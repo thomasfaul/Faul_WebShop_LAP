@@ -1,0 +1,57 @@
+﻿@model ClonestoneMVC.Models.tbllogin
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron" id="ProfileDetails">
+    <div>
+        <h4>Details:</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tblperson.gamertag)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tblperson.gamertag)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tblperson.firstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tblperson.firstname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tblperson.lastname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tblperson.lastname)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.idlogin })
+    </p>
+    <p>
+        @if (Convert.ToString(Session["sessionUserrole"]) == "2" || Convert.ToString(Session["sessionUserrole"]) == "3")
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }        
+    </p>
+    <p>
+        @Html.ActionLink("Home", "Index", "Home")
+    </p>
+    </div>

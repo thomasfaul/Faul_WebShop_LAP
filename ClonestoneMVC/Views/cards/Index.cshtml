@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ClonestoneMVC.Models.tblcard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="gallery">
+
+    @{
+        int startpositionB = ViewBag.start - 9;
+        int startpositionN = ViewBag.start + 9;
+
+        if (ViewBag.start < 9)
+        {
+            <a href="~/cards/index/?start=@startpositionB" style="visibility:hidden" class="glyphicon glyphicon-chevron-left"></a>
+        }
+        else
+        {
+            <a href="~/cards/index/?start=@startpositionB" class="glyphicon glyphicon-chevron-left" style="transform: scale(3); float:left; border:1px solid white; border-radius:5px; padding:0px 1px 2px 1px"></a>
+        }
+
+        if (ViewBag.start > ViewBag.len - 8)
+        {
+            <a href="~/cards/index/?start=@startpositionN" style="visibility:hidden" class="glyphicon glyphicon-chevron-right">vor</a>
+
+        }
+        else
+        {
+            <a href="~/cards/index/?start=@startpositionN" class="glyphicon glyphicon-chevron-right" style="transform: scale(3); float:right; border:1px solid white; border-radius:5px; padding:0px 1px 2px 1px"></a>
+        }
+
+    }
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="row col-md-4 col-sm-6 col-xs-12" style="margin-top:37px">
+            <div class="col-md-8 vcenter" style="margin-top:26px">
+                <div class="container" style="font-size:12px">
+                    <div class="row">
+                        @*@Html.DisplayNameFor(model => model.cardname)*@
+                        @Html.DisplayFor(modelItem => item.cardname)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.mana):
+                        @Html.DisplayFor(modelItem => item.mana)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.life):
+                        @Html.DisplayFor(modelItem => item.life)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.attack):
+                        @Html.DisplayFor(modelItem => item.attack)
+                    </div>
+                    @*<div class="row">
+                        @Html.DisplayNameFor(model => model.flavor)
+                        @Html.DisplayFor(modelItem => item.flavor)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.tblability.ability)
+                        @Html.DisplayFor(modelItem => item.tblability.ability)
+                    </div>*@
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.tblclass.@class):
+                        @Html.DisplayFor(modelItem => item.tblclass.@class)
+                    </div>
+                    <div class="row">
+                        @Html.DisplayNameFor(model => model.tbltype.typename):
+                        @Html.DisplayFor(modelItem => item.tbltype.typename)
+                    </div>
+                </div>
+            </div>          
+            <div class="col-md-4" style="position:relative">
+                @{
+                    var base64 = Convert.ToBase64String(item.pic);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                }
+                <img class="galleryImg img-responsive" src="@imgSrc"/>
+            </div>
+            
+        </div>
+      }   
+</div>
+<div class="jumbotron" style="background:unset; font-size:30px; padding-top:400px; padding-left:0px">
+    @Html.ActionLink("Home", "Index", "Home")
+
+</div>

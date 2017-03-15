@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="margin-top:100px; color:white">NEWS</h1>
+
+<div id="openModal" class="modalDialog">
+    <a href="#close" title="Close" class="close">X</a>
+    <img src="~/img/News1.png" class="displayed img-responsive"/>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#openModal"><img src="~/img/News1.png" style="width:300px" /></a>
+            </div>
+            <div class="col-md-8">
+                <h3>The Game is nearly finished!</h3>
+                <p>We are proud to announce that the Game is nearly finished.</p>
+                <p>Soon we will start with an open beta phase,the exact time we will announce soon </p> 
+                <p>so stay tuned </p>
+                18.12.2016                    
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div id="openModal2" class="modalDialog">
+    <a href="#close" title="Close" class="close">X</a>
+    <img src="~/img/News2.png" class="displayed img-responsive"/>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Step by Step!</h3>
+                <p>The homepage already takes shape, step by step but hey Rome was also not built in one day. </p>
+                <p>Next we will take care of the information area.</p>
+                <p>That´s all folks, for now.</p>
+                01.12.2016
+            </div>
+            <div class="col-md-4">
+                <a href="#openModal2"><img src="~/img/News2.png" style="width:300px" /></a>
+            </div>           
+        </div>
+    </div>  
+</div>
+
+<div id="openModal3" class="modalDialog">
+    <a href="#close" title="Close" class="close">X</a>
+    <img src="~/img/News3.png" class="displayed img-responsive" />
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#openModal3"><img src="~/img/News3.png" style="width:300px" /></a>
+            </div>
+            <div class="col-md-8">
+                <h3>sneak preview time!</h3>
+                <p>Here you have our first Layout of the Gameboard</p>
+                <p>Of course, it is not yet final. But Maybe</p>
+                <p>stay tuned </p>
+                17.11.2016
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom:250px">
+    <h3>@Html.ActionLink("Home", "Index", "Home")</h3>
+</div>
+

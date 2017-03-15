@@ -1,0 +1,95 @@
+﻿@model ClonestoneMVC.Models.ProfileData
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@ViewBag.Firstname @ViewBag.Lastname @ViewBag.Gamertag
+
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="form-horizontal">
+            <h4>change Password</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.IdUser)
+            
+            <h2>
+                @if (TempData["pchange"] != null)
+                {
+                    @TempData["pchange"];
+                }
+            </h2>
+
+             <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3" for="confirmPassword">Confirm Password</label>
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.PasswordValidation, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PasswordValidation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-7">
+                    <input type="submit" value="change password" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        
+        // ======================================================================================
+        <br /><br />
+        <div class="form-horizontal">
+            <h4>change Email</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.IdUser)
+
+            <h2>
+                @if (TempData["echange"] != null)
+                {
+                    @TempData["echange"];
+                }
+            </h2>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3" for="confirmEmail">Confirm Email</label>
+                <div class="col-md-7">
+                    @Html.EditorFor(model => model.EmailValidation, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EmailValidation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-7">
+                    <input type="submit" value="change emailadress" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    }
+
+    <div>
+        <h4>@Html.ActionLink("Back to Profile", "Details", new { id = @Session["sessionUserid"] }, null) | @Html.ActionLink("Home", "Index", "Home")</h4>
+    </div>
+</div>

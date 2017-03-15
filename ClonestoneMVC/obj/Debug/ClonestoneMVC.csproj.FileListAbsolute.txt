@@ -1,0 +1,223 @@
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\csc.exe
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\vbc.exe
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.dll.config
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.pdb
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Antlr3.Runtime.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Web.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Newtonsoft.Json.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Helpers.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Mvc.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Optimization.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Razor.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\WebGrease.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Web.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Helpers.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Mvc.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Optimization.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Razor.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Antlr3.Runtime.pdb
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\bin\Newtonsoft.Json.xml
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.csprojResolveAssemblyReference.cache
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.dll
+C:\Users\Omega Ultima\Documents\GitHub\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.pdb
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\csc.exe
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\vbc.exe
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.dll.config
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\ClonestoneMVC.pdb
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Antlr3.Runtime.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Web.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Newtonsoft.Json.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Helpers.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Mvc.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Optimization.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Razor.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\WebGrease.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.Web.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Helpers.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Mvc.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Optimization.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.Razor.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Antlr3.Runtime.pdb
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\bin\Newtonsoft.Json.xml
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.csprojResolveAssemblyReference.cache
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.dll
+C:\Users\Martin Hengsberger\Desktop\Clonestone\MTPClonestone\ClonestoneMVC\obj\Debug\ClonestoneMVC.pdb
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\csc.exe
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\vbc.exe
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\ClonestoneMVC.dll.config
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\ClonestoneMVC.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\ClonestoneMVC.pdb
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Antlr3.Runtime.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Web.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Newtonsoft.Json.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Helpers.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Mvc.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Optimization.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Razor.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\WebGrease.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Web.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Helpers.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Mvc.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Optimization.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Razor.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Antlr3.Runtime.pdb
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\bin\Newtonsoft.Json.xml
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.csprojResolveAssemblyReference.cache
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.dll
+C:\Users\andi\Desktop\Clonestone\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.pdb
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\csc.exe
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\vbc.exe
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\ClonestoneMVC.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\ClonestoneMVC.pdb
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Antlr3.Runtime.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Web.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.ApplicationInsights.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Newtonsoft.Json.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Helpers.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Mvc.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Optimization.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Razor.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\WebGrease.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.Web.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.ApplicationInsights.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Helpers.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Mvc.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Optimization.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.Razor.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Deployment.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\System.Web.WebPages.Razor.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Antlr3.Runtime.pdb
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\bin\Newtonsoft.Json.xml
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.csprojResolveAssemblyReference.cache
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.dll
+C:\Users\faulthom\Desktop\Website Hosted by Hengsberger\ClonestoneMVC\obj\Debug\ClonestoneMVC.pdb

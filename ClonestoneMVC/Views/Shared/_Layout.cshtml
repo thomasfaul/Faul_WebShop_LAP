@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Clonestone</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Clonestone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="float:right">
+                   
+                    <!--LOGIN/LOGOUT-->
+                    @if (Session["sessionUserid"] == null)
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Login")</li>
+                    }
+                    @if (Session["sessionUserid"] != null)
+                    {
+                        <li>@Html.ActionLink("Logout", "LogOut", "Home")</li>
+                    }
+                    <li>@Html.ActionLink("Gallery", "Index", "cards")</li>
+
+                    @if (Session["sessionUserrole"] == null)
+                    {
+                        <li>@Html.ActionLink("Registration", "create", "Registration")</li>
+                    }
+                                   
+                    <li>@Html.ActionLink("News", "Index", "News")</li>
+                    <li>@Html.ActionLink("Tutorial", "Index", "Tutorial")</li>
+
+                    <!-- Abfrage userrole ob ADMIN! -->
+                    @if (Convert.ToString(Session["sessionUserrole"]) == "2")
+                    {
+                        <li>@Html.ActionLink("User-Administration", "Index", "Profile")</li>
+                    }
+
+                    <!--Abfrage userrole ob EDITOR!-->
+                    @if (Convert.ToString(Session["sessionUserrole"]) == "3")
+                    {
+                        <li>@Html.ActionLink("Insert News/Tutorial", "Index", "Editor")</li>
+                    }
+
+                    <!--Abfrage userrole ob EDITOR!-->
+                    @if (Convert.ToString(Session["sessionUserrole"]) == "1")
+                    {
+                        <li>@Html.ActionLink("Ranking", "Index", "Ranking")</li>
+                    }
+
+                    <!--Anzeige Gamertag und Link auf Profile-->
+                    @if (Session["sessionGamertag"] != null)
+                    {
+                        <li>@Html.ActionLink(Convert.ToString(Session["sessionGamertag"]), "Details", "Profile", new { id = @Session["sessionUserid"] }, null )</li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />*@
+        <footer>
+            @*Konditionelle Formatierung*@
+            @{
+                string style = @ViewBag.position == "Home" ? "height:22em" : null;
+            }
+            <div class="navbar-fixed-bottom visible-lg visible-md visible-sm" id="Rundherum" style="@style">
+
+                <div class="row" id="cardhand">
+
+
+                    <div class="embed-responsive" id="links2">
+                        <div class="cardhand_text">
+                            @Html.ActionLink("Gallery", "Index", "cards")
+                        </div>
+                    </div>
+                    <div class="embed-responsive" id="links">
+                        <div class="cardhand_text">
+                            @Html.ActionLink("News", "Index", "News")
+                        </div>
+                    </div>
+                    <div class="embed-responsive" id="mitte">
+                        <div class="cardhand_text">
+                            <a href="~/img/AGB.pdf" download="Clonestone">Download GAME</a>
+                        </div>
+                    </div>
+                    <div class="embed-responsive" id="rechts">
+                        <div class="cardhand_text">
+                            @Html.ActionLink("Tutorial", "Index", "Tutorial")
+                        </div>
+                    </div>
+                    <div class="embed-responsive" id="rechts2">
+                        <div class="cardhand_text">
+                            <!-- Abfrage ob User Eingelogged ist, wenn nicht Umleitung zum Login!-->
+                            @if (Session["sessionGamertag"] != null)
+                            {
+                                @Html.ActionLink("Profile", "Details", "Profile", new { id = @Session["sessionUserid"] }, null)
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Profile", "Login", "Login")
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-fixed-bottom center visible-lg visible-md visible-sm" id="Deckel">
+                    <div class="navbar-collapse collapse">
+                        <div class="footer-nav">
+                            <a href="~/img/AGB.pdf">Imprint</a> |
+                            <a href="~/img/Disclaimer.pdf">Disclaimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ClonestoneMVC.Models.pWinLoss_Result>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="jumbotron" id="ProfileList">
+    <p>
+        <h3>RANKING</h3>
+        <br />
+        @*@Html.ActionLink("Create New User", "Create")*@
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Rank
+            </th>
+            <th>
+                Gamertag
+            </th>
+            <th>
+                games played
+            </th>
+            <th>
+                Wins
+            </th>
+            <th>
+                Losses
+            </th>
+            <th>
+                win ratio
+            </th>
+            <th></th>
+        </tr>
+
+        @{int rank = 1; }
+        @foreach (var item in Model)
+
+        {
+            //<tr class="@(@rank == 1 ? "erster" : "")@(@rank == 2 ? "zweiter" : "")@(@rank == 3 ? "dritter" : "")">
+                <tr class="@(@rank == 1 ? "erster" : @rank == 2 ? "zweiter" : @rank == 3 ? "dritter" : "")">
+                    <td>
+                        @rank
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.gamertag)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.number_of_games)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.number_of_wins)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.number_of_losses)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.win_ratio)
+                    </td>
+
+                </tr>
+                rank++;
+
+        }
+
+    </table>
+    @Html.ActionLink("Home", "Index", "Home")
+</div>
+
+<div class="@(@rank < 4 ? "show" : "dritter") @(@rank < 3 ? "show" : "zweiter") @(@rank < 2 ? "show" : "erster")"></div>

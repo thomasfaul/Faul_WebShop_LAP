@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="itin21_ClonestoneFSModelStoreContainer" CdmEntityContainer="ClonestoneEntities">
+    <EntitySetMapping Name="tblabilities">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblability">
+        <MappingFragment StoreEntitySet="tblability">
+          <ScalarProperty Name="idability" ColumnName="idability" />
+          <ScalarProperty Name="ability" ColumnName="ability" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblcards">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblcard">
+        <MappingFragment StoreEntitySet="tblcard">
+          <ScalarProperty Name="idcard" ColumnName="idcard" />
+          <ScalarProperty Name="cardname" ColumnName="cardname" />
+          <ScalarProperty Name="mana" ColumnName="mana" />
+          <ScalarProperty Name="life" ColumnName="life" />
+          <ScalarProperty Name="attack" ColumnName="attack" />
+          <ScalarProperty Name="flavor" ColumnName="flavor" />
+          <ScalarProperty Name="fktype" ColumnName="fktype" />
+          <ScalarProperty Name="fkclass" ColumnName="fkclass" />
+          <ScalarProperty Name="fkability" ColumnName="fkability" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblclasses">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblclass">
+        <MappingFragment StoreEntitySet="tblclass">
+          <ScalarProperty Name="idclass" ColumnName="idclass" />
+          <ScalarProperty Name="class" ColumnName="class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbldecks">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbldeck">
+        <MappingFragment StoreEntitySet="tbldeck">
+          <ScalarProperty Name="iddeck" ColumnName="iddeck" />
+          <ScalarProperty Name="deckname" ColumnName="deckname" />
+          <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbldeckcards">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbldeckcard">
+        <MappingFragment StoreEntitySet="tbldeckcard">
+          <ScalarProperty Name="iddeckcard" ColumnName="iddeckcard" />
+          <ScalarProperty Name="fkdeck" ColumnName="fkdeck" />
+          <ScalarProperty Name="fkcard" ColumnName="fkcard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbledits">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbledit">
+        <MappingFragment StoreEntitySet="tbledit">
+          <ScalarProperty Name="isnews" ColumnName="isnews" />
+          <ScalarProperty Name="idedit" ColumnName="idedit" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="fkperson" ColumnName="fkperson" />
+          <ScalarProperty Name="editdate" ColumnName="editdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbleditFiles">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbleditFile">
+        <MappingFragment StoreEntitySet="tbleditFile">
+          <ScalarProperty Name="ideditfile" ColumnName="ideditfile" />
+          <ScalarProperty Name="fkedit" ColumnName="fkedit" />
+          <ScalarProperty Name="uidfile" ColumnName="uidfile" />
+          <ScalarProperty Name="editfile" ColumnName="editfile" />
+          <ScalarProperty Name="mimetype" ColumnName="mimetype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblgames">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblgame">
+        <MappingFragment StoreEntitySet="tblgame">
+          <ScalarProperty Name="idgame" ColumnName="idgame" />
+          <ScalarProperty Name="fkperson1" ColumnName="fkperson1" />
+          <ScalarProperty Name="fkperson2" ColumnName="fkperson2" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="gamestart" ColumnName="gamestart" />
+          <ScalarProperty Name="gameende" ColumnName="gameende" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbllogins">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbllogin">
+        <MappingFragment StoreEntitySet="tbllogin">
+          <ScalarProperty Name="idlogin" ColumnName="idlogin" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passcode" ColumnName="passcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblpersons">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblperson">
+        <MappingFragment StoreEntitySet="tblperson">
+          <ScalarProperty Name="gamertag" ColumnName="gamertag" />
+          <ScalarProperty Name="idperson" ColumnName="idperson" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblroles">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tblrole">
+        <MappingFragment StoreEntitySet="tblrole">
+          <ScalarProperty Name="idrole" ColumnName="idrole" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbltypes">
+      <EntityTypeMapping TypeName="itin21_ClonestoneFSModel.tbltype">
+        <MappingFragment StoreEntitySet="tbltype">
+          <ScalarProperty Name="idtype" ColumnName="idtype" />
+          <ScalarProperty Name="typename" ColumnName="typename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tblpersonrole" TypeName="itin21_ClonestoneFSModel.tblpersonrole" StoreEntitySet="tblpersonrole">
+      <EndProperty Name="tblperson">
+        <ScalarProperty Name="idperson" ColumnName="fkperson" />
+      </EndProperty>
+      <EndProperty Name="tblrole">
+        <ScalarProperty Name="idrole" ColumnName="fkrole" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="pInsertUser" FunctionName="itin21_ClonestoneFSModel.Store.pInsertUser" />
+    <FunctionImportMapping FunctionImportName="pGetDeckTextOnly" FunctionName="itin21_ClonestoneFSModel.Store.pGetDeckTextOnly">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="itin21_ClonestoneFSModel.pGetDeckTextOnly_Result">
+          <ScalarProperty Name="IdDeck" ColumnName="IdDeck" />
+          <ScalarProperty Name="DeckName" ColumnName="DeckName" />
+          <ScalarProperty Name="IdClass" ColumnName="IdClass" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="IdType" ColumnName="IdType" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="IdCard" ColumnName="IdCard" />
+          <ScalarProperty Name="CardName" ColumnName="CardName" />
+          <ScalarProperty Name="Mana" ColumnName="Mana" />
+          <ScalarProperty Name="Attack" ColumnName="Attack" />
+          <ScalarProperty Name="Health" ColumnName="Health" />
+          <ScalarProperty Name="Flavour" ColumnName="Flavour" />
+          <ScalarProperty Name="IdDeckCard" ColumnName="IdDeckCard" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="zahl" ColumnName="zahl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pWinLoss" FunctionName="itin21_ClonestoneFSModel.Store.pWinLoss">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="itin21_ClonestoneFSModel.pWinLoss_Result">
+          <ScalarProperty Name="idperson" ColumnName="idperson" />
+          <ScalarProperty Name="gamertag" ColumnName="gamertag" />
+          <ScalarProperty Name="number_of_games" ColumnName="number of games" />
+          <ScalarProperty Name="number_of_wins" ColumnName="number of wins" />
+          <ScalarProperty Name="number_of_losses" ColumnName="number of losses" />
+          <ScalarProperty Name="win_ratio" ColumnName="win ratio" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
