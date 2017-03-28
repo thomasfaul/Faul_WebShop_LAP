@@ -1,0 +1,183 @@
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\ApplicationInsights.config
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\csc.exe
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\vbc.exe
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll.config
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.pdb
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\WebGrease.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.csprojResolveAssemblyReference.cache
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.pdb
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\EntityFramework.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.pdb
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\EntityFramework.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.dll
+C:\Users\Martin Hengsberger\Documents\GitHub\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.pdb
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\ApplicationInsights.config
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\csc.exe
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\vbc.exe
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll.config
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.pdb
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\WebGrease.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.pdb
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.pdb
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.pdb
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.xml
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.csprojResolveAssemblyReference.cache
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.dll
+C:\Users\Chris72\Desktop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.pdb
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\ApplicationInsights.config
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\csc.exe
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Collections.Immutable.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\System.Reflection.Metadata.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\vbc.exe
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\roslyn\VBCSCompiler.exe.config
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll.config
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.Web.pdb
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Agent.Intercept.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.PerfCounterCollector.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.Web.Infrastructure.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\WebGrease.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.DAL.pdb
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\CardGame.Log.pdb
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\EntityFramework.SqlServer.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.DependencyCollector.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.Web.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.AI.WindowsServer.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.ApplicationInsights.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Helpers.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Mvc.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Optimization.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.Razor.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Deployment.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\System.Web.WebPages.Razor.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Antlr3.Runtime.pdb
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\bin\Newtonsoft.Json.xml
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.csprojResolveAssemblyReference.cache
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.dll
+J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.Web\obj\Debug\CardGame.Web.pdb
