@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CardGame.DAL.Model;
-using CardGame.Log;
-using System.Data.Entity;
+using PagedList.Mvc;
 
 namespace CardGame.DAL.Logic
 {
@@ -36,7 +35,6 @@ namespace CardGame.DAL.Logic
             List<tblcard> ReturnList = null;
             using (var db = new ClonestoneFSEntities())
             {
-                //ReturnList = db.tblcard.Include(t => t.tbltype).ToList();
                 ReturnList = db.tblcard.ToList();
             }
             return ReturnList;

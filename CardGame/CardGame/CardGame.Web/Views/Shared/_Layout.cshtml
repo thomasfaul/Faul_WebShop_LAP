@@ -27,7 +27,12 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Statistic", "Statistics", "Home")</li>
                     <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
-                    <li>@Html.ActionLink("Users", "Index", "User")</li>
+
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Users", "Index", "User")</li>
+                    }
+                    
                 </ul>
             </div>
         </div>
@@ -36,7 +41,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year </p>
         </footer>
     </div>
 

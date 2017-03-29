@@ -1,0 +1,46 @@
+﻿@*@using CardGame.Web.Models
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Card>
+
+@{ 
+    foreach (var item in Model)
+    {
+        <div class="main-content">
+             <div class="content-image">
+                 <a href="">
+                     @{
+                         if (item.Pic != null)
+                         {
+                             var base64 = Convert.ToBase64String(item.Pic);
+                             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                             <img src="@imgSrc" width="100" height="150" />
+                         }
+                         else
+                         {
+                             @Html.DisplayText("no Picture found")
+                         }
+                     }
+                 </a>
+            </div>
+            <div class="PicName">@item.Name  </div>
+            <div class="PicFlavor">@item.Flavor</div>
+            <div class="PicFlavor">@item.Mana</div>
+</div>
+                             }
+                         }
+Page @(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber )/ @Model.PageCount
+<div class="divpagination">
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new{ pagenumber = page }))
+
+</div>
+
+
+
+
+
+
+
+
+}*@

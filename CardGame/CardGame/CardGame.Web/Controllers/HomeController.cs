@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿https://www.youtube.com/watch?v=Q971J_7Znts
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
@@ -23,7 +20,7 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
-        [Authorize(Roles = "user,admin")]
+        //[Authorize(Roles = "user,admin")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -31,7 +28,7 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
