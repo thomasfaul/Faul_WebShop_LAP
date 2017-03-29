@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
@@ -10,8 +8,12 @@ using System.Web.Security;
 
 namespace CardGame.Web
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
+        #region Application Start
+        /// <summary>
+        /// TODO Comment
+        /// </summary>
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -19,7 +21,14 @@ namespace CardGame.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        #endregion
 
+        #region Application_AuthenticateRequest
+        /// <summary>
+        /// TODO Comment
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Application_AuthenticateRequest(Object sender, EventArgs e)
         {
             HttpCookie authCookie = Context.Request.Cookies[FormsAuthentication.FormsCookieName];
@@ -47,5 +56,6 @@ namespace CardGame.Web
             //Wir legen für unseren Benutzer ein neues Identifikationsobjekt an
         }
 
+        #endregion
     }
 }

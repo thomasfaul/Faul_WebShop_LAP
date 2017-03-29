@@ -33,13 +33,14 @@ namespace CardGame.DAL.Logic
                     if (dbUser == null)
                     {
                         throw new Exception("User Does not Exist");
-
                     }
                 }
             }
             catch (Exception e)
             {
+                
                 Log.Writer.LogError(e);
+                
             }
 
             return dbUser;

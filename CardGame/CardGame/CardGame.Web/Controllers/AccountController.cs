@@ -54,6 +54,7 @@ namespace CardGame.Web.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+       
 
         [HttpGet]
         public ActionResult Register()
@@ -61,28 +62,35 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+        public ActionResult ErrorMessage()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Register(User regUser)
         {
+            
             var dbUser = new tblperson();
-
+            if (regUser.Email !=null)
+            { 
             dbUser.firstname = regUser.Firstname;
             dbUser.lastname = regUser.Lastname;
 
             dbUser.email = regUser.Email;
             dbUser.password = regUser.Password;
+            dbUser.gamertag = regUser.Gamertag;
             dbUser.salt = regUser.Salt;
             dbUser.userrole = "player";
             dbUser.isactive = true;
             dbUser.currencybalance = 1000;
-
-            //dbUser.tblrole = new List<tblrole>();
-            //dbUser.tblrole.Add(new tblrole());
-            //dbUser.tblrole.FirstOrDefault().rolename = "user";
-
             AuthManager.Register(dbUser);
-
             return RedirectToAction("Login");
+            }
+            else
+            {
+                return RedirectToAction("ErrorMessage");
+            }
         }
     }
 }

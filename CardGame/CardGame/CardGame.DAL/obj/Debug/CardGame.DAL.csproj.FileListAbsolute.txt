@@ -34,3 +34,15 @@ J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.DAL\bin\Debug\EntityFramework
 J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.csprojResolveAssemblyReference.cache
 J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.dll
 J:\BBRZ\Modul_7\WebShop\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\CardGame.DAL.dll.config
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\CardGame.DAL.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\CardGame.DAL.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\CardGame.Log.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\EntityFramework.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\CardGame.Log.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\EntityFramework.xml
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.csprojResolveAssemblyReference.cache
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.pdb

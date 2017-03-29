@@ -21,19 +21,12 @@ namespace CardGame.Web.Models
         public string Lastname { get; set; }
 
         [Required(ErrorMessage = "required!", AllowEmptyStrings = false)]
-        [RegularExpression(@"^[a-zA-Z0-9--]+$", ErrorMessage = "no special characters allowed")]
         public string Gamertag { get; set; }
 
         [Required(ErrorMessage = "required!", AllowEmptyStrings = false)]
         [DataType(DataType.EmailAddress, ErrorMessage = "invalid emailadress")]
         [DisplayName("Email")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "required!", AllowEmptyStrings = false)]
-        [DataType(DataType.EmailAddress, ErrorMessage = "invalid ermailadress")]
-        [Compare("Email", ErrorMessage = "email not identical!")]
-        [DisplayName("confirmEmail")]
-        public string EmailValidation { get; set; }
 
         [StringLength(maximumLength: 20, MinimumLength = 4, ErrorMessage = "password requirements not met (4-20 digits)")]
         [Required(ErrorMessage = "required!", AllowEmptyStrings = false)]

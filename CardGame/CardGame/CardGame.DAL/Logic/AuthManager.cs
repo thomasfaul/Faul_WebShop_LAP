@@ -35,8 +35,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                throw;
-                //Writer.LogError(e);            
+                Writer.LogError(e); 
+                return false;              
             }
 
             return true;
@@ -60,11 +60,11 @@ namespace CardGame.DAL.Logic
                     dbUserPassword = dbUser.password;
                     dbUserSalt = dbUser.salt;
 
-                    Log.Writer.LogInfo("Entered Pass = " + password);
+                   Writer.LogInfo("Entered Pass = " + password);
 
                     password = Helper.GenerateHash(password + dbUserSalt);
 
-                    Log.Writer.LogInfo("HashPass = " + password);
+                    Writer.LogInfo("HashPass = " + password);
 
                     if (dbUserPassword == password)
                     {
@@ -79,8 +79,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-
-                throw;
+                Writer.LogError(e);
+                return false; 
             }
         }
     }
