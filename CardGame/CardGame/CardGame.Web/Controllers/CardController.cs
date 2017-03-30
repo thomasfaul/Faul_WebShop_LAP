@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
-using CardGame.Log;
+using System.Linq;
+//using CardGame.Web.Models;
 
 namespace CardGame.Web.Controllers
 {
     public class CardController : Controller
     {
+        public int Pagesize = 20;
+        
         // GET: Card
-        public ActionResult Overview()
+        public ActionResult Overview(int page=1)
         {
             List<Card> CardList = new List<Card>();
-
             var dbCardlist = CardManager.GetAllCards();
 
             foreach (var c in dbCardlist)
@@ -30,11 +29,19 @@ namespace CardGame.Web.Controllers
                 card.Pic = c.pic;
                 card.Flavor = c.flavor;
                 card.Type = CardManager.CardTypes[c.fktype];
-
                 CardList.Add(card);
             }
-
-            return View(CardList);
+            CardsListViewModel model = new CardsListViewModel()
+            {
+            Cards= CardList.OrderBy(c => c.ID)
+                           .Skip((page - 1) * Pagesize)
+                           .Take(Pagesize),
+                            PagingInfo= new PageInfo{
+                                CurrentPage =page,
+                                ItemsPerPage =Pagesize,
+                                TotalItems = CardList.Count()
+            }};
+            return View(model);
         }
 
         public ActionResult Details(int id)

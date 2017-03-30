@@ -63,6 +63,7 @@
     <Compile Include="Logic\CardManager.cs" />
     <Compile Include="Logic\DBInfoManager.cs" />
     <Compile Include="Logic\Helper.cs" />
+    <Compile Include="Logic\PackManager.cs" />
     <Compile Include="Logic\UserManager.cs" />
     <Compile Include="Model\CardGameModel.Context.cs">
       <AutoGen>True</AutoGen>

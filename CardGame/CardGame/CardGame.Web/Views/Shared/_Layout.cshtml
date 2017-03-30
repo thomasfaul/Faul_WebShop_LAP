@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - CloneShop</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="The description of my page" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,15 +21,29 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    @if (!User.IsInRole("player") || User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+                    
+                    @if (User.IsInRole("player") || User.IsInRole("admin"))
+                    {
                     <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Statistic", "Statistics", "Home")</li>
                     <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
-                    <li>@Html.ActionLink("Packs","ProductList","Product")</li>
-
+                    }
+                    @{ if (User.Identity.Name == "")
+                        {
+                            <li>Bitte einloggen </li>
+                        }
+                        else
+                        {
+                            <li style="color:aliceblue" position="right">@ViewBag.Firstname ' Shop</li> 
+                        }
+                    }
                     @if (User.IsInRole("admin"))
                     {
                         <li>@Html.ActionLink("Users", "Index", "User")</li>

@@ -56,7 +56,8 @@ namespace CardGame.DAL.Logic
                 var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
-                    throw new Exception("Userdoesnotexists");//TODO ERRORHANDLING
+                    Log.Writer.LogInfo("User already exists");
+                    return "";
                 }
                 role = dbUser.userrole;
             }

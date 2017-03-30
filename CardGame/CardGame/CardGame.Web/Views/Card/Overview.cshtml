@@ -1,7 +1,8 @@
-﻿@model IEnumerable<CardGame.Web.Models.Card>
+﻿
+@model CardGame.Web.Models.CardsListViewModel
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Overview";
 }
 
 <h2>Overview</h2>
@@ -9,21 +10,28 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(c => c.Name)
+            <h4>Number</h4>
         </th>
         <th>
-            @Html.DisplayNameFor(c => c.Type)
+            <h4>Name</h4> 
         </th>
         <th>
-            @Html.DisplayNameFor(c => c.Mana)
+            <h4>Type</h4>
         </th>
         <th>
-            Details
+            <h4>Mana</h4>
+        </th>
+        <th>
+            <h4> Details</h4>
         </th>
     </tr>
-    @foreach (var card in Model)
+   
+    @foreach (var card in Model.Cards)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(c => card.ID)
+            </td>
             <td>
                 @Html.DisplayFor(c => card.Name)
             </td>
@@ -36,9 +44,12 @@
             <td>
                 @Html.ActionLink("Details", "Details", new { id = card.ID })
             </td>
-            <td></td>
+            <td>
+               
+            </td>
         </tr>
     }
+        @Html.PageLinks(Model.PagingInfo, x=> Url.Action("OverView",new {page= x }))
 </table>
    
 
