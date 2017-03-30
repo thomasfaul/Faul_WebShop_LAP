@@ -1,4 +1,4 @@
-﻿https://www.youtube.com/watch?v=Q971J_7Znts
+﻿//ToDo https://www.youtube.com/watch?v=Q971J_7Znts
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
