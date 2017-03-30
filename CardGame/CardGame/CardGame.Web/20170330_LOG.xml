@@ -46,3 +46,23 @@
   <Time>30.03.2017 08:09:41</Time>
   <Info>GetNumDecks 1</Info>
 </Info>
+<Info>
+  <Time>30.03.2017 15:39:37</Time>
+  <Info>GetNumUsers 6</Info>
+</Info>
+<Info>
+  <Time>30.03.2017 15:39:37</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>30.03.2017 15:39:37</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>30.03.2017 16:12:14</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 58.</Stack>
+  </Exception>
+</Xcpt>

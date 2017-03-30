@@ -101,6 +101,20 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardGame.DAL\CardGame.DAL.csproj">
+      <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
+      <Name>CardGame.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardGame.Domain\CardGame.Domain.csproj">
+      <Project>{d10a11da-7985-495b-b73d-1dd5e6188c1b}</Project>
+      <Name>CardGame.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardGame.Web\CardGame.Web.csproj">
+      <Project>{4c647f82-c659-4772-a9ad-f5e2c1093677}</Project>
+      <Name>CardGame.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

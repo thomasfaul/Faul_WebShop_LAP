@@ -1,0 +1,17 @@
+﻿@using CardGame.Domain.Entities;
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "ProductList";
+}
+
+<h2>PackList</h2>
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.PackName</h3>
+            @p.Quantity
+        <h4>@p.PackPrice.ToString("c")</h4>
+    </div>
+}
+

@@ -36,7 +36,8 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Writer.LogError(e); 
-                return false;              
+                return false; 
+                //TODO Errorpage             
             }
 
             return true;

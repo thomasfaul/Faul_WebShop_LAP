@@ -180,10 +180,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\Statistic.cs" />
     <Compile Include="Models\User.cs" />
@@ -235,6 +237,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ErrorMessage.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +254,10 @@
     <ProjectReference Include="..\CardGame.DAL\CardGame.DAL.csproj">
       <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
       <Name>CardGame.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CardGame.Domain\CardGame.Domain.csproj">
+      <Project>{d10a11da-7985-495b-b73d-1dd5e6188c1b}</Project>
+      <Name>CardGame.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
       <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>

@@ -1,0 +1,4 @@
+C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Domain\bin\Debug\CardGame.Domain.dll
+C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Domain\bin\Debug\CardGame.Domain.pdb
+C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Domain\obj\Debug\CardGame.Domain.dll
+C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Domain\obj\Debug\CardGame.Domain.pdb
