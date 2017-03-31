@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CardGame.DAL.Model;
-using CardGame.Log;
-using System.Data.Entity;
 
 namespace CardGame.DAL.Logic
 {
     public class UserManager
     {
+        #region GetAllUser
+        /// <summary>
+        /// Connects to the Db and gets all Users
+        /// </summary>
+        /// <returns></returns>
         public static List<tblperson> GetAllUser()
         {
             List<tblperson> ReturnList = null;
@@ -22,6 +23,14 @@ namespace CardGame.DAL.Logic
             }
             return ReturnList;
         }
+        #endregion
+
+        #region Get User by UserEmail
+        /// <summary>
+        /// takes a string email  and returns a tblperson
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static tblperson GetUserByUserEmail(string email)
         {
             tblperson dbUser = null;
@@ -38,15 +47,23 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                
+
                 Log.Writer.LogError(e);
-                
+
             }
 
             return dbUser;
 
         }
-        public static string GetRoleNamesByUserName(string email)
+        #endregion
+
+        #region Get Rolenames by UserNameEmail
+        /// <summary>
+        /// takes a string Email and returns the role of the user
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static string GetRoleNamesByUserEmail(string email)
         {
             string role = "";
 
@@ -61,9 +78,10 @@ namespace CardGame.DAL.Logic
                 }
                 role = dbUser.userrole;
             }
-            return role;
-
+            return role; 
+            #endregion
         }
+
     }
 }
 

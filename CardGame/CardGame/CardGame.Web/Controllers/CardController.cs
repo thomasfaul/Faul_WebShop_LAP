@@ -13,7 +13,7 @@ namespace CardGame.Web.Controllers
         public int Pagesize = 20;
         
         // GET: Card
-        public ActionResult Overview(int page=1)
+        public ActionResult Overview(int? cardclass ,int page=1)
         {
             List<Card> CardList = new List<Card>();
             var dbCardlist = CardManager.GetAllCards();
@@ -22,6 +22,7 @@ namespace CardGame.Web.Controllers
             {
                 Card card = new Card();
                 card.ID = c.idcard;
+                card.CardClass = c.fkclass;
                 card.Name = c.cardname;
                 card.Mana = c.mana;
                 card.Attack = c.attack;
@@ -33,14 +34,16 @@ namespace CardGame.Web.Controllers
             }
             CardsListViewModel model = new CardsListViewModel()
             {
-            Cards= CardList.OrderBy(c => c.ID)
+                Cards = CardList.OrderBy(c => c.ID)
+            .Where(p => cardclass == null || p.CardClass == cardclass)
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
-                            PagingInfo= new PageInfo{
-                                CurrentPage =page,
-                                ItemsPerPage =Pagesize,
-                                TotalItems = CardList.Count()
-            }};
+                PagingInfo = new PageInfo {
+                    CurrentPage = page,
+                    ItemsPerPage = Pagesize,
+                    TotalItems = CardList.Count()
+                }, CurrentClass = cardclass
+            };
             return View(model);
         }
 

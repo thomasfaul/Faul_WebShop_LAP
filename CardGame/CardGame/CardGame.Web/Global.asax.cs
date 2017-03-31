@@ -53,6 +53,7 @@ namespace CardGame.Web
             // Benuter kann mehrere Rollen besetzen
 
             Context.User = new GenericPrincipal(new GenericIdentity(authTicket.Name), roles);
+            
             //Wir legen für unseren Benutzer ein neues Identifikationsobjekt an
         }
 

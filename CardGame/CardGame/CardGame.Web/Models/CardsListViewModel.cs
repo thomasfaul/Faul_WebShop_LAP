@@ -7,5 +7,7 @@ namespace CardGame.Web.Models
     {
         public IEnumerable<Card> Cards { get; set;}
         public PageInfo PagingInfo { get; set; }
+
+        public int? CurrentClass{ get; set; }
     }
 }

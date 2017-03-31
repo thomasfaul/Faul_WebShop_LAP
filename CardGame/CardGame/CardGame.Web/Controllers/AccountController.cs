@@ -24,7 +24,7 @@ namespace CardGame.Web.Controllers
         public ActionResult Login(User login)
         {
             bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
-            login.Role = UserManager.GetRoleNamesByUserName(login.Email);
+            login.Role = UserManager.GetRoleNamesByUserEmail(login.Email);
 
             if (hasAccess)
             {

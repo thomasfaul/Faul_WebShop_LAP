@@ -30,6 +30,8 @@ namespace CardGame.Web.Models
         [Range(0, int.MaxValue)]
         public string Type { get; set; }
 
+        public  int? CardClass { get; set; }
+
         public string Flavor { get; set; }
 
         public byte[] Pic { get; set; }
