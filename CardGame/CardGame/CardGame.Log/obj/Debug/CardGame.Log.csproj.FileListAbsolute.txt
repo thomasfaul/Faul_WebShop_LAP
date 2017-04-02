@@ -17,12 +17,12 @@ C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.L
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
 C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
 C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
 C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
 C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb

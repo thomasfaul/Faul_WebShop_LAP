@@ -24,12 +24,13 @@
                 <ul class="nav navbar-nav">
 
                     @if (User.IsInRole("player") || User.IsInRole("admin"))
-                      {
+                    {
                         <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Statistic", "Statistics", "Home")</li>
+                        <li>@Html.ActionLink("Packs", "PackOverview", "CardPack")</li>
                         <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
                     }
                     else if (true)
@@ -42,7 +43,7 @@
                         }
                         else
                         {
-                            <li >@ViewBag.Firstname 's Shop</li>
+                            <li>@ViewBag.Firstname 's Shop</li>
                         }
                     }
                     @if (User.IsInRole("admin"))
@@ -57,15 +58,22 @@
     </div>
 
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year </p>
-        </footer>
-    </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-3" id="categories">
+                 </div>
+            <div class="col-md-8 col-xs-8">
+                @RenderBody()
+                </div>
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year </p>
+                </footer>
+                </div>
+            </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
+
 </html>

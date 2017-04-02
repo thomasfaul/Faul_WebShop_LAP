@@ -4,7 +4,7 @@ using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Linq;
-//using CardGame.Web.Models;
+
 
 namespace CardGame.Web.Controllers
 {

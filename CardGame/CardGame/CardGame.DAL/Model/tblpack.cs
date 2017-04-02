@@ -24,6 +24,9 @@ namespace CardGame.DAL.Model
         public string packname { get; set; }
         public Nullable<decimal> packprice { get; set; }
         public Nullable<int> cardquantity { get; set; }
+        public byte[] packimage { get; set; }
+        public string flavour { get; set; }
+        public Nullable<bool> ismoney { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblorder> tblorder { get; set; }

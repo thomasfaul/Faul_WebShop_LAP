@@ -64,6 +64,9 @@
     <Property Name="packname" Type="varchar" MaxLength="50" />
     <Property Name="packprice" Type="decimal" Precision="18" Scale="0" />
     <Property Name="cardquantity" Type="int" />
+    <Property Name="packimage" Type="varbinary(max)" />
+    <Property Name="flavour" Type="varchar" MaxLength="50" />
+    <Property Name="ismoney" Type="bit" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>

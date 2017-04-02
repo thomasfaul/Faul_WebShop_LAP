@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using CardGame.DAL;
 
 namespace CardGame.Web.Models
 {

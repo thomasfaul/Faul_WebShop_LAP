@@ -1,13 +1,12 @@
-﻿
-@model CardGame.Web.Models.CardsListViewModel
-
+﻿@model CardGame.Web.Models.PacksListViewModel
 @{
-    ViewBag.Title = "Overview";
+    ViewBag.Title = "PackOverview";
 }
 
-<h2>Overview</h2>
-@*<div class="OverViewAll">*@
-    <table>
+<h2>CardPackView</h2>
+
+
+<table>
 
     <tr>
         <th class="Overviewth">
@@ -21,56 +20,55 @@
             <h4 class="Overviewth">Name</h4>
         </th>
         <th>
-            <h4 class="Overviewth">Type</h4>
+            <h4 class="Overviewth">Flavour</h4>
         </th>
         <th>
-            <h4 class="Overviewth">Mana</h4>
+            <h4 class="Overviewth">Price</h4>
         </th>
         <th>
             <h4 class="Overviewth"> Details</h4>
         </th>
     </tr>
 
-    @foreach (var card in Model.Cards)
+    @foreach (var pack in Model.Packs)
             {
 
         <tr>
             <td class="Overviewtd">
-                @Html.DisplayFor(c => card.ID)
+                @Html.DisplayFor(c => pack.IdPack)
             </td>
             <td class="Overviewtd">
-                @*@if (card.Pic != null)
+                @if (pack.Pic != null)
                 {
-                    var base64 = Convert.ToBase64String(card.Pic);
+                    var base64 = Convert.ToBase64String(pack.Pic);
                     var imgSrc = String.Format("data:image/png;base64,{0}", base64);
                     <img src="@imgSrc" id="OverViewPic" />
                 }
                 else
                 {
                     @Html.DisplayText("no Picture found")
-                }*@
+                }
             </td>
 
             <td class="Overviewtd">
-                @Html.DisplayFor(c => card.Name)
+                @Html.DisplayFor(c => pack.PackName)
             </td>
             <td class="Overviewtd">
-                @Html.DisplayFor(c => card.Type)
+                @Html.DisplayFor(c => pack.Flavor)
             </td>
             <td class="Overviewtd">
-                @Html.DisplayFor(c => card.Mana)
+                @Html.DisplayFor(c => pack.PackPrice)
             </td>
 
             <td class="Overviewtd">
-                @Html.ActionLink("Details", "Details", new { id = card.ID })
-            </td class="Overviewtd">
+                @Html.ActionLink("Details", "Details", new { id = pack.IdPack })
+            </td>
 
         </tr>
     }
 
 </table>
 <div class="PageLinks">
-   
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))
+
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
 </div>
-@*</div>*@

@@ -10,24 +10,24 @@ namespace CardGame.DAL.Logic
 {
     public class PackManager
     {
-        public static readonly Dictionary<int, string> PackCards;
+        public static readonly Dictionary<int, string> Packs;
 
         static PackManager()
         {
-            PackCards = new Dictionary<int, string>();
-            List<tblcard> cardList = null;
+            Packs = new Dictionary<int, string>();
+            List<tblpack> packList = null;
 
             using (var db = new ClonestoneFSEntities())
             {
-                cardList = db.tblcard.ToList();
+                packList = db.tblpack.ToList();
             }
 
-            foreach (var card in cardList)
+            foreach (var pack in packList)
             {
-                PackCards.Add(card.idcard, card.cardname);
+                Packs.Add(pack.idpack, pack.packname);
             }
 
-            PackCards.Add(0, "n/a");
+            Packs.Add(0, "n/a");
         }
         public static List<tblpack> GetAllPacks()
         {

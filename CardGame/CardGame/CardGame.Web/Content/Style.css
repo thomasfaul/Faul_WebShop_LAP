@@ -10,7 +10,7 @@
 }
 
 body {
-    font-size: 100%;
+    font-size: 130%;
     margin: 0em;
     padding: 0em;
     /*em ist eine  relative Angabe bezogen, an dieser Stelle müssen
@@ -59,7 +59,7 @@ li {
 }
 
 .control-label {
-    font-family:Arial !important;
+    font-family:Arial;
     font-size: 18px;
     line-height: 20px;
 }
@@ -94,5 +94,23 @@ li {
     transition-duration:3s;
     width:14em;
 }
+.Overviewtd{
+    text-align:center
+}
+.Overviewth {
+    text-align:center;
+    width:5em;
+}
+.PageLinks {
+    width:55em;
+    text-align:center;
+    
+
+
+     
+}
+/*.well {
+    background:none;
+}*/
 
 
