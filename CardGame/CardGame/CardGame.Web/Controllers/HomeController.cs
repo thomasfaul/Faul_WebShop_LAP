@@ -76,9 +76,6 @@ namespace CardGame.Web.Controllers
         /// </summary>
         public void CreateViewBag()
         {
-
-
-            
             var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
             if (dbUser != null)
             {

@@ -8,7 +8,7 @@
 
 
 
-<table>
+<table style="margin-top:100px">
     <tr>
         <th>
             @Html.DisplayNameFor(c => c.ID)
@@ -56,7 +56,7 @@
                     {
                         var base64 = Convert.ToBase64String(Model.Pic);
                         var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                        <img src="@imgSrc" width="100" height="150" />
+                        <img class="DetailsPic" src="@imgSrc"  />
                     }
                     else
                     {

@@ -42,11 +42,21 @@
                 @Html.DisplayFor(c => card.Mana)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = card.ID })
+                @if (card.Pic != null)
+                {
+                var base64 = Convert.ToBase64String(card.Pic);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <img src="@imgSrc" id="OverViewPic" />
+                }
+                else
+                {
+                @Html.DisplayText("no Picture found")
+                }
             </td>
             <td>
-               
+                @Html.ActionLink("Details", "Details", new { id = card.ID })
             </td>
+
         </tr>
     }
         @Html.PageLinks(Model.PagingInfo, x=> Url.Action("OverView",new {page= x }))

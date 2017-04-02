@@ -44,6 +44,7 @@ namespace CardGame.Web.Controllers
                     TotalItems = CardList.Count()
                 }, CurrentClass = cardclass
             };
+        
             return View(model);
         }
 
@@ -63,8 +64,7 @@ namespace CardGame.Web.Controllers
             card.Flavor = dbcard.flavor;
          
             card.Type = CardManager.CardTypes[dbcard.fktype];
-
-            return View(card);
+                        return View(card);
         }
     }
 }

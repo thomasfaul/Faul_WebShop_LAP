@@ -37,6 +37,7 @@ namespace CardGame.Web.Controllers
 
                 UserList.Add(user);
             }
+            
 
             return View(UserList);
         }
