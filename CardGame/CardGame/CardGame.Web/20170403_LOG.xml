@@ -26,3 +26,35 @@
   <Time>03.04.2017 01:08:06</Time>
   <Info>GetNumDecks 1</Info>
 </Info>
+<Xcpt>
+  <Time>03.04.2017 08:17:49</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 58.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>03.04.2017 08:17:49</Time>
+  <Info>User already exists</Info>
+</Info>
+<Xcpt>
+  <Time>03.04.2017 08:17:53</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 58.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>03.04.2017 08:17:53</Time>
+  <Info>User already exists</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 08:19:16</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 08:19:16</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>

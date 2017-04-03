@@ -66,7 +66,7 @@
     <Property Name="cardquantity" Type="int" />
     <Property Name="packimage" Type="varbinary(max)" />
     <Property Name="flavour" Type="varchar" MaxLength="50" />
-    <Property Name="ismoney" Type="bit" />
+    <Property Name="ismoney" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>

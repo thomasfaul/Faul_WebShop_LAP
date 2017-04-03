@@ -82,7 +82,7 @@
     <NavigationProperty Name="tblorder" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
     <Property Name="packimage" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="flavour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ismoney" Type="Boolean" />
+    <Property Name="ismoney" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>

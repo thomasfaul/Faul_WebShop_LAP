@@ -21,7 +21,7 @@ namespace CardGame.Web.Models
         public string Flavor { get; set; }
 
  
-        public bool? IsMoney { get; set; }
+        public bool IsMoney { get; set; }
 
 
         public byte[] Pic { get; set; }

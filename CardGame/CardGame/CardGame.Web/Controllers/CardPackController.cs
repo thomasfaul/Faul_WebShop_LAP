@@ -13,8 +13,17 @@ namespace CardGame.Web.Controllers
     {
         public int PPagesize = 20;
         // GET: Cardpack
-        public ActionResult PackOverview(bool? isCurrency, int page = 1)
+        public ActionResult PackOverview(int page = 1)
         {
+            PacksListViewModel model = new PacksListViewModel();
+            
+            model.PIsMoney = false;
+            try
+            {
+                model.PIsMoney = (bool)this.Session["isCurrency"];
+            }
+            catch (Exception){}
+            
             List<CardPack> PackList = new List<CardPack>();
             var dbPacklist = PackManager.GetAllPacks();
 
@@ -29,39 +38,46 @@ namespace CardGame.Web.Controllers
                 pack.Pic = p.packimage;
                 PackList.Add(pack);
             }
-
-
-            PacksListViewModel model = new PacksListViewModel()
-            {
-                Packs = PackList.OrderBy(c => c.IdPack)
-                           .Where(p =>/* p.IsMoney == null ||*/ p.IsMoney == isCurrency)
+            
+            model.Packs = PackList.OrderBy(c => c.IdPack)
+                           .Where(p => p.IsMoney == model.PIsMoney)
                            .Skip((page - 1) * PPagesize)
-                           .Take(PPagesize),
-                PagingInfo = new PageInfo
-                {
-                    CurrentPage = page,
-                    ItemsPerPage = PPagesize,
-                    TotalItems = PackList.Count()
-                },
-                CurrentClass =isCurrency
-            };
+                           .Take(PPagesize).ToList<CardPack>();
 
+            model.PagingInfo = new PageInfo
+            {
+                CurrentPage = page,
+                ItemsPerPage = PPagesize,
+                TotalItems = PackList.Count()
+            };
+            
             return View(model);
         }
 
-        public ActionResult Details(int id)
-        {
-            tblpack dbpack = null;
-
-            dbpack = PackManager.GetPackById(id);
-
-            CardPack pack = new CardPack();
-            pack.IdPack = dbpack.idpack;
-            pack.PackName = dbpack.packname;
-            pack.PackPrice = (decimal)dbpack.packprice;
-            pack.Pic = dbpack.packimage;
-            pack.Flavor = dbpack.flavour;
-            return View(pack);
+        public ActionResult EnableCurrency() {
+            this.Session["isCurrency"] = true;
+            return RedirectToAction("PackOverview", "CardPack" );
         }
+
+        public ActionResult DisableCurrency()
+        {
+            this.Session["isCurrency"] = false;
+            return RedirectToAction("PackOverview", "CardPack");
+        }
+
+        //public ActionResult Details(int id)
+        //{
+        //    tblpack dbpack = null;
+
+        //    dbpack = PackManager.GetPackById(id);
+
+        //    CardPack pack = new CardPack();
+        //    pack.IdPack = dbpack.idpack;
+        //    pack.PackName = dbpack.packname;
+        //    pack.PackPrice = (decimal)dbpack.packprice;
+        //    pack.Pic = dbpack.packimage;
+        //    pack.Flavor = dbpack.flavour;
+        //    return View(pack);
+        //}
     }
 }
