@@ -4,20 +4,16 @@
 }
 
 
-
-
-
-
-<div id="packcontainer" class="container">
-    <div class="col-lg-1 " id="categorylinks">
-        <h2 id="lefthead">Ihr CardShop</h2>
+<div  class="container fullcontainer">
+    <div class="col-lg-1 categorylinks">
+        <h3 id="lefthead">Card Shop</h3>
         <div>
-            <a  href="/CardPack/DisableCurrency" class="btn btn-default packbutton">Buy Cardpacks</a>
-            <a  href="/CardPack/EnableCurrency" class="btn btn-default packbutton">Buy Gold </a>
+            <a  href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+            <a  href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
         </div>
     </div>
  
-    <div id="pack"class="col-lg-10 col-md-9">
+    <div class="col-md-9  mainright-pack">
         @foreach (var pack in Model.Packs)
         {
             <ul id="packCards">
@@ -38,11 +34,11 @@
                 </li>
             </ul>
         }
+        <div class="pagelinks col-md-9">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
+        </div>
+    </div>
 
-    </div>
-    <div class="pagelinks">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
-    </div>
 </div>
 
 

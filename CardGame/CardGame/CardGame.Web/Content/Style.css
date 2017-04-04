@@ -8,6 +8,10 @@
     color:papayawhip
 }
 
+
+/*BODY*/
+
+
 body {
     font-size: 120%;
     margin-top: 10em;
@@ -17,15 +21,18 @@ body {
         STELLSCHRAUBE für alles!!!!*/
     background:transparent url('images/maxresdefault.jpg')fixed 0  no-repeat;
 }
-
 .body-content{
     margin-top:17em
 }
+
+
+/*NAVBAR*/
+
+
 .navbar {
     background-image: url('images/Head.png');
     font-size:1.4em;
-    text-align:center; 
-       
+    text-align:center;      
 }
 
 
@@ -41,11 +48,12 @@ a {
 }
 
 
+/*JUMBOTRON*/
 
 .jumbotron {
  
     color: papayawhip;
-    background-color:rgba(189, 102, 49, 0.80);
+    background-color:papayawhip;
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
     border-color:rgba(255, 215, 0, 0.35)  ;
     border-width:1em;  
@@ -59,20 +67,53 @@ a {
     font-size:0.8em
 }
 
-.control-label {
-    font-family:Arial;
-    font-size:3em;
-    line-height: 4em;
+.mainright
+{
+    float:right;
+    margin-left:2em;  
+    background-color:rgba(189, 102, 49, 0.80);
+    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
+    text-align:center;
+    border-color:rgba(255, 215, 0, 0.35)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    -moz-border-radius:1.0em;
+    -webkit-border-radius:1.0em;
+    border-radius:1.0em;
+    color:papayawhip; 
+    margin-bottom:3em
 }
 
-.text-danger {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size:14px;
-    color:mediumturquoise
+
+
+/*FORMS*/
+.form-group {
+background-color:rgba(189, 102, 49, 1);
+    -moz-border-radius:1.0em;
+    -webkit-border-radius:1.0em;
+    border-radius:1.0em;
 }
 
+.field {
+    width: 20em;
+    height:2em;
+    float:right;
+    background-color:rgba(189, 102, 49, 0.80);
+    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
+    color:papayawhip;
+}
+.label{
+    /*margin-top:1.5em;*/
+    height:3em;
+    width:5em;
+    float:left;
+    font-size:120%;
+}
 
 /*IMAGES*/
+
+
 #OverViewPic {
     width:3em;
 }
@@ -89,6 +130,11 @@ a {
     transition-duration:3s;
     width:14em;
 }
+
+
+/*TABLES*/
+
+
 .Overviewtd{
     text-align:center
 }
@@ -96,11 +142,12 @@ a {
     text-align:center;
     width:5em;
 }
+
+
 /*Links und Buttons*/
 
 
-
-#categorylinks {
+.categorylinks {
     background-color:rgba(189, 102, 49, 0.80);
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
     text-align:center;
@@ -121,9 +168,10 @@ margin-right:2em
 }
 
 
+/*BUTTONS*/
     
+
 .btn-default,
-/*.btn-default:hover,*/
 .btn-default:active,
 .btn-default:visited {
     padding:0.5em;
@@ -135,14 +183,11 @@ margin-right:2em
     text-decoration:none;
     background-color:rgba(189, 102, 49, 0.80);
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
-     color:papayawhip;
-    
+    color:papayawhip;
 }
 .btn-default :visited{
     background-color:#357ebd
-    }
-
-
+}
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited{
@@ -151,14 +196,17 @@ margin-right:2em
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
    text-decoration:none;
 }
-
 .btn-primary :hover{
     background-color:#357ebd
     }
-.packbutton {
+.buttonleftnav {
     margin-left:1em;
 }
-/*PackCards*/
+
+
+
+/*PACKCARDS*/
+
 
 #packCards {
     background-color:rgba(189, 102, 49, 0.80);
@@ -179,19 +227,6 @@ margin-right:2em
     -webkit-border-radius:1.0em;
     border-radius:1.0em;
 }
-#pack {
-    float:left;
-    
-}
-
-/*.col {
-    margin:0;    
-    padding:100em;
-    text-align:center;
-    padding:0 0 4em 0;
-    min-height:28em;
-    height:28em;
-}*/
 #cph2 {
     text-align:center;
     margin:0;
@@ -199,8 +234,7 @@ margin-right:2em
     width:100%;
     font-size:1.5em;
     font-weight:normal;
-    line-height:1.5;
-    
+    line-height:1.5;  
 }
 #discription
 {
@@ -218,10 +252,7 @@ margin-right:2em
     border-color:rgba(255, 215, 0, 0.35)  ;
     border-width:0.2em;  
     border-style:ridge;
-
 }
-
-
 p.price {
     font-size:100%;
     margin:0.1em auto 1em;
@@ -234,9 +265,10 @@ p.price {
     border-radius:3em;
     border:0.15em solid #fff;
     background-color:rgba(247, 179, 80, 0.64);
-
 }
 
+
+/*FOOTER*/
 
 #footer {
     padding-bottom:3em;

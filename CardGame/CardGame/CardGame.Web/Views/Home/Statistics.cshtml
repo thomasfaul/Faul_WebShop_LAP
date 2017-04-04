@@ -4,23 +4,30 @@
     ViewBag.Title = "Statistics";
 }
 
-<div style="margin:10em" >
-    <br />
-    <h2 >Game Statistics</h2>
 
-    @Html.LabelFor(s => s.NumUsers)
-    @Html.DisplayFor(s => s.NumUsers)
+<div class="container fullcontainer">
+    <div class="col-lg-1 categorylinks">
+        <h3 id="lefthead">Game Statistics</h3>
+        <div>
+            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
+            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
+        </div>
+    </div>
+    <div  class="col-md-9 mainright">
+        @Html.LabelFor(s => s.NumUsers)
+        @Html.DisplayFor(s => s.NumUsers)
 
-    <br />
+        <br />
+        @Html.LabelFor(s => s.NumCards)
+        @Html.DisplayFor(s => s.NumCards)
+        <br />
 
-    @Html.LabelFor(s => s.NumCards)
-    @Html.DisplayFor(s => s.NumCards)
-    <br />
+        @Html.LabelFor(s => s.NumDecks)
+        @Html.DisplayFor(s => s.NumDecks)
+        <br />
 
-    @Html.LabelFor(s => s.NumDecks)
-    @Html.DisplayFor(s => s.NumDecks)
-    <br />
+        @Html.LabelFor(s => s.CreationTime)
+        @Html.DisplayFor(s => s.CreationTime)
 
-    @Html.LabelFor(s => s.CreationTime)
-    @Html.DisplayFor(s => s.CreationTime)
+    </div>
 </div>
