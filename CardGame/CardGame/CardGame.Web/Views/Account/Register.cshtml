@@ -2,10 +2,71 @@
 @{
     ViewBag.Title = "Register";
 }
+<div id="fullcontainer" class="container fullcontainer">
+    <div class="col-lg-1 categorylinks">
+        <h2 id="lefthead">Register</h2>
+        <div>
+            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
+            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
+        </div>
+    </div>
 
-<h2>Register</h2>
+    <div class="col-lg-6  mainright ">
 
-@using (Html.BeginForm())
+        <div class="form-horizontal">
+            <h3>Register</h3>
+            <div class="form-group col-lg-12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger danger "})
+                @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label label" })
+                @Html.EditorFor(u => u.Firstname, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label label" })
+                @Html.EditorFor(u => u.Lastname, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label label" })
+                @Html.EditorFor(u => u.Gamertag, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(model => model.Gamertag, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label label" })
+                @Html.EditorFor(u => u.Email, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label label" })
+                @Html.EditorFor(u => u.Password, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="form-group col-lg-12">
+                @Html.LabelFor(u => u.PasswordValidation, htmlAttributes: new { @class = "control-label label " })
+                @Html.EditorFor(u => u.PasswordValidation, new { htmlAttributes = new { @class = "form-control field" } })
+                @Html.ValidationMessageFor(u => u.PasswordValidation, "", new { @class = "text-danger danger" })
+            </div>
+            <div class="col-lg-12 submitpanel">
+                <input type="submit" value="Register" class="btn btn-default submitbutton" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@using (Html.BeginForm())
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label col-md-3"})
@@ -39,4 +100,4 @@
     @Html.ValidationMessageFor(u => u.PasswordValidation, "", new { @class = "text-danger" })
     <br />
     <input type="submit" class="btn btn-default" />
-}
+}*@

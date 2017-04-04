@@ -13,69 +13,27 @@
         </div>
     </div>
 
-    <div  class="col-lg-6  mainright ">
-  
-        @using (Html.BeginForm(new {@class ="form-horizontal"}))
-        {
+    <div class="col-lg-6  mainright ">
 
-            <h3>Login</h3>
-
-            @Html.ValidationSummary(true, "", new { @class = "text-danger summarydanger" })
-            <div class="form-group col-lg-10">
-
+    <div class="form-horizontal">
+             <h3>Login</h3>
+              <div class="form-group col-lg-12">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger summarydanger" })
                 @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label label" })
                 @Html.EditorFor(u => u.Email, new { htmlAttributes = new { @class = "form-control field" } })
                 @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger danger" })
             </div>
             <br />
-            <div class="form-group col-lg-10">
+            <div class="form-group col-lg-12">
                 @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label label" })
                 @Html.EditorFor(u => u.Password, new { htmlAttributes = new { @class = "form-control field" } })
                 @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger danger" })
-
-             </div>
-                <input type="submit" value="Login" class="btn btn-default submitbutton" />
-                @Html.ActionLink("Register", "Register", "User")
-        }
             </div>
+            <div class="col-lg-12 submitpanel">
+            <input type="submit" value="Login" class="btn btn-default submitbutton" />
+           @Html.ActionLink("Register", "Register", "Account", htmlAttributes:new {@class="btn btn-default" })
+            </div>
+        </div>  
+      </div>  
 </div>
-
-
-
-@*<form class="form-horizontal">
-    <h2>REGISTRATION</h2>
-    <div class="form-group">
-        <label class="control-label" for="text">Firstname</label>
-        <input type="text" class="form-control" id="fn" placeholder="Firstname">
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="text">Lastname</label>
-        <input type="text" class="form-control" id="ln" placeholder="Lastname">
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="text">Gamertag</label>
-        <input type="text" class="form-control" id="gt" placeholder="Gamertag">
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="pwd">Password</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-submit">Sign Up</button>
-    </div>
-</form>*@
-
-
-
-
-
+-

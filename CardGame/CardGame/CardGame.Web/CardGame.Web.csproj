@@ -195,6 +195,7 @@
     <Content Include="Content\images\Cardpacks\8.jpg" />
     <Content Include="Content\images\Cardpacks\9.jpg" />
     <Content Include="Content\images\Cardpacks\coins.png" />
+    <Content Include="Content\images\classic-pack.png" />
     <Content Include="Content\images\CS_Logo - Kopie.png" />
     <Content Include="Content\images\CS_Logo.png" />
     <Content Include="Content\images\foo.png" />
