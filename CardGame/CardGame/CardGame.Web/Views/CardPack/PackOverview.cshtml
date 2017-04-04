@@ -3,78 +3,66 @@
     ViewBag.Title = "PackOverview";
 }
 
-<h2>CardPackView</h2>
 
-<div>
-    <a href="/CardPack/DisableCurrency" class="btn btn-warning form-control">DisableCurrency</a>
-    <a href="/CardPack/EnableCurrency" class="btn btn-success form-control">EnableCurrency</a>
+
+
+
+
+<div id="packcontainer" class="container">
+    <div class="col-lg-1 " id="categorylinks">
+        <h2 id="lefthead">Ihr CardShop</h2>
+        <div>
+            <a  href="/CardPack/DisableCurrency" class="btn btn-default packbutton">Buy Cardpacks</a>
+            <a  href="/CardPack/EnableCurrency" class="btn btn-default packbutton">Buy Gold </a>
+        </div>
+    </div>
+ 
+    <div id="pack"class="col-lg-10 col-md-9">
+        @foreach (var pack in Model.Packs)
+        {
+            <ul id="packCards">
+                <li class="col">
+                    <h2 id="cph2">@Html.DisplayFor(c => pack.PackName)</h2>
+                    @if (pack.IsMoney != true)
+                    {
+                        <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
+                    }
+                    else
+                    {
+                        <img id="cardpic" src="~/Content/images/Cardpacks/coins.png" alt="Coin-Picture" />
+                    }
+
+                    <p id="discription">@Html.DisplayFor(c => pack.Flavor) </p>
+                    <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+                    <p id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</p>
+                </li>
+            </ul>
+        }
+
+    </div>
+    <div class="pagelinks">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
+    </div>
 </div>
 
 
 
-<table>
-
-    <tr>
-        <th class="Overviewth">
-            <h4>Number</h4>
-        </th>
-        <th>
-            <h4 class="Overviewth">Picture</h4>
-        </th>
-
-        <th>
-            <h4 class="Overviewth">Name</h4>
-        </th>
-        <th>
-            <h4 class="Overviewth">Flavour</h4>
-        </th>
-        <th>
-            <h4 class="Overviewth">Price</h4>
-        </th>
-        <th>
-            <h4 class="Overviewth"> Details</h4>
-        </th>
-    </tr>
-
-    @foreach (var pack in Model.Packs)
+@*  @foreach (var pack in Model.Packs)
             {
 
         <tr>
             <td class="Overviewtd">
                 @Html.DisplayFor(c => pack.IdPack)
-            </td>
-            <td class="Overviewtd">
-                @if (pack.Pic != null)
-                {
-                    var base64 = Convert.ToBase64String(pack.Pic);
-                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                    <img src="@imgSrc" id="OverViewPic" />
-                }
-                else
-                {
-                    @Html.DisplayText("no Picture found")
-                }
-            </td>
+           </td>
+    <td >
+        if (pack.Pic == null)
+         {<img class="CardPackPic" src="~/Content/images/Cardpacks/1.png" /> }
+         else
+         {
+             var base64 = Convert.ToBase64String(pack.Pic);
+             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+             <img src="@imgSrc" id="OverViewPic" />
+         }
+     </td>*@
 
-            <td class="Overviewtd">
-                @Html.DisplayFor(c => pack.PackName)
-            </td>
-            <td class="Overviewtd">
-                @Html.DisplayFor(c => pack.Flavor)
-            </td>
-            <td class="Overviewtd">
-                @Html.DisplayFor(c => pack.PackPrice)
-            </td>
 
-            <td class="Overviewtd">
-                @Html.ActionLink("Details", "Details", new { id = pack.IdPack })
-            </td>
-
-        </tr>
-    }
-
-</table>
-<div class="PageLinks">
-
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
-</div>

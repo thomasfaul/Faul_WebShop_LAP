@@ -90,3 +90,11 @@ C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.csprojResolveAssemblyReference.cache
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.dll
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\obj\Debug\CardGame.DAL.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.WebPages.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.Razor.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.WebPages.xml
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.Razor.xml
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\bin\Debug\System.Web.WebPages.Deployment.xml

@@ -58,3 +58,91 @@
   <Time>03.04.2017 08:19:16</Time>
   <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
 </Info>
+<Info>
+  <Time>03.04.2017 19:13:18</Time>
+  <Info>Entered Pass = 123</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 19:13:18</Time>
+  <Info>HashPass = 4BA6CED7A2F193D7B45CE39171CDDD2A7E952B428A4014EBFF0379B3D8651DFCF7EBB8B6485441AFE7CD09225907630A2CA43EBB62BCE7CA54B51A801099692C</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:03:26</Time>
+  <Info>Entered Pass = </Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:03:26</Time>
+  <Info>HashPass = CF83E1357EEFB8BDF1542850D66D8007D620E4050B5715DC83F4A921D36CE9CE47D0D13C5D85F2B0FF8318D2877EEC2F63B931BD47417A81A538327AF927DA3E</Info>
+</Info>
+<Xcpt>
+  <Time>03.04.2017 20:03:43</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 58.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>03.04.2017 20:03:43</Time>
+  <Info>User already exists</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:04:39</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:04:39</Time>
+  <Info>HashPass = F3772E58C83A746A5BC8663D7416DEB276BC7CD4486BCC8A3D3D77FE6689EF2932ED22A608A00C43E10F527E5F2FBA0C698DBC68300D6A114F02FAF6645786FC</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:19:40</Time>
+  <Info>Entered Pass = 123</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 20:19:40</Time>
+  <Info>HashPass = 4BA6CED7A2F193D7B45CE39171CDDD2A7E952B428A4014EBFF0379B3D8651DFCF7EBB8B6485441AFE7CD09225907630A2CA43EBB62BCE7CA54B51A801099692C</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 22:12:14</Time>
+  <Info>Entered Pass = 123</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 22:12:14</Time>
+  <Info>HashPass = 4BA6CED7A2F193D7B45CE39171CDDD2A7E952B428A4014EBFF0379B3D8651DFCF7EBB8B6485441AFE7CD09225907630A2CA43EBB62BCE7CA54B51A801099692C</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:21:58</Time>
+  <Info>GetNumUsers 8</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:21:58</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:21:58</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:22:01</Time>
+  <Info>GetNumUsers 8</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:22:01</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:22:01</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:38:15</Time>
+  <Info>GetNumUsers 8</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:38:15</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>03.04.2017 23:38:15</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>

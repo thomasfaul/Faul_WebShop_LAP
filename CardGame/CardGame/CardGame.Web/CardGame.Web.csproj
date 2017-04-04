@@ -161,6 +161,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\CardPackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -184,6 +185,16 @@
     <Content Include="Content\images\background_1920.png" />
     <Content Include="Content\images\Button.png" />
     <Content Include="Content\images\Button_hp.png" />
+    <Content Include="Content\images\Cardpacks\1.png" />
+    <Content Include="Content\images\Cardpacks\2.png" />
+    <Content Include="Content\images\Cardpacks\3.png" />
+    <Content Include="Content\images\Cardpacks\4.png" />
+    <Content Include="Content\images\Cardpacks\5.png" />
+    <Content Include="Content\images\Cardpacks\6.png" />
+    <Content Include="Content\images\Cardpacks\7.png" />
+    <Content Include="Content\images\Cardpacks\8.jpg" />
+    <Content Include="Content\images\Cardpacks\9.jpg" />
+    <Content Include="Content\images\Cardpacks\coins.png" />
     <Content Include="Content\images\CS_Logo - Kopie.png" />
     <Content Include="Content\images\CS_Logo.png" />
     <Content Include="Content\images\foo.png" />
@@ -241,7 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Pack\" />
+    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />

@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - CloneShop</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <meta name="description" content="The description of my page" />
+    <meta name="Webshop" content="Webshop to buy CloneStone Cards" />
 </head>
 <body>
 
@@ -30,8 +30,9 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Statistic", "Statistics", "Home")</li>
-                        <li>@Html.ActionLink("Packs", "PackOverview", "CardPack")</li>
                         <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
+                        <li>@Html.ActionLink("Shop", "DisableCurrency","CardPack")</li>
+                        
                     }
                     else if (true)
                     {
@@ -43,7 +44,7 @@
                         }
                         else
                         {
-                            <li>@ViewBag.Firstname 's Shop</li>
+                            <li><a>@ViewBag.Firstname's Shop</a></li>
                         }
                     }
                     @if (User.IsInRole("admin"))
@@ -59,16 +60,13 @@
 
     <div class="container body-content">
         <div class="row">
-            <div class="col-md-3 col-xs-3" id="categories">
-                 </div>
-            <div class="col-md-8 col-xs-8">
+            
                 @RenderBody()
-                </div>
-                <hr />
-                <footer>
+        </div>
+                <footer class="navbar navbar-fixed-bottom"id="footer">
                     <p>&copy; @DateTime.Now.Year </p>
                 </footer>
-                </div>
+               
             </div>
 
         @Scripts.Render("~/bundles/jquery")

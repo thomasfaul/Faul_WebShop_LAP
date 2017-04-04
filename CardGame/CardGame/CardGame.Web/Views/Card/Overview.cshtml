@@ -39,7 +39,7 @@
                 @Html.DisplayFor(c => card.ID)
             </td>
             <td class="Overviewtd">
-                @*@if (card.Pic != null)
+                @if (card.Pic != null)
                 {
                     var base64 = Convert.ToBase64String(card.Pic);
                     var imgSrc = String.Format("data:image/png;base64,{0}", base64);
@@ -48,7 +48,7 @@
                 else
                 {
                     @Html.DisplayText("no Picture found")
-                }*@
+                }
             </td>
 
             <td class="Overviewtd">

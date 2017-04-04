@@ -26,3 +26,4 @@ C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
