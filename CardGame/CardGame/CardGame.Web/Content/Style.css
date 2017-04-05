@@ -37,8 +37,7 @@ body {
 
 
 .navbar-brand {
-    font-size: 1.5em;
-    
+    font-size: 1.5em;    
 }
 
 a {
@@ -55,9 +54,6 @@ a {
     background-color:rgba(189, 102, 49, 0.80);
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
     text-align:center;
-
-
-
     border-color:rgba(255, 215, 0, 0.35)  ;
     border-width:1em;  
     border-style:ridge;
@@ -65,10 +61,37 @@ a {
     -moz-border-radius:1.0em;
     -webkit-border-radius:1.0em;
     border-radius:1.0em;
-    color:papayawhip;  
+    color:papayawhip;
+    width:20em;
+    float:left;
+    margin-right:10em 
 }
+
 .lead {
-    font-size:0.8em
+    font-size:0.6em;
+    margin-top:2em;
+}
+.indexrechts {
+    background-color:rgba(189, 102, 49, 0.80);
+    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
+    text-align:center;
+    border-color:rgba(255, 215, 0, 0.35)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    -moz-border-radius:1.0em;
+    -webkit-border-radius:1.0em;
+    border-radius:1.0em;
+    color:papayawhip;
+    margin-top:3em
+}
+.stats{
+    height:20em;
+    padding:3em;
+    width:50em
+}
+.top {
+    margin-top:0;
 }
 
 .mainright
@@ -93,7 +116,7 @@ a {
 
 
 .form-group {
-background-color:rgba(189, 102, 49, 1);
+    background-color:rgba(189, 102, 49, 1);
     -moz-border-radius:1.0em;
     -webkit-border-radius:1.0em;
     border-radius:1.0em;
@@ -127,9 +150,7 @@ background-color:rgba(189, 102, 49, 1);
 /*IMAGES*/
 
 
-#OverViewPic {
-    width:3em;
-}
+
 .DetailsPic {
     width:18em;
 }
@@ -140,8 +161,11 @@ background-color:rgba(189, 102, 49, 1);
 }
 #OverViewPic:hover {
     transform-style:flat;
-    transition-duration:3s;
-    width:14em;
+    transition-duration:2s;
+    width:8em;
+}
+#OverViewPic {
+    width:3em;
 }
 
 
@@ -149,17 +173,43 @@ background-color:rgba(189, 102, 49, 1);
 
 
 .Overviewtd{
-    text-align:center
+    text-align:center;
+    text-align:center;
+    width:9em;
+    height:2em;
+    background-color:rgba(189, 102, 49, 0.20);
 }
 .Overviewth {
     text-align:center;
-    width:5em;
+    
+}
+.Overviewtable {
+    margin-top:-12em;
+    float:right;
+    margin-left:2em;  
+    background-color:rgba(189, 102, 49, 0.80);
+    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
+    text-align:center;
+    border-color:rgba(255, 215, 0, 0.35)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    -moz-border-radius:1.0em;
+    -webkit-border-radius:1.0em;
+    border-radius:1.0em;
+    color:papayawhip; 
+    margin-bottom:3em
 }
 .RowA {
     background-color:blue;
 }
 .RowB {
     background-color:orange;
+}
+.pageLinks {
+    font-size:1.1em;
+    margin-bottom:0.5em;
+    z-index:3;
 }
 
 /*Links und Buttons*/
@@ -291,6 +341,7 @@ p.price {
 /*FOOTER*/
 
 #footer {
+    z-index:0;
     padding-bottom:3em;
     background-image: url('images/foo.png');
  

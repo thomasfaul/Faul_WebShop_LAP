@@ -10,7 +10,7 @@ namespace CardGame.Web.Controllers
 {
     public class CardController : Controller
     {
-        public int Pagesize = 20;
+        public int Pagesize = 15;
         
         // GET: Card
         public ActionResult Overview(int? cardclass ,int page=1)

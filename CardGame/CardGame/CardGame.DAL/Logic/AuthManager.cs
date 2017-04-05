@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CardGame.DAL.Model;
 using CardGame.Log;
 
@@ -18,7 +15,7 @@ namespace CardGame.DAL.Logic
                 {
                     if (db.tblperson.Any(n => n.email == regUser.email))
                     {
-                        throw new Exception("UserAlreadyExists");
+                        throw new Exception("User-Emailadresse gibt es bereits");
                     }
                     //Salt erzeugen
                     string salt = Helper.GenerateSalt();
@@ -55,7 +52,7 @@ namespace CardGame.DAL.Logic
                     tblperson dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
-                        throw new Exception("UserDoesNotExist");
+                        throw new Exception("User gibt es noch nicht, bitte Registrieren");
                     }
 
                     dbUserPassword = dbUser.password;

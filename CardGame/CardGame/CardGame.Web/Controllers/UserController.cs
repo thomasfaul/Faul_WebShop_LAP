@@ -31,7 +31,7 @@ namespace CardGame.Web.Controllers
                 user.Lastname = c.lastname;
                 user.Email = c.email;
                 user.Role = c.userrole;
-                user.Password = c.password;
+                user.Passwort = c.password;
                 user.Salt = c.salt;
 
 

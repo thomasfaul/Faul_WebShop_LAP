@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
-using CardGame.Log;
 using System.Web.Security;
 
 namespace CardGame.Web.Controllers
@@ -23,7 +20,7 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         public ActionResult Login(User login)
         {
-            bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
+            bool hasAccess = AuthManager.AuthUser(login.Email, login.Passwort);
             login.Role = UserManager.GetRoleNamesByUserEmail(login.Email);
 
             if (hasAccess)
@@ -34,8 +31,8 @@ namespace CardGame.Web.Controllers
                                 login.Email,                  //welcher User
                                 DateTime.Now,                 // Zeitpunkt der Erstellung
                                 DateTime.Now.AddMinutes(20),  // Gültigkeitsdauer
-                                true,                         // Persistentes Ticket über Sessio9ns hinweg
-                               login.Role                   /* "admin"*/  //login.Role// Userrollen
+                                true,                         // Persistentes Ticket über Sessions hinweg
+                                login.Role                   /* "admin"*/  //login.Role// Userrollen
                                 );
 
                 string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
@@ -70,7 +67,17 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         public ActionResult Register(User regUser)
         {
+               if (ModelState.IsValid)
+            {
+                return View("Completed");
+            }
+            else
+            {
+                ViewBag.Selpwd = regUser.Passwort;
+                ViewBag.Selconfirmpwd = regUser.ConfirmPassword;
             
+            }
+
             var dbUser = new tblperson();
             if (regUser.Email !=null)
             { 
@@ -78,7 +85,7 @@ namespace CardGame.Web.Controllers
             dbUser.lastname = regUser.Lastname;
 
             dbUser.email = regUser.Email;
-            dbUser.password = regUser.Password;
+            dbUser.password = regUser.Passwort;
             dbUser.gamertag = regUser.Gamertag;
             dbUser.salt = regUser.Salt;
             dbUser.userrole = "player";
@@ -92,5 +99,7 @@ namespace CardGame.Web.Controllers
                 return RedirectToAction("ErrorMessage");
             }
         }
+
     }
+    
 }

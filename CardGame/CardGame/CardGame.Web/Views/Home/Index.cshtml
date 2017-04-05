@@ -5,42 +5,49 @@
 <div class="jumbotron">
     @{ if (User.Identity.Name == "")
         {
-            <h2>Welcome</h2>
+            <h3>Willkommen</h3>
         }
         else
         {
-            <h3>Welcome @ViewBag.Firstname @ViewBag.Lastname</h3>
+            <h3>Willkommen</h3>
+            <h3>@ViewBag.Firstname</h3>
         }
     }
+    <h3>im CloneShop</h3>
     @{ if (User.IsInRole("admin"))
         {
             <h4>You are an admin</h4>
         }
     }
-
-    <h3>CloneShop</h3>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="#" class="btn btn-default">Learn more &raquo;</a></p>
+    <p class="lead">Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
+     Cardpacks kaufen und deine eigenen Decks erstellen.</p>
+    <p>@Html.ActionLink("Login", "Login", "Account", new {@class= "btn btn-default"})
+    </p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+
+
+<div class="row ">
+    <div class="col-md-4 indexrechts top">
+        <h3>Stöbern</h3>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+          Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
         </p>
-        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Zu den Karten", "Overview", "Card", new { @class = "btn btn-default" })</p>
+        
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
+
+    <div class="col-md-4  indexrechts">
+        <h3>Stelle deine Decks zusammen</h3>
+        <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
+        <p>@Html.ActionLink("Zu den Decks", "Overview", "Card", new { @class = "btn btn-default" })</p>
+        
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="#">Learn more &raquo;</a></p>
+ 
+    <div class="col-md-4 indexrechts" >
+        <h3>Kaufe Kartenpacks </h3>
+        <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
+        <p>@Html.ActionLink("Zum Shop", "DisableCurrency", "Cardpack", new { @class = "btn btn-default" })</p>
+        
     </div>
 </div>
