@@ -21,20 +21,21 @@
                 <legend></legend>
                 <ul>
                     <li>
-                        @Html.LabelFor(u => u.Email)
-                        @Html.EditorFor(u => u.Email)
+                        <p>
+                            @Html.LabelFor(u => u.Email)
+                            @Html.EditorFor(u => u.Email)
+                        </p>
                         @Html.ValidationMessageFor(u => u.Email)
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.Passwort)
-                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                        <p>
+                            @Html.LabelFor(u => u.Passwort)
+                            @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                        </p>
                         @Html.ValidationMessageFor(u => u.Passwort)
-
                     </li>
                     <li>
                         <input type="submit" value="Login" class="btn btn-default submitbutton" />
-                    </li>
-                    <li>
                         @Html.ActionLink("Register", "Register", "Account", htmlAttributes: new { @class = "btn btn-default" })
                     </li>
                 </ul>

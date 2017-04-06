@@ -18,47 +18,27 @@
         {
             <ul id="packCards">
                 <li class="col">
-                    <h2 id="cph2">@Html.DisplayFor(c => pack.PackName)</h2>
+                    <h4 id="cph2">@Html.DisplayFor(c => pack.PackName)</h4>
                     @if (pack.IsMoney != true)
                     {
-                        <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
+                        <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture"  />
                     }
                     else
                     {
                         <img id="cardpic" src="~/Content/images/Cardpacks/coins.png" alt="Coin-Picture" />
                     }
 
-                    <p id="discription">@Html.DisplayFor(c => pack.Flavor) </p>
+                    <h6 id="discription">@Html.DisplayFor(c => pack.Flavor)</h6>
                     <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
-                    <p id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</p>
+                    <h6 id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h6>
                 </li>
             </ul>
         }
-        <div class="pagelinks col-md-9">
-            @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
-        </div>
     </div>
-
+    <div class="pagelinks col-md-9">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
+    </div>
 </div>
 
-
-
-@*  @foreach (var pack in Model.Packs)
-            {
-
-        <tr>
-            <td class="Overviewtd">
-                @Html.DisplayFor(c => pack.IdPack)
-           </td>
-    <td >
-        if (pack.Pic == null)
-         {<img class="CardPackPic" src="~/Content/images/Cardpacks/1.png" /> }
-         else
-         {
-             var base64 = Convert.ToBase64String(pack.Pic);
-             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-             <img src="@imgSrc" id="OverViewPic" />
-         }
-     </td>*@
 
 

@@ -10,68 +10,89 @@
     <meta name="description" content="A Webhop to buy Clonestone Cards" />
 </head>
 <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top uppernav" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("CloneShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar">@Html.ActionLink("Logout", "Logout", "Account")</span>
+                        <span class="icon-bar">@Html.ActionLink("Home", "Index", "Home")</span>
+                        <span class="icon-bar">@Html.ActionLink("About", "About", "Home")</span>
+                        <span class="icon-bar">@Html.ActionLink("Contact", "Contact", "Home")</span>
+                    </button>
+                    @Html.ActionLink("CloneShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navlist">
+
+                    @if (User.IsInRole("player") || User.IsInRole("admin"))
+            {
+                        <li class="topnav">@Html.ActionLink("Logout", "Logout", "Account")</li>
+                            <li class="topnav">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="topnav">@Html.ActionLink("About", "About", "Home")</li>
+                            <li class="topnav">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
+                    else if (true)
+                    {
+                        <li class="topnav">@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+                    @{ if (User.Identity.Name == "")
+                        {
+                            <li class="topnav">@Html.ActionLink("Bitte einloggen", "Login", "Account") </li>
+                        }
+                        else
+                        {
+                            <li class="topnav"><a class="welcome">@ViewBag.Firstname's Shop</a></li>
+                        }
+                    }
+                    @if (User.IsInRole("admin"))
+            {
+                        <li class="topnav">@Html.ActionLink("Users", "Index", "User")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top downnav" role="navigation">
+        <div class="container">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
                     @if (User.IsInRole("player") || User.IsInRole("admin"))
                     {
-                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Statistic", "Statistics", "Home")</li>
-                        <li>@Html.ActionLink("Cards", "Overview", "Card")</li>
-                        <li>@Html.ActionLink("Shop", "DisableCurrency","CardPack")</li>
-                        
-                    }
-                    else if (true)
-                    {
-                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    }
-                    @{ if (User.Identity.Name == "")
-                        {
-                            <li>@Html.ActionLink("Bitte einloggen", "Login", "Account") </li>
-                        }
-                        else
-                        {
-                            <li><a>@ViewBag.Firstname's Shop</a></li>
-                        }
+                        <li class="undernav">@Html.ActionLink("About", "About", "Home")</li>
+                        <li class="undernav">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li class="undernav">@Html.ActionLink("Statistic", "Statistics", "Home")</li>
+                        <li class="undernav">@Html.ActionLink("Cards", "Overview", "Card")</li>
+                        <li class="undernav">@Html.ActionLink("Shop", "DisableCurrency", "CardPack")</li>
                     }
                     @if (User.IsInRole("admin"))
-            {
-                        <li>@Html.ActionLink("Users", "Index", "User")</li>
+                    {
+                        <li class="undernav">@Html.ActionLink("Users", "Index", "User")</li>
                     }
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+
+
+            @RenderBody()
+
+
+        </div>
+        <footer class="navbar navbar-fixed-bottom" id="footer">
+            <p>&copy; @DateTime.Now.Year </p>
+        </footer>
 
     </div>
 
-    <div class="container body-content">
-        <div class="row">
-            
-                @RenderBody()
-        </div>
-                <footer class="navbar navbar-fixed-bottom"id="footer">
-                    <p>&copy; @DateTime.Now.Year </p>
-                </footer>
-               
-            </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
+
+
 
 </html>

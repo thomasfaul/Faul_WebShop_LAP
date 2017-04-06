@@ -5,22 +5,22 @@
 <div class="jumbotron">
     @{ if (User.Identity.Name == "")
         {
-            <h3>Willkommen</h3>
+            <h3 class="welcome">Willkommen</h3>
         }
         else
         {
-            <h3>Willkommen</h3>
-            <h3>@ViewBag.Firstname</h3>
+            <h3 class="welcome">Willkommen @ViewBag.Firstname</h3>
+            <h3>im CloneShop</h3>
         }
     }
-    <h3>im CloneShop</h3>
+    
     @{ if (User.IsInRole("admin"))
         {
             <h4>You are an admin</h4>
         }
     }
-    <p class="lead">Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
-     Cardpacks kaufen und deine eigenen Decks erstellen.</p>
+    <h5 >Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
+     Cardpacks kaufen und deine eigenen Decks erstellen.</h5>
     <p>@Html.ActionLink("Login", "Login", "Account", new {@class= "btn btn-default"})
     </p>
 </div>

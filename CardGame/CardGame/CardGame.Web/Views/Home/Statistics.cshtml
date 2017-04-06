@@ -13,21 +13,29 @@
             <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
         </div>
     </div>
-    <div  class="col-md-9 mainright stats">
-        @Html.LabelFor(s => s.NumUsers)
-        @Html.DisplayFor(s => s.NumUsers)
-
+    <div class="col-md-9 mainright stats">
+        <h3>User angemeldet:</h3>
+        <p>
+            @Html.DisplayName("User:")
+            @Html.DisplayFor(s => s.NumUsers)
+        </p>
         <br />
-        @Html.LabelFor(s => s.NumCards)
-        @Html.DisplayFor(s => s.NumCards)
+        <h3>Karten insgesamt:</h3>
+        <p>
+            @Html.DisplayName("Karten:")
+            @Html.DisplayFor(s => s.NumCards)
+        </p>
         <br />
-
-        @Html.LabelFor(s => s.NumDecks)
-        @Html.DisplayFor(s => s.NumDecks)
+        <h3>Erstellte Decks:</h3>
+        <p>
+            @Html.DisplayName("Decks:")
+            @Html.DisplayFor(s => s.NumDecks)
+        </p>
         <br />
-
-        @Html.LabelFor(s => s.CreationTime)
-        @Html.DisplayFor(s => s.CreationTime)
-
+        <h3>Veröffentlicht am</h3>
+        <p>
+            @Html.DisplayName("Datum:")
+            @Html.DisplayFor(s => s.CreationTime)
+        </p>
     </div>
 </div>

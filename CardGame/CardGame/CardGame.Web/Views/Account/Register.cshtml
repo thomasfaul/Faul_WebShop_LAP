@@ -19,45 +19,58 @@
         {
             <fieldset>
                 <legend></legend>
-                <ol>
+                <ul>
                     <li>
+                        <p>
 
-                        @Html.LabelFor(u => u.Firstname)
-                        @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
-                        @Html.ValidationMessageFor(model => model.Firstname)
+                            @Html.LabelFor(u => u.Firstname)
+                            @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
+                            @Html.ValidationMessageFor(model => model.Firstname)
+                        </p>
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.Lastname)
-                        @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
-                        @Html.ValidationMessageFor(model => model.Lastname)
+                        <p>
+                            @Html.LabelFor(u => u.Lastname)
+                            @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
+                            @Html.ValidationMessageFor(model => model.Lastname)
+                        </p>
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.Gamertag)
-                        @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
-                        @Html.ValidationMessageFor(model => model.Gamertag)
+                        <p>
+                            @Html.LabelFor(u => u.Gamertag)
+                            @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
+                            @Html.ValidationMessageFor(model => model.Gamertag)
+                        </p>
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.Email)
-                        @Html.EditorFor(u => u.Email)
-                        @Html.ValidationMessageFor(u => u.Email)
+                        <p>
+                            @Html.LabelFor(u => u.Email)
+                            @Html.EditorFor(u => u.Email)
+                            @Html.ValidationMessageFor(u => u.Email)
+                        </p>
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.Passwort)
-                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
-                        @Html.ValidationMessageFor(u => u.Passwort)
+                        <p>
+                            @Html.LabelFor(u => u.Passwort)
+                            @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                            @Html.ValidationMessageFor(u => u.Passwort)
+                        </p>
                     </li>
                     <li>
-                        @Html.LabelFor(u => u.ConfirmPassword)
-                        @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
-                        @Html.ValidationMessageFor(u => u.PasswordValidation)
+                        <p>
+                            @Html.LabelFor(u => u.ConfirmPassword)
+                            @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
+                            @Html.ValidationMessageFor(u => u.PasswordValidation)
+                        </p>
                     </li>
                     <li>
-                        @Html.CheckBoxFor(m => m.TermsAccepted) I accept the terms & conditions
-                        @Html.ValidationMessageFor(m => m.TermsAccepted)
+                        <p>
+                            @Html.CheckBoxFor(m => m.TermsAccepted) I accept the terms & conditions
+                            @Html.ValidationMessageFor(m => m.TermsAccepted)
+                        </p>
                     </li>
-                </ol>
+                </ul>
                 <input type="submit" value="Register" class="btn btn-default submitbutton" />
-
             </fieldset>
         }
     </div>
