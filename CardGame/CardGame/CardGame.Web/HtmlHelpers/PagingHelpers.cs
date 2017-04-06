@@ -22,7 +22,7 @@ namespace CardGame.Web.HtmlHelpers
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", pageUrl(i));
                 tag.InnerHtml = i.ToString();
-                if (i==pagingInfo.CurrentPage)
+                if (i == pagingInfo.CurrentPage)
                 {
                     tag.AddCssClass("selected");
                     tag.AddCssClass("btn-primary");
@@ -31,6 +31,9 @@ namespace CardGame.Web.HtmlHelpers
                 result.Append(tag.ToString());
             }
             return MvcHtmlString.Create(result.ToString());
+
+            }
+
+
         }
     }
-}

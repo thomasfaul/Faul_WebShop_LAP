@@ -183,7 +183,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\toastr_info.jpg" />
     <Content Include="Content\images\background_1920.png" />
+    <Content Include="Content\images\toastr_error.jpg" />
     <Content Include="Content\images\Button.png" />
     <Content Include="Content\images\Button_hp.png" />
     <Content Include="Content\images\Cardpacks\1.png" />
@@ -196,6 +198,7 @@
     <Content Include="Content\images\Cardpacks\8.jpg" />
     <Content Include="Content\images\Cardpacks\9.jpg" />
     <Content Include="Content\images\Cardpacks\coins.png" />
+    <Content Include="Content\images\toastr_warning.jpg" />
     <Content Include="Content\images\classic-pack.png" />
     <Content Include="Content\images\CS_Logo - Kopie.png" />
     <Content Include="Content\images\CS_Logo.png" />
@@ -204,6 +207,7 @@
     <Content Include="Content\images\footer3.png" />
     <Content Include="Content\images\FrostShock.jpg" />
     <Content Include="Content\images\Head.png" />
+    <Content Include="Content\images\toastr_success.jpg" />
     <Content Include="Content\images\maxresdefault.jpg" />
     <Content Include="Content\images\paper_background.png" />
     <Content Include="Content\images\th.png" />

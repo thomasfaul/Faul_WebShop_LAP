@@ -66,6 +66,8 @@ namespace CardGame.Web.Controllers
             s.NumCards = DBInfoManager.GetNumCards();
             s.NumDecks = DBInfoManager.GetNumDecks();
             CreateViewBag();
+            
+
             return View(s);
         } 
         #endregion

@@ -50,18 +50,21 @@ namespace CardGame.Web.Controllers
                 ItemsPerPage = PPagesize,
                 TotalItems = PackList.Count()
             };
-            
+           
             return View(model);
         }
 
         public ActionResult EnableCurrency() {
             this.Session["isCurrency"] = true;
+            TempData["Infomessage"] = "LOADING";
             return RedirectToAction("PackOverview", "CardPack" );
+           
         }
 
         public ActionResult DisableCurrency()
         {
             this.Session["isCurrency"] = false;
+            TempData["Infomessage"] = "Packs are LOADING";
             return RedirectToAction("PackOverview", "CardPack");
         }
 

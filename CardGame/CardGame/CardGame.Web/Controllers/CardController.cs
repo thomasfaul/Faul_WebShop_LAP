@@ -10,7 +10,7 @@ namespace CardGame.Web.Controllers
 {
     public class CardController : Controller
     {
-        public int Pagesize = 15;
+        public int Pagesize = 30;
         
         // GET: Card
         public ActionResult Overview(int? cardclass ,int page=1)
@@ -44,7 +44,7 @@ namespace CardGame.Web.Controllers
                     TotalItems = CardList.Count()
                 }, CurrentClass = cardclass
             };
-        
+            TempData["InfoMessage"] = "LOADING";
             return View(model);
         }
 
@@ -64,7 +64,8 @@ namespace CardGame.Web.Controllers
             card.Flavor = dbcard.flavor;
          
             card.Type = CardManager.CardTypes[dbcard.fktype];
-                        return View(card);
+            TempData["InfoMessage"] = "LOADING";
+            return View(card);
         }
     }
 }

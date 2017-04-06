@@ -458,3 +458,147 @@
   <Time>06.04.2017 16:02:17</Time>
   <Info>HashPass = 128175757829DA22FFCFB3E5C2875588C949BDCA3E117EB983F91840D1609D12F73C31253F1B66AC64D46D63DD3177E0B2ABADF55F8F59866C739EF6954D8248</Info>
 </Info>
+<Info>
+  <Time>06.04.2017 18:28:02</Time>
+  <Info>Entered Pass = blabla</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 18:28:02</Time>
+  <Info>HashPass = 2994DFE33A4F75BF4A05921281337C61426C274D6CD4ED954CB5C265624B2B50D7DEC5F50CA6933B1AF36A601F1337D9361C36180827841DDA119945E367BFE0</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 18:56:37</Time>
+  <Info>Entered Pass = blabla</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 18:56:37</Time>
+  <Info>HashPass = 2994DFE33A4F75BF4A05921281337C61426C274D6CD4ED954CB5C265624B2B50D7DEC5F50CA6933B1AF36A601F1337D9361C36180827841DDA119945E367BFE0</Info>
+</Info>
+<Xcpt>
+  <Time>06.04.2017 19:00:07</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User gibt es noch nicht, bitte Registrieren</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 55.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.04.2017 19:00:36</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User gibt es noch nicht, bitte Registrieren</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 55.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>06.04.2017 19:00:49</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User gibt es noch nicht, bitte Registrieren</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 55.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.04.2017 19:01:24</Time>
+  <Info>Entered Pass = tom123</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:01:24</Time>
+  <Info>HashPass = BECDA28DF9D104482B67AEA5293E05E1FB7B6913B3AE11B277CA4CA70CFE972E33C9C7B85B5D09F0D51BE8860EF5249BB9312FEA45A7D2B434D78F1DE0BEBF74</Info>
+</Info>
+<Xcpt>
+  <Time>06.04.2017 19:01:57</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User-Emailadresse gibt es bereits</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 18.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>06.04.2017 19:02:26</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:02:26</Time>
+  <Info>HashPass = F3772E58C83A746A5BC8663D7416DEB276BC7CD4486BCC8A3D3D77FE6689EF2932ED22A608A00C43E10F527E5F2FBA0C698DBC68300D6A114F02FAF6645786FC</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:16:05</Time>
+  <Info>Entered Pass = blabla</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:16:05</Time>
+  <Info>HashPass = 2994DFE33A4F75BF4A05921281337C61426C274D6CD4ED954CB5C265624B2B50D7DEC5F50CA6933B1AF36A601F1337D9361C36180827841DDA119945E367BFE0</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:26:41</Time>
+  <Info>Entered Pass = 123bla</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:26:41</Time>
+  <Info>HashPass = 8DFCBB7E1B1CE340CEA26FB5EA4D2FBCF816B22C8F99CACD34E36135FDA2A74A5A09128C32E2103CC1096DA725D2690051A17758C55E9E919E479B40E9C1DE2B</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:28:56</Time>
+  <Info>Entered Pass = 123bla</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:28:56</Time>
+  <Info>HashPass = 8DFCBB7E1B1CE340CEA26FB5EA4D2FBCF816B22C8F99CACD34E36135FDA2A74A5A09128C32E2103CC1096DA725D2690051A17758C55E9E919E479B40E9C1DE2B</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:33:24</Time>
+  <Info>GetNumUsers 11</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:33:24</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:33:24</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:34:11</Time>
+  <Info>Entered Pass = hengsti</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:34:11</Time>
+  <Info>HashPass = C1A413C3F77B75E38E1520C71E1EC13CACD0BE1857CC5977577251840FC39B2E1D07B2A68FD842D14B2F075A493B185993DEB586396287C4C9DB4045B3D1F543</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:42:12</Time>
+  <Info>GetNumUsers 11</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:42:12</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 19:42:12</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 21:34:37</Time>
+  <Info>Entered Pass = hengsti</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 21:34:37</Time>
+  <Info>HashPass = C1A413C3F77B75E38E1520C71E1EC13CACD0BE1857CC5977577251840FC39B2E1D07B2A68FD842D14B2F075A493B185993DEB586396287C4C9DB4045B3D1F543</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 23:57:41</Time>
+  <Info>Entered Pass = hensti</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 23:57:41</Time>
+  <Info>HashPass = 393678BA57A1FF7A8D6B12346A529E4F48E7855FD778F720D1E9113A54EDBD53EA2A7022825B7F6B1597FA1C4929FF89F582C17F79D6C6D5EDFBE568FE78F146</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 23:57:54</Time>
+  <Info>Entered Pass = hengsti</Info>
+</Info>
+<Info>
+  <Time>06.04.2017 23:57:54</Time>
+  <Info>HashPass = C1A413C3F77B75E38E1520C71E1EC13CACD0BE1857CC5977577251840FC39B2E1D07B2A68FD842D14B2F075A493B185993DEB586396287C4C9DB4045B3D1F543</Info>
+</Info>

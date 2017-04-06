@@ -4,7 +4,6 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div id="fullcontainer" class="container fullcontainer">
     <div class="col-lg-1 categorylinks">
@@ -14,63 +13,62 @@
             <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
         </div>
     </div>
+    <div class="col-lg-9 col-md-7 Detpic">
+        @{
+            if (Model.Pic != null)
+            {
+                var base64 = Convert.ToBase64String(Model.Pic);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <img class="DetailsPic" src="@imgSrc" />
+            }
+            else
+            {
+                @Html.DisplayText("no Picture found")
+            }
+        }
+    </div>
     <div class="col-lg-9 mainright">
+
         <table class="Overviewtable">
             <tr>
-                <th class="Overviewth">
+                <th class="Overviewth detailth ">
                     @Html.DisplayNameFor(c => c.ID)
                 </th>
 
-                <th class="Overviewth">
+                <th class="Overviewth detailth">
                     @Html.DisplayNameFor(c => c.Name)
-                </th >
-                <th class="Overviewth">
+                </th>
+                <th class="Overviewth detailth">
                     @Html.DisplayNameFor(c => c.Type)
                 </th>
-                <th class="Overviewth">
+                <th class="Overviewth detailth">
                     @Html.DisplayNameFor(c => c.Mana)
                 </th>
-                <th class="Overviewth">
+                <th class="Overviewth detailth">
                     @Html.DisplayNameFor(c => c.Attack)
                 </th>
-                <th class="Overviewth">
+                <th class="Overviewth detailth">
                     @Html.DisplayNameFor(c => c.Life)
                 </th>
             </tr>
             <tr>
-                <td class="Overviewtd">
+                <td class="Overviewtd detailtd">
                     @Html.DisplayFor(c => c.ID)
                 </td>
-                <td class="Overviewtd" >
+                <td class="Overviewtd detailtd detailtd">
                     @Html.DisplayFor(c => c.Name)
                 </td>
-                <td class="Overviewtd">
+                <td class="Overviewtd detailtd">
                     @Html.DisplayFor(c => c.Type)
                 </td>
-                <td class="Overviewtd">
+                <td class="Overviewtd detailtd">
                     @Html.DisplayFor(c => c.Mana)
                 </td>
-                <td class="Overviewtd" >
+                <td class="Overviewtd detailtd">
                     @Html.DisplayFor(c => c.Attack)
                 </td>
-                <td class="Overviewtd">
+                <td class="Overviewtd detailtd">
                     @Html.DisplayFor(c => c.Life)
-                </td>
-                <td class="Overviewtd" >
-                    @{
-                        if (Model.Pic != null)
-                        {
-                            var base64 = Convert.ToBase64String(Model.Pic);
-                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                            <img class="DetailsPic" src="@imgSrc" />
-                        }
-                        else
-                        {
-                            @Html.DisplayText("no Picture found")
-                        }
-                    }
-
-
                 </td>
             </tr>
         </table>

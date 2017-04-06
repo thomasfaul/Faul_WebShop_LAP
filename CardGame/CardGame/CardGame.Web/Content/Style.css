@@ -191,7 +191,7 @@ ul, li
     width: auto;
     
 }
-    .adminuserright,td {
+.adminuserright,td {
         width:auto;
     }
                                /*FORMS*/
@@ -232,36 +232,20 @@ input{
     border-width:0.2em;  
     border-style:ridge;
     border-width:0 0 0.50em;
+    color:papayawhip;
     
 }
 input[type=text]:focus {
      border: 3px solid darkorange;
-    background-color:#555 ;
+     background-color:#555 ;
+    
 }
 input[type=password]:focus {
      border: 3px solid darkorange;
      background-color:#555 ;
-      color:gold
+   
 }
-                               /*IMAGES*/
-/*----------------------------------------------------------------------------*/
-
-.DetailsPic {
-    width:18em;
-}
-.DetailsPic:hover {
-    transform-style:flat;
-    transition-duration:3s;
-    width:30em;
-}
-#OverViewPic:hover {
-    transform-style:flat;
-    transition-duration:2s;
-    width:8em;
-}
-#OverViewPic {
-    width:3em;
-}
+                              
                                 /*TABLES*/
 /*----------------------------------------------------------------------------*/
 
@@ -270,14 +254,34 @@ input[type=password]:focus {
     width:9em;
     height:2em;
     background-color:rgba(189, 102, 49, 0.20);
-}
-.Overviewth {
+    font-size:120%;
+    text-align:center;
+    border-width:0 0 0.50em;
+    background-color: #555; 
+   
     
 }
+.Overviewth {
+  background-color: #555;  
+  font-size:0.7em;
+  font-family:Xena !important;
+   border-color:rgba(255, 215, 0, 0.35)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    border-radius:0.8em 0.8em 0 0 ;
+
+}
+.Overviewtd:nth-child(2n+1) {
+    background-color:rgba(255, 215, 0, 0.35);
+    border-width:0 0 0.50em;
+}
 .Overviewtable {
-    margin-top:-12em;
+ 
     float:right;
-    margin-left:2em;  
+    margin-right:7em;
+    margin-top: 6em;
+    width:83em;  
     background-color:rgba(189, 102, 49, 0.80);
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
     border-color:rgba(255, 215, 0, 0.35)  ;
@@ -302,8 +306,8 @@ p.pageLinks {
     z-index:3;
     color:papayawhip;
 }
-.PackOverview>a:first-child {
-    visibility:hidden;
+/*.PackOverview>a:first-child {
+    visibility:hidden;*/
 }
                                 /*LINKS*/
 /*----------------------------------------------------------------------------*/
@@ -325,7 +329,9 @@ p.pageLinks {
 }
 #lefthead{
     margin-right:2em;
+    
 }
+
                                /*BUTTONS*/
 /*----------------------------------------------------------------------------*/
 
@@ -365,8 +371,13 @@ p.pageLinks {
 a.btn-default {
   color:papayawhip;
 }
+
                                /*PACKCARDS*/
 /*----------------------------------------------------------------------------*/
+.carddeckwrapper {
+    float:right;
+    margin-right:10em
+}
 .mainright-pack {
       transform-origin: 50% 50%;
       transform:rotate(45deg);
@@ -404,6 +415,7 @@ a.btn-default {
     -ms-transform: rotate(-90deg)translate(0,0em);
     transform:rotate(-90deg)translate(0,0.5em);
     z-index:10;
+    background-color: #555;
 }
 #packCards:nth-last-of-type(2) {
      margin-top:10.8em;
@@ -423,7 +435,8 @@ a.btn-default {
     -o-transform:rotate(-60deg)translate(0,-10em);
     -ms-transform: rotate(60deg)translate(0,10em);
     transform:rotate(-60deg)translate(0,-10em);
-    z-index:8
+    z-index:8;
+    background-color: #555;
 }
 #packCards:nth-last-of-type(4) {
     margin-top:0em;
@@ -444,6 +457,7 @@ a.btn-default {
     -ms-transform: rotate(10deg)translate(0,-20em);
     transform:rotate(-30deg)translate(0,-30em);
     z-index:6;
+    background-color: #555;
 }
 #packCards:nth-last-of-type(6) {
         margin-top: 0em;
@@ -516,10 +530,127 @@ p.price {
     -ms-transform: rotate(20deg);
     transform:rotate(20deg);
 }
-                                 /*FOOTER
+                                  /*FOOTER
 ----------------------------------------------------------------------------*/
 #footer {
     z-index: 0;
     background-image: url('images/foo.png');
     font-size: 0.9em;
-}
+}                               /*CARD GRID CARDS*/
+/*----------------------------------------------------------------------------*/
+div.col-lg-9.mainright {
+  width:60%;
+  padding-right:-7em;
+  z-index:5;
+  position:absolute;
+   margin-left:40em;
+   margin-top:15em;
+   z-index:-3;
+
+
+}
+td.Overviewtd.detailtd {
+    font-size:150%
+}
+th.Overviewth.detailth {
+     font-size:120%
+}.detailtd {
+    font-size:130%
+}
+ .detaildh{
+    height:150%;
+    float:right;
+}                               /*CARD GRID CARDS*/
+/*----------------------------------------------------------------------------*/
+card-deck-wrapper {
+    width:100%;
+    margin-right:-10em;
+}
+.card {
+    width: 15em;
+    height: 30em;
+    background-color: rgba(189, 102, 49, 0.80);
+    color: papayawhip;
+    float: right;
+    margin: 1em;
+    text-align:center;
+    border-color:rgba(247, 179, 80, 0.64)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    border-radius:1.0em;
+    -webkit-box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+    -moz-box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+    box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+}
+.card:nth-child(2n+1)
+{
+background-color: #555;
+
+
+}
+.cardOverviewPic {
+    padding:0.3em 0.3em 0 0.3em;
+}
+.cardOverviewPic:hover {
+    border-color:rgba(255, 215, 0, 0.35)  ;
+    border-width:0.2em;  
+    border-style:ridge;
+}
+#cardfooter {
+
+height:auto;
+min-height:2em;
+margin-bottom:1em;
+
+
+}
+.card-header {
+    height:1.5em;
+    bottom:0em;
+    position:center;
+}
+
+/*IMAGES*/
+/*----------------------------------------------------------------------------*/
+div.Detpic {
+}
+
+.DetailsPic {
+    width:15em;
+    margin-left:80%;
+    margin-top:-2em;
+        border-color:rgba(247, 179, 80, 0.64)  ;
+    border-width:1em;  
+    border-style:ridge;
+    border-width:0 0 0.50em;
+    border-radius:1.0em;
+    -webkit-box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+    -moz-box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+    box-shadow: 5px -5px 5px 2px rgba(245,219,166,0.20);
+    background-color: #555;
+       -moz-transform:rotate(3deg)translate(-1em );
+    -webkit-transform:rotate(3deg)translate(-1em );
+    -o-transform:rotate(3deg)translate(-1em );
+    -ms-transform: rotate(3deg)translate(0,0em);
+    transform:rotate(3deg)translate(-1em );
+}
+.DetailsPic:hover {
+    transform-style:flat;
+    transition-duration:3s;
+    width:25em;
+}
+
+#OverViewPic:hover {
+    transform-style:flat;
+    transition-duration:2s;
+    width:8em;
+}
+#OverViewPic{
+
+width:3em;
+}
+
+
+
+

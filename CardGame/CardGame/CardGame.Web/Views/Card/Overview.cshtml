@@ -4,59 +4,89 @@
 @{
     ViewBag.Title = "Overview";
 }
-
-<div id="fullcontainer" class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
+<div id="fullcontainer" class="container fullcontainer col-lg-12">
+    <div class="col-lg-2 categorylinks">
         <h3 id="lefthead">Contact</h3>
         <div>
             <a href="#" class="btn btn-default buttonleftnav">Button1</a>
             <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
         </div>
     </div>
-    
-        <table class="Overviewtable">
 
-            <tr class="Overviewtr">
-                <th class="Overviewth"><h4>Number</h4></th>
-                <th class="Overviewth"><h4>Picture</h4></th>
-                <th class="Overviewth"><h4>Name</h4></th>
-                <th class="Overviewth"><h4>Type</h4></th>
-                <th class="Overviewth"><h4>Mana</h4></th>
-                <th class="Overviewth"><h4> Details</h4></th>
-            </tr>
-
-            @{
-                var counter = 0;
-                foreach (var card in Model.Cards)
-                {
-                    counter++;
-                    <tr class="Overviewtr">
-                        <td class="@if (counter % 2 != 0) { <text>RowA</text> } else {<text>RowB</text> } ">
-                            @Html.DisplayFor(c => card.ID)
-                        </td>
-                        <td class="Overviewtd">
-                            @if (card.Pic != null)
+    <div class="card-deck-wrapper col-lg-10 col-md-10 ">
+        <div class="card-deck">
+            @foreach (var card in Model.Cards)
+            {
+                <div class="card">
+                    @if (card.Pic != null)
                 {
                     var base64 = Convert.ToBase64String(card.Pic);
                     var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                                <img src="@imgSrc" id="OverViewPic" />
-                            }
-                            else
-                            {
-                                @Html.DisplayText("no Picture found")
-                            }
-                        </td>
-                        <td class="Overviewtd">@Html.DisplayFor(c => card.Name)</td>
-                        <td class="Overviewtd">@Html.DisplayFor(c => card.Type)</td>
-                        <td class="Overviewtd">@Html.DisplayFor(c => card.Mana)</td>
-                        <td class="Overviewtd">@Html.ActionLink("Details", "Details", new { id = card.ID })</td>
-                    </tr>
-                }
-            }
+                        <img src="@imgSrc" id="cardOverviewPic" class="img-responsive" />
 
-        </table>
-        <p class="navbar-fixed-bottom pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))</p>
-        <br />
+                    }
+                    else
+                    {
+                        <div class="card-header">@Html.DisplayText("no Picture found")</div>
+                    }
+                    <div class="card-title">
+                        <h3>@Html.DisplayFor(c => card.Name)</h3>
+                    </div>
+                    <div class="card-footer" id="cardfooter">
+                        <h5>@Html.ActionLink("Details", "Details", new { id = card.ID })</h5>
+                    </div>
+
+                </div>
+            }
+        </div>
     </div>
 
+
+
+
+    <table class="Overviewtable">
+
+        <tr class="Overviewtr">
+            <th class="Overviewth"><h4>Number</h4></th>
+            <th class="Overviewth"><h4>Picture</h4></th>
+            <th class="Overviewth"><h4>Name</h4></th>
+            <th class="Overviewth"><h4>Type</h4></th>
+            <th class="Overviewth"><h4>Mana</h4></th>
+            <th class="Overviewth"><h4> Details</h4></th>
+        </tr>
+
+        @*@{
+            var counter = 0;*@
+        @foreach (var card in Model.Cards)
+        {
+            //counter++;
+            <tr class="Overviewtr">
+                <td class="Overviewtd" @*class="@if (counter % 2 != 0) { <text>RowA</text> } else {<text>RowB</text> } "*@>
+                    @Html.DisplayFor(c => card.ID)
+                </td>
+                <td class="Overviewtd">
+                    @if (card.Pic != null)
+                {
+                    var base64 = Convert.ToBase64String(card.Pic);
+                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                        <img src="@imgSrc" id="OverViewPic" />
+                    }
+                    else
+                    {
+                        @Html.DisplayText("no Picture found")
+                    }
+                </td>
+                <td class="Overviewtd">@Html.DisplayFor(c => card.Name)</td>
+                <td class="Overviewtd">@Html.DisplayFor(c => card.Type)</td>
+                <td class="Overviewtd">@Html.DisplayFor(c => card.Mana)</td>
+                <td class="Overviewtd">@Html.ActionLink("Details", "Details", new { id = card.ID })</td>
+            </tr>
+        }
+        }
+
+    </table>
+
+    <p class="navbar-fixed-bottom pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))</p>
+    <br />
+</div>
 
