@@ -23,43 +23,61 @@ namespace CardGame.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+                TempData["ErrorMessage"] = "Bitte nochmal versuchen";
                 return View(login);
             }
             else
             {
                 bool hasAccess = AuthManager.AuthUser(login.Email, login.Passwort);
-                login.Role = UserManager.GetRoleNamesByUserEmail(login.Email);
-
-                if (hasAccess)
+                
+                if (!hasAccess)
                 {
-                    var authTicket = new FormsAuthenticationTicket(
-                                    1,                            //ticketversion
-                                    login.Email,                  //welcher User
-                                    DateTime.Now,                 // Zeitpunkt der Erstellung
-                                    DateTime.Now.AddMinutes(20),  // Gültigkeitsdauer
-                                    true,                         // Persistentes Ticket über Sessions hinweg
-                                    login.Role                   /* "admin"*/  //login.Role// Userrollen
-                                    );
-
-                    string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
-                    // optionale verschlüsselung
-                    var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-                    // neues Cookie erstellen, hat immer Name und Wert
-                    System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
-                    // Ticket schicken wir dem User
-                }
-                else
-                {
+                    TempData["ErrorMessage"] = "Kein Zutritt";
                     return View(login);
+                   
                 }
-                return RedirectToAction("Index", "Home");
             }
+
+            string role = UserManager.GetRoleNamesByUserEmail(login.Email);
+            auth(login.Email, login.Passwort, role);
+            TempData["ConfirmMessage"] = "Sie sind eingeloggt";
+            return RedirectToAction("Index", "Home");
         }
+
+        private void auth(string email, string passwort, string role)
+        {
+            
+                var authTicket = new FormsAuthenticationTicket(
+                                1,                            //ticketversion
+                                email,                  //welcher User
+                                DateTime.Now,                 // Zeitpunkt der Erstellung
+                                DateTime.Now.AddMinutes(20),  // Gültigkeitsdauer
+                                true,                         // Persistentes Ticket über Sessions hinweg
+                                role                  /* "admin"*/  //login.Role// Userrollen
+                                );
+
+                string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                // optionale verschlüsselung
+                var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                // neues Cookie erstellen, hat immer Name und Wert
+                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);
+                // Ticket schicken wir dem User
+              
+        }
+
+
+
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            TempData["ConfirmMessage"] = "Sie sind ausgeloggt";
             return RedirectToAction("Index", "Home");
         }
+
+
+
+
 
 
         [HttpGet]
@@ -68,44 +86,50 @@ namespace CardGame.Web.Controllers
             return View();
         }
 
+
+
+
+
         public ActionResult ErrorMessage()
         {
             return View();
         }
 
+
+
+
+
         [HttpPost]
         public ActionResult Register(Register regUser)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                //    return View("Completed");
-                //}
-                //else
-                //{
-                //    ViewBag.Selpwd = regUser.Passwort;
-                //    ViewBag.Selconfirmpwd = regUser.ConfirmPassword;
+                return View(regUser);
 
-                //}
-                var dbUser = new tblperson();
-                if (regUser.Email != null)
-                {
-                    dbUser.firstname = regUser.Firstname;
-                    dbUser.lastname = regUser.Lastname;
-                    dbUser.email = regUser.Email;
-                    dbUser.password = regUser.Passwort;
-                    dbUser.gamertag = regUser.Gamertag;
-                    dbUser.salt = regUser.Salt;
-                    dbUser.userrole = "player";
-                    dbUser.isactive = true;
-                    dbUser.currencybalance = 1000;
-                    AuthManager.Register(dbUser);
-                    return RedirectToAction("Login");
-                }
+            }
+            var dbUser = new tblperson();
+            dbUser.firstname = regUser.Firstname;
+            dbUser.lastname = regUser.Lastname;
+            dbUser.email = regUser.Email;
+            dbUser.password = regUser.Passwort;
+            dbUser.gamertag = regUser.Gamertag;
+            dbUser.salt = regUser.Salt;
+            dbUser.userrole = "player";
+            dbUser.isactive = true;
+            dbUser.currencybalance = 1000;
+
+            
+
+            if (!AuthManager.Register(dbUser))
+            {
+                TempData["ErrorMessage"] = "Sie konnten nicht eingeloggt werden";
+                return View(regUser);
             }
 
-            return View("Register");
+            auth(dbUser.email, dbUser.password, dbUser.userrole);
+            TempData["ConfirmMessage"] = "Sie sind registriert";
+            return RedirectToAction("Index", "Home");
         }
-
-
     }
 }
+
