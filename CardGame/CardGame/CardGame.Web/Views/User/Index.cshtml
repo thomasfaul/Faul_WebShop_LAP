@@ -5,45 +5,56 @@
 }
 
 <h2>Index</h2>
+<div id="fullcontainer" class="container fullcontainer">
+    <div class="col-lg-1 categorylinks">
+        <h2 id="lefthead">About</h2>
+        <div>
+            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
+            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
+        </div>
+    </div>
 
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(u => u.ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(u => u.Firstname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(u => u.Lastname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(u => u.Role)
-        </th>
-        <th>
-            @Html.DisplayNameFor(u => u.Email)
-        </th>
+    <div class="col-lg-9  mainright adminuserright ">
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(u => u.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(u => u.Firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(u => u.Lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(u => u.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(u => u.Email)
+                </th>
 
-    </tr>
-    @foreach (var user in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(u => user.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(u => user.Firstname)
-            </td>
-            <td>
-                @Html.DisplayFor(u => user.Lastname)
-            </td>
-            <td>
-                @Html.DisplayFor(u => user.Role)
-            </td>
-            <td>
-                @Html.DisplayFor(u => user.Email)
-            </td>
-        </tr>
-    }
+            </tr>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(u => user.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(u => user.Firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(u => user.Lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(u => user.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(u => user.Email)
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+    </div>
+</div>

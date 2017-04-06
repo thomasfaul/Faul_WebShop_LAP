@@ -1,4 +1,4 @@
-﻿@model CardGame.Web.Models.User
+﻿@model CardGame.Web.Models.UI.Register
 @{
     ViewBag.Title = "Register";
 }
@@ -22,7 +22,6 @@
                 <ul>
                     <li>
                         <p>
-
                             @Html.LabelFor(u => u.Firstname)
                             @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
                             @Html.ValidationMessageFor(model => model.Firstname)
@@ -60,7 +59,7 @@
                         <p>
                             @Html.LabelFor(u => u.ConfirmPassword)
                             @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
-                            @Html.ValidationMessageFor(u => u.PasswordValidation)
+                            @*@Html.ValidationMessageFor(u => u.PasswordValidation)*@
                         </p>
                     </li>
                     <li>

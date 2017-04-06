@@ -60,8 +60,6 @@
 
                     @if (User.IsInRole("player") || User.IsInRole("admin"))
                     {
-                        <li class="undernav">@Html.ActionLink("About", "About", "Home")</li>
-                        <li class="undernav">@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li class="undernav">@Html.ActionLink("Statistic", "Statistics", "Home")</li>
                         <li class="undernav">@Html.ActionLink("Cards", "Overview", "Card")</li>
                         <li class="undernav">@Html.ActionLink("Shop", "DisableCurrency", "CardPack")</li>

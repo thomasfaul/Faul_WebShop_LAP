@@ -179,9 +179,21 @@ ul, li
     -webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
     -moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
     box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
-    width:auto;   
+     float:right;
 }
-
+.disclaimer {
+    float:right;
+    margin-top:3em
+    
+}
+.adminuserright{
+    font-size:120%;
+    width: auto;
+    
+}
+    .adminuserright,td {
+        width:auto;
+    }
                                /*FORMS*/
 /*----------------------------------------------------------------------------*/
 
