@@ -279,7 +279,7 @@ input[type=password]:focus {
 .Overviewtable {
  
     float:right;
-    margin-right:7em;
+    margin-right:5em;
     margin-top: 6em;
     width:83em;  
     background-color:rgba(189, 102, 49, 0.80);
@@ -294,12 +294,18 @@ input[type=password]:focus {
     -moz-box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
     box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
 }
-.RowA {
+/*#Card_Wrapper_Overview {
+    visibility:hidden;
+    position:absolute
+
+}*/
+
+/*.RowA {
     background-color:blue;
 }
 .RowB {
     background-color:orange;
-}
+}*/
 p.pageLinks {
     font-size:1.1em;
     margin-bottom:0.5em;
@@ -307,8 +313,8 @@ p.pageLinks {
     color:papayawhip;
 }
 /*.PackOverview>a:first-child {
-    visibility:hidden;*/
-}
+    visibility:hidden;
+}*/
                                 /*LINKS*/
 /*----------------------------------------------------------------------------*/
 
@@ -323,7 +329,7 @@ p.pageLinks {
     border-style:ridge;
     border-width:0 0 0.50em;
     border-radius:1.0em;
-       -webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
+    -webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
     -moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
     box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33); 
 }
@@ -538,29 +544,27 @@ p.price {
     font-size: 0.9em;
 }                               /*CARD GRID CARDS*/
 /*----------------------------------------------------------------------------*/
-div.col-lg-9.mainright {
-  width:60%;
-  padding-right:-7em;
-  z-index:5;
-  position:absolute;
-   margin-left:40em;
-   margin-top:15em;
-   z-index:-3;
+.detailrowpart {
+height:10em;
+width:10em;
+}
 
+.part1{
 
 }
-td.Overviewtd.detailtd {
-    font-size:150%
+.part2{
 }
-th.Overviewth.detailth {
-     font-size:120%
-}.detailtd {
-    font-size:130%
+.part3{
 }
- .detaildh{
-    height:150%;
-    float:right;
-}                               /*CARD GRID CARDS*/
+.part4{
+}
+.part5{
+}
+
+.partprice {
+    height:300%
+}
+                               /*CARD GRID CARDS*/
 /*----------------------------------------------------------------------------*/
 card-deck-wrapper {
     width:100%;

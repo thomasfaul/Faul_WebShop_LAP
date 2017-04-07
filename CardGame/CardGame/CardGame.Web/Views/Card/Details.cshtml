@@ -5,7 +5,7 @@
 }
 
 
-<div id="fullcontainer" class="container fullcontainer">
+@*<div id="fullcontainer" class="container fullcontainer">
     <div class="col-lg-1 categorylinks">
         <h3 id="lefthead">Contact</h3>
         <div>
@@ -73,7 +73,96 @@
             </tr>
         </table>
     </div>
+</div>*@
+<div class="card-deck-wrapper col-lg-10 col-md-10  " id="Card_Wrapper_Overview">
+    <div class="card-deck">
+
+        @*<div class="card detailrowpart part1">
+            <div class="card-title">Nummer</div>
+                <h3 class="price partprice">@Html.DisplayFor(m=>Model.ID)</h3>
+            
+        </div>*@
+
+
+        <div class="card detailrowpart part2" >
+            <div class="card-title">Kategorie</div>
+                <p class="price partprice">@Html.DisplayFor(m => Model.CardClass)</p>
+            
+        </div>
+
+
+        <div class="card detailrowpart part3" >
+            <div class="card-title">Type</div>
+                <p class="price partprice">@Html.DisplayFor(m => Model.Type)</p>
+            
+        </div>
+
+
+        <div class="card detailrowpart part4">
+            <div class="card-title">Leben</div>
+                
+                <p class="price partprice">@Html.DisplayFor(m => Model.Life)</p>
+
+            
+        </div>
+
+        <div class="card detailrowpart part5">
+            <div class="card-title">Attack</div>
+                
+                <p class="price partprice">@Html.DisplayFor( m => Model.Attack)</p>
+            
+        </div>
+
+        <div class="card detailrowpart part6">
+            <div class="card-title cardtitle">Mana</div>
+                <p class="price partprice">@Html.DisplayFor(m => Model.Mana)</p>
+            
+        </div>
+
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+@*<ul id="Card_Wrapper_Overview_Info">
+    <li class="col">
+        <h4 id="cph2">@Html.DisplayFor(c => pack.PackName)</h4>
+        @if (pack.IsMoney != true)
+        {
+            <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
+        }
+        else
+        {
+            <img id="cardpic" src="~/Content/images/Cardpacks/coins.png" alt="Coin-Picture" />
+        }
+
+        <h6 id="discription">@Html.DisplayFor(c => pack.Flavor)</h6>
+        <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+        <h6 id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h6>
+    </li>
+</ul>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
