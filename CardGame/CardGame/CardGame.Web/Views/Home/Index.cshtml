@@ -1,53 +1,74 @@
-﻿@{
+﻿@model CardGame.Web.Models.User
+
+
+@{
     ViewBag.Title = "Home Page";
 }
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
+    </div>
+    <div class="col col-md-12">
+        <h3>Ihr Guthaben</h3>
+        <h5 class="welcome">
+           @ViewBag.MyCurrency COINS
+        </h5>
 
-<div class="jumbotron">
+        <img class="img-responsive "src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+        @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })
+    </div>
+</div>
+<div class="col col-md-6">
     @{ if (User.Identity.Name == "")
         {
-            <h3 class="welcome">Willkommen</h3>
+            <h3>Willkommen</h3>
+            <h3>im CloneShop</h3>
+            <h5>
+                Um im Shop stöbern zu können müssen Sie sich zuerst einloggen
+            </h5>
+            @Html.ActionLink("Zum Login","Login","Account", new { @class = "btn btn-default" })
         }
         else
         {
             <h3 class="welcome">Willkommen @ViewBag.Firstname</h3>
             <h3>im CloneShop</h3>
+            <h5>
+                Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
+                Cardpacks kaufen und deine eigenen Decks erstellen.
+            </h5>
+
         }
-    }
-    
-    @{ if (User.IsInRole("admin"))
-        {
-            <h4>You are an admin</h4>
+        if (User.IsInRole("admin"))
+            {
+                <h5>You are an admin</h5>
+            }
         }
-    }
-    <h5 >Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
-     Cardpacks kaufen und deine eigenen Decks erstellen.</h5>
-    <p>@Html.ActionLink("Login", "Login", "Account", new {@class= "btn btn-default"})
-    </p>
 </div>
 
 
 
-<div class="row ">
-    <div class="col-md-4 indexrechts top">
+<div class="col-md-3">
+    <div class="col col-md-12">
         <h3>Stöbern</h3>
         <p>
-          Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+            Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
         </p>
         <p>@Html.ActionLink("Zu den Karten", "Overview", "Card", new { @class = "btn btn-default" })</p>
-        
+
     </div>
 
-    <div class="col-md-4  indexrechts">
+    <div class="col col-md-12">
         <h3>Stelle deine Decks zusammen</h3>
         <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
         <p>@Html.ActionLink("Zu den Decks", "Overview", "Card", new { @class = "btn btn-default" })</p>
-        
+
     </div>
- 
-    <div class="col-md-4 indexrechts" >
+
+    <div class="col col-md-12">
         <h3>Kaufe Kartenpacks </h3>
         <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
         <p>@Html.ActionLink("Zum Shop", "DisableCurrency", "Cardpack", new { @class = "btn btn-default" })</p>
-        
+
     </div>
 </div>

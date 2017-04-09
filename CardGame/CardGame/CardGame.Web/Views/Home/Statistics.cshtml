@@ -5,37 +5,59 @@
 }
 
 
-<div class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
-        <h3 id="lefthead">Game Statistics</h3>
-        <div>
-            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
-            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
-        </div>
+
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
-    <div class="col-md-9 mainright stats">
-        <h3>User angemeldet:</h3>
-        <p>
-            @Html.DisplayName("User:")
-            @Html.DisplayFor(s => s.NumUsers)
-        </p>
-        <br />
-        <h3>Karten insgesamt:</h3>
-        <p>
-            @Html.DisplayName("Karten:")
-            @Html.DisplayFor(s => s.NumCards)
-        </p>
-        <br />
-        <h3>Erstellte Decks:</h3>
-        <p>
-            @Html.DisplayName("Decks:")
-            @Html.DisplayFor(s => s.NumDecks)
-        </p>
-        <br />
-        <h3>Veröffentlicht am</h3>
-        <p>
-            @Html.DisplayName("Datum:")
-            @Html.DisplayFor(s => s.CreationTime)
-        </p>
+    <div class="col col-md-12">
+        <h3>Ihr Guthaben</h3>
+        <h5 class="welcome">
+            @ViewBag.MyCurrency COINS
+        </h5>
+
+        <img class="img-responsive " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+        @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })@*TODO Link zum Shop*@
     </div>
+</div>
+<div class="col col-md-6">
+    <h3>User angemeldet:</h3>
+    <p>
+        @Html.DisplayName("User:")
+        @Html.DisplayFor(s => s.NumUsers)
+    </p>
+    <br />
+    <h3>Karten insgesamt:</h3>
+    <p>
+        @Html.DisplayName("Karten:")
+        @Html.DisplayFor(s => s.NumCards)
+    </p>
+    <br />
+    <h3>Erstellte Decks:</h3>
+    <p>
+        @Html.DisplayName("Decks:")
+        @Html.DisplayFor(s => s.NumDecks)
+    </p>
+    <br />
+    <h3>Veröffentlicht am</h3>
+    <p>
+        @Html.DisplayName("Datum:")
+        @Html.DisplayFor(s => s.CreationTime)
+    </p>
+</div>
+
+
+
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <p>
+            Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+        </p>
+        <p>@Html.ActionLink("Zu den Karten", "Overview", "Card", new { @class = "btn btn-default" })</p>
+        <h3>Hier kommen noch die Diagramme rein</h3>
+    </div>
+
+   
 </div>

@@ -81,9 +81,11 @@ namespace CardGame.Web.Controllers
             var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
             if (dbUser != null)
             {
+            ViewBag.Id = dbUser.idperson;
             ViewBag.Firstname = dbUser.firstname;
             ViewBag.Lastname = dbUser.lastname;
             ViewBag.Email = dbUser.email;
+            ViewBag.MyCurrency = dbUser.currencybalance;
             }
         } 
         #endregion

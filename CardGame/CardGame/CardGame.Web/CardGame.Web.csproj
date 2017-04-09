@@ -183,6 +183,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\black_pattern_tile.jpg" />
+    <Content Include="Content\images\Coins-PNG-Picture-180x180.png" />
+    <Content Include="Content\images\Money.png" />
     <Content Include="Content\images\toastr_info.jpg" />
     <Content Include="Content\images\background_1920.png" />
     <Content Include="Content\images\toastr_error.jpg" />
@@ -197,7 +200,7 @@
     <Content Include="Content\images\Cardpacks\7.png" />
     <Content Include="Content\images\Cardpacks\8.jpg" />
     <Content Include="Content\images\Cardpacks\9.jpg" />
-    <Content Include="Content\images\Cardpacks\coins.png" />
+    <Content Include="Content\images\coins.png" />
     <Content Include="Content\images\toastr_warning.jpg" />
     <Content Include="Content\images\classic-pack.png" />
     <Content Include="Content\images\CS_Logo - Kopie.png" />

@@ -9,86 +9,86 @@
     <meta name="Webshop" content="Webshop to buy CloneStone Cards" />
     <meta name="description" content="A Webhop to buy Clonestone Cards" />
 </head>
+
+
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top uppernav" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar">@Html.ActionLink("Logout", "Logout", "Account")</span>
-                        <span class="icon-bar">@Html.ActionLink("Home", "Index", "Home")</span>
-                        <span class="icon-bar">@Html.ActionLink("About", "About", "Home")</span>
-                        <span class="icon-bar">@Html.ActionLink("Contact", "Contact", "Home")</span>
-                    </button>
-                    @Html.ActionLink("CloneShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-
-                <ul class="nav navbar-nav navlist">
-
-                    @if (User.IsInRole("player") || User.IsInRole("admin"))
-            {
-                        <li class="topnav">@Html.ActionLink("Logout", "Logout", "Account")</li>
-                            <li class="topnav">@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li class="topnav">@Html.ActionLink("About", "About", "Home")</li>
-                            <li class="topnav">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    }
-                    else if (true)
-                    {
-                        <li class="topnav">@Html.ActionLink("Login", "Login", "Account")</li>
-                    }
-                    @{ if (User.Identity.Name == "")
-                        {
-                            <li class="topnav">@Html.ActionLink("Bitte einloggen", "Login", "Account") </li>
-                        }
-                        else
-                        {
-                            <li class="topnav"><a class="welcome">@ViewBag.Firstname's Shop</a></li>
-                        }
-                    }
-                    @if (User.IsInRole("admin"))
-            {
-                        <li class="topnav">@Html.ActionLink("Users", "Index", "User")</li>
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="navbar navbar-inverse navbar-fixed-top downnav" role="navigation">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-
-                    @if (User.IsInRole("player") || User.IsInRole("admin"))
-                    {
-                        <li class="undernav">@Html.ActionLink("Statistic", "Statistics", "Home")</li>
-                        <li class="undernav">@Html.ActionLink("Cards", "Overview", "Card")</li>
-                        <li class="undernav">@Html.ActionLink("Shop", "DisableCurrency", "CardPack")</li>
-                    }
-                    @if (User.IsInRole("admin"))
-                    {
-                        <li class="undernav">@Html.ActionLink("Users", "Index", "User")</li>
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <!-- PARTIAL VIEW -->
+    <div class="container maincontainer">
         <div class="row">
 
 
             @RenderBody()
 
-
         </div>
-        <footer class="navbar navbar-fixed-bottom" id="footer">
-            <p>&copy; @DateTime.Now.Year </p>
-        </footer>
-
     </div>
+
+    <header>
+        <div class="overlay"></div>
+        <!-- NAVIGATION -->
+        <nav class="navbar navbar-default  navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        @if (User.IsInRole("player") || User.IsInRole("admin"))
+                        {
+                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                <li><a href="@Url.Action( "About", "Home")">Über uns</a></li>
+                                <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
+                                <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
+                                <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
+                                <li><a href="@Url.Action("DisableCurrency", "CardPack")">Karten</a></li>
+                                <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
+                                <li><a href="@Url.Action( "Index", "Home")">@ViewBag.Firstname's Shop</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
+                        }
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li><a href="@Url.Action("Index", "User")">Admins only</a></li>
+                        }
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav><!-- /navigation -->
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*SCRIPTS & CO*@
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 
     <script type="text/javascript">
         toastr.options = {
@@ -106,6 +106,15 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
+        $(window).scroll(function () {
+            var wscroll = $(this).scrollTop();
+            if (wscroll > 50) {
+                $(".navbar").addClass("shrink-nav");
+            }
+            else {
+                $(".navbar").removeClass("shrink-nav");
+            }
+        });
         $(document).ready(function () {
 
             @if (TempData["ErrorMessage"] != null)
@@ -121,29 +130,29 @@
             toastr.success("", "@TempData["ConfirmMessage"]");
             </text>
             }
-            
+
             @if (TempData["ErrorMessage"] != null)
             {
                 <text>
             toastr.error("", "@TempData["ErrorMessage"]");
-                </text>
+            </text>
             }
-            
+
             @if (TempData["WarningMessage"] != null)
             {
                 <text>
             toastr.warning("", "@TempData["WarningMessage"]");
-                </text>
+            </text>
             }
 
             @if (TempData["Progress"] != null)
             {
                 <text>
             toastr.warning("", "@TempData["ProgressMessage"]");
-                </text>
+            </text>
             }
 
-            });
+        });
     </script>
 </body>
 

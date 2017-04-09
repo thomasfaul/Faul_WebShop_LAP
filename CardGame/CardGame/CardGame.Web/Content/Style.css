@@ -9,15 +9,17 @@
 * {
     color:papayawhip
 }
-body{
+body {
     font-size: 100%;
     margin-top: 18em;
     padding: 0em;
     /*em ist eine  relative Angabe bezogen, an dieser Stelle müssen
         wir später nur die Schriftgrösse anpassen (100%--16px)MERKEN
         STELLSCHRAUBE für alles!!!!*/
-    background:transparent url('images/maxresdefault.jpg')fixed 0  no-repeat;
+    background-color: black;
+    background-image: url('images/black_pattern_tile.jpg');
 }
+
 
 
                                  /*FONTS*/
@@ -73,77 +75,131 @@ ul, li
                               /*NAVIGATION*/
 /*----------------------------------------------------------------------------*/
 
+header {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  /*padding-top:8em;*/
+  width:100%;
+  position:center;
+  /*padding-bottom: 300px;*/
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 8em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .navbar {
-   
-    font-size:1.4em;     
-    height:3em;
-    border-color:rgba(255, 215, 0, 0.35)  ;
+        
+  height:5em;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  border: transparent;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.2s;
 }
-.navbar-brand {
-    font-size: 1.5em;     
+.navbar-default .navbar-nav > li > a:hover {
+ color: papayawhip; 
+ background-color: transparent;
+ 
 }
-.uppernav {
-    width:99%;
-    position: absolute;
+.navbar-nav > li > a {
+font-family:Xena;
+  line-height: 3em;
+  -webkit-transition: all ease-in-out 0.6s;
+  -moz-transition: all ease-in-out 0.6s;
+  -o-transition: all ease-in-out 0.6s;
+  transition: all ease-in-out 0.6s;
+}
+.navbar-default .navbar-nav > li > a {
+  font-size:1.5em;
+}
+.navbar-brand img {
+  width: 12em;
+}
+.shrink-nav {
+    top: 0em;
+    
     background-image: url('images/Head.png');
-    border-radius:0  0 1em 1em;
-    left: 0.5%;   
-    border-width:0 0 0.2em 0; 
-
+    position: fixed;
 }
-.downnav {
-    height:6em;
-    background-color:rgba(189, 102, 49, 0.80);
-    border-width:1em;  
-    border-style:ridge;
-    border-width:0 0 0.50em;
-    border-radius:0  0 1em 1em;
-    padding-top:2.8em;
-    z-index:3; 
+.shrink-nav .navbar-nav > li > a {
+  color:darkorange;
 }
-.topnav {
-   min-width:8em;
-   font-family:Xena;
-   padding-top:0.5em;     
+@media (max-width: 767px) {
+  .navbar-nav > li > a {
+    line-height: 20px;
+  }
+  .navbar-brand {
+    padding: 7px 15px;
+  }
+  .navbar-brand img {
+    width: 144px;
+  }
 }
-.navbar-collapse {
-    float:right;
-}
-.navbar-inverse .navbar-nav>li >a {
-  color:papayawhip; 
-}
-.navbar-inverse .navbar-nav>li >a:hover {
-  color:rgba(237, 172, 55, 1.00); 
-}     
-                             /*MAIN--JUMBO*/
+                          /*Container*/
 /*----------------------------------------------------------------------------*/
 
-.jumbotron {
- 
-    background-color:rgba(189, 102, 49, 0.80);
-    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
-    border-color:rgba(255, 215, 0, 0.35)  ;
-    border-width:1em;  
+  .maincontainer{
+    background: url('images/maxresdefault.jpg')no-repeat  top;
+    background-position:center top left;
+    margin-top:-8em;
+}
+.col {
+    background-color:rgba(189, 102, 49, 0.60);
+    border-color:rgba(255, 215, 0, 0.35);
     border-style:ridge;
     border-width:0 0 0.50em;
-    border-radius:1.0em;
-    width:20em;
-    float:left;
-    margin-right:4em;
-    margin-left:8em ;
-    padding-left:-1em;
+    border-radius:1.0em; 
+    padding-right:1em;
+    margin-bottom:1em;
     text-align:center;
     -webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
     -moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
-    box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
+    box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);       
 }
+
+.col-md-12 {
+    padding-top:1em;
+    padding-bottom:1em;
+
+    
+}
+
+.col-md-6 {
+    padding-top:3.5em;
+    padding-bottom:3.5em;
+   
+}
+.col-md-9 {
+    padding:2em;
+    
+}
+col.md-3 {
+height:50em;
+}
+ 
+                          /*Images*/
+/*----------------------------------------------------------------------------*/
+.img-responsive {
+    padding-left:2.6em;
+}
+
 .lead {
-    margin-top:2em;
+    /*margin-top:2em;*/
 }
                             /*MAIN--RECHTS*/
 /*----------------------------------------------------------------------------*/
 
-.indexrechts {
+/*.indexrechts {
     background-color:rgba(189, 102, 49, 0.80);
     background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
     border-color:rgba(255, 215, 0, 0.35)  ;
@@ -155,7 +211,7 @@ ul, li
    -webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.44);
    -moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.44);
    box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.44);
-}
+}*/
 .stats{
     height:auto;
     padding:3em;
@@ -277,44 +333,30 @@ input[type=password]:focus {
     border-width:0 0 0.50em;
 }
 .Overviewtable {
- 
-    float:right;
-    margin-right:5em;
+    float: right;
+    margin-right: 5em;
     margin-top: 6em;
-    width:83em;  
-    background-color:rgba(189, 102, 49, 0.80);
-    background:linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
-    border-color:rgba(255, 215, 0, 0.35)  ;
-    border-width:1em;  
-    border-style:ridge;
-    border-width:0 0 0.50em;
-    border-radius:1.0em;
-    margin-bottom:3em;
+    width: 83em;
+    background-color: rgba(189, 102, 49, 0.80);
+    background: linear-gradient(top,rgba(238, 102, 19, 0.79),rgba(189, 102, 49, 0.30));
+    border-color: rgba(255, 215, 0, 0.35);
+    border-width: 1em;
+    border-style: ridge;
+    border-width: 0 0 0.50em;
+    border-radius: 1.0em;
+    margin-bottom: 3em;
     -webkit-box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
     -moz-box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
     box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
 }
-/*#Card_Wrapper_Overview {
-    visibility:hidden;
-    position:absolute
 
-}*/
-
-/*.RowA {
-    background-color:blue;
-}
-.RowB {
-    background-color:orange;
-}*/
 p.pageLinks {
     font-size:1.1em;
     margin-bottom:0.5em;
     z-index:3;
     color:papayawhip;
 }
-/*.PackOverview>a:first-child {
-    visibility:hidden;
-}*/
+
                                 /*LINKS*/
 /*----------------------------------------------------------------------------*/
 
@@ -345,7 +387,7 @@ p.pageLinks {
 .btn-defaultactive,
 .btn-default:visited {
     padding:0.5em;
-    width: 12em;
+    width: 13em;
     height:2em;
     margin-top:1.5em;
     font-family:Xena;
@@ -535,13 +577,6 @@ p.price {
     -o-transform:rotate(20deg);
     -ms-transform: rotate(20deg);
     transform:rotate(20deg);
-}
-                                  /*FOOTER
-----------------------------------------------------------------------------*/
-#footer {
-    z-index: 0;
-    background-image: url('images/foo.png');
-    font-size: 0.9em;
 }                               /*CARD GRID CARDS*/
 /*----------------------------------------------------------------------------*/
 .detailrowpart {
@@ -654,6 +689,9 @@ div.Detpic {
 
 width:3em;
 }
+
+
+
 
 
 
