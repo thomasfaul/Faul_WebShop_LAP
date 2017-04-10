@@ -65,7 +65,8 @@ namespace CardGame.Web.Controllers
         {
             this.Session["isCurrency"] = false;
             TempData["Infomessage"] = "Packs are LOADING";
-            return RedirectToAction("PackOverview", "CardPack");
+            //return RedirectToAction("PackOverview", "CardPack");
+            return RedirectToAction("PackOverview");
         }
 
         //public ActionResult Details(int id)

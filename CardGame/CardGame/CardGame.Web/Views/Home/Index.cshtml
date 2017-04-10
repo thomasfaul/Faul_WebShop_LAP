@@ -16,7 +16,7 @@
         </h5>
 
         <img class="img-responsive "src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })
+        <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
     </div>
 </div>
 <div class="col col-md-6">
@@ -27,7 +27,7 @@
             <h5>
                 Um im Shop stöbern zu können müssen Sie sich zuerst einloggen
             </h5>
-            @Html.ActionLink("Zum Login","Login","Account", new { @class = "btn btn-default" })
+            <a class="btn btn-default" href="@Url.Action("Login", "Account")">Zum Login</a>
         }
         else
         {
@@ -54,21 +54,19 @@
         <p>
             Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
         </p>
-        <p>@Html.ActionLink("Zu den Karten", "Overview", "Card", new { @class = "btn btn-default" })</p>
-
+        <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
     </div>
 
     <div class="col col-md-12">
         <h3>Stelle deine Decks zusammen</h3>
         <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
-        <p>@Html.ActionLink("Zu den Decks", "Overview", "Card", new { @class = "btn btn-default" })</p>
+       <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
 
     </div>
 
     <div class="col col-md-12">
         <h3>Kaufe Kartenpacks </h3>
         <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
-        <p>@Html.ActionLink("Zum Shop", "DisableCurrency", "Cardpack", new { @class = "btn btn-default" })</p>
-
+        <a class="btn btn-default" href="@Url.Action("DisableCurrency", "CardPack")">Zum Shop</a>
     </div>
 </div>

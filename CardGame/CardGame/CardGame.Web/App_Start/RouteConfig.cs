@@ -16,7 +16,7 @@ namespace CardGame.Web
             routes.MapRoute(
                 name: null,
                 url: "Page{page}",
-                defaults: new { controller = "Card", action = "Overview"});
+                defaults: new { controller = "Card", action = "Overview" });
 
             routes.MapRoute(
                 name: "Default",
