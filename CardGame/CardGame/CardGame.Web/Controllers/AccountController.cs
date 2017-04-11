@@ -6,6 +6,7 @@ using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
 using CardGame.Web.Models.UI;
+using CardGame.Web.HtmlHelpers;
 
 namespace CardGame.Web.Controllers
 {
@@ -32,6 +33,7 @@ namespace CardGame.Web.Controllers
                 
                 if (!hasAccess)
                 {
+
                     TempData["ErrorMessage"] = "Kein Zutritt";
                     return View(login);
                    
@@ -117,9 +119,6 @@ namespace CardGame.Web.Controllers
             dbUser.userrole = "player";
             dbUser.isactive = true;
             dbUser.currencybalance = 1000;
-
-            
-
             if (!AuthManager.Register(dbUser))
             {
                 TempData["ErrorMessage"] = "Sie konnten nicht eingeloggt werden";

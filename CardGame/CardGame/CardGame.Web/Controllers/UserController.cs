@@ -8,6 +8,7 @@ using CardGame.DAL.Model;
 using CardGame.Log;
 using CardGame.Web.Models;
 using CardGame.Web.Models.UI;
+using CardGame.Web.HtmlHelpers;
 
 namespace CardGame.Web.Controllers
 {
@@ -42,13 +43,9 @@ namespace CardGame.Web.Controllers
                 {
                     user.Currencybalance = 0;
                 }
-                
-
-
                 UserList.Add(user);
+                
             }
-            
-
             return View(UserList);
         }
 

@@ -169,6 +169,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="HtmlHelpers\SessionHelper.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardPack.cs" />
     <Compile Include="Models\CardsListViewModel.cs" />

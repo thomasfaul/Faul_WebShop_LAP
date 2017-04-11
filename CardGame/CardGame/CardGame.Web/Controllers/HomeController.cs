@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
+using CardGame.Web.HtmlHelpers;
 
 namespace CardGame.Web.Controllers
 {
@@ -17,9 +18,10 @@ namespace CardGame.Web.Controllers
             if (User.Identity.Name != "")
             {
                 CreateViewBag();
+                CreateSession();
             }
             return View();
-        } 
+        }
 
         #endregion
 
@@ -34,8 +36,8 @@ namespace CardGame.Web.Controllers
             ViewBag.Message = "Your application description page.";
             CreateViewBag();
             return View();
-        } 
-    
+        }
+
         #endregion
 
         #region ActionResult Contact
@@ -49,7 +51,7 @@ namespace CardGame.Web.Controllers
             ViewBag.Message = "Your contact page.";
             CreateViewBag();
             return View();
-        } 
+        }
         #endregion
 
         #region ActionResult Statistics
@@ -66,10 +68,10 @@ namespace CardGame.Web.Controllers
             s.NumCards = DBInfoManager.GetNumCards();
             s.NumDecks = DBInfoManager.GetNumDecks();
             CreateViewBag();
-            
+
 
             return View(s);
-        } 
+        }
         #endregion
 
         #region Create ViewBag
@@ -81,13 +83,31 @@ namespace CardGame.Web.Controllers
             var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
             if (dbUser != null)
             {
-            ViewBag.Id = dbUser.idperson;
-            ViewBag.Firstname = dbUser.firstname;
-            ViewBag.Lastname = dbUser.lastname;
-            ViewBag.Email = dbUser.email;
-            ViewBag.MyCurrency = dbUser.currencybalance;
+                ViewBag.Id = dbUser.idperson;
+                ViewBag.Firstname = dbUser.firstname;
+                ViewBag.Lastname = dbUser.lastname;
+                ViewBag.Email = dbUser.email;
+                ViewBag.MyCurrency = dbUser.currencybalance;
             }
-        } 
+        }
         #endregion
+
+
+        public void CreateSession()
+        {
+            var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
+            if (dbUser != null)
+            {
+                SessionHelper.Set<string>("Firstname", dbUser.firstname);
+                SessionHelper.Set<string>("Lastname", dbUser.lastname);
+                SessionHelper.Set<int>("Id", dbUser.idperson);
+                SessionHelper.Set<string>("Email", dbUser.password);
+                if (dbUser.currencybalance == null)
+                {
+                    dbUser.currencybalance = 0;
+                    SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.currencybalance);
+                }
+            }
+        }
     }
 }

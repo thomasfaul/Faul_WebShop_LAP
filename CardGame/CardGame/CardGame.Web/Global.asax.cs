@@ -21,6 +21,12 @@ namespace CardGame.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start(Object sender, EventArgs e)
+        {
+            int temp = 4;
+            HttpContext.Current.Session.Add("UserSession", temp);
+        }
         #endregion
 
         #region Application_AuthenticateRequest

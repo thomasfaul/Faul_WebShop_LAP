@@ -1,6 +1,7 @@
 ﻿using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using CardGame.Web.Models;
+using CardGame.Web.HtmlHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace CardGame.Web.Controllers
 {
     public class CardPackController : Controller
     {
+        HomeController a = new HomeController();
         public int PPagesize = 20;
         // GET: Cardpack
         public ActionResult PackOverview(int page = 1)

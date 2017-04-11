@@ -17,12 +17,11 @@
     <div class="container maincontainer">
         <div class="row">
 
-
             @RenderBody()
 
         </div>
     </div>
-
+    
     <header>
         <div class="overlay"></div>
         <!-- NAVIGATION -->
@@ -57,7 +56,7 @@
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
                             <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                            <li><a href="@Url.Action( "User", "Register")">@ViewBag.Firstname´s ADMINSSITE</a></li>
+                            <li><a href="@Url.Action( "User", "Register")">@ViewBag.Firstname`s ADMINSSITE</a></li>
                             <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
                             <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
 

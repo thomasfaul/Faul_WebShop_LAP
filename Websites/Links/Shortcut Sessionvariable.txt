@@ -1,0 +1,1 @@
+@*@{ string firstname = SessionHelper.Get<string>("Firstname");}<h2> @firstname</h2>*@
