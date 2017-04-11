@@ -4,41 +4,73 @@
 }
 
 
-<div  class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
-        <h3 id="lefthead">Card Shop</h3>
-        <div>
-            <a  href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
-            <a  href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
-        </div>
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
- 
-    <div class="col-md-9  mainright-pack">
-        @foreach (var pack in Model.Packs)
-        {
-            <ul id="packCards">
-                <li class="col">
-                    <h4 id="cph2">@Html.DisplayFor(c => pack.PackName)</h4>
-                    @if (pack.IsMoney != true)
-                    {
-                        <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture"  />
-                    }
-                    else
-                    {
-                        <img id="cardpic" src="~/Content/images/Cardpacks/coins.png" alt="Coin-Picture" />
-                    }
-
-                    <h6 id="discription">@Html.DisplayFor(c => pack.Flavor)</h6>
-                    <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
-                    <h6 id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h6>
-                </li>
-            </ul>
-        }
-    </div>
-    <div class="pagelinks col-md-9">
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))
+    <div class="col col-md-12 currency">
+        <h3>Ihr Guthaben</h3>
+        <h5 class="welcome">
+            @ViewBag.MyCurrency COINS
+        </h5>
+        <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+        <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
     </div>
 </div>
 
 
 
+
+<div class="col-md-6 cardcol">
+    <div class="card-deck-wrapper col-md-12 cardcol">
+        <div class="card-deck packcol packdeck ">
+            @foreach (var pack in Model.Packs)
+            {
+                <div class="card col-md-2 packcard">
+                        
+                        @if (pack.IsMoney != true)
+                        {
+                            <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
+                        }
+                        else
+                        {
+                            <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                        }
+                         <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                        <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
+                        <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+                        @*<h5 id="card-footer">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h5>*@
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="col-md-3">
+    <div class="col col-md-12 ">
+        <h3>Coins einlösen</h3>
+        <p>
+            Lege dir Cardpacks zu und statte deine Kartendecks aus
+        </p>
+        <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+        
+    </div>
+
+    <div class="col col-md-12">
+        <h3>Kaufe Coins</h3>
+        <p>und du kannst damit Cardpacks erstehen</p>
+
+        <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
+    </div>
+
+    <div class="col col-md-12">
+        <h3 id="pagingOverview">weitere Seiten: </h3>
+        <p class="pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
+    </div>
+</div>

@@ -1,52 +1,84 @@
 <Info>
-  <Time>10.04.2017 00:00:51</Time>
-  <Info>GetNumUsers 12</Info>
+  <Time>10.04.2017 20:31:24</Time>
+  <Info>GetNumUsers 14</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 00:00:51</Time>
+  <Time>10.04.2017 20:31:24</Time>
   <Info>GetNumCards 382</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 00:00:51</Time>
+  <Time>10.04.2017 20:31:24</Time>
   <Info>GetNumDecks 1</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 00:11:36</Time>
-  <Info>Entered Pass = tomtam</Info>
-</Info>
-<Info>
-  <Time>10.04.2017 00:11:36</Time>
-  <Info>HashPass = 0AB6EBFD78B6068F95F0FDDE7A16F6AB3D73D60C134C24BE9ED22B8F0ECA08A70F519CEC025F475E432D1247F16989ED00D92C4DE8A48296B1FFEA484CE05612</Info>
-</Info>
-<Info>
-  <Time>10.04.2017 00:11:45</Time>
+  <Time>10.04.2017 21:50:58</Time>
   <Info>Entered Pass = tamtam</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 00:11:45</Time>
+  <Time>10.04.2017 21:50:58</Time>
   <Info>HashPass = 340FF8887A9DD5283CE3520BE6BD0A6DF53B9E9128027DF66D53717C0310A55A3C2C0300065925BC022A8ED3C28571517CAFB7007F3D54C220A3DB96168D5442</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 08:09:08</Time>
-  <Info>Entered Pass = tomtom</Info>
+  <Time>10.04.2017 22:28:13</Time>
+  <Info>GetNumUsers 14</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 08:09:08</Time>
-  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+  <Time>10.04.2017 22:28:13</Time>
+  <Info>GetNumCards 382</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 09:30:16</Time>
-  <Info>Entered Pass = tomtom</Info>
+  <Time>10.04.2017 22:28:13</Time>
+  <Info>GetNumDecks 1</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 09:30:16</Time>
-  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+  <Time>10.04.2017 22:45:35</Time>
+  <Info>GetNumUsers 14</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 09:52:26</Time>
-  <Info>Entered Pass = tomtom</Info>
+  <Time>10.04.2017 22:45:35</Time>
+  <Info>GetNumCards 382</Info>
 </Info>
 <Info>
-  <Time>10.04.2017 09:52:26</Time>
-  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+  <Time>10.04.2017 22:45:35</Time>
+  <Info>GetNumDecks 1</Info>
 </Info>
+<Info>
+  <Time>10.04.2017 22:46:47</Time>
+  <Info>GetNumUsers 14</Info>
+</Info>
+<Info>
+  <Time>10.04.2017 22:46:47</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>10.04.2017 22:46:47</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>10.04.2017 22:50:17</Time>
+  <Info>GetNumUsers 14</Info>
+</Info>
+<Info>
+  <Time>10.04.2017 22:50:17</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>10.04.2017 22:50:17</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>10.04.2017 23:12:23</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>10.04.2017 23:14:25</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
+  </Exception>
+</Xcpt>

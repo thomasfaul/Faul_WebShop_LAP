@@ -4,123 +4,120 @@
 }
 
 
-<div id="fullcontainer" class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
-        <h2 id="lefthead">Register</h2>
-        <div>
-            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
-            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
-        </div>
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
-
-    <div class="col-lg-6  mainright ">
-
-        @using (Html.BeginForm())
-        {
-            <fieldset>
-                <legend></legend>
-                <ul>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Firstname)
-                            @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
-                            @Html.ValidationMessageFor(model => model.Firstname)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Lastname)
-                            @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
-                            @Html.ValidationMessageFor(model => model.Lastname)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Gamertag)
-                            @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
-                            @Html.ValidationMessageFor(model => model.Gamertag)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Email)
-                            @Html.EditorFor(u => u.Email)
-                            @Html.ValidationMessageFor(u => u.Email)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Passwort)
-                            @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
-                            @Html.ValidationMessageFor(u => u.Passwort)
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.ConfirmPassword)
-                            @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
-                            @*@Html.ValidationMessageFor(u => u.PasswordValidation)*@
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Html.CheckBoxFor(m => m.TermsAccepted) I accept the terms & conditions
-                            @Html.ValidationMessageFor(m => m.TermsAccepted)
-                        </p>
-                    </li>
-                </ul>
-                <input type="submit" value="Register" class="btn btn-default submitbutton" />
-            </fieldset>
-        }
+    <div class="col col-md-12 currency">
+        <h3>Coins</h3>
+        <h5 class="welcome">
+            Kaufen Sie, mit im Spiel erstanden Coins neue Karten
+        </h5>
+        <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
     </div>
 </div>
-            
+<div class="col col-md-6">
+    <h3>Registrierung</h3>
+
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend></legend>
+            <ul>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Firstname)
+                        @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
+                    </p>
+                </li>
+                <li>
+                    @Html.ValidationMessageFor(model => model.Firstname)
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Lastname)
+                        @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
+                    </p>
+
+                    @Html.ValidationMessageFor(model => model.Lastname)
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Gamertag)
+                        @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Gamertag)
+
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Email)
+                        @Html.EditorFor(u => u.Email)
+                    </p>
+                    @Html.ValidationMessageFor(u => u.Email)
+
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Passwort)
+                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                    </p>
+                    @Html.ValidationMessageFor(u => u.Passwort)
+
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.ConfirmPassword)
+                        @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
+                    </p>
+                    @*@Html.ValidationMessageFor(u => u.PasswordValidation)*@
+
+                </li>
+                <li>
+                    <a class="readAGB " href="@Url.Action("Contact", "Home")">Ich habe die AGB´s gelesen und akzeptiert </a>
+                </li>
+                <li>
+                    <div>@Html.CheckBoxFor(m => m.TermsAccepted)</div>
 
 
+                    @Html.ValidationMessageFor(m => m.TermsAccepted)
+                </li>
+                <li><input type="submit" value="Registrieren" class="btn btn-default regButtonreg" /></li>
+            </ul>
 
+        </fieldset>
+    }
+    <br />
+</div>
 
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <p>
+            Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+        </p>
+        @{ if (User.Identity.Name != "")
+            {
+                <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
+            }
+        }
+    </div>
 
+    <div class="col col-md-12">
+        <h3>Lese die AGB</h3>
+        <p>Bitte lese dir die AGB´s gut durch bevor du dich registrierst</p>
 
+                <a class="btn btn-default" href="@Url.Action("Contact", "Home")">Zu den AGB´s</a>
 
+    </div>
 
+    <div class="col col-md-12">
+        <h3>Registriere dich </h3>
 
+                <p>Hier kannst du dich registrieren, damit du dich einloggen kannst</p>
 
+                <a class="btn btn-default" href="@Url.Action("Register", "Account")">Registrieren</a>
 
-
-
-
-            @*@using (Html.BeginForm())
-                {
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.LabelFor(u => u.Firstname, htmlAttributes: new { @class = "control-label col-md-3"})
-                    @Html.EditorFor(u => u.Firstname, new { htmlAttributes = new { @class = "form-control" }})
-                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
-                    <br />
-
-                    @Html.LabelFor(u => u.Lastname, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.EditorFor(u => u.Lastname, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
-                    <br />
-
-                    @Html.LabelFor(u => u.Gamertag, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.EditorFor(u => u.Gamertag, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Gamertag, "", new { @class = "text-danger" })
-                    <br />
-
-                    @Html.LabelFor(u => u.Email, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.EditorFor(u => u.Email, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger" })
-                    <br />
-
-
-                    @Html.LabelFor(u => u.Password, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.EditorFor(u => u.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
-                    <br />
-
-                    @Html.LabelFor(u => u.PasswordValidation, htmlAttributes: new { @class = "control-label col-md-3" })
-                    @Html.EditorFor(u => u.PasswordValidation, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(u => u.PasswordValidation, "", new { @class = "text-danger" })
-                    <br />
-                    <input type="submit" class="btn btn-default" />
-                }*@
+    </div>
+</div>

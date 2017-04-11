@@ -2,13 +2,6 @@
     ViewBag.Title = "Contact";
 }
 
-
-
-
-
-
-
-
 <div class="col-md-3">
     <div class="col col-md-12">
         <h3>Contact</h3>
@@ -28,20 +21,29 @@
             <p><strong>Marketing:</strong> <a href="mailto:Marketing@clonestone.at">Marketing@clonestone.com</a></p>
         </address>
     </div>
-    <div class="col col-md-12">
+    <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
         <h5 class="welcome">
             @ViewBag.MyCurrency COINS
         </h5>
 
-        <img class="img-responsive " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })@*TODO Link zum Shop*@
+        <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+        @{if (User.Identity.Name != "")
+            {
+                @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })
+            }
+        }
     </div>
 </div>
 <div class="col col-md-9">
     <h3>Nutzungsbedingungen, AGB</h3>
     <p class="welcome">
-        Lieber @ViewBag.Firstname,
+        Liebe(r)
+        @{if (User.Identity.Name != "")
+            {
+                @ViewBag.Firstname
+            }
+        }
         <br />
     <p>
         Allgemeine Geschäftsbedingungen der MTP GmbH
@@ -111,10 +113,6 @@
     </p>
     <br />
 </div>
-
-
-
-
 
 
 

@@ -4,90 +4,82 @@
 @{
     ViewBag.Title = "Overview";
 }
-<div id="fullcontainer" class="container fullcontainer col-lg-12">
-    <div class="col-lg-2 categorylinks">
-        <h3 id="lefthead">Contact</h3>
-        <div>
-            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
-            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
+
+    
+    <div class="col-md-3">
+        <div class="col col-md-12">
+            <h3>Stöbern</h3>
+            <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
+        </div>
+        <div class="col col-md-12 currency">
+            <h3>Ihr Guthaben</h3>
+            <h5 class="welcome">
+                @ViewBag.MyCurrency COINS
+            </h5>
+            <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+            <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
         </div>
     </div>
 
-    <div class="card-deck-wrapper col-lg-10 col-md-10  " id="Card_Wrapper_Overview">
-        <div class="card-deck">
-            @foreach (var card in Model.Cards)
+
+
+
+    <div class="col col-md-6 cardcol">
+        <div class="card-deck-wrapper col-md-12 cardcol  ">
+            <div class="card-deck cardcol ">
+                @foreach (var card in Model.Cards)
             {
-                <div class="card">
-                    @if (card.Pic != null)
+                    <div class="card col-md-3">
+                        @if (card.Pic != null)
                 {
-                    var base64 = Convert.ToBase64String(card.Pic);
-                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                        <img src="@imgSrc" id="cardOverviewPic" class="img-responsive" />
+                          var base64 = Convert.ToBase64String(card.Pic);
+                          var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <img class="cardpic"src="@imgSrc"/>
+                        }
+                        else
+                        {
+                            <div class="card-header ">@Html.DisplayText("no Picture found")</div>
+                        }
+                        <div class="card-title ">
+                            <h3 class="cardtitle">@Html.DisplayFor(c => card.Name)</h3>
+                        </div>
+                        <div class="card-footer " >
+                            <h5>@Html.ActionLink("Details", "Details", new { id = card.ID })</h5>
+                        </div>
 
-                    }
-                    else
-                    {
-                        <div class="card-header">@Html.DisplayText("no Picture found")</div>
-                    }
-                    <div class="card-title">
-                        <h3>@Html.DisplayFor(c => card.Name)</h3>
                     </div>
-                    <div class="card-footer" id="cardfooter">
-                        <h5>@Html.ActionLink("Details", "Details", new { id = card.ID })</h5>
-                    </div>
+                }
+            </div>
+        </div>
+    </div>
 
-                </div>
-            }
+
+
+    <div class="col-md-3">
+        <div class="col col-md-12 ">
+            <h3>Stöbern</h3>
+            <p>
+                Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+            </p>
+            <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
+        </div>
+
+        <div class="col col-md-12">
+            <h3>Stelle deine Decks zusammen</h3>
+            <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
+       
+            <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
+
+        </div>
+
+        <div class="col col-md-12">
+            <h3 id="pagingOverview">weitere Seiten: </h3>
+           <p class="pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))</p>
         </div>
     </div>
 
 
 
 
-    <table class="Overviewtable">
 
-        <tr class="Overviewtr">
-            <th class="Overviewth"><h4>Number</h4></th>
-            <th class="Overviewth"><h4>Picture</h4></th>
-            <th class="Overviewth"><h4>Name</h4></th>
-            <th class="Overviewth"><h4>Type</h4></th>
-            <th class="Overviewth"><h4>Mana</h4></th>
-            <th class="Overviewth"><h4> Details</h4></th>
-        </tr>
-
-        @*@{
-            var counter = 0;*@
-        @foreach (var card in Model.Cards)
-        {
-            //counter++;
-            <tr class="Overviewtr">
-                <td class="Overviewtd" @*class="@if (counter % 2 != 0) { <text>RowA</text> } else {<text>RowB</text> } "*@>
-                    @Html.DisplayFor(c => card.ID)
-
-                </td>
-                <td class="Overviewtd">
-                    @if (card.Pic != null)
-                {
-                    var base64 = Convert.ToBase64String(card.Pic);
-                    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                        <img src="@imgSrc" id="OverViewPic" />
-                    }
-                    else
-                    {
-                        @Html.DisplayText("no Picture found")
-                    }
-                </td>
-                <td class="Overviewtd">@Html.DisplayFor(c => card.Name)</td>
-                <td class="Overviewtd">@Html.DisplayFor(c => card.Type)</td>
-                <td class="Overviewtd">@Html.DisplayFor(c => card.Mana)</td>
-                <td class="Overviewtd">@Html.ActionLink("Details", "Details", new { id = card.ID })</td>
-            </tr>
-        }
-        }
-
-    </table>
-
-    <p class="navbar-fixed-bottom pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))</p>
-    <br />
-</div>
 

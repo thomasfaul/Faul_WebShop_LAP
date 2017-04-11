@@ -10,10 +10,10 @@ namespace CardGame.Web.Controllers
 {
     public class CardController : Controller
     {
-        public int Pagesize = 30;
+        public int Pagesize = 100;
         
         // GET: Card
-        public ActionResult Overview(int? cardclass ,int page=1)
+        public ActionResult Overview(int? cardclass,int page=1)
         {
             List<Card> CardList = new List<Card>();
             var dbCardlist = CardManager.GetAllCards();
@@ -22,7 +22,17 @@ namespace CardGame.Web.Controllers
             {
                 Card card = new Card();
                 card.ID = c.idcard;
-                card.CardClass = c.fkclass;
+                if (c.fkclass == null)
+                {
+                    card.CardClass = 0;
+                }
+                else
+                {
+                   card.CardClass=c.fkclass;
+                }
+                
+                
+
                 card.Name = c.cardname;
                 card.Mana = c.mana;
                 card.Attack = c.attack;
@@ -44,7 +54,7 @@ namespace CardGame.Web.Controllers
                     TotalItems = CardList.Count()
                 }, CurrentClass = cardclass
             };
-            TempData["InfoMessage"] = "LOADING";
+           
             return View(model);
         }
 
@@ -64,7 +74,7 @@ namespace CardGame.Web.Controllers
             card.Flavor = dbcard.flavor;
          
             card.Type = CardManager.CardTypes[dbcard.fktype];
-            TempData["InfoMessage"] = "LOADING";
+           
             return View(card);
         }
     }

@@ -4,43 +4,75 @@
     ViewBag.Title = "Login";
 }
 
-<div id="fullcontainer" class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
-        <h2 id="lefthead">About</h2>
-        <div>
-            <a href="#" class="btn btn-default buttonleftnav">Button1</a>
-            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
-        </div>
+
+
+
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
-
-    <div class="col-lg-6  mainright ">
-
-        @using (Html.BeginForm())
-        {
-            <fieldset>
-                <legend></legend>
-                <ul>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Email)
-                            @Html.EditorFor(u => u.Email)
-                        </p>
-                        @Html.ValidationMessageFor(u => u.Email)
-                    </li>
-                    <li>
-                        <p>
-                            @Html.LabelFor(u => u.Passwort)
-                            @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
-                        </p>
-                        @Html.ValidationMessageFor(u => u.Passwort)
-                    </li>
-                    <li>
-                        <input type="submit" value="Login" class="btn btn-default submitbutton" />
-                        @Html.ActionLink("Register", "Register", "Account", htmlAttributes: new { @class = "btn btn-default" })
-                    </li>
-                </ul>
-            </fieldset>
-        }
+    <div class="col col-md-12 currency">
+        <h3>Coins</h3>
+        <h5 class="welcome">
+            Kaufen Sie, mit im Spiel erstanden Coins neue Karten
+        </h5>
+        <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
     </div>
 </div>
-            -
+<div class="col col-md-6">
+    <h3>Login</h3>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend></legend>
+            <ul>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Email)
+                        @Html.EditorFor(u => u.Email)
+                    </p>
+                    @Html.ValidationMessageFor(u => u.Email)
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Passwort)
+                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                    </p>
+                    @Html.ValidationMessageFor(u => u.Passwort)
+                </li>
+                <li>
+                    <input type="submit" value="Login" class="btn btn-default " />
+                </li>
+                <li><p class="toregistrieren"><a href="@Url.Action("Register", "Account")">Registrieren</a></p></li>
+            </ul>
+        </fieldset>
+    }
+    <br />
+</div>
+
+
+<div class="col-md-3">
+    <div class="col col-md-12">
+        <h3>Stöbern</h3>
+        <p>
+            Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+        </p>
+        <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
+    </div>
+
+    <div class="col col-md-12">
+        <h3>Stelle deine Decks zusammen</h3>
+        <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
+        <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
+
+    </div>
+
+    <div class="col col-md-12">
+        <h3>Registriere dich </h3>
+        <p>Hier kannst du dich registrieren, damit du dich einloggen kannst</p>
+        <a class="btn btn-default" href="@Url.Action("Register", "Account")">Registrieren</a>
+    </div>
+</div>
+
+            

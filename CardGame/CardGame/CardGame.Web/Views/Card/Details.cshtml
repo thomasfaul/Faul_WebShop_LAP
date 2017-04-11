@@ -5,121 +5,52 @@
 }
 
 
-@*<div id="fullcontainer" class="container fullcontainer">
-    <div class="col-lg-1 categorylinks">
-        <h3 id="lefthead">Contact</h3>
-        <div>
-            <a> @Html.ActionLink("Zurück", "Overview", new { @class = "btn btn-default" })</a>
-            <a href="#" class="btn btn-default buttonleftnav">Button2 </a>
-        </div>
-    </div>
-    <div class="col-lg-9 col-md-7 Detpic">
-        @{
-            if (Model.Pic != null)
-            {
-                var base64 = Convert.ToBase64String(Model.Pic);
-                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                <img class="DetailsPic" src="@imgSrc" />
-            }
-            else
-            {
-                @Html.DisplayText("no Picture found")
-            }
-        }
-    </div>
-    <div class="col-lg-9 mainright">
+<a style="float:left"class="btn btn-default" href="@Url.Action("Overview", "Card")">zurück</a>
+<div class="col-md-3 col detail">
 
-        <table class="Overviewtable">
-            <tr>
-                <th class="Overviewth detailth ">
-                    @Html.DisplayNameFor(c => c.ID)
-                </th>
-
-                <th class="Overviewth detailth">
-                    @Html.DisplayNameFor(c => c.Name)
-                </th>
-                <th class="Overviewth detailth">
-                    @Html.DisplayNameFor(c => c.Type)
-                </th>
-                <th class="Overviewth detailth">
-                    @Html.DisplayNameFor(c => c.Mana)
-                </th>
-                <th class="Overviewth detailth">
-                    @Html.DisplayNameFor(c => c.Attack)
-                </th>
-                <th class="Overviewth detailth">
-                    @Html.DisplayNameFor(c => c.Life)
-                </th>
-            </tr>
-            <tr>
-                <td class="Overviewtd detailtd">
-                    @Html.DisplayFor(c => c.ID)
-                </td>
-                <td class="Overviewtd detailtd detailtd">
-                    @Html.DisplayFor(c => c.Name)
-                </td>
-                <td class="Overviewtd detailtd">
-                    @Html.DisplayFor(c => c.Type)
-                </td>
-                <td class="Overviewtd detailtd">
-                    @Html.DisplayFor(c => c.Mana)
-                </td>
-                <td class="Overviewtd detailtd">
-                    @Html.DisplayFor(c => c.Attack)
-                </td>
-                <td class="Overviewtd detailtd">
-                    @Html.DisplayFor(c => c.Life)
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>*@
-<div class="card-deck-wrapper col-lg-10 col-md-10  " id="Card_Wrapper_Overview">
-    <div class="card-deck">
-
-        @*<div class="card detailrowpart part1">
-            <div class="card-title">Nummer</div>
-                <h3 class="price partprice">@Html.DisplayFor(m=>Model.ID)</h3>
-            
-        </div>*@
-
-
-        <div class="card detailrowpart part2" >
-            <div class="card-title">Kategorie</div>
-                <p class="price partprice">@Html.DisplayFor(m => Model.CardClass)</p>
-            
-        </div>
-
-
-        <div class="card detailrowpart part3" >
-            <div class="card-title">Type</div>
-                <p class="price partprice">@Html.DisplayFor(m => Model.Type)</p>
-            
-        </div>
-
-
-        <div class="card detailrowpart part4">
-            <div class="card-title">Leben</div>
-                
-                <p class="price partprice">@Html.DisplayFor(m => Model.Life)</p>
-
-            
-        </div>
-
-        <div class="card detailrowpart part5">
-            <div class="card-title">Attack</div>
-                
-                <p class="price partprice">@Html.DisplayFor( m => Model.Attack)</p>
-            
-        </div>
-
-        <div class="card detailrowpart part6">
-            <div class="card-title cardtitle">Mana</div>
-                <p class="price partprice">@Html.DisplayFor(m => Model.Mana)</p>
-            
-        </div>
+    <h3>@Html.DisplayFor(m => Model.Name)</h3>
+    @if (Model.Pic != null)
+    {
+        var base64 = Convert.ToBase64String(Model.Pic);
+        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+        <img class="detailpic col" src="@imgSrc" />
+    }
+    else
+    {
+        <div class="card-header ">@Html.DisplayText("no Picture found")</div>
+    }
+    <div>
+        
+        <div><p>Kategorie</p></div>
+        <p class="detailsRound">@Html.DisplayFor(m => Model.CardClass)</p>
 
     </div>
+
+    <div>
+        <div><p>Type</p></div>
+        <p class="detailsRound">@Html.DisplayFor(m => Model.Type)</p>
+
+    </div>
+
+
+    <div>
+        <div><p>Leben</p></div>
+
+        <p class="detailsRound">@Html.DisplayFor(m => Model.Life)</p>
+
+
+    </div>
+
+    <div>
+        <div><p>Attack</p></div>
+        <p class="detailsRound">@Html.DisplayFor(m => Model.Attack)</p>
+    </div>
+
+    <div>
+        <div><p>Mana</p></div>
+        <p class="detailsRound">@Html.DisplayFor(m => Model.Mana)</p>
+    </div>
+
 </div>
 
 
@@ -129,26 +60,6 @@
 
 
 
-
-
-
-@*<ul id="Card_Wrapper_Overview_Info">
-    <li class="col">
-        <h4 id="cph2">@Html.DisplayFor(c => pack.PackName)</h4>
-        @if (pack.IsMoney != true)
-        {
-            <img id="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
-        }
-        else
-        {
-            <img id="cardpic" src="~/Content/images/Cardpacks/coins.png" alt="Coin-Picture" />
-        }
-
-        <h6 id="discription">@Html.DisplayFor(c => pack.Flavor)</h6>
-        <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
-        <h6 id="details">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h6>
-    </li>
-</ul>*@
 
 
 

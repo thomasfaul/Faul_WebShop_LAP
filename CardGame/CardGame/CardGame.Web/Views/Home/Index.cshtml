@@ -9,14 +9,18 @@
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
-    <div class="col col-md-12">
+    <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
         <h5 class="welcome">
-           @ViewBag.MyCurrency COINS
+            @ViewBag.MyCurrency COINS
         </h5>
 
-        <img class="img-responsive "src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
+        <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+        @{ if (User.Identity.Name != "")
+            {
+                <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
+            }
+        }
     </div>
 </div>
 <div class="col col-md-6">
@@ -40,10 +44,10 @@
 
         }
         if (User.IsInRole("admin"))
-            {
-                <h5>You are an admin</h5>
-            }
+        {
+            <h5>You are an admin</h5>
         }
+    }
 </div>
 
 
@@ -54,19 +58,31 @@
         <p>
             Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
         </p>
-        <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
+        @{ if (User.Identity.Name != "")
+            {
+                <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a>
+            }
+        }
     </div>
 
     <div class="col col-md-12">
         <h3>Stelle deine Decks zusammen</h3>
         <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
-       <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
+        @{ if (User.Identity.Name != "")
 
+            {
+                <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
+            }
+        }
     </div>
 
     <div class="col col-md-12">
         <h3>Kaufe Kartenpacks </h3>
         <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
-        <a class="btn btn-default" href="@Url.Action("DisableCurrency", "CardPack")">Zum Shop</a>
+        @{ if (User.Identity.Name != "")
+            {
+                <a class="btn btn-default" href="@Url.Action("DisableCurrency", "CardPack")">Zum Shop</a>
+            }
+        }
     </div>
 </div>

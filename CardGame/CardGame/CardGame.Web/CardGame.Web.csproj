@@ -215,7 +215,6 @@
     <Content Include="Content\images\paper_background.png" />
     <Content Include="Content\images\th.png" />
     <Content Include="Content\toastr.css" />
-    <Content Include="Content\toastr.min.css" />
     <Content Include="Scripts\myscript.js" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
@@ -228,8 +227,6 @@
     </Content>
     <Content Include="Content\fonts\Xena.ttf" />
     <Content Include="Content\fonts\DistractorFree-Regular.otf" />
-    <Content Include="Content\toastr.scss" />
-    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
