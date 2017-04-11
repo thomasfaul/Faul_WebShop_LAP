@@ -2,6 +2,7 @@
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.Web.HtmlHelpers;
+using CardGame.Log;
 
 namespace CardGame.Web.Controllers
 {
@@ -95,19 +96,27 @@ namespace CardGame.Web.Controllers
 
         public void CreateSession()
         {
-            var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
-            if (dbUser != null)
+            try
             {
-                SessionHelper.Set<string>("Firstname", dbUser.firstname);
-                SessionHelper.Set<string>("Lastname", dbUser.lastname);
-                SessionHelper.Set<int>("Id", dbUser.idperson);
-                SessionHelper.Set<string>("Email", dbUser.password);
-                if (dbUser.currencybalance == null)
+                var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
+                if (dbUser != null)
                 {
-                    dbUser.currencybalance = 0;
-                    SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.currencybalance);
+                    SessionHelper.Set<string>("Firstname", dbUser.firstname);
+                    SessionHelper.Set<string>("Lastname", dbUser.lastname);
+                    SessionHelper.Set<int>("Id", dbUser.idperson);
+                    SessionHelper.Set<string>("Email", dbUser.password);
+                    if (dbUser.currencybalance != null)
+                    {
+                        SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.currencybalance);
+                    }
                 }
             }
+            catch (System.Exception)
+            {
+
+               Writer.LogInfo("Problem in der Session");
+            }
+
         }
     }
 }

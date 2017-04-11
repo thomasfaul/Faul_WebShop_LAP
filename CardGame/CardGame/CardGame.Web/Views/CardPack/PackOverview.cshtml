@@ -9,7 +9,7 @@
 
 
 
-
+@{ var currencybalance = SessionHelper.Get<int>("Currencybalance");} 
 <div class="col-md-3">
 
     <div class="col col-md-12">
@@ -19,7 +19,7 @@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
         <h5 class="welcome">
-            @ViewBag.Currency COINS
+            @currencybalance COINS
         </h5>
         <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>

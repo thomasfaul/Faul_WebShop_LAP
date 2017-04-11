@@ -18,7 +18,7 @@ namespace CardGame.Web.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
-            List<User> UserList = new List<User>();
+            List<Register> UserList = new List<Register>();
 
             var dbUserlist = UserManager.GetAllUser();
 

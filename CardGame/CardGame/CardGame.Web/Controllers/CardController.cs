@@ -43,6 +43,7 @@ namespace CardGame.Web.Controllers
             CardsListViewModel model = new CardsListViewModel()
             {
                 Cards = CardList.OrderBy(c => c.ID)
+                //ordne alle Karten nach dem ID
             .Where(p => cardclass == null || p.CardClass == cardclass)
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
