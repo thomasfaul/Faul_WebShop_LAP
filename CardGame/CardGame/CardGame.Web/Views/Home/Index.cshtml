@@ -11,9 +11,13 @@
     </div>
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @ViewBag.MyCurrency COINS
-        </h5>
+        @{if (Session["CurrencyBalance"] != null)
+            {
+                var currency = this.Session["CurrencyBalance"];
+                <h5 class="welcome">@currency</h5>
+                    <h5 class="Welcome">COINS</h5>
+            }
+        }
         
          
 

@@ -6,7 +6,7 @@
     ViewBag.Title = "Overview";
 }
 
- @{ var currencybalance = SessionHelper.Get<int>("Currencybalance");} 
+ @*@{ var currencybalance = SessionHelper.Get<int>("Currencybalance");}*@ 
     <div class="col-md-3">
 
         <div class="col col-md-12 adtopleft">
@@ -15,10 +15,13 @@
         </div>
         <div class="col col-md-12 currency">
             <h3>Ihr Guthaben</h3>
-            <h5 class="welcome">
-                 COINS
-                 @currencybalance
-            </h5>
+            @{if (Session["CurrencyBalance"] != null)
+                {
+                    var currency = this.Session["CurrencyBalance"];
+                    <h5 class="welcome">@currency</h5>
+                    <h5 class="Welcome">COINS</h5>
+                }
+            }
              
             <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
             <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>

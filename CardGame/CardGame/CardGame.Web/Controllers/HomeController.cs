@@ -101,6 +101,8 @@ namespace CardGame.Web.Controllers
                 var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
                 if (dbUser != null)
                 {
+                    Session.Add("Firstname", dbUser.firstname);
+                    Session.Add("Currencybalance", dbUser.currencybalance);
                     SessionHelper.Set<string>("Firstname", dbUser.firstname);
                     SessionHelper.Set<string>("Lastname", dbUser.lastname);
                     SessionHelper.Set<int>("Id", dbUser.idperson);
@@ -115,6 +117,7 @@ namespace CardGame.Web.Controllers
             {
 
                Writer.LogInfo("Problem in der Session");
+               return;
             }
 
         }

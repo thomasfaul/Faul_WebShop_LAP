@@ -10,9 +10,13 @@
     </div>
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @ViewBag.MyCurrency COINS
-        </h5>
+        @{if (Session["CurrencyBalance"] != null)
+            {
+                var currency = this.Session["CurrencyBalance"];
+                <h5 class="welcome">@currency</h5>
+                    <h5 class="Welcome">COINS</h5>
+            }
+        }
 
         <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         @if (User.IsInRole("player") || User.IsInRole("player"))
@@ -24,7 +28,12 @@
 <div class="col col-md-9">
     <h3>Über unseren Shop</h3>
     <p>
-        Dear @ViewBag.Firstname,
+        Dear @{if (Session["Firstname"] != null)
+            {
+                var firstname = this.Session["Firstname"]; @firstname
+            }
+        }
+        
         <br />
         CardShop is an online virtual card service. This service is FREE and information will be kept confidential and not used for any other purposes (see privacy statement).
 

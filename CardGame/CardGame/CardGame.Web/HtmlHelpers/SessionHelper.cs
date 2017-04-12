@@ -7,7 +7,7 @@ using System.Web;
 namespace CardGame.Web.HtmlHelpers
 {
 
-    //[DebuggerNonUserCodeAttribute()]
+    [DebuggerNonUserCodeAttribute()]
     public static class SessionHelper
     {
         public static T Get<T>(string index)

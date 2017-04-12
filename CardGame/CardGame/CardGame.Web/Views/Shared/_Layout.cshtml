@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
 
 
 <body>
-    @{ var firstname = SessionHelper.Get<string>("Firstname");}
     <!-- PARTIAL VIEW -->
     <div class="container maincontainer">
         <div class="row">
@@ -43,30 +41,70 @@
                         @if (User.IsInRole("player"))
                         {
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action( "About", "Home")">Über uns</a></li>
+                            <li><a href="@Url.Action("About", "Home")">Über uns</a></li>
                             <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
-                                <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
-                                <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                                <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
-                                <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
-                                <li><a href="@Url.Action( "Index", "Home")">@firstname 's Shop</a></li>
-                                <li> @ViewBag.currency </li>
-                        }
-                        else if (User.IsInRole("admin"))
-                        {
-                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
+                            <li><a href="@Url.Action("Statistics", "Home")">Stat´s</a></li>
                             <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                            <li><a href="@Url.Action( "Index", "User")">@firstname 's ADMINSSITE</a></li>
                             <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
-                            <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
+                            <li><a href="@Url.Action("Logout", "Account")">Log Out</a></li>
+                            <li>
+                                <a href="@Url.Action("Index", "Home")">
+                                    @{if (Session["Firstname"] != null)
+                                        {
+                                            var firstname = (this.Session["Firstname"]) + "´s Shop"; @firstname
+                                        }
+                                    }
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
+                                    <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+
+                                    @{if (Session["CurrencyBalance"] != null)
+                                        {
+                                            var currency = this.Session["CurrencyBalance"];
+                                            @currency
+                                        }
+                                    }
+                                </a>
+                            </li>
+                                        }
+                                        else if (User.IsInRole("admin"))
+                                        {
+                                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                            <li><a href="@Url.Action("Statistics", "Home")">Stat´s</a></li>
+                                            <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
+                                            <li>
+                                                <a href="@Url.Action("Index", "User")">
+                                                    @{if (Session["Firstname"] != null)
+                                                        {
+                                                            var firstname = (this.Session["Firstname"]) + "`Verwaltung"; @firstname
+                                                        }
+                                                    }
+                                                </a>
+                                            </li>
 
 
-                        }
-                        else
-                        {
-                            <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
-                        }
+                                            <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
+                                            <li><a href="@Url.Action("Logout", "Account")">Log Out</a></li>
+                                            <li>
+                                                <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
+                                                    <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+                                                </a>
+                                                @{if (Session["CurrencyBalance"] != null)
+                                                    {
+                                                        var currency = this.Session["CurrencyBalance"];
+                                                        @currency
+                                                    }
+                                                }
+                                            </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
+                                                        <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
+                                                        <li><a href="@Url.Action("Register", "Home")">Registrieren</a></li>
+                                                    }
                     </ul>
 
 

@@ -28,7 +28,7 @@
         </h5>
 
         <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        @{if (User.Identity.Name != "")
+            @{if (User.Identity.Name != "")
             {
                 @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })
             }
@@ -39,7 +39,7 @@
     <h3>Nutzungsbedingungen, AGB</h3>
     <p class="welcome">
         Liebe(r)
-        @{if (User.Identity.Name != "")
+            @{if (User.Identity.Name != "")
             {
                 @ViewBag.Firstname
             }

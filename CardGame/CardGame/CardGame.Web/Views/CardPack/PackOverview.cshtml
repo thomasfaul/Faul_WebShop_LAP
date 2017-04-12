@@ -7,20 +7,27 @@
     ViewBag.Title = "PackOverview";
 }
 
+ 
 
 
-@{ var currencybalance = SessionHelper.Get<int>("Currencybalance");} 
+
+
+
 <div class="col-md-3">
-
     <div class="col col-md-12 adtopleft">
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @currencybalance COINS
-        </h5>
+
+            @{if (Session["CurrencyBalance"] != null)
+                {
+                    var currency = this.Session["CurrencyBalance"];
+                    <h5 class="welcome">@currency</h5>
+                    <h5 class="Welcome">COINS</h5>
+                }
+            }
         <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
     </div>
@@ -35,9 +42,8 @@
             @foreach (var pack in Model.Packs)
             {
                 <div class="card col-md-2 packcard">
-                        
                         @if (pack.IsMoney != true)
-                        {
+            {
                             <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
                         }
                         else
@@ -66,16 +72,12 @@
             Lege dir Cardpacks zu und statte deine Kartendecks aus
         </p>
         <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
-        
     </div>
-
     <div class="col col-md-12">
         <h3>Kaufe Coins</h3>
         <p>und du kannst damit Cardpacks erstehen</p>
-
         <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
     </div>
-
     <div class="col col-md-12">
         <h3 id="pagingOverview">weitere Seiten: </h3>
         <p class="pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
