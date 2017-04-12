@@ -159,6 +159,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
+    <Compile Include="Models\UI\FilterModels\CardsWithType.cs" />
     <Compile Include="Models\UI\Register.cs" />
     <Compile Include="Models\UI\Login.cs" />
     <Compile Include="Models\User.cs" />

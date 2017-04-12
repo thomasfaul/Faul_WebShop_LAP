@@ -7,7 +7,7 @@
     ViewBag.Title = "PackOverview";
 }
 
- 
+
 
 
 
@@ -21,13 +21,13 @@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
 
-            @{if (Session["CurrencyBalance"] != null)
-                {
-                    var currency = this.Session["CurrencyBalance"];
-                    <h5 class="welcome">@currency</h5>
+        @{if (Session["CurrencyBalance"] != null)
+            {
+                var currency = this.Session["CurrencyBalance"];
+                <h5 class="welcome">@currency</h5>
                     <h5 class="Welcome">COINS</h5>
-                }
             }
+        }
         <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
     </div>
@@ -42,21 +42,23 @@
             @foreach (var pack in Model.Packs)
             {
                 <div class="card col-md-2 packcard">
-                        @if (pack.IsMoney != true)
-            {
-                            <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
-                        }
-                        else
-                        {
-                            <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
-                        }
+                    @if (pack.IsMoney != true)
+                    {
+                        <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
                          <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                         <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
+                        <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+                    }
+                    else
+                    {
+                        <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                        <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                         <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
-                        @*<h5 id="card-footer">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h5>*@
+                    }
+                    @*<h5 id="card-footer">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h5>*@
                 </div>
             }
-
         </div>
     </div>
 </div>

@@ -30,6 +30,9 @@ namespace CardGame.DAL.Logic
             CardTypes.Add(0, "n/a");
         }
 
+
+
+
         public static List<tblcard> GetAllCards()
         {
             List<tblcard> ReturnList = null;
@@ -69,6 +72,29 @@ namespace CardGame.DAL.Logic
             }
 
             return card;
+        }
+
+        
+        public static void GetCardByType(int type)
+        {
+            
+            using (var db = new ClonestoneFSEntities())
+            {
+
+                var ReturnList = db.tblcard.Join(db.tbltype, t => t.idcard, c => c.idtype, (c, types)
+                                         => new
+                                         {
+                                             Cardname = c.cardname,
+                                             Mana = c.mana,
+                                             Life = c.life,
+                                             Attack = c.attack,
+                                             Flavor = c.flavor,
+                                             Pic = c.pic,
+                                             Types = types,
+                                             FkTypes = c.fktype
+                                         }).Where(t => t.FkTypes == type);                     
+                //return ReturnList;                          
+            }
         }
     }
 }
