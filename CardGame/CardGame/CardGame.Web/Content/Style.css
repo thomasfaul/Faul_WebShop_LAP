@@ -186,28 +186,37 @@ font-family:Xena;
 .col-md-9 {
 	padding: 2em;
 }
+.adtopleft {
+    min-height:32.5em;
+}
 
                                 /*BUTTONS*/
 /*----------------------------------------------------------------------------*/
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
 .btn-default,
 .btn-defaultactive,
 .btn-default:visited {
-	padding:0.5em;
-	width: 13em;
-	height:2em;
-	margin-top:1.5em;
-	font-family:Xena;
 	text-decoration:none;
 	background-color:rgba(189, 102, 49, 0.80);
-	color:papayawhip;
+	color:papayawhip
 }
-.btn-primary,
-.btn-primary:active,
-.btn-primary:visited{
-	 color:papayawhip;
-	 background-color:rgba(189, 102, 49, 0.80);
-	 text-decoration:none;
+    .btn-default,
+    .btn-defaultactive,
+    .btn-default:visited {
+        padding: 0.5em;
+        width: 13em;
+        height: 2em;
+        margin-top: 1.5em;
+        font-family: Xena;
+    }
+a.btn-default:first-child {
+    visibility:hidden;
 }
+
+						   /*FORMS*/
+/*----------------------------------------------------------------------------*/
  input {
 	width: 60%;
 	float: right;
@@ -215,30 +224,28 @@ font-family:Xena;
 	border-style: ridge;
 	padding-left: 1em;
 	border-width: 0 0 0.2em;
+    background-color:papayawhip;
 }
-a.btn-default:first-child {
-    visibility:hidden;
-}
-
-						   /*FORMS*/
-/*----------------------------------------------------------------------------*/
 input:focus {
 	 border: 2px solid papayawhip;
-	 background-color:#555 ; 	 
+	 background-color:rgba(189, 102, 49, 0.80) ; 
+     color:darkorange;	 
 }
-input:valid:
+input:valid {
+     border: 2px solid darkorange;
+	 background-color:rgba(189, 102, 49, 0.80) ; 
+     color:papayawhip;
+}
 .toregistrieren {
   padding-top:1.8em;
-  float:right;
   margin-right:15em;
 }
 .regButtonreg {
 	margin-left:15em;
-	float:right;
-	border: papayawhip;
+	border-color: papayawhip;
 }
 .readAGB {
-	text-align:right;
+    /*text-align:right;*/
 }
 .field-validation-error {
 	color:darkorange;

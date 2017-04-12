@@ -13,6 +13,7 @@
 
 
 <body>
+    @{ var firstname = SessionHelper.Get<string>("Firstname");}
     <!-- PARTIAL VIEW -->
     <div class="container maincontainer">
         <div class="row">
@@ -48,7 +49,7 @@
                                 <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
                                 <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
                                 <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
-                                <li><a href="@Url.Action( "Index", "Home")">@ViewBag.Firstname's Shop</a></li>
+                                <li><a href="@Url.Action( "Index", "Home")">@firstname 's Shop</a></li>
                                 <li> @ViewBag.currency </li>
                         }
                         else if (User.IsInRole("admin"))
@@ -56,7 +57,7 @@
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
                             <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                            <li><a href="@Url.Action( "Index", "User")">@ViewBag.Firstname`s ADMINSSITE</a></li>
+                            <li><a href="@Url.Action( "Index", "User")">@firstname 's ADMINSSITE</a></li>
                             <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
                             <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
 
