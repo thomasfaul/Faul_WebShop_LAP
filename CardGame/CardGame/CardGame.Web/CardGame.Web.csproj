@@ -185,13 +185,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\black_pattern_tile.jpg" />
+    <Content Include="Content\images\image_1096894.gif" />
     <Content Include="Content\images\Coins-PNG-Picture-180x180.png" />
     <Content Include="Content\images\Money.png" />
     <Content Include="Content\images\toastr_info.jpg" />
-    <Content Include="Content\images\background_1920.png" />
     <Content Include="Content\images\toastr_error.jpg" />
-    <Content Include="Content\images\Button.png" />
-    <Content Include="Content\images\Button_hp.png" />
     <Content Include="Content\images\Cardpacks\1.png" />
     <Content Include="Content\images\Cardpacks\2.png" />
     <Content Include="Content\images\Cardpacks\3.png" />
@@ -201,14 +199,9 @@
     <Content Include="Content\images\Cardpacks\7.png" />
     <Content Include="Content\images\Cardpacks\8.jpg" />
     <Content Include="Content\images\Cardpacks\9.jpg" />
-    <Content Include="Content\images\coins.png" />
     <Content Include="Content\images\toastr_warning.jpg" />
-    <Content Include="Content\images\classic-pack.png" />
-    <Content Include="Content\images\CS_Logo - Kopie.png" />
+    <Content Include="Content\images\Cardpacks\classic-pack.png" />
     <Content Include="Content\images\CS_Logo.png" />
-    <Content Include="Content\images\foo.png" />
-    <Content Include="Content\images\foo2.png" />
-    <Content Include="Content\images\footer3.png" />
     <Content Include="Content\images\FrostShock.jpg" />
     <Content Include="Content\images\Head.png" />
     <Content Include="Content\images\toastr_success.jpg" />
@@ -216,6 +209,9 @@
     <Content Include="Content\images\paper_background.png" />
     <Content Include="Content\images\th.png" />
     <Content Include="Content\toastr.css" />
+    <None Include="Scripts\jquery-1.11.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\myscript.js" />
     <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
@@ -228,9 +224,7 @@
     </Content>
     <Content Include="Content\fonts\Xena.ttf" />
     <Content Include="Content\fonts\DistractorFree-Regular.otf" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -275,7 +269,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardGame.DAL\CardGame.DAL.csproj">

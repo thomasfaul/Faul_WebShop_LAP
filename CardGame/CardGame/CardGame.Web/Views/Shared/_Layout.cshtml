@@ -13,13 +13,13 @@
 
 
 <body>
+
     @{ var firstname = SessionHelper.Get<string>("Firstname");}
     <!-- PARTIAL VIEW -->
     <div class="container maincontainer">
         <div class="row">
 
             @RenderBody()
-
         </div>
     </div>
     
@@ -45,12 +45,12 @@
                             <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a href="@Url.Action( "About", "Home")">Über uns</a></li>
                             <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
-                                <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
-                                <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                                <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
-                                <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
-                                <li><a href="@Url.Action( "Index", "Home")">@firstname 's Shop</a></li>
-                                <li> @ViewBag.currency </li>
+                            <li><a href="@Url.Action( "Statistics", "Home")">Stat´s</a></li>
+                            <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
+                            <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
+                            <li><a href="@Url.Action( "Logout", "Account")">Log Out</a></li>
+                            <li><a href="@Url.Action( "Index", "Home")">@firstname 's Shop</a></li>
+                            <li> @ViewBag.currency </li>
                         }
                         else if (User.IsInRole("admin"))
                         {
@@ -93,7 +93,8 @@
 
 
 
-    @*SCRIPTS & CO*@
+  
+@*-----------------------------------------------------Scripts ---------------------------------------  ------*@
 
 
     @Scripts.Render("~/bundles/jquery")

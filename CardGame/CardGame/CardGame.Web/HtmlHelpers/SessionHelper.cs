@@ -4,7 +4,7 @@ using System.Web;
 
 namespace CardGame.Web.HtmlHelpers
 {
-    [DebuggerNonUserCodeAttribute()]
+    //[DebuggerNonUserCodeAttribute()]
     public static class SessionHelper
     {
         #region SESSIONHELPER- Man hat Nachts ja nichts anderes zu tun
