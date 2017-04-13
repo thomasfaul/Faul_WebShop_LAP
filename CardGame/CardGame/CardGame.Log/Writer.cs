@@ -8,11 +8,14 @@ namespace CardGame.Log
     {
         static readonly string _baseDirectory = null;
 
+        #region WRITER
         static Writer()
         {
             _baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
         }
+        #endregion
 
+        #region LOG ERROR
         public static void LogError(Exception e)
         {
             Trace.WriteLine("ERROR");
@@ -20,6 +23,9 @@ namespace CardGame.Log
 
             WriteToFile(e);
         }
+        #endregion
+
+        #region LOG INFO
         public static void LogInfo(string message)
         {
             Trace.WriteLine("Info");
@@ -27,7 +33,9 @@ namespace CardGame.Log
 
             WriteToFile(message);
         }
+        #endregion
 
+        #region WRITE TO FILE
         private static void WriteToFile(string message)
         {
             try
@@ -46,7 +54,9 @@ namespace CardGame.Log
                 LogError(e);
             }
         }
+        #endregion
 
+        #region WRITE TO FILE II
         private static void WriteToFile(Exception e)
         {
             try
@@ -80,10 +90,13 @@ namespace CardGame.Log
             }
 
         }
+        #endregion
 
+        #region GET FILE NAME YYYYMMDD
         private static string GetFileNameYYYMMDD()
         {
             return System.DateTime.Now.ToString("yyyyMMdd") + "_LOG.xml";
         }
+        #endregion
     }
 }

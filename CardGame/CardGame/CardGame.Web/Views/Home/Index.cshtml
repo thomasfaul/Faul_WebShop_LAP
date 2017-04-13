@@ -4,19 +4,20 @@
     ViewBag.Title = "Home Page";
 }
 
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12 adtopleft">
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
+
+ @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
         <h5 class="welcome">
             @ViewBag.MyCurrency COINS
         </h5>
-        
-         
-
         <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         @{ if (User.Identity.Name != "")
             {
@@ -24,7 +25,7 @@
            }
         }
     </div>
-
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 </div>
 <div class="col col-md-6">
     @{ if (User.Identity.Name == "")
@@ -52,9 +53,7 @@
         }
     }
 </div>
-
-
-
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12">
         <h3>Stöbern</h3>
@@ -67,7 +66,7 @@
             }
         }
     </div>
-
+@*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
     <div class="col col-md-12">
         <h3>Stelle deine Decks zusammen</h3>
         <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
@@ -78,7 +77,7 @@
             }
         }
     </div>
-
+@*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
     <div class="col col-md-12">
         <h3>Kaufe Kartenpacks </h3>
         <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>

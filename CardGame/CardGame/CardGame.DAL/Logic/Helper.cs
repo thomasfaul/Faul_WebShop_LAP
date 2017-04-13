@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using System.Security.Cryptography;
 
 namespace CardGame.DAL.Logic
@@ -10,6 +6,12 @@ namespace CardGame.DAL.Logic
     public class Helper
     {
 
+        #region GENERATE HASH
+        /// <summary>
+        /// Takes a string and generates the hashed string
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public static string GenerateHash(string s)
         {
             var bytes = System.Text.Encoding.UTF8.GetBytes(s);
@@ -17,9 +19,15 @@ namespace CardGame.DAL.Logic
             {
                 var hash = sha.ComputeHash(bytes);
                 return GetHexNotation(hash);
-            }        
+            }
         }
+        #endregion
 
+        #region GENERATE SALT
+        /// <summary>
+        /// Generate a Salt, gives back a string salt
+        /// </summary>
+        /// <returns></returns>
         public static string GenerateSalt()
         {
             var salt = new byte[64];
@@ -30,7 +38,14 @@ namespace CardGame.DAL.Logic
             return GetHexNotation(salt);
             // Umwandlung
         }
+        #endregion
 
+        #region GET HEX NOTATION
+        /// <summary>
+        /// Takes the salt and returns a String
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         private static string GetHexNotation(byte[] bytes)
         {
             var hashStringBuilder = new StringBuilder(128);
@@ -42,6 +57,6 @@ namespace CardGame.DAL.Logic
 
             return hashStringBuilder.ToString();
         }
-
+        #endregion
     }
 }

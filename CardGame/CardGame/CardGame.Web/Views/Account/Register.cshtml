@@ -3,12 +3,13 @@
     ViewBag.Title = "Register";
 }
 
-
+@*-------------------------------------------------------LEFTBAR AD----------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12 adtopleft">
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
+@*----------------------------------------------------LEFTBAR CURRENCY---------------------------------------------*@
     <div class="col col-md-12 currency">
         <h3>Coins</h3>
         <h5 class="welcome">
@@ -17,9 +18,9 @@
         <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
     </div>
 </div>
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 <div class="col col-md-6">
     <h3>Registrierung</h3>
-
     @using (Html.BeginForm())
     {
         <fieldset>
@@ -39,7 +40,6 @@
                         @Html.LabelFor(u => u.Lastname)
                         @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
                     </p>
-
                     @Html.ValidationMessageFor(model => model.Lastname)
                 </li>
                 <li>
@@ -48,7 +48,6 @@
                         @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
                     </p>
                     @Html.ValidationMessageFor(model => model.Gamertag)
-
                 </li>
                 <li>
                     <p>
@@ -56,7 +55,6 @@
                         @Html.EditorFor(u => u.Email)
                     </p>
                     @Html.ValidationMessageFor(u => u.Email)
-
                 </li>
                 <li>
                     <p>
@@ -64,7 +62,6 @@
                         @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
                     </p>
                     @Html.ValidationMessageFor(u => u.Passwort)
-
                 </li>
                 <li>
                     <p>
@@ -72,15 +69,12 @@
                         @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
                     </p>
                     @*@Html.ValidationMessageFor(u => u.PasswordValidation)*@
-
                 </li>
                 <li>
                     <a class="readAGB " href="@Url.Action("Contact", "Home")">Ich habe die AGB´s gelesen und akzeptiert </a>
                 </li>
                 <li>
                     <div>@Html.CheckBoxFor(m => m.TermsAccepted)</div>
-
-
                     @Html.ValidationMessageFor(m => m.TermsAccepted)
                 </li>
                 <li><input type="submit" value="Registrieren" class="btn btn-default regButtonreg" /></li>
@@ -90,7 +84,7 @@
     }
     <br />
 </div>
-
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12">
         <h3>Stöbern</h3>
@@ -99,25 +93,20 @@
         </p>
         @{if (User.IsInRole("player") || User.IsInRole("admin"))
             {
-                <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a> 
-                }
+            <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Decks</a> 
             }
+         }
      </div>
-
+@*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
     <div class="col col-md-12">
         <h3>Lese die AGB</h3>
         <p>Bitte lese dir die AGB´s gut durch bevor du dich registrierst</p>
-
-                <a class="btn btn-default" href="@Url.Action("Contact", "Home")">Zu den AGB´s</a>
-
+        <a class="btn btn-default" href="@Url.Action("Contact", "Home")">Zu den AGB´s</a>
     </div>
-
+@*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
     <div class="col col-md-12">
         <h3>Registriere dich </h3>
-
-                <p>Hier kannst du dich registrieren, damit du dich einloggen kannst</p>
-
-                <a class="btn btn-default" href="@Url.Action("Register", "Account")">Registrieren</a>
-
+        <p>Hier kannst du dich registrieren, damit du dich einloggen kannst</p>
+        <a class="btn btn-default" href="@Url.Action("Register", "Account")">Registrieren</a>
     </div>
 </div>

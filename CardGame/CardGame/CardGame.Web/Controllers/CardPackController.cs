@@ -1,11 +1,8 @@
 ﻿using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
 using CardGame.Web.Models;
-using CardGame.Web.HtmlHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CardGame.Web.Controllers
@@ -14,18 +11,29 @@ namespace CardGame.Web.Controllers
     {
         HomeController a = new HomeController();
         public int PPagesize = 20;
-        // GET: Cardpack
+
+        #region ACTIONRESULT PACKOVERVIEW
+        /// <summary>
+        /// checks if its a Currencyview
+        /// takes the Pagesize
+        /// and gets the Cardpacks
+        /// returns the model
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns>ActionResult</returns>
         public ActionResult PackOverview(int page = 1)
         {
             PacksListViewModel model = new PacksListViewModel();
-            
             model.PIsMoney = false;
+
+
+
             try
             {
                 model.PIsMoney = (bool)this.Session["isCurrency"];
             }
-            catch (Exception){}
-            
+            catch (Exception) { }
+
             List<CardPack> PackList = new List<CardPack>();
             var dbPacklist = PackManager.GetAllPacks();
 
@@ -35,12 +43,12 @@ namespace CardGame.Web.Controllers
                 pack.IdPack = p.idpack;
                 pack.PackName = p.packname;
                 pack.IsMoney = p.ismoney;
-                pack.PackPrice= (decimal)p.packprice;
+                pack.PackPrice = (decimal)p.packprice;
                 pack.Flavor = p.flavour;
                 pack.Pic = p.packimage;
                 PackList.Add(pack);
             }
-            
+
             model.Packs = PackList.OrderBy(c => c.IdPack)
                            .Where(p => p.IsMoney == model.PIsMoney)
                            .Skip((page - 1) * PPagesize)
@@ -52,17 +60,30 @@ namespace CardGame.Web.Controllers
                 ItemsPerPage = PPagesize,
                 TotalItems = PackList.Count()
             };
-           
+
             return View(model);
         }
+        #endregion
 
-        public ActionResult EnableCurrency() {
+        #region ACTIONRESULT ENABLE CURRENCY
+        /// <summary>
+        /// ENABLES THE ISCURRENCYPAGE (PAY IN REAL)
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult EnableCurrency()
+        {
             this.Session["isCurrency"] = true;
             TempData["Infomessage"] = "LOADING";
-            return RedirectToAction("PackOverview", "CardPack" );
-           
-        }
+            return RedirectToAction("PackOverview", "CardPack");
 
+        }
+        #endregion
+
+        #region ACTIONRESULT DISABLE CURRENCY
+        /// <summary>
+        /// ENABLES THE ISCURRENCYPAGE (PAY IN INGAME MONEY)
+        /// </summary>
+        /// <returns></returns>
         public ActionResult DisableCurrency()
         {
             this.Session["isCurrency"] = false;
@@ -70,7 +91,10 @@ namespace CardGame.Web.Controllers
             //return RedirectToAction("PackOverview", "CardPack");
             return RedirectToAction("PackOverview");
         }
+        #endregion
 
+        #region ACTIONRESULT DETAILS: TODO
+        
         //public ActionResult Details(int id)
         //{
         //    tblpack dbpack = null;
@@ -84,6 +108,7 @@ namespace CardGame.Web.Controllers
         //    pack.Pic = dbpack.packimage;
         //    pack.Flavor = dbpack.flavour;
         //    return View(pack);
-        //}
+        //} 
+        #endregion
     }
 }

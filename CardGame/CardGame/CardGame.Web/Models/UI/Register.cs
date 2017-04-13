@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CardGame.Web.Models.UI
@@ -39,28 +36,51 @@ namespace CardGame.Web.Models.UI
         [MustBeSelected]
         public bool TermsAccepted { get; set; }
 
-
-
-        //public string PasswordValidation { get; set; }????
-
-        // IClientValidatable for client side Validation
+        #region CLASS => ATTRIBUT [MUSTBEATTIBUTE]
+            /// <summary>
+            /// IClientValidatable for client side Validation
+            /// </summary>
         public class MustBeTrueAttribute : ValidationAttribute, IClientValidatable
         {
+            #region ISVALID
+            /// <summary>
+            /// Checks if it is valid
+            /// </summary>
+            /// <param name="value"></param>
+            /// <returns></returns>
             public override bool IsValid(object value)
             {
                 return value is bool && (bool)value;
             }
+            #endregion
 
-            // Implement IClientValidatable for client side Validation
+            #region GetClientValidationRules
+            /// <summary>
+            /// Implement IClientValidatable for client side Validation
+            /// </summary>
+            /// <param name="metadata"></param>
+            /// <param name="context"></param>
+            /// <returns></returns>
             public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
             {
                 return new ModelClientValidationRule[] { new ModelClientValidationRule { ValidationType = "checkbox", ErrorMessage = this.ErrorMessage } };
             }
-        }
+            #endregion
+        } 
+        #endregion
 
-        // IClientValidatable for client side Validation
+        #region CLASS => ATTRIBUT [MUSTBESELECTED]
+        /// <summary>
+        /// Hier wird das Attribut MUSTBESELECTED erstellt und überprüft
+        /// </summary>
         public class MustBeSelected : ValidationAttribute, IClientValidatable
         {
+            #region ISVALID 
+            /// <summary>
+            /// Checks if it is valid
+            /// </summary>
+            /// <param name="value"></param>
+            /// <returns></returns>
             public override bool IsValid(object value)
             {
                 if (value == null)
@@ -68,12 +88,21 @@ namespace CardGame.Web.Models.UI
                 else
                     return true;
             }
+            #endregion
 
-            // Implement IClientValidatable for client side Validation
+            #region CLIENTVALIDATION RULES
+            /// <summary>
+            ///  Implement IClientValidatable for client side Validation
+            /// </summary>
+            /// <param name="metadata"></param>
+            /// <param name="context"></param>
+            /// <returns></returns>
             public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
             {
                 return new ModelClientValidationRule[] { new ModelClientValidationRule { ValidationType = "dropdown", ErrorMessage = this.ErrorMessage } };
-            }
-        }
+            } 
+            #endregion
+        } 
+        #endregion
     }
 }

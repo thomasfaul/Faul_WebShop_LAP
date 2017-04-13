@@ -7,6 +7,16 @@ namespace CardGame.DAL.Logic
 {
     public class AuthManager
     {
+        #region Register
+        /// <summary>
+        /// 
+        /// Gets the registered person,
+        /// looks if the user already exists,
+        /// hashes the password with the helper method,
+        /// sends it to the db
+        /// </summary>
+        /// <param name="regUser"></param>
+        /// <returns>bool</returns>
         public static bool Register(tblperson regUser)
         {
             try
@@ -29,7 +39,8 @@ namespace CardGame.DAL.Logic
                     db.tblperson.Add(regUser);
                     db.SaveChanges();
                 }
-            }
+            } 
+            
             catch (Exception e)
             {
                 Writer.LogError(e); 
@@ -39,7 +50,18 @@ namespace CardGame.DAL.Logic
 
             return true;
         }
+        #endregion
 
+        #region Auth(enticate) User
+        /// <summary>
+        /// takes string email and password
+        /// hashes both,
+        /// compares them
+        /// returns bool if it worked
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns>bool</returns>
         public static bool AuthUser(string email, string password)
         {
             try
@@ -58,7 +80,7 @@ namespace CardGame.DAL.Logic
                     dbUserPassword = dbUser.password;
                     dbUserSalt = dbUser.salt;
 
-                   Writer.LogInfo("Entered Pass = " + password);
+                    Writer.LogInfo("Entered Pass = " + password);
 
                     password = Helper.GenerateHash(password + dbUserSalt);
 
@@ -77,9 +99,12 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
+
                 Writer.LogError(e);
-                return false; 
+                return false;
             }
         }
+
+        #endregion
     }
 }

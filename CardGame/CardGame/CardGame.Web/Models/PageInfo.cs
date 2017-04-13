@@ -10,7 +10,7 @@ namespace CardGame.Web.Models
         public int CurrentPage { get; set; }
         public int TotalPages
         { get
-            { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);}
+            {return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);}
             //Returniere den höchsten Wert von GesamtItems/Items per Seite
         }
     }

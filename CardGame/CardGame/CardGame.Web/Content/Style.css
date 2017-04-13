@@ -97,8 +97,8 @@ header {
   background-color: rgba(0, 0, 0, 0.1 );
 }
 .navbar {
-		
-  height:7em;
+  font-size:90%;	
+  height:6em;
   position: absolute;
   width: 100%;
   top: 0px;
@@ -114,7 +114,6 @@ header {
 .navbar-default .navbar-nav > li > a:hover {
  color: papayawhip; 
  background-color: transparent;
- 
 }
 .navbar-nav > li > a {
 font-family:Xena;
@@ -128,7 +127,7 @@ font-family:Xena;
   font-size:1.5em;
 }
 .navbar-brand img {
-  width: 12em;
+  width: 8em;
 }
 .shrink-nav {
 	top: 0em;
@@ -138,15 +137,25 @@ font-family:Xena;
 .shrink-nav .navbar-nav > li > a {
   color:darkorange;
 }
+.navcoin{
+    font-size:20%;
+
+}
+ .navcointoppic {
+        width:1em;  
+    }
+
+
+
+
+
 @media (max-width: 767px) {
   .navbar-nav > li > a {
 	line-height: 20px;
   }
   .navbar-brand {
-	padding: 7px 15px;
-  }
-  .navbar-brand img {
-	width: 144px;
+	padding: 7px 15px; 
+    visibility:hidden;
   }
 }
 

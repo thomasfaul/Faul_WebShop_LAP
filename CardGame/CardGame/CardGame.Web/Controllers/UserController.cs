@@ -5,25 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
-using CardGame.Log;
-using CardGame.Web.Models;
 using CardGame.Web.Models.UI;
-using CardGame.Web.HtmlHelpers;
 
 namespace CardGame.Web.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
+
+        #region ACTIONRESULT ADIM- USER 
+        /// <summary>
+        /// Returns the Usersdata for the Adminpage
+        /// </summary>
+        /// <returns></returns>
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             List<Register> UserList = new List<Register>();
-
             var dbUserlist = UserManager.GetAllUser();
-
-            //var asd = new tblrole();
-            
 
             foreach (var c in dbUserlist)
             {
@@ -35,19 +33,20 @@ namespace CardGame.Web.Controllers
                 user.Role = c.userrole;
                 user.Passwort = c.password;
                 user.Salt = c.salt;
-                if (c.currencybalance!=null)
+                if (c.currencybalance != null)
                 {
-                 user.Currencybalance = (int)c.currencybalance;
+                    user.Currencybalance = (int)c.currencybalance;
                 }
                 else
                 {
                     user.Currencybalance = 0;
                 }
                 UserList.Add(user);
-                
+
             }
             return View(UserList);
-        }
+        } 
+        #endregion
 
     }
 }

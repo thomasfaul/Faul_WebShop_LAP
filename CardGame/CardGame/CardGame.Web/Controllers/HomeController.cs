@@ -93,7 +93,10 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-
+        #region CREATE SESSION a funny Idea but...
+        /// <summary>
+        /// Creates my own Sessionvariables, but on the first load, they don´t work
+        /// </summary>
         public void CreateSession()
         {
             try
@@ -114,9 +117,9 @@ namespace CardGame.Web.Controllers
             catch (System.Exception)
             {
 
-               Writer.LogInfo("Problem in der Session");
+                Writer.LogInfo("Problem in der Session");
             }
-
-        }
+        } 
+        #endregion
     }
 }

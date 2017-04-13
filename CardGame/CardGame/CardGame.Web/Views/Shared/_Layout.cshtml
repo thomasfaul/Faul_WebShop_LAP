@@ -141,28 +141,6 @@
             toastr.success("", "@TempData["ConfirmMessage"]");
             </text>
             }
-
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <text>
-            toastr.error("", "@TempData["ErrorMessage"]");
-            </text>
-            }
-
-            @if (TempData["WarningMessage"] != null)
-            {
-                <text>
-            toastr.warning("", "@TempData["WarningMessage"]");
-            </text>
-            }
-
-            @if (TempData["Progress"] != null)
-            {
-                <text>
-            toastr.warning("", "@TempData["ProgressMessage"]");
-            </text>
-            }
-
         });
     </script>
 </body>

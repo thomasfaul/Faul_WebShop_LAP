@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CardGame.DAL.Model;
-using PagedList.Mvc;
+
 
 namespace CardGame.DAL.Logic
 {
@@ -12,10 +9,15 @@ namespace CardGame.DAL.Logic
     {
         public static readonly Dictionary<int, string> CardTypes;
 
+        #region Constructor CardManager 
+        /// <summary>
+        ///Design of the Object CardManager wird hier erstellt 
+        /// </summary>
         static CardManager()
         {
             CardTypes = new Dictionary<int, string>();
             List<tbltype> cardTypeList = null;
+
 
             using (var db = new ClonestoneFSEntities())
             {
@@ -30,9 +32,13 @@ namespace CardGame.DAL.Logic
             CardTypes.Add(0, "n/a");
         }
 
+        #endregion
 
-
-
+        #region GET ALL CARDS
+        /// <summary>
+        /// Returns a list of all cards
+        /// </summary>
+        /// <returns></returns>
         public static List<tblcard> GetAllCards()
         {
             List<tblcard> ReturnList = null;
@@ -41,10 +47,15 @@ namespace CardGame.DAL.Logic
                 ReturnList = db.tblcard.ToList();
             }
             return ReturnList;
-
         }
+        #endregion
 
-        //Theoretisch überflüssig
+        #region GET CARDTYPE BY ID
+        /// <summary>
+        /// TODO: GET Cardtype by id überprüfen, selbst gemacht in irgendeinem Anfall 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static string GetCardTypeById(int? id)
         {
             string TypeName = "n/a";
@@ -55,7 +66,14 @@ namespace CardGame.DAL.Logic
             }
             return TypeName;
         }
+        #endregion
 
+        #region GET CARD BY ID
+        /// <summary>
+        /// Takes the card Id and returns the associated card
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static tblcard GetCardById(int id)
         {
             tblcard card = null;
@@ -70,14 +88,19 @@ namespace CardGame.DAL.Logic
                 //        where c.idcard == id
                 //        select c).FirstOrDefault();
             }
-
             return card;
         }
+        #endregion
 
-        
+        #region GET CARD BY TYPE (not ready)
+        /// <summary>
+        /// TODO: get card by type
+        /// Should return a list of cards which have the same type
+        /// </summary>
+        /// <param name="type"></param>
         public static void GetCardByType(int type)
         {
-            
+
             using (var db = new ClonestoneFSEntities())
             {
 
@@ -92,9 +115,10 @@ namespace CardGame.DAL.Logic
                                              Pic = c.pic,
                                              Types = types,
                                              FkTypes = c.fktype
-                                         }).Where(t => t.FkTypes == type);                     
+                                         }).Where(t => t.FkTypes == type);
                 //return ReturnList;                          
             }
         }
+        #endregion
     }
 }

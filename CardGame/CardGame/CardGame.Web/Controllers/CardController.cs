@@ -11,10 +11,21 @@ namespace CardGame.Web.Controllers
     public class CardController : Controller
     {
         HomeController a = new HomeController();
+
         public int Pagesize = 100;
-        
-        // GET: Card
-        public ActionResult Overview(int? cardclass,int page=1)
+
+
+        #region ACTIONRESULT OVERVIEW
+            /// <summary>
+            /// takes the cardclass und die page
+            /// Orders the card by id and
+            /// gives all the cards back as a 
+            /// model-ActionResult
+            /// </summary>
+            /// <param name="cardclass"></param>
+            /// <param name="page"></param>
+            /// <returns></returns>
+        public ActionResult Overview(int? cardclass, int page = 1)
         {
             List<Card> CardList = new List<Card>();
             var dbCardlist = CardManager.GetAllCards();
@@ -29,7 +40,7 @@ namespace CardGame.Web.Controllers
                 }
                 else
                 {
-                   card.CardClass=c.fkclass;
+                    card.CardClass = c.fkclass;
                 }
                 card.Name = c.cardname;
                 card.Mana = c.mana;
@@ -47,15 +58,25 @@ namespace CardGame.Web.Controllers
             .Where(p => cardclass == null || p.CardClass == cardclass)
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
-                PagingInfo = new PageInfo {
+                PagingInfo = new PageInfo
+                {
                     CurrentPage = page,
                     ItemsPerPage = Pagesize,
                     TotalItems = CardList.Count()
-                }, CurrentClass = cardclass
+                },
+                CurrentClass = cardclass
             };
             return View(model);
         }
+        #endregion
 
+        #region ActionResult DETAILS
+        /// <summary>
+        /// Takes the id of a card and returns 
+        /// the card 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>View</returns>
         public ActionResult Details(int id)
         {
             tblcard dbcard = null;
@@ -70,14 +91,10 @@ namespace CardGame.Web.Controllers
             card.Life = dbcard.life;
             card.Pic = dbcard.pic;
             card.Flavor = dbcard.flavor;
-         
+
             card.Type = CardManager.CardTypes[dbcard.fktype];
             return View(card);
-        }
-        //public ActionResult GetAllCardsByCardType()
-        //{
-
-
-        //}
+        } 
+        #endregion
     }
 }

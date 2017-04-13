@@ -4,11 +4,15 @@ using System.Web.Mvc;
 using CardGame.Web.Models;
 
 namespace CardGame.Web.HtmlHelpers
-{
+ {
     public static class PagingHelpers
     {
+        #region PageLinks
         /// <summary>
-        /// The PageLinks extension method generates the HTML for a set of pagelinks usin the information prvided in a PagingInfo Object. The GFunc parameter accepts a delegate that it uses to gerate hte links to view other pages
+        /// The PageLinks extension method generates the HTML
+        /// for a set of pagelinks usin the information prvided
+        /// in a PagingInfo Object. The GFunc parameter accepts
+        /// a delegate that it uses to gerate hte links to view other pages
         /// </summary>
         /// <param name="html"></param>
         /// <param name="pagingInfo"></param>
@@ -31,9 +35,7 @@ namespace CardGame.Web.HtmlHelpers
                 result.Append(tag.ToString());
             }
             return MvcHtmlString.Create(result.ToString());
-
-            }
-
-
-        }
+        } 
+        #endregion
     }
+ }

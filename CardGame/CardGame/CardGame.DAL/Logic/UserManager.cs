@@ -47,13 +47,10 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-
                 Log.Writer.LogError(e);
-
             }
 
             return dbUser;
-
         }
         #endregion
 
@@ -78,10 +75,10 @@ namespace CardGame.DAL.Logic
                 }
                 role = dbUser.userrole;
             }
-            return role; 
-            #endregion
-        }
+            return role;
 
+        }
+        #endregion
     }
 }
 

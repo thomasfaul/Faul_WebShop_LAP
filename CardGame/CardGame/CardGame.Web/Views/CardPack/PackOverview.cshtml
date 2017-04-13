@@ -7,26 +7,19 @@
     ViewBag.Title = "PackOverview";
 }
 
-<<<<<<< HEAD
 
 
-
-
-=======
->>>>>>> parent of adebe49... a nervige nachmittagssession
-
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
 
 @{ var currencybalance = SessionHelper.Get<int>("Currencybalance");} 
 <div class="col-md-3">
-
     <div class="col col-md-12 adtopleft">
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
+@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-<<<<<<< HEAD
-
         @{if (Session["CurrencyBalance"] != null)
             {
                 var currency = this.Session["CurrencyBalance"];
@@ -34,32 +27,26 @@
                     <h5 class="Welcome">COINS</h5>
             }
         }
-=======
         <h5 class="welcome">
             @currencybalance COINS
         </h5>
->>>>>>> parent of adebe49... a nervige nachmittagssession
         <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
     </div>
 </div>
 
-
-
-
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 <div class="col-md-6 cardcol">
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck ">
             @foreach (var pack in Model.Packs)
             {
                 <div class="card col-md-2 packcard">
-<<<<<<< HEAD
                     @if (pack.IsMoney != true)
                     {
                         <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
-=======
-                        
-                        @if (pack.IsMoney != true)
+
+                        if (pack.IsMoney != true)
                         {
                             <img class="cardpic" src="~/Content/images/Cardpacks/1.png" alt="Card-Picture" />
                         }
@@ -67,7 +54,6 @@
                         {
                             <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
                         }
->>>>>>> parent of adebe49... a nervige nachmittagssession
                          <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                          <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
@@ -87,9 +73,7 @@
 </div>
 
 
-
-
-
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12 ">
         <h3>Coins einlösen</h3>
@@ -97,16 +81,14 @@
             Lege dir Cardpacks zu und statte deine Kartendecks aus
         </p>
         <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
-        
     </div>
-
+@*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
     <div class="col col-md-12">
         <h3>Kaufe Coins</h3>
         <p>und du kannst damit Cardpacks erstehen</p>
-
         <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
     </div>
-
+    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
     <div class="col col-md-12">
         <h3 id="pagingOverview">weitere Seiten: </h3>
         <p class="pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
