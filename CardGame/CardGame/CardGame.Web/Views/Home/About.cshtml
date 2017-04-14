@@ -3,31 +3,40 @@
 }
 
 @*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
-   <div class="col-md-3">
+<div class="col-md-3">
     <div class="col col-md-12 adtopleft">
         <h3>Stöbern</h3>
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
-@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @ViewBag.MyCurrency COINS
-        </h5>
+        @{if (Session["CurrencyBalance"] != null)
+            {
+                var currency = this.Session["CurrencyBalance"];
+                <h5 class="welcome">@currency</h5>
+                <h5 class="welcome">COINS</h5>
+            }
+        }
 
         <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         @if (User.IsInRole("player") || User.IsInRole("player"))
         {
-        @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })@*TODO Link zum Shop*@
-        } 
+            @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })@*TODO Link zum Shop*@
+        }
     </div>
+
+    @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 </div>
-@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
 <div class="col col-md-9">
     <h3>Über unseren Shop</h3>
     <p>
-        Dear @ViewBag.Firstname,
-        <br />
+        Dear @{if (Session["Firstname"] != null)
+            {
+                var firstname = this.Session["Firstname"]; @firstname
+            }
+        }, 
         CardShop is an online virtual card service. This service is FREE and information will be kept confidential and not used for any other purposes (see privacy statement).
 
         If you have received a virtual card and wish to see it click on collect.

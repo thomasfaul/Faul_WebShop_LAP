@@ -15,15 +15,18 @@
 @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
     <div class="col col-md-12 currency">
         <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @ViewBag.MyCurrency COINS
-        </h5>
-
+        @{if (Session["CurrencyBalance"] != null)
+            {
+                var currency = this.Session["CurrencyBalance"];
+                <h5 class="welcome">@currency</h5>
+                <h5 class="welcome">COINS</h5>
+            }
+        }
         <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
         @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })@*TODO Link zum Shop*@
     </div>
-</div>
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+    </div>
 <div class="col col-md-6">
     <h3>User angemeldet:</h3>
     <p>

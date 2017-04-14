@@ -99,10 +99,14 @@
      </div>
 @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
     <div class="col col-md-12">
-        <h3>Lese die AGB</h3>
-        <p>Bitte lese dir die AGB´s gut durch bevor du dich registrierst</p>
-        <a class="btn btn-default" href="@Url.Action("Contact", "Home")">Zu den AGB´s</a>
+        <h3>Stelle deine Decks zusammen</h3>
+        <p>Durchsuche deine Kartensammlung und stelle deine, persönlichen Decks zusammen</p>
+        @if (User.IsInRole("admin") || User.IsInRole("player"))
+        {
+            <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
+        }
     </div>
+
 @*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
     <div class="col col-md-12">
         <h3>Registriere dich </h3>
@@ -110,3 +114,4 @@
         <a class="btn btn-default" href="@Url.Action("Register", "Account")">Registrieren</a>
     </div>
 </div>
+

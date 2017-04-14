@@ -6,3 +6,131 @@
     <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
   </Exception>
 </Xcpt>
+<Info>
+  <Time>14.04.2017 09:35:37</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:35:37</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:36:45</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:36:46</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:36:46</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:37:24</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:37:25</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:37:25</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:40:12</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:40:12</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:40:12</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:41:46</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:41:47</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:41:47</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:42:27</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:42:27</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:42:27</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:43:21</Time>
+  <Info>GetNumUsers 9</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:43:21</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:43:21</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:49:36</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:49:37</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:49:37</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:51:25</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:51:26</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:51:26</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:58:27</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>14.04.2017 09:58:27</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>
+<Xcpt>
+  <Time>14.04.2017 10:01:26</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>14.04.2017 10:03:47</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
+  </Exception>
+</Xcpt>
