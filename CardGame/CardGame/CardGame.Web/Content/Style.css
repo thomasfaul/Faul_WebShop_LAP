@@ -92,7 +92,8 @@ header {
 .overlay {
   position: absolute;
   top: 6em;
-  width: 100%;
+  width: 90%;
+  margin-left:5%;
   height: 8em;
   background-color: rgba(0, 0, 0, 0.1 );
 }
@@ -130,9 +131,11 @@ font-family:Xena;
   width: 8em;
 }
 .shrink-nav {
+     margin-left:5%;
 	top: 0em;
-	background-image: url('images/Head.png') ;
+    background-color:rgba(0, 0, 0, 0.2 );
 	position: fixed;
+    width: 90%;
 }
 .shrink-nav .navbar-nav > li > a {
   color:darkorange;
