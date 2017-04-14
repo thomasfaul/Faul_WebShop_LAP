@@ -1,0 +1,70 @@
+﻿@model DeckBuilder
+
+@{
+    ViewBag.Title = "EditDeck";
+}
+<div class="container-fluid">
+    <h4>Deckbuilder @Html.ActionLink("Return to Deck Overview", "DeckOverview", "Profile")</h4>
+    <div class="row">
+        <div class="col-xs-6">
+            Card Collection
+            <div class="table-responsive" style="height: 350px; overflow:auto;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-6">Name</th>
+                            <th class="col-xs-2">Type</th>
+                            <th class="col-xs-1">Mana</th>
+                            <th class="col-xs-1">Att</th>
+                            <th class="col-xs-1">Life</th>
+                            <th class="col-xs-1"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var card in Model.caco)
+                        {
+                            <tr>
+                                <td class="col-xs-6">@Html.DisplayFor(c => card.CardName)</td>
+                                <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
+                                <td class="col-xs-1">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.caco.IndexOf(card)})</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            Deck @Html.ActionLink("Save Deck","SaveDeck",new { id = Model.DeckID})
+            <div class="table-responsive" style="height: 350px; overflow:auto;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-6">Name</th>
+                            <th class="col-xs-2">Type</th>
+                            <th class="col-xs-1">Mana</th>
+                            <th class="col-xs-1">Att</th>
+                            <th class="col-xs-1">Life</th>
+                            <th class="col-xs-1"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var card in Model.deck)
+                        {
+                            <tr>
+                                <td class="col-xs-6">@Html.DisplayFor(c => card.CardName)</td>
+                                <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
+                                <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
+                                <td class="col-xs-1">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deck.IndexOf(card) })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
