@@ -165,7 +165,8 @@ font-family:Xena;
 						  /*Container*/
 /*----------------------------------------------------------------------------*/
   .maincontainer{
-	background: url('images/maxresdefault.jpg')no-repeat  top ;
+	/*background: url('images/maxresdefault.jpg')no-repeat  top ;*/
+    background: url('images/Old_gods_back.jpg') no-repeat top;
 	background-position:center top left;
 	margin-top:-8em;
 	min-height:75em;
@@ -193,7 +194,10 @@ font-family:Xena;
 }
 .col-md-6 {
 	padding-top:3.5em;
-	padding-bottom:3.5em;   
+	padding-bottom:3.5em; 
+    border:none;
+    box-shadow:none;
+    background-color:none;  
 }
 .col-md-9 {
 	padding: 2em;
