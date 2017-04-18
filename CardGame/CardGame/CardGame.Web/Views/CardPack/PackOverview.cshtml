@@ -18,20 +18,10 @@
         <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
     </div>
     @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
-    <div class="col col-md-12 currency">
-        <h3>Ihr Guthaben</h3>
 
-        @{if (Session["CurrencyBalance"] != null)
-            {
-                var currency = this.Session["CurrencyBalance"];
-                <h5 class="welcome">@currency</h5>
-                <h5 class="Welcome">COINS</h5>
-            }
-        }
 
-        <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        <a class="btn btn-default" href="@Url.Action("PackOverview", "CardPack")">Guthaben aufladen</a>
-    </div>
+
+    @Html.Partial("_Money");
 
 
     @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@

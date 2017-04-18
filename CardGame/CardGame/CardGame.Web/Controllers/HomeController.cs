@@ -93,7 +93,6 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-
         #region CREATE SESSION
         /// <summary>
         /// Creates  Sessens, if you need the information of the current User

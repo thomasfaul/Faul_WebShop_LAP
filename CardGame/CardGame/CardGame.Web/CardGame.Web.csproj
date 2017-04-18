@@ -259,6 +259,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ErrorMessage.cshtml" />
     <Content Include="Views\CardPack\PackOverview.cshtml" />
+    <Content Include="Views\Shared\_Money.cshtml" />
+    <Content Include="Views\Shared\_Advertisment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

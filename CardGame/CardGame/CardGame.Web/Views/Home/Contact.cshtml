@@ -25,19 +25,7 @@
     </div>
     @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
 
-    <div class="col col-md-12 currency">
-        <h3>Ihr Guthaben</h3>
-        <h5 class="welcome">
-            @ViewBag.MyCurrency COINS
-        </h5>
-
-        <img class="image responsive coinpic " src="~/Content/images/Coins-PNG-Picture-180x180.png" />
-        @{if (User.Identity.Name != "")
-            {
-                @Html.ActionLink("Guthaben aufladen", "Login", "Account", new { @class = "btn btn-default" })
-            }
-        }
-    </div>
+     @Html.Partial("_Money");
 
     @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
   </div>
