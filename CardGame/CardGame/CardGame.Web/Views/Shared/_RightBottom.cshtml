@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "_RightBottom";
+}
+
+
+<div class="col col-md-12">
+    <h3>Kaufe Kartenpacks </h3>
+    <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
+    @{ if (User.Identity.Name != "")
+            {
+            <a class="btn btn-default" href="@Url.Action("DisableCurrency", "CardPack")">Zum Shop</a>
+        }
+    }
+</div>

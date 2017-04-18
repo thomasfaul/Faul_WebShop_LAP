@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using CardGame_v2.DAL.EDM;
-using CardGame_v2.Log;
+using Cardgame_v2.Log;
 
 namespace CardGame_v2.DAL.Logic
 {

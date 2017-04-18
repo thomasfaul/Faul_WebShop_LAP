@@ -10,22 +10,16 @@
 
 
 @*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
-
-@{ var currencybalance = SessionHelper.Get<int>("Currencybalance");} 
 <div class="col-md-3">
-    <div class="col col-md-12 adtopleft">
-        <h3>Stöbern</h3>
-        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
-    </div>
+    @Html.Partial("_Advertisment")
+
     @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
-
-
 
     @Html.Partial("_Money");
 
-
-    @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 </div>
+    @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
 <div class="col-md-6 cardcol">
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck ">

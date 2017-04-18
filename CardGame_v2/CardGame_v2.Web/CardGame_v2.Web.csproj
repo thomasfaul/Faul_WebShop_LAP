@@ -240,9 +240,9 @@
       <Project>{a1f97220-6430-4f77-aa1f-77866c3c734f}</Project>
       <Name>CardGame_v2.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CardGame_v2.Log\CardGame_v2.Log.csproj">
-      <Project>{676F333E-6276-4D73-A7D3-D2C49906F64B}</Project>
-      <Name>CardGame_v2.Log</Name>
+    <ProjectReference Include="..\Cardgame_v2.Log\Cardgame_v2.Log.csproj">
+      <Project>{0B7F3032-A163-42B9-8A5D-96990EEBF48E}</Project>
+      <Name>Cardgame_v2.Log</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

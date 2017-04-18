@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CardGame_v2.DAL.EDM;
 using System.Data.Entity;
-using CardGame_v2.Log;
+using Cardgame_v2.Log;
 
 namespace CardGame_v2.DAL.Logic
 {

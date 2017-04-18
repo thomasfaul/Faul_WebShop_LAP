@@ -117,12 +117,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardGame_v2.Log\CardGame_v2.Log.csproj">
-      <Project>{676F333E-6276-4D73-A7D3-D2C49906F64B}</Project>
-      <Name>CardGame_v2.Log</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="EDM\CardGameModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CardGameModel.edmx</DependentUpon>
@@ -133,6 +127,12 @@
       <DependentUpon>CardGameModel.edmx</DependentUpon>
       <LastGenOutput>CardGameModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cardgame_v2.Log\Cardgame_v2.Log.csproj">
+      <Project>{0B7F3032-A163-42B9-8A5D-96990EEBF48E}</Project>
+      <Name>Cardgame_v2.Log</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

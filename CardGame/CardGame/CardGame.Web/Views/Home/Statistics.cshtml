@@ -8,15 +8,13 @@
 @*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
 
 <div class="col-md-3">
-    <div class="col col-md-12 adtopleft">
-        <h3>Stöbern</h3>
-        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</h6>
-    </div>
-@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
-    
+    @Html.Partial("_Advertisment")
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
     @Html.Partial("_Money");
+</div>
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
-    </div>
+
 <div class="col col-md-6 cardcol">
     <h3>User angemeldet:</h3>
     <p>
@@ -46,12 +44,8 @@
 
 @*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
 <div class="col-md-3">
-    <div class="col col-md-12">
-        <h3>Stöbern</h3>
-        <p>
-            Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
-        </p>
-        <p>@Html.ActionLink("Zu den Karten", "Overview", "Card", new { @class = "btn btn-default" })</p>
-        <h3>Hier kommen noch die Diagramme rein</h3>
-    </div>
+
+    @Html.Partial("_RightTop")
+    
 </div>
+

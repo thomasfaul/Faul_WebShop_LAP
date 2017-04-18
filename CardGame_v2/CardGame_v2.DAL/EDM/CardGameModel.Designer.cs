@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\EDM\CardGameModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\EDM\CardGameModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
