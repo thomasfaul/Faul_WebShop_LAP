@@ -1,0 +1,321 @@
+<Xcpt>
+  <Time>18.04.2017 14:05:44</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.AuthManager.Register(tblUser regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 19.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:05:44</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable&lt;TResult&gt;.GetEnumerator()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame_v2.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 29.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:05:44</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:08:16</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.AuthManager.Register(tblUser regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 19.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:08:16</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable&lt;TResult&gt;.GetEnumerator()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame_v2.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 29.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:08:16</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:10:46</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.AuthManager.Register(tblUser regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 19.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:10:46</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable&lt;TResult&gt;.GetEnumerator()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame_v2.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 29.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:10:47</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Unable to load the specified metadata resource.</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.LoadResources(String assemblyName, String resourceName, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoaderCompositeResource.CreateResourceLoader(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataArtifactLoader.Create(String path, ExtensionCheck extensionCheck, String validExtension, ICollection`1 uriRegistry, MetadataArtifactAssemblyResolver resolver)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.SplitPaths(String paths)
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.&lt;&gt;c__DisplayClass2.&lt;Evaluate&gt;b__0()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   bei System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetArtifactLoader(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataCache.GetMetadataWorkspace(DbConnectionOptions effectiveConnectionOptions)
+   bei System.Data.Entity.Core.EntityClient.EntityConnection.GetMetadataWorkspace()
+   bei System.Data.Entity.Core.Objects.ObjectContext.RetrieveMetadataWorkspaceFromConnection()
+   bei System.Data.Entity.Core.Objects.ObjectContext..ctor(EntityConnection connection, Boolean isConnectionConstructor, ObjectQueryExecutionPlanFactory objectQueryExecutionPlanFactory, Translator translator, ColumnMapFactory columnMapFactory)
+   bei System.Data.Entity.Internal.InternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalConnection.CreateObjectContextFromConnectionModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:23:05</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>No connection string named 'CardGameEntities' could be found in the application config file.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.AuthManager.Register(tblUser regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 19.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:23:05</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>No connection string named 'CardGameEntities' could be found in the application config file.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable&lt;TResult&gt;.GetEnumerator()
+   bei System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   bei System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   bei CardGame_v2.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 29.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>18.04.2017 14:23:05</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>No connection string named 'CardGameEntities' could be found in the application config file.</Message>
+    <Stack>   bei System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   bei System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 70.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>18.04.2017 14:38:15</Time>
+  <Info>AddedUser</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 14:38:25</Time>
+  <Info>Entered Pass=blabla</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 14:38:25</Time>
+  <Info>Hashed Pass=61A3C5A36F292962038BDC9434564C503B7AD7E05FF971BF5A98AAD85B5EAC37BFF86246F9165B1E33B20ACDB4DDB67E503067C70ABE7C8EDF6623324B47D148</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 14:39:07</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>18.04.2017 14:39:07</Time>
+  <Info>numPacks: 1</Info>
+</Info>

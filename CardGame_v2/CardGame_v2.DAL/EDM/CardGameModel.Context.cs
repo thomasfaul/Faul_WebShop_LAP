@@ -13,10 +13,10 @@ namespace CardGame_v2.DAL.EDM
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CardGame_v2Entities : DbContext
+    public partial class CardGameEntities : DbContext
     {
-        public CardGame_v2Entities()
-            : base("name=CardGame_v2Entities")
+        public CardGameEntities()
+            : base("name=CardGameEntities")
         {
         }
     
@@ -30,9 +30,9 @@ namespace CardGame_v2.DAL.EDM
         public virtual DbSet<tblCardType> tblCardType { get; set; }
         public virtual DbSet<tblDeck> tblDeck { get; set; }
         public virtual DbSet<tblDeckCard> tblDeckCard { get; set; }
+        public virtual DbSet<tblUser> tblUser { get; set; }
         public virtual DbSet<tblUserCardCollection> tblUserCardCollection { get; set; }
         public virtual DbSet<tblUserRole> tblUserRole { get; set; }
         public virtual DbSet<tblVirtualPurchase> tblVirtualPurchase { get; set; }
-        public virtual DbSet<tblUser> tblUser { get; set; }
     }
 }

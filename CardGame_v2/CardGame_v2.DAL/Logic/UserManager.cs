@@ -24,7 +24,7 @@ namespace CardGame_v2.DAL.Logic
             List<tblCardType> cardTypeList = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     userRoleList = db.tblUserRole.ToList();
                     cardTypeList = db.tblCardType.ToList();
@@ -52,7 +52,7 @@ namespace CardGame_v2.DAL.Logic
         public static List<tblUser> GetAllUsers()
         {
             List<tblUser> userList = null;
-            using (var db = new CardGame_v2Entities())
+            using (var db = new CardGameEntities())
             {
                 userList = db.tblUser.ToList();
             }
@@ -65,7 +65,7 @@ namespace CardGame_v2.DAL.Logic
             tblUser dbUser = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
@@ -84,7 +84,7 @@ namespace CardGame_v2.DAL.Logic
         public static string GetRoleByEmail(string email)
         {
             string role = "";
-            using (var db = new CardGame_v2Entities())
+            using (var db = new CardGameEntities())
             {
                 tblUser dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                 if (dbUser == null)
@@ -99,7 +99,7 @@ namespace CardGame_v2.DAL.Logic
         public static int GetNumDistinctCardsOwnedByEmail(string email)
         {
             int numCards = -1;
-            using (var db = new CardGame_v2Entities())
+            using (var db = new CardGameEntities())
             {
                 tblUser dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                 if (dbUser == null)
@@ -114,7 +114,7 @@ namespace CardGame_v2.DAL.Logic
         public static int GetNumTotalCardsOwnedByEmail(string email)
         {
             int numCards = -1;
-            using (var db = new CardGame_v2Entities())
+            using (var db = new CardGameEntities())
             {
                 tblUser dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                 if (dbUser == null)
@@ -134,7 +134,7 @@ namespace CardGame_v2.DAL.Logic
         public static int GetNumDecksOwnedByEmail(string email)
         {
             int numDecks = -1;
-            using (var db = new CardGame_v2Entities())
+            using (var db = new CardGameEntities())
             {
                 tblUser dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                 if (dbUser == null)
@@ -157,7 +157,7 @@ namespace CardGame_v2.DAL.Logic
 
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     var dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
@@ -191,7 +191,7 @@ namespace CardGame_v2.DAL.Logic
             dbUser.currency = newBalance;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     db.Entry(dbUser).State = EntityState.Modified;
                     db.SaveChanges();
@@ -210,7 +210,7 @@ namespace CardGame_v2.DAL.Logic
             var dbUser = new tblUser();
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
@@ -257,7 +257,7 @@ namespace CardGame_v2.DAL.Logic
         {
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     var dbUser = db.tblUser.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)

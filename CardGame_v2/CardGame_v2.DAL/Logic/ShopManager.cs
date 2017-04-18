@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CardGame_v2.DAL.EDM;
-using CardGame_v2.Log;
 using System.Data.Entity;
+using CardGame_v2.Log;
 
 namespace CardGame_v2.DAL.Logic
 {
@@ -17,7 +15,7 @@ namespace CardGame_v2.DAL.Logic
 
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     allCardPacks = db.tblCardPack.ToList();
                 }
@@ -37,7 +35,7 @@ namespace CardGame_v2.DAL.Logic
 
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     dbCardPack = db.tblCardPack.Find(id);
                 }
@@ -56,7 +54,7 @@ namespace CardGame_v2.DAL.Logic
             int price = 0;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     var pack = db.tblCardPack.Find(id);
                     if(pack == null)
@@ -82,7 +80,7 @@ namespace CardGame_v2.DAL.Logic
             //Generate Cards
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     var cardPack = db.tblCardPack.Find(id);
 

@@ -51,47 +51,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EDM\EDM.Context.cs">
+    <Compile Include="EDM\CardGameModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EDM.Context.tt</DependentUpon>
+      <DependentUpon>CardGameModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EDM\EDM.cs">
+    <Compile Include="EDM\CardGameModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EDM\EDM.Designer.cs">
+    <Compile Include="EDM\CardGameModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EDM.edmx</DependentUpon>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblCard.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblCardPack.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblCardType.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblDeck.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblDeckCard.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblUser.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblUserCardCollection.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblUserRole.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EDM\tblVirtualPurchase.cs">
-      <DependentUpon>EDM.tt</DependentUpon>
+      <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Logic\DeckManager.cs" />
     <Compile Include="Logic\ShopManager.cs" />
@@ -101,21 +101,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardGame_v2.Log\CardGame_v2.Log.csproj">
-      <Project>{4dbaea3b-a288-4564-904e-d07fa7dfedf3}</Project>
-      <Name>CardGame_v2.Log</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config">
       <SubType>Designer</SubType>
     </None>
-    <EntityDeploy Include="EDM\EDM.edmx">
+    <EntityDeploy Include="EDM\CardGameModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EDM.Designer.cs</LastGenOutput>
+      <LastGenOutput>CardGameModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EDM\EDM.edmx.diagram">
-      <DependentUpon>EDM.edmx</DependentUpon>
+    <None Include="EDM\CardGameModel.edmx.diagram">
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -123,15 +117,21 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EDM\EDM.Context.tt">
+    <ProjectReference Include="..\CardGame_v2.Log\CardGame_v2.Log.csproj">
+      <Project>{676F333E-6276-4D73-A7D3-D2C49906F64B}</Project>
+      <Name>CardGame_v2.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EDM\CardGameModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EDM.edmx</DependentUpon>
-      <LastGenOutput>EDM.Context.cs</LastGenOutput>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EDM\EDM.tt">
+    <Content Include="EDM\CardGameModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EDM.edmx</DependentUpon>
-      <LastGenOutput>EDM.cs</LastGenOutput>
+      <DependentUpon>CardGameModel.edmx</DependentUpon>
+      <LastGenOutput>CardGameModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

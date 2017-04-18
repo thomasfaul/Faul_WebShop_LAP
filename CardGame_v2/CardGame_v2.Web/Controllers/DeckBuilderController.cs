@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using CardGame_v2.Web.Models;
 using CardGame_v2.DAL.EDM;
 using CardGame_v2.DAL.Logic;
-using CardGame_v2.Log;
+
 
 namespace CardGame_v2.Web.Controllers
 {

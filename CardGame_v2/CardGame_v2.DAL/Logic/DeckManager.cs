@@ -16,7 +16,7 @@ namespace CardGame_v2.DAL.Logic
             tblDeck deck = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     deck = db.tblDeck.Find(id);
                     if (deck == null)
@@ -39,7 +39,7 @@ namespace CardGame_v2.DAL.Logic
             int numCards = -1;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     deck = db.tblDeck.Find(id);
                     if (deck == null)
@@ -64,7 +64,7 @@ namespace CardGame_v2.DAL.Logic
 
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     var dbDeck = db.tblDeck.Where(d => d.idDeck == id).FirstOrDefault();
                     if (dbDeck == null)
@@ -97,7 +97,7 @@ namespace CardGame_v2.DAL.Logic
             tblDeck deck = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     deck = db.tblDeck.Find(id);
                     if (deck == null)
@@ -139,7 +139,7 @@ namespace CardGame_v2.DAL.Logic
             tblUser user = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     user = db.tblUser.Find(id);
                     tblDeck deck = new tblDeck();
@@ -163,7 +163,7 @@ namespace CardGame_v2.DAL.Logic
             tblUser user = null;
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     user = db.tblUser.Find(id);
                     bool addedAll = false;
@@ -172,7 +172,7 @@ namespace CardGame_v2.DAL.Logic
 
                     for (int i = 1; i <= 3; ++i)
                     {
-                        addedAll = AddDeckByUserId(id, user.email + i.ToString());
+                        addedAll = AddDeckByUserId(id, user.email.Substring(0,9) + i.ToString());
                     }
                     return addedAll;
                 }

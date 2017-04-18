@@ -14,7 +14,7 @@ namespace CardGame_v2.DAL.Logic
         {
             try
             {
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     if (db.tblUser.Any(n => n.email == regUser.email))
                     {
@@ -48,7 +48,7 @@ namespace CardGame_v2.DAL.Logic
                 string dbUserPassword = null;
                 string dbUserSalt = null;
 
-                using (var db = new CardGame_v2Entities())
+                using (var db = new CardGameEntities())
                 {
                     tblUser dbUser = db.tblUser.Where(u => u.email == login).FirstOrDefault();
                     if (dbUser == null)
