@@ -15,5 +15,7 @@ namespace CardGame.Web.Models.UI
         [DataType(DataType.Password)]
         [Display(Name = "Passwort")]
         public string Passwort { get; set; }
+
+        
     }
 }

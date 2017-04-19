@@ -23,6 +23,7 @@ namespace CardGame.DAL.Model
         public int iddeckcard { get; set; }
         public int fkdeck { get; set; }
         public int fkcard { get; set; }
+        public Nullable<int> numcards { get; set; }
     
         public virtual tblcard tblcard { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -5,6 +5,7 @@ using CardGame.DAL.Model;
 
 namespace CardGame.DAL.Logic
 {
+
     public class CardManager
     {
         public static readonly Dictionary<int, string> CardTypes;
@@ -30,8 +31,7 @@ namespace CardGame.DAL.Logic
             }
 
             CardTypes.Add(0, "n/a");
-        }
-
+        } 
         #endregion
 
         #region GET ALL CARDS

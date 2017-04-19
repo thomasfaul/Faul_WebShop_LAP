@@ -19,9 +19,12 @@ namespace CardGame.DAL.Model
         public Nullable<int> fkperson { get; set; }
         public Nullable<int> fkorder { get; set; }
         public Nullable<int> fkdeckcard { get; set; }
+        public Nullable<int> numcards { get; set; }
+        public int fkcard { get; set; }
     
         public virtual tbldeckcard tbldeckcard { get; set; }
         public virtual tblorder tblorder { get; set; }
         public virtual tblperson tblperson { get; set; }
+        public virtual tblcard tblcard { get; set; }
     }
 }

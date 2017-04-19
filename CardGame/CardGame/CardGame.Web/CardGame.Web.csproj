@@ -164,7 +164,9 @@
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\CardPackController.cs" />
     <Compile Include="Controllers\DeckController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -174,7 +176,10 @@
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardPack.cs" />
     <Compile Include="Models\CardsListViewModel.cs" />
+    <Compile Include="Models\DB\Deck.cs" />
     <Compile Include="Models\DB\Deckbuilder.cs" />
+    <Compile Include="Models\DB\Order.cs" />
+    <Compile Include="Models\DB\Shop.cs" />
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
@@ -270,6 +275,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Deck\" />
+    <Folder Include="Views\Error\" />
+    <Folder Include="Views\Shop\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />

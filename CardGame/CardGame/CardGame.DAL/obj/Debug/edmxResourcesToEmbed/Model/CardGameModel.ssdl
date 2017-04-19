@@ -30,6 +30,8 @@
     <Property Name="fkperson" Type="int" />
     <Property Name="fkorder" Type="int" />
     <Property Name="fkdeckcard" Type="int" />
+    <Property Name="numcards" Type="int" />
+    <Property Name="fkcard" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tbldeck">
     <Key>
@@ -46,6 +48,7 @@
     <Property Name="iddeckcard" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fkdeck" Type="int" Nullable="false" />
     <Property Name="fkcard" Type="int" Nullable="false" />
+    <Property Name="numcards" Type="int" />
   </EntityType>
   <EntityType Name="tblorder">
     <Key>
@@ -66,7 +69,8 @@
     <Property Name="cardquantity" Type="int" />
     <Property Name="packimage" Type="varbinary(max)" />
     <Property Name="flavour" Type="varchar" MaxLength="50" />
-    <Property Name="ismoney" Type="bit" Nullable="false" />
+    <Property Name="ismoney" Type="bit" />
+    <Property Name="numcards" Type="int" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>
@@ -90,6 +94,8 @@
     <Property Name="idtype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vEditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <Association Name="FK__tblcard__fkclass__2D27B809">
     <End Role="tblclass" Type="Self.tblclass" Multiplicity="0..1" />
     <End Role="tblcard" Type="Self.tblcard" Multiplicity="*" />
@@ -111,6 +117,18 @@
       </Principal>
       <Dependent Role="tblcard">
         <PropertyRef Name="fktype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblcollec__fkcar__14270015">
+    <End Role="tblcard" Type="Self.tblcard" Multiplicity="1" />
+    <End Role="tblcollection" Type="Self.tblcollection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcard">
+        <PropertyRef Name="idcard" />
+      </Principal>
+      <Dependent Role="tblcollection">
+        <PropertyRef Name="fkcard" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -210,6 +228,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fcheckifeditor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
+    <Parameter Name="idperson" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="pInsertcard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cardname" Type="varchar" Mode="In" />
+    <Parameter Name="mana" Type="tinyint" Mode="In" />
+    <Parameter Name="life" Type="smallint" Mode="In" />
+    <Parameter Name="attack" Type="smallint" Mode="In" />
+    <Parameter Name="fktype" Type="int" Mode="In" />
+    <Parameter Name="fkclass" Type="int" Mode="In" />
+    <Parameter Name="fkability" Type="int" Mode="In" />
+    <Parameter Name="flavor" Type="varchar" Mode="In" />
+    <Parameter Name="pic" Type="varbinary" Mode="In" />
+    <Parameter Name="idcard" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ClonestoneFSModelStoreContainer">
     <EntitySet Name="tblcard" EntityType="Self.tblcard" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblclass" EntityType="Self.tblclass" Schema="dbo" store:Type="Tables" />
@@ -227,6 +291,10 @@
     <AssociationSet Name="FK__tblcard__fktype__2C3393D0" Association="Self.FK__tblcard__fktype__2C3393D0">
       <End Role="tbltype" EntitySet="tbltype" />
       <End Role="tblcard" EntitySet="tblcard" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblcollec__fkcar__14270015" Association="Self.FK__tblcollec__fkcar__14270015">
+      <End Role="tblcard" EntitySet="tblcard" />
+      <End Role="tblcollection" EntitySet="tblcollection" />
     </AssociationSet>
     <AssociationSet Name="FK__tblcollec__fkdec__10566F31" Association="Self.FK__tblcollec__fkdec__10566F31">
       <End Role="tbldeckcard" EntitySet="tbldeckcard" />

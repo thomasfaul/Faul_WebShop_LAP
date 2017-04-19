@@ -94,18 +94,18 @@ namespace CardGame.DAL.Logic
                         throw new Exception("DeckNotFound");
                     }
 
-                    var existingDeckList = deck.tbldeckcard.ToList();
+                    var existingDeckList = deck.tblcard.ToList();
 
                     foreach (var dc in existingDeckList)
                     {
-                        deck.tbldeckcard.Remove(dc);
+                        deck.tblcard.Remove(dc);
                     }
                     db.SaveChanges();
 
                     foreach (var dc in deckCards)
                     {
                         var dbDeckCard = new tbldeckcard();
-                        //dbDeckCard.numcards = dc.numcards;
+                        dbDeckCard.numcards = dc.numcards;
                         dbDeckCard.tbldeck = db.tbldeck.Find(id);
                         dbDeckCard.tblcard = db.tblcard.Find(dc.tblcard.idcard);
                         db.tbldeckcard.Add(dbDeckCard);
@@ -144,14 +144,14 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("Deck does not exist");
                     }
-                    var dbDeckCollection = dbDeck.tbldeckcard.ToList();
+                    var dbDeckCollection = dbDeck.tblcard.ToList();
                     if (dbDeckCollection == null)
                     {
                         throw new Exception("Card Collection Not Found");
                     }
                     foreach (var dc in dbDeckCollection)
                     {
-                        //for (int i = 0; i < dc.numcards; i++)
+                        for (int i = 0; i < dc.numcards; i++)
                         deckCards.Add(dc.tblcard);
                     }
 
@@ -185,7 +185,7 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("DeckNotFound");
                     }
-                    numCards = deck.tbldeckcard.Count;
+                    numCards = deck.tblcard.Count;
 
                     return numCards;
                 }

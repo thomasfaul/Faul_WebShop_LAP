@@ -12,13 +12,13 @@ namespace CardGame.Web.Models
         public string Name { get; set; }
 
         [Range(0,int.MaxValue)]
-        public int Mana { get; set; }
+        public byte Mana { get; set; }
 
         [Range(0, int.MaxValue)]
-        public int Attack { get; set; }
+        public short Attack { get; set; }
 
         [Range(0, int.MaxValue)]
-        public int Life { get; set; }
+        public short Life { get; set; }
 
         [Range(0, int.MaxValue)]
         public string Type { get; set; }

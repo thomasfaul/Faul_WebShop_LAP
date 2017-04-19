@@ -16,6 +16,7 @@
     <NavigationProperty Name="tblclass" Relationship="Self.FK__tblcard__fkclass__2D27B809" FromRole="tblcard" ToRole="tblclass" />
     <NavigationProperty Name="tbltype" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tblcard" ToRole="tbltype" />
     <NavigationProperty Name="tbldeckcard" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="tblcard" ToRole="tbldeckcard" />
+    <NavigationProperty Name="tblcollection" Relationship="ClonestoneFSModel.FK__tblcollec__fkcar__14270015" FromRole="tblcard" ToRole="tblcollection" />
   </EntityType>
   <EntityType Name="tblclass">
     <Key>
@@ -37,6 +38,9 @@
     <NavigationProperty Name="tbldeckcard" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="tblcollection" ToRole="tbldeckcard" />
     <NavigationProperty Name="tblorder" Relationship="Self.FK__tblcollec__fkord__0F624AF8" FromRole="tblcollection" ToRole="tblorder" />
     <NavigationProperty Name="tblperson" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="tblcollection" ToRole="tblperson" />
+    <Property Name="numcards" Type="Int32" />
+    <Property Name="fkcard" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblcard" Relationship="ClonestoneFSModel.FK__tblcollec__fkcar__14270015" FromRole="tblcollection" ToRole="tblcard" />
   </EntityType>
   <EntityType Name="tbldeck">
     <Key>
@@ -58,6 +62,7 @@
     <NavigationProperty Name="tblcard" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="tbldeckcard" ToRole="tblcard" />
     <NavigationProperty Name="tblcollection" Relationship="Self.FK__tblcollec__fkdec__10566F31" FromRole="tbldeckcard" ToRole="tblcollection" />
     <NavigationProperty Name="tbldeck" Relationship="Self.FK__tbldeckca__fkdec__30F848ED" FromRole="tbldeckcard" ToRole="tbldeck" />
+    <Property Name="numcards" Type="Int32" />
   </EntityType>
   <EntityType Name="tblorder">
     <Key>
@@ -82,7 +87,8 @@
     <NavigationProperty Name="tblorder" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
     <Property Name="packimage" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="flavour" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ismoney" Type="Boolean" Nullable="false" />
+    <Property Name="ismoney" Type="Boolean" />
+    <Property Name="numcards" Type="Int32" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>
@@ -280,5 +286,74 @@
       <End Role="tblperson" EntitySet="tblperson" />
       <End Role="tblorder" EntitySet="tblorder" />
     </AssociationSet>
+    <FunctionImport Name="pInsertcard">
+      <Parameter Name="cardname" Mode="In" Type="String" />
+      <Parameter Name="mana" Mode="In" Type="Byte" />
+      <Parameter Name="life" Mode="In" Type="Int16" />
+      <Parameter Name="attack" Mode="In" Type="Int16" />
+      <Parameter Name="fktype" Mode="In" Type="Int32" />
+      <Parameter Name="fkclass" Mode="In" Type="Int32" />
+      <Parameter Name="fkability" Mode="In" Type="Int32" />
+      <Parameter Name="flavor" Mode="In" Type="String" />
+      <Parameter Name="pic" Mode="In" Type="Binary" />
+      <Parameter Name="idcard" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ClonestoneFSModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ClonestoneFSModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK__tblcollec__fkcar__14270015" Association="ClonestoneFSModel.FK__tblcollec__fkcar__14270015">
+      <End Role="tblcard" EntitySet="tblcard" />
+      <End Role="tblcollection" EntitySet="tblcollection" />
+    </AssociationSet>
   </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK__tblcollec__fkcar__14270015">
+    <End Type="ClonestoneFSModel.tblcard" Role="tblcard" Multiplicity="1" />
+    <End Type="ClonestoneFSModel.tblcollection" Role="tblcollection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblcard">
+        <PropertyRef Name="idcard" />
+      </Principal>
+      <Dependent Role="tblcollection">
+        <PropertyRef Name="fkcard" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

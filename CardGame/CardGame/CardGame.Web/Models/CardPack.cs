@@ -12,6 +12,8 @@ namespace CardGame.Web.Models
         [Required]
         public string PackName { get; set; }
 
+        public int NumCards { get; set; }
+
         
         public decimal PackPrice { get; set; }
 

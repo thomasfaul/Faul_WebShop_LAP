@@ -42,7 +42,7 @@ namespace CardGame.Web.Controllers
                 CardPack pack = new CardPack();
                 pack.IdPack = p.idpack;
                 pack.PackName = p.packname;
-                pack.IsMoney = p.ismoney;
+                pack.IsMoney = p.ismoney ?? false;
                 pack.PackPrice = (decimal)p.packprice;
                 pack.Flavor = p.flavour;
                 pack.Pic = p.packimage;

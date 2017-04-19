@@ -24,6 +24,7 @@
         <AssociationConnector Association="ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="ClonestoneFSModel.FK__tblorder__fkpack__0B91BA14" ManuallyRouted="false" />
         <AssociationConnector Association="ClonestoneFSModel.FK__tblorder__fkpers__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="ClonestoneFSModel.FK__tblcollec__fkcar__14270015" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
