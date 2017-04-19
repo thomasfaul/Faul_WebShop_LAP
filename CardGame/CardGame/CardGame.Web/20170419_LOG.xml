@@ -38,3 +38,239 @@
   <Time>19.04.2017 00:34:55</Time>
   <Info>HashPass = 988D5CC169530C12B7B826C60CB23C3267AE3D8A24ECD91FF3BD67E98588AF0049D1FA52A8E7D3060F3F10E7C794D842AAD76B06C179C60BED5E01F18C25651A</Info>
 </Info>
+<Info>
+  <Time>19.04.2017 13:28:02</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 13:28:02</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 13:31:14</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 13:31:14</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 13:31:14</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:34:30</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:34:30</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:34:30</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:15</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:15</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:15</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:50</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:50</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:50</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:53</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:38:53</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:43</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:43</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:43</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:45</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:45</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:39:45</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:57:47</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:57:47</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 14:57:47</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>19.04.2017 14:59:00</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\Chris72\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 44.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>19.04.2017 15:00:16</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:00:16</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:01:54</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:01:54</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:01:54</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:19:40</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:19:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:19:40</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:22:27</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:22:27</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:22:27</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:25:00</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:25:00</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:25:00</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:32:43</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:32:43</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:32:43</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:53:51</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:53:51</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:53:51</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:55:24</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:55:24</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:55:24</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:40</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:40</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:44</Time>
+  <Info>GetNumUsers 10</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:44</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 15:56:44</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 16:02:09</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>19.04.2017 16:02:09</Time>
+  <Info>HashPass = 7443A9B9556A3F6E18CB53151B75BD264953E3F4E3B189E9CE7BF316A9E85FD89AD9581E18B14D2038331485EEE563AB2ABE40B437ED4E5CFA8BA6DCC90D973A</Info>
+</Info>
