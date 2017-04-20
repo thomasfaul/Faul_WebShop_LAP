@@ -192,6 +192,10 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Banner\banner1.jpg" />
+    <Content Include="Content\images\Banner\banner2.jpg" />
+    <Content Include="Content\images\Banner\banner4.png" />
+    <Content Include="Content\images\Banner\banner3.jpg" />
     <Content Include="Content\images\black_pattern_tile.jpg" />
     <Content Include="Content\images\image_1096894.gif" />
     <Content Include="Content\images\Coins-PNG-Picture-180x180.png" />
@@ -285,6 +289,7 @@
     <Content Include="Views\Shop\ShowGeneratedCards.cshtml" />
     <Content Include="Views\Shared\_CardList.cshtml" />
     <Content Include="Views\Shared\_DBCardList.cshtml" />
+    <Content Include="Views\Shared\_BannerAd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

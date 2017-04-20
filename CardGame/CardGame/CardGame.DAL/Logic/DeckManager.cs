@@ -94,11 +94,11 @@ namespace CardGame.DAL.Logic
                         throw new Exception("DeckNotFound");
                     }
 
-                    var existingDeckList = deck.tblcard.ToList();
+                    var existingDeckList = deck.tbldeckcard.ToList();
 
                     foreach (var dc in existingDeckList)
                     {
-                        deck.tblcard.Remove(dc);
+                        deck.tbldeckcard.Remove(dc);
                     }
                     db.SaveChanges();
 
@@ -144,7 +144,7 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("Deck does not exist");
                     }
-                    var dbDeckCollection = dbDeck.tblcard.ToList();
+                    var dbDeckCollection = dbDeck.tbldeckcard.ToList();
                     if (dbDeckCollection == null)
                     {
                         throw new Exception("Card Collection Not Found");
@@ -185,7 +185,7 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("DeckNotFound");
                     }
-                    numCards = deck.tblcard.Count;
+                    numCards = deck.tbldeckcard.Count;
 
                     return numCards;
                 }

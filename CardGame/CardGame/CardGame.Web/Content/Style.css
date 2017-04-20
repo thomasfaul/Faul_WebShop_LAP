@@ -101,7 +101,7 @@ header {
   font-size:90%;	
   height:6em;
   position: absolute;
-  width: 100%;
+  width:100%;
   top: 0px;
   margin-bottom: 0px;
   border-radius: 0px;
@@ -132,31 +132,27 @@ font-family:Xena;
   width: 8em;
 }
 .shrink-nav {
-    margin-left:5%;
+    margin-left:20%;
 	top: 0em;
 	position: fixed;
-    width: 90%; 
+    width: 60%; 
      background-color:rgba(189, 102, 49, 0.90);
     border-color:rgba(255, 215, 0, 0.35);
 	border-style:ridge;
 	border-width:0 0 0.50em;
 	border-radius:1.0em; 
 	padding-right:1em;
-	margin-bottom:1em;
+	margin-bottom:8em;
 	text-align:center;
 	-webkit-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
 	-moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
 	box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
 }
 .shrink-nav .navbar-nav > li > a {
-  color:gold
-
-
-  
+  color:gold 
 }
 .navcoin{
 	font-size:20%;
-
 }
  .navcointoppic {
 		width:1em;  
@@ -204,14 +200,16 @@ font-family:Xena;
 	min-height: 24em;
 }  
 .currency {
-	  height:40em 
+    min-height:32em;
+	  height:auto;
+}
+.banner {
+    height:auto;
 }
 .col-md-6 {
 	padding-top:3.5em;
 	padding-bottom:3.5em; 
     border:none;
-
-
     text-shadow: 5px 5px 10px  darkviolet;
      
 }
@@ -447,7 +445,7 @@ input:valid {
  
 
 
- /*PACKCARDS*/
+                                 /*PACKCARDS*/
 /*----------------------------------------------------------------------------*/
 .packdeck {
 	/*overflow:hidden;*/
@@ -531,6 +529,20 @@ input:valid {
 		margin-left: -1em;
 	}
 }
-
-
-
+                                 /*Banner*/
+/*----------------------------------------------------------------------------*/
+.banner {
+    height:auto;
+    padding:0.5em;
+    height:8.5em;
+    margin:0em;
+    
+}
+.mySlides {
+    height:8.5em;
+    width:25em;
+    border-radius:0.4em;
+}
+.bannertext {
+    color:darkorange
+}

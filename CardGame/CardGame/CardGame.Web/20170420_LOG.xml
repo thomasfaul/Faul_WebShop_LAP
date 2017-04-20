@@ -214,3 +214,873 @@ The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Mod
    bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
   </Exception>
 </Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:55:48</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 11:08:08</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 12:58:45</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User gibt es noch nicht, bitte Registrieren</Message>
+    <Stack>   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 80.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 13:05:08</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 13:11:54</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 13:11:54</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 13:11:55</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 13:28:58</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:05:35</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:05:35</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:05:35</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:05:35</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 14:08:54</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 14:09:27</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 14:11:14</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:11:45</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:11:45</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:11:45</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:14:32</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:14:41</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:14:41</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:14:41</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:28:54</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:29:48</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:29:48</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:29:48</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:29:48</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 14:47:26</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:47:37</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:47:37</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:47:37</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:49:34</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:49:34</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:49:34</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:50:45</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:50:50</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:50:50</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:50:50</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:13</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:13</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:13</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:33</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:33</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:51:33</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:08</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:08</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:53</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:53</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:52:53</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:08</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:08</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:42</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:42</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:53:42</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 14:54:50</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 14:55:08</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:55:08</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:55:08</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:56:23</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:56:23</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:56:23</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:04</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:04</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:04</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:14</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:14</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:14</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:49</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:49</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 14:58:49</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:02:34</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:02:34</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:02:34</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:05:14</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:05:26</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:05:26</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:05:26</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:07:43</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:07:48</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:07:48</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:07:48</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:09:06</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:09:10</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:09:10</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:09:10</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:11:37</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:11:37</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:11:37</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:11:52</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:11:59</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:11:59</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:11:59</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:12:49</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:12:54</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:12:54</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:12:54</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:29:52</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:30:04</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:30:04</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:34:41</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 15:35:08</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 15:36:03</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 15:38:03</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:55:59</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:55:59</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 15:55:59</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 15:57:55</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 15:58:29</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 15:58:29</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:00:05</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:00:05</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:01:27</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:01:27</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:03:02</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:03:02</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 16:03:02</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 16:04:12</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:04:12</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:05:23</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:05:23</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:09:56</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:09:56</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:20</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:20</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:31</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:31</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:31</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:32</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:32</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:32</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:33</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:33</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:33</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:34</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:34</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:34</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:35</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:36</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:36</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:36</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:39</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:39</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:39</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:40</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:51</Time>
+  <Info>GetNumUsers 17</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:51</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:10:51</Time>
+  <Info>GetNumDecks 1</Info>
+</Info>
+<Xcpt>
+  <Time>20.04.2017 16:13:41</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 16:13:51</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:13:51</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:14:00</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:14:00</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:14:08</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 16:14:08</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>

@@ -21,64 +21,63 @@
             @RenderBody()
 
         </div>
-    </div>
 
-    <header>
-        <div class="overlay"></div>
-        <!-- NAVIGATION DEFAULT -->
-        <nav class="navbar navbar-default  navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
-                </div>
-
+        <header>
+            <div class="overlay"></div>
+            <!-- NAVIGATION DEFAULT -->
+            <nav class="navbar navbar-default  navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
+                    </div>
 
 
-                <!-- NAVIGATION Collapse -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-            @*-------------------------------------------------PLAYER---------------------------------------  ------*@
-                        @if (User.IsInRole("player"))
+
+                    <!-- NAVIGATION Collapse -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            @*-------------------------------------------------PLAYER---------------------------------------  ------*@
+                            @if (User.IsInRole("player"))
             {
-                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                            <li><a href="@Url.Action("About", "Home")">Über uns</a></li>
-                            <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
-                            <li><a href="@Url.Action("Statistics", "Home")">Stat´s</a></li>
-                            <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
-                            <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
-                            <li><a href="@Url.Action("Logout", "Account")">Log Out</a></li>
-                            <li>
-                                <a href="@Url.Action("Index", "Home")">
-                                    @{if (Session["Firstname"] != null)
-                                        {
-                                            var firstname = (this.Session["Firstname"]) + "´s Shop"; @firstname
+                                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                <li><a href="@Url.Action("About", "Home")">Über uns</a></li>
+                                <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
+                                <li><a href="@Url.Action("Statistics", "Home")">Stat´s</a></li>
+                                <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
+                                <li><a href="@Url.Action("DisableCurrency", "CardPack")">Get Coins</a></li>
+                                <li><a href="@Url.Action("Logout", "Account")">Log Out</a></li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Home")">
+                                        @{if (Session["Firstname"] != null)
+                                            {
+                                                var firstname = (this.Session["Firstname"]) + "´s Shop"; @firstname
+                                            }
                                         }
-                                    }
-                                </a>
-                            </li>
-                            <li>
-                                <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
-                                    <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
+                                        <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
 
-                                    @{if (Session["CurrencyBalance"] != null)
-                                        {
-                                            var currency = this.Session["CurrencyBalance"];
-                                            @currency
+                                        @{if (Session["CurrencyBalance"] != null)
+                                            {
+                                                var currency = this.Session["CurrencyBalance"];
+                                                @currency
+                                            }
                                         }
-                                    }
-                                </a>
-                            </li>
-                                        }
-           @*-------------------------------------------------ADMIN---------------------------------------  ------*@
-                        else if (User.IsInRole("admin"))
-                        {
-                                            <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                    </a>
+                                </li>
+                                            }
+                                            @*-------------------------------------------------ADMIN---------------------------------------  ------*@
+                            else if (User.IsInRole("admin"))
+                            {
+                                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                             <li><a href="@Url.Action("Statistics", "Home")">Stat´s</a></li>
                                             <li><a href="@Url.Action("Overview", "Card")">Karten</a></li>
                                             <li>
@@ -106,19 +105,19 @@
                                             </li>
                                                         }
 
-                   @*-------------------------------------------------VISITOR---------------------------------------  ------*@
-                        else
-                        {
-                                                        <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
+                                                        @*-------------------------------------------------VISITOR---------------------------------------  ------*@
+                            else
+                            {
+                                <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
                                                         <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
                                                         <li><a href="@Url.Action("Register", "Account")">Registrieren</a></li>
-                                                    }
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav><!-- /navigation -->
-    </header>
-
+                            }
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /navigation -->
+        </header>
+    </div>
 
 
 
@@ -131,8 +130,24 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
+    <script>
+        var myIndex = 0;
+        carousel();
 
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 6000);
+        }
+    </script>
     <script type="text/javascript">
+
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -173,9 +188,7 @@
             </text>
             }
         });
+     
     </script>
 </body>
-
-
-
 </html>
