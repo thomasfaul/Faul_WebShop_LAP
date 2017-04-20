@@ -180,6 +180,7 @@
     <Compile Include="Models\DB\Deckbuilder.cs" />
     <Compile Include="Models\DB\Order.cs" />
     <Compile Include="Models\DB\Shop.cs" />
+    <Compile Include="Models\DB\UserProfile.cs" />
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
@@ -271,12 +272,22 @@
     <Content Include="Views\Shared\_RightTop.cshtml" />
     <Content Include="Views\Shared\_RightMiddle.cshtml" />
     <Content Include="Views\Shared\_RightBottom.cshtml" />
+    <Content Include="Views\Deck\EditDeck.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Profile\CardCollection.cshtml" />
+    <Content Include="Views\Profile\DeckDetails.cshtml" />
+    <Content Include="Views\Profile\DeckOverview.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Shop\BuyCardPack.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\NotEnoughBalance.cshtml" />
+    <Content Include="Views\Shop\OrderOverview.cshtml" />
+    <Content Include="Views\Shop\ShowGeneratedCards.cshtml" />
+    <Content Include="Views\Shared\_CardList.cshtml" />
+    <Content Include="Views\Shared\_DBCardList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Deck\" />
-    <Folder Include="Views\Error\" />
-    <Folder Include="Views\Shop\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />

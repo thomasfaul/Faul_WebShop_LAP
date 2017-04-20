@@ -1,0 +1,12 @@
+﻿@using CardGame.Web.Models
+
+@model IEnumerable<Card>
+@{
+    ViewBag.Title = "ShowGeneratedCards";
+}
+
+<h2>ShowGeneratedCards</h2>
+
+@Html.Partial("_CardList", Model)
+
+@Html.ActionLink("Back to Shop", "Index")

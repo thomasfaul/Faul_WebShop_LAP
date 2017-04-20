@@ -1,0 +1,216 @@
+<Xcpt>
+  <Time>20.04.2017 10:35:42</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:35:51</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:36:46</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 26.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:36:56</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 26.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:37:45</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.Register(tblperson regUser) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 26.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:38:13</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:40:27</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>20.04.2017 10:42:41</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>Schema specified is not valid. Errors: 
+The relationship 'ClonestoneFSModel.FK__tbldeckca__fkdec__30F848ED' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+
+The relationship 'ClonestoneFSModel.FK__tbldeck__fkperso__1DE57479' was not loaded because the type 'ClonestoneFSModel.tbldeck' is not available.
+The following information may be useful in resolving the previous error:
+The required property 'tbldeckcard' does not exist on the type 'CardGame.DAL.Model.tbldeck'.
+
+</Message>
+    <Stack>   bei System.Data.Entity.Core.Metadata.Edm.ObjectItemCollection.LoadAssemblyFromCache(Assembly assembly, Boolean loadReferencedAssemblies, EdmItemCollection edmItemCollection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.ExplicitLoadFromAssembly(Assembly assembly, ObjectItemCollection collection, Action`1 logLoadMessage)
+   bei System.Data.Entity.Core.Metadata.Edm.MetadataOptimization.TryUpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   bei System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   bei System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   bei System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   bei System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   bei CardGame.DAL.Logic.AuthManager.AuthUser(String email, String password) in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\AuthManager.cs:Zeile 74.</Stack>
+  </Exception>
+</Xcpt>

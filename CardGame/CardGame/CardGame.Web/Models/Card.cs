@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace CardGame.Web.Models
 {
-    public class Card
+    public class Card :IComparable<Card>
     {
         [Required]
         [Display(Name = "KartenID")]
@@ -28,5 +29,17 @@ namespace CardGame.Web.Models
         public string Flavor { get; set; }
 
         public byte[] Pic { get; set; }
+
+
+
+        public int CompareTo(Card other)
+        {
+            if (this.ID == other.ID)
+                return 0;
+            else if (this.ID< other.ID)
+                return -1;
+            else //this.CardID > other.CardID
+                return 1;
+        }
     }
 }
