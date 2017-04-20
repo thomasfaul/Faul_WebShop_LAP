@@ -1,0 +1,16 @@
+<Xcpt>
+  <Time>20.04.2017 17:57:25</Time>
+  <Exception>
+    <Source>CardGame_v2.DAL</Source>
+    <Message>UserAlreadyExists</Message>
+    <Stack>   bei CardGame_v2.DAL.Logic.AuthManager.Register(tblUser regUser) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 21.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>20.04.2017 17:57:35</Time>
+  <Info>Entered Pass=tomtom</Info>
+</Info>
+<Info>
+  <Time>20.04.2017 17:57:35</Time>
+  <Info>Hashed Pass=210C7BD7101FF3B270A390322C580EB2B80B92310514DA65D607C2E12EDB50A97461A40A3F4B2CBF09DC9DD934A5A1518BF00BE449719FD1CB09457C8A17A30E</Info>
+</Info>

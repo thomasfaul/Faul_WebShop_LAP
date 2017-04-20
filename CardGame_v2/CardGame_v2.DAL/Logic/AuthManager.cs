@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CardGame_v2.DAL.EDM;
-using Cardgame_v2.Log;
+using CardGame_v2.Log;
 
 namespace CardGame_v2.DAL.Logic
 {

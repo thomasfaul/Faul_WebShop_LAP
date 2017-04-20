@@ -129,9 +129,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cardgame_v2.Log\Cardgame_v2.Log.csproj">
-      <Project>{0B7F3032-A163-42B9-8A5D-96990EEBF48E}</Project>
-      <Name>Cardgame_v2.Log</Name>
+    <ProjectReference Include="..\CardGame_v2.Log\CardGame_v2.Log.csproj">
+      <Project>{66524921-125e-41d1-8a01-50eb64d565d4}</Project>
+      <Name>CardGame_v2.Log</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

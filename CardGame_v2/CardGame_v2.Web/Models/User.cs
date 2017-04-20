@@ -12,7 +12,7 @@ namespace CardGame_v2.Web.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public decimal Currency { get; set; }
-        public string Role { get; set; }
+        //public string Role { get; set; }
         public int CurrencyBalance { get; set; }
     }
 }
