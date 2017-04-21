@@ -5,26 +5,114 @@
     ViewBag.Title = "BuyCardPack";
 }
 
-<h2>@Model.PackName</h2>
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
 
-@Html.DisplayNameFor(cp => cp.NumCards):
-@Html.DisplayFor(cp => cp.NumCards)
-<br />
-@Html.DisplayNameFor(cp => cp.PackPrice):
-@Html.DisplayFor(cp => cp.PackPrice)
-<br />
-Price per Card:
-@((double)Model.PackPrice / Model.NumCards)
-<br />
-<br />
-@using (Html.BeginForm())
-{
+    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+    @Html.Partial("_Money");
+
+</div>
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
+<div class="col-md-6 cardcol">
+
+    <h2>@Model.PackName</h2>
+    @if (Model.IsMoney == true)
+    {
+        @Html.DisplayNameFor(cp => cp.PackPrice)
+        @Html.DisplayFor(cp => cp.PackPrice)
+
+        @Html.DisplayNameFor(cp => cp.PackPrice)
+        @Html.DisplayFor(cp => cp.PackPrice)
+
+        using (Html.BeginForm())
+        {
+            <div>
+                Amount: <input type="text" name="numPacks" class="text-right" />
+            </div>
+            <div>
+                <input type="submit" value="Guthaben aufladen" class="btn btn-default" />
+            </div>
+        }
+    }
+    }
+    else
+    {
+    @Html.DisplayNameFor(cp => cp.PackPrice)
+    @Html.DisplayFor(cp => cp.PackPrice)
+
+    @Html.DisplayNameFor(cp => cp.NumCards)
+    @Html.DisplayFor(cp => cp.NumCards)
+
+    @Html.DisplayNameFor(cp => cp.PackPrice)
+    @Html.DisplayFor(cp => cp.PackPrice)
+
+    <p>Price per Card:</p>
+    @((double)Model.PackPrice / Model.NumCards)
+
+    using (Html.BeginForm())
+    {
     <div>
         Amount: <input type="text" name="numPacks" class="text-right" />
     </div>
-    <br />
     <div>
-        <input type="submit" value="Buy Pack(s)" class="btn btn-default" />
+        <input type="submit" value="Pack Kaufen" class="btn btn-default" />
     </div>
-}
+    }
+    }
+</div>
+
+
+
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+    <div class="col col-md-12 ">
+        <h3>Coins einlösen</h3>
+        <p>
+            Lege dir Cardpacks zu und statte deine Kartendecks aus
+        </p>
+        <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+    </div>
+    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+    <div class="col col-md-12">
+        <h3>Kaufe Coins</h3>
+        <p>und du kannst damit Cardpacks erstehen</p>
+        <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
+    </div>
+    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+</div>
+
+@*<div class="col-md-6 cardcol">
+        <div class="card-deck-wrapper col-md-12 cardcol">
+            <div class="card-deck packcol packdeck ">
+
+                <div class="card col-md-2 packcard">
+                    @if (Model.IsMoney != true)
+                    {
+
+                        <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
+                            <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                            <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
+                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+                    }
+                    else
+                    {
+                        <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                            <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                            <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
+                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
+                            @Html.ActionLink("Kaufen", "BuyCardPack", new { packid = pack.IdPack })
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>*@
 

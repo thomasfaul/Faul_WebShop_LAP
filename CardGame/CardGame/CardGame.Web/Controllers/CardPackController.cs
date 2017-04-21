@@ -1,4 +1,5 @@
 ﻿using CardGame.DAL.Logic;
+using CardGame.Log;
 using CardGame.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -25,14 +26,14 @@ namespace CardGame.Web.Controllers
         {
             PacksListViewModel model = new PacksListViewModel();
             model.PIsMoney = false;
-
-
-
             try
             {
                 model.PIsMoney = (bool)this.Session["isCurrency"];
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                //Writer.Log("Troubles im Cardpackcontroller");
+            }
 
             List<CardPack> PackList = new List<CardPack>();
             var dbPacklist = PackManager.GetAllPacks();
@@ -101,9 +102,9 @@ namespace CardGame.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult BuyCardPack(int id)
+        public ActionResult BuyCardPack(int packid)
         {
-            var dbCardPack = ShopManager.Get_CardPackById(id);
+            var dbCardPack = ShopManager.Get_CardPackById(packid);
 
             CardPack cardPack = new CardPack();
             cardPack.IdPack = dbCardPack.idpack;
