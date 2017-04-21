@@ -44,7 +44,7 @@
                         <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                         <h5 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h5>
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)</p>
-                        @Html.ActionLink("Kaufen","Shop","Index", new { id = pack.IdPack })
+                        @Html.ActionLink("Kaufen","BuyCardPack","CardPack", new { id = pack.IdPack })
                     }
                     @*<h5 id="card-footer">@Html.ActionLink("Details", "Details", new { id = pack.IdPack })</h5>*@
                 </div>

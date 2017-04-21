@@ -290,6 +290,7 @@
     <Content Include="Views\Shared\_CardList.cshtml" />
     <Content Include="Views\Shared\_DBCardList.cshtml" />
     <Content Include="Views\Shared\_BannerAd.cshtml" />
+    <Content Include="Views\CardPack\BuyCardPack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

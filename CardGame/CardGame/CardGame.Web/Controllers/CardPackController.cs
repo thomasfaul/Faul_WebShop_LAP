@@ -93,8 +93,30 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT BUY CARD PACK
+        /// <summary>
+        /// Takes the id of the cardpack and
+        /// returns the View
+        /// </summary> [Authorize(Roles = "player")]
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult BuyCardPack(int id)
+        {
+            var dbCardPack = ShopManager.Get_CardPackById(id);
+
+            CardPack cardPack = new CardPack();
+            cardPack.IdPack = dbCardPack.idpack;
+            cardPack.PackName = dbCardPack.packname;
+            cardPack.NumCards = dbCardPack.numcards ?? 0;
+            cardPack.PackPrice = dbCardPack.packprice ?? 0;
+
+            return View(cardPack);
+        }
+        #endregion
+
         #region ACTIONRESULT DETAILS: TODO
-        
+
         //public ActionResult Details(int id)
         //{
         //    tblpack dbpack = null;

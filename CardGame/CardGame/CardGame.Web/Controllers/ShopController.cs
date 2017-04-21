@@ -17,8 +17,8 @@ namespace CardGame.Web.Controllers
         /// 
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Authorize(Roles = "player")]
+
+        [HttpGet] //[Authorize(Roles = "player")]
         public ActionResult Index()
         {
             Shop shop = new Shop();
@@ -39,15 +39,14 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-        #region ACTIONRESULT BUY CARD PACK
+        #region ACTIONRESULT BUY CARD PACK****
         /// <summary>
         /// Takes the id of the cardpack and
         /// returns the View
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet]
-        [Authorize(Roles = "player")]
+        [HttpGet]//[Authorize(Roles = "player")]
         public ActionResult BuyCardPack(int id)
         {
             var dbCardPack = ShopManager.Get_CardPackById(id);

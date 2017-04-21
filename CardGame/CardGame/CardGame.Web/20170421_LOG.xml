@@ -1,0 +1,28 @@
+<Info>
+  <Time>21.04.2017 08:51:38</Time>
+  <Info>Entered Pass = knibbe</Info>
+</Info>
+<Info>
+  <Time>21.04.2017 08:51:38</Time>
+  <Info>HashPass = 70C0D7B75380C077206A850497F40A7B5403C5390419E044DF9DEBE68A61BC99D617E5E6A69D2CCB129BF72BB09E040055DECE702AF5D04712A6AF80F5F4323D</Info>
+</Info>
+<Xcpt>
+  <Time>21.04.2017 08:51:38</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>21.04.2017 09:16:40</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
