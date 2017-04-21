@@ -1,0 +1,227 @@
+<Xcpt>
+  <Time>22.04.2017 00:03:50</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>22.04.2017 00:17:33</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>22.04.2017 00:17:33</Time>
+  <Info>HashPass = F3772E58C83A746A5BC8663D7416DEB276BC7CD4486BCC8A3D3D77FE6689EF2932ED22A608A00C43E10F527E5F2FBA0C698DBC68300D6A114F02FAF6645786FC</Info>
+</Info>
+<Xcpt>
+  <Time>22.04.2017 00:17:33</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:27:34</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:28:53</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:32:22</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:47:59</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:52:26</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 00:58:21</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>22.04.2017 00:59:31</Time>
+  <Info>Entered Pass = tomtom</Info>
+</Info>
+<Info>
+  <Time>22.04.2017 00:59:31</Time>
+  <Info>HashPass = F3772E58C83A746A5BC8663D7416DEB276BC7CD4486BCC8A3D3D77FE6689EF2932ED22A608A00C43E10F527E5F2FBA0C698DBC68300D6A114F02FAF6645786FC</Info>
+</Info>
+<Xcpt>
+  <Time>22.04.2017 00:59:31</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:00:53</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:03:19</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:04:46</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:10:37</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:11:09</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:13:08</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:13:30</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:14:28</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:14:53</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:15:16</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:16:37</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:17:05</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:17:28</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>22.04.2017 01:20:01</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.PackOverview(Int32 page) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 31.</Stack>
+  </Exception>
+</Xcpt>

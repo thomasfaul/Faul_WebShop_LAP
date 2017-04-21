@@ -28,11 +28,11 @@ namespace CardGame.Web.Controllers
             model.PIsMoney = false;
             try
             {
-                model.PIsMoney = (bool)this.Session["isCurrency"];
+                model.PIsMoney = (bool)Session["isCurrency"];
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //Writer.Log("Troubles im Cardpackcontroller");
+                Writer.LogError(e);
             }
 
             List<CardPack> PackList = new List<CardPack>();
@@ -43,7 +43,7 @@ namespace CardGame.Web.Controllers
                 CardPack pack = new CardPack();
                 pack.IdPack = p.idpack;
                 pack.PackName = p.packname;
-                pack.IsMoney = p.ismoney ?? false;
+                pack.IsMoney = p.ismoney ?? model.PIsMoney;
                 pack.PackPrice = (decimal)p.packprice;
                 pack.Flavor = p.flavour;
                 pack.Pic = p.packimage;
@@ -109,8 +109,11 @@ namespace CardGame.Web.Controllers
             CardPack cardPack = new CardPack();
             cardPack.IdPack = dbCardPack.idpack;
             cardPack.PackName = dbCardPack.packname;
+            cardPack.IsMoney = (bool)dbCardPack.ismoney;
             cardPack.NumCards = dbCardPack.numcards ?? 0;
             cardPack.PackPrice = dbCardPack.packprice ?? 0;
+            cardPack.Flavor = dbCardPack.flavour;
+            
 
             return View(cardPack);
         }

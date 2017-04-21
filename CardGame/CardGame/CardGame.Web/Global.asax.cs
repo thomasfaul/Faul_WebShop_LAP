@@ -26,8 +26,8 @@ namespace CardGame.Web
         #region Session Start
         protected void Session_Start(Object sender, EventArgs e)
         {
-            int temp = 4;
-            HttpContext.Current.Session.Add("UserSession", temp);
+            int temp = 18;
+            HttpContext.Current.Session.Add("Usersession",temp);
         } 
         #endregion
 

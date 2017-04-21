@@ -269,7 +269,7 @@ font-family:Xena;
 	padding-top:3.5em;
 	padding-bottom:3.5em; 
     border:none;
-    text-shadow: 5px 5px 10px  darkviolet;
+    text-shadow: 5px 5px 10px  darkorange;
      
 }
 
@@ -521,13 +521,18 @@ input:valid {
 	box-shadow: 5px 1px 5px 1px rgba(125,108,73,1);
 }
 .price {
+    color:#fbfc8f;
+    margin-top:0.5em;
+    padding-top:0.8em;
 	font-size:1.3em;
+    font-style:italic;
+    font-weight:800;
 	width:6em;
 	height:6em;
-	line-height:4em;
-	text-indent:0,20em;
+	line-height:2em;
+	text-indent:0,30em;
 	border-radius:5em;
-	border:0.20em solid #fff;
+	border:0.30em solid #fff;
 	background-color:rgba(247, 179, 80, 0.64);
 	-moz-transform:rotate(20deg);
 	-webkit-transform:rotate(20deg);
@@ -602,9 +607,59 @@ input:valid {
     width:25em;
     border-radius:0.4em;
 }
-.bannertext {
-    color:darkorange
+
+
+
+                                 /*buyPackMiddle*/
+/*----------------------------------------------------------------------------*/
+.buymiddlecontainer {
+
+    margin-top:15em;
 }
+
+.buypack {
+ background: transparent;
+  border-spacing: 0px;
+  border-collapse: separate;
+  empty-cells: show;
+  padding: 0em;
+  margin-top:10em;
+  outline: 0px;
+  font-size: 110%;
+  vertical-align: top;
+  text-align: right;
+  caption-side: top;
+  -webkit-border-radius: 0px;
+
+  
+}
+
+.headbuypack {
+     border-top:none;
+     background-color:rgba(189, 102, 49, 0.20)
+}
+.tdbuypack {
+     font-size:1.2em;
+     border-color:none;
+     border:none;
+     border-top:none ;
+     width:10em;
+}
+.trbuypack {
+     font-size:1.2em;
+     border-color:none;
+     border:none;
+     border-top:none;
+     width:10em;
+}
+.tdbuypackr{
+    text-align:right;
+     font-size:1.2em;
+     width:28em;
+}
+
+
+
 
                                  /*@media*/
 /*----------------------------------------------------------------------------*/
