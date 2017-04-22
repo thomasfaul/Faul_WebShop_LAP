@@ -10,6 +10,11 @@ namespace CardGame.DAL.Logic
 {
     public class ShopManager
     {
+        #region GET ALL CARD PACKS
+        /// <summary>
+        /// Returns al List of all Packs
+        /// </summary>
+        /// <returns></returns>
         public static List<tblpack> Get_AllCardPacks()
         {
             var allCardPacks = new List<tblpack>();
@@ -29,7 +34,14 @@ namespace CardGame.DAL.Logic
             }
             return allCardPacks;
         }
+        #endregion
 
+        #region GET CARDPACK BY ID
+        /// <summary>
+        /// Takes the packid and returns the Cardpack
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static tblpack Get_CardPackById(int id)
         {
             var dbCardPack = new tblpack();
@@ -48,12 +60,22 @@ namespace CardGame.DAL.Logic
                 Writer.LogError(e);
             }
             return dbCardPack;
-        }
+        } 
+        #endregion
 
+        #region GET TOTAL COST
+        /// <summary>
+        /// Takes the id of the pack and the number of the Packs
+        /// returns the total cost
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="numPacks"></param>
+        /// <returns></returns>
         public static decimal GetTotalCost(int id, int numPacks)
         {
             decimal num = 0;
-           decimal price = 0;
+            decimal price = 0;
+            bool cur = false;
             try
             {
                 using (var db = new ClonestoneFSEntities())
@@ -63,7 +85,9 @@ namespace CardGame.DAL.Logic
                     {
                         throw new Exception("PackNotFound");
                     }
-                    price =pack.packprice ?? 0;
+                    price = pack.packprice ?? 0;
+                    cur = pack.ismoney ?? false;
+
                 }
             }
             catch (Exception e)
@@ -73,7 +97,16 @@ namespace CardGame.DAL.Logic
             num = Convert.ToDecimal(numPacks);
             return (price * numPacks);
         }
+        #endregion
 
+        #region ORDER
+        /// <summary>
+        /// Takes the Id and the nummber of CardPacks
+        /// Generates the Cards and returns the new List of Cards
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="numPacks"></param>
+        /// <returns></returns>
         public static List<tblcard> Order(int id, int numPacks)
         {
             //3 Steps: Generate Cards, Enter into DB
@@ -128,10 +161,8 @@ namespace CardGame.DAL.Logic
                 Writer.LogInfo("Card: " + c.idcard);
             }
 
-            //Cards were successfully generated
-            //Now we can enter them into the DB
-
             return generatedCards;
-        }
+        } 
+        #endregion
     }
 }

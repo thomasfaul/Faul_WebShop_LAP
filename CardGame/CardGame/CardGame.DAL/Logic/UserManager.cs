@@ -51,10 +51,10 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Writer.LogError(e);
-            } 
-           
+            }
+
         }
-         #endregion
+        #endregion
 
         #region GetAllUser
         /// <summary>
@@ -100,7 +100,7 @@ namespace CardGame.DAL.Logic
                 Writer.LogError(e);
             }
             return dbPerson;
-        } 
+        }
         #endregion
 
         #region Get User by UserEmail
@@ -318,8 +318,6 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-
-
         #region Update Balance by Email
         /// <summary>
         /// Takes the email and the new CurrencyBalance
@@ -362,49 +360,50 @@ namespace CardGame.DAL.Logic
         public static bool Add_CardsToCollectionByEmail(string email, List<tblcard> cards)
         {
             var dbPerson = new tblperson();
-            try
+            //try
+            //{
+            using (var db = new ClonestoneFSEntities())
             {
-                using (var db = new ClonestoneFSEntities())
+                dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                if (dbPerson == null)
                 {
-                    dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
-                    if (dbPerson == null)
-                    {
-                        throw new Exception("User Does Not Exist");
-                    }
-                    foreach (var card in cards)
-                    {
-                        var userCC = (from coll in db.tblcollection
-                                      where coll.fkcard == card.idcard && coll.fkperson == dbPerson.idperson
-                                      select coll)
-                                     .FirstOrDefault();
-                        if (userCC == null) //User does not own card, add to collection
-                        {
-                            var cc = new tblcollection();
-                            cc.tblcard = db.tblcard.Find(card.idcard);
-                            cc.tblperson = dbPerson;
-                            cc.numcards = 1;
-                            dbPerson.tblcollection.Add(cc);
-                            db.SaveChanges();
-                        }
-                        else //User owns card, add to num
-                        {
-                            userCC.numcards += 1;
-                            db.Entry(userCC).State = EntityState.Modified;
-                            db.SaveChanges();
-                        }
-                    }
-                    //db.SaveChanges();
-                    return true;
+                    throw new Exception("User Does Not Exist");
                 }
+                foreach (var card in cards)
+                {
+                    var userCC = (from coll in db.tblcollection
+                                  where coll.fkcard == card.idcard && coll.fkperson == dbPerson.idperson
+                                  select coll)
+                                 .FirstOrDefault();
+                    if (userCC == null) //User does not own card, add to collection
+                    {
+                        var cc = new tblcollection();
+                        cc.tblcard = db.tblcard.Find(card.idcard);
+                        cc.tblperson = dbPerson;
+                        cc.numcards = 1;
+                        dbPerson.tblcollection.Add(cc);
+                        db.SaveChanges();
+                    }
+                    else //User owns card, add to num
+                    {
+                        userCC.numcards += 1;
+                        db.Entry(userCC).State = EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                }
+                //db.SaveChanges();
+                return true;
             }
-            catch (Exception e)
-            {
-                Writer.LogError(e);
-                return false;
-            }
-        }
-        #endregion
+            //}
+            //catch (Exception e)
+            //{
+            //    Writer.LogError(e);
+            //    return false;
+            //}
+            //}
+            #endregion
 
+        }
     }
 }
 

@@ -20,11 +20,11 @@ namespace CardGame.Web
                       "~/Content/Scripts/respond.js",
                       "~/Scripts/toastr.js",
                       "~/Content/myscript.js"));
-
+                
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/bootstrap.css",
                       "~/Content/toastr.css",
-                      "~/Content/style.css"));
+                      "~/Content/Style.css"));
         }
     }
 }

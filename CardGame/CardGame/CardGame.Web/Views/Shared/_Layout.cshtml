@@ -37,14 +37,12 @@
                         <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
                     </div>
 
-
-
                     <!-- NAVIGATION Collapse -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            @*-------------------------------------------------PLAYER---------------------------------------  ------*@
+@*-------------------------------------------------PLAYER--------------------------------------- ------*@
                             @if (User.IsInRole("player"))
-            {
+                            {
                                 <li><a href="@Url.Action("Index", "Home")">Home</a></li>
                                 <li><a href="@Url.Action("About", "Home")">Über uns</a></li>
                                 <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
@@ -74,7 +72,7 @@
                                     </a>
                                 </li>
                                             }
-                                            @*-------------------------------------------------ADMIN---------------------------------------  ------*@
+@*-------------------------------------------------ADMIN--------------------------------------- -----*@
                             else if (User.IsInRole("admin"))
                             {
                                 <li><a href="@Url.Action("Index", "Home")">Home</a></li>
@@ -105,7 +103,7 @@
                                             </li>
                                                         }
 
-                                                        @*-------------------------------------------------VISITOR---------------------------------------  ------*@
+@*-------------------------------------------------VISITOR------------------------------------------------*@
                             else
                             {
                                 <li><a href="@Url.Action("Login", "Account")">Log in</a></li>
@@ -123,13 +121,12 @@
 
 
   
-@*-----------------------------------------------------Scripts ---------------------------------------  ------*@
+@*-----------------------------------------------------Scripts ---------------------------------------------*@
 
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 
     <script type="text/javascript">
 

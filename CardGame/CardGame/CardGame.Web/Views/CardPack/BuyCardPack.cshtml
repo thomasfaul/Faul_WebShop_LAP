@@ -19,18 +19,17 @@
     @Html.Partial("_Money");
 
 </div>
-@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
 
 <div class="col-md-6 cardcol buymiddlecontainer">
     <div class="card-deck-wrapper col-md-6 cardcol">
         <div class="card-deck packcol packdeck ">
             <div class="card col-md-2 packcard">
-
                 @if (Model.IsMoney == true)
                 {
                     <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
-                    <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3><br/>
-                    <h6 class="card-header head">@Html.DisplayFor(c => Model.Flavor)</h6><br/>
+                    <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3><br />
+                    <h6 class="card-header head">@Html.DisplayFor(c => Model.Flavor)</h6><br />
                     <p class="price">€ &nbsp; @Html.DisplayFor(c => Model.PackPrice)<br /><span>Euro</span></p>
                 }
                 else
@@ -38,11 +37,10 @@
                     <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
                     <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3>
                     <h5 style="color:darkorange" class="card-header head">@Html.DisplayFor(c => Model.NumCards)<span>&nbsp;Karten</span></h5>
-                    
+
                     <p class="price">
                         @Html.DisplayFor(c => Model.PackPrice)<br /><span>Coins</span>
                     </p>
-
                 }
             </div>
         </div>
@@ -50,7 +48,6 @@
 
 
     <div class="col-md-6 cardcol">
-
         @if (Model.IsMoney == true)
         {
             using (Html.BeginForm())
@@ -119,11 +116,11 @@
 
     @Html.Partial("_RightTop")
 
-    @*-----------------------------------------------------RIGHTBAR Middle--------------------------------------*@
+@*-----------------------------------------------------RIGHTBAR Middle-----------------------------------------*@
 
     @Html.Partial("_RightMiddle")
 
-    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+@*-------------------------------------------------RIGHTBAR BOTTOM---------------------------------------------*@
 
     @if (Model.IsMoney != true)
     {
@@ -143,7 +140,5 @@
             <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
         </div>
     }
-
-
 </div>
 

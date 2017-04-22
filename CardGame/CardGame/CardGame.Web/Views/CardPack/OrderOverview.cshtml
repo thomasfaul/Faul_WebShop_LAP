@@ -1,0 +1,44 @@
+﻿@using CardGame.Web.Models.DB
+@model Order
+@{
+    ViewBag.Title = "OrderOverview";
+}
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+
+@*---------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+
+@*--------------------------------------------------LEFTBAR CURRENCY---------------------------------------*@
+
+    @Html.Partial("_Money");
+
+</div>
+@*---------------------------------------------------MAINCOLUMN-------------------------------------------*@
+
+@if (Model.OIsCurrency == true)
+{
+@Html.Partial("_MiddleCoinPackOver")
+}
+else
+{
+@Html.Partial("_MiddleCardPackOver")
+}
+
+@*---------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_RightTop")
+
+@*---------------------------------------------------RIGHTBAR Middle---------------------------------------*@
+
+    @Html.Partial("_RightMiddle")
+
+@*-----------------------------------------------RIGHTBAR BOTTOM-------------------------------------------*@
+
+    @Html.Partial("_RightBottom")
+
+</div>

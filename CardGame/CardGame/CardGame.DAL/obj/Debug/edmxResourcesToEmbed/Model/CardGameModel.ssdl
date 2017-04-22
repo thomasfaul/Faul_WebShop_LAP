@@ -71,6 +71,7 @@
     <Property Name="flavour" Type="varchar" MaxLength="50" />
     <Property Name="ismoney" Type="bit" />
     <Property Name="numcards" Type="int" />
+    <Property Name="worth" Type="int" />
   </EntityType>
   <EntityType Name="tblperson">
     <Key>

@@ -23,6 +23,8 @@ namespace CardGame.Web.Models
  
         public bool IsMoney { get; set; }
 
+        public int Worth { get; set; }
+
 
         public byte[] Pic { get; set; }
     }

@@ -1,6 +1,8 @@
 ﻿using CardGame.DAL.Logic;
+using CardGame.DAL.Model;
 using CardGame.Log;
 using CardGame.Web.Models;
+using CardGame.Web.Models.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +49,7 @@ namespace CardGame.Web.Controllers
                 pack.PackPrice = (decimal)p.packprice;
                 pack.Flavor = p.flavour;
                 pack.Pic = p.packimage;
+                pack.Worth = p.worth ?? 0;
                 PackList.Add(pack);
             }
 
@@ -66,6 +69,20 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT ORDEROVERVIEW
+        /// <summary>
+        /// Return the Overview of the Orders and the Order
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult OrderOverview()
+        {
+            Order o = (Order)TempData["Order"];
+            TempData["Order"] = o;
+            return View(o);
+        }
+        #endregion
+
         #region ACTIONRESULT ENABLE CURRENCY
         /// <summary>
         /// ENABLES THE ISCURRENCYPAGE (PAY IN REAL)
@@ -76,7 +93,6 @@ namespace CardGame.Web.Controllers
             this.Session["isCurrency"] = true;
             TempData["Infomessage"] = "LOADING";
             return RedirectToAction("PackOverview", "CardPack");
-
         }
         #endregion
 
@@ -88,7 +104,6 @@ namespace CardGame.Web.Controllers
         public ActionResult DisableCurrency()
         {
             this.Session["isCurrency"] = false;
-            TempData["Infomessage"] = "Packs are LOADING";
             //return RedirectToAction("PackOverview", "CardPack");
             return RedirectToAction("PackOverview");
         }
@@ -102,39 +117,96 @@ namespace CardGame.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult BuyCardPack(int packid)
+        public ActionResult BuyCardPack(int id)
         {
-            var dbCardPack = ShopManager.Get_CardPackById(packid);
+            var dbCardPack = ShopManager.Get_CardPackById(id);
 
             CardPack cardPack = new CardPack();
             cardPack.IdPack = dbCardPack.idpack;
             cardPack.PackName = dbCardPack.packname;
+            cardPack.Worth = dbCardPack.worth ?? 0;
             cardPack.IsMoney = (bool)dbCardPack.ismoney;
             cardPack.NumCards = dbCardPack.numcards ?? 0;
             cardPack.PackPrice = dbCardPack.packprice ?? 0;
             cardPack.Flavor = dbCardPack.flavour;
-            
-
+       
             return View(cardPack);
         }
         #endregion
 
-        #region ACTIONRESULT DETAILS: TODO
+        #region ACTIONRESULT BUY CARD PACK
+        /// <summary>
+        /// Takes the ID and the Number of the Packs
+        /// Saves the Packs in the Databace
+        ///
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="numPacks"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult BuyCardPack(int id, int numPacks)
+        {
+            Writer.LogInfo("id: " + id.ToString());
+            Writer.LogInfo("numPacks: " + numPacks.ToString());
 
-        //public ActionResult Details(int id)
-        //{
-        //    tblpack dbpack = null;
+            Order o = new Order();
+            var dbCardPack = ShopManager.Get_CardPackById(id);
 
-        //    dbpack = PackManager.GetPackById(id);
+            CardPack cardPack = new CardPack();
+            cardPack.IdPack = dbCardPack.idpack;
+            cardPack.PackName = dbCardPack.packname;
+            cardPack.NumCards = dbCardPack.numcards ?? 0;
+            cardPack.PackPrice = dbCardPack.packprice ?? 0;
+            cardPack.IsMoney = dbCardPack.ismoney ?? false;
 
-        //    CardPack pack = new CardPack();
-        //    pack.IdPack = dbpack.idpack;
-        //    pack.PackName = dbpack.packname;
-        //    pack.PackPrice = (decimal)dbpack.packprice;
-        //    pack.Pic = dbpack.packimage;
-        //    pack.Flavor = dbpack.flavour;
-        //    return View(pack);
-        //} 
+            o.Pack = cardPack;
+            o.Quantity = numPacks;
+            o.CurrencyBalance = UserManager.Get_BalanceByEmail(User.Identity.Name);
+
+            TempData["Order"] = o;
+
+            return RedirectToAction("OrderOverview");
+        }
+        #endregion
+
+        #region ACTIONRESULT SHOW GENERATED CARDS
+        /// <summary>
+        /// Gets the Generated Cards and returns a List
+        /// of Cards to the View
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult ShowGeneratedCards()
+        {
+            var orderedCards = (List<tblcard>)TempData["OrderedCards"];
+            var cards = new List<Card>();
+
+            foreach (var c in orderedCards)
+            {
+                Card card = new Card();
+                card.ID = c.idcard;
+                card.Name = c.cardname;
+                card.Type = c.tbltype.typename;
+                card.Mana = c.mana;
+                card.Attack = c.attack;
+                card.Life = c.life;
+                card.Pic = c.pic;
+                cards.Add(card);
+            }
+            return View(cards);
+        }
+        #endregion
+
+        #region ACTIONRESULT NOT ENOUGH BALANCE
+        /// <summary>
+        /// Returns the "Not Enough Balance" View
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult NotEnoughBalance()
+        {
+            return View();
+        }  
         #endregion
     }
 }

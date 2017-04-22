@@ -163,14 +163,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\CardPackController.cs" />
-    <Compile Include="Controllers\DeckController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\EmailHelper.cs" />
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="HtmlHelpers\SessionHelper.cs" />
     <Compile Include="Models\Card.cs" />
@@ -222,6 +221,10 @@
     <Content Include="Content\images\paper_background.png" />
     <Content Include="Content\images\th.png" />
     <Content Include="Content\toastr.css" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.11.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.11.3.js" />
     <Content Include="Scripts\jquery-1.11.3.min.js" />
@@ -278,18 +281,16 @@
     <Content Include="Views\Shared\_RightBottom.cshtml" />
     <Content Include="Views\Deck\EditDeck.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
-    <Content Include="Views\Profile\CardCollection.cshtml" />
-    <Content Include="Views\Profile\DeckDetails.cshtml" />
-    <Content Include="Views\Profile\DeckOverview.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Views\Shop\Index.cshtml" />
-    <Content Include="Views\Shop\NotEnoughBalance.cshtml" />
-    <Content Include="Views\Shop\OrderOverview.cshtml" />
-    <Content Include="Views\Shop\ShowGeneratedCards.cshtml" />
-    <Content Include="Views\Shared\_CardList.cshtml" />
+    <Content Include="Views\CardPack\NotEnoughBalance.cshtml" />
+    <Content Include="Views\CardPack\OrderOverview.cshtml" />
+    <Content Include="Views\CardPack\ShowGeneratedCards.cshtml" />
     <Content Include="Views\Shared\_DBCardList.cshtml" />
     <Content Include="Views\Shared\_BannerAd.cshtml" />
     <Content Include="Views\CardPack\BuyCardPack.cshtml" />
+    <Content Include="Views\Shared\_CardList.cshtml" />
+    <Content Include="Views\Shared\_CardTable.cshtml" />
+    <Content Include="Views\Shared\_MiddleCardPackOver.cshtml" />
+    <Content Include="Views\Shared\_MiddleCoinPackOver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

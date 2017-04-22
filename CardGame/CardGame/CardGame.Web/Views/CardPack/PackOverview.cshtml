@@ -1,23 +1,20 @@
 ﻿@model CardGame.Web.Models.PacksListViewModel
 
 
-
-
 @{
     ViewBag.Title = "PackOverview";
 }
-
 
 
 @*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
 <div class="col-md-3">
     @Html.Partial("_Advertisment")
 
-    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+@*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
 
     @Html.Partial("_BannerAd")
 
-    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
 
     @Html.Partial("_Money");
 
@@ -28,11 +25,10 @@
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck ">
             @foreach (var pack in Model.Packs)
-            {
+{
                 <div class="card col-md-2 packcard">
                     @if (pack.IsMoney != true)
                     {
-
                         <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
                         <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                         if (pack.NumCards != 0)
@@ -44,8 +40,7 @@
                             <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
                         }
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
-                        <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { packid = pack.IdPack })</h5>
-
+                        <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
                     }
                     else
                     {
@@ -53,7 +48,7 @@
                         <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                         <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
                         <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
-                        <h5 style="margin-top:2em;S">@Html.ActionLink("Aufladen", "BuyCardPack", new { packid = pack.IdPack })</h5>
+                        <h5 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h5>
                     }
                 </div>
             }
@@ -61,8 +56,7 @@
     </div>
 </div>
 
-
-@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+   @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
 <div class="col-md-3">
     <div class="col col-md-12 ">
         <h3>Coins einlösen</h3>
@@ -71,14 +65,14 @@
         </p>
         <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
     </div>
-    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+  @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
     <div class="col col-md-12">
         <h3>Kaufe Coins</h3>
         <p>und du kannst damit Cardpacks erstehen</p>
         <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Kaufe Coins </a>
     </div>
-    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
-    <div class="col col-md-12">
+   @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+                <div class="col col-md-12">
         <h3 id="pagingOverview">weitere Seiten: </h3>
         <p class="pageLinks">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
     </div>

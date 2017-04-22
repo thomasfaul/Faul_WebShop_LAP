@@ -69,6 +69,7 @@
     <EntitySetMapping Name="tblpack">
       <EntityTypeMapping TypeName="ClonestoneFSModel.tblpack">
         <MappingFragment StoreEntitySet="tblpack">
+          <ScalarProperty Name="worth" ColumnName="worth" />
           <ScalarProperty Name="numcards" ColumnName="numcards" />
           <ScalarProperty Name="ismoney" ColumnName="ismoney" />
           <ScalarProperty Name="flavour" ColumnName="flavour" />

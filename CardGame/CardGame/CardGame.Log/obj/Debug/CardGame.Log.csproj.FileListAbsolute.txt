@@ -23,13 +23,12 @@ C:\Users\Stefanie\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.L
 C:\Users\Stefanie\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
 C:\Users\Stefanie\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\Stefanie\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
 C:\Users\faulthom\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
-C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.csprojResolveAssemblyReference.cache
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\bin\Debug\CardGame.Log.pdb
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.dll
+C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.Log\obj\Debug\CardGame.Log.pdb
