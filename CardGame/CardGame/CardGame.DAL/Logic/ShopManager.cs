@@ -162,7 +162,8 @@ namespace CardGame.DAL.Logic
             }
 
             return generatedCards;
-        } 
+        }
         #endregion
+
     }
 }

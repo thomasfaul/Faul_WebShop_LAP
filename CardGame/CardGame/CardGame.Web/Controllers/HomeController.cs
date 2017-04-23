@@ -93,14 +93,6 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-        #region CREATE SESSION
-        /// <summary>
-        /// Creates  Sessions, if you need the information of the current User
-        /// </summary>
-        /// 
-
-        #endregion
-
         #region CREATE SESSION a funny Idea but...
         /// <summary>
         /// Creates my own Sessionvariables, but on the first load, they don´t work

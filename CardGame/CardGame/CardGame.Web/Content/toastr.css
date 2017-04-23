@@ -51,9 +51,6 @@
 #toast-container.toast-bottom-center > div {
 font-size:1em;
 }
-#toast-container.toast-top-full-width > div,
-#toast-container.toast-bottom-full-width > div {
-}
 
 .toast {
     background-color:rgba(189, 102, 49, 0.60);

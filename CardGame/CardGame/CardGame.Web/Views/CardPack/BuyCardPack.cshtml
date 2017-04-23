@@ -10,11 +10,11 @@
 <div class="col-md-3">
     @Html.Partial("_Advertisment")
 
-    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+ @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
 
     @Html.Partial("_BannerAd")
 
-    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+ @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
 
     @Html.Partial("_Money");
 
@@ -61,6 +61,11 @@
                                 <td class="tdbuypack">Preis:</td>
                                 <td class="tdbuypack">  </td>
                                 <td class="tdbuypackr"> € @Html.DisplayFor(cp => cp.PackPrice)</td>
+                            </tr>
+                            <tr class="trbuypack">
+                                <td class="tdbuypack">Anzahl:</td>
+                                <td class="tdbuypack">   </td>
+                                <td class="tdbuypackr"> <input type="text" name="numPacks" class="text-left" style="width:3em" value="1" /></td>
                             </tr>
                             <tr></tr>
                         </tbody>

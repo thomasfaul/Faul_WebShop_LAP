@@ -112,7 +112,7 @@ namespace CardGame.Web.Controllers
             dbUser.salt = regUser.Salt;
             dbUser.userrole = "player";
             dbUser.isactive = true;
-            dbUser.currencybalance = 1000;
+            dbUser.currencybalance = 100;
             if (!AuthManager.Register(dbUser))
             {
                 TempData["ErrorMessage"] = "Sie konnten nicht eingeloggt werden";

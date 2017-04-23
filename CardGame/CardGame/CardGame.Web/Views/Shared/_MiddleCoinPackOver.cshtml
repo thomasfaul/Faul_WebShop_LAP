@@ -8,27 +8,32 @@
 
 <div class="col-md-6 cardcol buymiddlecontainer">
     <div class="col-md-12 cardcol">
-        @if (Model.OIsCurrency == true)
+        @if (Model.Pack.IsMoney == true)
         {
-            <h2>Bestellübersicht</h2>
-            <h3 style="color:darkorange">Sie wollen @Model.Quantity @Model.Pack.PackName kaufen</h3>
+            <h2>Bestellübersicht COINS</h2>
+            <h3 style="color:darkorange">Sie wollen @Model.Quantity Stück @Model.Pack.PackName Paket kaufen</h3>
+
+
             using (Html.BeginForm())
             {
-                <div class="col-md-offset-2 col-md-4">
-                    <h5 style="color:bisque">Ihr Guthaben:<span class="spanpoverview"> @Model.CurrencyBalance</span>Coins</h5>
-                    <h5 style="color:bisque">Guthaben nach Kauf:<span class="spanpoverview"> @(@Model.CurrencyBalance + Model.Quantity * Model.Pack.Worth)</span>COINS</h5>
+                <div class="col-md-12 middleOrder">
+                    <h5 style="color:bisque">Ihr Guthaben:&nbsp;<span class="spanpoverview"> @Model.CurrencyBalance</span>&nbsp; Coins</h5>
 
-                    <h5 style="color:bisque">Gesamtbetrag: <span class="spanpoverview">@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>Euro</h5>
+                    <h5 style="color:bisque">Guthaben nach Kauf:&nbsp;<span class="spanpoverview">&nbsp; @(@Model.CurrencyBalance + Model.Quantity * Model.Pack.Worth)</span>&nbsp;Coins</h5>
+
+                    <br />
+                    <h5 style="color:bisque">
+                        Umsatzsteuer:&nbsp;<span class="spanpoverview">
+                            20% &nbsp;€ &nbsp; @((((Model.Quantity * Model.Pack.PackPrice) / 120) * 20).ToString("#.##"))
+                        </span>&nbsp; Euro
+                    </h5>
+                    <hr />
+                    <h5 style="color:bisque">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>Euro</h5>
 
 
 
                 </div>
-                <div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                <div class="col-md-push-6">
                     <input type="submit" value="Aufladen" class="btn btn-default" />
                 </div>
             }
