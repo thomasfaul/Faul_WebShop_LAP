@@ -21,7 +21,7 @@ namespace CardGame.Web.Models
         [Range(0, int.MaxValue)]
         public short Life { get; set; }
 
-        [Range(0, int.MaxValue)]
+       
         public string Type { get; set; }
 
         public  int? CardClass { get; set; }

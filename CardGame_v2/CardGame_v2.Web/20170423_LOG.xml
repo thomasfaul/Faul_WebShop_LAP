@@ -1,0 +1,76 @@
+<Xcpt>
+  <Time>23.04.2017 17:24:04</Time>
+  <Exception>
+    <Source>CardGame_v2.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 73.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>23.04.2017 17:47:35</Time>
+  <Info>AddedUser</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:47:47</Time>
+  <Info>Entered Pass=blabla</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:47:47</Time>
+  <Info>Hashed Pass=799AD8C530A557590E18B85C0F1E6D031B0A8E3B04ADFEBDC66F59DBA02E47747F4C3541F1B1BBF03F8A98B119578768429DD9CC32BDDAB3BA9B9CD4706F3083</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:16</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:16</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>vID: 45</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>Card: 5</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>Card: 18</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>Card: 4</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>Card: 40</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 17:48:18</Time>
+  <Info>Card: 13</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 20:18:12</Time>
+  <Info>Entered Pass=blabla</Info>
+</Info>
+<Info>
+  <Time>23.04.2017 20:18:12</Time>
+  <Info>Hashed Pass=799AD8C530A557590E18B85C0F1E6D031B0A8E3B04ADFEBDC66F59DBA02E47747F4C3541F1B1BBF03F8A98B119578768429DD9CC32BDDAB3BA9B9CD4706F3083</Info>
+</Info>
+<Xcpt>
+  <Time>23.04.2017 21:46:08</Time>
+  <Exception>
+    <Source>CardGame_v2.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 73.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>23.04.2017 21:46:29</Time>
+  <Exception>
+    <Source>CardGame_v2.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame_v2.DAL.Logic.UserManager.GetUserByEmail(String email) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\UserManager.cs:Zeile 73.</Stack>
+  </Exception>
+</Xcpt>

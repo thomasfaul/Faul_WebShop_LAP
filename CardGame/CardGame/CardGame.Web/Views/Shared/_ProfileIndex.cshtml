@@ -1,0 +1,42 @@
+﻿
+@using CardGame.Web.Models
+
+@model UserProfile
+@{
+    ViewBag.Title = "_ProfileIndex";
+}
+
+<div class="col-md-6 cardcol buymiddlecontainer"id="cp">
+    <div class="col-md-12 cardcol middlehead">
+
+        <div class="col-md-8 buymiddle middle"> <h3>Welcome, @Model.FirstName</h3></div>
+  
+        <div class="col-md-6 buymiddle left"> <h6>Guthaben:</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Model.Currency Coins</h6></div>
+    
+        <div class="col-md-8 buymiddle middle"><h3>Deine Daten</h3></div>
+
+        <div class="col-md-6 buymiddle left"> <h6>Vorname:</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.FirstName)</h6></div>
+        <div class="col-md-6 buymiddle left"> <h6>Nachname:</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.LastName)</h6></div>
+        <div class="col-md-6 buymiddle left"> <h6>Gamertag:</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.GamerTag)</h6></div>
+        <div class="col-md-6 buymiddle left"> <h6>Email:</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.Email)</h6></div>
+     
+        <div class="col-md-8 buymiddle middle"><h3>@Html.ActionLink("Meine Karten", "CardCollection")</h3></div>
+
+        <div class="col-md-6 buymiddle left"> <h6>Alle Karten in der Sammlung</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.NumDistinctCardsOwned)</h6></div>
+        <div class="col-md-6 buymiddle left"> <h6>Einzelne karten in der Sammlung</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.NumTotalCardsOwned)</h6></div>
+  
+        <div class="col-md-8 buymiddle middle"><h3>@Html.ActionLink("Meine Decks", "DeckOverview")</h3></div>
+
+        <div class="col-md-6 buymiddle left"> <h6>Anzahl meiner Decks</h6></div>
+        <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.NumDecksOwned)</h6></div>
+
+
+    </div>
+</div>
