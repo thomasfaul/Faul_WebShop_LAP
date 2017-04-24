@@ -242,6 +242,8 @@ color: papayawhip;
 }
 div.col.col-md-6.cardcol {
     margin-top:14em;
+    padding-left:7em
+
 }
 #ShowNewCards {
     margin-top:-17em;
@@ -377,7 +379,10 @@ input:valid {
 	-webkit-box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
 	-moz-box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
 	box-shadow: 13px -5px 9px 2px rgba(245,219,166,0.71);
+   
 }
+div.col.col-md-6.cardcol{}
+
 
 							  
 							   /*DETAILS*/
@@ -418,7 +423,7 @@ input:valid {
 	background-image:none;
 	border:none;
 	border-style:none;
-	padding:1.5em;
+	/*padding:1.5em;*/
 	margin:0 0 0 0;
 	-webkit-box-shadow: none;
 	-moz-box-shadow:none;

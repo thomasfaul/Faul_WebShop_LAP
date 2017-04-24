@@ -1,0 +1,131 @@
+<Xcpt>
+  <Time>24.04.2017 13:24:27</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>24.04.2017 13:24:45</Time>
+  <Info>id: 7</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:24:45</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:08</Time>
+  <Info>id: 2</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:08</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:09</Time>
+  <Info>vID: 382</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 436</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 619</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 564</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 689</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 170</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 588</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 460</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 184</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 623</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:25:10</Time>
+  <Info>Card: 287</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:34</Time>
+  <Info>id: 12</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:34</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:53</Time>
+  <Info>id: 9</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:53</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>vID: 382</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 470</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 69</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 636</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 681</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 19</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 529</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 614</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 296</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 419</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 13:39:54</Time>
+  <Info>Card: 101</Info>
+</Info>

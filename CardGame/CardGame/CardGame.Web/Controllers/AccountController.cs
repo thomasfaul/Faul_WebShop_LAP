@@ -121,7 +121,7 @@ namespace CardGame.Web.Controllers
 
             auth(dbUser.email, dbUser.password, dbUser.userrole);
             TempData["ConfirmMessage"] = "Sie sind registriert";
-            bool emailworked = EmailHelper.SendEmail(User.Identity.Name, "Registrierungsbestätigung", " Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
+            bool emailworked = EmailHelper.SendEmail(dbUser.email, "Registrierungsbestätigung", " Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
             return RedirectToAction("Index", "Home");
         } 
         #endregion
