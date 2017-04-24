@@ -34,28 +34,23 @@ namespace CardGame.Web.Controllers
             {
                 Card card = new Card();
                 card.ID = c.idcard;
-                if (c.fkclass == null)
-                {
-                    card.CardClass = 0;
-                }
-                else
-                {
-                    card.CardClass = c.fkclass;
-                }
+                //card.Class = c.tblclass.@class ?? 0;
+                //card.Type = c.tbltype.typename;
                 card.Name = c.cardname;
                 card.Mana = c.mana;
                 card.Attack = c.attack;
                 card.Life = c.life;
                 card.Pic = c.pic;
                 card.Flavor = c.flavor;
+                card.Class = CardManager.CardClasses[c.fkclass ?? 0];
                 card.Type = CardManager.CardTypes[c.fktype];
                 CardList.Add(card);
             }
             CardsListViewModel model = new CardsListViewModel()
             {
                 Cards = CardList.OrderBy(c => c.ID)
-                //ordne alle Karten nach dem ID
-            .Where(p => cardclass == null || p.CardClass == cardclass)
+               
+            .Where(p => cardclass == null )
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
                 PagingInfo = new PageInfo
@@ -91,7 +86,9 @@ namespace CardGame.Web.Controllers
             card.Life = dbcard.life;
             card.Pic = dbcard.pic;
             card.Flavor = dbcard.flavor;
-
+            //card.Class = dbcard.tblclass.@class;
+            //card.Type = dbcard.tbltype.typename;
+            card.Class = CardManager.CardClasses[dbcard.fkclass ?? 0];
             card.Type = CardManager.CardTypes[dbcard.fktype];
             return View(card);
         } 

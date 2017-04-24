@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ClonestoneFSModelStoreContainer" CdmEntityContainer="ClonestoneFSEntities">
+  <EntityContainerMapping StorageEntityContainer="CardGameModelStoreContainer" CdmEntityContainer="itin21_ClonestoneFSEntities">
     <EntitySetMapping Name="tblcard">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblcard">
+      <EntityTypeMapping TypeName="CardGameModel.tblcard">
         <MappingFragment StoreEntitySet="tblcard">
           <ScalarProperty Name="idcard" ColumnName="idcard" />
           <ScalarProperty Name="cardname" ColumnName="cardname" />
@@ -17,7 +17,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblclass">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblclass">
+      <EntityTypeMapping TypeName="CardGameModel.tblclass">
         <MappingFragment StoreEntitySet="tblclass">
           <ScalarProperty Name="idclass" ColumnName="idclass" />
           <ScalarProperty Name="class" ColumnName="class" />
@@ -25,20 +25,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblcollection">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblcollection">
+      <EntityTypeMapping TypeName="CardGameModel.tblcollection">
         <MappingFragment StoreEntitySet="tblcollection">
-          <ScalarProperty Name="fkcard" ColumnName="fkcard" />
-          <ScalarProperty Name="numcards" ColumnName="numcards" />
           <ScalarProperty Name="idcollection" ColumnName="idcollection" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
           <ScalarProperty Name="fkperson" ColumnName="fkperson" />
-          <ScalarProperty Name="fkorder" ColumnName="fkorder" />
-          <ScalarProperty Name="fkdeckcard" ColumnName="fkdeckcard" />
+          <ScalarProperty Name="numcards" ColumnName="numcards" />
+          <ScalarProperty Name="fkcard" ColumnName="fkcard" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbldeck">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tbldeck">
+      <EntityTypeMapping TypeName="CardGameModel.tbldeck">
         <MappingFragment StoreEntitySet="tbldeck">
           <ScalarProperty Name="iddeck" ColumnName="iddeck" />
           <ScalarProperty Name="deckname" ColumnName="deckname" />
@@ -47,17 +44,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbldeckcard">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tbldeckcard">
+      <EntityTypeMapping TypeName="CardGameModel.tbldeckcard">
         <MappingFragment StoreEntitySet="tbldeckcard">
-          <ScalarProperty Name="numcards" ColumnName="numcards" />
           <ScalarProperty Name="iddeckcard" ColumnName="iddeckcard" />
           <ScalarProperty Name="fkdeck" ColumnName="fkdeck" />
           <ScalarProperty Name="fkcard" ColumnName="fkcard" />
+          <ScalarProperty Name="numcards" ColumnName="numcards" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblorder">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblorder">
+      <EntityTypeMapping TypeName="CardGameModel.tblorder">
         <MappingFragment StoreEntitySet="tblorder">
           <ScalarProperty Name="idorder" ColumnName="idorder" />
           <ScalarProperty Name="orderdate" ColumnName="orderdate" />
@@ -67,22 +64,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblpack">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblpack">
+      <EntityTypeMapping TypeName="CardGameModel.tblpack">
         <MappingFragment StoreEntitySet="tblpack">
-          <ScalarProperty Name="worth" ColumnName="worth" />
-          <ScalarProperty Name="numcards" ColumnName="numcards" />
-          <ScalarProperty Name="ismoney" ColumnName="ismoney" />
-          <ScalarProperty Name="flavour" ColumnName="flavour" />
-          <ScalarProperty Name="packimage" ColumnName="packimage" />
           <ScalarProperty Name="idpack" ColumnName="idpack" />
           <ScalarProperty Name="packname" ColumnName="packname" />
           <ScalarProperty Name="packprice" ColumnName="packprice" />
           <ScalarProperty Name="cardquantity" ColumnName="cardquantity" />
+          <ScalarProperty Name="packimage" ColumnName="packimage" />
+          <ScalarProperty Name="flavour" ColumnName="flavour" />
+          <ScalarProperty Name="ismoney" ColumnName="ismoney" />
+          <ScalarProperty Name="numcards" ColumnName="numcards" />
+          <ScalarProperty Name="worth" ColumnName="worth" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tblperson">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tblperson">
+      <EntityTypeMapping TypeName="CardGameModel.tblperson">
         <MappingFragment StoreEntitySet="tblperson">
           <ScalarProperty Name="idperson" ColumnName="idperson" />
           <ScalarProperty Name="firstname" ColumnName="firstname" />
@@ -94,41 +91,17 @@
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="salt" ColumnName="salt" />
           <ScalarProperty Name="userrole" ColumnName="userrole" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tbltype">
-      <EntityTypeMapping TypeName="ClonestoneFSModel.tbltype">
+      <EntityTypeMapping TypeName="CardGameModel.tbltype">
         <MappingFragment StoreEntitySet="tbltype">
           <ScalarProperty Name="idtype" ColumnName="idtype" />
           <ScalarProperty Name="typename" ColumnName="typename" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="pInsertcard" FunctionName="ClonestoneFSModel.Store.pInsertcard" />
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ClonestoneFSModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ClonestoneFSModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ClonestoneFSModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ClonestoneFSModel.Store.sp_helpdiagramdefinition">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ClonestoneFSModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ClonestoneFSModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ClonestoneFSModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ClonestoneFSModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ClonestoneFSModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

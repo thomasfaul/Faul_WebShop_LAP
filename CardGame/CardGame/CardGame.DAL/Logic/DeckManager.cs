@@ -19,7 +19,7 @@ namespace CardGame.DAL.Logic
             tblperson person = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     person = db.tblperson.Find(id);
                     bool addedAll = false;
@@ -54,7 +54,7 @@ namespace CardGame.DAL.Logic
             tblperson person = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     person = db.tblperson.Find(id);
                     tbldeck deck = new tbldeck();
@@ -86,7 +86,7 @@ namespace CardGame.DAL.Logic
             tbldeck deck = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     deck = db.tbldeck.Find(id);
                     if (deck == null)
@@ -137,7 +137,7 @@ namespace CardGame.DAL.Logic
 
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     var dbDeck = db.tbldeck.Where(d => d.iddeck == id).FirstOrDefault();
                     if (dbDeck == null)
@@ -178,7 +178,7 @@ namespace CardGame.DAL.Logic
             int numCards = -1;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     deck = db.tbldeck.Find(id);
                     if (deck == null)
@@ -209,7 +209,7 @@ namespace CardGame.DAL.Logic
             tbldeck deck = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     deck = db.tbldeck.Find(id);
                     if (deck == null)

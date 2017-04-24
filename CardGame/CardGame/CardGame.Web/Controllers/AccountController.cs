@@ -16,6 +16,7 @@ namespace CardGame.Web.Controllers
         /// Returns a View
         /// </summary>
         /// <returns>View</returns>
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Login()
         {
@@ -33,6 +34,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <param name="login"></param>
         /// <returns>Actionresult</returns>
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(Login login)
         {
@@ -96,6 +98,7 @@ namespace CardGame.Web.Controllers
 
         #region ACTIONRESULT REGISTER II
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Register(Register regUser)
         {
             if (!ModelState.IsValid)
@@ -113,16 +116,22 @@ namespace CardGame.Web.Controllers
             dbUser.userrole = "player";
             dbUser.isactive = true;
             dbUser.currencybalance = 100;
-            if (!AuthManager.Register(dbUser))
+            bool ok= AuthManager.Register(dbUser);
+            if (ok != true)
             {
                 TempData["ErrorMessage"] = "Sie konnten nicht eingeloggt werden";
                 return View(regUser);
             }
-
-            auth(dbUser.email, dbUser.password, dbUser.userrole);
-            TempData["ConfirmMessage"] = "Sie sind registriert";
-            bool emailworked = EmailHelper.SendEmail(dbUser.email, "Registrierungsbestätigung", " Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
-            return RedirectToAction("Index", "Home");
+            else
+            {
+             auth(dbUser.email, dbUser.password, dbUser.userrole);
+             int userID = UserManager.Get_UserByEmail(dbUser.email).idperson;
+             DeckManager.AddDefaultDecksByUserId(userID);
+             TempData["ConfirmMessage"] = "Sie sind registriert";
+              bool emailworked = EmailHelper.SendEmail(dbUser.email, "Registrierungsbestätigung", "Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
+              return RedirectToAction("Index", "Home");
+            }
+            
         } 
         #endregion
 

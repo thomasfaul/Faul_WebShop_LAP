@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\CardPackController.cs" />
+    <Compile Include="Controllers\DeckController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -177,7 +178,7 @@
     <Compile Include="Models\CardPack.cs" />
     <Compile Include="Models\CardsListViewModel.cs" />
     <Compile Include="Models\DB\Deck.cs" />
-    <Compile Include="Models\DB\Deckbuilder.cs" />
+    <Compile Include="Models\DB\DeckBuilder.cs" />
     <Compile Include="Models\DB\Order.cs" />
     <Compile Include="Models\DB\Shop.cs" />
     <Compile Include="Models\DB\UserProfile.cs" />
@@ -296,6 +297,8 @@
     <Content Include="Views\Profile\UProfile.cshtml" />
     <Content Include="Views\Shared\_ProfileIndex.cshtml" />
     <Content Include="Views\Profile\CardCollection.cshtml" />
+    <Content Include="Views\Profile\DeckOverView.cshtml" />
+    <Content Include="Views\Profile\DeckDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

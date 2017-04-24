@@ -1,0 +1,72 @@
+<Xcpt>
+  <Time>24.04.2017 22:05:23</Time>
+  <Exception>
+    <Source>CardGame_v2.DAL</Source>
+    <Message>UserDoesNotExist</Message>
+    <Stack>   bei CardGame_v2.DAL.Logic.AuthManager.AuthUser(String login, String password) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame_v2\CardGame_v2.DAL\Logic\AuthManager.cs:Zeile 59.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>24.04.2017 22:06:28</Time>
+  <Info>AddedUser</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:39</Time>
+  <Info>Entered Pass=franz</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:39</Time>
+  <Info>Hashed Pass=2BE985CE2B5D00F26CD6670C41B488E9F7C8DACC705EEEFC3610748C5D937F6ADAC7D1FA48CCBB8EDE8566BA36F4CCEE84DE7D3C1D296F2EC675E20546A9B814</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:50</Time>
+  <Info>id: 1</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:50</Time>
+  <Info>numPacks: 2</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>vID: 45</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 15</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 13</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 29</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 17</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 8</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 22</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 29</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 21</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 34</Info>
+</Info>
+<Info>
+  <Time>24.04.2017 22:06:51</Time>
+  <Info>Card: 30</Info>
+</Info>

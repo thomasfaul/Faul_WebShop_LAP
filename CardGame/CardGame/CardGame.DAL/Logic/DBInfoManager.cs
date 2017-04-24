@@ -14,7 +14,7 @@ namespace CardGame.DAL.Logic
         public static int GetNumUsers()
         {
             int numUsers = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 numUsers = db.tblperson.Count();
             }
@@ -31,11 +31,10 @@ namespace CardGame.DAL.Logic
         public static int GetNumCards()
         {
             int numCards = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 numCards = db.tblcard.Count();
             }
-
             Writer.LogInfo("GetNumCards " + numCards);
 
             return numCards;
@@ -50,7 +49,7 @@ namespace CardGame.DAL.Logic
         public static int GetNumDecks()
         {
             int numDecks = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 numDecks = db.tbldeck.Count();
             }

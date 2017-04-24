@@ -18,7 +18,7 @@ namespace CardGame.DAL.Logic
             Packs = new Dictionary<int, string>();
             List<tblpack> packList = null;
 
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 packList = db.tblpack.ToList();
             }
@@ -40,7 +40,7 @@ namespace CardGame.DAL.Logic
         public static List<tblpack> GetAllPacks()
         {
             List<tblpack> ReturnList = null;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 ReturnList = db.tblpack.ToList();
             }
@@ -58,7 +58,7 @@ namespace CardGame.DAL.Logic
         {
             tblpack pack = null;
 
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 //Extention Method
                 pack = db.tblpack.Where(c => c.idpack == id).FirstOrDefault();

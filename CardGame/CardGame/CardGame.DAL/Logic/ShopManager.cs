@@ -21,7 +21,7 @@ namespace CardGame.DAL.Logic
 
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     allCardPacks = db.tblpack.ToList();
                 }
@@ -48,7 +48,7 @@ namespace CardGame.DAL.Logic
 
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     dbCardPack = db.tblpack.Find(id);
                 }
@@ -78,7 +78,7 @@ namespace CardGame.DAL.Logic
             bool cur = false;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     var pack = db.tblpack.Find(id);
                     if (pack == null)
@@ -116,7 +116,7 @@ namespace CardGame.DAL.Logic
             //Generate Cards
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     var cardPack = db.tblpack.Find(id);
 
@@ -141,7 +141,9 @@ namespace CardGame.DAL.Logic
                     {
                         int indexID = rng.Next(0, validIDs.Count - 1);
                         int generatedCardID = validIDs[indexID];
-                        var generatedCard = db.tblcard.Where(c => c.idcard == generatedCardID).Include(c => c.tbltype).FirstOrDefault();
+                        var generatedCard = db.tblcard.Where(c => c.idcard == generatedCardID)
+                            .Include(c =>c.tbltype)
+                            .Include(c=>c.tblclass).FirstOrDefault();
 
                         if (generatedCard == null)
                         {

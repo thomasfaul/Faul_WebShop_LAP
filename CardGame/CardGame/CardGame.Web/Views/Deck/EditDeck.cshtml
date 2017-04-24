@@ -1,5 +1,5 @@
 ﻿
-@model  CardGame.Web.Models.DB.Deckbuilder
+@model  CardGame.Web.Models.DB.DeckBuilder
 
 @{
     ViewBag.Title = "EditDeck";
@@ -22,15 +22,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var card in Model.caco)
+                        @foreach (var card in Model.collectioncards)
                         {
                             <tr>
-                                <td class="col-xs-6">@Html.DisplayFor(c => card.CardName)</td>
+                                <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
                                 <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-xs-1">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.caco.IndexOf(card) })</td>
+                                <td class="col-xs-1">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.collectioncards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>
@@ -52,15 +52,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var card in Model.deck)
+                        @foreach (var card in Model.deckcards)
                         {
                             <tr>
-                                <td class="col-xs-6">@Html.DisplayFor(c => card.CardName)</td>
+                                <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
                                 <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
                                 <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-xs-1">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deck.IndexOf(card) })</td>
+                                <td class="col-xs-1">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deckcards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>

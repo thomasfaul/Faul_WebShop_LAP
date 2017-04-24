@@ -26,7 +26,7 @@ namespace CardGame.DAL.Logic
 
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     //cardRoleList = db.tblrole.ToList();
                     cardTypeList = db.tbltype.ToList();
@@ -64,7 +64,7 @@ namespace CardGame.DAL.Logic
         public static List<tblperson> GetAllUser()
         {
             List<tblperson> ReturnList = null;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
@@ -86,7 +86,7 @@ namespace CardGame.DAL.Logic
             tblperson dbPerson = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     dbPerson = db.tblperson.Where(u => u.email == uemail).FirstOrDefault();
                     if (dbPerson == null)
@@ -114,7 +114,7 @@ namespace CardGame.DAL.Logic
             tblperson dbUser = null;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
@@ -142,7 +142,7 @@ namespace CardGame.DAL.Logic
         {
             string role = "";
 
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
 
                 var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
@@ -168,7 +168,7 @@ namespace CardGame.DAL.Logic
         public static int Get_NumDistinctCardsOwnedByEmail(string email)
         {
             int numCards = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                 if (dbPerson == null)
@@ -191,7 +191,7 @@ namespace CardGame.DAL.Logic
         public static int Get_NumTotalCardsOwnedByEmail(string email)
         {
             int numCards = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                 if (dbPerson == null)
@@ -218,7 +218,7 @@ namespace CardGame.DAL.Logic
         public static int Get_NumDecksOwnedByEmail(string email)
         {
             int numDecks = -1;
-            using (var db = new ClonestoneFSEntities())
+            using (var db = new itin21_ClonestoneFSEntities())
             {
                 tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                 if (dbPerson == null)
@@ -256,7 +256,7 @@ namespace CardGame.DAL.Logic
 
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)
@@ -271,7 +271,7 @@ namespace CardGame.DAL.Logic
                     foreach (var cc in dbCardCollection)
                     {
                         for (int i = 0; i < cc.numcards; i++)
-                            cardList.Add(cc.tbldeckcard.tblcard);
+                            cardList.Add(cc.tblcard);
                     }
                     return cardList;
                 }
@@ -294,7 +294,7 @@ namespace CardGame.DAL.Logic
         {
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     var dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                     if (dbPerson == null)
@@ -333,7 +333,7 @@ namespace CardGame.DAL.Logic
             dbUser.currencybalance = newCurrencyBalance;
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     db.Entry(dbUser).State = EntityState.Modified;
                     db.SaveChanges();
@@ -360,9 +360,9 @@ namespace CardGame.DAL.Logic
         public static bool Add_CardsToCollectionByEmail(string email, List<tblcard> cards)
         {
             var dbPerson = new tblperson();
-            //try
-            //{
-            using (var db = new ClonestoneFSEntities())
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
             {
                 dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                 if (dbPerson == null)
@@ -391,16 +391,15 @@ namespace CardGame.DAL.Logic
                         db.SaveChanges();
                     }
                 }
-                //db.SaveChanges();
+                db.SaveChanges();
                 return true;
             }
-            //}
-            //catch (Exception e)
-            //{
-            //    Writer.LogError(e);
-            //    return false;
-            //}
-            //}
+        }
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+                return false;
+            }
             #endregion
 
         }

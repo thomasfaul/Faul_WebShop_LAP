@@ -76,6 +76,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public ActionResult OrderOverview()
         {
             Order o = (Order)TempData["Order"];
@@ -117,6 +118,7 @@ namespace CardGame.Web.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public ActionResult BuyCardPack(int id)
         {
             var dbCardPack = ShopManager.Get_CardPackById(id);
@@ -129,9 +131,9 @@ namespace CardGame.Web.Controllers
             cardPack.NumCards = dbCardPack.numcards ?? 0;
             cardPack.PackPrice = dbCardPack.packprice ?? 0;
             cardPack.Flavor = dbCardPack.flavour;
-       
+
             return View(cardPack);
-        }
+        } 
         #endregion
 
         #region ACTIONRESULT BUY CARD PACK
@@ -144,6 +146,7 @@ namespace CardGame.Web.Controllers
         /// <param name="numPacks"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize]
         public ActionResult BuyCardPack(int id, int numPacks)
         {
             Writer.LogInfo("id: " + id.ToString());
@@ -169,8 +172,15 @@ namespace CardGame.Web.Controllers
             return RedirectToAction("OrderOverview");
         }
         #endregion
+
+        #region MyRegion ACTIONRESULT ORDER
+
+        /// <summary>
+        /// todo Actionresult order comment
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
-        [Authorize(Roles = "player")]
+        [Authorize]
         [ActionName("OrderOverview")]
         public ActionResult Order()
         {
@@ -179,8 +189,8 @@ namespace CardGame.Web.Controllers
             //Check if User has enough balance
             try
             {
-                 if (o.Pack.IsMoney==true)
-                 {
+                if (o.Pack.IsMoney == true)
+                {
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth);
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
@@ -190,35 +200,35 @@ namespace CardGame.Web.Controllers
                     }
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
-                    return  RedirectToAction("Index", "Home");
-                 }
-                 else
-                { 
-                var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Quantity);
-                if (orderTotal > o.CurrencyBalance)
-                {
-                    return RedirectToAction("NotEnoughBalance");
+                    return RedirectToAction("Index", "Home");
                 }
-                var newBalance = o.CurrencyBalance - orderTotal;
-
-                //User has enough money, subtract money
-                var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name,(int)newBalance);
-                if (!hasUpdated)
+                else
                 {
-                    return RedirectToAction("BalanceUpdateError");
-                }
+                    var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Quantity);
+                    if (orderTotal > o.CurrencyBalance)
+                    {
+                        return RedirectToAction("NotEnoughBalance");
+                    }
+                    var newBalance = o.CurrencyBalance - orderTotal;
 
-                //Generate Cards
-                var orderedCards = ShopManager.Order(o.Pack.IdPack, o.Quantity);
+                    //User has enough money, subtract money
+                    var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
+                    if (!hasUpdated)
+                    {
+                        return RedirectToAction("BalanceUpdateError");
+                    }
 
-                //Add Cards to User Collection
-                var hasUpdatedCards = UserManager.Add_CardsToCollectionByEmail(User.Identity.Name, orderedCards);
+                    //Generate Cards
+                    var orderedCards = ShopManager.Order(o.Pack.IdPack, o.Quantity);
+
+                    //Add Cards to User Collection
+                    var hasUpdatedCards = UserManager.Add_CardsToCollectionByEmail(User.Identity.Name, orderedCards);
 
                     //evtl extra spalte in cardcollection mit fk fuer den Order machen
-                 EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihre Karten sind in der Collection");
-                 TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
+                    EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihre Karten sind in der Collection");
+                    TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
                     TempData["OrderedCards"] = orderedCards;
-                return RedirectToAction("ShowGeneratedCards");
+                    return RedirectToAction("ShowGeneratedCards");
                 }
             }
             catch (Exception e)
@@ -227,7 +237,9 @@ namespace CardGame.Web.Controllers
                 return RedirectToAction("Error", "Error");
             }
 
-        }
+        } 
+        #endregion
+
         #region ACTIONRESULT SHOW GENERATED CARDS
         /// <summary>
         /// Gets the Generated Cards and returns a List
@@ -235,6 +247,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public ActionResult ShowGeneratedCards()
         {
             var orderedCards = (List<tblcard>)TempData["OrderedCards"];
@@ -246,6 +259,7 @@ namespace CardGame.Web.Controllers
                 card.ID = c.idcard;
                 card.Name = c.cardname;
                 card.Type = c.tbltype.typename;
+                card.Class = c.tblclass.@class;
                 card.Mana = c.mana;
                 card.Attack = c.attack;
                 card.Life = c.life;
@@ -262,12 +276,11 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public ActionResult NotEnoughBalance()
         {
             return View();
         }
         #endregion
-
-        
     }
 }

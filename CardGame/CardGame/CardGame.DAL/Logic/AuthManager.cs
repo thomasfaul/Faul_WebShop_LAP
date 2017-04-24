@@ -21,7 +21,7 @@ namespace CardGame.DAL.Logic
         {
             try
             {
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     if (db.tblperson.Any(n => n.email == regUser.email))
                     {
@@ -69,7 +69,7 @@ namespace CardGame.DAL.Logic
                 string dbUserPassword = null;
                 string dbUserSalt = null;
 
-                using (var db = new ClonestoneFSEntities())
+                using (var db = new itin21_ClonestoneFSEntities())
                 {
                     tblperson dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
                     if (dbUser == null)

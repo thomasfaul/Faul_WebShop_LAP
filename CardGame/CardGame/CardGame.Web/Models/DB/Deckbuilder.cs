@@ -2,13 +2,13 @@
 
 namespace CardGame.Web.Models.DB
 {
-    public class Deckbuilder
+    public class DeckBuilder
     {
         public int DeckID { get; set; }
         public List<Card> deckcards { get; set; }
         public List<Card> collectioncards { get; set; }
 
-        public Deckbuilder()
+        public DeckBuilder()
         {
             deckcards = new List<Card>();
             collectioncards = new List<Card>();
