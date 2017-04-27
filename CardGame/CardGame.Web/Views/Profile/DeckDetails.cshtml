@@ -7,12 +7,58 @@
     ViewBag.Title = "DeckDetails";
 }
 
-<h2>DeckDetails</h2>
 
-@Html.Partial("_CardList", Model)
 
-@Html.ActionLink("Edit Deck", "EditDeck", "Deck", new { id = ViewContext.RouteData.Values["id"] }, null)
-@Html.ActionLink("Back to Deck Overview", "DeckOverview")
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+
+
+    @*-----------------------------------------------------LEFTBAR Banner-------------------------------------- ---*@
+
+    @Html.Partial("_BannerAd")
+
+    @*-----------------------------------------------------LEFTBAR CURRENCY------------------------------------ --*@
+
+    @Html.Partial("_Money")
+
+</div>
+
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
+
+
+
+
+<div class="col col-md-6 cardcol "id="decklistaround">
+
+@Html.Partial("_DeckList", Model)
+
+
+    <div class="col-md-offset-5"><h3>@Html.ActionLink("Ihr Deck bearbeiten", "EditDeck", "Deck", new { id = ViewContext.RouteData.Values["id"] }, null)</h3></div>
+
+
+   
+        <div class="col-md-offset-7">
+  <h3>
+    @Html.ActionLink("Zurück zur Übersicht", "DeckOverview")
+</h3>
+</div>
+    
+ </div>
 
  
 
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_RightTop")
+
+    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+
+    @Html.Partial("_RightMiddle")
+
+    @*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+    @Html.Partial("_RightBottom")
+</div>

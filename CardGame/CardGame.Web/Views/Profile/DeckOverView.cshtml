@@ -6,29 +6,55 @@
     ViewBag.Title = "DeckOverview";
 }
 
-<h2>DeckOverview</h2>
 
-<h3>You currently have @Model.ToList().Count decks</h3>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(d => d.Name)
-        </th>
-        <th>
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
 
-        </th>
-    </tr>
 
-    @foreach (var deck in Model)
-    {
-        <tr>
-            <th>
-                @Html.DisplayFor(d => deck.Name)
-            </th>
-            <th>
-                @Html.ActionLink("View Deck", "DeckDetails", new { id = deck.DeckID })
-            </th>
-        </tr>
-    }
-</table>
+    @*-----------------------------------------------------LEFTBAR Banner-------------------------------------- ---*@
 
+    @Html.Partial("_BannerAd")
+
+    @*-----------------------------------------------------LEFTBAR CURRENCY------------------------------------ --*@
+
+    @Html.Partial("_Money")
+
+</div>
+
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
+
+<div class="col-md-6 cardcol">
+  <h3>Deckübersicht</h3>
+        <h3>You currently have @Model.ToList().Count decks</h3>
+    <div class="card-deck-wrapper col-md-12 cardcol "id="deckwrapper">
+      
+        <div class="card-deck packcol packdeck " id="packoverview">
+            @foreach (var deck in Model)
+            {
+                <div class="card col-md-2 packcard" id="deckcardcard">
+                    <img class="cardpic" src="~/Content/images/Cardpacks/2.png"  />
+                    <h3 class="packname">@Html.DisplayFor(c => deck.Name)</h3>
+                    @Html.ActionLink("View Deck", "DeckDetails", new { id = deck.DeckID })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_RightTop")
+
+    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+
+    @Html.Partial("_RightMiddle")
+
+    @*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+    @Html.Partial("_RightBottom")
+</div>

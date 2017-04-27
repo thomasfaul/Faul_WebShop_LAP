@@ -749,7 +749,7 @@ min-height:52em;
 
 #cardoverview {
     overflow-x:hidden;
- margin-top:-18em;
+  margin-top:-18em;
 }
 #cardoverviewinner {
       overflow-x:hidden;
@@ -768,4 +768,51 @@ transition:ease-in-out 1s;
 }
 #packoverview {
     margin-top:-6em;
+}
+#deckcardcard {
+    height:25em;
+}
+#deckcardcard:nth-of-type(1){
+    transform:rotate(-15deg) ;
+}
+#deckcardcard:nth-of-type(2){
+  margin-top:-3em;
+
+}
+#deckcardcard:nth-of-type(3) {
+ transform:rotate( 15deg)
+}
+#deckwrapper {
+margin-top:20em;
+padding:0;
+margin-right:0;
+margin-left:0;
+}
+
+
+#decklistcard {
+
+    position:relative;
+    width: 10em;
+    height: 21em;
+    margin-top: 0.4em;
+    margin-right: 0.8em;
+    padding: 0.1em;
+    background-color: rgba(189, 102, 49, 0.80);
+    text-align: center;
+    border-color: rgba(247, 179, 80, 0.64);
+    border-style: ridge;
+    border-width: 0 0 0.50em;
+    border-radius: 1.0em;
+}
+#decklistaround {
+    margin-left:-4em;
+
+}
+#nestbeschmutzer {
+    margin-left:-5em;
+    overflow-x:hidden;
+    padding:0 0 0 0;
+    height:62em;
+    margin:0 0 0 0 ;
 }

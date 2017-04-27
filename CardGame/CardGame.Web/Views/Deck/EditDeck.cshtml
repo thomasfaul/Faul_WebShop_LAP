@@ -4,13 +4,14 @@
 @{
     ViewBag.Title = "EditDeck";
 }
-<div class="container-fluid">
-    <h4>Deckbuilder @Html.ActionLink("Return to Deck Overview", "DeckOverview", "Profile")</h4>
-    <div class="row">
+<div class="container-fluid editdeckcont">
+    <h4>Deck- Builder</h4>
+    <h3> @Html.ActionLink("Return to Deck Overview", "DeckOverview", "Profile")</h3>
+    <div class="row editdeckrow">
         <div class="col-xs-6">
-            Card Collection
-            <div class="table-responsive" style="height: 350px; overflow:auto;">
-                <table class="table table-striped">
+           Ihre Sammlung
+            <div class="table-responsive">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
                             <th class="col-xs-6">Name</th>
@@ -39,8 +40,8 @@
         </div>
         <div class="col-xs-6">
             Deck @Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.DeckID })
-            <div class="table-responsive" style="height: 350px; overflow:auto;">
-                <table class="table table-striped">
+            <div class="table-responsive">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
                             <th class="col-xs-6">Name</th>

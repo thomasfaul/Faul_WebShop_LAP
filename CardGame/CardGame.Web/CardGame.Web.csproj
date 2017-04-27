@@ -207,7 +207,6 @@
     <Content Include="Content\images\toastr_error.jpg" />
     <Content Include="Content\images\Cardpacks\1.png" />
     <Content Include="Content\images\Cardpacks\2.png" />
-    <Content Include="Content\images\Cardpacks\3.png" />
     <Content Include="Content\images\Cardpacks\4.png" />
     <Content Include="Content\images\Cardpacks\5.png" />
     <Content Include="Content\images\Cardpacks\6.png" />
@@ -299,6 +298,7 @@
     <Content Include="Views\Profile\CardCollection.cshtml" />
     <Content Include="Views\Profile\DeckOverView.cshtml" />
     <Content Include="Views\Profile\DeckDetails.cshtml" />
+    <Content Include="Views\Shared\_DeckList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

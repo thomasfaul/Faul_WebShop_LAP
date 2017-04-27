@@ -27,7 +27,7 @@ namespace CardGame.Web.Controllers
                 card.Life = cc.life;
                 card.Mana = cc.mana;
                 card.Type = UserManager.CardTypeNames[cc.fktype];
-                card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
+                //card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
                 card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
                 card.Pic = cc.pic;
                 db.deckcards.Add(card);

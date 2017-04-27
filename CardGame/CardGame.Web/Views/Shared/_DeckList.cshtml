@@ -1,0 +1,39 @@
+﻿
+@using CardGame.Web.Models
+
+@model IEnumerable<Card>
+@{
+    ViewBag.Title = "_CardList";
+}
+
+
+
+
+    <div class="card-deck-wrapper col-md-12 cardcol" id="ShowNewCards">
+        <div class="card-deck cardcol "id="nestbeschmutzer">
+            <h3>Ihre Karten</h3>
+            @foreach (var card in Model)
+            {
+                <div class="col-md-2"id="decklistcard">
+                    @if (card.Pic != null)
+                    {
+                        var base64 = Convert.ToBase64String(card.Pic);
+                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                        <img class="cardpic img-responsive" id="deckpick"src="@imgSrc" />
+                    }
+                    else
+                    {
+                        <div class="card-header ">@Html.DisplayText("no Picture found")</div>
+                    }
+                    <div class="card-title ">
+                        <h3 class="cardtitle">@Html.DisplayFor(c => card.Name)</h3>
+                    </div>
+                    <div class="card-footer ">
+                        <h5>@Html.DisplayFor(c => card.Flavor)</h5>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
