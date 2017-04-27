@@ -63,7 +63,7 @@ namespace CardGame.Web.Controllers
                 card.Flavor = cc.flavor;
                 card.Pic = cc.pic;
                 card.Type = UserManager.CardTypeNames[cc.fktype];
-                card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
+                //card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
 
                 cardCollection.Add(card);
             }

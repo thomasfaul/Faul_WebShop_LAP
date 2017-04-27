@@ -101,6 +101,7 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register(Register regUser)
         {
+          
             if (!ModelState.IsValid)
             {
                 return View(regUser);

@@ -5,68 +5,97 @@
     ViewBag.Title = "EditDeck";
 }
 <div class="container-fluid editdeckcont">
-    <h4>Deck- Builder</h4>
-    <h3> @Html.ActionLink("Return to Deck Overview", "DeckOverview", "Profile")</h3>
+    <h2>Deck - Builder</h2>
+
     <div class="row editdeckrow">
-        <div class="col-xs-6">
-           Ihre Sammlung
-            <div class="table-responsive">
-                <table class="table table-condensed">
+        <div class="img-circle"id="adpic"><img id="adpicinner"src="~/Content/images/Cardpacks/4.png" /></div>
+        <div class="col col-md-6  colcol">
+            <div><h3> Ihre Sammlung</h3></div>
+
+            <div class="table-responsive showcont" id="listProducts">
+                <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed showtable">
                     <thead>
-                        <tr>
-                            <th class="col-xs-6">Name</th>
-                            <th class="col-xs-2">Type</th>
-                            <th class="col-xs-1">Mana</th>
-                            <th class="col-xs-1">Att</th>
-                            <th class="col-xs-1">Life</th>
-                            <th class="col-xs-1"></th>
+                        <tr class="showtr">
+                            <th class="col-md-1 "></th>
+                            <th class="col-md-5 ">Name</th>
+                            <th class="col-md-2 ">Type</th>
+                            <th class="col-md-1 ">Mana</th>
+                            <th class="col-md-1 ">Attack</th>
+                            <th class="col-md-1 ">Life</th>
+                            <th></th>
                         </tr>
                     </thead>
+
                     <tbody>
                         @foreach (var card in Model.collectioncards)
                         {
-                            <tr>
-                                <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
-                                <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-xs-1">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.collectioncards.IndexOf(card) })</td>
+                            var base64 = Convert.ToBase64String(card.Pic);
+                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <tr class="showtr">
+                                <td class="col-md-1 showth"><img class="img-responsive deckbuilderpic img-thumbnail" src="@imgSrc" /></td>
+                                <td class="col-md-3 showth">@Html.DisplayFor(c => card.Name)</td>
+                                <td class="col-md-2 showth">@Html.DisplayFor(c => card.Type)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Mana)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Attack)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Life)</td>
+                                <td class="col-md-1 showth">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.collectioncards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="col-xs-6">
-            Deck @Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.DeckID })
-            <div class="table-responsive">
-                <table class="table table-condensed">
+        <div class="col col-md-6 colcol" style="background-color:rgba(247, 179, 80, 0.64);color:gray;">
+            <div>
+                <h3> Ihr Deck</h3>
+                <div class="col-md-2-offset offsetlinks">
+
+                    <h1>Klick auf die Kreuze ;-)</h1>
+                    <br />
+                    <h2> <a href="@Url.Action("Deckoverview", "Profile")">Zurück zu den Decks</a>")</h2>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <h2>@Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.DeckID })</h2>
+                </div>
+
+                <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed">
                     <thead>
                         <tr>
-                            <th class="col-xs-6">Name</th>
-                            <th class="col-xs-2">Type</th>
-                            <th class="col-xs-1">Mana</th>
-                            <th class="col-xs-1">Att</th>
-                            <th class="col-xs-1">Life</th>
-                            <th class="col-xs-1"></th>
+                            <th class="col-md-1">Image</th>
+                            <th class="col-md-5">Name</th>
+                            <th class="col-md-2">Type</th>
+                            <th class="col-md-1">Mana</th>
+                            <th class="col-md-1">Att</th>
+                            <th class="col-md-1">Life</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var card in Model.deckcards)
                         {
-                            <tr>
-                                <td class="col-xs-6">@Html.DisplayFor(c => card.Name)</td>
-                                <td class="col-xs-2">@Html.DisplayFor(c => card.Type)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Mana)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Attack)</td>
-                                <td class="col-xs-1">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-xs-1">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deckcards.IndexOf(card) })</td>
+                            var base64 = Convert.ToBase64String(card.Pic);
+                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <tr class="showtr">
+                                <td class="col-md-1 showth"><img class="img-responsive deckbuilderpic img-thumbnail" src="@imgSrc" /></td>
+                                <td class="col-md-3 showth">@Html.DisplayFor(c => card.Name)</td>
+                                <td class="col-md-2 showth">@Html.DisplayFor(c => card.Type)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Mana)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Attack)</td>
+                                <td class="col-md-1 showth">@Html.DisplayFor(c => card.Life)</td>
+                                <td class="col-md-1 showth">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deckcards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>
                 </table>
+
             </div>
         </div>
+
     </div>
+
+</div>
 </div>

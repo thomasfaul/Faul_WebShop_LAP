@@ -250,23 +250,31 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult ShowGeneratedCards()
         {
-            var orderedCards = (List<tblcard>)TempData["OrderedCards"];
-            var cards = new List<Card>();
-
-            foreach (var c in orderedCards)
+            try
             {
-                Card card = new Card();
-                card.ID = c.idcard;
-                card.Name = c.cardname;
-                card.Type = c.tbltype.typename;
-        
-                card.Mana = c.mana;
-                card.Attack = c.attack;
-                card.Life = c.life;
-                card.Pic = c.pic;
-                cards.Add(card);
+                var orderedCards = (List<tblcard>)TempData["OrderedCards"];
+                var cards = new List<Card>();
+
+                foreach (var c in orderedCards)
+                {
+                    Card card = new Card();
+                    card.ID = c.idcard;
+                    card.Name = c.cardname;
+                    card.Type = c.tbltype.typename;
+
+                    card.Mana = c.mana;
+                    card.Attack = c.attack;
+                    card.Life = c.life;
+                    card.Pic = c.pic;
+                    cards.Add(card);
+                }
+                return View(cards);
             }
-            return View(cards);
+            catch (Exception e)
+            {
+                Writer.LogError(e);
+                return View("Error");
+            }
         }
         #endregion
 

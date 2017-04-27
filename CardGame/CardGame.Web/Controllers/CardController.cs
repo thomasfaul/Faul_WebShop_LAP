@@ -29,7 +29,7 @@ namespace CardGame.Web.Controllers
         {
             List<Card> CardList = new List<Card>();
             var dbCardlist = CardManager.GetAllCards();
-
+            
             foreach (var c in dbCardlist)
             {
                 Card card = new Card();

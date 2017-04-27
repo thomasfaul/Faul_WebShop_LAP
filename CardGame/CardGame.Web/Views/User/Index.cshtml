@@ -37,28 +37,29 @@
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 
 </div>
-<div class="col col-md-6"id="index">
+<div class="col col-md-6"id="index"style="max-height:72em;overflow:scroll; overflow-x:hidden">
+    <h2>Kundenübersicht</h2>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table showtable">
             <thead>
-                <tr>
-                        <th>@Html.DisplayNameFor(u => u.ID)</th>
-                        <th>@Html.DisplayNameFor(u => u.Firstname)</th>
-                        <th>@Html.DisplayNameFor(u => u.Lastname)</th>
-                        <th>@Html.DisplayNameFor(u => u.Role)</th>
-                        <th>@Html.DisplayNameFor(u => u.Email)</th>
+                <tr class="showtr">
+                        <th class="showth">@Html.DisplayNameFor(u => u.ID)</th>
+                        <th class="showth">@Html.DisplayNameFor(u => u.Firstname)</th>
+                        <th class="showth">@Html.DisplayNameFor(u => u.Lastname)</th>
+                        <th class="showth">@Html.DisplayNameFor(u => u.Role)</th>
+                        <th class="showth">@Html.DisplayNameFor(u => u.Email)</th>
                 </tr>
             </thead>
             <tbody>
 
                 @foreach (var user in Model)
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(u => user.ID)</td>
-                        <td>@Html.DisplayFor(u => user.Firstname)</td>
-                        <td>@Html.DisplayFor(u => user.Lastname)</td>
-                        <td>@Html.DisplayFor(u => user.Role)</td>
-                        <td>@Html.DisplayFor(u => user.Email)</td>
+                    <tr class="showtr">
+                        <td class="showth">@Html.DisplayFor(u => user.ID)</td>
+                        <td class="showth">@Html.DisplayFor(u => user.Firstname)</td>
+                        <td class="showth">@Html.DisplayFor(u => user.Lastname)</td>
+                        <td class="showth">@Html.DisplayFor(u => user.Role)</td>
+                        <td class="showth">@Html.DisplayFor(u => user.Email)</td>
                     </tr>
                 }
             </tbody>
@@ -83,7 +84,9 @@
         <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zu den Karten</a>
 
     </div>
+    @*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
 
+    @Html.Partial("_RightBottom")
 </div>
 
 

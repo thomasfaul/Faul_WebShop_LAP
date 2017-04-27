@@ -26,7 +26,7 @@
 
 <div class="col-md-6 cardcol">
   <h3>Deckübersicht</h3>
-        <h3>You currently have @Model.ToList().Count decks</h3>
+        <h3>Du hast @Model.ToList().Count Decks</h3>
     <div class="card-deck-wrapper col-md-12 cardcol "id="deckwrapper">
       
         <div class="card-deck packcol packdeck " id="packoverview">
@@ -35,7 +35,7 @@
                 <div class="card col-md-2 packcard" id="deckcardcard">
                     <img class="cardpic" src="~/Content/images/Cardpacks/2.png"  />
                     <h3 class="packname">@Html.DisplayFor(c => deck.Name)</h3>
-                    @Html.ActionLink("View Deck", "DeckDetails", new { id = deck.DeckID })
+                    @Html.ActionLink("Zu diesem Deck", "DeckDetails", new { id = deck.DeckID })
                 </div>
             }
         </div>

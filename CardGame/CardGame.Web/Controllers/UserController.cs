@@ -45,7 +45,16 @@ namespace CardGame.Web.Controllers
 
             }
             return View(UserList);
-        } 
+        }
+        /// <summary>
+        /// TODO set User inactive
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UserInactive()
+        {
+            //var userinactive= UserManager.
+            return View();
+        }
         #endregion
 
     }

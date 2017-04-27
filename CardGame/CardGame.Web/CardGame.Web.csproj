@@ -316,7 +316,7 @@
       <Name>CardGame.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
-      <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>
+      <Project>{1465bcea-ccac-4ace-a7a0-c50c30a205a5}</Project>
       <Name>CardGame.Log</Name>
     </ProjectReference>
   </ItemGroup>

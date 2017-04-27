@@ -111,7 +111,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.Config" />
     <EntityDeploy Include="Model\CardGameModel.edmx">
@@ -127,12 +126,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
-      <Project>{a2b8ef85-9ca4-48fc-850a-c9fa254a7a4b}</Project>
-      <Name>CardGame.Log</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Model\CardGameModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CardGameModel.edmx</DependentUpon>
@@ -143,6 +136,12 @@
       <DependentUpon>CardGameModel.edmx</DependentUpon>
       <LastGenOutput>CardGameModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
+      <Project>{1465BCEA-CCAC-4ACE-A7A0-C50C30A205A5}</Project>
+      <Name>CardGame.Log</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,10 +14,10 @@ namespace CardGame.Web.Controllers
     {
         public ActionResult EditDeck(int id)
         {
+
             DeckBuilder db = new DeckBuilder();
             db.DeckID = id;
             var dbDeckCards = DeckManager.GetDeckCardsById(id);
-
             foreach (var cc in dbDeckCards)
             {
                 Card card = new Card();
@@ -28,8 +28,9 @@ namespace CardGame.Web.Controllers
                 card.Mana = cc.mana;
                 card.Type = UserManager.CardTypeNames[cc.fktype];
                 //card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
+                 card.Pic = cc.pic;
                 card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
-                card.Pic = cc.pic;
+                
                 db.deckcards.Add(card);
             }
 
@@ -100,6 +101,7 @@ namespace CardGame.Web.Controllers
 
         public ActionResult SaveDeck(int id)
         {
+ 
             DeckBuilder db = new DeckBuilder();
             db = (DeckBuilder)TempData["DeckBuilder"];
 
