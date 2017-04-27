@@ -1,0 +1,84 @@
+<Xcpt>
+  <Time>27.04.2017 08:23:23</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\Github\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>27.04.2017 08:25:09</Time>
+  <Exception>
+    <Source>CardGame.DAL</Source>
+    <Message>User Does not Exist</Message>
+    <Stack>   bei CardGame.DAL.Logic.UserManager.GetUserByUserEmail(String email) in C:\Users\faulthom\Documents\Github\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 124.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>27.04.2017 08:25:39</Time>
+  <Info>Entered Pass = Christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:25:39</Time>
+  <Info>HashPass = 0D6F1304B6C817ADC9E9BC5B0036E9FBD627DE7998F69A9865BC9FA9530C17295C8FF91406A620FC3E7C8D8F331E8FFB0D6754E06750738718AEDF82ADF05292</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:25:50</Time>
+  <Info>Entered Pass = Christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:25:50</Time>
+  <Info>HashPass = 0D6F1304B6C817ADC9E9BC5B0036E9FBD627DE7998F69A9865BC9FA9530C17295C8FF91406A620FC3E7C8D8F331E8FFB0D6754E06750738718AEDF82ADF05292</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:26:17</Time>
+  <Info>Entered Pass = christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:26:17</Time>
+  <Info>HashPass = 9EA2CB560933A21219C6BA2A8E0349BF7F2E37214E8C1A8C598B003EE8244B2358F33FC1E2CA633459FEC20E8E9BDF92B83A08450C75421D995D8B20C25FD123</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:11</Time>
+  <Info>Entered Pass = Christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:11</Time>
+  <Info>HashPass = 0D6F1304B6C817ADC9E9BC5B0036E9FBD627DE7998F69A9865BC9FA9530C17295C8FF91406A620FC3E7C8D8F331E8FFB0D6754E06750738718AEDF82ADF05292</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:29</Time>
+  <Info>Entered Pass = Christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:29</Time>
+  <Info>HashPass = 0D6F1304B6C817ADC9E9BC5B0036E9FBD627DE7998F69A9865BC9FA9530C17295C8FF91406A620FC3E7C8D8F331E8FFB0D6754E06750738718AEDF82ADF05292</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:41</Time>
+  <Info>Entered Pass = Christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:41</Time>
+  <Info>HashPass = 0D6F1304B6C817ADC9E9BC5B0036E9FBD627DE7998F69A9865BC9FA9530C17295C8FF91406A620FC3E7C8D8F331E8FFB0D6754E06750738718AEDF82ADF05292</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:58</Time>
+  <Info>Entered Pass = christian</Info>
+</Info>
+<Info>
+  <Time>27.04.2017 08:27:58</Time>
+  <Info>HashPass = 9EA2CB560933A21219C6BA2A8E0349BF7F2E37214E8C1A8C598B003EE8244B2358F33FC1E2CA633459FEC20E8E9BDF92B83A08450C75421D995D8B20C25FD123</Info>
+</Info>
+<Xcpt>
+  <Time>27.04.2017 08:27:58</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\faulthom\Documents\Github\Faul_WebShop_LAP\CardGame\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>

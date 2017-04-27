@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "_RightTop";
+}
+
+<div class="col col-md-12">
+    <br />
+    <h3>Stöbern</h3>
+    <p>
+        Stöbere durch unsere Kartensammlung und schaue dir die neuesten Karten an
+    </p>
+    @{if (User.IsInRole("player") || User.IsInRole("admin"))
+            {
+            <a class="btn btn-default" href="@Url.Action("Overview", "Card")">Zeig mir die Karten</a>
+        }
+    }
+</div>

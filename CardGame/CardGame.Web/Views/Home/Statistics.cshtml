@@ -1,0 +1,56 @@
+﻿@model CardGame.Web.Models.Statistic
+
+@{
+    ViewBag.Title = "Statistics";
+}
+
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+@*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+    @Html.Partial("_Money");
+</div>
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
+<div class="col col-md-6 cardcol" id="index">
+    <h3>User angemeldet:</h3>
+    <p>
+        @Html.DisplayName("User:")
+        @Html.DisplayFor(s => s.NumUsers)
+    </p>
+    <br />
+    <h3>Karten insgesamt:</h3>
+    <p>
+        @Html.DisplayName("Karten:")
+        @Html.DisplayFor(s => s.NumCards)
+    </p>
+    <br />
+    <h3>Erstellte Decks:</h3>
+    <p>
+        @Html.DisplayName("Decks:")
+        @Html.DisplayFor(s => s.NumDecks)
+    </p>
+    <br />
+    <h3>Veröffentlicht am</h3>
+    <p>
+        @Html.DisplayName("Datum:")
+        @Html.DisplayFor(s => s.CreationTime)
+    </p>
+</div>
+
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_RightTop")
+    @Html.Partial("_RightMiddle")
+    @Html.Partial("_RightBottom")
+    
+</div>
+

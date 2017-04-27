@@ -1,0 +1,87 @@
+﻿@model CardGame.Web.Models.CardsListViewModel
+
+
+
+@{
+    ViewBag.Title = "Overview";
+}
+
+
+
+
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+
+
+    <div class="col-md-3">
+        @Html.Partial("_Advertisment")
+
+ @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+        @Html.Partial("_BannerAd")
+
+@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+       @Html.Partial("_Money");
+        </div>
+    @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
+    <div class="col col-md-6 cardcol "id="cardoverviewouter">
+        <div class="card-deck-wrapper col-md-12 cardcol"id="cardoverview">
+            <div class="card-deck cardcol" id="cardoverviewinner">
+                @foreach (var card in Model.Cards)
+            {
+                    <div class="card col-md-3">
+                        @if (card.Pic != null)
+                {
+                          var base64 = Convert.ToBase64String(card.Pic);
+                          var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <img class="cardpic"src="@imgSrc"/>
+                        }
+                        else
+                        {
+                            <div class="card-header ">@Html.DisplayText("no Picture found")</div>
+                        }
+                        <div class="card-title ">
+                            <h3 class="cardtitle">@Html.DisplayFor(c => card.Name)</h3>
+                        </div>
+                        <div class="card-footer " >
+                            <h5>@Html.ActionLink("Details", "Details", new { id = card.ID })</h5>
+                        </div>
+                    </div>
+                }
+            </div>
+            
+        </div>
+        <p class="col-md-offset-7" id="paginator">@Html.PageLinks(Model.PagingInfo, x => Url.Action("OverView", new { page = x }))</p>       
+    </div>
+      
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+    <div class="col-md-3">
+
+        @Html.Partial("_RightTop")
+@*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+        @Html.Partial("_RightMiddle")
+@*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+        @Html.Partial("_RightBottom")
+
+
+@*-----------------------------------------------------Paginator-----------------------------------------*@        
+   
+           
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+

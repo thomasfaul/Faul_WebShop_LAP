@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "_Money";
+}
+
+<div class="col col-md-12 currency">
+    @{if (Session["CurrencyBalance"] != null)
+            {
+            <br style="height:0.5em"/>
+            <h3>Dein Guthaben</h3>
+           
+            var currency = Session["CurrencyBalance"];
+            <h5 class="welcome">@currency</h5>
+            <h5 class="Welcome">COINS</h5>
+            <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+            <a class="btn btn-default" href="@Url.Action("EnableCurrency","CardPack")">Guthaben aufladen</a>  
+             
+        }
+        else
+        {
+            <br />
+            <h3>Lade dein Guthaben auf</h3>
+            <img class="image responsive coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+            <h3>und hol dir Cardpacks!!</h3>
+        }
+    }
+</div>

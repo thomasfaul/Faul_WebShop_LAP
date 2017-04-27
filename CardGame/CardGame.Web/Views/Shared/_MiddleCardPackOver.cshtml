@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "_MiddleCardPackOver";
+}
+
+
+
+<div class="col-md-6 cardcol buymiddlecontainer">
+    <div class="col-md-12 cardcol"id="index">
+        @if (Model.Pack.IsMoney == false)
+        {
+            <h2>Bestellübersicht</h2>
+            <h3 style="color:darkorange">Sie wollen &nbsp; @Model.Quantity &nbsp; Stück @Model.Pack.PackName &nbsp; kaufen</h3>
+
+            using (Html.BeginForm())
+            {
+                <div class="col-md-12 middleOrder">
+
+                    <h5 style="color:bisque">Ihr Guthaben:<span class="spanpoverview"> @Model.CurrencyBalance</span>&nbsp; Coins</h5>
+
+                    <h5 style="color:bisque">Gesamt: <span class="spanpoverview">@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span> &nbsp;Stück</h5>
+
+                    <h5 style="color:bisque">Guthaben nach Kauf:<span class="spanpoverview"> @(@Model.CurrencyBalance - Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Coins</h5>
+                </div>
+                <div class=col-md-push-6>
+                    <input type="submit" value="Will es Haben" class="btn btn-default" />
+                </div>
+            }
+        }
+    </div>
+</div>

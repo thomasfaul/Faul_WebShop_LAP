@@ -1,0 +1,149 @@
+﻿@using CardGame.Web.Models
+
+@model CardPack
+
+@{
+    ViewBag.Title = "BuyCardPack";
+}
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+
+ @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+
+ @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+    @Html.Partial("_Money");
+
+</div>
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
+
+<div class="col-md-6 cardcol buymiddlecontainer">
+    <div class="card-deck-wrapper col-md-6 cardcol">
+        <div class="card-deck packcol packdeck "id="index">
+            <div class="card col-md-2 packcard">
+                @if (Model.IsMoney == true)
+                {
+                    <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                    <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3><br />
+                    <h6 class="card-header head">@Html.DisplayFor(c => Model.Flavor)</h6><br />
+                    <p class="price">€ &nbsp; @Html.DisplayFor(c => Model.PackPrice)<br /><span>Euro</span></p>
+                }
+                else
+                {
+                    <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
+                    <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3>
+                    <h5 style="color:darkorange" class="card-header head">@Html.DisplayFor(c => Model.NumCards)<span>&nbsp;Karten</span></h5>
+
+                    <p class="price">
+                        @Html.DisplayFor(c => Model.PackPrice)<br /><span>Coins</span>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 cardcol">
+        @if (Model.IsMoney == true)
+        {
+            using (Html.BeginForm())
+            {
+                <div class="col-md-12">
+                    <h2 class="headbuypack">@Html.DisplayFor(c => Model.PackName)</h2>
+                    <h4>@Html.DisplayFor(c => Model.Flavor)</h4>
+                    <table class="buypack">
+                        <tbody>
+                            <tr class="trbuypack">
+                                <td class="tdbuypack">Preis:</td>
+                                <td class="tdbuypack">  </td>
+                                <td class="tdbuypackr"> € @Html.DisplayFor(cp => cp.PackPrice)</td>
+                            </tr>
+                            <tr class="trbuypack">
+                                <td class="tdbuypack">Anzahl:</td>
+                                <td class="tdbuypack">   </td>
+                                <td class="tdbuypackr"> <input type="text" name="numPacks" class="text-left" style="width:3em" value="1" /></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Guthaben aufladen" class="btn btn-default" />
+                </div>
+            }
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                <div class="col-md-12">
+                    <h2 class="headbuypack">@Html.DisplayFor(c => Model.PackName)</h2>
+                    <h4>@Html.DisplayFor(c => Model.Flavor)</h4>
+                    <table class="buypack">
+                        <tbody>
+                            <tr class="trbuypack">
+
+                                <td class="tdbuypack">Preis:</td>
+                                <td class="tdbuypack">  </td>
+                                <td class="tdbuypackr">  @Html.DisplayFor(cp => cp.PackPrice)&nbsp;<span>Coins</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tdbuypack">Karten:</td>
+                                <td class="tdbuypack">  </td>
+                                <td class="tdbuypackr">  @Html.DisplayFor(cp => cp.NumCards)&nbsp;<span>Stück</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tdbuypack">Preis p. Karte:</td>
+                                <td class="tdbuypack"></td>
+                                <td class="tdbuypackr"> @((double)Model.PackPrice / Model.NumCards) &nbsp;Coins</td>
+                            </tr>
+                            <tr class="trbuypack">
+                                <td class="tdbuypack">Anzahl:</td>
+                                <td class="tdbuypack">   </td>
+                                <td class="tdbuypackr"> <input type="text" name="numPacks" class="text-left" style="width:3em" value="1" /></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Paket kaufen" class="btn btn-default" />
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_RightTop")
+
+@*-----------------------------------------------------RIGHTBAR Middle-----------------------------------------*@
+
+    @Html.Partial("_RightMiddle")
+
+@*-------------------------------------------------RIGHTBAR BOTTOM---------------------------------------------*@
+
+    @if (Model.IsMoney != true)
+    {
+        <div class="col col-md-12">
+            <h3>Kaufe Coins</h3>
+            <p>und du kannst damit Cardpacks erstehen</p>
+            <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Buy Gold </a>
+        </div>
+    }
+    else
+    {
+        <div class="col col-md-12 ">
+            <h3>Coins einlösen</h3>
+            <p>
+                Lege dir Cardpacks zu und statte deine Kartendecks aus
+            </p>
+            <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+        </div>
+    }
+</div>
+

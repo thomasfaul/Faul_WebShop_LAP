@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+
+    @Html.Partial("_Advertisment")
+
+    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+
+    @Html.Partial("_Money");
+
+</div>
+
+    @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
+<div class="col col-md-9 cardcol  "id="about">
+    <h3>Über unseren Shop</h3>
+    <p> Dear,
+        @{if (Session["Firstname"] != null)
+            {
+                var firstname = this.Session["Firstname"];  @firstname 
+            }
+        }, 
+        CardShop is an online virtual card service. This service is FREE and information will be kept confidential and not used for any other purposes (see privacy statement).
+
+        If you have received a virtual card and wish to see it click on collect.
+    </p>
+    <br />
+    <p>
+        Greetings may contain still photos or animated pictures.
+
+        Cards can be sent to anyone who has an e-mail address and who has access to a web browser to view their greeting. After you have designed your greeting an e-mail will be sent to the recipient informing them that they have been sent a virtual card. They will be given an access code that allows them to view their message. Choose send to design and send a greeting.
+
+        Privacy Statement
+
+        Briefly, Any information provided to the CardShop will be kept as securely as we can and will not be used for any purposes other than to provide a virtual greeting to the individual you have chosen.
+
+        Warning: The Internet by it's nature is insecure and no guarantee can be given that information may not be viewable by others. We will endeavour to reduce this possibility. E-mail address's will not be stored.
+
+        Conditions of use
+
+        CardShop is a FREE service but users must observe the conditions of use:
+    </p>
+    <br />
+    <p>
+        Material that is of an illegal or offensive nature must not be included in greetings sent using CardShop.
+        This service may not be used to harass or in any other way distress the recipient of your message.
+        The author of a greeting is responsible for the content of any message sent and any consequences of sending such a greeting.
+        No liability is accepted for any loss caused by the use of CardShop or the delivery or none delivery of any greetings.
+        No guarantee of availability of service.
+        Conditions of use may be changed at a future date.
+        Advanced Use
+    </p>
+    <br />
+    <p>
+        If you are feeling brave and know a bit of HTML then you can include some in the message of the card. Preview it first just to make sure it's OK. Warning editing your card will eat any <br> tags you may have. Good Luck!
+    </p>
+    <br />
+    <p>
+        Use this area to provide additional information.
+    </p>
+</div>

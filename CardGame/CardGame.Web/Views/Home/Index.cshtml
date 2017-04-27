@@ -1,0 +1,65 @@
+﻿@model CardGame.Web.Models.User
+   
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+
+
+@*-----------------------------------------------------LEFTBAR Banner-------------------------------------- ---*@
+
+    @Html.Partial("_BannerAd")
+
+ @*-----------------------------------------------------LEFTBAR CURRENCY------------------------------------ --*@
+
+    @Html.Partial("_Money")
+
+</div> 
+
+ @*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
+
+   
+<div class="col col-md-6 cardcol "id="index">
+    @{ if (User.Identity.Name == "")
+        {
+            <h3>Willkommen</h3>
+            <h3>im CloneShop</h3>
+            <h5>
+                Um im Shop stöbern zu können müssen Sie sich zuerst einloggen
+            </h5>
+            <a class="btn btn-default" href="@Url.Action("Login", "Account")">Zum Login</a>
+        }
+        else
+        {
+            <h3 class="welcome">Willkommen @ViewBag.Firstname</h3>
+            <h3>im CloneShop</h3>
+            <h5>
+                Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
+                Cardpacks kaufen und deine eigenen Decks erstellen.
+            </h5>
+
+        }
+        if (User.IsInRole("admin"))
+        {
+            <h5>You are an admin</h5>
+        }
+    }
+</div>
+
+@*-----------------------------------------------------RIGHTBAR TOP---------------------------------------------*@
+<div class="col-md-3">
+
+   @Html.Partial("_RightTop")
+
+@*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+
+   @Html.Partial("_RightMiddle")
+
+@*-----------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+   @Html.Partial("_RightBottom")
+</div>
