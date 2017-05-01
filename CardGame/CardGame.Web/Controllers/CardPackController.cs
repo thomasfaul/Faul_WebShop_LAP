@@ -1,11 +1,11 @@
 ﻿using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
-using CardGame.Log;
 using CardGame.Web.HtmlHelpers;
 using CardGame.Web.Models;
 using CardGame.Web.Models.DB;
+using log4net;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -13,6 +13,7 @@ namespace CardGame.Web.Controllers
 {
     public class CardPackController : Controller
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         HomeController a = new HomeController();
         public int PPagesize = 20;
 
@@ -27,6 +28,7 @@ namespace CardGame.Web.Controllers
         /// <returns>ActionResult</returns>
         public ActionResult PackOverview(int page = 1)
         {
+            log.Info("CardPackController-PackOverview");
             PacksListViewModel model = new PacksListViewModel();
             model.PIsMoney = false;
             try
@@ -35,7 +37,8 @@ namespace CardGame.Web.Controllers
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("CardPackController-PackOverview",e);
             }
 
             List<CardPack> PackList = new List<CardPack>();
@@ -44,13 +47,13 @@ namespace CardGame.Web.Controllers
             foreach (var p in dbPacklist)
             {
                 CardPack pack = new CardPack();
-                pack.IdPack = p.idpack;
-                pack.PackName = p.packname;
-                pack.IsMoney = p.ismoney ?? model.PIsMoney;
-                pack.PackPrice = (decimal)p.packprice;
-                pack.Flavor = p.flavour;
-                pack.Pic = p.packimage;
-                pack.Worth = p.worth ?? 0;
+                pack.IdPack = p.ID;
+                pack.PackName = p.Name;
+                pack.IsMoney = p.IsMoney ?? model.PIsMoney;
+                pack.PackPrice = (decimal)p.Price;
+                pack.Flavor = p.FlavorText;
+                pack.Pic = p.Image;
+                pack.Worth = p.Worth ?? 0;
                 PackList.Add(pack);
             }
 
@@ -79,6 +82,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult OrderOverview()
         {
+            log.Info("CardPackController-OrderOverview");
             Order o = (Order)TempData["Order"];
             TempData["Order"] = o;
             return View(o);
@@ -92,6 +96,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         public ActionResult EnableCurrency()
         {
+            log.Info("CardPackController-EnableCurrency");
             this.Session["isCurrency"] = true;
             return RedirectToAction("PackOverview", "CardPack");
         }
@@ -104,6 +109,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         public ActionResult DisableCurrency()
         {
+            log.Info("CardPackController-Disable Currency");
             this.Session["isCurrency"] = false;
             //return RedirectToAction("PackOverview", "CardPack");
             return RedirectToAction("PackOverview");
@@ -121,16 +127,17 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPack(int id)
         {
+            log.Info("CardPackController-BuyCardPack");
             var dbCardPack = ShopManager.Get_CardPackById(id);
 
             CardPack cardPack = new CardPack();
-            cardPack.IdPack = dbCardPack.idpack;
-            cardPack.PackName = dbCardPack.packname;
-            cardPack.Worth = dbCardPack.worth ?? 0;
-            cardPack.IsMoney = (bool)dbCardPack.ismoney;
-            cardPack.NumCards = dbCardPack.numcards ?? 0;
-            cardPack.PackPrice = dbCardPack.packprice ?? 0;
-            cardPack.Flavor = dbCardPack.flavour;
+            cardPack.IdPack = dbCardPack.ID;
+            cardPack.PackName = dbCardPack.Name;
+            cardPack.Worth = dbCardPack.Worth ?? 0;
+            cardPack.IsMoney = (bool)dbCardPack.IsMoney;
+            cardPack.NumCards = dbCardPack.NumberOfCards ?? 0;
+            cardPack.PackPrice = dbCardPack.Price ?? 0;
+            cardPack.Flavor = dbCardPack.FlavorText;
 
             return View(cardPack);
         } 
@@ -149,20 +156,21 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult BuyCardPack(int id, int numPacks)
         {
-            Writer.LogInfo("id: " + id.ToString());
-            Writer.LogInfo("numPacks: " + numPacks.ToString());
+            log.Info("CardPackController-BuyCardPack");
+            log.Info("id: " + id.ToString());
+            log.Info("numPacks: " + numPacks.ToString());
 
             Order o = new Order();
             var dbCardPack = ShopManager.Get_CardPackById(id);
 
             CardPack cardPack = new CardPack();
            
-            cardPack.IdPack = dbCardPack.idpack;
-            cardPack.PackName = dbCardPack.packname;
-            cardPack.NumCards = dbCardPack.numcards ?? 0;
-            cardPack.PackPrice = dbCardPack.packprice ?? 0;
-            cardPack.IsMoney = dbCardPack.ismoney ?? false;
-            cardPack.Worth = dbCardPack.worth ?? 0;
+            cardPack.IdPack = dbCardPack.ID;
+            cardPack.PackName = dbCardPack.Name;
+            cardPack.NumCards = dbCardPack.NumberOfCards ?? 0;
+            cardPack.PackPrice = dbCardPack.Price ?? 0;
+            cardPack.IsMoney = dbCardPack.IsMoney ?? false;
+            cardPack.Worth = dbCardPack.Worth ?? 0;
             o.Pack = cardPack;
             o.Quantity = numPacks;
             o.CurrencyBalance = UserManager.Get_BalanceByEmail(User.Identity.Name);
@@ -184,7 +192,7 @@ namespace CardGame.Web.Controllers
         [ActionName("OrderOverview")]
         public ActionResult Order()
         {
-
+            log.Info("CardPackController-Order");
             Order o = (Order)TempData["Order"];
             //Check if User has enough balance
             try
@@ -196,6 +204,7 @@ namespace CardGame.Web.Controllers
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)
                     {
+                        log.Error("CardPackController-Order, BalanceUpdateError");
                         return RedirectToAction("BalanceUpdateError");
                     }
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
@@ -207,6 +216,7 @@ namespace CardGame.Web.Controllers
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Quantity);
                     if (orderTotal > o.CurrencyBalance)
                     {
+                        log.Error("CardPackController-Order, NotEnoughBalance");
                         return RedirectToAction("NotEnoughBalance");
                     }
                     var newBalance = o.CurrencyBalance - orderTotal;
@@ -215,6 +225,7 @@ namespace CardGame.Web.Controllers
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)
                     {
+                        log.Error("CardPackController-Order,BalanceUpdateError");
                         return RedirectToAction("BalanceUpdateError");
                     }
 
@@ -233,7 +244,8 @@ namespace CardGame.Web.Controllers
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("CardPackController-Order", e);
                 return RedirectToAction("Error", "Error");
             }
 
@@ -250,29 +262,31 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult ShowGeneratedCards()
         {
+            log.Info("CardPackController-ShowGeneratedCards");
             try
             {
-                var orderedCards = (List<tblcard>)TempData["OrderedCards"];
-                var cards = new List<Card>();
+                var orderedCards = (List<DAL.Model.Card>)TempData["OrderedCards"];
+                var cards = new List<Web.Models.Card>();
 
                 foreach (var c in orderedCards)
                 {
-                    Card card = new Card();
-                    card.ID = c.idcard;
-                    card.Name = c.cardname;
-                    card.Type = c.tbltype.typename;
-
-                    card.Mana = c.mana;
-                    card.Attack = c.attack;
-                    card.Life = c.life;
-                    card.Pic = c.pic;
+                    Web.Models.Card card = new Web.Models.Card();
+                    card.ID = c.ID;
+                    card.Name = c.Name;
+                    card.Type = c.CardType.Name;
+                    card.Class = c.CardClass.Name;
+                    card.Mana = c.ManaCost;
+                    card.Attack = c.Attack;
+                    card.Life = c.Life;
+                    card.Pic = c.Image;
                     cards.Add(card);
                 }
                 return View(cards);
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error(e);
                 return View("Error");
             }
         }
@@ -287,6 +301,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult NotEnoughBalance()
         {
+            log.Info("CardPackController-NotEnoughBalance");
             return View();
         }
         #endregion

@@ -12,33 +12,33 @@ namespace CardGame.DAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblperson
+    public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblperson()
+        public User()
         {
-            this.tblcollection = new HashSet<tblcollection>();
-            this.tbldeck = new HashSet<tbldeck>();
-            this.tblorder = new HashSet<tblorder>();
+            this.AllUserCardCollections = new HashSet<UserCardCollection>();
+            this.AllDecks = new HashSet<Deck>();
+            this.AllOrders = new HashSet<Purchase>();
         }
     
-        public int idperson { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string gamertag { get; set; }
-        public Nullable<int> currencybalance { get; set; }
-        public Nullable<bool> isactive { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
-        public string salt { get; set; }
-        public string userrole { get; set; }
-        public byte[] pic { get; set; }
+        public int ID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string GamerTag { get; set; }
+        public Nullable<int> AmountMoney { get; set; }
+        public Nullable<bool> IsActive { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Salt { get; set; }
+        public string UserRole { get; set; }
+        public byte[] Avatar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblcollection> tblcollection { get; set; }
+        public virtual ICollection<UserCardCollection> AllUserCardCollections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbldeck> tbldeck { get; set; }
+        public virtual ICollection<Deck> AllDecks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblorder> tblorder { get; set; }
+        public virtual ICollection<Purchase> AllOrders { get; set; }
     }
 }

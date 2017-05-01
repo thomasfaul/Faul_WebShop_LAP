@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CardGame.DAL.Model;
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
     public class PackManager
     //TODO-- könnte durch Vererbung(Schnittstelle) entfernt werden
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static readonly Dictionary<int, string> Packs;
 
         #region Construktor Packmanager
@@ -15,17 +17,18 @@ namespace CardGame.DAL.Logic
         /// </summary>
         static PackManager()
         {
+            log.Info("PackManager-Constructor");
             Packs = new Dictionary<int, string>();
-            List<tblpack> packList = null;
+            List<Pack> packList = null;
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                packList = db.tblpack.ToList();
+                packList = db.AllPacks.ToList();
             }
 
             foreach (var pack in packList)
             {
-                Packs.Add(pack.idpack, pack.packname);
+                Packs.Add(pack.ID, pack.Name);
             }
 
             Packs.Add(0, "n/a");
@@ -37,12 +40,13 @@ namespace CardGame.DAL.Logic
         /// Gets all Packs from the Database
         /// </summary>
         /// <returns></returns> returns a tblpack
-        public static List<tblpack> GetAllPacks()
+        public static List<Pack> GetAllPacks()
         {
-            List<tblpack> ReturnList = null;
+            log.Info("Usermanager-GetAllPacks");
+            List<Pack> ReturnList = null;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                ReturnList = db.tblpack.ToList();
+                ReturnList = db.AllPacks.ToList();
             }
             return ReturnList;
         }
@@ -54,14 +58,15 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static tblpack GetPackById(int id)
+        public static Pack GetPackById(int id)
         {
-            tblpack pack = null;
+            log.Info("Usermanager-GetPackById");
+            Pack pack = null;
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
                 //Extention Method
-                pack = db.tblpack.Where(c => c.idpack == id).FirstOrDefault();
+                pack = db.AllPacks.Where(c => c.ID == id).FirstOrDefault();
             }
             return pack;
         }

@@ -12,14 +12,14 @@ namespace CardGame.DAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblorder
+    public partial class DeckCard
     {
-        public int idorder { get; set; }
-        public Nullable<System.DateTime> orderdate { get; set; }
-        public Nullable<int> fkperson { get; set; }
-        public Nullable<int> fkpack { get; set; }
+        public int ID { get; set; }
+        public int ID_Deck { get; set; }
+        public int ID_Card { get; set; }
+        public Nullable<int> NumberOfCards { get; set; }
     
-        public virtual tblpack tblpack { get; set; }
-        public virtual tblperson tblperson { get; set; }
+        public virtual Card Card { get; set; }
+        public virtual Deck Deck { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Net.Mail;
 using CardGame.Log;
+using System.Diagnostics;
 
 namespace CardGame.Web.HtmlHelpers
 {
@@ -40,6 +41,7 @@ namespace CardGame.Web.HtmlHelpers
             }
             catch (Exception e)
             {
+                Debugger.Break();
                 Writer.LogError(e);
                 return true;
             }

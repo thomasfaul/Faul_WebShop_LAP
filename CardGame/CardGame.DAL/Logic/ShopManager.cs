@@ -1,8 +1,9 @@
 ﻿using CardGame.DAL.Model;
-using CardGame.Log;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 
 
@@ -10,27 +11,32 @@ namespace CardGame.DAL.Logic
 {
     public class ShopManager
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region GET ALL CARD PACKS
         /// <summary>
         /// Returns al List of all Packs
         /// </summary>
         /// <returns></returns>
-        public static List<tblpack> Get_AllCardPacks()
+        public static List<Pack> Get_AllCardPacks()
         {
-            var allCardPacks = new List<tblpack>();
+            log.Info("Usermanager-Get_AllCardPacks");
+            var allCardPacks = new List<Pack>();
 
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    allCardPacks = db.tblpack.ToList();
+                    allCardPacks = db.AllPacks.ToList();
                 }
                 if (allCardPacks == null)
+                    log.Info("Usermanager-Get_AllCardPacks, no CardPacks found");
                     throw new Exception("NoCardPacksFound");
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-Get_AllCardPacks",e);
             }
             return allCardPacks;
         }
@@ -42,22 +48,25 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static tblpack Get_CardPackById(int id)
+        public static Pack Get_CardPackById(int id)
         {
-            var dbCardPack = new tblpack();
+            log.Info("Usermanager-Get_CardPackById");
+            var dbCardPack = new Pack();
 
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    dbCardPack = db.tblpack.Find(id);
+                    dbCardPack = db.AllPacks.Find(id);
                 }
                 if (dbCardPack == null)
+                    log.Info("Get_CardPackById, no CardPacks found");
                     throw new Exception("CardPackNotFound");
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-Get_CardPackById", e);
             }
             return dbCardPack;
         } 
@@ -73,6 +82,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static decimal GetTotalCost(int id, int numPacks)
         {
+            log.Info("Usermanager-GetTotalCost");
             decimal num = 0;
             decimal price = 0;
             bool cur = false;
@@ -80,19 +90,21 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var pack = db.tblpack.Find(id);
+                    var pack = db.AllPacks.Find(id);
                     if (pack == null)
                     {
+                        log.Error("Usermanager-GetTotalCost,Pack not found");
                         throw new Exception("PackNotFound");
                     }
-                    price = pack.packprice ?? 0;
-                    cur = pack.ismoney ?? false;
+                    price = pack.Price ?? 0;
+                    cur = pack.IsMoney ?? false;
 
                 }
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-GetTotalCost", e);
             }
             num = Convert.ToDecimal(numPacks);
             return (price * numPacks);
@@ -107,33 +119,36 @@ namespace CardGame.DAL.Logic
         /// <param name="id"></param>
         /// <param name="numPacks"></param>
         /// <returns></returns>
-        public static List<tblcard> Order(int id, int numPacks)
+        public static List<Card> Order(int id, int numPacks)
         {
+            log.Info("UserManager-Order");
             //3 Steps: Generate Cards, Enter into DB
             Random rng = new Random();
-            var generatedCards = new List<tblcard>();
+            var generatedCards = new List<Card>();
 
             //Generate Cards
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var cardPack = db.tblpack.Find(id);
+                    var cardPack = db.AllPacks.Find(id);
 
                     if (cardPack == null)
                     {
+                        log.Error("Usermanager-Order, CardPack not found");
                         throw new Exception("CardPackNotFound");
                     }
-                    int numCardsToGenerate = cardPack.numcards ?? 0;
+                    int numCardsToGenerate = cardPack.NumberOfCards ?? 0;
 
                     numCardsToGenerate *= numPacks;
 
-                    var validIDs = db.tblcard.Select(c => c.idcard).ToList();
+                    var validIDs = db.AllCards.Select(c => c.ID).ToList();
 
-                    Writer.LogInfo("vID: " + validIDs.Count.ToString());
+                    log.Info("validID: " + validIDs.Count.ToString());
 
                     if (validIDs.Count == 0)
                     {
+                        log.Error("Usermanager-Order, No Card IDs Found");
                         throw new Exception("No Card IDs Found");
                     }
 
@@ -141,12 +156,13 @@ namespace CardGame.DAL.Logic
                     {
                         int indexID = rng.Next(0, validIDs.Count - 1);
                         int generatedCardID = validIDs[indexID];
-                        var generatedCard = db.tblcard.Where(c => c.idcard == generatedCardID)
-                            .Include(c =>c.tbltype)
-                            .Include(c=>c.tblclass).FirstOrDefault();
+                        var generatedCard = db.AllCards.Where(c => c.ID == generatedCardID)
+                            .Include(c =>c.CardType)
+                            .Include(c=>c.CardClass).FirstOrDefault();
 
                         if (generatedCard == null)
                         {
+                            log.Error("Usermanager-Order, Card not found");
                             throw new Exception("CardNotFound");
                         }
                         generatedCards.Add(generatedCard);
@@ -155,12 +171,13 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-Order",e);
             }
 
             foreach (var c in generatedCards)
             {
-                Writer.LogInfo("Card: " + c.idcard);
+                log.Info("UserManager-Order,Card: " + c.ID);
             }
 
             return generatedCards;

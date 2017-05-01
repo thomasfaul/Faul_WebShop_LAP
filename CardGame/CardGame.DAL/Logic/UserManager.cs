@@ -2,55 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using CardGame.DAL.Model;
-using CardGame.Log;
 using System.Data.Entity;
+using System.Diagnostics;
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
     public class UserManager
     {
-
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         //public static readonly Dictionary<int, string> UserRoleNames;
         public static readonly Dictionary<int, string> CardClassNames;
         public static readonly Dictionary<int, string> CardTypeNames;
+      
 
         #region Constructor USERMANAGER
         static UserManager()
         {
-            //UserRoleNames = new Dictionary<int, string>();
+            log.Info("Usermanager - Konstruktor");
             CardClassNames = new Dictionary<int, string>();
             CardTypeNames = new Dictionary<int, string>();
-            //List<tblUserRole> userRoleList = null;
-            List<tbltype> cardTypeList = null;
-            List<tblclass> cardClassList = null;
+            List<CardType> cardTypeList = null;
+            List<CardClass> cardClassList = null;
 
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    //cardRoleList = db.tblrole.ToList();
-                    cardTypeList = db.tbltype.ToList();
-                    cardClassList = db.tblclass.ToList();
+                
+                    cardTypeList = db.AllCardTypes.ToList();
+                    cardClassList = db.AllCardClasses.ToList();
                 }
-                //foreach (var role in userRoleList)
-                //{
-                //    UserRoleNames.Add(role.idUserrole, role.rolename);
-                //}
                 foreach (var type in cardTypeList)
                 {
-                    CardTypeNames.Add(type.idtype, type.typename);
+                    CardTypeNames.Add(type.ID, type.Name);
                 }
                 foreach (var clas in cardClassList)
                 {
-                    CardTypeNames.Add(clas.idclass, clas.@class);
-                }
-                //UserRoleNames.Add(0, "n/a");
+                    CardTypeNames.Add(clas.ID, clas.Name);
+                };
                 CardTypeNames.Add(0, "n/a");
                 CardClassNames.Add(0, "n/a");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Writer.LogError(e);
+                //Debugger.Break();
+                log.Error("Usermanager-Konstruktor", ex);
+               
             }
 
         }
@@ -61,14 +59,15 @@ namespace CardGame.DAL.Logic
         /// Connects to the Db and gets all Users
         /// </summary>
         /// <returns></returns>
-        public static List<tblperson> GetAllUser()
+        public static List<User> GetAllUser()
         {
-            List<tblperson> ReturnList = null;
+            log.Info("Usermanager-Get_GetAllUser");
+            List<User> ReturnList = null;
             using (var db = new itin21_ClonestoneFSEntities())
             {
                 // TODO - Include
                 // .Include(t => t.tabelle) um einen Join zu machen !
-                ReturnList = db.tblperson.ToList();
+                ReturnList = db.AllUsers.ToList();
             }
             return ReturnList;
         }
@@ -81,14 +80,15 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="uemail"></param>
         /// <returns></returns>
-        public static tblperson Get_UserByEmail(string uemail)
+        public static User Get_UserByEmail(string uemail)
         {
-            tblperson dbPerson = null;
+            log.Info("Usermanager-Get_UserbyEmail");
+            User dbPerson = null;
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    dbPerson = db.tblperson.Where(u => u.email == uemail).FirstOrDefault();
+                    dbPerson = db.AllUsers.Where(u => u.Email == uemail).FirstOrDefault();
                     if (dbPerson == null)
                     {
                         throw new Exception("UserDoesNotExist");
@@ -97,7 +97,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Get_UserbyEmail", e);
             }
             return dbPerson;
         }
@@ -109,23 +110,26 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static tblperson GetUserByUserEmail(string email)
+        public static User GetUserByUserEmail(string email)
         {
-            tblperson dbUser = null;
+            log.Info("Usermanager-Get_UserbyUserEmail");
+            User dbUser = null;
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    dbUser = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
+                        log.Error(" Get User by UserEmail-User existiert nicht");
                         throw new Exception("User Does not Exist");
                     }
                 }
             }
             catch (Exception e)
             {
-                Log.Writer.LogError(e);
+                Debugger.Break();
+                log.Error("GetUserByUserEmail",e);
             }
 
             return dbUser;
@@ -140,18 +144,19 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GetRoleNamesByUserEmail(string email)
         {
+            log.Info("Usermanager-GetRoleNamesByUserEmail");
             string role = "";
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
 
-                var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                var dbUser = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                 if (dbUser == null)
                 {
-                    Log.Writer.LogInfo("User already exists");
+                    log.Error("UserManager-User already exists");
                     return "";
                 }
-                role = dbUser.userrole;
+                role = dbUser.UserRole;
             }
             return role;
 
@@ -167,15 +172,17 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int Get_NumDistinctCardsOwnedByEmail(string email)
         {
+            log.Info("Usermanager - Get_NumDistinctCardsOwnedByEmail");
             int numCards = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                User dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                 if (dbPerson == null)
                 {
+                    log.Error("Usermanager-User does not exists");
                     throw new Exception("UserDoesNotExist");
                 }
-                numCards = dbPerson.tblcollection.Count;
+                numCards = dbPerson.AllUserCardCollections.Count;
             }
             return numCards;
         }
@@ -190,18 +197,20 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int Get_NumTotalCardsOwnedByEmail(string email)
         {
+            log.Info("Usermanager-Get_NumTotalCardsOwnedByEmail");
             int numCards = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                User dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                 if (dbPerson == null)
                 {
-                    throw new Exception("User Does Not Exist");
+                    log.Error("Usermanager-Get_NumTotalCardsOwnedByEmail, User does not exist");
+                    throw new Exception ("User Does Not Exist");
                 }
                 numCards = 0;
-                foreach (var card in dbPerson.tblcollection)
+                foreach (var card in dbPerson.AllUserCardCollections)
                 {
-                    numCards += card.numcards ?? 0;
+                    numCards += card.NumberOfCards?? 0;
                 }
             }
             return numCards;
@@ -217,15 +226,17 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int Get_NumDecksOwnedByEmail(string email)
         {
+            log.Info("Usermanager-Get_NumDecksOwnedByEmail");
             int numDecks = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                tblperson dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                User dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                 if (dbPerson == null)
                 {
+                    log.Error("Usermanager-Get_NumDecksOwnedByEmail, User does not exist");
                     throw new Exception("User Does Not Exist");
                 }
-                numDecks = dbPerson.tbldeck.Count;
+                numDecks = dbPerson.AllDecks.Count;
             }
             return numDecks;
         }
@@ -239,7 +250,8 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int Get_BalanceByEmail(string email)
         {
-            return Get_UserByEmail(email).currencybalance ?? 0;
+            log.Info("Usermanager-Get_BalanceByEmail");
+            return Get_UserByEmail(email).AmountMoney ?? 0;
         }
         #endregion
 
@@ -250,35 +262,40 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static List<tblcard> Get_AllCardsByEmail(string email)
+        public static List<Card> Get_AllCardsByEmail(string email)
         {
-            var cardList = new List<tblcard>();
+            log.Info("Usermanager-Get_AllCardsByEmail");
+
+            var cardList = new List<Card>();
 
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    var dbUser = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
+                        log.Error("Usermanager-Get_AllCardsByEmail, User does not exist");
                         throw new Exception("User Does Not Exist");
                     }
-                    var dbCardCollection = dbUser.tblcollection.ToList();
+                    var dbCardCollection = dbUser.AllUserCardCollections.ToList();
                     if (dbCardCollection == null)
                     {
+                        log.Error("Usermanager-Get_AllCardsByEmail, Card Collection not found");
                         throw new Exception("Card Collection Not Found");
                     }
                     foreach (var cc in dbCardCollection)
                     {
-                        for (int i = 0; i < cc.numcards; i++)
-                            cardList.Add(cc.tblcard);
+                        for (int i = 0; i < cc.NumberOfCards; i++)
+                            cardList.Add(cc.Card);
                     }
                     return cardList;
                 }
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-Get_AllCardsByEmail",e);
                 return null;
             }
         }
@@ -290,20 +307,23 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>
-        public static List<tbldeck> Get_AllDecksByEmail(string email)
+        public static List<Deck> Get_AllDecksByEmail(string email)
         {
+            log.Info("Get_AllDecksByEmail");
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    var dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                     if (dbPerson == null)
                     {
-                        throw new Exception("User Does NotExist");
+                        log.Error("Usermanager-Get_AllDecksByEmail, User does not exist");
+                        throw new Exception("User Does Not Exist");
                     }
-                    var dbDecks = dbPerson.tbldeck.ToList();
+                    var dbDecks = dbPerson.AllDecks.ToList();
                     if (dbDecks == null)
                     {
+                        log.Error("Usermanager-Get_AllDecksByEmail, No decks found");
                         throw new Exception("No Decks Found");
                     }
 
@@ -312,7 +332,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("Usermanager-Get_AllDecksByEmail",e);
                 return null;
             }
         }
@@ -328,9 +349,10 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static bool Update_BalanceByEmail(string email, int newCurrencyBalance)
         {
+            log.Info("UserManager-Update_BalanceByEmail");
             var dbUser = Get_UserByEmail(email);
 
-            dbUser.currencybalance = newCurrencyBalance;
+            dbUser.AmountMoney = newCurrencyBalance;
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
@@ -342,7 +364,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("UserManager-Update_BalanceByEmail",e);
                 return false;
             }
         }
@@ -357,36 +380,38 @@ namespace CardGame.DAL.Logic
         /// <param name="email"></param>
         /// <param name="cards"></param>
         /// <returns></returns>
-        public static bool Add_CardsToCollectionByEmail(string email, List<tblcard> cards)
+        public static bool Add_CardsToCollectionByEmail(string email, List<Card> cards)
         {
-            var dbPerson = new tblperson();
+            log.Info("UserManager-Add_CardsToCollectionByEmail");
+            var dbPerson = new User();
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
             {
-                dbPerson = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                 if (dbPerson == null)
                 {
-                    throw new Exception("User Does Not Exist");
+                        log.Error("UserManager-Add_CardsToCollectionByEmail, User does not exist");
+                        throw new Exception("User Does Not Exist");
                 }
                 foreach (var card in cards)
                 {
-                    var userCC = (from coll in db.tblcollection
-                                  where coll.fkcard == card.idcard && coll.fkperson == dbPerson.idperson
+                    var userCC = (from coll in db.AllUserCardCollections
+                                  where coll.ID_Card == card.ID && coll.ID_User == dbPerson.ID
                                   select coll)
                                  .FirstOrDefault();
                     if (userCC == null) //User does not own card, add to collection
                     {
-                        var cc = new tblcollection();
-                        cc.tblcard = db.tblcard.Find(card.idcard);
-                        cc.tblperson = dbPerson;
-                        cc.numcards = 1;
-                        dbPerson.tblcollection.Add(cc);
+                        var cc = new UserCardCollection();
+                        cc.Card = db.AllCards.Find(card.ID);
+                        cc.User = dbPerson;
+                        cc.NumberOfCards = 1;
+                        dbPerson.AllUserCardCollections.Add(cc);
                         db.SaveChanges();
                     }
                     else //User owns card, add to num
                     {
-                        userCC.numcards += 1;
+                        userCC.NumberOfCards += 1;
                         db.Entry(userCC).State = EntityState.Modified;
                         db.SaveChanges();
                     }
@@ -397,12 +422,14 @@ namespace CardGame.DAL.Logic
         }
             catch (Exception e)
             {
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("UserManager-Add_CardsToCollectionByEmail,",e);
                 return false;
             }
-            #endregion
+            
 
         }
+        #endregion
     }
 }
 

@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CardGame.DAL.Model;
-
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
 
     public class CardManager
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static readonly Dictionary<int, string> CardTypes;
         public static readonly Dictionary<int, string> CardClasses;
 
@@ -17,25 +18,26 @@ namespace CardGame.DAL.Logic
         /// </summary>
         static CardManager()
         {
+            log.Info("CardManager-Construktor");
             CardTypes = new Dictionary<int, string>();
             CardClasses = new Dictionary<int, string>();
-            List<tbltype> cardTypeList = null;
-            List<tblclass> cardClassList = null;
-
+            List<CardType> cardTypeList = null;
+            List<CardClass> cardClassList = null;
+            
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                cardTypeList = db.tbltype.ToList();
-                cardClassList = db.tblclass.ToList();
+                cardTypeList = db.AllCardTypes.ToList();
+                cardClassList = db.AllCardClasses.ToList();
             }
 
             foreach (var type in cardTypeList)
             {
-                CardTypes.Add(type.idtype, type.typename);
+                CardTypes.Add(type.ID, type.Name);
             }
             foreach(var clas in cardClassList)
             {
-                CardClasses.Add(clas.idclass, clas.@class);
+                CardClasses.Add(clas.ID, clas.Name);
             }
             CardClasses.Add(0, "n/a");
             CardTypes.Add(0, "n/a");
@@ -47,12 +49,13 @@ namespace CardGame.DAL.Logic
         /// Returns a list of all cards
         /// </summary>
         /// <returns></returns>
-        public static List<tblcard> GetAllCards()
+        public static List<Card> GetAllCards()
         {
-            List<tblcard> ReturnList = null;
+            log.Info("CardManager-GetAllCards");
+            List<Card> ReturnList = null;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                ReturnList = db.tblcard.ToList();
+                ReturnList = db.AllCards.ToList();
             }
             return ReturnList;
         }
@@ -66,34 +69,35 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GetCardTypeById(int? id)
         {
+            log.Info("CardManager-GetCardTypeById");
             string TypeName = "n/a";
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                TypeName = db.tbltype.Find(id).typename;
+                TypeName = db.AllCardTypes.Find(id).Name;
             }
             return TypeName;
         }
         #endregion
 
-        #region GET CARDTYPE BY ID
+        #region GET CARDClass BY ID
         /// <summary>
         /// TODO: GET Class by id überprüfen, selbst gemacht in irgendeinem Anfall 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static string GetCardClassById(int? id)
+        public static string GetCardClassById(int id)
         {
+            log.Info("CardManager-GetCardClassById");
             string ClassName = "n/a";
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                ClassName = db.tblclass.Find(id).@class;
+                ClassName = db.AllCardClasses.Find(id).Name;
             }
             return ClassName;
         }
         #endregion
-
 
         #region GET CARD BY ID
         /// <summary>
@@ -101,14 +105,15 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static tblcard GetCardById(int id)
+        public static Card GetCardById(int id)
         {
-            tblcard card = null;
+            log.Info("CardManager-GetCardById");
+            Card card = null;
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
                 //Extention Method
-                card = db.tblcard.Where(c => c.idcard == id).FirstOrDefault();
+                card = db.AllCards.Where(c => c.ID == id).FirstOrDefault();
 
                 //Klassisch LINQ
                 //card = (from c in db.tblcard

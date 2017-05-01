@@ -1,11 +1,13 @@
 ﻿using System.Linq;
 using CardGame.DAL.Model;
-using CardGame.Log;
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
     public class DBInfoManager
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region GET NUM USERS (Count the Users)
         /// <summary>
         /// Counts all USERS and gives the number back
@@ -13,12 +15,13 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int GetNumUsers()
         {
+            log.Info("DB-InfoManager-GetNumUsers");
             int numUsers = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                numUsers = db.tblperson.Count();
+                numUsers = db.AllUsers.Count();
             }
-            Writer.LogInfo("GetNumUsers " + numUsers);
+            log.Info("DB-InfoManager-GetNumUsers " + numUsers);
             return numUsers;
         }
         #endregion
@@ -30,12 +33,13 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int GetNumCards()
         {
+            log.Info("DB-InfoManager-GetNumCards");
             int numCards = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                numCards = db.tblcard.Count();
+                numCards = db.AllCards.Count();
             }
-            Writer.LogInfo("GetNumCards " + numCards);
+            log.Info("DB-InfoManager-GetNumCards " + numCards);
 
             return numCards;
         }
@@ -48,13 +52,14 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static int GetNumDecks()
         {
+            log.Info("DB-InfoManager-GetNumDecks");
             int numDecks = -1;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                numDecks = db.tbldeck.Count();
+                numDecks = db.AllDecks.Count();
             }
 
-            Writer.LogInfo("GetNumDecks " + numDecks);
+            log.Info("DB-InfoManager-GetNumDecks " + numDecks);
 
             return numDecks;
         }

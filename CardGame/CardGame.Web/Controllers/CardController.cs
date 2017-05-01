@@ -2,9 +2,8 @@
 using System.Web.Mvc;
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
 using System.Linq;
-
+using log4net;
 
 namespace CardGame.Web.Controllers
 {
@@ -13,37 +12,37 @@ namespace CardGame.Web.Controllers
         HomeController a = new HomeController();
 
         public int Pagesize = 100;
-
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region ACTIONRESULT OVERVIEW
-            /// <summary>
-            /// takes the cardclass und die page
-            /// Orders the card by id and
-            /// gives all the cards back as a 
-            /// model-ActionResult
-            /// </summary>
-            /// <param name="cardclass"></param>
-            /// <param name="page"></param>
-            /// <returns></returns>
+        /// <summary>
+        /// takes the cardclass und die page
+        /// Orders the card by id and
+        /// gives all the cards back as a 
+        /// model-ActionResult
+        /// </summary>
+        /// <param name="cardclass"></param>
+        /// <param name="page"></param>
+        /// <returns></returns>
         public ActionResult Overview(int? cardclass, int page = 1)
         {
-            List<Card> CardList = new List<Card>();
+            log.Info("CardController-Overview");
+            List<Web.Models.Card> CardList = new List<Web.Models.Card>();
             var dbCardlist = CardManager.GetAllCards();
             
             foreach (var c in dbCardlist)
             {
-                Card card = new Card();
-                card.ID = c.idcard;
-                //card.Class = c.tblclass.@class ?? 0;
-                //card.Type = c.tbltype.typename;
-                card.Name = c.cardname;
-                card.Mana = c.mana;
-                card.Attack = c.attack;
-                card.Life = c.life;
-                card.Pic = c.pic;
-                card.Flavor = c.flavor;
-                card.Class = CardManager.CardClasses[c.fkclass ?? 0];
-                card.Type = CardManager.CardTypes[c.fktype];
+                log.Info("Deckcontroller-Editdeck");
+                Web.Models.Card card = new Web.Models.Card();
+                card.ID = c.ID;
+                card.Name = c.Name;
+                card.Mana = c.ManaCost;
+                card.Attack = c.Attack;
+                card.Life = c.Life;
+                card.Pic = c.Image;
+                card.Flavor = c.FlavorText;
+                card.Class = CardManager.CardClasses[c.ID_CardClass ?? 0];
+                card.Type = CardManager.CardTypes[c.ID_CardType];
                 CardList.Add(card);
             }
             CardsListViewModel model = new CardsListViewModel()
@@ -74,22 +73,23 @@ namespace CardGame.Web.Controllers
         /// <returns>View</returns>
         public ActionResult Details(int id)
         {
-            tblcard dbcard = null;
+            log.Info("CardController-Details");
+            DAL.Model.Card dbcard = null;
 
             dbcard = CardManager.GetCardById(id);
 
-            Card card = new Card();
-            card.ID = dbcard.idcard;
-            card.Name = dbcard.cardname;
-            card.Mana = dbcard.mana;
-            card.Attack = dbcard.attack;
-            card.Life = dbcard.life;
-            card.Pic = dbcard.pic;
-            card.Flavor = dbcard.flavor;
+            Web.Models.Card card = new Web.Models.Card();
+            card.ID = dbcard.ID;
+            card.Name = dbcard.Name;
+            card.Mana = dbcard.ManaCost;
+            card.Attack = dbcard.Attack;
+            card.Life = dbcard.Life;
+            card.Pic = dbcard.Image;
+            card.Flavor = dbcard.FlavorText;
             //card.Class = dbcard.tblclass.@class;
             //card.Type = dbcard.tbltype.typename;
-            card.Class = CardManager.CardClasses[dbcard.fkclass ?? 0];
-            card.Type = CardManager.CardTypes[dbcard.fktype];
+            card.Class = CardManager.CardClasses[dbcard.ID_CardClass ?? 0];
+            card.Type = CardManager.CardTypes[dbcard.ID_CardType];
             return View(card);
         } 
         #endregion

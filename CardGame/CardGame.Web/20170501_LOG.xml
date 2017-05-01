@@ -1,0 +1,568 @@
+<Info>
+  <Time>01.05.2017 15:59:44</Time>
+  <Info>Entered Pass = Thomas</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 15:59:44</Time>
+  <Info>HashPass = 5B451A54BD8902CE2BD2C25F47EDB9B5BE38591057484D04BE3959FAA998646B557748032446DD6AA14E50D2220F80142C81B3378726323E25A00E8E4F14B03A</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 15:59:45</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:00:46</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:04:15</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:05:13</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:08:21</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:09:33</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:10:39</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:11:36</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:12:01</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 103.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 16:12:16</Time>
+  <Info>id: 9</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:16</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>vID: 382</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 703</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 367</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 427</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 96</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 602</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 497</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 143</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 524</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 466</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:12:18</Time>
+  <Info>Card: 648</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 16:12:18</Time>
+  <Exception>
+    <Source>System</Source>
+    <Message>Fehler beim Senden von Mail.</Message>
+    <Stack>   bei System.Net.Mail.SmtpClient.Send(MailMessage message)
+   bei CardGame.Web.HtmlHelpers.EmailHelper.SendEmail(String emailaddress, String emailsubject, String text) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.Web\HtmlHelpers\EmailHelper.cs:Zeile 38.</Stack>
+    <InnerException>
+      <Source>System</Source>
+      <Message>Der Remotename konnte nicht aufgelöst werden: 'srv08.itccn.loc'</Message>
+      <Stack>   bei System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress&amp; address, Socket&amp; abortSocket, Socket&amp; abortSocket6)
+   bei System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   bei System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   bei System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   bei System.Net.Mail.SmtpClient.GetConnection()
+   bei System.Net.Mail.SmtpClient.Send(MailMessage message)</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:12:18</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.ShowGeneratedCards() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 264.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:22:44</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 16:22:54</Time>
+  <Info>id: 9</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:54</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>vID: 382</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 44</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 227</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 388</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 491</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 257</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 96</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 296</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 497</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 680</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:22:55</Time>
+  <Info>Card: 619</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 16:22:56</Time>
+  <Exception>
+    <Source>System</Source>
+    <Message>Fehler beim Senden von Mail.</Message>
+    <Stack>   bei System.Net.Mail.SmtpClient.Send(MailMessage message)
+   bei CardGame.Web.HtmlHelpers.EmailHelper.SendEmail(String emailaddress, String emailsubject, String text) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.Web\HtmlHelpers\EmailHelper.cs:Zeile 38.</Stack>
+    <InnerException>
+      <Source>System</Source>
+      <Message>Der Remotename konnte nicht aufgelöst werden: 'srv08.itccn.loc'</Message>
+      <Stack>   bei System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress&amp; address, Socket&amp; abortSocket, Socket&amp; abortSocket6)
+   bei System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   bei System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   bei System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   bei System.Net.Mail.SmtpClient.GetConnection()
+   bei System.Net.Mail.SmtpClient.Send(MailMessage message)</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:22:56</Time>
+  <Exception>
+    <Source>CardGame.Web</Source>
+    <Message>Der Objektverweis wurde nicht auf eine Objektinstanz festgelegt.</Message>
+    <Stack>   bei CardGame.Web.Controllers.CardPackController.ShowGeneratedCards() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.Web\Controllers\CardPackController.cs:Zeile 264.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:23:42</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 103.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 16:40:24</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 16:40:42</Time>
+  <Info>id: 9</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:40:42</Time>
+  <Info>numPacks: 1</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:41:20</Time>
+  <Info>vID: 382</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:42:43</Time>
+  <Info>Card: 107</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:02</Time>
+  <Info>Card: 156</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:28</Time>
+  <Info>Card: 200</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:39</Time>
+  <Info>Card: 648</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:45</Time>
+  <Info>Card: 93</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:52</Time>
+  <Info>Card: 92</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:43:58</Time>
+  <Info>Card: 182</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:44:05</Time>
+  <Info>Card: 282</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:44:11</Time>
+  <Info>Card: 702</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 16:44:19</Time>
+  <Info>Card: 405</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 16:46:42</Time>
+  <Exception>
+    <Source>System</Source>
+    <Message>Fehler beim Senden von Mail.</Message>
+    <Stack>   bei System.Net.Mail.SmtpClient.Send(MailMessage message)
+   bei CardGame.Web.HtmlHelpers.EmailHelper.SendEmail(String emailaddress, String emailsubject, String text) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.Web\HtmlHelpers\EmailHelper.cs:Zeile 38.</Stack>
+    <InnerException>
+      <Source>System</Source>
+      <Message>Der Remotename konnte nicht aufgelöst werden: 'srv08.itccn.loc'</Message>
+      <Stack>   bei System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress&amp; address, Socket&amp; abortSocket, Socket&amp; abortSocket6)
+   bei System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   bei System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   bei System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   bei System.Net.Mail.SmtpClient.GetConnection()
+   bei System.Net.Mail.SmtpClient.Send(MailMessage message)</Stack>
+    </InnerException>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 17:57:19</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 17:57:40</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 103.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 18:33:23</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 45.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 19:39:12</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 46.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 19:40:25</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 19:42:00</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 19:43:37</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 19:44:00</Time>
+  <Info>Entered Pass = Thomas</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 19:44:00</Time>
+  <Info>HashPass = 5B451A54BD8902CE2BD2C25F47EDB9B5BE38591057484D04BE3959FAA998646B557748032446DD6AA14E50D2220F80142C81B3378726323E25A00E8E4F14B03A</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 19:46:15</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 19:50:14</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 20:21:46</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 46.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 20:22:04</Time>
+  <Info>GetNumUsers 21</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 20:22:04</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 20:22:04</Time>
+  <Info>GetNumDecks 7</Info>
+</Info>
+<Xcpt>
+  <Time>01.05.2017 20:24:26</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 46.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 20:27:04</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards)</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 20:38:12</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 46.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 20:38:54</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 20:59:06</Time>
+  <Exception>
+    <Source>mscorlib</Source>
+    <Message>Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.</Message>
+    <Stack>   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 46.</Stack>
+  </Exception>
+</Xcpt>
+<Xcpt>
+  <Time>01.05.2017 21:01:23</Time>
+  <Exception>
+    <Source>EntityFramework</Source>
+    <Message>The operation failed: The relationship could not be changed because one or more of the foreign-key properties is non-nullable. When a change is made to a relationship, the related foreign-key property is set to a null value. If the foreign-key does not support null values, a new relationship must be defined, the foreign-key property must be assigned another non-null value, or the unrelated object must be deleted.</Message>
+    <Stack>   bei System.Data.Entity.Core.Objects.ObjectContext.PrepareToSaveChanges(SaveOptions options)
+   bei System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   bei System.Data.Entity.Internal.InternalContext.SaveChanges()
+   bei CardGame.DAL.Logic.DeckManager.UpdateDeckById(Int32 id, List`1 deckCards) in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\DeckManager.cs:Zeile 106.</Stack>
+  </Exception>
+</Xcpt>
+<Info>
+  <Time>01.05.2017 23:11:08</Time>
+  <Info>Entered Pass = Thomas</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 23:11:08</Time>
+  <Info>HashPass = 5B451A54BD8902CE2BD2C25F47EDB9B5BE38591057484D04BE3959FAA998646B557748032446DD6AA14E50D2220F80142C81B3378726323E25A00E8E4F14B03A</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 23:27:42</Time>
+  <Info>GetNumUsers 21</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 23:27:42</Time>
+  <Info>GetNumCards 382</Info>
+</Info>
+<Info>
+  <Time>01.05.2017 23:27:42</Time>
+  <Info>GetNumDecks 7</Info>
+</Info>

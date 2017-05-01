@@ -2,12 +2,16 @@
 using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using CardGame.Web.HtmlHelpers;
-using CardGame.Log;
+using System.Diagnostics;
+using log4net;
+using System;
 
 namespace CardGame.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region ActionResult Index
         /// <summary>
         /// Creates the Index View
@@ -16,6 +20,7 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            log.Info("HomeController-Index");
             if (User.Identity.Name != "")
             {
                 CreateViewBag();
@@ -34,6 +39,7 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult About()
         {
+            log.Info("HomeController-About");
             ViewBag.Message = "Your application description page.";
             CreateViewBag();
             return View();
@@ -49,6 +55,8 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Contact()
         {
+            log.Info("HomeController-Contact");
+
             ViewBag.Message = "Your contact page.";
             CreateViewBag();
             return View();
@@ -62,6 +70,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         public ActionResult Statistics()
         {
+            log.Info("HomeController-Statistics");
             Statistic s = new Statistic();
 
             //Befülle die Statistik
@@ -81,14 +90,15 @@ namespace CardGame.Web.Controllers
         /// </summary>
         public void CreateViewBag()
         {
+            log.Info("HomeController-CreateViewBag");
             var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
             if (dbUser != null)
             {
-                ViewBag.Id = dbUser.idperson;
-                ViewBag.Firstname = dbUser.firstname;
-                ViewBag.Lastname = dbUser.lastname;
-                ViewBag.Email = dbUser.email;
-                ViewBag.MyCurrency = dbUser.currencybalance;
+                ViewBag.Id = dbUser.ID;
+                ViewBag.Firstname = dbUser.FirstName;
+                ViewBag.Lastname = dbUser.LastName;
+                ViewBag.Email = dbUser.Email;
+                ViewBag.MyCurrency = dbUser.AmountMoney;
             }
         }
         #endregion
@@ -101,23 +111,24 @@ namespace CardGame.Web.Controllers
         {
             try
             {
+                log.Info("HomeController-CreateSession");
                 var dbUser = UserManager.GetUserByUserEmail(User.Identity.Name);
                 if (dbUser != null)
                 {
-                    SessionHelper.Set<string>("Firstname", dbUser.firstname);
-                    SessionHelper.Set<string>("Lastname", dbUser.lastname);
-                    SessionHelper.Set<int>("Id", dbUser.idperson);
-                    SessionHelper.Set<string>("Email", dbUser.password);
-                    if (dbUser.currencybalance != null)
+                    SessionHelper.Set<string>("Firstname", dbUser.FirstName);
+                    SessionHelper.Set<string>("Lastname", dbUser.LastName);
+                    SessionHelper.Set<int>("Id", dbUser.ID);
+                    SessionHelper.Set<string>("Email", dbUser.Password);
+                    if (dbUser.AmountMoney != null)
                     {
-                        SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.currencybalance);
+                        SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.AmountMoney);
                     }
                 }
             }
-            catch (System.Exception)
+            catch (Exception e)
             {
-
-                Writer.LogInfo("Problem in der Session");
+                Debugger.Break();
+                log.Info("HomeController-CreateSession",e);
             }
         }
         #endregion

@@ -6,11 +6,14 @@ using CardGame.DAL.Model;
 using System.Web.Security;
 using CardGame.Web.Models.UI;
 using CardGame.Web.HtmlHelpers;
+using log4net;
 
 namespace CardGame.Web.Controllers
 {
     public class AccountController : Controller
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region ACTIONRESULT LOGIN
         /// <summary>
         /// Returns a View
@@ -20,6 +23,7 @@ namespace CardGame.Web.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            log.Info("AccountController-Login");
             return View();
         }
         #endregion
@@ -38,6 +42,7 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
+            log.Info("Accountcontroller-Login");
             if (!ModelState.IsValid)
             {
                 TempData["ErrorMessage"] = "Bitte nochmal versuchen";
@@ -92,6 +97,7 @@ namespace CardGame.Web.Controllers
         [HttpGet]
         public ActionResult Register()
         {
+            log.Info("Accountcontroller-Register");
             return View();
         }
         #endregion
@@ -101,22 +107,23 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register(Register regUser)
         {
-          
+            log.Info("Accountcontroller-LoginII");
+
             if (!ModelState.IsValid)
             {
                 return View(regUser);
 
             }
-            var dbUser = new tblperson();
-            dbUser.firstname = regUser.Firstname;
-            dbUser.lastname = regUser.Lastname;
-            dbUser.email = regUser.Email;
-            dbUser.password = regUser.Passwort;
-            dbUser.gamertag = regUser.Gamertag;
-            dbUser.salt = regUser.Salt;
-            dbUser.userrole = "player";
-            dbUser.isactive = true;
-            dbUser.currencybalance = 100;
+            var dbUser = new User();
+            dbUser.FirstName = regUser.Firstname;
+            dbUser.LastName = regUser.Lastname;
+            dbUser.Email = regUser.Email;
+            dbUser.Password = regUser.Passwort;
+            dbUser.GamerTag = regUser.Gamertag;
+            dbUser.Salt = regUser.Salt;
+            dbUser.UserRole = "player";
+            dbUser.IsActive = true;
+            dbUser.AmountMoney = 100;
             bool ok= AuthManager.Register(dbUser);
             if (ok != true)
             {
@@ -125,11 +132,11 @@ namespace CardGame.Web.Controllers
             }
             else
             {
-             auth(dbUser.email, dbUser.password, dbUser.userrole);
-             int userID = UserManager.Get_UserByEmail(dbUser.email).idperson;
+             auth(dbUser.Email, dbUser.Password, dbUser.UserRole);
+             int userID = UserManager.Get_UserByEmail(dbUser.Email).ID;
              DeckManager.AddDefaultDecksByUserId(userID);
              TempData["ConfirmMessage"] = "Sie sind registriert";
-              bool emailworked = EmailHelper.SendEmail(dbUser.email, "Registrierungsbestätigung", "Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
+              bool emailworked = EmailHelper.SendEmail(dbUser.Email, "Registrierungsbestätigung", "Lieber User, Sie haben sich erfolgreich im Cloneshop registriert");
               return RedirectToAction("Index", "Home");
             }
             
@@ -143,6 +150,7 @@ namespace CardGame.Web.Controllers
         /// <returns>RedirectToAction</returns>
         public ActionResult Logout()
         {
+            log.Info("Accountcontroller-Logout");
             FormsAuthentication.SignOut();
             TempData["ConfirmMessage"] = "Sie sind ausgeloggt";
             return RedirectToAction("Index", "Home");
@@ -158,6 +166,7 @@ namespace CardGame.Web.Controllers
         /// <returns>View</returns>
         public ActionResult ErrorMessage()
         {
+            log.Info("Accountcontroller-ErrorMessage");
             TempData["ErrorMessage"] = "muss sich ein Fehler eingeschlichen haben";
             return View();
 

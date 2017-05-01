@@ -12,25 +12,18 @@ namespace CardGame.DAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblpack
+    public partial class CardType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblpack()
+        public CardType()
         {
-            this.tblorder = new HashSet<tblorder>();
+            this.AllCards = new HashSet<Card>();
         }
     
-        public int idpack { get; set; }
-        public string packname { get; set; }
-        public Nullable<decimal> packprice { get; set; }
-        public Nullable<int> cardquantity { get; set; }
-        public byte[] packimage { get; set; }
-        public string flavour { get; set; }
-        public Nullable<bool> ismoney { get; set; }
-        public Nullable<int> numcards { get; set; }
-        public Nullable<int> worth { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblorder> tblorder { get; set; }
+        public virtual ICollection<Card> AllCards { get; set; }
     }
 }

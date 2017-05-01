@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
 using CardGame.DAL.Model;
-using CardGame.Log;
+using System.Diagnostics;
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
     public class AuthManager
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region Register
         /// <summary>
         /// 
@@ -17,33 +20,36 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="regUser"></param>
         /// <returns>bool</returns>
-        public static bool Register(tblperson regUser)
+        public static bool Register(User regUser)
         {
+            log.Info("AuthManager-Register");
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    if (db.tblperson.Any(n => n.email == regUser.email))
+                    if (db.AllUsers.Any(n => n.Email == regUser.Email))
                     {
+                        log.Error("AuthManager-Register, Emailadresse gibt es bereits");
                         throw new Exception("User-Emailadresse gibt es bereits");
                     }
                     //Salt erzeugen
                     string salt = Helper.GenerateSalt();
 
                     //Passwort Hashen
-                    string hashedAndSaltedPassword = Helper.GenerateHash(regUser.password + salt);
+                    string hashedAndSaltedPassword = Helper.GenerateHash(regUser.Password + salt);
 
-                    regUser.password = hashedAndSaltedPassword;
-                    regUser.salt = salt;
+                    regUser.Password = hashedAndSaltedPassword;
+                    regUser.Salt = salt;
 
-                    db.tblperson.Add(regUser);
+                    db.AllUsers.Add(regUser);
                     db.SaveChanges();
                 }
             } 
             
             catch (Exception e)
             {
-                Writer.LogError(e); 
+                Debugger.Break();
+                log.Error("AuthManager-Register",e);
                 return false; 
                 //TODO Errorpage             
             }
@@ -64,6 +70,7 @@ namespace CardGame.DAL.Logic
         /// <returns>bool</returns>
         public static bool AuthUser(string email, string password)
         {
+            log.Info("AuthManager-AuthUser");
             try
             {
                 string dbUserPassword = null;
@@ -71,20 +78,21 @@ namespace CardGame.DAL.Logic
 
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    tblperson dbUser = db.tblperson.Where(u => u.email == email).FirstOrDefault();
+                    User dbUser = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
+                        log.Error("AuthManager-AuthUser,User gibt es noch nicht, bitte Registrieren");
                         throw new Exception("User gibt es noch nicht, bitte Registrieren");
                     }
 
-                    dbUserPassword = dbUser.password;
-                    dbUserSalt = dbUser.salt;
+                    dbUserPassword = dbUser.Password;
+                    dbUserSalt = dbUser.Salt;
 
-                    Writer.LogInfo("Entered Pass = " + password);
+                    log.Info("Entered Pass = " + password);
 
                     password = Helper.GenerateHash(password + dbUserSalt);
 
-                    Writer.LogInfo("HashPass = " + password);
+                    log.Info("HashPass = " + password);
 
                     if (dbUserPassword == password)
                     {
@@ -99,8 +107,8 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-
-                Writer.LogError(e);
+                Debugger.Break();
+                log.Error("AuthManager-AuthUser", e);
                 return false;
             }
         }

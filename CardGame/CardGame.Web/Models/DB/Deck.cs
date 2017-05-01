@@ -8,6 +8,7 @@ namespace CardGame.Web.Models.DB
     {
         public int DeckID { get; set; }
         public string Name { get; set; }
+        public int NumCards { get; set; }
         public List<Card> Cards { get; set; }
     }
 }

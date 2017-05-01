@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Config;
+using System;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +21,8 @@ namespace CardGame.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //log4net Configuration
+            XmlConfigurator.Configure();
         }
         #endregion
 

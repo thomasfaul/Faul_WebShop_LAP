@@ -12,18 +12,20 @@ namespace CardGame.DAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tbltype
+    public partial class Deck
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbltype()
+        public Deck()
         {
-            this.tblcard = new HashSet<tblcard>();
+            this.AllDeckCards = new HashSet<DeckCard>();
         }
     
-        public int idtype { get; set; }
-        public string typename { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> ID_User { get; set; }
     
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblcard> tblcard { get; set; }
+        public virtual ICollection<DeckCard> AllDeckCards { get; set; }
     }
 }

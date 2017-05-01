@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using CardGame.DAL.Logic;
-using CardGame.DAL.Model;
 using CardGame.Web.Models.UI;
+using log4net;
 
 namespace CardGame.Web.Controllers
 {
     public class UserController : Controller
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 
         #region ACTIONRESULT ADIM- USER 
         /// <summary>
@@ -20,22 +19,24 @@ namespace CardGame.Web.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
+            log.Info("UserController-Index");
+
             List<Register> UserList = new List<Register>();
             var dbUserlist = UserManager.GetAllUser();
 
             foreach (var c in dbUserlist)
             {
                 Register user = new Register();
-                user.ID = c.idperson;
-                user.Firstname = c.firstname;
-                user.Lastname = c.lastname;
-                user.Email = c.email;
-                user.Role = c.userrole;
-                user.Passwort = c.password;
-                user.Salt = c.salt;
-                if (c.currencybalance != null)
+                user.ID = c.ID;
+                user.Firstname = c.FirstName;
+                user.Lastname = c.LastName;
+                user.Email = c.Email;
+                user.Role = c.UserRole;
+                user.Passwort = c.Password;
+                user.Salt = c.Salt;
+                if (c.AmountMoney != null)
                 {
-                    user.Currencybalance = (int)c.currencybalance;
+                    user.Currencybalance = (int)c.AmountMoney;
                 }
                 else
                 {

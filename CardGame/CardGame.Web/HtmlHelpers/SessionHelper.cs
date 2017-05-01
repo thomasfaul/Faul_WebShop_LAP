@@ -30,6 +30,7 @@ namespace CardGame.Web.HtmlHelpers
                     }
                     catch (Exception)
                     {
+                        Debugger.Break();
                         HttpContext.Current.Session.RemoveAt(i);
                     }
 

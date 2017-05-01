@@ -12,30 +12,30 @@ namespace CardGame.DAL.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblcard
+    public partial class Card
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblcard()
+        public Card()
         {
-            this.tblcollection = new HashSet<tblcollection>();
-            this.tbldeckcard = new HashSet<tbldeckcard>();
+            this.AllUserCardCollection = new HashSet<UserCardCollection>();
+            this.AllDeckCards = new HashSet<DeckCard>();
         }
     
-        public int idcard { get; set; }
-        public string cardname { get; set; }
-        public byte mana { get; set; }
-        public short life { get; set; }
-        public short attack { get; set; }
-        public string flavor { get; set; }
-        public int fktype { get; set; }
-        public Nullable<int> fkclass { get; set; }
-        public byte[] pic { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public byte ManaCost { get; set; }
+        public short Life { get; set; }
+        public short Attack { get; set; }
+        public string FlavorText { get; set; }
+        public int ID_CardType { get; set; }
+        public Nullable<int> ID_CardClass { get; set; }
+        public byte[] Image { get; set; }
     
-        public virtual tblclass tblclass { get; set; }
-        public virtual tbltype tbltype { get; set; }
+        public virtual CardClass CardClass { get; set; }
+        public virtual CardType CardType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblcollection> tblcollection { get; set; }
+        public virtual ICollection<UserCardCollection> AllUserCardCollection { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbldeckcard> tbldeckcard { get; set; }
+        public virtual ICollection<DeckCard> AllDeckCards { get; set; }
     }
 }

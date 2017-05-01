@@ -1,10 +1,12 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
+using log4net;
 
 namespace CardGame.DAL.Logic
 {
     public class Helper
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region GENERATE HASH
         /// <summary>
@@ -14,6 +16,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GenerateHash(string s)
         {
+            log.Info("Helper-GenerateHash");
             var bytes = System.Text.Encoding.UTF8.GetBytes(s);
             using (SHA512 sha = new SHA512Managed())
             {
@@ -30,6 +33,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GenerateSalt()
         {
+            log.Info("Helper-Salt");
             var salt = new byte[64];
             // generieren ein neues byte 64 array
             var rng = new RNGCryptoServiceProvider();
@@ -48,6 +52,7 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         private static string GetHexNotation(byte[] bytes)
         {
+            log.Info("Helper-GetHexNotation");
             var hashStringBuilder = new StringBuilder(128);
 
             foreach (var b in bytes)

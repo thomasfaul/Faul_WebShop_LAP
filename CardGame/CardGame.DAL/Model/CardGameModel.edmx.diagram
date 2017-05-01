@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="18a5d6fbfa7d47ccb82bc2788667e891" Name="Diagram1">
-        <EntityTypeShape EntityType="CardGameModel.tblcard" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tblclass" Width="1.5" PointX="4.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tblcollection" Width="1.5" PointX="4.625" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tbldeck" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tbldeckcard" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tblorder" Width="1.5" PointX="0.875" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tblpack" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tblperson" Width="1.5" PointX="4.5" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.tbltype" Width="1.5" PointX="4.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.Card" Width="1.5" PointX="2.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.CardClass" Width="1.5" PointX="4.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.UserCardCollection" Width="1.5" PointX="4.625" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.Deck" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.DeckCard" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.Purchase" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.Pack" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.User" Width="1.5" PointX="4.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.CardType" Width="1.5" PointX="4.875" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CardGameModel.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblcard__fktype__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblcollec__fkcar__14270015" ManuallyRouted="true" >
@@ -29,8 +29,8 @@
           <ConnectorPoint PointX="4.53125" PointY="8.5" />
           <ConnectorPoint PointX="4.53125" PointY="7.2650262939453123" />
           <ConnectorPoint PointX="3.260416666666667" PointY="7.2650262939453123" />
-          <ConnectorPoint PointX="3.260416666666667" PointY="4.7576554361979166" />
-          <ConnectorPoint PointX="2.25" PointY="4.7576554361979166" />
+          <ConnectorPoint PointX="3.260416666666667" PointY="17.858284861416276" />
+          <ConnectorPoint PointX="2.25" PointY="5.8552864583333326" />
         </AssociationConnector>
         <AssociationConnector Association="CardGameModel.FK__tbldeckca__fkdec__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblorder__fkpack__0B91BA14" ManuallyRouted="false" />
