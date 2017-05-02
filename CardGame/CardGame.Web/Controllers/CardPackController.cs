@@ -200,6 +200,7 @@ namespace CardGame.Web.Controllers
                 if (o.Pack.IsMoney == true)
                 {
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth);
+                    var osaved=ShopManager.SaveOrder()
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)
@@ -235,7 +236,7 @@ namespace CardGame.Web.Controllers
                     //Add Cards to User Collection
                     var hasUpdatedCards = UserManager.Add_CardsToCollectionByEmail(User.Identity.Name, orderedCards);
 
-                    //evtl extra spalte in cardcollection mit fk fuer den Order machen
+                    
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihre Karten sind in der Collection");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
                     TempData["OrderedCards"] = orderedCards;

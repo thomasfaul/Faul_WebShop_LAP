@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Net.Mail;
-using CardGame.Log;
 using System.Diagnostics;
+using log4net;
 
 namespace CardGame.Web.HtmlHelpers
 {
     public class EmailHelper
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #region SEND EMAIL
         public static bool SendEmail(string emailaddress, string emailsubject, string text)
         {
@@ -42,7 +40,7 @@ namespace CardGame.Web.HtmlHelpers
             catch (Exception e)
             {
                 Debugger.Break();
-                Writer.LogError(e);
+                log.Error("Emailhelper-EmailBBRZ", e);
                 return true;
             }
             #endregion

@@ -52,8 +52,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -319,10 +319,6 @@
     <ProjectReference Include="..\CardGame.DAL\CardGame.DAL.csproj">
       <Project>{eb5dd192-e1a3-4351-a680-57034adf3708}</Project>
       <Name>CardGame.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CardGame.Log\CardGame.Log.csproj">
-      <Project>{e59e464d-7ce5-49b0-a486-38b40208e5c8}</Project>
-      <Name>CardGame.Log</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

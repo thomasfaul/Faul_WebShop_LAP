@@ -81,7 +81,6 @@ namespace CardGame.DAL.Logic
                     User dbUser = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
                     if (dbUser == null)
                     {
-                        log.Error("AuthManager-AuthUser,User gibt es noch nicht, bitte Registrieren");
                         throw new Exception("User gibt es noch nicht, bitte Registrieren");
                     }
 

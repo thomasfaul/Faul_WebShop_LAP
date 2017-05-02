@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Web", "CardGame.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardgame.UnitTests", "Cardgame.UnitTests\Cardgame.UnitTests.csproj", "{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Log", "CardGame.Log\CardGame.Log.csproj", "{E59E464D-7CE5-49B0-A486-38B40208E5C8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E59E464D-7CE5-49B0-A486-38B40208E5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E59E464D-7CE5-49B0-A486-38B40208E5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E59E464D-7CE5-49B0-A486-38B40208E5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E59E464D-7CE5-49B0-A486-38B40208E5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Diagnostics;
 using System.Web;
 
@@ -7,6 +8,8 @@ namespace CardGame.Web.HtmlHelpers
     //[DebuggerNonUserCodeAttribute()]
     public static class SessionHelper
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region SESSIONHELPER- Man hat Nachts ja nichts anderes zu tun
         /// <summary>
         /// this try-catch is done to avoid the issue where the report
@@ -14,8 +17,8 @@ namespace CardGame.Web.HtmlHelpers
         /// session on a refresh of the report
         /// </summary>
         public static T Get<T>(string index)
-        {
-            //            
+        {    
+                  
             if (HttpContext.Current.Session == null)
             {
                 var i = HttpContext.Current.Session.Count - 1;
@@ -31,6 +34,7 @@ namespace CardGame.Web.HtmlHelpers
                     catch (Exception)
                     {
                         Debugger.Break();
+
                         HttpContext.Current.Session.RemoveAt(i);
                     }
 

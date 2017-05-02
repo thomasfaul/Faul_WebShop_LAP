@@ -110,14 +110,14 @@ namespace CardGame.DAL.Logic
 
                     foreach (var dc in existingDeckList)
                     {
-                        deck.AllDeckCards.Remove(dc);
+                        db.AllDeckCards.Remove(dc);
                     }
                     db.SaveChanges();
 
                     foreach (var dc in deckCards)
                     {
                         var dbDeckCard = new DeckCard();
-                        dbDeckCard.NumberOfCards = dc.NumberOfCards ?? 0;
+                        dbDeckCard.NumberOfCards = dc.NumberOfCards;
                         dbDeckCard.Deck = db.AllDecks.Find(id);
                         dbDeckCard.Card = db.AllCards.Find(dc.Card.ID);
                         db.AllDeckCards.Add(dbDeckCard);

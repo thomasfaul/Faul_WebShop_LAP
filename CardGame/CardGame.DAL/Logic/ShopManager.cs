@@ -65,7 +65,7 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Debugger.Break();
+                //Debugger.Break();
                 log.Error("Usermanager-Get_CardPackById", e);
             }
             return dbCardPack;
@@ -183,6 +183,25 @@ namespace CardGame.DAL.Logic
             return generatedCards;
         }
         #endregion
+        public static bool SaveOrder(int userid,int cardpackid,int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                Purchase order = new Purchase();
+                User user = new User();
+                
+                order.OrderDateTime = DateTime.Now;
+                order.CardPack = Get_CardPackById(cardpackid);
+                order.User=
+
+                //db.AllPurchases.Add(order);
+                db.SaveChanges();
+            }
+                
+
+
+            return true;
+        }
 
     }
 }

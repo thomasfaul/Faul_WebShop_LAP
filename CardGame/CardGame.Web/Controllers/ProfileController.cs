@@ -10,7 +10,6 @@ namespace CardGame.Web.Controllers
     public class ProfileController : Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
         #region ACTIONRESULT UPROFILE
         /// <summary>
         /// Creates the ProfileView and creates the profile
