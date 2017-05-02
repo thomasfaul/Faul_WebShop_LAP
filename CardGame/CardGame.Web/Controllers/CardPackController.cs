@@ -200,7 +200,7 @@ namespace CardGame.Web.Controllers
                 if (o.Pack.IsMoney == true)
                 {
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth);
-                    var osaved=ShopManager.SaveOrder()
+                    //var osaved=ShopManager.SaveOrder()
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)
@@ -267,15 +267,15 @@ namespace CardGame.Web.Controllers
             try
             {
                 var orderedCards = (List<DAL.Model.Card>)TempData["OrderedCards"];
-                var cards = new List<Web.Models.Card>();
+                var cards = new List<Card>();
 
                 foreach (var c in orderedCards)
                 {
-                    Web.Models.Card card = new Web.Models.Card();
+                    Card card = new Card();
                     card.ID = c.ID;
                     card.Name = c.Name;
                     card.Type = c.CardType.Name;
-                    card.Class = c.CardClass.Name;
+                    //card.Class = c.CardClass.Name;
                     card.Mana = c.ManaCost;
                     card.Attack = c.Attack;
                     card.Life = c.Life;

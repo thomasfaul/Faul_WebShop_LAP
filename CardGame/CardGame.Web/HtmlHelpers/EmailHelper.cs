@@ -11,7 +11,6 @@ namespace CardGame.Web.HtmlHelpers
         #region SEND EMAIL
         public static bool SendEmail(string emailaddress, string emailsubject, string text)
         {
-
             #region EMAILBBRZ
             try
             {
@@ -39,8 +38,8 @@ namespace CardGame.Web.HtmlHelpers
             }
             catch (Exception e)
             {
-                Debugger.Break();
-                log.Error("Emailhelper-EmailBBRZ", e);
+                //Debugger.Break();
+                log.Error("Emailhelper-EmailBBRZ",e);
                 return true;
             }
             #endregion

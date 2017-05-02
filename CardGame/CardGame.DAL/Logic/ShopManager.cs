@@ -157,7 +157,7 @@ namespace CardGame.DAL.Logic
                         int indexID = rng.Next(0, validIDs.Count - 1);
                         int generatedCardID = validIDs[indexID];
                         var generatedCard = db.AllCards.Where(c => c.ID == generatedCardID)
-                            .Include(c =>c.CardType)
+                            .Include(c => c.CardType)
                             .Include(c=>c.CardClass).FirstOrDefault();
 
                         if (generatedCard == null)
@@ -183,25 +183,25 @@ namespace CardGame.DAL.Logic
             return generatedCards;
         }
         #endregion
-        public static bool SaveOrder(int userid,int cardpackid,int id)
-        {
-            using (var db = new itin21_ClonestoneFSEntities())
-            {
-                Purchase order = new Purchase();
-                User user = new User();
+        //public static bool SaveOrder(int userid,int cardpackid,int id)
+        //{
+        //    using (var db = new itin21_ClonestoneFSEntities())
+        //    {
+        //        Purchase order = new Purchase();
+        //        User user = new User();
                 
-                order.OrderDateTime = DateTime.Now;
-                order.CardPack = Get_CardPackById(cardpackid);
-                order.User=
+        //        order.OrderDateTime = DateTime.Now;
+        //        order.CardPack = Get_CardPackById(cardpackid);
+        //        order.User=
 
-                //db.AllPurchases.Add(order);
-                db.SaveChanges();
-            }
+        //        //db.AllPurchases.Add(order);
+        //        db.SaveChanges();
+        //    }
                 
 
 
-            return true;
-        }
+        //    return true;
+        //}
 
     }
 }

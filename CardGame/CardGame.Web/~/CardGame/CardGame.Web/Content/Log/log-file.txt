@@ -1,0 +1,28 @@
+2017-05-01 23:11:08,520 [8] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager - Konstruktor
+2017-05-01 23:11:21,298 [8] ERROR CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Konstruktor
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 42.
+2017-05-01 23:11:21,306 [8] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-GetRoleNamesByUserEmail
+2017-05-01 23:11:21,324 [10] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:11:21,341 [10] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:00,564 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager - Konstruktor
+2017-05-01 23:17:00,885 [7] ERROR CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Konstruktor
+System.ArgumentException: Ein Element mit dem gleichen Schlüssel wurde bereits hinzugefügt.
+   bei System.ThrowHelper.ThrowArgumentException(ExceptionResource resource)
+   bei System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   bei CardGame.DAL.Logic.UserManager..cctor() in C:\Users\FaulThomas\Documents\GitHub\Faul_WebShop_LAP\CardGame\CardGame.DAL\Logic\UserManager.cs:Zeile 42.
+2017-05-01 23:17:00,889 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:01,013 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:08,300 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:13,005 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyEmail
+2017-05-01 23:17:13,011 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager - Get_NumDistinctCardsOwnedByEmail
+2017-05-01 23:17:13,050 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_NumDecksOwnedByEmail
+2017-05-01 23:17:13,083 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_NumTotalCardsOwnedByEmail
+2017-05-01 23:17:20,954 [8] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:20,958 [8] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:23,974 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:25,986 [11] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_UserbyUserEmail
+2017-05-01 23:17:28,587 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Get_AllDecksByEmail
+2017-05-01 23:17:33,203 [7] INFO  CardGame.DAL.Logic.UserManager [(null)] - Usermanager-Get_AllCardsByEmail
