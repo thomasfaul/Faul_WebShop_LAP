@@ -74,7 +74,7 @@ namespace CardGame.DAL.Logic
 
         #region GET TOTAL COST
         /// <summary>
-        /// Takes the id of the pack and the number of the Packs
+        /// Takes the id of the pack and the number of the !!CARDPacks
         /// returns the total cost
         /// </summary>
         /// <param name="id"></param>
@@ -110,7 +110,45 @@ namespace CardGame.DAL.Logic
             return (price * numPacks);
         }
         #endregion
+        #region GET TOTAL COSTII
+        /// <summary>
+        /// Takes the id of the pack and the number of the COINPacks
+        /// returns the total cost
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="numPacks"></param>
+        ///  <param name="quantity"></param>
+        /// <returns></returns>
+        public static decimal GetTotalCost(int id, int numPacks,int quantity)
+        {
+            log.Info("Usermanager-GetTotalCost");
+            decimal num = 0;
+            decimal price = 0;
+            bool cur = false;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    var pack = db.AllPacks.Find(id);
+                    if (pack == null)
+                    {
+                        log.Error("Usermanager-GetTotalCost,Pack not found");
+                        throw new Exception("PackNotFound");
+                    }
+                    price = pack.Price ?? 0;
+                    cur = pack.IsMoney ?? false;
 
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Usermanager-GetTotalCost", e);
+            }
+            num = Convert.ToDecimal(numPacks);
+            return (price * quantity);
+        }
+        #endregion
         #region ORDER
         /// <summary>
         /// Takes the Id and the nummber of CardPacks

@@ -38,13 +38,13 @@
                 </li>
                 <li>
                     <p>
-                        @Html.LabelFor(u => u.Passwort)
-                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                        @Html.LabelFor(u => u.Password)
+                        @Html.PasswordFor(u => u.Password)
                     </p>
-                    @Html.ValidationMessageFor(u => u.Passwort)
+                    @Html.ValidationMessageFor(u => u.Password)
                 </li>
                 <li>
-                    <input type="submit" value="Login" class="btn btn-default " />
+                    <input type="submit" value="Login" class="btn btn-default"/>
                 </li>
                 <li><p class="toregistrieren"><a href="@Url.Action("Register", "Account")">Registrieren</a></p></li>
             </ul>

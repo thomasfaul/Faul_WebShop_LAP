@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Web", "CardGame.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardgame.UnitTests", "Cardgame.UnitTests\Cardgame.UnitTests.csproj", "{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame.Resources", "CardGame.Resources\CardGame.Resources.csproj", "{28999364-B091-4115-9167-B65E8A46859C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A96E10-D94C-4A3A-9BAA-0FEC874C4173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28999364-B091-4115-9167-B65E8A46859C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28999364-B091-4115-9167-B65E8A46859C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28999364-B091-4115-9167-B65E8A46859C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28999364-B091-4115-9167-B65E8A46859C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

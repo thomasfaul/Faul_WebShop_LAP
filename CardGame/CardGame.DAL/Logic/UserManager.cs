@@ -128,8 +128,7 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Debugger.Break();
-                log.Error("GetUserByUserEmail",e);
+                log.Error("GetUserByUserEmail-User hat sich die Agb´s angesehen",e);
             }
 
             return dbUser;

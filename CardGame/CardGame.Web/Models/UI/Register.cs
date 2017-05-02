@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CardGame.Resources;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -6,40 +7,70 @@ namespace CardGame.Web.Models.UI
 {
     public class Register : Login
     {
-        [Required(ErrorMessage = "bitte geben Sie ihren Vornamen ein", AllowEmptyStrings = false)]
-        [Display(Name = "Vorname")]
-        [RegularExpression(@"^[a-zA-Z--]+$", ErrorMessage = "Bitte keine Sonderzeichen benutzen")]
+        #region FIRSTNAME
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50,
+ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [RegularExpression(@"^[a-zA-Z--]+$", ErrorMessageResourceType = typeof(ValidationMessages),
+    ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
+        [Display(Name = Constants.Labels.FIRSTNAME,ResourceType = typeof(ValidationLabels))]
         public string Firstname { get; set; }
+        #endregion
 
-
-
-        [Required(ErrorMessage = "Bitte geben Sie ihren Nachnamen ein", AllowEmptyStrings = false)]
-        [Display(Name = "Nachname")]
-        [RegularExpression(@"^[a-zA-Z0-9--]+$", ErrorMessage = "Bitte keine Sonderzeichen benutzen")]
+        #region LASTNAME
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50,
+ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [RegularExpression(@"^[a-zA-Z--]+$", ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
+        [Display(Name = Constants.Labels.LASTNAME, ResourceType = typeof(ValidationLabels))]
         public string Lastname { get; set; }
+        #endregion
 
-
-
-        [Required(ErrorMessage = "Bitte geben Sie Ihren Gamertag ein", AllowEmptyStrings = false)]
-        [Display(Name = "Gamertag")]
+        #region GAMERTAG
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50,
+ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [Display(Name = Constants.Labels.GAMERTAG, ResourceType = typeof(ValidationLabels))] 
         public string Gamertag { get; set; }
+        #endregion
 
-        [StringLength(maximumLength: 20, MinimumLength = 4, ErrorMessage = "Für ein Passwort bitte (4-20 Zeichen eingeben)")]
-        [Required(ErrorMessage = "Bestätigen Sie bitte ihr Passwort", AllowEmptyStrings = false)]
-        [DataType(DataType.Password)]
-        [System.ComponentModel.DataAnnotations.Compare("Passwort", ErrorMessage = "Passwort ist nicht gleich")]
-        [Display(Name = "Passwort bestätigen")]
-        public string ConfirmPassword { get; set; }
+        #region PASSWORDCONFIRMATION
+        [Required(
+        AllowEmptyStrings = false,
+        ErrorMessageResourceType = typeof(ValidationMessages),
+        ErrorMessageResourceName = Constants.Validation.REQUIRED
+        )]
+        //[DataType(DataType.Password)]
+        [StringLength(50,
+     ErrorMessageResourceType = typeof(ValidationMessages),
+    ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [System.ComponentModel.DataAnnotations.Compare(nameof(Password),
+    ErrorMessageResourceType = typeof(ValidationMessages),
+    ErrorMessageResourceName = Constants.Validation.PASSWORD_EQUAL)]
+        [Display(Name = Constants.Labels.CONFIRMATION, ResourceType =typeof(ValidationLabels))]
+        public string PasswordConfirmation { get; set; }
+        #endregion
 
+        #region TERMS ACCEPTED
         [Required]
-        [Display(Name = "Habe Agb´s gelesen und akzeptiere Sie hiermit")]
-        [MustBeSelected]
+        [MustBeSelected(ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName = Constants.Validation.TERMS)]
+        [Display(Name = Constants.Labels.TERMS_ACCEPT, ResourceType = typeof(ValidationLabels))]  
         public bool TermsAccepted { get; set; }
 
+        #endregion
+
+
         #region CLASS => ATTRIBUT [MUSTBEATTIBUTE]
-            /// <summary>
-            /// IClientValidatable for client side Validation
-            /// </summary>
+        /// <summary>
+        /// IClientValidatable for client side Validation
+        /// </summary>
         public class MustBeTrueAttribute : ValidationAttribute, IClientValidatable
         {
             #region ISVALID

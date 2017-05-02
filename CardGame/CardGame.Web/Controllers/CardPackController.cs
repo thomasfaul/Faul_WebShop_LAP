@@ -199,7 +199,7 @@ namespace CardGame.Web.Controllers
             {
                 if (o.Pack.IsMoney == true)
                 {
-                    var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth);
+                    var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth,o.Quantity);
                     //var osaved=ShopManager.SaveOrder()
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);

@@ -82,6 +82,7 @@ namespace CardGame.Web.HtmlHelpers
             }
             catch (Exception e)
             {
+                Debug.Write(e);
                 var i = HttpContext.Current.Session.Count - 1;
 
                 while (i >= 0)

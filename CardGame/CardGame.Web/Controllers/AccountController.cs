@@ -50,7 +50,7 @@ namespace CardGame.Web.Controllers
             }
             else
             {
-                bool hasAccess = AuthManager.AuthUser(login.Email, login.Passwort);
+                bool hasAccess = AuthManager.AuthUser(login.Email, login.Password);
 
                 if (!hasAccess)
                 {
@@ -62,7 +62,7 @@ namespace CardGame.Web.Controllers
             }
 
             string role = UserManager.GetRoleNamesByUserEmail(login.Email);
-            auth(login.Email, login.Passwort, role);
+            auth(login.Email, login.Password, role);
             TempData["ConfirmMessage"] = "Sie sind eingeloggt";
             return RedirectToAction("Index", "Home");
         }
@@ -118,7 +118,7 @@ namespace CardGame.Web.Controllers
             dbUser.FirstName = regUser.Firstname;
             dbUser.LastName = regUser.Lastname;
             dbUser.Email = regUser.Email;
-            dbUser.Password = regUser.Passwort;
+            dbUser.Password = regUser.Password;
             dbUser.GamerTag = regUser.Gamertag;
             dbUser.Salt = regUser.Salt;
             dbUser.UserRole = "player";

@@ -25,7 +25,7 @@
                 <li>
                     <p>
                         @Html.LabelFor(u => u.Firstname)
-                        @Html.TextBoxFor(u => u.Firstname, new { maxlength = 50 })
+                        @Html.TextBoxFor(u => u.Firstname)
                     </p>
                 </li>
                 <li>
@@ -34,14 +34,14 @@
                 <li>
                     <p>
                         @Html.LabelFor(u => u.Lastname)
-                        @Html.EditorFor(u => u.Lastname, new { maxlength = 50 })
+                        @Html.EditorFor(u => u.Lastname)
                     </p>
                     @Html.ValidationMessageFor(model => model.Lastname)
                 </li>
                 <li>
                     <p>
                         @Html.LabelFor(u => u.Gamertag)
-                        @Html.EditorFor(u => u.Gamertag, new { maxlength = 50 })
+                        @Html.EditorFor(u => u.Gamertag)
                     </p>
                     @Html.ValidationMessageFor(model => model.Gamertag)
                 </li>
@@ -54,23 +54,22 @@
                 </li>
                 <li>
                     <p>
-                        @Html.LabelFor(u => u.Passwort)
-                        @Html.PasswordFor(u => u.Passwort, new { maxlength = 50, value = ViewBag.Selpwd })
+                        @Html.LabelFor(u => u.Password)
+                        @Html.PasswordFor(u => u.Password)
                     </p>
-                    @Html.ValidationMessageFor(u => u.Passwort)
+                    @Html.ValidationMessageFor(u => u.Password)
                 </li>
                 <li>
                     <p>
-                        @Html.LabelFor(u => u.ConfirmPassword)
-                        @Html.EditorFor(u => u.ConfirmPassword, new { maxlength = 50, value = ViewBag.Selconfirmpwd })
+                        @Html.LabelFor(u => u.PasswordConfirmation)
+                        @Html.PasswordFor(u => u.PasswordConfirmation)
                     </p>
-                    @*@Html.ValidationMessageFor(u => u.PasswordValidation)*@
+                    @Html.ValidationMessageFor(u => u.PasswordConfirmation)
                 </li>
+
                 <li>
-                    <a class="readAGB " href="@Url.Action("Contact", "Home")">Ich habe die AGB´s gelesen und akzeptiert </a>
-                </li>
-                <li>
-                    <div>@Html.CheckBoxFor(m => m.TermsAccepted)</div>
+                    <a class="readAGB" href="@Url.Action("Contact", "Home")">@Html.LabelFor(m=>m.TermsAccepted)</a>
+                    @Html.CheckBoxFor(m => m.TermsAccepted)
                     @Html.ValidationMessageFor(m => m.TermsAccepted)
                 </li>
                 <li><input type="submit" value="Registrieren" class="btn btn-default regButtonreg" /></li>

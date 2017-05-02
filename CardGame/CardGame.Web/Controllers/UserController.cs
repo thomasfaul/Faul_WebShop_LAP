@@ -32,7 +32,7 @@ namespace CardGame.Web.Controllers
                 user.Lastname = c.LastName;
                 user.Email = c.Email;
                 user.Role = c.UserRole;
-                user.Passwort = c.Password;
+                user.Password = c.Password;
                 user.Salt = c.Salt;
                 if (c.AmountMoney != null)
                 {
