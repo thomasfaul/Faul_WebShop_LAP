@@ -122,7 +122,6 @@ namespace CardGame.DAL.Logic
         public static decimal GetTotalCost(int id, int numPacks,int quantity)
         {
             log.Info("Usermanager-GetTotalCost");
-            decimal num = 0;
             decimal price = 0;
             bool cur = false;
             try
@@ -145,7 +144,6 @@ namespace CardGame.DAL.Logic
                 Debugger.Break();
                 log.Error("Usermanager-GetTotalCost", e);
             }
-            num = Convert.ToDecimal(numPacks);
             return (price * quantity);
         }
         #endregion
