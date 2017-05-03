@@ -110,6 +110,7 @@ namespace CardGame.DAL.Logic
             return (price * numPacks);
         }
         #endregion
+
         #region GET TOTAL COSTII
         /// <summary>
         /// Takes the id of the pack and the number of the COINPacks
@@ -147,6 +148,7 @@ namespace CardGame.DAL.Logic
             return (price * quantity);
         }
         #endregion
+
         #region ORDER
         /// <summary>
         /// Takes the Id and the nummber of CardPacks
@@ -219,6 +221,7 @@ namespace CardGame.DAL.Logic
             return generatedCards;
         }
         #endregion
+
         //public static bool SaveOrder(int userid,int cardpackid,int id)
         //{
         //    using (var db = new itin21_ClonestoneFSEntities())

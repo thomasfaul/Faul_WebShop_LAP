@@ -204,6 +204,7 @@ color: papayawhip;
 }
 
 
+
 						  /*Container*/
 /*----------------------------------------------------------------------------*/
   .maincontainer{
@@ -299,8 +300,7 @@ div.col.col-md-6.cardcol {
 a.btn-primary:hover,a.btn-default:hover,a.btn.btn-default:hover {
 	-webkit-box-shadow: 2px -5px 6px 2px rgba(245,219,166,0.71);
 	-moz-box-shadow: 2px -5px 6px 2px rgba(245,219,166,0.71);
-	box-shadow: 2px -5px 6px 2px rgba(245,219,166,0.71);
-    width:85%;
+	box-shadow: 2px -3px 4px 2px rgba(245,219,166,0.30);
     transition:ease-in 1s
 }
 
@@ -322,7 +322,7 @@ a.btn-primary:hover,a.btn-default:hover,a.btn.btn-default:hover {
 .btn-defaultactive,
 .btn-default:visited:hover {
 	text-decoration:none;
-	background-color:rgba(189, 102, 49, 0.80);
+	background-color:rgba(189, 102, 49, 0.50);
 	color:papayawhip;
     margin-left:-0.5em;
     transition:ease-in 2s;
@@ -343,13 +343,22 @@ a.btn-default:first-child {
 	.btn-defaultactive,
 	.btn-default:visited:hover {
 		padding: 0.4em;
-		width: 14em;
+		width: 13em;
 		height: 2em;
 		margin-top: 1.5em;
 		font-family: Xena;
         transition:ease-in-out 3s;
 	}
-
+.selected:hover {
+    max-width:3em;
+}
+.btn-info{
+    background-color:rgba(189, 102, 49, 0.80);
+    border-color:papayawhip;
+}
+.btn-info:visited{
+    background-color:rgba(189, 102, 49, 0.30);
+}
 						   /*FORMS*/
 /*----------------------------------------------------------------------------*/
  input {

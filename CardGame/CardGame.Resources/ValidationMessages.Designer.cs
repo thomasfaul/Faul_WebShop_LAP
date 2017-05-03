@@ -79,7 +79,7 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Du hast leider die maximale Zeilenlänge überschritten.
+        ///   Looks up a localized string similar to Du hast leider die maximale Wortlänge überschritten.
         /// </summary>
         public static string MAX_LENGTH {
             get {

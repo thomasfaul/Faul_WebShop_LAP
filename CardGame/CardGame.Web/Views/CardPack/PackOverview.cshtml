@@ -26,7 +26,7 @@
         <div class="card-deck packcol packdeck " id="packoverview">
             @foreach (var pack in Model.Packs)
 {
-                <div class="card col-md-2 packcard">
+                <div class="card col-md-3 packcard">
                     @if (pack.IsMoney != true)
                     {
                         <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
@@ -53,8 +53,9 @@
                 </div>
             }
         </div>
+        <p class="col-md-offset-7" id="paginator" style="max-height:5em; margin-top:53em; ">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p> 
     </div>
-    <p  class="col-md-offset-7" id="paginator">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
+    
 </div>
 
    @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
