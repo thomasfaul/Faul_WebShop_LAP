@@ -200,13 +200,20 @@ namespace CardGame.Web.Controllers
                 if (o.Pack.IsMoney == true)
                 {
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth,o.Quantity);
-                    //var osaved=ShopManager.SaveOrder()
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)
                     {
                         log.Error("CardPackController-Order, BalanceUpdateError");
                         return RedirectToAction("BalanceUpdateError");
+                    }
+                    var us = UserManager.GetUserByUserEmail(User.Identity.Name);
+
+                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack);
+                    if (!isSaved)
+                    {
+                        log.Error("CardPackController-Order,SaveOrder");
+                        return RedirectToAction("Order-SaveOrderError");
                     }
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";

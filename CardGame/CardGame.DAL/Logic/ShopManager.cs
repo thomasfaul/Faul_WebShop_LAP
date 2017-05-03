@@ -219,25 +219,38 @@ namespace CardGame.DAL.Logic
             return generatedCards;
         }
         #endregion
-        //public static bool SaveOrder(int userid,int cardpackid,int id)
-        //{
-        //    using (var db = new itin21_ClonestoneFSEntities())
-        //    {
-        //        Purchase order = new Purchase();
-        //        User user = new User();
-                
-        //        order.OrderDateTime = DateTime.Now;
-        //        order.CardPack = Get_CardPackById(cardpackid);
-        //        order.User=
-
-        //        //db.AllPurchases.Add(order);
-        //        db.SaveChanges();
-        //    }
-                
 
 
-        //    return true;
-        //}
+
+
+        public static bool SaveOrder(int userid, int cardpackid)
+        {
+            log.Info("SaveOrder");
+            User person = null;
+            Pack cardpack = null;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    person = db.AllUsers.Find(userid);
+                    cardpack = db.AllPacks.Find(cardpackid);
+                    Purchase order = new Purchase();
+                    order.OrderDateTime = DateTime.Now;
+                    order.User = person;
+                    order.CardPack = cardpack;
+                    db.AllPurchases.Add(order);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Usermanager-SaveOrder", e);
+                return false;
+            }
+
+        }
 
     }
 }
