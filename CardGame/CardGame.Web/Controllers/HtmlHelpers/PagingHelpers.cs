@@ -29,7 +29,7 @@ namespace CardGame.Web.HtmlHelpers
                 if (i == pagingInfo.CurrentPage)
                 {
                     tag.AddCssClass("selected");
-                    tag.AddCssClass("btn-primary");
+                    tag.AddCssClass("btn-info");
                 }
                 tag.AddCssClass("btn btn default");
                 result.Append(tag.ToString());

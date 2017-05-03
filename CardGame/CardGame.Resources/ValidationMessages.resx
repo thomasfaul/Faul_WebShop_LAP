@@ -124,7 +124,7 @@
     <value>Bitte mindestens 4, höchstens 50 Buchstaben</value>
   </data>
   <data name="MAX_LENGTH" xml:space="preserve">
-    <value>Du hast leider die maximale Zeilenlänge überschritten</value>
+    <value>Du hast leider die maximale Wortlänge überschritten</value>
   </data>
   <data name="PASSWORD_EQUAL" xml:space="preserve">
     <value>Die Passwörter müssen gleich sein</value>
