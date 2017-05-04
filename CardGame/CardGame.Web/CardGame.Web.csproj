@@ -184,6 +184,7 @@
     <Compile Include="Models\DB\Deck.cs" />
     <Compile Include="Models\DB\DeckBuilder.cs" />
     <Compile Include="Models\DB\Order.cs" />
+    <Compile Include="Models\DB\Payment.cs" />
     <Compile Include="Models\DB\Shop.cs" />
     <Compile Include="Models\DB\UserProfile.cs" />
     <Compile Include="Models\PacksListViewModel.cs" />

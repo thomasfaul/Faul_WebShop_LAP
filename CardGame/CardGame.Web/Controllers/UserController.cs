@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using CardGame.DAL.Logic;
-using CardGame.Web.Models.DB;
+using CardGame.Web.Models.UI;
 using log4net;
 
 namespace CardGame.Web.Controllers

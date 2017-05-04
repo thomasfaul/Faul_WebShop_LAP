@@ -867,7 +867,7 @@ margin-left:0;
 }
 .listProducts {
     max-height:62em;
-    margin-left
+    margin-left:auto;
 }
 .editdeckrow {
     overflow:hidden;
