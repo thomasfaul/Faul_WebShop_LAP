@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CARD_COMPANY" xml:space="preserve">
+    <value>Kreditkartenfirma</value>
+  </data>
+  <data name="CARD_EXPIRY" xml:space="preserve">
+    <value>Ablaufdatum</value>
+  </data>
+  <data name="CARD_HOLDER" xml:space="preserve">
+    <value>Kartenbesitzer</value>
+  </data>
+  <data name="CARD_NUMBER" xml:space="preserve">
+    <value>Kartennummer</value>
+  </data>
+  <data name="CARD_SECURITY_N" xml:space="preserve">
+    <value>Sicherheitscode</value>
+  </data>
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Passwort bestätigen</value>
   </data>

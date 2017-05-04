@@ -18,6 +18,8 @@ namespace CardGame.DAL.Model
         public Nullable<System.DateTime> OrderDateTime { get; set; }
         public Nullable<int> ID_User { get; set; }
         public Nullable<int> ID_CardPack { get; set; }
+        public Nullable<int> TotalCost { get; set; }
+        public Nullable<int> NumberOfPackagesBought { get; set; }
     
         public virtual Pack CardPack { get; set; }
         public virtual User User { get; set; }

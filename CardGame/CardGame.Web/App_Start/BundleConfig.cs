@@ -20,7 +20,10 @@ namespace CardGame.Web
                       "~/Scripts/respond.js",
                       "~/Scripts/toastr.js",
                       "~/Scripts/myscript.js"));
-                
+
+            bundles.Add(new StyleBundle("~/Content/jqueryui") .Include(
+                "~/Content/themes/base/all.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/bootstrap.css",
                       "~/Content/toastr.css",

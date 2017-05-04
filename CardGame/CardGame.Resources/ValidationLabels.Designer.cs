@@ -61,6 +61,51 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kreditkartenfirma.
+        /// </summary>
+        public static string CARD_COMPANY {
+            get {
+                return ResourceManager.GetString("CARD_COMPANY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ablaufdatum.
+        /// </summary>
+        public static string CARD_EXPIRY {
+            get {
+                return ResourceManager.GetString("CARD_EXPIRY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kartenbesitzer.
+        /// </summary>
+        public static string CARD_HOLDER {
+            get {
+                return ResourceManager.GetString("CARD_HOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kartennummer.
+        /// </summary>
+        public static string CARD_NUMBER {
+            get {
+                return ResourceManager.GetString("CARD_NUMBER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sicherheitscode.
+        /// </summary>
+        public static string CARD_SECURITY_N {
+            get {
+                return ResourceManager.GetString("CARD_SECURITY_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Passwort bestätigen.
         /// </summary>
         public static string CONFIRMATION {

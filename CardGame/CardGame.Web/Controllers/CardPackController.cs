@@ -209,7 +209,7 @@ namespace CardGame.Web.Controllers
                     }
                     var us = UserManager.GetUserByUserEmail(User.Identity.Name);
 
-                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack);
+                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack,(int)orderTotal,o.Quantity);
                     if (!isSaved)
                     {
                         log.Error("CardPackController-Order,SaveOrder");

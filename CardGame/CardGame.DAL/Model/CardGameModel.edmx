@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CardGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CardGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblcard">
           <Key>
             <PropertyRef Name="idcard" />
@@ -60,6 +60,8 @@
           <Property Name="orderdate" Type="datetime" />
           <Property Name="fkperson" Type="int" />
           <Property Name="fkpack" Type="int" />
+          <Property Name="totalcost" Type="int" />
+          <Property Name="numberofpackagesbought" Type="int" />
         </EntityType>
         <EntityType Name="tblpack">
           <Key>
@@ -253,8 +255,7 @@
             <End Role="tblorder" EntitySet="tblorder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CardGameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -326,6 +327,8 @@
           <Property Name="ID_CardPack" Type="Int32" />
           <NavigationProperty Name="CardPack" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblorder" ToRole="tblpack" />
           <NavigationProperty Name="User" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="tblorder" ToRole="tblperson" />
+          <Property Name="TotalCost" Type="Int32" />
+          <Property Name="NumberOfPackagesBought" Type="Int32" />
         </EntityType>
         <EntityType Name="Pack">
           <Key>
@@ -585,6 +588,8 @@
           <EntitySetMapping Name="AllPurchases">
             <EntityTypeMapping TypeName="CardGameModel.Purchase">
               <MappingFragment StoreEntitySet="tblorder">
+                <ScalarProperty Name="NumberOfPackagesBought" ColumnName="numberofpackagesbought" />
+                <ScalarProperty Name="TotalCost" ColumnName="totalcost" />
                 <ScalarProperty Name="ID" ColumnName="idorder" />
                 <ScalarProperty Name="OrderDateTime" ColumnName="orderdate" />
                 <ScalarProperty Name="ID_User" ColumnName="fkperson" />

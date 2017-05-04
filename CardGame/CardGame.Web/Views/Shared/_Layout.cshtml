@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - CloneShop</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Content/jqueryui")
     @Scripts.Render("~/bundles/modernizr")
+    
     <meta name="Webshop" content="Webshop to buy CloneStone Cards" />
     <meta name="description" content="A Webhop to buy Clonestone Cards" />
 </head>
@@ -151,9 +153,10 @@
 
 @*-----------------------------------------------------Scripts ---------------------------------------------*@
 
-
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
     @RenderSection("scripts", required: false)
 
     <script type="text/javascript">
@@ -212,5 +215,18 @@ $(document).ready( function () {
       $('#listProducts').dataTable();
 });
 </script>
+    <script>$(function () {
+    $(".jqueryui-marker-datepicker").datepicker({
+        dateFormat: "yy-mm-dd",
+        changeYear: true,
+        shownOn: "button"
+    }).css("display", "inline-block")
+    .next("button").button({
+        icons: { primary: "ui-icon-calender" },
+        label: "Bitte ein Datum aussuchen",
+        text: false
+    });
+});
+    </script>
 </body>
 </html>

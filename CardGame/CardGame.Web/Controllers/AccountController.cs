@@ -4,9 +4,10 @@ using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
-using CardGame.Web.Models.UI;
+using CardGame.Web.Models.DB;
 using CardGame.Web.HtmlHelpers;
 using log4net;
+using CardGame.Web.Models.UI;
 
 namespace CardGame.Web.Controllers
 {

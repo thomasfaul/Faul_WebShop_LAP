@@ -110,7 +110,6 @@ namespace CardGame.DAL.Logic
             return (price * numPacks);
         }
         #endregion
-
         #region GET TOTAL COSTII
         /// <summary>
         /// Takes the id of the pack and the number of the COINPacks
@@ -148,7 +147,6 @@ namespace CardGame.DAL.Logic
             return (price * quantity);
         }
         #endregion
-
         #region ORDER
         /// <summary>
         /// Takes the Id and the nummber of CardPacks
@@ -222,11 +220,10 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-<<<<<<< HEAD
 
 
 
-        public static bool SaveOrder(int userid, int cardpackid)
+        public static bool SaveOrder(int userid, int cardpackid, int totalsum,int numberofpacks)
         {
             log.Info("SaveOrder");
             User person = null;
@@ -241,6 +238,8 @@ namespace CardGame.DAL.Logic
                     order.OrderDateTime = DateTime.Now;
                     order.User = person;
                     order.CardPack = cardpack;
+                    order.NumberOfPackagesBought = numberofpacks;
+                    order.TotalCost = totalsum;
                     db.AllPurchases.Add(order);
                     db.SaveChanges();
                 }
@@ -254,27 +253,6 @@ namespace CardGame.DAL.Logic
             }
 
         }
-=======
-        //public static bool SaveOrder(int userid,int cardpackid,int id)
-        //{
-        //    using (var db = new itin21_ClonestoneFSEntities())
-        //    {
-        //        Purchase order = new Purchase();
-        //        User user = new User();
-                
-        //        order.OrderDateTime = DateTime.Now;
-        //        order.CardPack = Get_CardPackById(cardpackid);
-        //        order.User=
-
-        //        //db.AllPurchases.Add(order);
-        //        db.SaveChanges();
-        //    }
-                
-
-
-        //    return true;
-        //}
->>>>>>> origin/master
 
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Order
+@{
     ViewBag.Title = "_MiddleCoinPackOver";
 }
 
@@ -30,9 +31,14 @@
                     <hr />
                     <h5 style="color:bisque">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>Euro</h5>
 
-
-
                 </div>
+
+
+                @Html.Partial("_Payment")
+
+
+
+
                 <div class="col-md-push-6">
                     <input type="submit" value="Aufladen" class="btn btn-default" />
                 </div>

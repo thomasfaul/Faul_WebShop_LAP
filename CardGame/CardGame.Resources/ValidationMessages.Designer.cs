@@ -61,6 +61,33 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte ein korrektes Ablaufdatum eintragen.
+        /// </summary>
+        public static string CARD_EXPIRY {
+            get {
+                return ResourceManager.GetString("CARD_EXPIRY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte eine korrekte Kartennummer eintragen.
+        /// </summary>
+        public static string CARD_NUMBER {
+            get {
+                return ResourceManager.GetString("CARD_NUMBER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte einen korrekten Sicherheitscode eintragen.
+        /// </summary>
+        public static string CARD_SECURITY_N {
+            get {
+                return ResourceManager.GetString("CARD_SECURITY_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte eine gültige Emailadresse eingeben.
         /// </summary>
         public static string EMAIL {

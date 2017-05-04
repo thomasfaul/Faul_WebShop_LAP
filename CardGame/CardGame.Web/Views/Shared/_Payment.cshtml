@@ -1,0 +1,52 @@
+﻿
+@using CardGame.Web.Models.DB
+@model Order
+
+
+
+            <fieldset>
+                <legend>Payment</legend>
+
+                <div class="control-group">
+                    @Html.LabelFor(m => m.CardCompany)
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CardCompany)
+                        @Html.ValidationMessageFor(m => m.CardCompany)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(m => m.CardHolder)
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CardHolder)
+                        @Html.ValidationMessageFor(m => m.CardHolder)
+                    </div>
+                </div>
+
+
+
+                <div class="control-group">
+                    @Html.LabelFor(m => m.CardExpiryDate)
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CardExpiryDate, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })
+                        @Html.ValidationMessageFor(m => m.CardExpiryDate)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(m => m.CardNumber)
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CardNumber)
+                        @Html.ValidationMessageFor(m => m.CardNumber)
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(m => m.CardSecurityNumber)
+                    <div class="controls">
+                        @Html.TextBoxFor(m => m.CardSecurityNumber)
+                        @Html.ValidationMessageFor(m => m.CardSecurityNumber)
+                    </div>
+                </div>
+            </fieldset>
+
