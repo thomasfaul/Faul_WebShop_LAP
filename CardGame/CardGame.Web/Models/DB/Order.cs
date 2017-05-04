@@ -13,6 +13,7 @@ namespace CardGame.Web.Models.DB
         public int Quantity { get; set; }
         public int CurrencyBalance { get; set; }
         public bool OIsCurrency { get; set; }
+        public Payment CardPayment {get; set;}
     }
 
 }

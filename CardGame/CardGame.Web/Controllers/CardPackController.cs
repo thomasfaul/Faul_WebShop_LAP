@@ -82,6 +82,7 @@ namespace CardGame.Web.Controllers
         [Authorize]
         public ActionResult OrderOverview()
         {
+            
             log.Info("CardPackController-OrderOverview");
             Order o = (Order)TempData["Order"];
             TempData["Order"] = o;
@@ -181,7 +182,7 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-        #region MyRegion ACTIONRESULT ORDER
+        #region  ACTIONRESULT ORDER
 
         /// <summary>
         /// todo Actionresult order comment
@@ -194,7 +195,6 @@ namespace CardGame.Web.Controllers
         {
             log.Info("CardPackController-Order");
             Order o = (Order)TempData["Order"];
-            //Check if User has enough balance
             try
             {
                 if (o.Pack.IsMoney == true)
@@ -219,7 +219,16 @@ namespace CardGame.Web.Controllers
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
                     return RedirectToAction("Index", "Home");
-                }
+                    }
+
+
+
+
+
+
+
+
+
                 else
                 {
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Quantity);

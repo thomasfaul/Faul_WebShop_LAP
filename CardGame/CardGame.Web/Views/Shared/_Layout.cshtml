@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - CloneShop</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/Content/jqueryui")
+    @Styles.Render("~/Content/jqueryui")
     @Scripts.Render("~/bundles/modernizr")
     
     <meta name="Webshop" content="Webshop to buy CloneStone Cards" />
@@ -153,7 +153,7 @@
 
 @*-----------------------------------------------------Scripts ---------------------------------------------*@
 
-    @Scripts.Render("~/bundles/jqueryui")
+    @*@Scripts.Render("~/bundles/jqueryui")*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
@@ -210,11 +210,11 @@
         }
        
     </script>
-    <script type="text/javascript" charset="utf-8">
+    @*<script type="text/javascript" charset="utf-8">
 $(document).ready( function () {
       $('#listProducts').dataTable();
 });
-</script>
+</script>*@
     <script>$(function () {
     $(".jqueryui-marker-datepicker").datepicker({
         dateFormat: "yy-mm-dd",
