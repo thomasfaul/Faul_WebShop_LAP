@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+using System.Web.Mvc;
 
 namespace CardGame.Web.Models
 {
     public class CardPack
     {
         [Required]
-        [Display(Name = "Nummer")]
         public int IdPack { get; set; }
 
         [Required]
