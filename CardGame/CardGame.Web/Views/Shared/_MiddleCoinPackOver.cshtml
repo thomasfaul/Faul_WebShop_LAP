@@ -8,40 +8,39 @@
 
 
 <div class="col-md-6 cardcol buymiddlecontainer">
-    <div class="col-md-12 cardcol"id="index">
+    <div class="col-md-12 cardcol"id="index" style="margin-top:-16em">
         @if (Model.Pack.IsMoney == true)
         {
             <h2>Bestellübersicht COINS</h2>
             <h3 style="color:darkorange">Sie wollen @Model.Quantity Stück @Model.Pack.PackName Paket kaufen</h3>
-
+        <br />
 
             using (Html.BeginForm())
             {
-                <div class="col-md-12 middleOrder">
-                    <h5 style="color:bisque">Ihr Guthaben:&nbsp;<span class="spanpoverview"> @Model.CurrencyBalance</span>&nbsp; Coins</h5>
+                <fieldset>
+                    <div class="col-md-12 middleOrder">
+                        <h5 style="color:bisque">Ihr Guthaben:&nbsp;<span class="spanpoverview"> @Model.CurrencyBalance</span>&nbsp; Coins</h5>
 
-                    <h5 style="color:bisque">Guthaben nach Kauf:&nbsp;<span class="spanpoverview">&nbsp; @(@Model.CurrencyBalance + Model.Quantity * Model.Pack.Worth)</span>&nbsp;Coins</h5>
+                        <h5 style="color:bisque">Guthaben nach Kauf:&nbsp;<span class="spanpoverview">&nbsp; @(@Model.CurrencyBalance + Model.Quantity * Model.Pack.Worth)</span>&nbsp;Coins</h5>
 
+                        <br />
+                        <h5 style="color:bisque">
+                            Umsatzsteuer:&nbsp;<span class="spanpoverview">
+                                20% &nbsp;€ &nbsp; @((((Model.Quantity * Model.Pack.PackPrice) / 120) * 20).ToString("#.##"))
+                            </span>&nbsp; Euro
+                        </h5>
+                        <hr />
+                        <h5 style="color:darkgray; background-color:rgba(115, 63, 33, 0.90)">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Euro</h5>
+
+                    </div>
                     <br />
-                    <h5 style="color:bisque">
-                        Umsatzsteuer:&nbsp;<span class="spanpoverview">
-                            20% &nbsp;€ &nbsp; @((((Model.Quantity * Model.Pack.PackPrice) / 120) * 20).ToString("#.##"))
-                        </span>&nbsp; Euro
-                    </h5>
-                    <hr />
-                    <h5 style="color:bisque">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>Euro</h5>
 
-                </div>
+                    @Html.Partial("_Payment")
 
-
-                @Html.Partial("_Payment")
-
-
-
-
-                <div class="col-md-push-6">
-                    <input type="submit" value="Aufladen" class="btn btn-default" />
-                </div>
+                    <div class="col-md-push-6">
+                        <input type="submit" value="Bezahlen" class="btn btn-default" />
+                    </div>
+                </fieldset>
             }
         }
     </div>

@@ -1,0 +1,17 @@
+﻿
+@model CardGame.Web.Models.CardPack
+@{
+    ViewBag.Title="Admin: Edit" + @Model.PackName;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Pack bearbeiten</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save"/>
+    @Html.ActionLink("Cancel and return to List", "Index")
+}

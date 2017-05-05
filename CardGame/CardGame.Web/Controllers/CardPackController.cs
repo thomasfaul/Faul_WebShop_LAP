@@ -139,7 +139,7 @@ namespace CardGame.Web.Controllers
             cardPack.NumCards = dbCardPack.NumberOfCards ?? 0;
             cardPack.PackPrice = dbCardPack.Price ?? 0;
             cardPack.Flavor = dbCardPack.FlavorText;
-
+            
             return View(cardPack);
         } 
         #endregion
@@ -177,7 +177,7 @@ namespace CardGame.Web.Controllers
             o.CurrencyBalance = UserManager.Get_BalanceByEmail(User.Identity.Name);
 
             TempData["Order"] = o;
-
+        
             return RedirectToAction("OrderOverview");
         }
         #endregion
@@ -194,13 +194,34 @@ namespace CardGame.Web.Controllers
         public ActionResult Order()
         {
             log.Info("CardPackController-Order");
+            
             Order o = (Order)TempData["Order"];
+            
+            if (!ModelState.IsValid)
+                {
+                    return View(o);
+
+                }
             try
             {
                 if (o.Pack.IsMoney == true)
                 {
+
+                    //    Payment payed = new Payment();
+                    //    payed.CardCompany = o.CardPayment.CardCompany;
+                    //    payed.CardExpiryDate = o.CardPayment.CardExpiryDate;
+                    //    payed.CardHolder = o.CardPayment.CardHolder;
+                    //    payed.CardNumber = o.CardPayment.CardNumber;
+                    //    payed.CardSecurityNumber = o.CardPayment.CardSecurityNumber;
+
+                    //    if (!ModelState.IsValid)
+                    //    {
+                    //        return View(o);
+
+                    //    }
+
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth,o.Quantity);
-                    //var osaved=ShopManager.SaveOrder()
+                    
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
                     if (!hasUpdated)

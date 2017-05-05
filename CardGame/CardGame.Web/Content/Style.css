@@ -934,7 +934,30 @@ height:15em;
 transition:8s;
 z-index:9999;
 }
+ /*-------------------------------------Datepicker---------------------------------------*/ 
 
+input#CardPayment_CardExpiryDate {
+    width:auto;
+    height:20px
+}
+select.ui-datepicker-year {
+    color:#555;
+}
+div.ui-datepicker-title {
+    color:#555;
+}
+table.ui-datepicker-calendar {
+    background-color:rgba(189, 102, 49, 0.80);
+}
 
+div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    background-color:rgba(189, 102, 49, 0.80);
+}
+
+ /*-------------------------------------Admin-table---------------------------------------*/ 
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: darkgrey !important;
+    border-color:darkmagenta !important;
+}
 
 

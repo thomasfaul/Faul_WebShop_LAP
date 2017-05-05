@@ -8,48 +8,58 @@
 
 
 <fieldset>
-    <legend>Kreditkartenbezahlung</legend>
+    <h3 class="welcome" style="color:darkorange">Kreditkartenzahlung</h3>
 
-    <div class="control-group">
-        @Html.LabelFor(m => m.CardPayment.CardCompany)
-        <div class="controls">
-            @Html.TextBoxFor(m => m.CardPayment.CardCompany)
-            @Html.ValidationMessageFor(m => m.CardPayment.CardCompany)
+    <div class="row"style="margin-top:-0.4em">
+        <div class="col-md-4 cardcol">
+            <h5> @Html.LabelFor(model => model.CardPayment.CardCompany)</h5>
         </div>
-    </div>
-
-    <div class="control-group">
-        @Html.LabelFor(m => m.CardPayment.CardHolder)
-        <div class="controls">
-            @Html.TextBoxFor(m => m.CardPayment.CardHolder)
-            @Html.ValidationMessageFor(m => m.CardPayment.CardHolder)
+        <div class="col-md-push-4 cardcol">
+            <h5> @Html.TextBoxFor(m => m.CardPayment.CardCompany)</h5>
+            <h5>@Html.ValidationMessageFor(model => model.CardPayment.CardCompany)</h5>
         </div>
     </div>
 
 
-
-    <div class="control-group">
-        @Html.LabelFor(m => m.CardPayment.CardExpiryDate)
-        <div class="controls">
-            @Html.TextBoxFor(m => m.CardPayment.CardExpiryDate, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })
-            @Html.ValidationMessageFor(m => m.CardPayment.CardExpiryDate)
+    <div class="row"style="margin-top:0.6em">
+        <div class="col-md-4 cardcol">
+            <h5> @Html.LabelFor(model => model.CardPayment.CardHolder)</h5>
+      </div>
+        <div class="col-md-push-4 cardcol">
+            <h5>@Html.TextBoxFor(m => m.CardPayment.CardHolder)</h5>
+            <h5>@Html.ValidationMessageFor(model => model.CardPayment.CardHolder)</h5>
         </div>
     </div>
 
-    <div class="control-group">
-        @Html.LabelFor(m => m.CardPayment.CardNumber)
-        <div class="controls">
-            @Html.TextBoxFor(m => m.CardPayment.CardNumber)
-            @Html.ValidationMessageFor(m => m.CardPayment.CardNumber)
+
+    <div class="row"style="margin-top:0.6em">
+        <div class="col-md-4 cardcol">
+            <h5> @Html.LabelFor(m => m.CardPayment.CardExpiryDate)</h5>
+        </div>
+        <div class="col-md-push-4 cardcol">
+            <h5>@Html.TextBoxFor(m => m.CardPayment.CardExpiryDate, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })</h5>
+            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryDate)</h5>
+        </div>
+     </div>
+
+    <div class="row"style="margin-top:0.6em">
+        <div class="col-md-4 cardcol">
+            <h5>@Html.LabelFor(m => m.CardPayment.CardNumber)</h5>
+           </div>
+        <div class="col-md-push-4 cardcol">
+            <h5>@Html.TextBoxFor(m => m.CardPayment.CardNumber)</h5>
+            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardNumber)</h5>
         </div>
     </div>
 
-    <div class="control-group">
-        @Html.LabelFor(m => m.CardPayment.CardSecurityNumber)
-        <div class="controls">
-            @Html.TextBoxFor(m => m.CardPayment.CardSecurityNumber)
-            @Html.ValidationMessageFor(m => m.CardPayment.CardSecurityNumber)
+    <div class="row" style="margin-top:0.6em">
+        <div class="col-md-4 cardcol">
+            <h5> @Html.LabelFor(m => m.CardPayment.CardSecurityNumber)</h5>
         </div>
-    </div>
+        <div class="col-md-push-4 cardcol">
+            <h5>@Html.TextBoxFor(m => m.CardPayment.CardSecurityNumber)</h5>
+            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardSecurityNumber)</h5>
+</div>
+       </div>
 </fieldset>
 

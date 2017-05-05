@@ -11,7 +11,7 @@
     @Scripts.Render("~/bundles/modernizr")
     
     <meta name="Webshop" content="Webshop to buy CloneStone Cards" />
-    <meta name="description" content="A Webhop to buy Clonestone Cards" />
+    <meta name="description" content="A Webshop to buy Clonestone Cards" />
 </head>
 
 
@@ -52,7 +52,7 @@
                                 //--SERVICES BUTTON PLAYER--
                                 <li>
                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Services 
+                                        Services
                                     </a>
                                     <ul class="dropdown-menu dropup">
                                         <li><a href="@Url.Action("About", "Home")">Über uns</a></li>
@@ -65,9 +65,9 @@
                                         @{if (Session["Firstname"] != null)
                                             {
                                                 var firstname = (this.Session["Firstname"]) + "´s Profil"; @firstname
-                                                
+
                                             }
-                                        } 
+                                        }
                                     </a>
                                     <ul class="dropdown-menu dropup">
                                         <li><a href="@Url.Action("UProfile","Profile")">Deine Daten</a></li>
@@ -77,44 +77,44 @@
                                     </ul>
                                 </li>
                                             //--MEIN SHOP BUTTON PLAYER--
-                                <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Shop 
-                                    </a>
-                                    <ul class="dropdown-menu dropup">
-                                        <li><a href="@Url.Action("EnableCurrency", "CardPack")">Guthaben aufladen</a></li>
-                                        <li><a href="@Url.Action("DisableCurrency", "CardPack")">Karten kaufen</a></li>
-                                    </ul>
-                                </li>
+                                            <li>
+                                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Shop
+                                                </a>
+                                                <ul class="dropdown-menu dropup">
+                                                    <li><a href="@Url.Action("EnableCurrency", "CardPack")">Guthaben aufladen</a></li>
+                                                    <li><a href="@Url.Action("DisableCurrency", "CardPack")">Karten kaufen</a></li>
+                                                </ul>
+                                            </li>
                                             //--DECKS BUTTON PLAYER--
-                                <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Decks 
-                                    </a>
-                                    <ul class="dropdown-menu dropup">
-                                        <li><a href="@Url.Action("Overview", "Card")">Kartenübersicht</a></li>
-                                        <li><a href="@Url.Action("Deckoverview", "Profile")">Decks</a></li>
-                                    </ul>
-                                </li>
+                                            <li>
+                                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Decks
+                                                </a>
+                                                <ul class="dropdown-menu dropup">
+                                                    <li><a href="@Url.Action("Overview", "Card")">Kartenübersicht</a></li>
+                                                    <li><a href="@Url.Action("Deckoverview", "Profile")">Decks</a></li>
+                                                </ul>
+                                            </li>
                                             //--LOGOUT BUTTON PLAYER--
-                                <li>
-                                    <a href="@Url.Action("Logout", "Account")">Log Out</a>
-                                </li>
+                                            <li>
+                                                <a href="@Url.Action("Logout", "Account")">Log Out</a>
+                                            </li>
                                             //--NAVCOIN PLAYER--
-                                <li>
-                                    <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
-                                        <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+                                            <li>
+                                                <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
+                                                    <img class="navcointoppic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
 
-                                        @{if (Session["CurrencyBalance"] != null)
-                                            {
-                                                var currency = this.Session["CurrencyBalance"];
-                                                @currency
-                                            }
-                                        }
-                                    </a>
-                                </li>
-                                            }
-                                 @*---------------------------------VISITOR----------------------------*@
+                                                    @{if (Session["CurrencyBalance"] != null)
+                                                        {
+                                                            var currency = this.Session["CurrencyBalance"];
+                                                            @currency
+                                                        }
+                                                    }
+                                                </a>
+                                            </li>
+                                                        }
+                                                        @*---------------------------------VISITOR----------------------------*@
                             else
                             {
                                 <li><a href="@Url.Action("Login", "Account")">Login</a></li>
@@ -127,18 +127,18 @@
                             }
 
                             @*--------------------------------------ADMIN-------------------------------------*@
-                             @if (User.IsInRole("admin"))
-                             {
+                            @if (User.IsInRole("admin"))
+                            {
 
-                            <li >
-                                <a class="dropdown-toggle dropup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Adminzone <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Index","User")">User Übersicht</a></li>
-                                    <li><a href="#">Karten Übersicht</a></li>
-                                </ul>
-                            </li>
+                                <li>
+                                    <a class="dropdown-toggle dropup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Adminzone <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("Index","ADMIN")">All Cardpacks</a></li>
+                                        <li><a href="#">Karten Übersicht</a></li>
+                                    </ul>
+                                </li>
                             }
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -151,9 +151,9 @@
 
 
 
-@*-----------------------------------------------------Scripts ---------------------------------------------*@
+    @*-----------------------------------------------------Scripts ---------------------------------------------*@
 
-    @*@Scripts.Render("~/bundles/jqueryui")*@
+  
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
@@ -176,7 +176,7 @@
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
         }
-       
+
         $(document).ready(function () {
 
             @if (TempData["ErrorMessage"] != null)
@@ -208,25 +208,21 @@
             x[myIndex - 1].style.display = "block";
             setTimeout(carousel, 5000);
         }
-       
+
     </script>
-    @*<script type="text/javascript" charset="utf-8">
-$(document).ready( function () {
-      $('#listProducts').dataTable();
-});
-</script>*@
-    <script>$(function () {
-    $(".jqueryui-marker-datepicker").datepicker({
-        dateFormat: "yy-mm-dd",
-        changeYear: true,
-        shownOn: "button"
-    }).css("display", "inline-block")
-    .next("button").button({
-        icons: { primary: "ui-icon-calender" },
-        label: "Bitte ein Datum aussuchen",
-        text: false
-    });
-});
+    <script>
+        $(function () {
+            $(".jqueryui-marker-datepicker").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeYear: true,
+                shownOn: "button"
+            }).css("display", "inline-block")
+            .next("button").button({
+                icons: { primary: "ui-icon-calender" },
+                label: "Bitte ein Datum aussuchen",
+                text: false
+            });
+        });
     </script>
 </body>
 </html>
