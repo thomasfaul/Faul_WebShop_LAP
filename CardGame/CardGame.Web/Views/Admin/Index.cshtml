@@ -17,6 +17,7 @@
                 <tr>
                     <th class="text-right">Nummer</th>
                     <th>Name</th>
+                    <th>Aktiv</th>
                     <th class="text-right">Karten-Anzahl</th>
                     <th class="text-right">InfoText</th>
                     <th class="text-center">Wert/Euro</th>
@@ -29,7 +30,9 @@
                 {
                     <tr>
                         <td class="text-right">@pack.IdPack</td>
+
                         <td><h6>@Html.ActionLink(pack.PackName, "Edit", new { id=pack.IdPack })</h6></td>
+                        <td class="text-right">@Html.CheckBoxFor(p => pack.IsActive, new { @disabled = "disabled" })</td>
                         <td class="text-right">@pack.NumCards</td>
                         <td class="text-right">@pack.Flavor</td>
                         <td class="text-center">
@@ -37,11 +40,11 @@
                             else{ @pack.PackPrice.ToString("Coins")}
                         </td>
                         <td class="text-center">@pack.Worth</td>
-                        <td class="text-right">@Html.DisplayFor(p=>pack.IsMoney)</td>
-                        @using (Html.BeginForm("Delete", "Admin"))
+                        <td class="text-right">@Html.CheckBoxFor(p=>pack.IsMoney, new { @disabled = "disabled"})</td>
+                        @using (Html.BeginForm("SetInactive", "Admin"))
                          {
                          <td >
-                          @*@Html.Hidden("id", pack.IdPack)*@
+                         @Html.Hidden("id",pack.IdPack)
                           <input type="submit" class="btn btn-default btn-xs" value="Löschen" /></td>
                               }
                      </tr>

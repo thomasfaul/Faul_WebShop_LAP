@@ -37,7 +37,7 @@ namespace CardGame.Web.Controllers
             }
             catch (Exception e)
             {
-                Debugger.Break();
+                //Debugger.Break();
                 log.Error("CardPackController-PackOverview",e);
             }
 
@@ -344,5 +344,21 @@ namespace CardGame.Web.Controllers
             return View();
         }
         #endregion
+
+
+
+
+        public FileContentResult GetImage(int id)
+        {
+            var pack = PackManager.GetPackById(id);
+            if (pack != null)
+            {
+                return File(pack.Image, pack.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

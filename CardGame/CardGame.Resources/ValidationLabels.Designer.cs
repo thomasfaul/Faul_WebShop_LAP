@@ -115,6 +115,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beschreibung.
+        /// </summary>
+        public static string DESCRIPTION {
+            get {
+                return ResourceManager.GetString("DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Emailadresse.
         /// </summary>
         public static string EMAIL_LABEL {
@@ -142,11 +151,47 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bild.
+        /// </summary>
+        public static string IMAGE {
+            get {
+                return ResourceManager.GetString("IMAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AKTIV (Hacken für gelöscht).
+        /// </summary>
+        public static string ISACTIVE {
+            get {
+                return ResourceManager.GetString("ISACTIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ist ein COIN-Packet?.
+        /// </summary>
+        public static string ISMONEY {
+            get {
+                return ResourceManager.GetString("ISMONEY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nachname.
         /// </summary>
         public static string LASTNAME {
             get {
                 return ResourceManager.GetString("LASTNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anzahl.
+        /// </summary>
+        public static string NUMBER {
+            get {
+                return ResourceManager.GetString("NUMBER", resourceCulture);
             }
         }
         
@@ -160,11 +205,47 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Preis.
+        /// </summary>
+        public static string PRICE {
+            get {
+                return ResourceManager.GetString("PRICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string PRODUCT_NAME {
+            get {
+                return ResourceManager.GetString("PRODUCT_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Habe die Agb´s durchgelesen und akzeptiere sie.
         /// </summary>
         public static string TERMS_ACCEPT {
             get {
                 return ResourceManager.GetString("TERMS_ACCEPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TEXT.
+        /// </summary>
+        public static string TEXT {
+            get {
+                return ResourceManager.GetString("TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wert.
+        /// </summary>
+        public static string WORTH {
+            get {
+                return ResourceManager.GetString("WORTH", resourceCulture);
             }
         }
     }

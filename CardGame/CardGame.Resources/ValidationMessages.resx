@@ -126,8 +126,14 @@
   <data name="CARD_SECURITY_N" xml:space="preserve">
     <value>Bitte einen korrekten Sicherheitscode eintragen</value>
   </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Bitte eine Beschreibung eingeben</value>
+  </data>
   <data name="EMAIL" xml:space="preserve">
     <value>Bitte eine gültige Emailadresse eingeben</value>
+  </data>
+  <data name="ISACTIVE" xml:space="preserve">
+    <value>Wenn gelöscht bitte anhacken (INAKTIV)</value>
   </data>
   <data name="LENGTH" xml:space="preserve">
     <value>Bitte mindestens 4, höchstens 50 Buchstaben</value>
@@ -135,8 +141,17 @@
   <data name="MAX_LENGTH" xml:space="preserve">
     <value>Du hast leider die maximale Wortlänge überschritten</value>
   </data>
+  <data name="NUMBER" xml:space="preserve">
+    <value>Bitte eine gültige Zahl eingeben</value>
+  </data>
   <data name="PASSWORD_EQUAL" xml:space="preserve">
     <value>Die Passwörter müssen gleich sein</value>
+  </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>Bitte einen gültigen Preis eingeben</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>Bitte einen Namen eingeben</value>
   </data>
   <data name="REQUIRED" xml:space="preserve">
     <value>Bitte Feld unbedingt ausfüllen</value>

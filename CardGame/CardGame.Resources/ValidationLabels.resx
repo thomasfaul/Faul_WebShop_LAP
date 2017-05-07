@@ -135,6 +135,9 @@
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Passwort bestätigen</value>
   </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
   <data name="EMAIL_LABEL" xml:space="preserve">
     <value>Emailadresse</value>
   </data>
@@ -144,13 +147,37 @@
   <data name="GAMERTAG" xml:space="preserve">
     <value>Spitzname</value>
   </data>
+  <data name="IMAGE" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="ISACTIVE" xml:space="preserve">
+    <value>AKTIV (Hacken für gelöscht)</value>
+  </data>
+  <data name="ISMONEY" xml:space="preserve">
+    <value>ist ein COIN-Packet?</value>
+  </data>
   <data name="LASTNAME" xml:space="preserve">
     <value>Nachname</value>
+  </data>
+  <data name="NUMBER" xml:space="preserve">
+    <value>Anzahl</value>
   </data>
   <data name="PASSWORD" xml:space="preserve">
     <value>Passwort</value>
   </data>
+  <data name="PRICE" xml:space="preserve">
+    <value>Preis</value>
+  </data>
+  <data name="PRODUCT_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="TERMS_ACCEPT" xml:space="preserve">
     <value>Habe die Agb´s durchgelesen und akzeptiere sie</value>
+  </data>
+  <data name="TEXT" xml:space="preserve">
+    <value>TEXT</value>
+  </data>
+  <data name="WORTH" xml:space="preserve">
+    <value>Wert</value>
   </data>
 </root>

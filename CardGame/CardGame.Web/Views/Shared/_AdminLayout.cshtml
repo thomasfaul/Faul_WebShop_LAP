@@ -12,7 +12,11 @@
     <meta name="description" content="Adminzone" />
 </head>
 <body>
-    <div class="container maincontainer"style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%;min-height:72em;">
+    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%;min-height:72em;">
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
         <div class="row">
             <!-- PARTIAL VIEW -->
             @RenderBody()
@@ -37,8 +41,8 @@
                     <!-- NAVIGATION Collapse -->
                     <div class="collapse navbar-collapse dropup" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                 
-                         
+
+
                             @if (User.IsInRole("admin"))
                             {
                                 <li>

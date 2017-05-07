@@ -10,11 +10,11 @@
 <div class="col-md-3">
     @Html.Partial("_Advertisment")
 
-@*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
 
     @Html.Partial("_BannerAd")
 
-@*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
 
     @Html.Partial("_Money");
 
@@ -25,56 +25,65 @@
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck " id="packoverview">
             @foreach (var pack in Model.Packs)
-{
+            {
                 <div class="card col-md-3 packcard">
                     @if (pack.IsMoney != true)
                     {
-                        <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
-                        <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
-                        if (pack.NumCards != 0)
+
+                        if (pack.Pic != null)
                         {
-                            <h7 class="card-header head">@Html.DisplayFor(c => pack.NumCards)<span>&nbsp;Karten</span></h7>
+                            <img class="cardpic" src="@Url.Action("GetImage","CardPack",new {id=pack.IdPack})"/>
                         }
                         else
                         {
-                            <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
                         }
-                        <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
-                        <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
-                    }
-                    else
-                    {
-                        <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
-                        <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
-                        <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
-                        <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
-                        <h5 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h5>
+
+                            <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                            if (pack.NumCards != 0)
+                            {
+                                <h7 class="card-header head">@Html.DisplayFor(c => pack.NumCards)<span>&nbsp;Karten</span></h7>
+                            }
+                            else
+                            {
+                                <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            }
+                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
+                            <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
+                        }
+                        else
+                        {
+                            <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                            <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                            <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
+                            <h5 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h5>
+                        }
+            </div>
                     }
                 </div>
-            }
-        </div>
-        
-        <p class="col-md-offset-7" id="paginator" style="max-height:5em; margin-top:53em; ">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p> 
-    </div>
-    
-</div>
 
-   @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
-<div class="col-md-3">
-    <div class="col col-md-12 ">
-        <h3>Coins einlösen</h3>
-        <p>
-            Lege dir Cardpacks zu und statte deine Kartendecks aus
-        </p>
-        <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
-    </div>
-  @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
-    <div class="col col-md-12">
-        <h3>Kaufe Coins</h3>
-        <p>und du kannst damit Cardpacks erstehen</p>
-        <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Kaufe Coins </a>
-    </div>
-   @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
-    
-    @Html.Partial("_RightTop")
-</div>
+                <p class="col-md-offset-7" id="paginator" style="max-height:5em; margin-top:53em; ">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
+            </div>
+
+        </div>
+
+        @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
+                <div class="col-md-3">
+                    <div class="col col-md-12 ">
+                        <h3>Coins einlösen</h3>
+                        <p>
+                            Lege dir Cardpacks zu und statte deine Kartendecks aus
+                        </p>
+                        <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+                    </div>
+                    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+                    <div class="col col-md-12">
+                        <h3>Kaufe Coins</h3>
+                        <p>und du kannst damit Cardpacks erstehen</p>
+                        <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Kaufe Coins </a>
+                    </div>
+                    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+                    @Html.Partial("_RightTop")
+                </div>

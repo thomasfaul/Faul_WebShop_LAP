@@ -88,11 +88,29 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte eine Beschreibung eingeben.
+        /// </summary>
+        public static string DESCRIPTION {
+            get {
+                return ResourceManager.GetString("DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte eine gültige Emailadresse eingeben.
         /// </summary>
         public static string EMAIL {
             get {
                 return ResourceManager.GetString("EMAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wenn gelöscht bitte anhacken (INAKTIV).
+        /// </summary>
+        public static string ISACTIVE {
+            get {
+                return ResourceManager.GetString("ISACTIVE", resourceCulture);
             }
         }
         
@@ -115,11 +133,38 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte eine gültige Zahl eingeben.
+        /// </summary>
+        public static string NUMBER {
+            get {
+                return ResourceManager.GetString("NUMBER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Passwörter müssen gleich sein.
         /// </summary>
         public static string PASSWORD_EQUAL {
             get {
                 return ResourceManager.GetString("PASSWORD_EQUAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte einen gültigen Preis eingeben.
+        /// </summary>
+        public static string PRICE {
+            get {
+                return ResourceManager.GetString("PRICE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte einen Namen eingeben.
+        /// </summary>
+        public static string PRODUCT_NAME {
+            get {
+                return ResourceManager.GetString("PRODUCT_NAME", resourceCulture);
             }
         }
         

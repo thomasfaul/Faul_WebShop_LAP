@@ -76,6 +76,8 @@
           <Property Name="ismoney" Type="bit" />
           <Property Name="numcards" Type="int" />
           <Property Name="worth" Type="int" />
+          <Property Name="isactive" Type="bit" />
+          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblperson">
           <Key>
@@ -344,6 +346,8 @@
           <Property Name="NumberOfCards" Type="Int32" />
           <Property Name="Worth" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -600,6 +604,8 @@
           <EntitySetMapping Name="AllPacks">
             <EntityTypeMapping TypeName="CardGameModel.Pack">
               <MappingFragment StoreEntitySet="tblpack">
+                <ScalarProperty Name="ImageMimeType" ColumnName="imagemimetype" />
+                <ScalarProperty Name="IsActive" ColumnName="isactive" />
                 <ScalarProperty Name="ID" ColumnName="idpack" />
                 <ScalarProperty Name="Name" ColumnName="packname" />
                 <ScalarProperty Name="Price" ColumnName="packprice" />

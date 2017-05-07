@@ -2,6 +2,7 @@
 using System.Linq;
 using CardGame.DAL.Model;
 using log4net;
+using System.Data.Entity;
 
 namespace CardGame.DAL.Logic
 {
@@ -23,7 +24,7 @@ namespace CardGame.DAL.Logic
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                packList = db.AllPacks.ToList();
+                packList = db.AllPacks.Where(p=>p.IsActive==true).ToList();
             }
 
             foreach (var pack in packList)
@@ -46,7 +47,7 @@ namespace CardGame.DAL.Logic
             List<Pack> ReturnList = null;
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                ReturnList = db.AllPacks.ToList();
+                ReturnList = db.AllPacks.Where(p => p.IsActive == true).ToList();
             }
             return ReturnList;
         }
@@ -71,5 +72,107 @@ namespace CardGame.DAL.Logic
             return pack;
         }
         #endregion
+
+        #region ADMIN: GET ALL PACKS
+        /// <summary>
+        /// Gets all Packs from the Database
+        /// </summary>
+        /// <returns></returns> returns a tblpack
+        public static List<Pack> AdminGetAllPacks()
+        {
+            log.Info("Usermanager-GetAllPacks");
+            List<Pack> ReturnList = null;
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                ReturnList = db.AllPacks.ToList();
+            }
+            return ReturnList;
+        }
+        #endregion
+
+        #region SAVECARDPACK
+        /// <summary>
+        /// Saves a new Cardpack 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="flavortext"></param>
+        /// <param name="ismoney"></param>
+        /// <param name="worth"></param>
+        /// <param name="numberofcards"></param>
+        /// <param name="isactive"></param>
+        /// <param name="pic"></param>
+        /// <param name="mimetypename"></param>
+        public static void SaveCardPack(int id, string name, string flavortext, bool ismoney, int worth, int numberofcards, bool isactive, byte[] pic, string mimetypename)
+        {
+            if (id == 0)
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    Pack dbpack = new Pack();
+                    dbpack.Name = name;
+                    dbpack.IsActive = true;
+                    dbpack.IsMoney = ismoney;
+                    dbpack.NumberOfCards = numberofcards;
+                    dbpack.Worth = worth;
+                    dbpack.FlavorText = flavortext;
+                    dbpack.Image = pic;
+                    dbpack.ImageMimeType = mimetypename;
+                    db.AllPacks.Add(dbpack);
+
+                    db.SaveChanges();
+
+                }
+
+            }
+            else
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    if (db.AllPacks != null)
+                    {
+                        Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
+
+                        dbpack.Name = name;
+                        dbpack.IsActive = true;
+                        dbpack.IsMoney = ismoney;
+                        dbpack.NumberOfCards = numberofcards;
+                        dbpack.Worth = worth;
+                        dbpack.FlavorText = flavortext;
+                        dbpack.Image = pic;
+                        dbpack.ImageMimeType = mimetypename;
+                        db.Entry(dbpack).State = EntityState.Modified;
+
+                        db.SaveChanges();
+
+                    }
+
+
+                }
+            }
+        }
+        #endregion
+
+        #region SET PACK INACTIVE
+        /// <summary>
+        /// Sets a pack inactive
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool SetPackInactive(int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
+                dbpack.IsActive = false;
+
+                db.Entry(dbpack).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return true; 
+            #endregion
+        }
     }
 }

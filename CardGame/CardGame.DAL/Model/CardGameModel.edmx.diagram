@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="CardGameModel.Deck" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGameModel.DeckCard" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGameModel.Purchase" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CardGameModel.Pack" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CardGameModel.Pack" Width="1.5" PointX="6.625" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGameModel.User" Width="1.5" PointX="4.5" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CardGameModel.CardType" Width="1.5" PointX="4.875" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CardGameModel.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />

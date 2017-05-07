@@ -16,6 +16,12 @@ namespace CardGame.Resources
             public const string CARD_NUMBER = "CARD_NUMBER";
             public const string CARD_EXPIRY = "CARD_EXPIRY";
             public const string CARD_SECURITY_N = "CARD_SECURITY_N";
+            public const string PRODUCT_NAME = "PRODUCT_NAME";
+            public const string DESCRIPTION = "DESCRIPTION";
+            public const string PRICE = "PRICE";
+            public const string NUMBER = "NUMBER";
+            public const string ISACTIVE = "ISACTIVE";
+            
         }
 
         public class Labels
@@ -32,6 +38,14 @@ namespace CardGame.Resources
             public const string CARD_EXPIRY = "CARD_EXPIRY";
             public const string CARD_SECURITY_N = "CARD_SECURITY_N";
             public const string CARD_COMPANY = "CARD_COMPANY";
+            public const string PRODUCT_NAME = "PRODUCT_NAME";
+            public const string NUMBER = "NUMBER";
+            public const string PRICE = "PRICE";
+            public const string WORTH = "WORTH";
+            public const string TEXT = "TEXT";
+            public const string ISMONEY = "ISMONEY";
+            public const string IMAGE = "IMAGE";
+            public const string ISACTIVE = "ISACTIVE";
 
         }
     }
