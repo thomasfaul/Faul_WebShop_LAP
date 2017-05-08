@@ -21,20 +21,36 @@
 </div>
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 
-<div class="col-md-6 cardcol">
+<div class="col-md-6 cardcol"style="max-height:72em;overflow:hidden;overflow-y:scroll">
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck " id="packoverview">
             @foreach (var pack in Model.Packs)
             {
+<<<<<<< HEAD
+                <div class="card col-md-3 packcard" style="margin-left:1em;">
+=======
                 <div class="card col-md-3 packcard">
+>>>>>>> origin/master
                     @if (pack.IsMoney != true)
                     {
 
                         if (pack.Pic != null)
                         {
+<<<<<<< HEAD
+                            <img class="cardpic" src="@Url.Action("GetImage","CardPack",new {id=pack.IdPack})" />
+                        }
+                        else
+                        {
+                            <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
+                        }
+
+                        <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                        if (pack.NumCards != 0)
+=======
                             <img class="cardpic" src="@Url.Action("GetImage","CardPack",new {id=pack.IdPack})"/>
                         }
                         else
+>>>>>>> origin/master
                         {
                             <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
                         }
@@ -59,7 +75,20 @@
                             <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
                             <h5 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h5>
                         }
+<<<<<<< HEAD
+                        <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
+                            <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
+                    }
+                    else
+                    {
+                        <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                            <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
+                            <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
+                            <h5 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h5>
+=======
             </div>
+>>>>>>> origin/master
                     }
                 </div>
 
@@ -68,6 +97,15 @@
 
         </div>
 
+<<<<<<< HEAD
+    </div>
+    <div class="col-md-12">
+        <p class="col-md-11" id="paginator" style="max-height:5em; margin-top:1em; ">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
+    </div>
+        </div>
+
+=======
+>>>>>>> origin/master
         @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
                 <div class="col-md-3">
                     <div class="col col-md-12 ">

@@ -77,8 +77,13 @@ namespace CardGame.Web.Controllers
                 pack.PackPrice = dbpack.Price ?? 0;
                 pack.Worth = dbpack.Worth ?? 0;
                 pack.Flavor = dbpack.FlavorText;
+<<<<<<< HEAD
+                pack.Pic = dbpack.Image;
+                pack.ImageMimeType = dbpack.ImageMimeType;
+=======
                 //pack.Pic = dbpack.Image;
                 //pack.ImageMimeType = dbpack.ImageMimeType;
+>>>>>>> origin/master
                 return View(pack);
             }
             catch (Exception e)

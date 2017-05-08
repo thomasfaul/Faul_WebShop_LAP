@@ -488,7 +488,7 @@ input:valid {
    
 }
 .card {
-	width: 13em;
+	width: 14em;
 	height: 26em;
 	margin-top:1.4em;
    
@@ -502,7 +502,10 @@ input:valid {
 	border-radius:1.0em;
 }
 .cardpic {
-	width:12em;
+	/*width:12em;*/
+    min-width:12em;
+    max-width:12em;
+    width:12em;
 }
 .card:nth-child(2n+1)
 {

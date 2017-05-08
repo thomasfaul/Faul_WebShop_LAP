@@ -15,7 +15,7 @@ namespace CardGame.Web.Controllers
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         HomeController a = new HomeController();
-        public int PPagesize = 20;
+        public int PPagesize = 6;
 
         #region ACTIONRESULT PACKOVERVIEW
         /// <summary>
