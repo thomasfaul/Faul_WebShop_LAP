@@ -6,11 +6,14 @@
 }
 
 
-<div class="panel panel-default"style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;" >
-        <div class="panel-heading"style="background-color:darkgrey">
+<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
+    <div class="panel-heading" style="background-color:darkgrey">
         <h2>Alle CardPacks</h2>
-         
-        </div>
+        <center>
+            <h5>@Html.ActionLink("Neues Pack", "Create", new { @class = "btn btn-default" })</h5>
+           
+        </center>
+    </div>
     <center>
         <div class="panel-body">
             <table class="table-hover table-condensed table-bordered">
@@ -31,31 +34,33 @@
                     <tr>
                         <td class="text-right">@pack.IdPack</td>
 
-                        <td><h6>@Html.ActionLink(pack.PackName, "Edit", new { id=pack.IdPack })</h6></td>
+                        <td><h6>@Html.ActionLink(pack.PackName, "Edit", new { id = pack.IdPack })</h6></td>
                         <td class="text-right">@Html.CheckBoxFor(p => pack.IsActive, new { @disabled = "disabled" })</td>
                         <td class="text-right">@pack.NumCards</td>
                         <td class="text-right">@pack.Flavor</td>
                         <td class="text-center">
-                            @if (pack.IsMoney){@pack.PackPrice.ToString("c")}
-                            else{ @pack.PackPrice.ToString("Coins")}
+                            @if (pack.IsMoney)
+                            {@pack.PackPrice.ToString("c")}
+                            else
+                            { @pack.PackPrice.ToString("Coins")}
                         </td>
                         <td class="text-center">@pack.Worth</td>
-                        <td class="text-right">@Html.CheckBoxFor(p=>pack.IsMoney, new { @disabled = "disabled"})</td>
+                        <td class="text-right">@Html.CheckBoxFor(p => pack.IsMoney, new { @disabled = "disabled" })</td>
                         @using (Html.BeginForm("SetInactive", "Admin"))
-                         {
-                         <td >
-                         @Html.Hidden("id",pack.IdPack)
-                          <input type="submit" class="btn btn-default btn-xs" value="Löschen" /></td>
-                              }
-                     </tr>
+                        {
+                            <td>
+                                @Html.Hidden("id", pack.IdPack)
+                                <input type="submit" class="btn btn-default btn-xs" value="Löschen" />
+                            </td>
+                        }
+                    </tr>
                 }
             </table>
 
         </div>
     </center>
     <div class="panel-footer" style="background-color:darkgrey">
-        <center><h3 >@Html.ActionLink("Neues Pack hinzufügen", "Create",new { @class = "btn btn-default" })</h3></center>
+        <center><h3>@Html.ActionLink("Neues Pack hinzufügen", "Create", new { @class = "btn btn-default" })</h3></center>
     </div>
 
 </div>
-

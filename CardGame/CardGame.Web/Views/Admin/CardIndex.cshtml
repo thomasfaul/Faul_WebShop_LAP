@@ -9,11 +9,24 @@
 <div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
     <div class="panel-heading" style="background-color:darkgrey;">
         <h2>Alle Karten</h2>
-        <center><h3>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-default" })</h3></center>
-</div>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group col-md-11" role="group" aria-label="First group">
+                    <center> <h5>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-secondary" })</h5></center>
+                </div>
+                <br />
+                <center>
+                    <div class="btn-group col-md-11" role="group" aria-label="Second group">
+                        <h5><span class="btn btn-secondary">Sortieren nach:</span></h5>
+                        <h4><span>@Html.ActionLink("Name", "CardIndex", new {@CName=ViewBag.sort }, new { @class = "btn btn-secondary" })</span></h4>
+                        <h4><span>@Html.ActionLink("Name_Aufsteigend", "CardIndex", new{@CName_Aufsteigend=ViewBag.sort }, new { @class = "btn btn-secondary" })</span></h4>
+                        <h4><span>@Html.ActionLink("Type", "CardIndex", new {@CType=ViewBag.sort}, new { @class = "btn btn-secondary" })</span></h4>
+                    </div>
+                </center>
+            </div>
+    </div>
     <center>
-        <div class="panel-body"style="margin-left:-5em">
-            <table class="table-hover table-condensed table-bordered">
+        <div class="panel-body">
+            <table class="table-hover table-condensed table-bordered"style="margin-top:0.5em">
                 <tr>
                     <th class="text-right">Nummer</th>
                     <th>Name</th>
@@ -38,8 +51,8 @@
                         <td class="text-center">@card.Mana</td>
                         <td class="text-center">@card.Attack</td>
                         <td class="text-center">@card.Life</td>
-                        
-                        @using (Html.BeginForm("SetCardInActive","Admin"))
+
+                        @using (Html.BeginForm("SetCardInActive", "Admin"))
                         {
                             <td>
                                 @Html.Hidden("id", card.ID)
@@ -51,9 +64,9 @@
             </table>
 
         </div>
-    </center>
-    <div class="panel-footer" style="background-color:darkgrey">
-        <center><h3>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-default" })</h3></center>
-    </div>
 
+        <div class="panel-footer" style="background-color:darkgrey">
+            <center><h3>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-default" })</h3></center>
+        </div>
+    </center>
 </div>

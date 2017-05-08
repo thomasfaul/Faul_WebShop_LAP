@@ -7,6 +7,7 @@ using log4net;
 using System;
 using System.Diagnostics;
 using System.Web;
+using System.Linq;
 
 namespace CardGame.Web.Controllers
 {
@@ -60,7 +61,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult CardIndex()
+        public ActionResult CardIndex(string sortOrder)
         {
             log.Info("AdminController-CardIndex");
 
@@ -69,6 +70,7 @@ namespace CardGame.Web.Controllers
                 List<Card> Cards = new List<Card>();
                 var dbcards = CardManager.GetAllCards();
                 
+
                 foreach (var card in dbcards)
                 {
                     Card c = new Card();
@@ -78,7 +80,6 @@ namespace CardGame.Web.Controllers
                     c.Attack = card.Attack;
                     c.Name = card.Name ?? "n/a";
                     c.Life = card.Life;
-                    //c.Class = CardManager.GetCardClassById((int)card.ID_CardClass).ToString()?? "n/a";
                     c.Flavor = card.FlavorText ?? "n/a";
                     c.Type = CardManager.GetCardTypeById(card.ID_CardType);
                     c.Pic = card.Image;
@@ -87,7 +88,23 @@ namespace CardGame.Web.Controllers
                     Cards.Add(c);
                 }
 
-                return View(Cards);
+                    var sorted = Cards;
+                if(ViewBag.sort == null)
+                {
+                    if (ViewBag.sort == "CType")
+                    {
+                        sorted = Cards.OrderByDescending(c => c.Type).ToList();
+                    }
+                    else if (ViewBag.sort == "CName")
+                    {
+                        sorted = Cards.OrderByDescending(c => c.Name).ToList();
+                    }
+                    else
+                    {
+                        sorted = Cards.OrderBy(c => c.Name).ToList();
+                    }
+                }
+                return View(sorted);
             }
             catch (Exception e)
             {
