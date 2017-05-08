@@ -21,12 +21,12 @@
 </div>
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 
-<div class="col-md-6 cardcol"style="max-height:72em;overflow:hidden;overflow-y:scroll">
+<div class="col-md-6 cardcol"style="max-height:74em;overflow:hidden;overflow-y:scroll">
     <div class="card-deck-wrapper col-md-12 cardcol">
         <div class="card-deck packcol packdeck " id="packoverview">
             @foreach (var pack in Model.Packs)
             {
-                <div class="card col-md-3 packcard" style="margin-left:1em;">
+                <div class="card col-md-3 packcard" style="margin-left:1em;height:36em">
                     @if (pack.IsMoney != true)
                     {
 
@@ -46,14 +46,24 @@
                         }
                         else
                         {
-                            <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            <h6 class="card-header head"style="margin-top:-1em">@Html.DisplayFor(c => pack.Flavor)</h6>
                         }
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
                             <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
                     }
                     else
                     {
-                        <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                        if (pack.Pic !=null)
+                        {
+                            var base64 = Convert.ToBase64String(@pack.Pic);
+                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <img class="cardpic" src="@imgSrc" style="min-height:12em" />
+                        }
+                        else
+                        {
+                            <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                        }
+
                             <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                             <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
                             <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>

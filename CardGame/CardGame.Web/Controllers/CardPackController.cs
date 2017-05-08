@@ -54,6 +54,9 @@ namespace CardGame.Web.Controllers
                 pack.Flavor = p.FlavorText;
                 pack.Pic = p.Image;
                 pack.Worth = p.Worth ?? 0;
+                pack.IsActive = (bool)p.IsActive;
+                pack.ImageMimeType = p.ImageMimeType;
+                pack.Pic = p.Image;
                 PackList.Add(pack);
             }
 
@@ -139,7 +142,11 @@ namespace CardGame.Web.Controllers
             cardPack.NumCards = dbCardPack.NumberOfCards ?? 0;
             cardPack.PackPrice = dbCardPack.Price ?? 0;
             cardPack.Flavor = dbCardPack.FlavorText;
-            
+            cardPack.IsActive = (bool)dbCardPack.IsActive;
+            cardPack.ImageMimeType = dbCardPack.ImageMimeType;
+            cardPack.Pic = dbCardPack.Image;
+
+
             return View(cardPack);
         } 
         #endregion
@@ -172,8 +179,12 @@ namespace CardGame.Web.Controllers
             cardPack.PackPrice = dbCardPack.Price ?? 0;
             cardPack.IsMoney = dbCardPack.IsMoney ?? false;
             cardPack.Worth = dbCardPack.Worth ?? 0;
+            cardPack.IsActive = (bool)dbCardPack.IsActive;
+            cardPack.ImageMimeType = dbCardPack.ImageMimeType;
+            cardPack.Pic = dbCardPack.Image;
             o.Pack = cardPack;
             o.Quantity = numPacks;
+            
             o.CurrencyBalance = UserManager.Get_BalanceByEmail(User.Identity.Name);
 
             TempData["Order"] = o;

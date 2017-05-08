@@ -24,17 +24,36 @@
 <div class="col-md-6 cardcol buymiddlecontainer">
     <div class="card-deck-wrapper col-md-6 cardcol">
         <div class="card-deck packcol packdeck "id="index">
-            <div class="card col-md-2 packcard">
+            <div class="card col-md-2 packcard"style="height:35em">
                 @if (Model.IsMoney == true)
                 {
-                    <img class="cardpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" alt="Coin-Picture" />
+                    if (Model.Pic != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.Pic);
+                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                        <img class="cardpic" src="@imgSrc" style="min-height:12em" />
+                    }
+                    else
+                    {
+                        <img class="coinpic" src="~/Content/images/Coins-PNG-Picture-180x180.png" />
+                    }
                     <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3><br />
                     <h6 class="card-header head">@Html.DisplayFor(c => Model.Flavor)</h6><br />
                     <p class="price">€ &nbsp; @Html.DisplayFor(c => Model.PackPrice)<br /><span>Euro</span></p>
                 }
                 else
                 {
-                    <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
+                    if (Model.Pic != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.Pic);
+                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                        <img class="cardpic" src="@imgSrc" style="min-height:12em" />
+                    }
+                    else
+                    {
+                        <img class="cardpic" src="~/Content/images/Cardpacks/5.png" />
+                    }
+
                     <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3>
                     <h5 style="color:darkorange" class="card-header head">@Html.DisplayFor(c => Model.NumCards)<span>&nbsp;Karten</span></h5>
 
