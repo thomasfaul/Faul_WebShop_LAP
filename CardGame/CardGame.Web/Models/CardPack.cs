@@ -16,21 +16,13 @@ ErrorMessageResourceName = Constants.Validation.PRODUCT_NAME)]
         public string PackName { get; set; }
 
         [Required]
-<<<<<<< HEAD
         [Range(0, 20, ErrorMessageResourceType = typeof(ValidationMessages),
-=======
-        [Range(1, 20, ErrorMessageResourceType = typeof(ValidationMessages),
->>>>>>> origin/master
 ErrorMessageResourceName = Constants.Validation.NUMBER)]
         [Display(Name = Constants.Labels.NUMBER, ResourceType = typeof(ValidationLabels))]
         public int NumCards { get; set; }
 
         [Required]
-<<<<<<< HEAD
         [Range(0, 1000, ErrorMessageResourceType = typeof(ValidationMessages),
-=======
-        [Range(1, 1000, ErrorMessageResourceType = typeof(ValidationMessages),
->>>>>>> origin/master
 ErrorMessageResourceName = Constants.Validation.PRICE)]
         [Display(Name = Constants.Labels.PRICE, ResourceType = typeof(ValidationLabels))]
         public decimal PackPrice { get; set; }
@@ -42,11 +34,7 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
         public string Flavor { get; set; }
 
         [Required]
-<<<<<<< HEAD
         [Range(0, 1000, ErrorMessageResourceType = typeof(ValidationMessages),
-=======
-        [Range(0, 20, ErrorMessageResourceType = typeof(ValidationMessages),
->>>>>>> origin/master
 ErrorMessageResourceName = Constants.Validation.NUMBER)]
         [Display(Name = Constants.Labels.WORTH, ResourceType = typeof(ValidationLabels))]
         public int Worth { get; set; }

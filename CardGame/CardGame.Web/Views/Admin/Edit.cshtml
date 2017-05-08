@@ -34,19 +34,11 @@
                             }
                             else if (property.PropertyName == "IsActive")
                             {
-<<<<<<< HEAD
                                 @Html.CheckBox(property.PropertyName)
                             }
                             else if (property.PropertyName == "IsMoney")
                             {
                                 @Html.CheckBox(property.PropertyName)
-=======
-                                @Html.CheckBox(property.PropertyName, new { @disabled = "disabled" })
-                            }
-                            else if (property.PropertyName == "IsMoney")
-                            {
-                                @Html.CheckBox(property.PropertyName, new { @disabled = "disabled" })
->>>>>>> origin/master
                             }
                             else
                             {
@@ -63,7 +55,6 @@
                     <label>Bild</label>
                     <a class='btn'style="margin-left:20em;" href='javascript:;'>
                         Wähle Bild aus...
-<<<<<<< HEAD
                         <input type="file" id="img" name="img" size="40" style="position:absolute;z-index:2;top:0;left:0;filter:alpha(opacity=0);opacity:0;background-color:transparent;" onchange='$("#upload-file-info").html($(this).val());' />
                     </a>
                     <span class='label label-info' id="upload-file-info"></span>
@@ -71,20 +62,6 @@
 
                 @Html.Partial("_ShowCardImage",@Model)
 
-=======
-                        <input type="file" name="Image" size="40" style="position:absolute;z-index:2;top:0;left:0;filter:alpha(opacity=0);opacity:0;background-color:transparent;" onchange='$("#upload-file-info").html($(this).val());' />
-                    </a>
-                    <span class='label label-info' id="upload-file-info"></span>
-                </div>
-                @if (Model.Pic == null)
-                {
-                    <div class="form-control-static">Noch kein Bild vorhanden</div>
-                }
-                else
-                {
-                    <img class="img-thumbnail" width="150" height="150" src="@Url.Action("GetImage", "CardPack",new {id= Model.IdPack})" />
-                }
->>>>>>> origin/master
             </div>
         </div>
         <div class="panel-footer" style="background-color:darkgrey">
