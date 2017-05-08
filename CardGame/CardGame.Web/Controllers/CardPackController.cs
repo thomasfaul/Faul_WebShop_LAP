@@ -324,7 +324,6 @@ namespace CardGame.Web.Controllers
                     card.ID = c.ID;
                     card.Name = c.Name;
                     card.Type = c.CardType.Name;
-                    //card.Class = c.CardClass.Name;
                     card.Mana = c.ManaCost;
                     card.Attack = c.Attack;
                     card.Life = c.Life;

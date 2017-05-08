@@ -33,9 +33,9 @@ namespace CardGame.Web.Controllers
                 card.Name = cc.Name;
                 card.Life = cc.Life;
                 card.Mana = cc.ManaCost;
-                card.Type = UserManager.CardTypeNames[cc.ID_CardType];
+                card.Type = CardManager.GetCardTypeById(cc.CardType.ID);
                 card.Pic = cc.Image;
-                card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
+                card.IsActive = (bool)cc.IsActive;
 
                 db.deckcards.Add(card);
             } 

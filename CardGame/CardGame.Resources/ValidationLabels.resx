@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ATTACK" xml:space="preserve">
+    <value>Attack</value>
+  </data>
   <data name="CARD_COMPANY" xml:space="preserve">
     <value>Kreditkartenfirma</value>
   </data>
@@ -126,11 +129,17 @@
   <data name="CARD_HOLDER" xml:space="preserve">
     <value>Kartenbesitzer</value>
   </data>
+  <data name="CARD_NAME" xml:space="preserve">
+    <value>Name der Karte</value>
+  </data>
   <data name="CARD_NUMBER" xml:space="preserve">
     <value>Kartennummer</value>
   </data>
   <data name="CARD_SECURITY_N" xml:space="preserve">
     <value>Sicherheitscode</value>
+  </data>
+  <data name="CLASS" xml:space="preserve">
+    <value>Kartenklasse</value>
   </data>
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Passwort bestätigen</value>
@@ -159,6 +168,12 @@
   <data name="LASTNAME" xml:space="preserve">
     <value>Nachname</value>
   </data>
+  <data name="LIFE" xml:space="preserve">
+    <value>Life</value>
+  </data>
+  <data name="MANA_COST" xml:space="preserve">
+    <value>Mana</value>
+  </data>
   <data name="NUMBER" xml:space="preserve">
     <value>Anzahl</value>
   </data>
@@ -176,6 +191,9 @@
   </data>
   <data name="TEXT" xml:space="preserve">
     <value>TEXT</value>
+  </data>
+  <data name="TYPE" xml:space="preserve">
+    <value>Kartentyp</value>
   </data>
   <data name="WORTH" xml:space="preserve">
     <value>Wert</value>

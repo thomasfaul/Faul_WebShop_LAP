@@ -155,6 +155,9 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
+      
+
+
         #region SET PACK INACTIVE
         /// <summary>
         /// Sets a pack inactive

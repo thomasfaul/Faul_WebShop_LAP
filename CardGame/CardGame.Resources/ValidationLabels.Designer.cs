@@ -61,6 +61,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attack.
+        /// </summary>
+        public static string ATTACK {
+            get {
+                return ResourceManager.GetString("ATTACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kreditkartenfirma.
         /// </summary>
         public static string CARD_COMPANY {
@@ -88,6 +97,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name der Karte.
+        /// </summary>
+        public static string CARD_NAME {
+            get {
+                return ResourceManager.GetString("CARD_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kartennummer.
         /// </summary>
         public static string CARD_NUMBER {
@@ -102,6 +120,15 @@ namespace CardGame.Resources {
         public static string CARD_SECURITY_N {
             get {
                 return ResourceManager.GetString("CARD_SECURITY_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kartenklasse.
+        /// </summary>
+        public static string CLASS {
+            get {
+                return ResourceManager.GetString("CLASS", resourceCulture);
             }
         }
         
@@ -187,6 +214,24 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Life.
+        /// </summary>
+        public static string LIFE {
+            get {
+                return ResourceManager.GetString("LIFE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mana.
+        /// </summary>
+        public static string MANA_COST {
+            get {
+                return ResourceManager.GetString("MANA_COST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Anzahl.
         /// </summary>
         public static string NUMBER {
@@ -237,6 +282,15 @@ namespace CardGame.Resources {
         public static string TEXT {
             get {
                 return ResourceManager.GetString("TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kartentyp.
+        /// </summary>
+        public static string TYPE {
+            get {
+                return ResourceManager.GetString("TYPE", resourceCulture);
             }
         }
         

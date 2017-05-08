@@ -1,27 +1,27 @@
-﻿@model CardGame.Web.Models.CardPack
+﻿@model CardGame.Web.Models.Card
 
 
 @{
-    ViewBag.Title = "Admin: Edit" + @Model.PackName;
+    ViewBag.Title = "Admin: CardEdit" + @Model.Name;
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Pack bearbeiten</h2>
+<h2>Karte bearbeiten</h2>
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
     <div class="panel-heading" style="background-color:darkgrey">
-        <h3>Bearbeite @Model.PackName</h3>
+        <h3>Bearbeite @Model.Name</h3>
     </div>
 
-    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("CardEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="panel-body">
-            @Html.HiddenFor(m => m.IdPack)
+            @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
                 {
                     switch (property.PropertyName)
                     {
-                        case "IdPack":
+                        case "ID":
                         case "Pic":
                         case "ImageMimeType":
                             break;
@@ -36,10 +36,7 @@
                             {
                                 @Html.CheckBox(property.PropertyName)
                             }
-                            else if (property.PropertyName == "IsMoney")
-                            {
-                                @Html.CheckBox(property.PropertyName)
-                            }
+
                             else
                             {
                                 @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
@@ -53,20 +50,20 @@
             <div class="form-group">
                 <div style="position:relative;">
                     <label>Bild</label>
-                    <a class='btn'style="margin-left:20em;" href='javascript:;'>
+                    <a class='btn' style="margin-left:20em;" href='javascript:;'>
                         Wähle Bild aus...
                         <input type="file" id="img" name="img" size="40" style="position:absolute;z-index:2;top:0;left:0;filter:alpha(opacity=0);opacity:0;background-color:transparent;" onchange='$("#upload-file-info").html($(this).val());' />
                     </a>
                     <span class='label label-info' id="upload-file-info"></span>
                 </div>
 
-                @Html.Partial("_ShowCardImage",@Model)
+                @Html.Partial("_ShowCardImageR", @Model)
 
             </div>
         </div>
         <div class="panel-footer" style="background-color:darkgrey">
             <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Zurücksetzen", "Index", null, new { @class = "btn btn-default" })
+            @Html.ActionLink("Zurücksetzen", "CardIndex", null, new { @class = "btn btn-default" })
 
         </div>
     }

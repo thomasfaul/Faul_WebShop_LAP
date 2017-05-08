@@ -30,6 +30,8 @@ namespace CardGame.DAL.Model
         public int ID_CardType { get; set; }
         public Nullable<int> ID_CardClass { get; set; }
         public byte[] Image { get; set; }
+        public Nullable<bool> IsActive { get; set; }
+        public string ImageMimeType { get; set; }
     
         public virtual CardClass CardClass { get; set; }
         public virtual CardType CardType { get; set; }

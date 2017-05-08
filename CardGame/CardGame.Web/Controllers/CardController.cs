@@ -16,7 +16,7 @@ namespace CardGame.Web.Controllers
 
         #region ACTIONRESULT OVERVIEW
         /// <summary>
-        /// takes the cardclass und die page
+        /// takes  und die page
         /// Orders the card by id and
         /// gives all the cards back as a 
         /// model-ActionResult
@@ -24,7 +24,7 @@ namespace CardGame.Web.Controllers
         /// <param name="cardclass"></param>
         /// <param name="page"></param>
         /// <returns></returns>
-        public ActionResult Overview(int? cardclass, int page = 1)
+        public ActionResult Overview( int page = 1)
         {
             log.Info("CardController-Overview");
             List<Web.Models.Card> CardList = new List<Web.Models.Card>();
@@ -41,15 +41,15 @@ namespace CardGame.Web.Controllers
                 card.Life = c.Life;
                 card.Pic = c.Image;
                 card.Flavor = c.FlavorText;
-                card.Class = CardManager.CardClasses[c.ID_CardClass ?? 0];
-                card.Type = CardManager.CardTypes[c.ID_CardType];
+                card.IsActive = (bool)c.IsActive;
+                card.Type = CardManager.GetCardTypeById(c.CardType.ID);
                 CardList.Add(card);
             }
             CardsListViewModel model = new CardsListViewModel()
             {
                 Cards = CardList.OrderBy(c => c.ID)
                
-            .Where(p => cardclass == null )
+            .Where(p => p.Type == null )
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
                 PagingInfo = new PageInfo
@@ -57,8 +57,7 @@ namespace CardGame.Web.Controllers
                     CurrentPage = page,
                     ItemsPerPage = Pagesize,
                     TotalItems = CardList.Count()
-                },
-                CurrentClass = cardclass
+                }
             };
             return View(model);
         }
@@ -86,10 +85,7 @@ namespace CardGame.Web.Controllers
             card.Life = dbcard.Life;
             card.Pic = dbcard.Image;
             card.Flavor = dbcard.FlavorText;
-            //card.Class = dbcard.tblclass.@class;
-            //card.Type = dbcard.tbltype.typename;
-            card.Class = CardManager.CardClasses[dbcard.ID_CardClass ?? 0];
-            card.Type = CardManager.CardTypes[dbcard.ID_CardType];
+            card.Type = CardManager.GetCardTypeById(dbcard.ID_CardType);
             return View(card);
         } 
         #endregion

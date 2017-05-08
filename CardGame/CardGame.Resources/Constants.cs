@@ -46,6 +46,13 @@ namespace CardGame.Resources
             public const string ISMONEY = "ISMONEY";
             public const string IMAGE = "IMAGE";
             public const string ISACTIVE = "ISACTIVE";
+            public const string CARD_NAME = "CARD_NAME";
+            public const string MANA_COST = "MANA_COST";
+            public const string ATTACK = "ATTACK";
+            public const string LIFE = "LIFE";
+            public const string TYPE = "TYPE";
+            public const string CLASS = "CLASS";
+           
 
         }
     }

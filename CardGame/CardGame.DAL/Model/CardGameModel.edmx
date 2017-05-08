@@ -18,6 +18,8 @@
           <Property Name="fktype" Type="int" Nullable="false" />
           <Property Name="fkclass" Type="int" />
           <Property Name="pic" Type="varbinary(max)" />
+          <Property Name="isactive" Type="bit" />
+          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblclass">
           <Key>
@@ -278,6 +280,8 @@
           <NavigationProperty Name="CardType" Relationship="Self.FK__tblcard__fktype__2C3393D0" FromRole="tblcard" ToRole="tbltype" />
           <NavigationProperty Name="AllUserCardCollection" Relationship="Self.FK__tblcollec__fkcar__14270015" FromRole="tblcard" ToRole="tblcollection" />
           <NavigationProperty Name="AllDeckCards" Relationship="Self.FK__tbldeckca__fkcar__31EC6D26" FromRole="tblcard" ToRole="tbldeckcard" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CardClass">
           <Key>
@@ -540,6 +544,8 @@
           <EntitySetMapping Name="AllCards">
             <EntityTypeMapping TypeName="CardGameModel.Card">
               <MappingFragment StoreEntitySet="tblcard">
+                <ScalarProperty Name="ImageMimeType" ColumnName="imagemimetype" />
+                <ScalarProperty Name="IsActive" ColumnName="isactive" />
                 <ScalarProperty Name="ID" ColumnName="idcard" />
                 <ScalarProperty Name="Name" ColumnName="cardname" />
                 <ScalarProperty Name="ManaCost" ColumnName="mana" />

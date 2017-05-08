@@ -17,11 +17,9 @@
         <AssociationConnector Association="CardGameModel.FK__tblcard__fkclass__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblcard__fktype__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblcollec__fkcar__14270015" ManuallyRouted="true" >
-          <ConnectorPoint PointX="3.625" PointY="4.2686979166666674" />
-          <ConnectorPoint PointX="3.625" PointY="4.9821272786458337" />
-          <ConnectorPoint PointX="4.295" PointY="4.9821272786458337" />
-          <ConnectorPoint PointX="4.295" PointY="6.4612939453125" />
-          <ConnectorPoint PointX="4.625" PointY="6.4612939453125" />
+          <ConnectorPoint PointX="3.625" PointY="4.65330078125" />
+          <ConnectorPoint PointX="3.625" PointY="6.3200131469726557" />
+          <ConnectorPoint PointX="4.625" PointY="6.3200131469726557" />
         </AssociationConnector>
         <AssociationConnector Association="CardGameModel.FK__tbldeckca__fkcar__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblcollec__fkper__0E6E26BF" ManuallyRouted="false" />

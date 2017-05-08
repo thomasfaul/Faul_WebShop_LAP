@@ -2,6 +2,7 @@
 using System.Linq;
 using CardGame.DAL.Model;
 using log4net;
+using System.Data.Entity;
 
 namespace CardGame.DAL.Logic
 {
@@ -22,24 +23,21 @@ namespace CardGame.DAL.Logic
             CardTypes = new Dictionary<int, string>();
             CardClasses = new Dictionary<int, string>();
             List<CardType> cardTypeList = null;
-            List<CardClass> cardClassList = null;
+     
             
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
                 cardTypeList = db.AllCardTypes.ToList();
-                cardClassList = db.AllCardClasses.ToList();
+            
             }
 
             foreach (var type in cardTypeList)
             {
                 CardTypes.Add(type.ID, type.Name);
+
             }
-            foreach(var clas in cardClassList)
-            {
-                CardClasses.Add(clas.ID, clas.Name);
-            }
-            CardClasses.Add(0, "n/a");
+            
             CardTypes.Add(0, "n/a");
         } 
         #endregion
@@ -67,37 +65,21 @@ namespace CardGame.DAL.Logic
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static string GetCardTypeById(int? id)
+        public static string GetCardTypeById(int id)
         {
             log.Info("CardManager-GetCardTypeById");
-            string TypeName = "n/a";
+            string typename;
 
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                TypeName = db.AllCardTypes.Find(id).Name;
-            }
-            return TypeName;
+                  
+                    var cardtype= db.AllCardTypes.Where(c=>c.ID==id).FirstOrDefault();
+                  typename=cardtype.Name;
+            }         
+            return typename;
         }
         #endregion
 
-        #region GET CARDClass BY ID
-        /// <summary>
-        /// TODO: GET Class by id überprüfen, selbst gemacht in irgendeinem Anfall 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public static string GetCardClassById(int id)
-        {
-            log.Info("CardManager-GetCardClassById");
-            string ClassName = "n/a";
-
-            using (var db = new itin21_ClonestoneFSEntities())
-            {
-                ClassName = db.AllCardClasses.Find(id).Name;
-            }
-            return ClassName;
-        }
-        #endregion
 
         #region GET CARD BY ID
         /// <summary>
@@ -124,33 +106,142 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-        #region GET CARD BY TYPE (not ready)
+
+        #region GET TypeByName
         /// <summary>
-        /// TODO: get card by type
-        /// Should return a list of cards which have the same type
+        /// Takes the Name of the type and returns the id
         /// </summary>
-        /// <param name="type"></param>
-        //public static void GetCardByType(int type)
-        //{
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int GetTypeByName(string name)
+        {
+            log.Info("CardManager-GetTypebyName");
 
-        //    using (var db = new itin21_ClonestoneFSEntities())
-        //    {
+            int result=0;
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                //Extention Method
+                var type = db.AllCardTypes.Where(c => c.Name == name).FirstOrDefault();
+                result = type.ID;
 
-        //        var ReturnList = db.tblcard.Join(db.tbltype, t => t.idcard, c => c.idtype, (c, types)
-        //                                 => new
-        //                                 {
-        //                                     Cardname = c.cardname,
-        //                                     Mana = c.mana,
-        //                                     Life = c.life,
-        //                                     Attack = c.attack,
-        //                                     Flavor = c.flavor,
-        //                                     Pic = c.pic,
-        //                                     Types = types,
-        //                                     FkTypes = c.fktype
-        //                                 }).Where(t => t.FkTypes == type);
-        //        //return ReturnList;                          
-        //    }
-        //}
+            }
+            return result;
+        }
         #endregion
+
+        #region GET ClassByName
+        /// <summary>
+        /// Takes the Name of the class and returns the id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static int GetClassByName(string name)
+        {
+            log.Info("CardManager-GetClassbyName");
+
+            int result=0;
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                //Extention Method
+                var cclass = db.AllCardClasses.Where(c => c.Name == name).FirstOrDefault();
+                result = cclass.ID;
+
+            }
+            return result;
+        }
+        #endregion
+
+
+        #region SAVE CARD
+        /// <summary>
+        /// Saves a new Cardpack 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="flavortext"></param>
+        /// <param name="ismoney"></param>
+        /// <param name="worth"></param>
+        /// <param name="numberofcards"></param>
+        /// <param name="isactive"></param>
+        /// <param name="pic"></param>
+        /// <param name="mimetypename"></param>
+        public static void SaveCard(int id, string name, byte mana,string flavortext, short attack, short life,  bool isactive,int cardtype, byte[] pic, string mimetypename)
+        {
+            if (id == 0)
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    Card dbcard = new Card();
+                    dbcard.Name = name;
+                    dbcard.IsActive = isactive;
+                    dbcard.ManaCost = mana;
+                    dbcard.Attack = attack;
+                    dbcard.Life = life;
+                    dbcard.FlavorText = flavortext;
+                    dbcard.Image = pic;
+                    dbcard.ImageMimeType = mimetypename;
+                    dbcard.ID_CardType = cardtype;
+
+                    db.AllCards.Add(dbcard);
+
+                    db.SaveChanges();
+
+                }
+
+            }
+            else
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    if (db.AllPacks != null)
+                    {
+                      
+
+                        Card dbcard = db.AllCards.SingleOrDefault(p => p.ID == id); ;
+                        dbcard.Name = name;
+                        dbcard.IsActive = isactive;
+                        dbcard.ManaCost = mana;
+                        dbcard.Attack = attack;
+                        dbcard.Life = life;
+                        dbcard.FlavorText = flavortext;
+                        dbcard.Image = pic;
+                        dbcard.ImageMimeType = mimetypename;
+                        dbcard.ID_CardType = cardtype;
+
+
+
+                        db.Entry(dbcard).State = EntityState.Modified;
+
+                        db.SaveChanges();
+
+                    }
+
+
+                }
+            }
+        }
+        #endregion
+
+        #region SET CARD INACTIVE
+        /// <summary>
+        /// Sets a card inactive
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool SetCardInActive(int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                Card dbcard = db.AllCards.SingleOrDefault(p => p.ID == id);
+                dbcard.IsActive = false;
+
+                db.Entry(dbcard).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return true;
+            #endregion
+        }
     }
 }
