@@ -976,3 +976,12 @@ input[type="file"] {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+
+
+ /*-------------------------------------Dropdown---------------------------------------*/ 
+.select button {width:100%; text-align:left;}
+.select .caret {position:absolute; right:10px; margin-top:10px;}
+.select:last-child >.btn {border-top-left-radius:5px; border-bottom-left-radius:5px;}
+.selected {padding-right:10px;}
+.option {width:100%;}

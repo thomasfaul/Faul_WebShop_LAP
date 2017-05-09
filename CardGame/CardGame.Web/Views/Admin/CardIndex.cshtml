@@ -9,47 +9,99 @@
 <div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
     <div class="panel-heading" style="background-color:darkgrey;">
         <h2>Alle Karten</h2>
+        <center>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group col-md-11" role="group" aria-label="First group">
-                    <center> <h5>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-secondary" })</h5></center>
+                <div class="btn-group " role="group" aria-label="First group">
+                    <center>
+                        <h5>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-secondary" })</h5>
+                    </center>
                 </div>
-                <br />
-                <center>
-                    <div class="btn-group col-md-11" role="group" aria-label="Second group">
-                        <h5><span class="btn btn-secondary">Sortieren nach:</span></h5>
-                        <span>@Html.ActionLink("Name", "CardIndex", new { SortValue = 1 }, new { @class = "btn btn-secondary" })</span>
-                        <span>@Html.ActionLink("Name Aufsteigend", "CardIndex", new { SortValue = 2 }, new { @class = "btn btn-secondary" })</span>
-                        <span>@Html.ActionLink("Type", "CardIndex", new { SortValue = 3 }, new { @class = "btn btn-secondary" })</span>
-                        <span>@Html.ActionLink("Type Aufsteigend", "CardIndex", new { SortValue = 4 }, new { @class = "btn btn-secondary" })</span>
-                        <span>@Html.ActionLink("Mana_Aufsteigend", "CardIndex", new { SortValue = 5 }, new { @class = "btn btn-secondary" })</span>
-                        
-
-                    </div>
-                </center>
             </div>
+        </center>
     </div>
     <center>
         <div class="panel-body">
-            <table class="table-hover table-condensed table-bordered"style="margin-top:0.5em">
+            <table class="table-hover table-condensed table-bordered" style="margin-top:0.5em">
                 <tr>
-                    <th class="text-right">
+                    <th>Sortieren =></th>
+
+                    <th>
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">aufsteigend</a></li>
-                                <li><a href="#">CSS</a></li>
-                                <li><a href="#">JavaScript</a></li>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Name &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
                             </ul>
                         </div>
                     </th>
-                    <th>Name</th>
-                    <th>Aktiv</th>
-                    <th class="text-right">Typ</th>
+
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Aktiv &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aktiv", "CardIndex", new { SortValue = 3 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Inaktiv", "CardIndex", new { SortValue = 4 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Hero", "CardIndex", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Minion", "CardIndex", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Spell", "CardIndex", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Weapon", "CardIndex", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                    </th>
                     <th class="text-right">InfoText</th>
-                    <th class="text-center">Mana</th>
-                    <th class="text-center">Attack</th>
-                    <th class="text-center">Life</th>
-                    <th class="text-center">Action</th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Mana &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 12}, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+
+                    
+
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Attack &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 13 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 14 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            Life &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 15 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 16 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                    </th>
+                    
+                    <th class="text-center">Löschen</th>
 
                 </tr>
                 @foreach (var card in Model)
