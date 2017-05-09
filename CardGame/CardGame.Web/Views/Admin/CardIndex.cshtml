@@ -17,9 +17,13 @@
                 <center>
                     <div class="btn-group col-md-11" role="group" aria-label="Second group">
                         <h5><span class="btn btn-secondary">Sortieren nach:</span></h5>
-                        <h4><span>@Html.ActionLink("Name", "CardIndex", new {@CName=ViewBag.sort }, new { @class = "btn btn-secondary" })</span></h4>
-                        <h4><span>@Html.ActionLink("Name_Aufsteigend", "CardIndex", new{@CName_Aufsteigend=ViewBag.sort }, new { @class = "btn btn-secondary" })</span></h4>
-                        <h4><span>@Html.ActionLink("Type", "CardIndex", new {@CType=ViewBag.sort}, new { @class = "btn btn-secondary" })</span></h4>
+                        <span>@Html.ActionLink("Name", "CardIndex", new { SortValue = 1 }, new { @class = "btn btn-secondary" })</span>
+                        <span>@Html.ActionLink("Name Aufsteigend", "CardIndex", new { SortValue = 2 }, new { @class = "btn btn-secondary" })</span>
+                        <span>@Html.ActionLink("Type", "CardIndex", new { SortValue = 3 }, new { @class = "btn btn-secondary" })</span>
+                        <span>@Html.ActionLink("Type Aufsteigend", "CardIndex", new { SortValue = 4 }, new { @class = "btn btn-secondary" })</span>
+                        <span>@Html.ActionLink("Mana_Aufsteigend", "CardIndex", new { SortValue = 5 }, new { @class = "btn btn-secondary" })</span>
+                        
+
                     </div>
                 </center>
             </div>
@@ -28,7 +32,16 @@
         <div class="panel-body">
             <table class="table-hover table-condensed table-bordered"style="margin-top:0.5em">
                 <tr>
-                    <th class="text-right">Nummer</th>
+                    <th class="text-right">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">aufsteigend</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
+                    </th>
                     <th>Name</th>
                     <th>Aktiv</th>
                     <th class="text-right">Typ</th>

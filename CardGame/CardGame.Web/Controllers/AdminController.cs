@@ -61,7 +61,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult CardIndex(string sortOrder)
+        public ActionResult CardIndex(int? sortValue)
         {
             log.Info("AdminController-CardIndex");
 
@@ -69,8 +69,6 @@ namespace CardGame.Web.Controllers
             {
                 List<Card> Cards = new List<Card>();
                 var dbcards = CardManager.GetAllCards();
-                
-
                 foreach (var card in dbcards)
                 {
                     Card c = new Card();
@@ -87,22 +85,56 @@ namespace CardGame.Web.Controllers
 
                     Cards.Add(c);
                 }
-
                     var sorted = Cards;
-                if(ViewBag.sort == null)
+
+                switch (sortValue)
                 {
-                    if (ViewBag.sort == "CType")
-                    {
-                        sorted = Cards.OrderByDescending(c => c.Type).ToList();
-                    }
-                    else if (ViewBag.sort == "CName")
-                    {
-                        sorted = Cards.OrderByDescending(c => c.Name).ToList();
-                    }
-                    else
-                    {
+                    case 1: 
                         sorted = Cards.OrderBy(c => c.Name).ToList();
-                    }
+                         break;
+                      case 2:
+                        sorted = Cards.OrderByDescending(c => c.Name).ToList();
+                         break;
+                      case 3:
+                        sorted = Cards.OrderBy(c => c.Type).ToList();
+                         break;
+                      case 4:
+                        sorted = Cards.OrderByDescending(c => c.Type).ToList();
+                         break;
+                      case 5:
+                        sorted = Cards.OrderBy(c=> c.Mana).ToList();
+                         break;
+                      case 6:
+                        sorted = Cards.OrderBy(c => c.Life).ToList();
+                         break;
+                      case 7:
+                        sorted = Cards.OrderBy(c => c.Attack).ToList();
+                         break;
+                      case 8:
+                        sorted = Cards.OrderBy(c => c.Name).ThenByDescending(c => c.Type).ToList();
+                         break;
+                      case 9:
+                        sorted = Cards.Where(c => c.IsActive == true).ToList();
+                         break;
+                      case 10:
+                        sorted = Cards.Where(c => c.IsActive == false).ToList();
+                         break;
+                      case 11:
+                        sorted= Cards.Where(c => c.Type == "").ToList();
+                         break;
+                      case 12:
+                        sorted = Cards.Where(c => c.Type == "Spell").OrderBy(c => c.Name).ToList();   
+                         break;
+                      case 13:
+                        sorted = Cards.OrderBy(c => c.Type).ToList();
+                         break;
+                      case 14:
+                        sorted = Cards.Where(c => c.Name.StartsWith("A"))
+                         .OrderBy(c => c.Type).ToList();
+                        break;
+                      default:
+                        sorted = Cards.ToList();
+                        break;
                 }
                 return View(sorted);
             }
@@ -183,7 +215,6 @@ namespace CardGame.Web.Controllers
             }
             catch (Exception e)
             {
-
                 Debugger.Break();
                 log.Error("AdminController-CardEdit", e);
                 return View("Error");

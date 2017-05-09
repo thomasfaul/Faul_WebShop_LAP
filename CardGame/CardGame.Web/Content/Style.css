@@ -966,4 +966,13 @@ div#ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearf
     border-color:darkmagenta !important;
 }
 
-
+ /*-------------------------------------FileUpload---------------------------------------*/ 
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

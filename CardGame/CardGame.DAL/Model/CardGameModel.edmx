@@ -18,8 +18,8 @@
           <Property Name="fktype" Type="int" Nullable="false" />
           <Property Name="fkclass" Type="int" />
           <Property Name="pic" Type="varbinary(max)" />
-          <Property Name="isactive" Type="bit" />
           <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
+          <Property Name="isactive" Type="bit" />
         </EntityType>
         <EntityType Name="tblclass">
           <Key>

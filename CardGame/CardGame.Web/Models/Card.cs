@@ -84,7 +84,9 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
                 return -1;
             else //this.CardID > other.CardID
                 return 1;
-        } 
+        }
         #endregion
+        [HiddenInput(DisplayValue =false)]
+        public int? SortValue { get; set; }
     }
 }
