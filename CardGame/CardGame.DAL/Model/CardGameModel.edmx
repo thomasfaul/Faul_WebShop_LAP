@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="CardGameModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="tblcard">
           <Key>
             <PropertyRef Name="idcard" />
@@ -18,8 +28,8 @@
           <Property Name="fktype" Type="int" Nullable="false" />
           <Property Name="fkclass" Type="int" />
           <Property Name="pic" Type="varbinary(max)" />
-          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
           <Property Name="isactive" Type="bit" />
+          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblclass">
           <Key>
@@ -64,6 +74,8 @@
           <Property Name="fkpack" Type="int" />
           <Property Name="totalcost" Type="int" />
           <Property Name="numberofpackagesbought" Type="int" />
+          <Property Name="kindofpayment" Type="varchar" MaxLength="50" />
+          <Property Name="isactive" Type="bit" />
         </EntityType>
         <EntityType Name="tblpack">
           <Key>
@@ -213,6 +225,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="CardGameModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblcard" EntityType="Self.tblcard" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblclass" EntityType="Self.tblclass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblcollection" EntityType="Self.tblcollection" Schema="dbo" store:Type="Tables" />
@@ -335,6 +348,8 @@
           <NavigationProperty Name="User" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="tblorder" ToRole="tblperson" />
           <Property Name="TotalCost" Type="Int32" />
           <Property Name="NumberOfPackagesBought" Type="Int32" />
+          <Property Name="KindOfPayment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="Pack">
           <Key>
@@ -534,7 +549,18 @@
             <End Role="tblperson" EntitySet="AllUsers" />
             <End Role="tblorder" EntitySet="AllPurchases" />
           </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="CardGameModel.sysdiagrams" />
         </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -598,6 +624,8 @@
           <EntitySetMapping Name="AllPurchases">
             <EntityTypeMapping TypeName="CardGameModel.Purchase">
               <MappingFragment StoreEntitySet="tblorder">
+                <ScalarProperty Name="IsActive" ColumnName="isactive" />
+                <ScalarProperty Name="KindOfPayment" ColumnName="kindofpayment" />
                 <ScalarProperty Name="NumberOfPackagesBought" ColumnName="numberofpackagesbought" />
                 <ScalarProperty Name="TotalCost" ColumnName="totalcost" />
                 <ScalarProperty Name="ID" ColumnName="idorder" />
@@ -646,6 +674,17 @@
               <MappingFragment StoreEntitySet="tbltype">
                 <ScalarProperty Name="ID" ColumnName="idtype" />
                 <ScalarProperty Name="Name" ColumnName="typename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CardGameModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

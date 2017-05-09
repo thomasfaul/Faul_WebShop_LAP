@@ -11,7 +11,6 @@ namespace CardGame.DAL.Logic
     public class UserManager
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        //public static readonly Dictionary<int, string> UserRoleNames;
         public static readonly Dictionary<int, string> CardClassNames;
         public static readonly Dictionary<int, string> CardTypeNames;
       

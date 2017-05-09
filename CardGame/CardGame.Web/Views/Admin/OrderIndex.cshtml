@@ -1,0 +1,169 @@
+﻿@model IEnumerable<CardGame.Web.Models.DB.OrderInfo>
+
+@{
+    ViewBag.Title = "ADMIN-All Orders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
+    <div class="panel-heading" style="background-color:darkgrey;">
+        <h2>Alle Bestellungen</h2>
+        <center>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group " role="group" aria-label="First group">
+                </div>
+            </div>
+        </center>
+    </div>
+    <center>
+        <div class="panel-body">
+            <table class="table-hover table-condensed table-bordered" style="margin-top:0.5em">
+                <tr>
+
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                ReNR. &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Aktiv &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aktiv", "OrderIndex", new { SortValue = 3 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Inaktiv", "OrderIndex", new { SortValue = 4 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Inhalt &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
+                           </ul>
+                        </div>
+                    </th>
+                    
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Bestelldatum &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+
+
+
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Betrag &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Zahlungsinfo &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 12 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Vorname &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 13 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 14 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Nachname &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 15 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 16 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Email &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 17 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 18 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
+                    </th>
+
+                    <th class="text-center">Löschen</th>
+
+                </tr>
+                @foreach (var order in Model)
+                {
+                    <tr>
+
+                        @{string o = order.ID.ToString();}
+
+
+                        <td><h6>@Html.ActionLink(o, "OrderEdit", new { id = order.ID })</h6></td>
+                        <td class="text-right">@Html.CheckBoxFor(p => order.isActive, new { @disabled = "disabled" })</td>
+                        <td class="text-right">@order.NumberOfPackages</td>
+                        <td class="text-right">@order.Date</td>
+                        <td class="text-center">@order.TotalCost</td>
+                        <td class="text-center">@order.CreditCard</td>
+                        <td class="text-center"style="color:paleturquoise">@order.User.Firstname</td>
+                        <td class="text-center"style="color:paleturquoise">@order.User.Lastname</td>
+                        <td class="text-center"style="color:paleturquoise">@order.User.Email</td>
+                        <td class="text-center"style="color:paleturquoise">@order.User.Gamertag</td>
+
+
+                        @using (Html.BeginForm("SetOrderInActive", "Admin"))
+                        {
+                            <td>
+                                @Html.Hidden("id", order.ID)
+                                <input type="submit" class="btn btn-default btn-xs" value="Löschen" />
+                            </td>
+                        }
+                    </tr>
+                            }
+            </table>
+
+        </div>
+
+        <div class="panel-footer" style="background-color:darkgrey">
+            <center>:::</center>
+        </div>
+    </center>
+</div>
+

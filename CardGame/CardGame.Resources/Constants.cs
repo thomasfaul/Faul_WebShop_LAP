@@ -21,6 +21,7 @@ namespace CardGame.Resources
             public const string PRICE = "PRICE";
             public const string NUMBER = "NUMBER";
             public const string ISACTIVE = "ISACTIVE";
+            public const string DATE = "DATE";
             
         }
 
@@ -52,7 +53,8 @@ namespace CardGame.Resources
             public const string LIFE = "LIFE";
             public const string TYPE = "TYPE";
             public const string CLASS = "CLASS";
-           
+            public const string DATE = "DATE";
+
 
         }
     }

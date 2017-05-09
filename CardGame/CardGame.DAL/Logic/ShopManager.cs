@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
+using System.Data.Entity;
 
 
 namespace CardGame.DAL.Logic
@@ -110,6 +111,8 @@ namespace CardGame.DAL.Logic
             return (price * numPacks);
         }
         #endregion
+
+
         #region GET TOTAL COSTII
         /// <summary>
         /// Takes the id of the pack and the number of the COINPacks
@@ -147,6 +150,8 @@ namespace CardGame.DAL.Logic
             return (price * quantity);
         }
         #endregion
+
+
         #region ORDER
         /// <summary>
         /// Takes the Id and the nummber of CardPacks
@@ -219,27 +224,9 @@ namespace CardGame.DAL.Logic
             return generatedCards;
         }
         #endregion
-        //public static bool SaveOrder(int userid,int cardpackid,int id)
-        //{
-        //    using (var db = new itin21_ClonestoneFSEntities())
-        //    {
-        //        Purchase order = new Purchase();
-        //        User user = new User();
-                
-        //        order.OrderDateTime = DateTime.Now;
-        //        order.CardPack = Get_CardPackById(cardpackid);
-        //        order.User=
 
-        //        //db.AllPurchases.Add(order);
-        //        db.SaveChanges();
-        //    }
-                
-
-
-        //    return true;
-        //}
-        
-        public static bool SaveOrder(int userid, int cardpackid, int totalsum,int numberofpacks)
+        #region SAVE ORDER
+        public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks)
         {
             log.Info("SaveOrder");
             User person = null;
@@ -269,6 +256,101 @@ namespace CardGame.DAL.Logic
             }
 
         }
+        #endregion
 
+        #region SAVE ORDER II
+        public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks,string creditcard,bool isactive)
+        {
+            log.Info("SaveOrder");
+            User person = null;
+            Pack cardpack = null;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    person = db.AllUsers.Find(userid);
+                    cardpack = db.AllPacks.Find(cardpackid);
+                    Purchase order = new Purchase();
+                    order.OrderDateTime = DateTime.Now;
+                    order.User = person;
+                    order.CardPack = cardpack;
+                    order.NumberOfPackagesBought = numberofpacks;
+                    order.TotalCost = totalsum;
+                    db.AllPurchases.Add(order);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Usermanager-SaveOrder", e);
+                return false;
+            }
+
+        }
+        #endregion
+
+        #region ADMIN: GET ALL Orders
+        /// <summary>
+        /// Gets all Packs from the Database
+        /// </summary>
+        /// <returns></returns> returns a tblpack
+        public static List<Purchase> AdminGetAllOrders()
+        {
+            log.Info("Usermanager-GetAllPacks");
+            List<Purchase> Return = null;
+
+
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                Return = db.AllPurchases.Include(u=>u.User).ToList();
+            }
+            return Return;
+        }
+        #endregion
+
+        #region SET ORDER INACTIVE
+        /// <summary>
+        /// Sets a card inactive
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool SetOrderInActive(int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                Purchase dbpurchase = db.AllPurchases.SingleOrDefault(p => p.ID == id);
+                dbpurchase.IsActive = false;
+
+                db.Entry(dbpurchase).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return true;
+        }
+            #endregion
+
+
+
+        #region GET Order BY ID
+            /// <summary>
+            /// Takes the card Id and returns the associated card
+            /// </summary>
+            /// <param name="id"></param>
+            /// <returns></returns>
+        public static Purchase GetOrderById(int id)
+        {
+            log.Info("CardManager-GetOrderById");
+            Purchase purch = null;
+
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                purch = db.AllPurchases.Where(c => c.ID == id).Include(c=>c.User).FirstOrDefault();
+            }
+            return purch;
+        }
+        #endregion
     }
+
 }
+

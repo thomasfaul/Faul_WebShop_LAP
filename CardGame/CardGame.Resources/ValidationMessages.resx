@@ -126,6 +126,9 @@
   <data name="CARD_SECURITY_N" xml:space="preserve">
     <value>Bitte einen korrekten Sicherheitscode eintragen</value>
   </data>
+  <data name="DATUM" xml:space="preserve">
+    <value>Bitte ein gültiges Datum eingeben</value>
+  </data>
   <data name="DESCRIPTION" xml:space="preserve">
     <value>Bitte eine Beschreibung eingeben</value>
   </data>

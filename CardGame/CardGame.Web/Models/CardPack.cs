@@ -68,7 +68,10 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         #endregion
 
         #region IMAGE MIME TYPE
-        public string ImageMimeType { get; set; } 
+        public string ImageMimeType { get; set; }
         #endregion
+
+        [HiddenInput(DisplayValue = false)]
+        public int? SortValue { get; set; }
     }
 }

@@ -7,8 +7,8 @@ using log4net;
 using System;
 using System.Diagnostics;
 using System.Web;
-using System.Linq;
 using CardGame.Web.Controllers.HtmlHelpers;
+using CardGame.Web.Models.DB;
 
 namespace CardGame.Web.Controllers
 {
@@ -22,7 +22,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int? sortValue)
         {
             log.Info("AdminController-Index");
 
@@ -41,10 +41,15 @@ namespace CardGame.Web.Controllers
                     p.PackPrice = pack.Price ?? 0;
                     p.Worth = pack.Worth ?? 0;
                     p.Flavor = pack.FlavorText ?? "n/a";
+
                     Cardpacks.Add(p);
                 }
-
-                return View(Cardpacks);
+                var sorted = Cardpacks;
+                if (sortValue != null)
+                {
+                    sorted = SortHelper.FilterCardPacks(Cardpacks, (int)sortValue);
+                }
+                return View(sorted);
             }
             catch (Exception e)
             {
@@ -103,6 +108,56 @@ namespace CardGame.Web.Controllers
 
         }
         #endregion
+
+        #region ACTIONRESULT ORDER INDEX
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        public ActionResult OrderIndex(int? sortValue)
+        {
+            log.Info("AdminController-OrderIndex");
+
+            try
+            {
+                List<OrderInfo> Orders = new List<OrderInfo>();
+                var dborder = ShopManager.AdminGetAllOrders();
+                User user = new Models.User();
+                foreach (var order in dborder)
+                {
+                    OrderInfo o = new OrderInfo();
+                    o.ID = order.ID;
+                    o.isActive = order.IsActive ?? true;
+                    o.TotalCost = order.TotalCost ?? 0;
+                    o.NumberOfPackages = order.NumberOfPackagesBought??0;
+                    o.Date = order.OrderDateTime ?? DateTime.MinValue;
+                    o.CreditCard = order.KindOfPayment ?? "n/a";
+                    o.User.Email = order.User.Email ?? "n/a";
+                    o.User.Firstname = order.User.FirstName ?? "n/a";
+                    o.User.Gamertag = order.User.GamerTag ?? "n/a";
+                    o.User.Lastname = order.User.LastName ?? "n/a";
+                    Orders.Add(o);
+                }
+                var sorted = Orders;
+                if (sortValue != null)
+                {
+                    sorted = SortHelper.FilterOrders(Orders, (int)sortValue);
+                }
+
+                return View(sorted);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-OrderIndex", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
+
+
 
         #region VIEWRESULT EDIT
         /// <summary>
@@ -173,6 +228,43 @@ namespace CardGame.Web.Controllers
             {
                 Debugger.Break();
                 log.Error("AdminController-CardEdit", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
+
+        #region VIEWRESULT ORDER Edit
+        /// <summary>
+        /// Takes the ORDERId, gets the ORDER
+        /// from DB,returns a ViewResult with pack
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Authorize]
+        public ViewResult OrderEdit(int id)
+        {
+            log.Info("AdminController-OrderEdit");
+            try
+            {
+                OrderInfo o = new OrderInfo();
+                var order = ShopManager.GetOrderById(id);
+                o.ID = order.ID;
+                o.isActive = order.IsActive ?? true;
+                o.TotalCost = order.TotalCost ?? 0;
+                o.NumberOfPackages = order.NumberOfPackagesBought ?? 0;
+                o.Date = order.OrderDateTime ?? DateTime.MinValue;
+                o.CreditCard = order.KindOfPayment ?? "n/a";
+                o.User.Email = order.User.Email ?? "n/a";
+                o.User.Firstname = order.User.FirstName ?? "n/a";
+                o.User.Gamertag = order.User.GamerTag ?? "n/a";
+                o.User.Lastname = order.User.LastName ?? "n/a";
+                return View(o);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-OrderEdit", e);
                 return View("Error");
             }
 
@@ -260,6 +352,40 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT ORDER EDIT II
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cp"></param>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost]
+        public ActionResult OrderEdit(OrderInfo o, HttpPostedFileBase img = null)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var a= UserManager.Get_UserByEmail(o.User.Email);
+                    int b = a.ID;
+                    ShopManager.SaveOrder(b ,0,o.TotalCost,o.NumberOfPackages,o.CreditCard,o.isActive);
+                    TempData["message"] = string.Format("{0} wurde gespeichert", o.ID.ToString());
+                    return RedirectToAction("CardIndex");
+                }
+                else
+                {
+                    return View(o);
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-OrderEditII", e);
+                return View("Error");
+            }
+        }
+        #endregion
 
         #region VIEWRESULT CREATE
         public ViewResult Create()
@@ -274,6 +400,15 @@ namespace CardGame.Web.Controllers
             return View("CardEdit", new Card());
         }
         #endregion
+
+        #region VIEWRESULT ORDER CREATE
+        public ViewResult OrderCreate()
+        {
+            return View("OrderEdit", new OrderInfo());
+        }
+        #endregion
+
+
 
         #region ACTIONRESULT SET INACTIVE
         [HttpPost]
@@ -305,7 +440,20 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT SET ORDER INACTIVE
+        [HttpPost]
+        public ActionResult SetOrderInActive(int id)
+        {
+            var ok = ShopManager.SetOrderInActive(id);
+            
+            if (ok == true)
+            {
+                TempData["message"] = string.Format("Bestellung Nr.{0} wurde inaktiv gesetzt", id.ToString());
+            }
+            return RedirectToAction("OrderIndex");
 
+        }
+        #endregion
 
 
 

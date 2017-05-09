@@ -88,6 +88,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte ein gültiges Datum eingeben.
+        /// </summary>
+        public static string DATUM {
+            get {
+                return ResourceManager.GetString("DATUM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte eine Beschreibung eingeben.
         /// </summary>
         public static string DESCRIPTION {

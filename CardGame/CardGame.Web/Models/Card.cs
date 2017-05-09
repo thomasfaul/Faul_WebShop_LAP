@@ -86,7 +86,8 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
                 return 1;
         }
         #endregion
-        [HiddenInput(DisplayValue =false)]
+       
+        [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
     }
 }

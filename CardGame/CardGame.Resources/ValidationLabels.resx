@@ -144,6 +144,9 @@
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Passwort bestätigen</value>
   </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Datum</value>
+  </data>
   <data name="DESCRIPTION" xml:space="preserve">
     <value>Beschreibung</value>
   </data>

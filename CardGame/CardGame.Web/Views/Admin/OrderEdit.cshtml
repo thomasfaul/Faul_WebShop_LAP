@@ -1,0 +1,57 @@
+﻿
+@model CardGame.Web.Models.DB.OrderInfo
+
+
+@{
+    ViewBag.Title = "Admin: Bestellung Nummer" + @Model.ID;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Bestellung bearbeiten</h2>
+
+<div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
+    <div class="panel-heading" style="background-color:darkgrey">
+        <h3>Bearbeite Bestellung Nummer @Model.ID</h3>
+    </div>
+
+    @using (Html.BeginForm("OrderEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(o => o.ID)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+                {
+                    switch (property.PropertyName)
+                    {
+                        case "ID":
+                            break;
+                        default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "IsActive")
+                            {
+                                @Html.CheckBox(property.PropertyName)
+                            }
+                            else if (property.PropertyName == "SortValue")
+                            {
+                                @Html.Hidden(property.PropertyName)
+
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+
+                }
+            }
+        </div>
+        <div class="panel-footer" style="background-color:darkgrey">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            @Html.ActionLink("Zurücksetzen", "OrderIndex", null, new { @class = "btn btn-default" })
+
+        </div>
+    }
+</div>
+

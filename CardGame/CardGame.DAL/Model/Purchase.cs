@@ -20,6 +20,8 @@ namespace CardGame.DAL.Model
         public Nullable<int> ID_CardPack { get; set; }
         public Nullable<int> TotalCost { get; set; }
         public Nullable<int> NumberOfPackagesBought { get; set; }
+        public string KindOfPayment { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual Pack CardPack { get; set; }
         public virtual User User { get; set; }

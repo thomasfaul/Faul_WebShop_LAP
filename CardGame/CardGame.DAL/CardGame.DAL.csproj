@@ -107,6 +107,9 @@
     <Compile Include="Model\Purchase.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\User.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>

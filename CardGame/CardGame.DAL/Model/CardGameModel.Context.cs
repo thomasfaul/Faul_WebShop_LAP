@@ -34,5 +34,6 @@ namespace CardGame.DAL.Model
         public virtual DbSet<Pack> AllPacks { get; set; }
         public virtual DbSet<User> AllUsers { get; set; }
         public virtual DbSet<CardType> AllCardTypes { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

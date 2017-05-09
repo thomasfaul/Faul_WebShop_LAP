@@ -12,48 +12,37 @@
     <meta name="description" content="Adminzone" />
 </head>
 <body>
-    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%;min-height:72em;">
-        @if (TempData["message"] != null)
-        {
-            <div class="alert alert-success">@TempData["message"]</div>
-        }
-        <div class="row">
-            <!-- PARTIAL VIEW -->
-            @RenderBody()
+    <header>
 
-        </div>
+        <!-- NAVIGATION DEFAULT -->
+        <nav class="navbar navbar-default navbar-fixed-top" style="margin-top:5em;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
+                </div>
 
-        <header>
-            <div class="overlay"></div>
-            <!-- NAVIGATION DEFAULT -->
-            <nav class="navbar navbar-default navbar-fixed-bottom" style="margin-top:5em;">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/images/CS_Logo.png" /></a>
-                    </div>
-
-                    <!-- NAVIGATION Collapse -->
-                    <div class="collapse navbar-collapse dropup" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
+                <!-- NAVIGATION Collapse -->
+                <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
 
 
-                            @if (User.IsInRole("admin"))
-                            {
-                                <li>
-                                    <a href="@Url.Action("Logout", "Account")">Log Out</a>
-                                </li>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li>
+                                <a href="@Url.Action("Logout", "Account")">Log Out</a>
+                            </li>
                                 <li>
                                     <a href="@Url.Action("Index", "Home")">Home</a>
                                 </li>
 
                                 <li>
-                                    <a class="dropdown-toggle dropup" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Adminzone <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -62,12 +51,32 @@
                                         <li><a href="#">Karten Übersicht</a></li>
                                     </ul>
                                 </li>
-                            }
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav><!-- /navigation -->
-        </header>
+                        }
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+
+
+    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%;min-height:72em;">
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success">@TempData["message"]</div>
+        }
+
+
+
+
+
+        <div class="row">
+            <!-- PARTIAL VIEW -->
+            @RenderBody()
+
+        </div>
+
+        
     </div>
 
 
