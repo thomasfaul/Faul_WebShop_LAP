@@ -11,56 +11,73 @@
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
     <div class="panel-heading" style="background-color:darkgrey">
-        <h3>Bearbeite Bestellung Nummer @Model.ID</h3>
+        <h5>Bearbeite Bestellung Nummer @Model.ID</h5>
     </div>
-
-    @using (Html.BeginForm("OrderEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@{int a = 1;}
+    @using (Html.BeginForm("OrderEdit", "Admin" ))
     {
         <div class="panel-body">
-            @Html.HiddenFor(o => o.ID)
-            @foreach (var property in ViewData.ModelMetadata.Properties)
-            {
-                switch (property.PropertyName)
-                {
-                    case "ID":
-                        break;
-                    case "sortValue":
-                        break;
-                    default:
-                        <div class="form-group">
-                            <label>@(property.DisplayName ?? property.PropertyName)</label>
-                            @if (property.PropertyName == "isActive")
-                            {
-                   
-                                @Html.CheckBox(property.PropertyName)
-                            }
-                            else if (property.PropertyName == "SortValue")
-                            {
-                                @Html.Hidden(property.PropertyName)
-                            }
-                            else if (property.PropertyName == "User")
-                            {
-                                <h5><span> @Html.Label(Model.User.Firstname)</span></h5>
-                                <h5><span>@Html.Label(Model.User.Lastname)</span></h5>
-                                <h5><span> @Html.Label(Model.User.Email)</span></h5>
-                            }
-                            else if (property.PropertyName == "Date")
-                            {
-                                        @Html.TextBoxFor(m => m.Date, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })
-                                        }
-                                        else
-                                        {
-                                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
-                                        }
-                                        @Html.ValidationMessage(property.PropertyName)
-</div>
-                        break;
 
-                }
-            }
+            <ul>
+                <li>
+                    <div>
+                        
+                        <span class="welcome"> @Html.Hidden(a.ToString())</span>
+                        <span>@Html.HiddenFor(o => o.ID)</span>
+                        <h7>@Html.DisplayFor(c=>c.User.Firstname)</h7>&nbsp;
+                        <h7> @Html.DisplayFor(c=>c.User.Lastname)</h7>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h7 style="color:darkorange">@Html.DisplayFor(c => c.User.Email)</h7>
+                    </div>
+                    <br/>
+                </li>
+
+                <li>
+                    <div>
+                        @Html.LabelFor(u => u.Date)
+                        <span>@Html.TextBoxFor(m => m.Date, new { @class = "form-control jqueryui-marker-datepicker" })</span>
+                    </div>
+                    @Html.ValidationMessageFor(u => u.Date)
+                    <br />
+                </li>
+                
+                <li>
+                    <br />
+                    <div>
+                        @Html.LabelFor(m => m.NumberOfPackages)
+                        @Html.TextBoxFor(m => m.NumberOfPackages)
+                    </div>
+                    @Html.ValidationMessageFor(m => m.NumberOfPackages)
+                    <br />
+                </li>
+                <li>
+                    <div>
+                        @Html.LabelFor(m => m.CreditCard)
+                        @Html.TextBoxFor(m => m.CreditCard)
+                    </div>
+                    @Html.ValidationMessageFor(m => m.CreditCard)
+                    <br />
+                </li>
+                <li>
+                    <div>
+                        @Html.LabelFor(m => m.isActive)
+                        @Html.CheckBoxFor(m => m.isActive)
+                    </div>
+                    @Html.ValidationMessageFor(m => m.isActive)
+                    <br />
+                </li>
+                <li>
+                    <div>
+                        @Html.LabelFor(m => m.TotalCost)
+                        @Html.TextBoxFor(m => m.TotalCost)
+                    </div>
+                    @Html.ValidationMessageFor(m => m.TotalCost)
+                    <br />
+                </li>
+            </ul>
+
         </div>
         <div class="panel-footer" style="background-color:darkgrey">
-            <input type="submit" value="Save" class="btn btn-primary" />
+            <input type="submit" value="Save" class="btn btn-primary" style="margin-top:1em"/>
             @Html.ActionLink("Zurücksetzen", "OrderIndex", null, new { @class = "btn btn-default" })
 
         </div>

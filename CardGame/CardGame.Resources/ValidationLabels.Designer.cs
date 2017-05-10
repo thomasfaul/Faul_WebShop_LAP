@@ -70,6 +70,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sperrdatum.
+        /// </summary>
+        public static string BANDATE {
+            get {
+                return ResourceManager.GetString("BANDATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kreditkartenfirma.
         /// </summary>
         public static string CARD_COMPANY {
@@ -138,6 +147,15 @@ namespace CardGame.Resources {
         public static string CONFIRMATION {
             get {
                 return ResourceManager.GetString("CONFIRMATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kontostand.
+        /// </summary>
+        public static string CURRENCYBALANCE {
+            get {
+                return ResourceManager.GetString("CURRENCYBALANCE", resourceCulture);
             }
         }
         
@@ -250,6 +268,24 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Karten-Anzahl.
+        /// </summary>
+        public static string NUMBER_CARDS {
+            get {
+                return ResourceManager.GetString("NUMBER_CARDS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anzahl/Packs.
+        /// </summary>
+        public static string NUMBER_PACKAGES {
+            get {
+                return ResourceManager.GetString("NUMBER_PACKAGES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Passwort.
         /// </summary>
         public static string PASSWORD {
@@ -277,6 +313,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registrierungsdatum.
+        /// </summary>
+        public static string SIGN_IN_DATE {
+            get {
+                return ResourceManager.GetString("SIGN_IN_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Habe die Agb´s durchgelesen und akzeptiere sie.
         /// </summary>
         public static string TERMS_ACCEPT {
@@ -295,11 +340,29 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Summe.
+        /// </summary>
+        public static string TOTAL_COST {
+            get {
+                return ResourceManager.GetString("TOTAL_COST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kartentyp.
         /// </summary>
         public static string TYPE {
             get {
                 return ResourceManager.GetString("TYPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rolle.
+        /// </summary>
+        public static string USERROLE {
+            get {
+                return ResourceManager.GetString("USERROLE", resourceCulture);
             }
         }
         

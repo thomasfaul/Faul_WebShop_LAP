@@ -34,25 +34,22 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         #endregion
 
         #region DATE
-//        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
-//ErrorMessageResourceName = Constants.Validation.REQUIRED)]
-//        [DataType(DataType.Date)]
-//        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-//        [RegularExpression(@"^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d{4}$", ErrorMessageResourceType = typeof(ValidationMessages),
-//ErrorMessageResourceName = Constants.Validation.DATE)]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [Display(Name = Constants.Labels.DATE, ResourceType = typeof(ValidationLabels))]
         public DateTime Date { get; set; }
         #endregion
 
         #region isActive
-        [Display(Name = Constants.Labels.ISACTIVE)]
+        [Display(Name = Constants.Labels.ISACTIVE,ResourceType = typeof(ValidationLabels))]
         public bool isActive { get; set; }
         #endregion
 
         #region TotalCost
         [Required]
         [Range(0, 1000, ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.NUMBER)]
-        [Display(Name = Constants.Labels.NUMBER, ResourceType = typeof(ValidationLabels))]
+ErrorMessageResourceName = Constants.Validation.TOTAL_COST)]
+        [Display(Name = Constants.Labels.TOTAL_COST, ResourceType = typeof(ValidationLabels))]
         public int TotalCost { get; set; }
         #endregion
 
@@ -60,10 +57,12 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         [Required]
         [Range(0, 1000, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.NUMBER)]
-        [Display(Name = Constants.Labels.NUMBER, ResourceType = typeof(ValidationLabels))]
+        [Display(Name = Constants.Labels.NUMBER_PACKAGES, ResourceType = typeof(ValidationLabels))]
         public int NumberOfPackages { get; set; }
 
         #endregion
+
+
         [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
 

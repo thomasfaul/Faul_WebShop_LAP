@@ -23,7 +23,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult Index(int? sortValue)
+        public ActionResult Index(int? sortValue, string search)
         {
             log.Info("AdminController-Index");
 
@@ -50,6 +50,10 @@ namespace CardGame.Web.Controllers
                 {
                     sorted = SortHelper.FilterCardPacks(Cardpacks, (int)sortValue);
                 }
+                if (search != null)
+                {
+                    sorted = SortHelper.FilterCardPacks(Cardpacks,search);
+                }
                 return View(sorted);
             }
             catch (Exception e)
@@ -62,13 +66,65 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT A_USER INDEX
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        public ActionResult A_UserIndex(int? sortValue, string search)
+        {
+            log.Info("AdminController-Index");
+
+            try
+            {
+                List<AdminUserInfo> Users = new List<AdminUserInfo>();
+                var dbuser = UserManager.GetAllUser();
+                foreach (var user in dbuser)
+                {
+                    AdminUserInfo u = new AdminUserInfo();
+                    u.ID = user.ID;
+                    u.IsActive = user.IsActive ?? true;
+                    u.Firstname = user.FirstName ?? "n/a";
+                    u.Lastname = user.LastName ?? "n/a";
+                    u.Gamertag = user.GamerTag ?? "n/a";
+                    u.Email = user.Email ?? "n/a";
+                    u.CurrencyBalance = user.AmountMoney ?? 0;
+                    u.userrole = user.UserRole ?? "n/a";
+                    u.Pic = user.Avatar ;
+                    u.ImageMimeType = user.AvatarMimeType ?? "n/a";
+                    u.BanDate = user.BanDate ?? DateTime.MinValue;
+                    u.EntryDate = user.EntryDate ?? DateTime.MinValue;
+                    Users.Add(u);
+                }
+                var sorted = Users;
+                if (sortValue != null)
+                {
+                    sorted = SortHelper.FilterUsers(Users, (int)sortValue);
+                }
+                if (search != null)
+                {
+                    sorted = SortHelper.FilterUsers(Users, search);
+                }
+                return View(sorted);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-A_UserIndex", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
+
         #region ACTIONRESULT CARD INDEX
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult CardIndex(int? sortValue)
+        public ActionResult CardIndex(int? sortValue,string search)
         {
             log.Info("AdminController-CardIndex");
 
@@ -93,9 +149,13 @@ namespace CardGame.Web.Controllers
                     Cards.Add(c);
                 }
                     var sorted = Cards;
-                if (sortValue != null)
+                if (sortValue != null )
                 {
-                sorted= SortHelper.FilterCards(Cards,(int)sortValue);
+                    sorted= SortHelper.FilterCards(Cards,(int)sortValue);
+                }
+                if (search!=null )
+                {
+                    sorted = SortHelper.FilterCards(Cards, search);
                 }
                 
                 return View(sorted);
@@ -116,7 +176,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [Authorize]
-        public ActionResult OrderIndex(int? sortValue)
+        public ActionResult OrderIndex(int? sortValue, string search)
         {
             log.Info("AdminController-OrderIndex");
 
@@ -146,7 +206,10 @@ namespace CardGame.Web.Controllers
                 {
                     sorted = SortHelper.FilterOrders(Orders, (int)sortValue);
                 }
-
+                if (search != null)
+                {
+                    sorted = SortHelper.FilterOrders(Orders, search);
+                }
                 return View(sorted);
             }
             catch (Exception e)
@@ -160,6 +223,46 @@ namespace CardGame.Web.Controllers
         #endregion
 
 
+
+        #region VIEWRESULT A_USER EDIT
+        /// <summary>
+        /// Takes the UserId, gets the User
+        /// from DB,returns a ViewResult with user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Authorize]
+        public ViewResult A_UserEdit(int id)
+        {
+            log.Info("AdminController-AUSERE");
+            try
+            {
+                AdminUserInfo u = new AdminUserInfo();
+                var user = UserManager.Get_UserById(id);
+                u.ID = user.ID;
+                u.IsActive = user.IsActive ?? true;
+                u.Firstname = user.FirstName ?? "n/a";
+                u.Lastname = user.LastName ?? "n/a";
+                u.Gamertag = user.GamerTag ?? "n/a";
+                u.Email = user.Email ?? "n/a";
+                u.CurrencyBalance = user.AmountMoney ?? 0;
+                u.userrole = user.UserRole ?? "n/a";
+                u.Pic = user.Avatar;
+                u.ImageMimeType = user.AvatarMimeType ?? "n/a";
+                u.BanDate = user.BanDate ?? DateTime.MinValue;
+                u.EntryDate = user.EntryDate ?? DateTime.MinValue;
+                return View(u);
+            }
+            catch (Exception e)
+            {
+
+                Debugger.Break();
+                log.Error("AdminController-A_UserEdit", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
 
         #region VIEWRESULT EDIT
         /// <summary>
@@ -365,17 +468,17 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpPost]
-        public ActionResult OrderEdit(OrderInfo o, HttpPostedFileBase img = null)
+        public ActionResult OrderEdit(OrderInfo o)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var a= UserManager.Get_UserByEmail(o.User.Email);
-                    int b = a.ID;
+                    var d= UserManager.Get_UserByEmail(o.User.Email);
+                    int b = d.ID;
                     ShopManager.SaveOrder(b ,0,o.TotalCost,o.NumberOfPackages,o.CreditCard,o.isActive);
                     TempData["message"] = string.Format("{0} wurde gespeichert", o.ID.ToString());
-                    return RedirectToAction("CardIndex");
+                    return RedirectToAction("OrderIndex");
                 }
                 else
                 {
@@ -390,6 +493,58 @@ namespace CardGame.Web.Controllers
             }
         }
         #endregion
+
+        #region ACTIONRESULT A_USER EDIT II
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cp"></param>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost]
+        public ActionResult A_UserEdit(AdminUserInfo au, HttpPostedFileBase img = null)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (img != null)
+                    {
+                        au.ImageMimeType = img.ContentType;
+                        au.Pic = new byte[img.ContentLength];
+                        img.InputStream.Read(au.Pic, 0, img.ContentLength);
+                    }
+                    UserManager.SaveAUser(au.ID,
+                                             au.Firstname,
+                                             au.Lastname, 
+                                             au.Email, 
+                                             au.Gamertag, 
+                                             au.IsActive, 
+                                             au.Pic, 
+                                             au.ImageMimeType,
+                                             au.CurrencyBalance,
+                                             au.userrole
+                                             );
+                    TempData["message"] = string.Format("{0} wurde gespeichert", au.Lastname);
+                    return RedirectToAction("A_UserIndex");
+                }
+                else
+                {
+                    return View(au);
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-EditII", e);
+                return View("Error");
+            }
+        }
+        #endregion
+
+
+
 
         #region VIEWRESULT CREATE
         public ViewResult Create()
@@ -458,6 +613,22 @@ namespace CardGame.Web.Controllers
 
         }
         #endregion
+
+        #region ACTIONRESULT SET USER INACTIVE
+        [HttpPost]
+        public ActionResult SetUserInActive(int id)
+        {
+            var ok = UserManager.SetUserInActive(id);
+
+            if (ok == true)
+            {
+                TempData["message"] = string.Format("User Nr.{0} wurde inaktiv gesetzt", id);
+            }
+            return RedirectToAction("A_UserIndex");
+
+        }
+        #endregion
+
 
 
 

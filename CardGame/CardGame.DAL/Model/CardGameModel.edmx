@@ -28,8 +28,8 @@
           <Property Name="fktype" Type="int" Nullable="false" />
           <Property Name="fkclass" Type="int" />
           <Property Name="pic" Type="varbinary(max)" />
-          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
           <Property Name="isactive" Type="bit" />
+          <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tblclass">
           <Key>
@@ -74,8 +74,8 @@
           <Property Name="fkpack" Type="int" />
           <Property Name="totalcost" Type="int" />
           <Property Name="numberofpackagesbought" Type="int" />
-          <Property Name="isactive" Type="bit" />
           <Property Name="kindofpayment" Type="varchar" MaxLength="50" />
+          <Property Name="isactive" Type="bit" />
         </EntityType>
         <EntityType Name="tblpack">
           <Key>
@@ -108,6 +108,9 @@
           <Property Name="salt" Type="char" MaxLength="128" />
           <Property Name="userrole" Type="varchar" MaxLength="20" />
           <Property Name="pic" Type="varbinary(max)" />
+          <Property Name="entrydate" Type="datetime" />
+          <Property Name="bandate" Type="datetime" />
+          <Property Name="picmimetype" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbltype">
           <Key>
@@ -386,6 +389,9 @@
           <NavigationProperty Name="AllUserCardCollections" Relationship="Self.FK__tblcollec__fkper__0E6E26BF" FromRole="tblperson" ToRole="tblcollection" />
           <NavigationProperty Name="AllDecks" Relationship="Self.FK__tbldeck__fkperso__1DE57479" FromRole="tblperson" ToRole="tbldeck" />
           <NavigationProperty Name="AllOrders" Relationship="Self.FK__tblorder__fkpers__0A9D95DB" FromRole="tblperson" ToRole="tblorder" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="BanDate" Type="DateTime" Precision="3" />
+          <Property Name="AvatarMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CardType">
           <Key>
@@ -655,6 +661,9 @@
           <EntitySetMapping Name="AllUsers">
             <EntityTypeMapping TypeName="CardGameModel.User">
               <MappingFragment StoreEntitySet="tblperson">
+                <ScalarProperty Name="AvatarMimeType" ColumnName="picmimetype" />
+                <ScalarProperty Name="BanDate" ColumnName="bandate" />
+                <ScalarProperty Name="EntryDate" ColumnName="entrydate" />
                 <ScalarProperty Name="ID" ColumnName="idperson" />
                 <ScalarProperty Name="FirstName" ColumnName="firstname" />
                 <ScalarProperty Name="LastName" ColumnName="lastname" />

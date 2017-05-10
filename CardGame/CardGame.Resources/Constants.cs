@@ -22,7 +22,11 @@ namespace CardGame.Resources
             public const string NUMBER = "NUMBER";
             public const string ISACTIVE = "ISACTIVE";
             public const string DATE = "DATE";
-            
+            public const string NUMBER_CARDS = "NUMBER_CARDS";
+            public const string TOTAL_COST = "TOTAL_COST";
+            public const string NUMBER_PACKAGES = "NUMBER_PACKAGES";
+            public const string USERROLE= "USERROLE";
+            public const string CURRENCYBALANCE = "CURRENCYBALANCE";
         }
 
         public class Labels
@@ -54,6 +58,12 @@ namespace CardGame.Resources
             public const string TYPE = "TYPE";
             public const string CLASS = "CLASS";
             public const string DATE = "DATE";
+            public const string NUMBER_CARDS = "NUMBER_CARDS";
+            public const string TOTAL_COST = "TOTAL_COST";
+            public const string NUMBER_PACKAGES = "NUMBER_PACKAGES";
+            public const string USERROLE = "USERROLE";
+            public const string CURRENCYBALANCE = "CURRENCYBALANCE";
+            public const string BANDATE = "BANDATE";
 
 
         }

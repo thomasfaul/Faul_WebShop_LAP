@@ -27,8 +27,7 @@
           <ConnectorPoint PointX="4.53125" PointY="8.5" />
           <ConnectorPoint PointX="4.53125" PointY="7.2650262939453123" />
           <ConnectorPoint PointX="3.260416666666667" PointY="7.2650262939453123" />
-          <ConnectorPoint PointX="3.260416666666667" PointY="17.858284861416276" />
-          <ConnectorPoint PointX="2.25" PointY="5.8552864583333326" />
+          <ConnectorPoint PointX="2.25" PointY="4.9246955681264062" />
         </AssociationConnector>
         <AssociationConnector Association="CardGameModel.FK__tbldeckca__fkdec__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblorder__fkpack__0B91BA14" ManuallyRouted="false" />

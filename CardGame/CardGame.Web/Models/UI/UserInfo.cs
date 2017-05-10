@@ -18,8 +18,7 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
     public string Firstname { get; set; }
         #endregion
 
-
-        #region LASTNAME
+    #region LASTNAME
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.REQUIRED)]
     [StringLength(50,
@@ -41,7 +40,7 @@ ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
     public string Gamertag { get; set; }
     #endregion
 
-        #region EMAIL
+    #region EMAIL
         [Required(
    AllowEmptyStrings = false,
    ErrorMessageResourceType = typeof(ValidationMessages),

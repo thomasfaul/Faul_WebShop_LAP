@@ -120,6 +120,9 @@
   <data name="ATTACK" xml:space="preserve">
     <value>Attack</value>
   </data>
+  <data name="BANDATE" xml:space="preserve">
+    <value>Sperrdatum</value>
+  </data>
   <data name="CARD_COMPANY" xml:space="preserve">
     <value>Kreditkartenfirma</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="CONFIRMATION" xml:space="preserve">
     <value>Passwort bestätigen</value>
+  </data>
+  <data name="CURRENCYBALANCE" xml:space="preserve">
+    <value>Kontostand</value>
   </data>
   <data name="DATE" xml:space="preserve">
     <value>Datum</value>
@@ -180,6 +186,12 @@
   <data name="NUMBER" xml:space="preserve">
     <value>Anzahl</value>
   </data>
+  <data name="NUMBER_CARDS" xml:space="preserve">
+    <value>Karten-Anzahl</value>
+  </data>
+  <data name="NUMBER_PACKAGES" xml:space="preserve">
+    <value>Anzahl/Packs</value>
+  </data>
   <data name="PASSWORD" xml:space="preserve">
     <value>Passwort</value>
   </data>
@@ -189,14 +201,23 @@
   <data name="PRODUCT_NAME" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="SIGN_IN_DATE" xml:space="preserve">
+    <value>Registrierungsdatum</value>
+  </data>
   <data name="TERMS_ACCEPT" xml:space="preserve">
     <value>Habe die Agb´s durchgelesen und akzeptiere sie</value>
   </data>
   <data name="TEXT" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="TOTAL_COST" xml:space="preserve">
+    <value>Summe</value>
+  </data>
   <data name="TYPE" xml:space="preserve">
     <value>Kartentyp</value>
+  </data>
+  <data name="USERROLE" xml:space="preserve">
+    <value>Rolle</value>
   </data>
   <data name="WORTH" xml:space="preserve">
     <value>Wert</value>

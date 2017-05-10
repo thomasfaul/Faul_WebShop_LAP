@@ -88,6 +88,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte ein Datum eingeben.
+        /// </summary>
+        public static string DATE {
+            get {
+                return ResourceManager.GetString("DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte ein gültiges Datum eingeben.
         /// </summary>
         public static string DATUM {
@@ -151,6 +160,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte einen gültigen Wert eingeben.
+        /// </summary>
+        public static string NUMBER_CARDS {
+            get {
+                return ResourceManager.GetString("NUMBER_CARDS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Passwörter müssen gleich sein.
         /// </summary>
         public static string PASSWORD_EQUAL {
@@ -201,6 +219,15 @@ namespace CardGame.Resources {
         public static string TERMS {
             get {
                 return ResourceManager.GetString("TERMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte einen gültigen Wert eingeben.
+        /// </summary>
+        public static string TOTAL_COST {
+            get {
+                return ResourceManager.GetString("TOTAL_COST", resourceCulture);
             }
         }
     }

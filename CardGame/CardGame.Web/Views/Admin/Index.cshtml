@@ -9,6 +9,13 @@
 <div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
     <div class="panel-heading" style="background-color:darkgrey">
         <h2>Alle CardPacks</h2>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.TextBox("Search")
+                <input style="max-width:5em" type="submit" value="Suchen" />
+            </p>
+        }
         <center>
             <h5>@Html.ActionLink("Neues Kartenpaket erstellen", "Create", new { @class = "btn btn-default" })</h5>
            

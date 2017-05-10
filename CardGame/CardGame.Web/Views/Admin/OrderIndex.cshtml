@@ -6,9 +6,16 @@
 }
 
 
-<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
+<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;overflow-y:hidden">
     <div class="panel-heading" style="background-color:darkgrey;">
         <h2>Alle Bestellungen</h2>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.TextBox("Search")
+                <input style="max-width:5em"type="submit"value="Suchen"/>
+            </p>
+        }
         <center>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group " role="group" aria-label="First group">
@@ -23,8 +30,8 @@
 
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
-                                ReNR. &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:2em;background-color:transparent;">
+                                NR. &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
                                 <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
@@ -46,20 +53,20 @@
                     </th>
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
                                 Inhalt &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
                                 <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
                                 <li style="background-color:transparent">@Html.ActionLink("Absteigend", "OrderIndex", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
-                           </ul>
+                            </ul>
                         </div>
                     </th>
-                    
+
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
-                                Bestelldatum &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                Datum &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
                                 <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
@@ -72,7 +79,7 @@
 
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
                                 Betrag &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
@@ -83,8 +90,8 @@
                     </th>
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
-                                Zahlungsinfo &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                Zahlung &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
                                 <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "OrderIndex", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
@@ -94,7 +101,7 @@
                     </th>
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
                                 Vorname &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
@@ -105,7 +112,7 @@
                     </th>
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
                                 Nachname &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
@@ -116,7 +123,7 @@
                     </th>
                     <th>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
                                 Email &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                             </button>
                             <ul class="dropdown-menu" style="background-color:transparent">
@@ -140,19 +147,19 @@
                         <td class="text-right">@Html.CheckBoxFor(p => order.isActive, new { @disabled = "disabled" })</td>
                         <td class="text-right">@order.NumberOfPackages</td>
                         <td class="text-right">@order.Date</td>
-                        <td class="text-center">@order.TotalCost</td>
+                        <td class="text-center">@order.TotalCost &nbsp €;</td>
                         <td class="text-center">@order.CreditCard</td>
-                        <td class="text-center"style="color:paleturquoise">@order.User.Firstname</td>
-                        <td class="text-center"style="color:paleturquoise">@order.User.Lastname</td>
-                        <td class="text-center"style="color:paleturquoise">@order.User.Email</td>
-                        <td class="text-center"style="color:paleturquoise">@order.User.Gamertag</td>
+                        <td class="text-center" style="color:paleturquoise">@order.User.Firstname</td>
+                        <td class="text-center" style="color:paleturquoise">@order.User.Lastname</td>
+                        <td class="text-center" style="color:paleturquoise">@order.User.Email</td>
+
 
 
                         @using (Html.BeginForm("SetOrderInActive", "Admin"))
                         {
                             <td>
                                 @Html.Hidden("id", order.ID)
-                                <input type="submit" class="btn btn-default btn-xs" value="Löschen" />
+                                <input style="max-width:2em; margin-top:-0.5em; margin-left:-5em" type="submit" class="btn btn-default btn-xs" value="X" />
                             </td>
                         }
                     </tr>
@@ -162,7 +169,7 @@
         </div>
 
         <div class="panel-footer" style="background-color:darkgrey">
-            <center>:::</center>
+
         </div>
     </center>
 </div>

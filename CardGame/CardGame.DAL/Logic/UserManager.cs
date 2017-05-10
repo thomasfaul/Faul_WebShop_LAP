@@ -13,7 +13,7 @@ namespace CardGame.DAL.Logic
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static readonly Dictionary<int, string> CardClassNames;
         public static readonly Dictionary<int, string> CardTypeNames;
-      
+
 
         #region Constructor USERMANAGER
         static UserManager()
@@ -28,7 +28,7 @@ namespace CardGame.DAL.Logic
             {
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                
+
                     cardTypeList = db.AllCardTypes.ToList();
                     cardClassList = db.AllCardClasses.ToList();
                 }
@@ -47,7 +47,7 @@ namespace CardGame.DAL.Logic
             {
                 //Debugger.Break();
                 log.Error("Usermanager-Konstruktor", ex);
-               
+
             }
 
         }
@@ -127,7 +127,7 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                log.Error("GetUserByUserEmail-User hat sich die Agb´s angesehen",e);
+                log.Error("GetUserByUserEmail-User hat sich die Agb´s angesehen", e);
             }
 
             return dbUser;
@@ -203,12 +203,12 @@ namespace CardGame.DAL.Logic
                 if (dbPerson == null)
                 {
                     log.Error("Usermanager-Get_NumTotalCardsOwnedByEmail, User does not exist");
-                    throw new Exception ("User Does Not Exist");
+                    throw new Exception("User Does Not Exist");
                 }
                 numCards = 0;
                 foreach (var card in dbPerson.AllUserCardCollections)
                 {
-                    numCards += card.NumberOfCards?? 0;
+                    numCards += card.NumberOfCards ?? 0;
                 }
             }
             return numCards;
@@ -293,7 +293,7 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("Usermanager-Get_AllCardsByEmail",e);
+                log.Error("Usermanager-Get_AllCardsByEmail", e);
                 return null;
             }
         }
@@ -331,7 +331,7 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("Usermanager-Get_AllDecksByEmail",e);
+                log.Error("Usermanager-Get_AllDecksByEmail", e);
                 return null;
             }
         }
@@ -363,7 +363,7 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("UserManager-Update_BalanceByEmail",e);
+                log.Error("UserManager-Update_BalanceByEmail", e);
                 return false;
             }
         }
@@ -385,53 +385,169 @@ namespace CardGame.DAL.Logic
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
-            {
-                dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
-                if (dbPerson == null)
                 {
+                    dbPerson = db.AllUsers.Where(u => u.Email == email).FirstOrDefault();
+                    if (dbPerson == null)
+                    {
                         log.Error("UserManager-Add_CardsToCollectionByEmail, User does not exist");
                         throw new Exception("User Does Not Exist");
-                }
-                foreach (var card in cards)
-                {
-                    var userCC = (from coll in db.AllUserCardCollections
-                                  where coll.ID_Card == card.ID && coll.ID_User == dbPerson.ID
-                                  select coll)
-                                 .FirstOrDefault();
-                    if (userCC == null) //User does not own card, add to collection
-                    {
-                        var cc = new UserCardCollection();
-                        cc.Card = db.AllCards.Find(card.ID);
-                        cc.User = dbPerson;
-                        cc.NumberOfCards = 1;
-                        dbPerson.AllUserCardCollections.Add(cc);
-                        db.SaveChanges();
                     }
-                    else //User owns card, add to num
+                    foreach (var card in cards)
                     {
-                        userCC.NumberOfCards += 1;
-                        db.Entry(userCC).State = EntityState.Modified;
-                        db.SaveChanges();
+                        var userCC = (from coll in db.AllUserCardCollections
+                                      where coll.ID_Card == card.ID && coll.ID_User == dbPerson.ID
+                                      select coll)
+                                     .FirstOrDefault();
+                        if (userCC == null) //User does not own card, add to collection
+                        {
+                            var cc = new UserCardCollection();
+                            cc.Card = db.AllCards.Find(card.ID);
+                            cc.User = dbPerson;
+                            cc.NumberOfCards = 1;
+                            dbPerson.AllUserCardCollections.Add(cc);
+                            db.SaveChanges();
+                        }
+                        else //User owns card, add to num
+                        {
+                            userCC.NumberOfCards += 1;
+                            db.Entry(userCC).State = EntityState.Modified;
+                            db.SaveChanges();
+                        }
                     }
+                    db.SaveChanges();
+                    return true;
                 }
-                db.SaveChanges();
-                return true;
             }
-        }
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("UserManager-Add_CardsToCollectionByEmail,",e);
+                log.Error("UserManager-Add_CardsToCollectionByEmail,", e);
                 return false;
             }
-            
 
+
+        }
+        #endregion
+
+        #region SET USER INACTIVE
+        /// <summary>
+        /// Sets a user inactive
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool SetUserInActive(int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                User dbuser = db.AllUsers.SingleOrDefault(p => p.ID == id);
+                dbuser.IsActive = false;
+
+                db.Entry(dbuser).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return true;
+        }
+        #endregion
+
+        #region Get User by ID
+        /// <summary>
+        /// Takes a string with email of the User
+        /// returns a list of Person with the email
+        /// </summary>
+        /// <param name="uemail"></param>
+        /// <returns></returns>
+        public static User Get_UserById(int id)
+        {
+            log.Info("Usermanager-Get_UserbyID");
+            User dbPerson = null;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    dbPerson = db.AllUsers.Where(u => u.ID == id).FirstOrDefault();
+                    if (dbPerson == null)
+                    {
+                        throw new Exception("UserDoesNotExist");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Get_UserbyID", e);
+            }
+            return dbPerson;
+        }
+        #endregion
+
+        #region SAVE USER
+        /// <summary>
+        /// Saves a new User or Modifies a user 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="firstname"></param>
+        /// <param name="Lastname"></param>
+        /// <param name="email"></param>
+        /// <param name="gamertag"></param>
+        /// <param name="isactive"></param>
+        /// <param name="pic"></param>
+        /// <param name="currencybal"></param>
+        /// <param name="mimetypename"></param>
+        public static void SaveAUser(int id, string Firstname, string Lastname, string Email, string Gamertag, bool IsActive, byte[] Pic, string ImageMimeType, int CurrencyBalance, string userrole)
+        {
+            if (id == 0)
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    User dbuser = new User();
+                    dbuser.ID = id;
+                    dbuser.FirstName = Firstname;
+                    dbuser.LastName = Lastname;
+                    dbuser.Email = Email;
+                    dbuser.GamerTag = Gamertag;
+                    dbuser.IsActive = IsActive;
+                    dbuser.Avatar = Pic;
+                    dbuser.AvatarMimeType = ImageMimeType;
+                    dbuser.AmountMoney = CurrencyBalance;
+                    dbuser.UserRole = userrole;
+                    dbuser.EntryDate = DateTime.Now;
+
+                    db.AllUsers.Add(dbuser);
+
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    if (db.AllPacks != null)
+                    {
+                        User dbuser = db.AllUsers.SingleOrDefault(u => u.ID == id); ;
+                        dbuser.ID = id;
+                        dbuser.FirstName = Firstname;
+                        dbuser.LastName = Lastname;
+                        dbuser.Email = Email;
+                        dbuser.GamerTag = Gamertag;
+                        dbuser.IsActive = IsActive;
+                        dbuser.Avatar = Pic;
+                        dbuser.AvatarMimeType = ImageMimeType;
+                        dbuser.AmountMoney = CurrencyBalance;
+                        dbuser.UserRole = userrole;
+
+
+                        db.Entry(dbuser).State = EntityState.Modified;
+
+                        db.SaveChanges();
+
+                    }
+
+
+                }
+            }
         }
         #endregion
     }
 }
-
-
-    
-
-

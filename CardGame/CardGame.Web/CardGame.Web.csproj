@@ -193,6 +193,7 @@
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
+    <Compile Include="Models\UI\AdminUserInfo.cs" />
     <Compile Include="Models\UI\Register.cs" />
     <Compile Include="Models\UI\Login.cs" />
     <Compile Include="Models\UI\UserInfo.cs" />

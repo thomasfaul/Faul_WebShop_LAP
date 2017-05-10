@@ -86,6 +86,20 @@
     @Scripts.Render("~/bundles/jqueryui")
     @RenderSection("scripts", required: false)
     <script>
+        $(function () {
+            $(".jqueryui-marker-datepicker").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeYear: true,
+                shownOn: "button"
+            }).css("display", "inline-block")
+            .next("button").button({
+                icons: { primary: "ui-icon-calender" },
+                label: "Bitte ein Datum aussuchen",
+                text: false
+            });
+        });
+    </script>
+    <script>
     $('body').on('click','.option li',function(){
     var i = $(this).parents('.select').attr('id');
     var v = $(this).children().text();
