@@ -301,12 +301,22 @@ namespace CardGame.DAL.Logic
             log.Info("Usermanager-GetAllPacks");
             List<Purchase> Return = null;
 
-
+            try
+            {
             using (var db = new itin21_ClonestoneFSEntities())
             {
-                Return = db.AllPurchases.Include(u=>u.User).ToList();
+                Return = db.AllPurchases.Include(c=>c.User).ToList();
             }
             return Return;
+            }
+            catch (Exception e)
+            {
+
+                Debugger.Break();
+                log.Error("Usermanager-SaveOrder", e);
+                return Return;
+            }
+
         }
         #endregion
 

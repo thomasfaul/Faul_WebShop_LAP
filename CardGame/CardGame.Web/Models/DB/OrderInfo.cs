@@ -11,6 +11,7 @@ namespace CardGame.Web.Models.DB
 
 
         #region User
+        [Required]
         public UserInfo User { get; set; } 
         #endregion
 
@@ -33,12 +34,12 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         #endregion
 
         #region DATE
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.REQUIRED)]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-        [RegularExpression(@"^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d{4}$", ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.DATE)]
+//        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+//ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+//        [DataType(DataType.Date)]
+//        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+//        [RegularExpression(@"^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d{4}$", ErrorMessageResourceType = typeof(ValidationMessages),
+//ErrorMessageResourceName = Constants.Validation.DATE)]
         public DateTime Date { get; set; }
         #endregion
 
@@ -63,6 +64,8 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         public int NumberOfPackages { get; set; }
 
         #endregion
+        [HiddenInput(DisplayValue = false)]
+        public int? SortValue { get; set; }
 
 
     }

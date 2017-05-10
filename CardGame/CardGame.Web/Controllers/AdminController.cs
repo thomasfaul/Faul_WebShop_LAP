@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Web;
 using CardGame.Web.Controllers.HtmlHelpers;
 using CardGame.Web.Models.DB;
+using CardGame.Web.Models.UI;
 
 namespace CardGame.Web.Controllers
 {
@@ -123,7 +124,7 @@ namespace CardGame.Web.Controllers
             {
                 List<OrderInfo> Orders = new List<OrderInfo>();
                 var dborder = ShopManager.AdminGetAllOrders();
-                User user = new Models.User();
+                UserInfo user = new UserInfo();
                 foreach (var order in dborder)
                 {
                     OrderInfo o = new OrderInfo();
@@ -133,10 +134,11 @@ namespace CardGame.Web.Controllers
                     o.NumberOfPackages = order.NumberOfPackagesBought??0;
                     o.Date = order.OrderDateTime ?? DateTime.MinValue;
                     o.CreditCard = order.KindOfPayment ?? "n/a";
-                    o.User.Email = order.User.Email ?? "n/a";
-                    o.User.Firstname = order.User.FirstName ?? "n/a";
-                    o.User.Gamertag = order.User.GamerTag ?? "n/a";
-                    o.User.Lastname = order.User.LastName ?? "n/a";
+                    user.Email = order.User.Email ?? "n/a";
+                    user.Firstname = order.User.FirstName ?? "n/a";
+                    user.Gamertag = order.User.GamerTag ?? "n/a";
+                    user.Lastname = order.User.LastName ?? "n/a";
+                    o.User = user;
                     Orders.Add(o);
                 }
                 var sorted = Orders;
@@ -248,6 +250,7 @@ namespace CardGame.Web.Controllers
             try
             {
                 OrderInfo o = new OrderInfo();
+                UserInfo user = new UserInfo();
                 var order = ShopManager.GetOrderById(id);
                 o.ID = order.ID;
                 o.isActive = order.IsActive ?? true;
@@ -255,10 +258,11 @@ namespace CardGame.Web.Controllers
                 o.NumberOfPackages = order.NumberOfPackagesBought ?? 0;
                 o.Date = order.OrderDateTime ?? DateTime.MinValue;
                 o.CreditCard = order.KindOfPayment ?? "n/a";
-                o.User.Email = order.User.Email ?? "n/a";
-                o.User.Firstname = order.User.FirstName ?? "n/a";
-                o.User.Gamertag = order.User.GamerTag ?? "n/a";
-                o.User.Lastname = order.User.LastName ?? "n/a";
+                user.Email = order.User.Email ?? "n/a";
+                user.Firstname = order.User.FirstName ?? "n/a";
+                user.Gamertag = order.User.GamerTag ?? "n/a";
+                user.Lastname = order.User.LastName ?? "n/a";
+                o.User = user;
                 return View(o);
             }
             catch (Exception e)

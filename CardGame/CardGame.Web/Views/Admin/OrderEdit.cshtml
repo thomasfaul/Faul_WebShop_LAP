@@ -19,29 +19,41 @@
         <div class="panel-body">
             @Html.HiddenFor(o => o.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
                 {
-                    switch (property.PropertyName)
-                    {
-                        case "ID":
-                            break;
-                        default:
+                    case "ID":
+                        break;
+                    case "sortValue":
+                        break;
+                    default:
                         <div class="form-group">
                             <label>@(property.DisplayName ?? property.PropertyName)</label>
-                            @if (property.PropertyName == "IsActive")
+                            @if (property.PropertyName == "isActive")
                             {
+                   
                                 @Html.CheckBox(property.PropertyName)
                             }
                             else if (property.PropertyName == "SortValue")
                             {
                                 @Html.Hidden(property.PropertyName)
-
                             }
-                            else
+                            else if (property.PropertyName == "User")
                             {
-                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                                <h5><span> @Html.Label(Model.User.Firstname)</span></h5>
+                                <h5><span>@Html.Label(Model.User.Lastname)</span></h5>
+                                <h5><span> @Html.Label(Model.User.Email)</span></h5>
                             }
-                            @Html.ValidationMessage(property.PropertyName)
-                        </div>
+                            else if (property.PropertyName == "Date")
+                            {
+                                        @Html.TextBoxFor(m => m.Date, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })
+                                        }
+                                        else
+                                        {
+                                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                                        }
+                                        @Html.ValidationMessage(property.PropertyName)
+</div>
                         break;
 
                 }

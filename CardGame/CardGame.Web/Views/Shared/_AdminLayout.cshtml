@@ -15,7 +15,7 @@
     <header>
 
         <!-- NAVIGATION DEFAULT -->
-        <nav class="navbar navbar-default navbar-fixed-top" style="margin-top:5em;">
+        <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom:5em;margin-left:10%;margin-right:10%; width:80%">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
@@ -46,9 +46,10 @@
                                         Adminzone <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="@Url.Action("Index","Admin")">Index/Packs</a></li>
-                                        <li><a href="@Url.Action("CardIndex","Admin")">Index/Cards</a></li>
-                                        <li><a href="#">Karten Übersicht</a></li>
+                                        <li><a href="@Url.Action("Index","Admin")">Pakete-Übersicht</a></li>
+                                        <li><a href="@Url.Action("CardIndex","Admin")">Karten-Übersicht</a></li>
+                                        <li><a href="@Url.Action("OrderIndex","Admin")">Order-Übersicht</a></li>
+                                        <li><a href="@Url.Action("UserIndex","Admin")">User-Übersicht</a></li>
                                     </ul>
                                 </li>
                         }
@@ -60,7 +61,7 @@
 
 
 
-    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%;min-height:72em;">
+    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%; width:80%;min-height:72em;">
         @if (TempData["message"] != null)
         {
             <div class="alert alert-success">@TempData["message"]</div>

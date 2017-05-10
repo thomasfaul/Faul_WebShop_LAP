@@ -6,9 +6,6 @@ namespace CardGame.Web.Models.UI
 {
     public class UserInfo
     {
-
-    
-
     #region FIRSTNAME
     [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.REQUIRED)]

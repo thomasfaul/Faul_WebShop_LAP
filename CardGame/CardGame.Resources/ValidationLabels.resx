@@ -163,7 +163,7 @@
     <value>Bild</value>
   </data>
   <data name="ISACTIVE" xml:space="preserve">
-    <value>AKTIV (Hacken für gelöscht)</value>
+    <value>Aktiv(Hacken für gelöscht)</value>
   </data>
   <data name="ISMONEY" xml:space="preserve">
     <value>ist ein COIN-Packet?</value>
@@ -193,7 +193,7 @@
     <value>Habe die Agb´s durchgelesen und akzeptiere sie</value>
   </data>
   <data name="TEXT" xml:space="preserve">
-    <value>TEXT</value>
+    <value>Text</value>
   </data>
   <data name="TYPE" xml:space="preserve">
     <value>Kartentyp</value>

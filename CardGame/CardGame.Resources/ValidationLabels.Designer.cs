@@ -196,7 +196,7 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AKTIV (Hacken für gelöscht).
+        ///   Looks up a localized string similar to Aktiv(Hacken für gelöscht).
         /// </summary>
         public static string ISACTIVE {
             get {
@@ -286,7 +286,7 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TEXT.
+        ///   Looks up a localized string similar to Text.
         /// </summary>
         public static string TEXT {
             get {
