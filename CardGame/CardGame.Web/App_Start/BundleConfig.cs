@@ -23,6 +23,8 @@ namespace CardGame.Web
                       "~/Scripts/respond.js",
                       "~/Scripts/toastr.js",
                       "~/Scripts/myscript.js"));
+            bundles.Add(new ScriptBundle("~/bundles/d3").Include(
+                       "~/Scripts/d3/d3.js"));
 
             bundles.Add(new StyleBundle("~/Content/jqueryui") .Include(
                 "~/Content/themes/base/*.css"));

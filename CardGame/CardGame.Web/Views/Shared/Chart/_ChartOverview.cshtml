@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "_ChartOverview";
+}
+
+
+<div class="col-md-5"><span>USER</span>
+                                                                  
+    @Html.Partial("Chart/_TopFiveClients")                        
+</div>                                                            
+<div class="col-md-5"><span>SELLERS</span>
+                                                                  
+    @Html.Partial("Chart/_TopFiveSellers")                        
+</div>                                                            
+<div class="col-md-5"><span>WEEK</span>
+                                                                  
+    @Html.Partial("Chart/_SellingStatsWeek")                      
+</div>                                                            
+<div class="col-md-5"><span>MONTH</span>
+    @Html.Partial("Chart/_SellingStatsMonth")                     
+</div>                                                            
+                                                                  
+<div class="col-md-5"><span>STATS</span>
+    @Html.Partial("Chart/_SellingStatsMonth")                
+</div>

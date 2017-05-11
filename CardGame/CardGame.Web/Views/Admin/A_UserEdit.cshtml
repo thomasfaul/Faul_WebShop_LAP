@@ -4,10 +4,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>User bearbeiten</h2>
+
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <div class="panel-heading" style="background-color:darkgrey">
+    <h2>User bearbeiten</h2>
+    <div class="panel-heading" style="position:relative;width:65em; margin-left:-15em;">
         <h3>Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
     </div>
 
@@ -26,7 +27,7 @@
                     case "SortValue":
                         break;
                     default:
-                        <div class="form-group">
+                        <div class="form-group"style="">
                             <label>@(property.DisplayName ?? property.PropertyName)</label>
                             @if (property.PropertyName == "IsActive")
                             {
@@ -57,11 +58,14 @@
 
             </div>
         </div>
-        <div class="panel-footer" style="background-color:darkgrey">
-            <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Zurücksetzen", "A_UserIndex", null, new { @class = "btn btn-default" })
+        <div class="panel-footer" >
+            <div class="col-md-offset-6"><input type="submit" value="Save" class="btn btn-primary" /></div>
+           
+                @Html.ActionLink("Zurücksetzen", "A_UserIndex", null, new { @class = "btn btn-default" },new { @id = "zurück" })
 
-        </div>
+
+
+            </div>
     }
 </div>
 

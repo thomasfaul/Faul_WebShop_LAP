@@ -6,16 +6,19 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Karte bearbeiten</h2>
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <div class="panel-heading" style="background-color:darkgrey">
+    <h3>Karte bearbeiten</h3>
+
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
         <h3>Bearbeite @Model.Name</h3>
+        <div id="cardi">@Html.Partial("_ShowCardImageR", @Model)</div>
     </div>
 
     @using (Html.BeginForm("CardEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="panel-body">
+
             @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
                 {
@@ -39,7 +42,7 @@
                             else if (property.PropertyName == "SortValue")
                             {
                                 @Html.Hidden(property.PropertyName)
-                             
+
                             }
                             else
                             {
@@ -61,15 +64,13 @@
 
                     <span class='label label-info' id="upload-file-info"></span>
                 </div>
-
-                @Html.Partial("_ShowCardImageR", @Model)
-
-            </div>
-        </div>
-        <div class="panel-footer" style="background-color:darkgrey">
-            <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Zurücksetzen", "CardIndex", null, new { @class = "btn btn-default" })
-
+                <div class="panel-footer " style="background-color:transparent;">
+                    <div class="col-md-10" style="margin-top:8em;float:left;">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        @Html.ActionLink("Zurücksetzen", "CardIndex", null, new { @class = "btn btn-default" })
+                    </div>
+                </div>
+             </div>
         </div>
     }
 </div>

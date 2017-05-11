@@ -15,7 +15,7 @@
     <header>
 
         <!-- NAVIGATION DEFAULT -->
-        <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom:5em;margin-left:10%;margin-right:10%; width:80%">
+        <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom:5em;margin-left:5%;margin-right:5%; width:90%;margin-top:3em;margin-bottom:5em">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
@@ -61,25 +61,26 @@
 
 
 
-    <div class="container maincontainer" style="padding:3em;background-image:none;font-size:larger;margin-left:10%;margin-right:10%; width:80%;min-height:72em;">
+    <div class="container maincontainer" style="background-image:none;font-size:larger;margin-left:2%; width:96%;min-height:60em">
         @if (TempData["message"] != null)
         {
             <div class="alert alert-success">@TempData["message"]</div>
         }
-
-
-
-
-
         <div class="row">
             <!-- PARTIAL VIEW -->
-            @RenderBody()
 
+       
+
+                <div class="col-md-12"style="margin-bottom:-8em;margin-left:7em;margin-top:-5em">
+                    @Html.Partial("Chart/_ChartOverview")
+                </div>
+
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+
+            </div>
         </div>
-
-        
-    </div>
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

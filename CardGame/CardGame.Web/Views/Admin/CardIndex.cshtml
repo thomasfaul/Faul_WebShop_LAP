@@ -6,8 +6,8 @@
 }
 
 
-<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;">
-    <div class="panel-heading" style="background-color:darkgrey;">
+<div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;border:transparent">
+    <div class="panel-heading" style="background-color:darkgrey; position:fixed; margin-left:7.5em;">
         <h2>Alle Karten</h2>
         @using (Html.BeginForm())
         {
@@ -28,8 +28,8 @@
     </div>
     <center>
         <div class="panel-body">
-            <table class="table-hover table-condensed table-bordered" style="margin-top:0.5em">
-                <tr>
+            <table class="table-hover table-condensed table-bordered" style="margin-top:13em">
+                <tr style="background-color:blueviolet;border:none">
                     <th>Sortieren =></th>
 
                     <th>
@@ -112,7 +112,7 @@
                     
                     <th class="text-center">Löschen</th>
 
-                </tr>
+                </trstyle="background-color:blueviolet">
                 @foreach (var card in Model)
                 {
                     <tr>
@@ -139,7 +139,7 @@
 
         </div>
 
-        <div class="panel-footer" style="background-color:darkgrey">
+        <div class="panel-footer" >
             <center><h3>@Html.ActionLink("Neue Karte hinzufügen", "CardCreate", new { @class = "btn btn-default" })</h3></center>
         </div>
     </center>

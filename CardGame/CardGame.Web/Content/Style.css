@@ -985,3 +985,153 @@ input[type="file"] {
 .select:last-child >.btn {border-top-left-radius:5px; border-bottom-left-radius:5px;}
 .selected {padding-right:10px;}
 .option {width:100%;}
+
+
+
+
+ /*-------------------------------------Dropdown---------------------------------------*/ 
+.col-md-5
+{
+    min-height:14em;
+    background-color:blueviolet;
+    margin-left:0.5em;
+    max-width:2em;
+    margin-right:2em;
+    border-style: ridge;
+    border-width: 0.5em 0 0.50em;
+    border-radius: 2.0em;
+    margin-top:12em;
+    padding-bottom:0em;
+    transform:translate();
+    transition-duration:2s;
+}
+.col-md-5:nth-child(2n+1) {
+    margin-top:13em
+}
+.col-md-5:hover
+{   
+    margin-top:10em;
+    max-width:90em;
+    z-index:9999;
+    position:relative;
+    transition:ease-in-out;
+    transform:translate();
+    transition-duration:3s;
+}
+@keyframes col-md-5 {
+	0% {
+		width: 100%;
+		border-width: 1em;
+		margin-left: -0em;
+	}
+
+	10% {
+		width: 110%;
+		border-width: 1.2em;
+		margin-left: -1em;
+	}
+
+	25% {
+		width: 115%;
+		border-width: 1.1em;
+		margin-left: -2em;
+	}
+
+	50% {
+		width: 130%;
+		border-width: 1.1em;
+		margin-left: -3em;
+	}
+
+	70% {
+		width: 115%;
+		border-width: 1.3em;
+		margin-left: -4em;
+	}
+
+	80% {
+		width: 110%;
+		border-width: 1.1em;
+		margin-left: -2em;
+	}
+
+	100% {
+		width: 100%;
+		border-width: 1em;
+		margin-left: -1em;
+	}
+}
+.panel-heading
+{
+        background-color:darkgrey;
+        position:fixed;
+        margin-left:1em;
+        min-width:50em;
+        border-width: 0.5em 0 0.50em;
+        border-radius: 1.0em;
+}
+input#search {
+    max-width:8em;
+}
+ul.dropdown-menu {
+    background-color:transparent !important;
+}
+.panel-footer {
+background-color:transparent;
+min-height:5em;
+margin-left:8em;
+margin-right:10em;
+}
+#Firstname {
+    width:15em
+}
+#Lastname {
+    width:15em
+}
+#Gamertag {
+    width:15em
+}
+#CurrencyBalance {
+    width:15em
+}
+#userrole {
+ width:15em
+}
+#EntryDate {
+     width:15em
+}
+#BanDate {
+     width:15em
+}
+label.custom-file-upload {
+    margin-left:13em !important;
+    margin-top:1em;
+}
+#Name {
+     width:15em
+}
+#Mana {
+     width:15em
+}
+#Attack {
+     width:15em
+}
+#Life {
+     width:15em
+}
+#Flavor {
+     width:15em;
+     float:right;
+     max-height:2.5em;
+     overflow:scroll;
+}
+#Type {
+     width:15em
+}
+#Minion {
+     width:15em;
+     float:right;
+}
+#cardi {
+    max-width:8em;
+}
