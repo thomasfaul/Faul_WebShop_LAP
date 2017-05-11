@@ -362,6 +362,9 @@
     <Content Include="Views\Shared\_ShowCardImageR.cshtml" />
     <Content Include="Views\Admin\OrderIndex.cshtml" />
     <Content Include="Views\Admin\OrderEdit.cshtml" />
+    <Content Include="Views\Admin\A_UserEdit.cshtml" />
+    <Content Include="Views\Admin\A_UserIndex.cshtml" />
+    <Content Include="Views\Shared\_ShowUserImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

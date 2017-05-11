@@ -88,6 +88,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie einen gültigen Wert ein.
+        /// </summary>
+        public static string CURRENCYBALANCE {
+            get {
+                return ResourceManager.GetString("CURRENCYBALANCE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte ein Datum eingeben.
         /// </summary>
         public static string DATE {
@@ -228,6 +237,15 @@ namespace CardGame.Resources {
         public static string TOTAL_COST {
             get {
                 return ResourceManager.GetString("TOTAL_COST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie eine gültige Rolle ein: (player,admin).
+        /// </summary>
+        public static string USERROLE {
+            get {
+                return ResourceManager.GetString("USERROLE", resourceCulture);
             }
         }
     }

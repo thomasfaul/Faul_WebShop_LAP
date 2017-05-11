@@ -1,0 +1,16 @@
+﻿
+@using CardGame.Web.Models.UI;
+
+@model AdminUserInfo
+
+
+@if (@Model.Pic != null)
+{
+    var base64 = Convert.ToBase64String(@Model.Pic);
+    var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+    <img class="cardpic" src="@imgSrc" />
+}
+else
+{
+    <div class="form-control-static">Noch kein Bild vorhanden</div>
+}

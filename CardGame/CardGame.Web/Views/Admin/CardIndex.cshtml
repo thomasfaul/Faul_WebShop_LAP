@@ -56,22 +56,24 @@
                         </div>
                     </th>
                     <th>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
-                            Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                        </button>
-                        <ul class="dropdown-menu" style="background-color:transparent">
-                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
-                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
-                            <li style="background-color:transparent">@Html.ActionLink("Hero", "CardIndex", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
-                            <li style="background-color:transparent">@Html.ActionLink("Minion", "CardIndex", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
-                            <li style="background-color:transparent">@Html.ActionLink("Spell", "CardIndex", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
-                            <li style="background-color:transparent">@Html.ActionLink("Weapon", "CardIndex", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
-                        </ul>
-                    </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
+                                Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                            </button>
+                            <ul class="dropdown-menu" style="background-color:transparent">
+                                <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "CardIndex", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Absteigend", "CardIndex", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Hero", "CardIndex", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Minion", "CardIndex", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Spell", "CardIndex", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
+                                <li style="background-color:transparent">@Html.ActionLink("Weapon", "CardIndex", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
+                            </ul>
+                        </div>
                     </th>
-                    <th class="text-right">InfoText</th>
                     <th>
+                        InfoText
+                    </th>
+                      <th>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;">
                                 Mana &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>

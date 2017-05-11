@@ -190,16 +190,28 @@ namespace CardGame.Web.Controllers.HtmlHelpers
                     sorted = Users.OrderByDescending(c => c.EntryDate).ToList();
                     break;
                 case 13:
-                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderBy(c => c.BanDate).ToList();
                     break;
                 case 14:
-                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderByDescending(c => c.BanDate).ToList();
                     break;
                 case 15:
-                    sorted = Users.Where(c => c.userrole== "admin").ToList();
+                    sorted = Users.OrderBy(c => c.userrole).ToList();
                     break;
                 case 16:
-                    sorted = Users.Where(c => c.userrole == "player").ToList();
+                    sorted = Users.OrderByDescending(c => c.userrole).ToList();
+                    break;
+                case 17:
+                    sorted = Users.Where(c => c.userrole=="player").ToList();
+                    break;
+                case 18:
+                    sorted = Users.Where(c => c.userrole == "admin").ToList();
+                    break;
+                case 19:
+                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    break;
+                case 20:
+                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
                     break;
                 default:
                     sorted = Users.ToList();
@@ -253,16 +265,28 @@ namespace CardGame.Web.Controllers.HtmlHelpers
                     sorted = Users.OrderByDescending(c => c.EntryDate).ToList();
                     break;
                 case 13:
-                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderBy(c => c.BanDate).ToList();
                     break;
                 case 14:
-                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderByDescending(c => c.BanDate).ToList();
                     break;
                 case 15:
-                    sorted = Users.Where(c => c.userrole == "admin").ToList();
+                    sorted = Users.OrderBy(c => c.userrole).ToList();
                     break;
                 case 16:
+                    sorted = Users.OrderByDescending(c => c.userrole).ToList();
+                    break;
+                case 17:
                     sorted = Users.Where(c => c.userrole == "player").ToList();
+                    break;
+                case 18:
+                    sorted = Users.Where(c => c.userrole == "admin").ToList();
+                    break;
+                case 19:
+                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    break;
+                case 20:
+                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
                     break;
                 default:
                     sorted = Users.ToList();

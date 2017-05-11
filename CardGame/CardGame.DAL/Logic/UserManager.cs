@@ -529,7 +529,7 @@ namespace CardGame.DAL.Logic
                         dbuser.ID = id;
                         dbuser.FirstName = Firstname;
                         dbuser.LastName = Lastname;
-                        dbuser.Email = Email;
+                        //dbuser.Email = Email;
                         dbuser.GamerTag = Gamertag;
                         dbuser.IsActive = IsActive;
                         dbuser.Avatar = Pic;

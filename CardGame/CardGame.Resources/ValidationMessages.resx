@@ -126,6 +126,9 @@
   <data name="CARD_SECURITY_N" xml:space="preserve">
     <value>Bitte einen korrekten Sicherheitscode eintragen</value>
   </data>
+  <data name="CURRENCYBALANCE" xml:space="preserve">
+    <value>Bitte geben Sie einen gültigen Wert ein</value>
+  </data>
   <data name="DATE" xml:space="preserve">
     <value>Bitte ein Datum eingeben</value>
   </data>
@@ -173,5 +176,8 @@
   </data>
   <data name="TOTAL_COST" xml:space="preserve">
     <value>Bitte einen gültigen Wert eingeben</value>
+  </data>
+  <data name="USERROLE" xml:space="preserve">
+    <value>Bitte geben Sie eine gültige Rolle ein: (player,admin)</value>
   </data>
 </root>

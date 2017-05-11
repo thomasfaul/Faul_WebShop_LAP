@@ -47,22 +47,23 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         #endregion
 
         #region EMAIL
-        [Required(
-   AllowEmptyStrings = false,
-   ErrorMessageResourceType = typeof(ValidationMessages),
-   ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+   //     [Required(
+   //AllowEmptyStrings = false,
+   //ErrorMessageResourceType = typeof(ValidationMessages),
+   //ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [StringLength(50,
     ErrorMessageResourceType = typeof(ValidationMessages),
    ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
-        [RegularExpression(".+@.+\\..+", ErrorMessageResourceType = typeof(ValidationMessages),
+        [EmailAddress(ErrorMessageResourceType = typeof(ValidationMessages),
     ErrorMessageResourceName = Constants.Validation.EMAIL)]
         [Display(Name = Constants.Labels.EMAIL_LABEL, ResourceType = typeof(ValidationLabels))]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         #endregion
 
         #region CURRENCYBALANCE
-        [Required]
-        [Range(0, 20, ErrorMessageResourceType = typeof(ValidationMessages),
+        //[Required]
+        [Range(0, 10000, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.CURRENCYBALANCE)]
         [Display(Name = Constants.Labels.CURRENCYBALANCE, ResourceType = typeof(ValidationLabels))]
         public int CurrencyBalance { get; set; }
@@ -94,19 +95,20 @@ ErrorMessageResourceName = Constants.Validation.USERROLE)]
 
         #region SORTVALUE
         [HiddenInput(DisplayValue = false)]
+        [Display(Name ="SortValue")]
         public int? SortValue { get; set; }
         #endregion
 
         #region ENTRYDATE
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+//        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+//ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [Display(Name = Constants.Labels.DATE, ResourceType = typeof(ValidationLabels))]
         public DateTime EntryDate { get; set; }
         #endregion
 
         #region BANDATE
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+//        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+//ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         [Display(Name = Constants.Labels.BANDATE, ResourceType = typeof(ValidationLabels))]
         public DateTime BanDate { get; set; }
         #endregion
