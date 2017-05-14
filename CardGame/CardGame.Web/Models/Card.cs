@@ -57,7 +57,7 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
 
         #endregion
 
-
+        
         #region ISACTIVE
 
         [Display(Name = Constants.Labels.ISACTIVE)]
@@ -89,5 +89,7 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
        
         [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
+
+        public int OwnerId { get; set; }
     }
 }

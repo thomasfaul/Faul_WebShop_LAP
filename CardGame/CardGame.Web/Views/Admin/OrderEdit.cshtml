@@ -7,28 +7,28 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Bestellung bearbeiten</h2>
+<h3>Bestellung bearbeiten</h3>
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <div class="panel-heading" style="background-color:darkgrey">
-        <h5>Bearbeite Bestellung Nummer @Model.ID</h5>
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
+        <h3 style="position:absolute">Bearbeite Bestellung Nummer @Model.ID</h3>
     </div>
-@{int a = 1;}
-    @using (Html.BeginForm("OrderEdit", "Admin" ))
+    @{int a = 1;}
+    @using (Html.BeginForm("OrderEdit", "Admin"))
     {
         <div class="panel-body">
 
             <ul>
                 <li>
                     <div>
-                        
+
                         <span class="welcome"> @Html.Hidden(a.ToString())</span>
                         <span>@Html.HiddenFor(o => o.ID)</span>
-                        <h7>@Html.DisplayFor(c=>c.User.Firstname)</h7>&nbsp;
-                        <h7> @Html.DisplayFor(c=>c.User.Lastname)</h7>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h7>@Html.DisplayFor(c => c.User.Firstname)</h7>&nbsp;
+                        <h7> @Html.DisplayFor(c => c.User.Lastname)</h7>&nbsp;&nbsp;&nbsp;&nbsp;
                         <h7 style="color:darkorange">@Html.DisplayFor(c => c.User.Email)</h7>
                     </div>
-                    <br/>
+                    <br />
                 </li>
 
                 <li>
@@ -39,7 +39,7 @@
                     @Html.ValidationMessageFor(u => u.Date)
                     <br />
                 </li>
-                
+
                 <li>
                     <br />
                     <div>
@@ -76,11 +76,12 @@
             </ul>
 
         </div>
-        <div class="panel-footer" style="background-color:darkgrey">
-            <input type="submit" value="Save" class="btn btn-primary" style="margin-top:1em"/>
-            @Html.ActionLink("Zurücksetzen", "OrderIndex", null, new { @class = "btn btn-default" })
-
-        </div>
+        <div class="panel-footer" style="background-color:transparent">
+            <div class="col-md-10" style="margin-top:8em;float:left;width:32em;margin-top:1em">
+                <input type="submit" value="Save" class="btn btn-default" style="margin-top:1em" />
+                @Html.ActionLink("Zurück", "OrderIndex", null, new { @class = "btn btn-default" })
+                </div>
+            </div>
     }
 </div>
 

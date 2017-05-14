@@ -26,7 +26,85 @@
         </div>
     @*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
 
-    <div class="col col-md-6 cardcol "id="cardoverviewouter">
+
+<nav class="navbar  navbar-fixed-top navbar-nav"id="topbarfilter">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color:darkorange">Filter die Karten nach:</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1.4em;font-family:Xena">
+                            Namen &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Overview", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Overview", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1.4em;font-family:Xena">
+                           Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent;">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Overview", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Overview", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Hero", "Overview", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Minion", "Overview", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Spell", "Overview", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Weapon", "Overview", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1.4em;font-family:Xena">
+                           Mana &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Overview", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Overview", new { SortValue = 12 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1.4em;font-family:Xena">
+                            Attack &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Overview", new { SortValue = 13 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Overview", new { SortValue = 14 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1.4em;font-family:Xena">
+                            Life &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="background-color:transparent">
+                            <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Overview", new { SortValue = 15 }, new { @class = "btn dropdown-toggle" })</li>
+                            <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Overview", new { SortValue = 16 }, new { @class = "btn dropdown-toggle" })</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    @using (Html.BeginForm())
+                    {
+                        <p>
+                            @Html.TextBox("Search")
+                            <input style="max-width:5em" type="submit" value="Suchen" />
+                        </p>
+                    }
+                </li>
+            </ul>
+        </div>
+</nav>
+    <div class="col col-md-6 cardcol "id="cardoverviewouter"style="margin-left:-8em;">
         <div class="card-deck-wrapper col-md-12 cardcol"id="cardoverview">
             <div class="card-deck cardcol" id="cardoverviewinner">
                 @foreach (var card in Model.Cards)
@@ -40,11 +118,14 @@
                         }
                         else
                         {
-                            <div class="card-header ">@Html.DisplayText("no Picture found")</div>
+                            <img class="cardpic"src = "~/Content/images/Cardpacks/2.png" />
+
+
                         }
                         <div class="card-title ">
                             <h3 class="cardtitle">@Html.DisplayFor(c => card.Name)</h3>
                         </div>
+                        
                         <div class="card-footer " >
                             <h5>@Html.ActionLink("Details", "Details", new { id = card.ID })</h5>
                         </div>

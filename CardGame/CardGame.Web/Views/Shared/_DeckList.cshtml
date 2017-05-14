@@ -14,7 +14,7 @@
             <h3>Deine Karten</h3>
             @foreach (var card in Model)
             {
-                <div class="col-md-2"id="decklistcard">
+                <div class="col-md-2"id="decklistcard" style="width:12em;height:26em">
                     @if (card.Pic != null)
                     {
                         var base64 = Convert.ToBase64String(card.Pic);

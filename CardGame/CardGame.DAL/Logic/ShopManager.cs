@@ -291,6 +291,39 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
+        #region SAVE ORDER III
+        public static bool SaveOrder( int orderid, int totalsum, int numberofpacks, string creditcard, bool isactive,DateTime orderdate)
+        {
+            log.Info("SaveOrder");
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                   
+                    
+                    Purchase order = db.AllPurchases.SingleOrDefault(p => p.ID == orderid);
+                    order.KindOfPayment= creditcard;
+                    order.NumberOfPackagesBought = numberofpacks;
+                    order.TotalCost = totalsum;
+                    order.OrderDateTime = orderdate;
+                    order.IsActive = isactive;
+                 
+                    db.Entry(order).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Usermanager-SaveOrderIII", e);
+                return false;
+            }
+
+        }
+        #endregion
+
+
         #region ADMIN: GET ALL Orders
         /// <summary>
         /// Gets all Packs from the Database

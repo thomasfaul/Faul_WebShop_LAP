@@ -1,5 +1,6 @@
 ﻿using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
+using CardGame.Web.Controllers.HtmlHelpers;
 using CardGame.Web.Models.DB;
 using log4net;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace CardGame.Web.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ActionResult EditDeck(int id)
+        public ActionResult EditDeck(int id, int? sortValue, string search)
         {
             log.Info("Deckcontroller-Editdeck");
 
@@ -33,13 +34,21 @@ namespace CardGame.Web.Controllers
                 card.Name = cc.Name;
                 card.Life = cc.Life;
                 card.Mana = cc.ManaCost;
-                card.Type = CardManager.GetCardTypeById(cc.CardType.ID);
+                card.Type = UserManager.CardTypeNames[cc.ID_CardType];
                 card.Pic = cc.Image;
-                card.IsActive = (bool)cc.IsActive;
+                card.IsActive = cc.IsActive??true;
 
                 db.deckcards.Add(card);
-            } 
-            
+            }
+            if (sortValue != null)
+            {
+                db.deckcards = SortHelper.FilterCards(db.deckcards, (int)sortValue);
+            }
+            if (search != null)
+            {
+                db.deckcards = SortHelper.FilterCards(db.deckcards, search);
+            }
+
 
             var dbCardList = UserManager.Get_AllCardsByEmail(User.Identity.Name);
 
@@ -54,7 +63,7 @@ namespace CardGame.Web.Controllers
                 card.Type = UserManager.CardTypeNames[cc.ID_CardType];
                 //card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
                 card.Pic = cc.Image;
-                card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
+                //card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
 
                 db.collectioncards.Add(card);
             }
@@ -64,9 +73,16 @@ namespace CardGame.Web.Controllers
                 int index = db.collectioncards.FindIndex(i => i.Name == deckCard.Name);
                 db.collectioncards.RemoveAt(index);
             }
-
-            db.collectioncards.Sort();
-            db.deckcards.Sort();
+            if (sortValue != null)
+            {
+                db.collectioncards = SortHelper.FilterCards(db.collectioncards, (int)sortValue);
+            }
+            if (search != null)
+            {
+                db.collectioncards = SortHelper.FilterCards(db.collectioncards, search);
+            }
+            //db.collectioncards.Sort();
+            //db.deckcards.Sort();
 
             TempData["DeckBuilder"] = db;
             return View(db);

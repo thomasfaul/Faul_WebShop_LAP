@@ -4,6 +4,7 @@ using CardGame.Web.Models;
 using CardGame.DAL.Logic;
 using System.Linq;
 using log4net;
+using CardGame.Web.Controllers.HtmlHelpers;
 
 namespace CardGame.Web.Controllers
 {
@@ -24,7 +25,7 @@ namespace CardGame.Web.Controllers
         /// <param name="cardclass"></param>
         /// <param name="page"></param>
         /// <returns></returns>
-        public ActionResult Overview( int page = 1)
+        public ActionResult Overview(int? sortValue , string search,int page = 1)
         {
             log.Info("CardController-Overview");
             List<Web.Models.Card> CardList = new List<Web.Models.Card>();
@@ -41,15 +42,25 @@ namespace CardGame.Web.Controllers
                 card.Life = c.Life;
                 card.Pic = c.Image;
                 card.Flavor = c.FlavorText;
-                card.IsActive = (bool)c.IsActive;
-                card.Type = CardManager.GetCardTypeById(c.CardType.ID);
+                card.IsActive = c.IsActive ?? true ;
+                card.Type = CardManager.GetCardTypeById(c.ID_CardType);
                 CardList.Add(card);
             }
+
+            if (sortValue!=null)
+            {
+                CardList = SortHelper.FilterCards(CardList, (int)sortValue);
+            }
+            if (search != null)
+            {
+                CardList = SortHelper.FilterCards(CardList, search);
+            }
+
+
             CardsListViewModel model = new CardsListViewModel()
             {
-                Cards = CardList.OrderBy(c => c.ID)
-               
-            .Where(p => p.Type == null )
+                Cards = CardList/*.OrderBy(c => c.ID)*/
+            //.Where(p => p.Type != null )
                            .Skip((page - 1) * Pagesize)
                            .Take(Pagesize),
                 PagingInfo = new PageInfo

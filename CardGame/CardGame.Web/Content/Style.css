@@ -915,9 +915,10 @@ font-size:larger;
 }
 
 .offsetlinks {
-    position:absolute;
-    margin-left: 60em;
-    font-size:0.5em;  
+    position:absolute !important;
+    margin-left: 80em;
+    font-size:0.5em;
+     
 }
 #adpic {
 transform:rotate(-25deg) ;
@@ -1122,7 +1123,7 @@ label.custom-file-upload {
 #Flavor {
      width:15em;
      float:right;
-     max-height:2.5em;
+     max-height:2.6em;
      overflow:scroll;
 }
 #Type {
@@ -1134,4 +1135,30 @@ label.custom-file-upload {
 }
 #cardi {
     max-width:8em;
+}
+#PackName {
+     max-width:15em;
+}
+#NumCards {
+     max-width:15em;
+}
+#PackPrice {
+     max-width:15em;
+}
+#Worth{
+     max-width:15em;
+}
+#Date{
+     max-width:21.5em;
+}
+#topbarfilter {
+    margin-top:2em;
+    max-width:80%;
+    background-color: rgba(189, 102, 49, 0.60);
+    border-color: rgba(247, 179, 80, 0);
+    border-style: ridge;
+    border-width: 0 0 0.50em;
+    border-radius: 1.0em;
+    padding-left:6%;
+    margin-left:7% !important; 
 }

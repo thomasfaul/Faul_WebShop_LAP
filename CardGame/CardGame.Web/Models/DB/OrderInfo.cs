@@ -28,7 +28,6 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         #endregion
 
         #region ID
-        [Required]
         [HiddenInput(DisplayValue = false)]
         public int ID { get; set; }
         #endregion

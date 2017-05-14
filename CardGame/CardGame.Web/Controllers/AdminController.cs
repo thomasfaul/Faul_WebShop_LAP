@@ -472,11 +472,11 @@ namespace CardGame.Web.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
+                if (o.NumberOfPackages!=0)
                 {
-                    var d= UserManager.Get_UserByEmail(o.User.Email);
-                    int b = d.ID;
-                    ShopManager.SaveOrder(b ,0,o.TotalCost,o.NumberOfPackages,o.CreditCard,o.isActive);
+
+
+                    ShopManager.SaveOrder(o.ID,o.TotalCost,o.NumberOfPackages,o.CreditCard,o.isActive,o.Date);
                     TempData["message"] = string.Format("{0} wurde gespeichert", o.ID.ToString());
                     return RedirectToAction("OrderIndex");
                 }
