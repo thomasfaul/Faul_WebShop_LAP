@@ -1,0 +1,74 @@
+﻿@model CardGame.Web.Models.UI.AdminUserInfo
+@{
+    ViewBag.Title = "UserEdit";
+}
+
+
+
+<div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
+    <h3>User bearbeiten</h3>
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
+        <h3 style="position:absolute">Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
+        <div id="cardi">@Html.Partial("_ShowUserImage", @Model)</div>
+    </div>
+
+    @using (Html.BeginForm("A_UserEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(c => c.ID)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "ID":
+                    case "Pic":
+                    case "ImageMimeType":
+                    case "SortValue":
+                    case "EntryDate":
+                    case "BanDate":
+                    case "CurrencyBalance":
+                    case "userrole":
+                    case "IsActive":
+                        break;
+                    default:
+                        <div class="form-group" style="">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "IsActive")
+                            {
+                                @Html.CheckBox(property.PropertyName)
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+
+                }
+            }
+            <div class="form-group">
+                <div>
+                    <label style="margin-right:10em">Bild</label>
+                    <label class="custom-file-upload" style="margin-left:12em">
+                        <input id="img" name="img" onchange='$("#upload-file-info").html($(this).val());' type="file" size="40" />
+                        <i class="fa fa-cloud-upload"></i> Wähle Bild aus...
+                    </label>
+
+                    <span class='label label-info' id="upload-file-info"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer " style="background-color:transparent;">
+            <div class="col-md-10" style="margin-top:8em;float:left;width:40em;margin-top:1em;margin-right:-20em">
+                <input type="submit" value="Save" class="btn btn-default" />
+
+                @Html.ActionLink("Zurück", "U_Profile", null, new { @class = "btn btn-default" })
+
+
+                </div>
+            </div>
+            }
+        </div>
+

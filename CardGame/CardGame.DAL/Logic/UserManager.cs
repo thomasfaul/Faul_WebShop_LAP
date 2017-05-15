@@ -549,5 +549,76 @@ namespace CardGame.DAL.Logic
             }
         }
         #endregion
+        #region SAVE USERII
+        /// <summary>
+        /// Saves a new User or Modifies a user 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="firstname"></param>
+        /// <param name="Lastname"></param>
+        /// <param name="email"></param>
+        /// <param name="gamertag"></param>
+        /// <param name="isactive"></param>
+        /// <param name="pic"></param>
+        /// <param name="currencybal"></param>
+        /// <param name="mimetypename"></param>
+        public static void SaveAUser(int id, string Firstname, string Lastname, string Email, string Password,string Gamertag, byte[] Pic, string ImageMimeType)
+        {
+            if (id == 0)
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    User dbuser = new User();
+                    dbuser.ID = id;
+                    dbuser.FirstName = Firstname;
+                    dbuser.LastName = Lastname;
+                    dbuser.Email = Email;
+                    dbuser.GamerTag = Gamertag;
+                    dbuser.Avatar = Pic;
+                    dbuser.AvatarMimeType = ImageMimeType;
+                    dbuser.EntryDate = DateTime.Now;
+
+                    db.AllUsers.Add(dbuser);
+
+                    db.SaveChanges();
+                }
+            }
+            else
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+
+                    if (db.AllUsers != null)
+                    {
+                        if (db.AllUsers.Any(n => n.Email == Email))
+                        {
+                            log.Error("AuthManager-Register, Emailadresse gibt es bereits");
+                            throw new Exception("User-Emailadresse gibt es bereits");
+                        }
+                        string salt = Helper.GenerateSalt();
+                        string hashedAndSaltedPassword = Helper.GenerateHash(Password + salt);
+                        User dbuser = db.AllUsers.SingleOrDefault(u => u.ID == id); 
+                        dbuser.ID = id;
+                        dbuser.Password= Helper.GenerateHash(Password + salt);
+                        dbuser.FirstName = Firstname;
+                        dbuser.LastName = Lastname;
+                        dbuser.GamerTag = Gamertag;
+                        dbuser.Avatar = Pic;
+                        dbuser.AvatarMimeType = ImageMimeType;
+
+
+                        db.Entry(dbuser).State = EntityState.Modified;
+
+                        db.SaveChanges();
+
+                    }
+                }
+            }
+        }
+        #endregion
+
+
+
     }
 }

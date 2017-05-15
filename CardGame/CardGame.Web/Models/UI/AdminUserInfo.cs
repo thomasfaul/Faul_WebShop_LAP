@@ -7,6 +7,7 @@ namespace CardGame.Web.Models.UI
 {
     public class AdminUserInfo
     {
+        internal string Password;
         #region ID
         [HiddenInput(DisplayValue = false)]
         public int ID { get; set; }
