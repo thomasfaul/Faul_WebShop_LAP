@@ -1,4 +1,5 @@
 ﻿using CardGame.DAL.Logic;
+using CardGame.Web.Controllers.HtmlHelpers;
 using CardGame.Web.Models;
 using CardGame.Web.Models.DB;
 using log4net;
@@ -10,6 +11,7 @@ namespace CardGame.Web.Controllers
     public class ProfileController : Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         #region ACTIONRESULT UPROFILE
         /// <summary>
         /// Creates the ProfileView and creates the profile
@@ -47,9 +49,10 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public ActionResult CardCollection()
+        public ActionResult CardCollection(int? sortValue, string search)
         {
-            log.Info("ProfileController-CardCollection");
+           
+        log.Info("ProfileController-CardCollection");
             var cardCollection = new List<Card>();
 
             var dbCardList = UserManager.Get_AllCardsByEmail(User.Identity.Name);
@@ -69,6 +72,17 @@ namespace CardGame.Web.Controllers
 
                 cardCollection.Add(card);
             }
+
+            if (sortValue != null)
+            {
+                cardCollection = SortHelper.FilterCards(cardCollection, (int)sortValue);
+            }
+            if (search != null)
+            {
+                cardCollection = SortHelper.FilterCards(cardCollection, search);
+            }
+
+
 
             return View(cardCollection);
         }
