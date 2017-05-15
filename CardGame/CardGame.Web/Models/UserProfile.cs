@@ -13,6 +13,7 @@ namespace CardGame.Web.Models
         public string GamerTag { get; set; }
         public decimal Currency { get; set; }
         public string PassWord { get; set; }
+        public byte[] Pic { get; set; }
 
         public int NumDistinctCardsOwned { get; set; }
         public int NumTotalCardsOwned { get; set; }

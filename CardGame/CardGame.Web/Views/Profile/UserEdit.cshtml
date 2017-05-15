@@ -1,4 +1,4 @@
-﻿@model CardGame.Web.Models.UI.AdminUserInfo
+﻿@model CardGame.Web.Models.UI.EditUserInfo
 @{
     ViewBag.Title = "UserEdit";
 }
@@ -9,10 +9,10 @@
     <h3>User bearbeiten</h3>
     <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
         <h3 style="position:absolute">Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
-        <div id="cardi">@Html.Partial("_ShowUserImage", @Model)</div>
+        <div id="cardi" style="margin-top:10em;">@Html.Partial("_ShowUserImage", @Model)</div>
     </div>
 
-    @using (Html.BeginForm("A_UserEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("UserEdit", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="panel-body">
             @Html.HiddenFor(c => c.ID)
@@ -23,12 +23,6 @@
                     case "ID":
                     case "Pic":
                     case "ImageMimeType":
-                    case "SortValue":
-                    case "EntryDate":
-                    case "BanDate":
-                    case "CurrencyBalance":
-                    case "userrole":
-                    case "IsActive":
                         break;
                     default:
                         <div class="form-group" style="">
@@ -42,6 +36,7 @@
                                 @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
                             }
                             @Html.ValidationMessage(property.PropertyName)
+                            
                         </div>
                         break;
 

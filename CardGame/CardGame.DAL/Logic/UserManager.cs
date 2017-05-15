@@ -562,7 +562,7 @@ namespace CardGame.DAL.Logic
         /// <param name="pic"></param>
         /// <param name="currencybal"></param>
         /// <param name="mimetypename"></param>
-        public static void SaveAUser(int id, string Firstname, string Lastname, string Email, string Password,string Gamertag, byte[] Pic, string ImageMimeType)
+        public static void SaveAUser(int id, string Firstname, string Lastname,string Gamertag, byte[] Pic, string ImageMimeType)
         {
             if (id == 0)
             {
@@ -573,7 +573,6 @@ namespace CardGame.DAL.Logic
                     dbuser.ID = id;
                     dbuser.FirstName = Firstname;
                     dbuser.LastName = Lastname;
-                    dbuser.Email = Email;
                     dbuser.GamerTag = Gamertag;
                     dbuser.Avatar = Pic;
                     dbuser.AvatarMimeType = ImageMimeType;
@@ -591,16 +590,9 @@ namespace CardGame.DAL.Logic
 
                     if (db.AllUsers != null)
                     {
-                        if (db.AllUsers.Any(n => n.Email == Email))
-                        {
-                            log.Error("AuthManager-Register, Emailadresse gibt es bereits");
-                            throw new Exception("User-Emailadresse gibt es bereits");
-                        }
-                        string salt = Helper.GenerateSalt();
-                        string hashedAndSaltedPassword = Helper.GenerateHash(Password + salt);
+                        
                         User dbuser = db.AllUsers.SingleOrDefault(u => u.ID == id); 
                         dbuser.ID = id;
-                        dbuser.Password= Helper.GenerateHash(Password + salt);
                         dbuser.FirstName = Firstname;
                         dbuser.LastName = Lastname;
                         dbuser.GamerTag = Gamertag;

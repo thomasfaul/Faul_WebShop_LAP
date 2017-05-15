@@ -8,15 +8,15 @@
 
 <div class="col-md-6 cardcol"id="index">
     <div class="col-md-12 cardcol middlehead">
-
+        @Html.Partial("_ShowProfileImage",Model)
         <div class="col-md-8 buymiddle middle"> <h3 style="background-color:grey">Welcome, @Model.FirstName</h3></div>
   
         <div class="col-md-6 buymiddle left"> <h6>Guthaben:</h6></div>
         <div class="col-md-6 buymiddle right"> <h6>@Model.Currency Coins</h6></div>
     
         <div class="col-md-8 buymiddle middle">
-            <h3 style="background-color:grey">Deine Daten</h3>
-            <h5>@Html.ActionLink("Meine Daten bearbeiten", "UserEdit", new { id = Model.ID })</h5>
+            <h3 style="background-color:grey">@Html.ActionLink("Meine Daten bearbeiten", "UserEdit", new { id = Model.ID })</h3>
+            <h5></h5>
         </div>
         <div class="col-md-6 buymiddle left"> <h6>Vorname:</h6></div>
         <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.FirstName)</h6></div>
@@ -34,7 +34,7 @@
         <div class="col-md-6 buymiddle left"> <h6>Einzelne karten in der Sammlung</h6></div>
         <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.NumTotalCardsOwned)</h6></div>
   
-        <div class="col-md-8 buymiddle middle"><h3 style="background-color:grey">@Html.ActionLink("Meine Karten", "CardCollection")</h3></div>
+        <div class="col-md-8 buymiddle middle"><h3 style="background-color:grey">@Html.ActionLink("Meine Decks", "Deckoverview")</h3></div>
 
         <div class="col-md-6 buymiddle left"> <h6>Anzahl meiner Decks</h6></div>
         <div class="col-md-6 buymiddle right"> <h6>@Html.DisplayFor(up => up.NumDecksOwned)</h6></div>

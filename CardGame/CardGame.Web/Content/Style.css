@@ -1162,6 +1162,6 @@ label.custom-file-upload {
     padding-left:6%;
     margin-left:7% !important; 
 }
-#Email {
-    max-width:15em;
+input#Email.form-control {
+   max-width:15em;
 }

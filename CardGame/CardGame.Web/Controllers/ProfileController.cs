@@ -35,6 +35,7 @@ namespace CardGame.Web.Controllers
             profile.FirstName = dbPerson.FirstName;
             profile.LastName = dbPerson.LastName;
             profile.GamerTag = dbPerson.GamerTag;
+            profile.Pic = dbPerson.Avatar;
 
 
             profile.NumDistinctCardsOwned = UserManager.Get_NumDistinctCardsOwnedByEmail(User.Identity.Name);
@@ -160,27 +161,23 @@ namespace CardGame.Web.Controllers
             log.Info("AdminController-AUSERE");
             try
             {
-                AdminUserInfo u = new AdminUserInfo();
+                EditUserInfo u = new EditUserInfo();
                 var user = UserManager.Get_UserById(id);
                 u.ID = user.ID;
-                u.IsActive = user.IsActive ?? true;
+               
                 u.Firstname = user.FirstName ?? "n/a";
                 u.Lastname = user.LastName ?? "n/a";
                 u.Gamertag = user.GamerTag ?? "n/a";
-                u.Email = user.Email ?? "n/a";
-                u.CurrencyBalance = user.AmountMoney ?? 0;
-                u.userrole = user.UserRole ?? "n/a";
                 u.Pic = user.Avatar;
                 u.ImageMimeType = user.AvatarMimeType ?? "n/a";
-                u.BanDate = user.BanDate ?? DateTime.MinValue;
-                u.EntryDate = user.EntryDate ?? DateTime.MinValue;
+             
                 return View(u);
             }
             catch (Exception e)
             {
 
                 Debugger.Break();
-                log.Error("AdminController-A_UserEdit", e);
+                log.Error("ProfileController-UserEdit", e);
                 return View("Error");
             }
 
@@ -196,7 +193,7 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         [Authorize]
         [HttpPost]
-        public ActionResult UserEdit(AdminUserInfo au, HttpPostedFileBase img = null)
+        public ActionResult UserEdit(EditUserInfo au, HttpPostedFileBase img = null)
         {
             try
             {
@@ -208,9 +205,9 @@ namespace CardGame.Web.Controllers
                         au.Pic = new byte[img.ContentLength];
                         img.InputStream.Read(au.Pic, 0, img.ContentLength);
                     }
-                    UserManager.SaveAUser(au.ID, au.Firstname, au.Lastname, au.Email, au.Password, au.Gamertag, au.Pic,au.ImageMimeType);
+                    UserManager.SaveAUser(au.ID, au.Firstname, au.Lastname, au.Gamertag, au.Pic,au.ImageMimeType);
                     TempData["message"] = string.Format("{0} wurde gespeichert", au.Lastname);
-                    return RedirectToAction("A_UserIndex");
+                    return RedirectToAction("UProfile");
                 }
                 else
                 {
@@ -220,7 +217,7 @@ namespace CardGame.Web.Controllers
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("AdminController-EditII", e);
+                log.Error("ProfileController-EditII", e);
                 return View("Error");
             }
         }
