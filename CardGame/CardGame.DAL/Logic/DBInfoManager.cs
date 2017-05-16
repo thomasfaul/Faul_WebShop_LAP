@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using CardGame.DAL.Model;
 using log4net;
+using System.Collections.Generic;
+using System;
 
 namespace CardGame.DAL.Logic
 {
@@ -64,5 +66,15 @@ namespace CardGame.DAL.Logic
             return numDecks;
         }
         #endregion
+
+        public static List<pGetTop5Buyers_Result> GetTop10Buyers()
+        {
+            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            using (var db=new itin21_ClonestoneFSEntities())
+            {
+               result= db.pGetTop5Buyers().ToList();
+            }
+            return result;
+        }
     }
 }

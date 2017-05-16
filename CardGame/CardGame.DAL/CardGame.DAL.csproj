@@ -104,7 +104,16 @@
     <Compile Include="Model\Pack.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\pGetTop5Buyers_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Purchase.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
@@ -114,6 +123,9 @@
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserCardCollection.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\vEditor.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

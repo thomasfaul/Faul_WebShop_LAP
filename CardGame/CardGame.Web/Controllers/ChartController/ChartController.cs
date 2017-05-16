@@ -1,4 +1,5 @@
-﻿using CardGame.Web.Models.Charts;
+﻿using CardGame.DAL.Logic;
+using CardGame.Web.Models.Charts;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
@@ -11,10 +12,14 @@ namespace CardGame.Web.Controllers.ChartController
 
         public ActionResult ShowTopFiveSellers()
         {
+            
+             var Top10 = DBInfoManager.GetTop10Buyers();
+
+           
             Chart bytes = new Chart(width: 300, height: 120)
             .AddSeries(
                 chartType: "column",
-                xValue: new[] { "Wert1", "Wert2", "Wert3", "Wert4" },
+                xValue: Top10.ToArray(),
                 yValues: new[] { "12", "3", "23", "11" })
             .AddSeries(
                 chartType: "column",
