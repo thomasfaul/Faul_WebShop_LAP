@@ -10,18 +10,10 @@
 namespace CardGame.DAL.Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class vEditor
+    public partial class pGetUserSignUpsWeek_Result
     {
-        public int idedit { get; set; }
-        public int ideditfile { get; set; }
-        public int idperson { get; set; }
-        public string title { get; set; }
-        public string content { get; set; }
-        public Nullable<System.DateTime> editdate { get; set; }
-        public byte[] editfile { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
+        public Nullable<System.DateTime> Signup { get; set; }
+        public string email { get; set; }
     }
 }

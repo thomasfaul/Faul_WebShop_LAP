@@ -37,7 +37,6 @@ namespace CardGame.DAL.Model
         public virtual DbSet<User> AllUsers { get; set; }
         public virtual DbSet<CardType> AllCardTypes { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<vEditor> vEditor { get; set; }
     
         public virtual ObjectResult<pGetTop5Buyers_Result> pGetTop5Buyers()
         {
@@ -186,6 +185,36 @@ namespace CardGame.DAL.Model
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<pGetCountSignUpsWeek_Result> pGetCountSignUpsWeek()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetCountSignUpsWeek_Result>("pGetCountSignUpsWeek");
+        }
+    
+        public virtual ObjectResult<pGetSellingstatsDay_Result> pGetSellingstatsDay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsDay_Result>("pGetSellingstatsDay");
+        }
+    
+        public virtual ObjectResult<pGetSellingstatsMonth_Result> pGetSellingstatsMonth()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsMonth_Result>("pGetSellingstatsMonth");
+        }
+    
+        public virtual ObjectResult<pGetTop10Buyers_Result> pGetTop10Buyers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Buyers_Result>("pGetTop10Buyers");
+        }
+    
+        public virtual ObjectResult<pGetUserSignUpsWeek_Result> pGetUserSignUpsWeek()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetUserSignUpsWeek_Result>("pGetUserSignUpsWeek");
+        }
+    
+        public virtual ObjectResult<pGetTop10Sellers_Result> pGetTop10Sellers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Sellers_Result>("pGetTop10Sellers");
         }
     }
 }

@@ -3,6 +3,7 @@ using CardGame.DAL.Model;
 using log4net;
 using System.Collections.Generic;
 using System;
+using System.Data.Entity.Core.Objects;
 
 namespace CardGame.DAL.Logic
 {
@@ -67,14 +68,63 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-        public static List<pGetTop5Buyers_Result> GetTop10Buyers()
+        public static ChartModel GetTop10Buyers()
         {
-            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            ChartModel cmodel = new Logic.ChartModel();
             using (var db=new itin21_ClonestoneFSEntities())
             {
-               result= db.pGetTop5Buyers().ToList();
+              var result= db.pGetTop10Buyers().ToList();
+                foreach (var item in result)
+                {
+                    cmodel.Info = item.email;
+                    cmodel.Wert = item.NumberofPurchases ?? 0;
+                }
+
+            }
+            return cmodel;
+        }
+        public static List<pGetTop5Buyers_Result> GetTop10Sellers()
+        {
+            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                db.pGetTop10Sellers();
             }
             return result;
         }
+        public static List<pGetTop5Buyers_Result> GetCountedSignUpsWeek()
+        {
+            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                db.pGetCountSignUpsWeek();
+            }
+            return result;
+        }
+        public static List<pGetTop5Buyers_Result> GetSellingStatsDay()
+        {
+            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                db.pGetSellingstatsDay();
+            }
+            return result;
+        }
+        public static List<pGetTop5Buyers_Result> GetSellingStatsMonth()
+        {
+            List<pGetTop5Buyers_Result> result = new List<pGetTop5Buyers_Result>();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                db.pGetSellingstatsMonth();
+            }
+            return result;
+        }
+
+    }
+    public class ChartModel
+    {
+      public int Wert { get; set; }
+      public string Info { get; set; }
+
     }
 }

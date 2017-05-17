@@ -104,7 +104,25 @@
     <Compile Include="Model\Pack.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\pGetCountSignUpsWeek_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetSellingstatsDay_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetSellingstatsMonth_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetTop10Buyers_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetTop10Sellers_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\pGetTop5Buyers_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetUserSignUpsWeek_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Purchase.cs">
@@ -123,9 +141,6 @@
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserCardCollection.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\vEditor.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

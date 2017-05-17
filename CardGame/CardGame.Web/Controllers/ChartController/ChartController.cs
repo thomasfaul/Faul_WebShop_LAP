@@ -1,5 +1,6 @@
 ﻿using CardGame.DAL.Logic;
 using CardGame.Web.Models.Charts;
+using System.Linq;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
@@ -8,26 +9,36 @@ namespace CardGame.Web.Controllers.ChartController
     public class ChartController : Controller
     {
 
-        ChartModel chartmod = new ChartModel();
-
-        public ActionResult ShowTopFiveSellers()
+  
+        public ActionResult ShowTopTenSellers()
         {
-            
-             var Top10 = DBInfoManager.GetTop10Buyers();
+            ChartViewModel model = new ChartViewModel();
+            ChartModel dbmodel= DBInfoManager.GetTop10Buyers();
+            for (int i = 0; i < dbmodel.Info.Length; i++)
+            {
+                model.Infos[i] = dbmodel.Info;
+                model.Werte[i] = dbmodel.Wert;
+            }
+            if (model.Infos==null||model.Werte==null)
+            {
 
-           
+                TempData["ErrorMessage"] = "Aufruf des ShowTopTensellers nicht möglich";
+                return null;
+            }
+            else
+            {
             Chart bytes = new Chart(width: 300, height: 120)
             .AddSeries(
                 chartType: "column",
-                xValue: Top10.ToArray(),
-                yValues: new[] { "12", "3", "23", "11" })
+                xValue: model.Infos,
+                yValues: model.Werte)
             .AddSeries(
                 chartType: "column",
-                xValue: new[] { "Wert1", "Wert2", "Wert3", "Wert4" },
-                yValues: new[] { "13", "32", "23", "5" });
+                xValue: model.Infos,
+                yValues: model.Werte);
 
             return File(bytes.GetBytes("png"), "image/png");
-            
+            }
         }
 
 

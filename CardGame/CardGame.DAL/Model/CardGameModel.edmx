@@ -120,29 +120,9 @@
           <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'itin21_ClonestoneFS.dbo.vEditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vEditor">
-          <Key>
-            <PropertyRef Name="idedit" />
-            <PropertyRef Name="ideditfile" />
-            <PropertyRef Name="idperson" />
-            <PropertyRef Name="firstname" />
-            <PropertyRef Name="lastname" />
-          </Key>
-          <Property Name="idedit" Type="int" Nullable="false" />
-          <Property Name="ideditfile" Type="int" Nullable="false" />
-          <Property Name="idperson" Type="int" Nullable="false" />
-          <Property Name="title" Type="varchar" MaxLength="100" />
-          <Property Name="content" Type="varchar" MaxLength="2000" />
-          <Property Name="editdate" Type="smalldatetime" />
-          <Property Name="editfile" Type="varbinary(max)" />
-          <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vGetTop5Buyers">
-          <Property Name="Purchases" Type="int" />
+warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vGetTop10Buyers">
+          <Property Name="NumberofPurchases" Type="int" />
           <Property Name="email" Type="varchar" MaxLength="150" />
         </EntityType>-->
         <Association Name="FK__tblcard__fkclass__2D27B809">
@@ -257,19 +237,12 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
           <Parameter Name="idperson" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="pGetTop5Buyers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pInsertcard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cardname" Type="varchar" Mode="In" />
-          <Parameter Name="mana" Type="tinyint" Mode="In" />
-          <Parameter Name="life" Type="smallint" Mode="In" />
-          <Parameter Name="attack" Type="smallint" Mode="In" />
-          <Parameter Name="fktype" Type="int" Mode="In" />
-          <Parameter Name="fkclass" Type="int" Mode="In" />
-          <Parameter Name="fkability" Type="int" Mode="In" />
-          <Parameter Name="flavor" Type="varchar" Mode="In" />
-          <Parameter Name="pic" Type="varbinary" Mode="In" />
-          <Parameter Name="idcard" Type="int" Mode="InOut" />
-        </Function>
+        <Function Name="pGetCountSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingstatsDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingstatsMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetTop10Buyers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetTop10Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetUserSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -311,19 +284,6 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
           <EntitySet Name="tblpack" EntityType="Self.tblpack" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblperson" EntityType="Self.tblperson" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbltype" EntityType="Self.tbltype" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="vEditor" EntityType="Self.vEditor" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vEditor].[idedit] AS [idedit], 
-    [vEditor].[ideditfile] AS [ideditfile], 
-    [vEditor].[idperson] AS [idperson], 
-    [vEditor].[title] AS [title], 
-    [vEditor].[content] AS [content], 
-    [vEditor].[editdate] AS [editdate], 
-    [vEditor].[editfile] AS [editfile], 
-    [vEditor].[firstname] AS [firstname], 
-    [vEditor].[lastname] AS [lastname]
-    FROM [dbo].[vEditor] AS [vEditor]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__tblcard__fkclass__2D27B809" Association="Self.FK__tblcard__fkclass__2D27B809">
             <End Role="tblclass" EntitySet="tblclass" />
             <End Role="tblcard" EntitySet="tblcard" />
@@ -685,7 +645,12 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="vEditor" EntityType="CardGameModel.vEditor" />
+          <FunctionImport Name="pGetCountSignUpsWeek" ReturnType="Collection(CardGameModel.pGetCountSignUpsWeek_Result)" />
+          <FunctionImport Name="pGetSellingstatsDay" ReturnType="Collection(CardGameModel.pGetSellingstatsDay_Result)" />
+          <FunctionImport Name="pGetSellingstatsMonth" ReturnType="Collection(CardGameModel.pGetSellingstatsMonth_Result)" />
+          <FunctionImport Name="pGetTop10Buyers" ReturnType="Collection(CardGameModel.pGetTop10Buyers_Result)" />
+          <FunctionImport Name="pGetUserSignUpsWeek" ReturnType="Collection(CardGameModel.pGetUserSignUpsWeek_Result)" />
+          <FunctionImport Name="pGetTop10Sellers" ReturnType="Collection(CardGameModel.pGetTop10Sellers_Result)" />
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -712,24 +677,32 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="vEditor">
-          <Key>
-            <PropertyRef Name="idedit" />
-            <PropertyRef Name="ideditfile" />
-            <PropertyRef Name="idperson" />
-            <PropertyRef Name="firstname" />
-            <PropertyRef Name="lastname" />
-          </Key>
-          <Property Name="idedit" Type="Int32" Nullable="false" />
-          <Property Name="ideditfile" Type="Int32" Nullable="false" />
-          <Property Name="idperson" Type="Int32" Nullable="false" />
-          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="content" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
-          <Property Name="editdate" Type="DateTime" Precision="0" />
-          <Property Name="editfile" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
+        <ComplexType Name="pGetCountSignUpsWeek_Result">
+          <Property Type="DateTime" Name="Signup" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetSellingstatsDay_Result">
+          <Property Type="Int32" Name="Einnahmen" Nullable="true" />
+          <Property Type="Int32" Name="Kaeufe" Nullable="true" />
+          <Property Type="Int32" Name="Tag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetSellingstatsMonth_Result">
+          <Property Type="Int32" Name="Einnahmen" Nullable="true" />
+          <Property Type="Int32" Name="Kaeufe" Nullable="true" />
+          <Property Type="Int32" Name="Woche" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetTop10Buyers_Result">
+          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="pGetUserSignUpsWeek_Result">
+          <Property Type="DateTime" Name="Signup" Nullable="true" Precision="23" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="pGetTop10Sellers_Result">
+          <Property Type="Int32" Name="NumberofPacks" Nullable="true" />
+          <Property Type="String" Name="packname" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -860,15 +833,6 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="pGetTop5Buyers" FunctionName="CardGameModel.Store.pGetTop5Buyers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5Buyers_Result">
-                <ScalarProperty Name="Purchases" ColumnName="Purchases" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pInsertcard" FunctionName="CardGameModel.Store.pInsertcard" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CardGameModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CardGameModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CardGameModel.Store.sp_dropdiagram" />
@@ -893,21 +857,56 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CardGameModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CardGameModel.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="vEditor">
-            <EntityTypeMapping TypeName="CardGameModel.vEditor">
-              <MappingFragment StoreEntitySet="vEditor">
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-                <ScalarProperty Name="editfile" ColumnName="editfile" />
-                <ScalarProperty Name="editdate" ColumnName="editdate" />
-                <ScalarProperty Name="content" ColumnName="content" />
-                <ScalarProperty Name="title" ColumnName="title" />
-                <ScalarProperty Name="idperson" ColumnName="idperson" />
-                <ScalarProperty Name="ideditfile" ColumnName="ideditfile" />
-                <ScalarProperty Name="idedit" ColumnName="idedit" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pGetCountSignUpsWeek" FunctionName="CardGameModel.Store.pGetCountSignUpsWeek">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetCountSignUpsWeek_Result">
+                <ScalarProperty Name="Signup" ColumnName="Signup" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingstatsDay" FunctionName="CardGameModel.Store.pGetSellingstatsDay">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsDay_Result">
+                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
+                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingstatsMonth" FunctionName="CardGameModel.Store.pGetSellingstatsMonth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsMonth_Result">
+                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
+                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
+                <ScalarProperty Name="Woche" ColumnName="Woche" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetTop10Buyers" FunctionName="CardGameModel.Store.pGetTop10Buyers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetTop10Buyers_Result">
+                <ScalarProperty Name="NumberofPurchases" ColumnName="NumberofPurchases" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetUserSignUpsWeek" FunctionName="CardGameModel.Store.pGetUserSignUpsWeek">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetUserSignUpsWeek_Result">
+                <ScalarProperty Name="Signup" ColumnName="Signup" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetTop10Sellers" FunctionName="CardGameModel.Store.pGetTop10Sellers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetTop10Sellers_Result">
+                <ScalarProperty Name="NumberofPacks" ColumnName="NumberofPacks" />
+                <ScalarProperty Name="packname" ColumnName="packname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -923,7 +922,7 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop5Buyers' does not h
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
