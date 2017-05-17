@@ -21,6 +21,7 @@ namespace CardGame.Resources
             public const string PRICE = "PRICE";
             public const string NUMBER = "NUMBER";
             public const string ISACTIVE = "ISACTIVE";
+            public const string ISDELETED = "ISDELETED";
             public const string DATE = "DATE";
             public const string NUMBER_CARDS = "NUMBER_CARDS";
             public const string TOTAL_COST = "TOTAL_COST";
@@ -64,6 +65,7 @@ namespace CardGame.Resources
             public const string USERROLE = "USERROLE";
             public const string CURRENCYBALANCE = "CURRENCYBALANCE";
             public const string BANDATE = "BANDATE";
+            public const string ISDELETED = "ISDELETED";
 
 
         }

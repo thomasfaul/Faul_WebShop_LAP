@@ -1151,6 +1151,30 @@ label.custom-file-upload {
 #Date{
      max-width:21.5em;
 }
+#Email {
+     max-width:15em;
+}
+#Password {
+     max-width:15em;
+}
+#PasswordConfirmation {
+     max-width:15em;
+}
+#TermsAccepted {
+  
+   margin-right:-10em
+}
+
+#IsActive {
+    width:2em
+
+}
+
+#IsDeleted {
+   width:2em;
+
+}
+
 #topbarfilter {
     margin-top:2em;
     max-width:80%;

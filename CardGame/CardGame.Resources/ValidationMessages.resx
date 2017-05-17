@@ -144,6 +144,9 @@
   <data name="ISACTIVE" xml:space="preserve">
     <value>Wenn gelöscht bitte anhacken (INAKTIV)</value>
   </data>
+  <data name="ISDELETED" xml:space="preserve">
+    <value>User ist gelöscht</value>
+  </data>
   <data name="LENGTH" xml:space="preserve">
     <value>Bitte mindestens 4, höchstens 50 Buchstaben</value>
   </data>

@@ -5,7 +5,7 @@
 }
 
 <div class="col-md-12">
-    <div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;border:transparent">
+    <div class="panel panel-default" style="background-color:transparent;background:fixed;max-width:100%;min-height:62em;border:transparent;font-size:70%">
         <div class="panel-heading" style="background-color:darkgrey; position:fixed; margin-left:1em;">
             <h2>Alle Benutzer</h2>
             @using (Html.BeginForm())
@@ -27,7 +27,7 @@
         </div>
         <center>
             <div class="panel-body">
-                <table class="table-hover table-condensed table-bordered"style="margin-top:12em">
+                <table class="table-hover table-condensed table-bordered"style="margin-left:-20em">
                     <tr style="background-color:blueviolet;">
                         <th>ID</th>
 
@@ -131,7 +131,7 @@
 
                         <th>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:em;background-color:transparent;">
                                     Money &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
                                 </button>
                                 <ul class="dropdown-menu" style="background-color:transparent">
@@ -140,8 +140,22 @@
                                 </ul>
                             </div>
                         </th>
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    Gelöscht &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Gelöscht", "A_UserIndex", new { SortValue = 21 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Alle USER", "A_UserIndex", new { SortValue = 22 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
                         <th class="text-center">
-                            Löschen
+                           inaktiv 
+                        </th>
+                        <th class="text-center">
+                            löschen 
                         </th>
                     </tr>
                     @foreach (var user in Model)
@@ -158,9 +172,15 @@
                             <td class="text-right">@user.BanDate</td>
                             <td class="text-center">@user.userrole</td>
                             <td class="text-center">@user.CurrencyBalance</td>
-
-
+                            <td class="text-center">@Html.CheckBoxFor(p => user.IsDeleted, new { @disabled = "disabled" })</td>
                             @using (Html.BeginForm("SetUserInActive", "Admin"))
+                            {
+                                <td>
+                                    @Html.Hidden("id", user.ID)
+                                    <input style="max-width:2em" type="submit" class="btn btn-default btn-xs" value="X" />
+                                </td>
+                            }
+                            @using (Html.BeginForm("SetUserDeleted", "Admin"))
                             {
                                 <td>
                                     @Html.Hidden("id", user.ID)

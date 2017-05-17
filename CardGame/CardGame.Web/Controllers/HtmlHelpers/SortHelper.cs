@@ -154,67 +154,73 @@ namespace CardGame.Web.Controllers.HtmlHelpers
             switch (sortValue)
             {
                 case 1:
-                    sorted = Users.OrderBy(c => c.Firstname).ToList();
+                    sorted = Users.OrderBy(c => c.Firstname).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 2:
-                    sorted = Users.OrderByDescending(c => c.Firstname).ToList();
-                    break;  
-                case 3:      
-                    sorted = Users.OrderBy(c => c.Lastname).ToList();
-                    break;   
-                case 4:      
-                    sorted = Users.OrderByDescending(c => c.Lastname).ToList();
-                    break;   
-                case 5:      
-                    sorted = Users.OrderBy(c => c.Gamertag).ToList();
-                    break;   
-                case 6:      
-                    sorted = Users.OrderByDescending(c => c.Gamertag).ToList();
-                    break;   
-                case 7:      
-                    sorted = Users.OrderBy(c => c.Email).ToList();
-                    break;   
-                case 8:      
-                    sorted = Users.OrderByDescending(c => c.Email).ToList();
-                    break;   
-                case 9:      
-                    sorted = Users.Where(c => c.IsActive == true).ToList();
-                    break;   
-                case 10:     
-                    sorted = Users.Where(c => c.IsActive == false).ToList();
-                    break;   
-                case 11:     
-                    sorted = Users.OrderBy(c => c.EntryDate).ToList();
+                    sorted = Users.OrderByDescending(c => c.Firstname).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 3:
+                    sorted = Users.OrderBy(c => c.Lastname).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 4:
+                    sorted = Users.OrderByDescending(c => c.Lastname).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 5:
+                    sorted = Users.OrderBy(c => c.Gamertag).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 6:
+                    sorted = Users.OrderByDescending(c => c.Gamertag).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 7:
+                    sorted = Users.OrderBy(c => c.Email).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 8:
+                    sorted = Users.OrderByDescending(c => c.Email).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 9:
+                    sorted = Users.Where(c => c.IsActive == true).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 10:
+                    sorted = Users.Where(c => c.IsActive == false).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 11:
+                    sorted = Users.OrderBy(c => c.EntryDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 12:
-                    sorted = Users.OrderByDescending(c => c.EntryDate).ToList();
+                    sorted = Users.OrderByDescending(c => c.EntryDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 13:
-                    sorted = Users.OrderBy(c => c.BanDate).ToList();
+                    sorted = Users.OrderBy(c => c.BanDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 14:
-                    sorted = Users.OrderByDescending(c => c.BanDate).ToList();
+                    sorted = Users.OrderByDescending(c => c.BanDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 15:
-                    sorted = Users.OrderBy(c => c.userrole).ToList();
+                    sorted = Users.OrderBy(c => c.userrole).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 16:
-                    sorted = Users.OrderByDescending(c => c.userrole).ToList();
+                    sorted = Users.OrderByDescending(c => c.userrole).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 17:
-                    sorted = Users.Where(c => c.userrole=="player").ToList();
+                    sorted = Users.Where(c => c.userrole == "player").Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 18:
-                    sorted = Users.Where(c => c.userrole == "admin").ToList();
+                    sorted = Users.Where(c => c.userrole == "admin").Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 19:
-                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderBy(c => c.CurrencyBalance).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 20:
-                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 21:
+                    sorted = Users.Where(c => c.IsDeleted == true).ToList();
+                    break;
+                case 22:
+                    sorted = Users.Where(c => c.IsDeleted == false).ToList();
                     break;
                 default:
-                    sorted = Users.ToList();
+                    sorted = Users.Where(c => c.IsDeleted == false).ToList();
                     break;
             }
             return sorted;
@@ -229,67 +235,73 @@ namespace CardGame.Web.Controllers.HtmlHelpers
             switch (sortValue)
             {
                 case 1:
-                    sorted = Users.OrderBy(c => c.Firstname).ToList();
+                    sorted = Users.OrderBy(c => c.Firstname).Where(c=>c.IsDeleted==false).ToList();
                     break;
                 case 2:
-                    sorted = Users.OrderByDescending(c => c.Firstname).ToList();
+                    sorted = Users.OrderByDescending(c => c.Firstname).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 3:
-                    sorted = Users.OrderBy(c => c.Lastname).ToList();
+                    sorted = Users.OrderBy(c => c.Lastname).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 4:
-                    sorted = Users.OrderByDescending(c => c.Lastname).ToList();
+                    sorted = Users.OrderByDescending(c => c.Lastname).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 5:
-                    sorted = Users.OrderBy(c => c.Gamertag).ToList();
+                    sorted = Users.OrderBy(c => c.Gamertag).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 6:
-                    sorted = Users.OrderByDescending(c => c.Gamertag).ToList();
+                    sorted = Users.OrderByDescending(c => c.Gamertag).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 7:
-                    sorted = Users.OrderBy(c => c.Email).ToList();
+                    sorted = Users.OrderBy(c => c.Email).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 8:
-                    sorted = Users.OrderByDescending(c => c.Email).ToList();
+                    sorted = Users.OrderByDescending(c => c.Email).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 9:
-                    sorted = Users.Where(c => c.IsActive == true).ToList();
+                    sorted = Users.Where(c => c.IsActive == true).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 10:
-                    sorted = Users.Where(c => c.IsActive == false).ToList();
+                    sorted = Users.Where(c => c.IsActive == false).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 11:
-                    sorted = Users.OrderBy(c => c.EntryDate).ToList();
+                    sorted = Users.OrderBy(c => c.EntryDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 12:
-                    sorted = Users.OrderByDescending(c => c.EntryDate).ToList();
+                    sorted = Users.OrderByDescending(c => c.EntryDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 13:
-                    sorted = Users.OrderBy(c => c.BanDate).ToList();
+                    sorted = Users.OrderBy(c => c.BanDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 14:
-                    sorted = Users.OrderByDescending(c => c.BanDate).ToList();
+                    sorted = Users.OrderByDescending(c => c.BanDate).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 15:
-                    sorted = Users.OrderBy(c => c.userrole).ToList();
+                    sorted = Users.OrderBy(c => c.userrole).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 16:
-                    sorted = Users.OrderByDescending(c => c.userrole).ToList();
+                    sorted = Users.OrderByDescending(c => c.userrole).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 17:
-                    sorted = Users.Where(c => c.userrole == "player").ToList();
+                    sorted = Users.Where(c => c.userrole == "player").Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 18:
-                    sorted = Users.Where(c => c.userrole == "admin").ToList();
+                    sorted = Users.Where(c => c.userrole == "admin").Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 19:
-                    sorted = Users.OrderBy(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderBy(c => c.CurrencyBalance).Where(c => c.IsDeleted == false).ToList();
                     break;
                 case 20:
-                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).ToList();
+                    sorted = Users.OrderByDescending(c => c.CurrencyBalance).Where(c => c.IsDeleted == false).ToList();
+                    break;
+                case 21:
+                    sorted = Users.Where(c => c.IsDeleted == true).ToList();
+                    break;
+                case 22:
+                    sorted = Users.Where(c => c.IsDeleted == false).ToList();
                     break;
                 default:
-                    sorted = Users.ToList();
+                    sorted = Users.Where(c => c.IsDeleted == false).ToList();
                     break;
             }
             return sorted;

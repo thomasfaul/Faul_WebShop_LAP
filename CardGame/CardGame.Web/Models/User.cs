@@ -10,6 +10,8 @@ namespace CardGame.Web.Models
         public string Role { get; set; }
         
         public int Currencybalance { get; set; }
+
+        public byte[] Pic { get; set; }
     }
 }
  

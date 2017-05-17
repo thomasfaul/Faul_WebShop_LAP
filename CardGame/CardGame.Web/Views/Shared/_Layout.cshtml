@@ -64,16 +64,16 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         @{if (Session["Firstname"] != null)
                                             {
-                                                var firstname = (this.Session["Firstname"]) + "´s Profil"; @firstname
+                                                    var firstname = (this.Session["Firstname"]) + "´s Profil"; @firstname
 
                                             }
                                         }
                                     </a>
                                     <ul class="dropdown-menu dropup">
-                                        <li><a href="@Url.Action("UProfile","Profile")">Deine Daten</a></li>
-                                        <li><a href="@Url.Action("Statistics", "Home")">Stats Webshop</a></li>
-                                        <li><a href="@Url.Action("CardCollection", "Profile")">Deine Karten</a></li>
-                                        <li><a href="@Url.Action("Deckoverview", "Profile")">Deine Decks</a></li>
+                                        <li><a href = "@Url.Action("UProfile","Profile")">Deine Daten</a></li>
+                                        <li><a href = "@Url.Action("Statistics", "Home")">Stats Webshop</a></li>
+                                        <li><a href = "@Url.Action("CardCollection", "Profile")">Deine Karten</a></li>
+                                        <li><a href = "@Url.Action("Deckoverview", "Profile")">Deine Decks</a></li>
                                     </ul>
                                 </li>
                                             //--MEIN SHOP BUTTON PLAYER--
@@ -82,8 +82,8 @@
                                                     Shop
                                                 </a>
                                                 <ul class="dropdown-menu dropup">
-                                                    <li><a href="@Url.Action("EnableCurrency", "CardPack")">Guthaben aufladen</a></li>
-                                                    <li><a href="@Url.Action("DisableCurrency", "CardPack")">Karten kaufen</a></li>
+                                                    <li><a href = "@Url.Action("EnableCurrency", "CardPack")">Guthaben aufladen</a></li>
+                                                    <li><a href = "@Url.Action("DisableCurrency", "CardPack")">Karten kaufen</a></li>
                                                 </ul>
                                             </li>
                                             //--DECKS BUTTON PLAYER--
@@ -92,14 +92,14 @@
                                                     Decks
                                                 </a>
                                                 <ul class="dropdown-menu dropup">
-                                                    <li><a href="@Url.Action("Overview", "Card")">Kartenübersicht</a></li>
-                                                    <li><a href="@Url.Action("Deckoverview", "Profile")">Decks</a></li>
+                                                    <li><a href = "@Url.Action("Overview", "Card")">Kartenübersicht</a></li>
+                                                    <li><a href = "@Url.Action("Deckoverview", "Profile")">Decks</a></li>
                                                 </ul>
                                             </li>
                                             //--LOGOUT BUTTON PLAYER--
                                             <li>
-                                                <a href="@Url.Action("Logout", "Account")">Log Out</a>
-                                            </li>
+                                                <a href = "@Url.Action("Logout", "Account")">Log Out</a>
+                                              </li>
                                             //--NAVCOIN PLAYER--
                                             <li>
                                                 <a class="navcointop" href="@Url.Action("EnableCurrency", "CardPack")">
@@ -108,7 +108,7 @@
                                                     @{if (Session["CurrencyBalance"] != null)
                                                         {
                                                             var currency = this.Session["CurrencyBalance"];
-                                                            @currency
+                                                    @currency
                                                         }
                                                     }
                                                 </a>

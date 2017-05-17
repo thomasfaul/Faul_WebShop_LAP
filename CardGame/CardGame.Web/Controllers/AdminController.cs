@@ -85,6 +85,7 @@ namespace CardGame.Web.Controllers
                     AdminUserInfo u = new AdminUserInfo();
                     u.ID = user.ID;
                     u.IsActive = user.IsActive ?? true;
+                    u.IsDeleted = user.IsDeleted ?? false;
                     u.Firstname = user.FirstName ?? "n/a";
                     u.Lastname = user.LastName ?? "n/a";
                     u.Gamertag = user.GamerTag ?? "n/a";
@@ -241,6 +242,7 @@ namespace CardGame.Web.Controllers
                 var user = UserManager.Get_UserById(id);
                 u.ID = user.ID;
                 u.IsActive = user.IsActive ?? true;
+                u.IsDeleted = user.IsDeleted ?? false;
                 u.Firstname = user.FirstName ?? "n/a";
                 u.Lastname = user.LastName ?? "n/a";
                 u.Gamertag = user.GamerTag ?? "n/a";
@@ -629,6 +631,20 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT SET USER Deleted
+        [HttpPost]
+        public ActionResult SetUserInDeleted(int id)
+        {
+            var ok = UserManager.SetUserInDeleted(id);
+
+            if (ok == true)
+            {
+                TempData["message"] = string.Format("User Nr.{0} wurde als gelöscht gesetzt", id);
+            }
+            return RedirectToAction("A_UserIndex");
+
+        }
+        #endregion
 
 
 

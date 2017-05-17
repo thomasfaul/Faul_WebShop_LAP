@@ -1,9 +1,5 @@
 ﻿using CardGame.Resources;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CardGame.Web.Models.UI
@@ -48,9 +44,11 @@ ErrorMessageResourceName = Constants.Validation.SPECIAL_CHARACTER)]
         [Display(Name = Constants.Labels.GAMERTAG, ResourceType = typeof(ValidationLabels))]
         public string Gamertag { get; set; }
         #endregion
+
         #region IMAGE MIME TYPE
         public string ImageMimeType { get; set; }
         #endregion
+
         #region PIC
         public byte[] Pic { get; set; }
         #endregion

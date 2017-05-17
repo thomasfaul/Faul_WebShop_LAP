@@ -223,6 +223,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gelöscht.
+        /// </summary>
+        public static string ISDELETED {
+            get {
+                return ResourceManager.GetString("ISDELETED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ist ein COIN-Packet?.
         /// </summary>
         public static string ISMONEY {

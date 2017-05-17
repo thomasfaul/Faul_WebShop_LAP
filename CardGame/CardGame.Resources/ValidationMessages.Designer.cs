@@ -142,6 +142,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User ist gelöscht.
+        /// </summary>
+        public static string ISDELETED {
+            get {
+                return ResourceManager.GetString("ISDELETED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte mindestens 4, höchstens 50 Buchstaben.
         /// </summary>
         public static string LENGTH {

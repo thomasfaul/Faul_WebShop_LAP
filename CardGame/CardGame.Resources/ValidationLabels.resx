@@ -171,6 +171,9 @@
   <data name="ISACTIVE" xml:space="preserve">
     <value>Aktiv(Hacken für gelöscht)</value>
   </data>
+  <data name="ISDELETED" xml:space="preserve">
+    <value>Gelöscht</value>
+  </data>
   <data name="ISMONEY" xml:space="preserve">
     <value>ist ein COIN-Packet?</value>
   </data>

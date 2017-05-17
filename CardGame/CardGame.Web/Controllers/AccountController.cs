@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.DAL.Model;
 using System.Web.Security;
-using CardGame.Web.Models.DB;
 using CardGame.Web.HtmlHelpers;
 using log4net;
 using CardGame.Web.Models.UI;
@@ -61,8 +60,25 @@ namespace CardGame.Web.Controllers
 
                 }
             }
+            bool isdeleted = UserManager.GetIfUserIsDeleted(login.Email);
+            if (isdeleted == true)
+            {
 
+                TempData["ErrorMessage"] = "Sie haben ihren Account  vor geraumer Zeit gelöscht";
+                return View(login);
+
+            }
+            bool isnotbaned = UserManager.GetIfUserIsBanned(login.Email);
+
+            if (isnotbaned==true)
+            {
+
+                TempData["ErrorMessage"] = "Sie sind für drei Tage gesperrt";
+                return View(login);
+
+            }
             string role = UserManager.GetRoleNamesByUserEmail(login.Email);
+            
             auth(login.Email, login.Password, role);
             TempData["ConfirmMessage"] = "Sie sind eingeloggt";
             return RedirectToAction("Index", "Home");
@@ -125,6 +141,9 @@ namespace CardGame.Web.Controllers
             dbUser.UserRole = "player";
             dbUser.IsActive = true;
             dbUser.AmountMoney = 100;
+            dbUser.EntryDate = DateTime.Now;
+            dbUser.IsDeleted = false;
+            
             bool ok= AuthManager.Register(dbUser);
             if (ok != true)
             {

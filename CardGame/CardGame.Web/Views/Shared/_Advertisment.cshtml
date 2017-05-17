@@ -4,9 +4,48 @@
 
 
 
+<div class="col col-md-12 adtopleft">
 
-    <div class="col col-md-12 adtopleft">
-        <br />
-        <h3>Advertisment</h3>
-        <h6>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</h6>
-    </div>
+    @{
+        if (ViewBag.Pic != null)
+        {
+            var base64 = Convert.ToBase64String(@ViewBag.Pic);
+            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+            <img class="cardpic img-circle" src="@imgSrc" />
+            <br />
+                <h3> @ViewBag.Firstname</h3>
+                <h6>
+                    Hier findest du alle deine Daten.Drück den Button und du kannst sie einsehen und bearbeiten
+                </h6>
+            if (User.Identity!=null)
+            {
+                <a class="btn btn-default" href="@Url.Action("UProfile", "Profile")">Zum Profil</a>
+            }
+
+        }
+        else
+        {
+            <br />
+            <br />
+            <h6>
+                Hier findest du alle deine Daten.Drück den Button und du kannst sie einsehen und bearbeiten
+            </h6>
+            if (User.Identity != null)
+            {
+            <a class="btn btn-default" href="@Url.Action("UProfile", "Profile")">Zum Profil</a>
+            }
+            <br />
+            <br />
+            <h6>
+                Schau deine Sammlung durch , gestalte deine Winner-Decks!!
+            </h6>
+            if (User.Identity != null)
+            { 
+            <a class="btn btn-default" href="@Url.Action("CardCollection", "Profile")">Zur Sammlung</a>
+            }
+        }
+
+    }
+
+   
+</div>

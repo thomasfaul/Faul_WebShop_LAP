@@ -99,6 +99,7 @@ namespace CardGame.Web.Controllers
                 ViewBag.Lastname = dbUser.LastName;
                 ViewBag.Email = dbUser.Email;
                 ViewBag.MyCurrency = dbUser.AmountMoney;
+                ViewBag.Pic = dbUser.Avatar;
             }
         }
         #endregion
@@ -119,6 +120,11 @@ namespace CardGame.Web.Controllers
                     SessionHelper.Set<string>("Lastname", dbUser.LastName);
                     SessionHelper.Set<int>("Id", dbUser.ID);
                     SessionHelper.Set<string>("Email", dbUser.Password);
+                    if (dbUser.Avatar!=null)
+                    {
+                     SessionHelper.Set<byte[]>("Pic", dbUser.Avatar);
+                    }
+                    
                     if (dbUser.AmountMoney != null)
                     {
                         SessionHelper.Set<int>("CurrencyBalance", (int)dbUser.AmountMoney);

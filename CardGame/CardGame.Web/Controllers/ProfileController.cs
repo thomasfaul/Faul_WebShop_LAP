@@ -44,6 +44,7 @@ namespace CardGame.Web.Controllers
 
             return View(profile);
         }
+
         #endregion
 
         #region ACTIONRESULT CARDCOLLECTION
@@ -88,7 +89,6 @@ namespace CardGame.Web.Controllers
             }
 
 
-
             return View(cardCollection);
         }
         #endregion
@@ -114,7 +114,7 @@ namespace CardGame.Web.Controllers
                 deck.Name = d.Name;
                 decks.Add(deck);
             }
-
+;
             return View(decks);
         }
         #endregion
@@ -170,7 +170,7 @@ namespace CardGame.Web.Controllers
                 u.Gamertag = user.GamerTag ?? "n/a";
                 u.Pic = user.Avatar;
                 u.ImageMimeType = user.AvatarMimeType ?? "n/a";
-             
+
                 return View(u);
             }
             catch (Exception e)
@@ -211,6 +211,7 @@ namespace CardGame.Web.Controllers
                 }
                 else
                 {
+
                     return View(au);
                 }
             }

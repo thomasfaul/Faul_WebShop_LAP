@@ -51,6 +51,8 @@ namespace CardGame.DAL.Logic
             }
 
         }
+
+
         #endregion
 
         #region GetAllUser
@@ -440,6 +442,7 @@ namespace CardGame.DAL.Logic
             using (var db = new itin21_ClonestoneFSEntities())
             {
                 User dbuser = db.AllUsers.SingleOrDefault(p => p.ID == id);
+                dbuser.BanDate = DateTime.Now;
                 dbuser.IsActive = false;
 
                 db.Entry(dbuser).State = EntityState.Modified;
@@ -448,6 +451,26 @@ namespace CardGame.DAL.Logic
             return true;
         }
         #endregion
+        #region SET USER Deleted
+        /// <summary>
+        /// Sets a user deleted
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static bool SetUserInDeleted(int id)
+        {
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                User dbuser = db.AllUsers.SingleOrDefault(p => p.ID == id);
+                dbuser.IsDeleted = true;
+
+                db.Entry(dbuser).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            return true;
+        }
+        #endregion
+
 
         #region Get User by ID
         /// <summary>
@@ -610,7 +633,80 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
+        #region Get IF USER IS BANNED
+        /// <summary>
+        /// it takes the email adress, checks if the user
+        /// is banned, returns true if not and sets the user
+        /// active again or returns false if the ban is not completed
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static bool GetIfUserIsBanned(string email)
+        {
+            log.Info("UserManager-GetIfUserIsBanned");
+            var dbUser = Get_UserByEmail(email);
+            DateTime today = DateTime.Now;
+            DateTime endban = today.AddDays(3);
 
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    var user = db.AllUsers.Where(c => c.Email == email).FirstOrDefault();
+                    if (DateTime.Now > user.BanDate)
+                    {
+                        dbUser.IsActive = true;
+                        db.Entry(dbUser).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("UserManager-Update_BalanceByEmail", e);
+                return false;
+            }
+        }
+        #endregion
+
+        #region Get IF USER IS Deleted
+
+        public static bool GetIfUserIsDeleted(string email)
+        {
+            log.Info("UserManager-GetIfUserisDeleted");
+            var dbUser = Get_UserByEmail(email);
+
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    var user = db.AllUsers.Where(c => c.Email == email).FirstOrDefault();
+                    bool ishe = user.IsDeleted ??false;
+                    if (ishe==true)
+                    {
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("UserManager-GetIfUserisDeleted", e);
+                return true;
+            }
+        }
+        #endregion
 
     }
 }

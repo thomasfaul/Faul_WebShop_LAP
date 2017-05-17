@@ -61,9 +61,8 @@ namespace CardGame.Web.Controllers
                 card.Life = cc.Life;
                 card.Mana = cc.ManaCost;
                 card.Type = UserManager.CardTypeNames[cc.ID_CardType];
-                //card.Class = UserManager.CardClassNames[cc.fkclass ?? 0];
                 card.Pic = cc.Image;
-                //card.Type = card.Type == "Minion" ? "M" : card.Type == "Spell" ? "S" : "W";
+             
 
                 db.collectioncards.Add(card);
             }
@@ -81,8 +80,7 @@ namespace CardGame.Web.Controllers
             {
                 db.collectioncards = SortHelper.FilterCards(db.collectioncards, search);
             }
-            //db.collectioncards.Sort();
-            //db.deckcards.Sort();
+
 
             TempData["DeckBuilder"] = db;
             return View(db);

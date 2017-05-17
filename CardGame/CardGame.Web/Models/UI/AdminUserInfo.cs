@@ -74,7 +74,7 @@ ErrorMessageResourceName = Constants.Validation.CURRENCYBALANCE)]
         #region USERROLE
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.REQUIRED)]
-        [StringLength(5,
+        [StringLength(6,
 ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.USERROLE)]
         [Display(Name = Constants.Labels.USERROLE, ResourceType = typeof(ValidationLabels))]
@@ -84,6 +84,12 @@ ErrorMessageResourceName = Constants.Validation.USERROLE)]
         #region ISACTIVE
         [Display(Name = Constants.Labels.ISACTIVE,ResourceType = typeof(ValidationLabels))]
         public bool IsActive
+        { get; set; }
+        #endregion
+
+        #region ISDeleted
+        [Display(Name = Constants.Labels.ISDELETED, ResourceType = typeof(ValidationLabels))]
+        public bool IsDeleted
         { get; set; }
         #endregion
 

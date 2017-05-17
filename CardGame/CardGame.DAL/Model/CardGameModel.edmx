@@ -111,6 +111,7 @@
           <Property Name="entrydate" Type="datetime" />
           <Property Name="bandate" Type="datetime" />
           <Property Name="picmimetype" Type="varchar" MaxLength="50" />
+          <Property Name="isdeleted" Type="bit" />
         </EntityType>
         <EntityType Name="tbltype">
           <Key>
@@ -119,12 +120,6 @@
           <Property Name="idtype" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="vGetTop10Buyers">
-          <Property Name="NumberofPurchases" Type="int" />
-          <Property Name="email" Type="varchar" MaxLength="150" />
-        </EntityType>-->
         <Association Name="FK__tblcard__fkclass__2D27B809">
           <End Role="tblclass" Type="Self.tblclass" Multiplicity="0..1" />
           <End Role="tblcard" Type="Self.tblcard" Multiplicity="*" />
@@ -237,12 +232,9 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not 
           <Parameter Name="idperson" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="pGetCountSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetTop10Buyers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetTop10Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetUserSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -438,6 +430,7 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not 
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <Property Name="BanDate" Type="DateTime" Precision="3" />
           <Property Name="AvatarMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
         </EntityType>
         <EntityType Name="CardType">
           <Key>
@@ -797,6 +790,7 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not 
           <EntitySetMapping Name="AllUsers">
             <EntityTypeMapping TypeName="CardGameModel.User">
               <MappingFragment StoreEntitySet="tblperson">
+                <ScalarProperty Name="IsDeleted" ColumnName="isdeleted" />
                 <ScalarProperty Name="AvatarMimeType" ColumnName="picmimetype" />
                 <ScalarProperty Name="BanDate" ColumnName="bandate" />
                 <ScalarProperty Name="EntryDate" ColumnName="entrydate" />
@@ -857,14 +851,6 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not 
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CardGameModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CardGameModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="pGetCountSignUpsWeek" FunctionName="CardGameModel.Store.pGetCountSignUpsWeek">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetCountSignUpsWeek_Result">
-                <ScalarProperty Name="Signup" ColumnName="Signup" />
-                <ScalarProperty Name="Column1" ColumnName="Column1" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pGetSellingstatsDay" FunctionName="CardGameModel.Store.pGetSellingstatsDay">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsDay_Result">
@@ -891,23 +877,7 @@ warning 6013: The table/view 'itin21_ClonestoneFS.dbo.vGetTop10Buyers' does not 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pGetUserSignUpsWeek" FunctionName="CardGameModel.Store.pGetUserSignUpsWeek">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetUserSignUpsWeek_Result">
-                <ScalarProperty Name="Signup" ColumnName="Signup" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pGetTop10Sellers" FunctionName="CardGameModel.Store.pGetTop10Sellers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetTop10Sellers_Result">
-                <ScalarProperty Name="NumberofPacks" ColumnName="NumberofPacks" />
-                <ScalarProperty Name="packname" ColumnName="packname" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

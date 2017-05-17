@@ -10,7 +10,17 @@
     <h3>User bearbeiten</h3>
     <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
         <h3 style="position:absolute">Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
-        <div id="cardi">@Html.Partial("_ShowUserImage", @Model)</div>
+        <br />
+        <br />
+        @if (Model.Pic!=null)
+        {
+            <div id="cardi">@Html.Partial("_ShowUserImage", @Model)</div>
+        }
+        else
+        {
+            <div class="col-md-4"style="padding-right:0"><h6>Noch kein Bild vorhanden</h6></div>
+        }
+
     </div>
 
     @using (Html.BeginForm("A_UserEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -19,6 +29,7 @@
             @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
             {
+                <br style="height:0.1em"/>
                 switch (property.PropertyName)
                 {
                     case "ID":
@@ -33,6 +44,10 @@
                             @if (property.PropertyName == "IsActive")
                             {
                                 @Html.CheckBox(property.PropertyName)
+                            }
+                            else if (property.PropertyName=="IsDeleted")
+                            {
+                               @Html.CheckBox(property.PropertyName)
                             }
                             else
                             {

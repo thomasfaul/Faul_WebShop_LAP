@@ -2,6 +2,7 @@
    
 @{
     ViewBag.Title = "Home Page";
+   
 }
 
 
@@ -35,17 +36,27 @@
         }
         else
         {
+            if (ViewBag.Pic != null)
+            {
+                var base64 = Convert.ToBase64String(@ViewBag.Pic);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <img class="cardpic img-circle" src="@imgSrc" />
+            }
+
             <h3 class="welcome">Willkommen @ViewBag.Firstname</h3>
             <h3>im CloneShop</h3>
             <h5>
                 Willkommen auf dem Webshop von CloneStone, hier kannst du stöbern,
                 Cardpacks kaufen und deine eigenen Decks erstellen.
             </h5>
-
         }
-        if (User.IsInRole("admin"))
+
+
+
+    }
+        @if (User.IsInRole("admin"))
         {
-            <h2>Du bist ein Admin</h2>
+            <h3 style="color:darkorange">Du bist ein Admin</h3>
         }
     }
 </div>
