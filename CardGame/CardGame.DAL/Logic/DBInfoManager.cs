@@ -86,7 +86,187 @@ namespace CardGame.DAL.Logic
              return cmodel;
             }
 
-        }  
+        }
+        public static ChartModel GetTop10Sellers()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                //var result = db.pGetTop10Sellers()ToList();
+
+                //for (int i = 0; i < result.Count; i++)
+                //{
+                //    cmodel.Strings.Add(result[i].email);
+                //    cmodel.Values.Add(result[i].NumberofPurchases);
+                //}
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetCountSignUpsWeek()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetCountSignUpsWeek().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Signup);
+                    cmodel.Values.Add(result[i].signed);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetPurchaseSumDay()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsDay().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Einnahmen);
+                    cmodel.Values.Add(result[i].Tag);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetPurchaseCountDay()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsDay().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Kaeufe);
+                    cmodel.Values.Add(result[i].Tag);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetPurchasesCountWeek()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsMonth().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Kaeufe);
+                    cmodel.Values.Add(result[i].Woche);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetPurchasesSumWeek()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsMonth().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Einnahmen);
+                    cmodel.Values.Add(result[i].Woche);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetUserSignUpsWeekEmail()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetUserSignUpsWeek().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Signup);
+                    cmodel.Values.Add(result[i].email);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetSellingWohleOrdersLastTwoWeeks()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingWholeOrdersLastTwoWeeks().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Kaeufe);
+                    cmodel.Values.Add(result[i].Tag);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetSellingStatsLast21HoursSum()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsLast24hours().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Einnahmen);
+                    cmodel.Values.Add(result[i].Stunde);
+                }
+                return cmodel;
+            }
+
+        }
+        public static ChartModel GetSellingStatsLast21HoursCount()
+        {
+            ChartModel cmodel = new ChartModel();
+            cmodel.Strings = new ArrayList();
+            cmodel.Values = new ArrayList();
+            using (var db = new itin21_ClonestoneFSEntities())
+            {
+                var result = db.pGetSellingstatsLast24hours().ToList();
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    cmodel.Strings.Add(result[i].Kaeufe);
+                    cmodel.Values.Add(result[i].Stunde);
+                }
+                return cmodel;
+            }
+
+        }
     }
     public class ChartModel
     {

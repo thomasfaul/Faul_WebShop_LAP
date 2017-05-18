@@ -7,7 +7,7 @@
 
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <h3>User bearbeiten</h3>
+   
     <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
         <h3 style="position:absolute">Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
         <br />
@@ -25,11 +25,11 @@
 
     @using (Html.BeginForm("A_UserEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="panel-body">
+        <div class="panel-body"style="margin-top:-2em">
             @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)
             {
-                <br style="height:0.1em"/>
+                <br style="height:0em"/>
                 switch (property.PropertyName)
                 {
                     case "ID":
@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="panel-footer " style="background-color:transparent;">
-            <div class="col-md-10" style="margin-top:8em;float:left;width:32em;margin-top:1em">
+            <div class="col-md-10" style="width:32em">
                 <input type="submit" value="Save" class="btn btn-default" />
 
                 @Html.ActionLink("Zurück", "A_UserIndex", null, new { @class = "btn btn-default" })

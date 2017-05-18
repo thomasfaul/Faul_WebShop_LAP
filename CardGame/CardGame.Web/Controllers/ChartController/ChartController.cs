@@ -29,7 +29,7 @@ namespace CardGame.Web.Controllers.ChartController
             }
             else
             {
-                Chart bytes = new Chart(width: 600, height: 120)
+                Chart bytes = new Chart(width: 600, height: 220)
                 .AddSeries(
                     chartType: "column",
                     xValue: model.Infos,

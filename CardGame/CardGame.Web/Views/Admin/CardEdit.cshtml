@@ -8,16 +8,15 @@
 
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <h3>Karte bearbeiten</h3>
+    
 
-    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
-        <h3 style="position:absolute">Bearbeite @Model.Name</h3>
-        <div id="cardi">@Html.Partial("_ShowCardImageR", @Model)</div>
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:6em;">
+        <h3>Bearbeite @Model.Name</h3>   
     </div>
-
+    <div style="margin-left:-12em" >@Html.Partial("_ShowCardImageR", @Model)</div>
     @using (Html.BeginForm("CardEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="panel-body">
+        <div class="panel-body" style="margin-top:-17em">
 
             @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)

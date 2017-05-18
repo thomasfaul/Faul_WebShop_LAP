@@ -231,11 +231,9 @@
         <Function Name="pGetCountSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingGainsTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingOverallTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetSellingstatsDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsLast24hours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingWholeOrdersLastTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetTop10Buyers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetTop10Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -771,15 +769,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="pGetSellingstatsDay" FunctionName="CardGameModel.Store.pGetSellingstatsDay">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsDay_Result">
-                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
-                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
-                <ScalarProperty Name="Tag" ColumnName="Tag" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pGetSellingstatsMonth" FunctionName="CardGameModel.Store.pGetSellingstatsMonth">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsMonth_Result">
@@ -811,14 +800,6 @@
               <ComplexTypeMapping TypeName="CardGameModel.pGetSellingWholeOrdersLastTwoWeeks_Result">
                 <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
                 <ScalarProperty Name="Tag" ColumnName="Tag" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pGetSignUpsWeek" FunctionName="CardGameModel.Store.pGetSignUpsWeek">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetSignUpsWeek_Result">
-                <ScalarProperty Name="Signup" ColumnName="Signup" />
-                <ScalarProperty Name="email" ColumnName="email" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
