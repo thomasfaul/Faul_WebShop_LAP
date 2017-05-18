@@ -374,13 +374,10 @@
     <Content Include="Views\Admin\A_UserEdit.cshtml" />
     <Content Include="Views\Admin\A_UserIndex.cshtml" />
     <Content Include="Views\Shared\_ShowUserImage.cshtml" />
-    <Content Include="Views\Shared\Chart\_TopFiveSellers.cshtml" />
-    <Content Include="Views\Shared\Chart\_TopFiveClients.cshtml" />
-    <Content Include="Views\Shared\Chart\_SellingStatsWeek.cshtml" />
-    <Content Include="Views\Shared\Chart\_SellingStatsMonth.cshtml" />
-    <Content Include="Views\Shared\Chart\_ChartOverview.cshtml" />
+    <Content Include="Views\Shared\Chart\_ShowTopTenBuyers.cshtml" />
     <Content Include="Views\Profile\UserEdit.cshtml" />
     <Content Include="Views\Shared\_ShowProfileImage.cshtml" />
+    <Content Include="Views\Shared\Chart\_ChartOverview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1013,6 +1013,7 @@ input[type="file"] {
 {   
     margin-top:10em;
     max-width:90em;
+    width:80em;
     z-index:9999;
     position:relative;
     transition:ease-in-out;

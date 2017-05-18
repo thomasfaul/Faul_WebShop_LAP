@@ -11,9 +11,10 @@ namespace CardGame.DAL.Model
 {
     using System;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class pGetSellingstatsLast24hours_Result
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public Nullable<int> Einnahmen { get; set; }
+        public Nullable<int> Kaeufe { get; set; }
+        public Nullable<int> Stunde { get; set; }
     }
 }

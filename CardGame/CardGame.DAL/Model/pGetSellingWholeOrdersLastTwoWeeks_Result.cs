@@ -11,9 +11,9 @@ namespace CardGame.DAL.Model
 {
     using System;
     
-    public partial class pGetCountSignUpsWeek_Result
+    public partial class pGetSellingWholeOrdersLastTwoWeeks_Result
     {
-        public string Signup { get; set; }
-        public Nullable<int> signed { get; set; }
+        public Nullable<int> Kaeufe { get; set; }
+        public Nullable<int> Tag { get; set; }
     }
 }

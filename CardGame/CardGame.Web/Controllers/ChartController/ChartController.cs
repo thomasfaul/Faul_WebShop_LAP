@@ -3,6 +3,7 @@ using CardGame.Web.Models.Charts;
 using System.Linq;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Collections;
 
 namespace CardGame.Web.Controllers.ChartController
 {
@@ -10,15 +11,16 @@ namespace CardGame.Web.Controllers.ChartController
     {
 
   
-        public ActionResult ShowTopTenSellers()
+        public ActionResult ShowTopTenBuyers()
         {
             ChartViewModel model = new ChartViewModel();
+            model.Infos = new ArrayList();
+            model.Werte = new ArrayList();
             ChartModel dbmodel= DBInfoManager.GetTop10Buyers();
-            for (int i = 0; i < dbmodel.Info.Length; i++)
-            {
-                model.Infos[i] = dbmodel.Info;
-                model.Werte[i] = dbmodel.Wert;
-            }
+
+            model.Infos = dbmodel.Strings;
+            model.Werte = dbmodel.Values;
+
             if (model.Infos==null||model.Werte==null)
             {
 
@@ -27,15 +29,12 @@ namespace CardGame.Web.Controllers.ChartController
             }
             else
             {
-            Chart bytes = new Chart(width: 300, height: 120)
-            .AddSeries(
-                chartType: "column",
-                xValue: model.Infos,
-                yValues: model.Werte)
-            .AddSeries(
-                chartType: "column",
-                xValue: model.Infos,
-                yValues: model.Werte);
+                Chart bytes = new Chart(width: 600, height: 120)
+                .AddSeries(
+                    chartType: "column",
+                    xValue: model.Infos,
+                    yValues: model.Werte);
+
 
             return File(bytes.GetBytes("png"), "image/png");
             }

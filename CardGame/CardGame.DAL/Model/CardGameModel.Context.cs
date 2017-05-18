@@ -38,160 +38,6 @@ namespace CardGame.DAL.Model
         public virtual DbSet<CardType> AllCardTypes { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
-        public virtual ObjectResult<pGetTop5Buyers_Result> pGetTop5Buyers()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Buyers_Result>("pGetTop5Buyers");
-        }
-    
-        public virtual int pInsertcard(string cardname, Nullable<byte> mana, Nullable<short> life, Nullable<short> attack, Nullable<int> fktype, Nullable<int> fkclass, Nullable<int> fkability, string flavor, byte[] pic, ObjectParameter idcard)
-        {
-            var cardnameParameter = cardname != null ?
-                new ObjectParameter("cardname", cardname) :
-                new ObjectParameter("cardname", typeof(string));
-    
-            var manaParameter = mana.HasValue ?
-                new ObjectParameter("mana", mana) :
-                new ObjectParameter("mana", typeof(byte));
-    
-            var lifeParameter = life.HasValue ?
-                new ObjectParameter("life", life) :
-                new ObjectParameter("life", typeof(short));
-    
-            var attackParameter = attack.HasValue ?
-                new ObjectParameter("attack", attack) :
-                new ObjectParameter("attack", typeof(short));
-    
-            var fktypeParameter = fktype.HasValue ?
-                new ObjectParameter("fktype", fktype) :
-                new ObjectParameter("fktype", typeof(int));
-    
-            var fkclassParameter = fkclass.HasValue ?
-                new ObjectParameter("fkclass", fkclass) :
-                new ObjectParameter("fkclass", typeof(int));
-    
-            var fkabilityParameter = fkability.HasValue ?
-                new ObjectParameter("fkability", fkability) :
-                new ObjectParameter("fkability", typeof(int));
-    
-            var flavorParameter = flavor != null ?
-                new ObjectParameter("flavor", flavor) :
-                new ObjectParameter("flavor", typeof(string));
-    
-            var picParameter = pic != null ?
-                new ObjectParameter("pic", pic) :
-                new ObjectParameter("pic", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pInsertcard", cardnameParameter, manaParameter, lifeParameter, attackParameter, fktypeParameter, fkclassParameter, fkabilityParameter, flavorParameter, picParameter, idcard);
-        }
-    
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<pGetCountSignUpsWeek_Result> pGetCountSignUpsWeek()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetCountSignUpsWeek_Result>("pGetCountSignUpsWeek");
-        }
-    
         public virtual ObjectResult<pGetSellingstatsDay_Result> pGetSellingstatsDay()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsDay_Result>("pGetSellingstatsDay");
@@ -202,19 +48,54 @@ namespace CardGame.DAL.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsMonth_Result>("pGetSellingstatsMonth");
         }
     
-        public virtual ObjectResult<pGetTop10Buyers_Result> pGetTop10Buyers()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Buyers_Result>("pGetTop10Buyers");
-        }
-    
         public virtual ObjectResult<pGetUserSignUpsWeek_Result> pGetUserSignUpsWeek()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetUserSignUpsWeek_Result>("pGetUserSignUpsWeek");
         }
     
-        public virtual ObjectResult<pGetTop10Sellers_Result> pGetTop10Sellers()
+        public virtual int pGetTop10Sellers()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Sellers_Result>("pGetTop10Sellers");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pGetTop10Sellers");
+        }
+    
+        public virtual ObjectResult<pGetSellingGainsTwoWeeks_Result> pGetSellingGainsTwoWeeks()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingGainsTwoWeeks_Result>("pGetSellingGainsTwoWeeks");
+        }
+    
+        public virtual ObjectResult<pGetSellingOverallTwoWeeks_Result> pGetSellingOverallTwoWeeks()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingOverallTwoWeeks_Result>("pGetSellingOverallTwoWeeks");
+        }
+    
+        public virtual ObjectResult<pGetSellingWholeOrdersLastTwoWeeks_Result> pGetSellingWholeOrdersLastTwoWeeks()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingWholeOrdersLastTwoWeeks_Result>("pGetSellingWholeOrdersLastTwoWeeks");
+        }
+    
+        public virtual ObjectResult<pGetSignUpsWeek_Result> pGetSignUpsWeek()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSignUpsWeek_Result>("pGetSignUpsWeek");
+        }
+    
+        public virtual ObjectResult<pGetCountSignUpsWeek_Result> pGetCountSignUpsWeek()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetCountSignUpsWeek_Result>("pGetCountSignUpsWeek");
+        }
+    
+        public virtual ObjectResult<pGetSellingstatsLast24hours_Result> pGetSellingstatsLast24hours()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsLast24hours_Result>("pGetSellingstatsLast24hours");
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<pGetTop10Buyers_Result> pGetTop10Buyers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Buyers_Result>("pGetTop10Buyers");
         }
     }
 }

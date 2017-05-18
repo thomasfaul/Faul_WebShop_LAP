@@ -228,42 +228,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fcheckifeditor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="bit">
-          <Parameter Name="idperson" Type="int" Mode="In" />
-        </Function>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="pGetCountSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingGainsTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingOverallTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsDay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingstatsLast24hours" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetSellingstatsMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSellingWholeOrdersLastTwoWeeks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetSignUpsWeek" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pGetTop10Buyers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
+        <Function Name="pGetTop10Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="CardGameModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -595,55 +569,18 @@
             <End Role="tblorder" EntitySet="AllPurchases" />
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="CardGameModel.sysdiagrams" />
-          <FunctionImport Name="pGetTop5Buyers" ReturnType="Collection(CardGameModel.pGetTop5Buyers_Result)" />
-          <FunctionImport Name="pInsertcard">
-            <Parameter Name="cardname" Mode="In" Type="String" />
-            <Parameter Name="mana" Mode="In" Type="Byte" />
-            <Parameter Name="life" Mode="In" Type="Int16" />
-            <Parameter Name="attack" Mode="In" Type="Int16" />
-            <Parameter Name="fktype" Mode="In" Type="Int32" />
-            <Parameter Name="fkclass" Mode="In" Type="Int32" />
-            <Parameter Name="fkability" Mode="In" Type="Int32" />
-            <Parameter Name="flavor" Mode="In" Type="String" />
-            <Parameter Name="pic" Mode="In" Type="Binary" />
-            <Parameter Name="idcard" Mode="InOut" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CardGameModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CardGameModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="pGetCountSignUpsWeek" ReturnType="Collection(CardGameModel.pGetCountSignUpsWeek_Result)" />
           <FunctionImport Name="pGetSellingstatsDay" ReturnType="Collection(CardGameModel.pGetSellingstatsDay_Result)" />
           <FunctionImport Name="pGetSellingstatsMonth" ReturnType="Collection(CardGameModel.pGetSellingstatsMonth_Result)" />
-          <FunctionImport Name="pGetTop10Buyers" ReturnType="Collection(CardGameModel.pGetTop10Buyers_Result)" />
           <FunctionImport Name="pGetUserSignUpsWeek" ReturnType="Collection(CardGameModel.pGetUserSignUpsWeek_Result)" />
-          <FunctionImport Name="pGetTop10Sellers" ReturnType="Collection(CardGameModel.pGetTop10Sellers_Result)" />
+          <FunctionImport Name="pGetTop10Sellers" />
+          <FunctionImport Name="pGetSellingGainsTwoWeeks" ReturnType="Collection(CardGameModel.pGetSellingGainsTwoWeeks_Result)" />
+          <FunctionImport Name="pGetSellingOverallTwoWeeks" ReturnType="Collection(CardGameModel.pGetSellingOverallTwoWeeks_Result)" />
+          <FunctionImport Name="pGetSellingWholeOrdersLastTwoWeeks" ReturnType="Collection(CardGameModel.pGetSellingWholeOrdersLastTwoWeeks_Result)" />
+          <FunctionImport Name="pGetSignUpsWeek" ReturnType="Collection(CardGameModel.pGetSignUpsWeek_Result)" />
+          <FunctionImport Name="pGetCountSignUpsWeek" ReturnType="Collection(CardGameModel.pGetCountSignUpsWeek_Result)" />
+          <FunctionImport Name="pGetSellingstatsLast24hours" ReturnType="Collection(CardGameModel.pGetSellingstatsLast24hours_Result)" />
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="pGetTop10Buyers" ReturnType="Collection(CardGameModel.pGetTop10Buyers_Result)" />
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -655,25 +592,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <ComplexType Name="pGetTop5Buyers_Result">
-          <Property Type="Int32" Name="Purchases" Nullable="true" />
-          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="pGetCountSignUpsWeek_Result">
-          <Property Type="DateTime" Name="Signup" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="Column1" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="pGetSellingstatsDay_Result">
           <Property Type="Int32" Name="Einnahmen" Nullable="true" />
           <Property Type="Int32" Name="Kaeufe" Nullable="true" />
@@ -684,17 +602,43 @@
           <Property Type="Int32" Name="Kaeufe" Nullable="true" />
           <Property Type="Int32" Name="Woche" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="pGetTop10Buyers_Result">
-          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
-          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
-        </ComplexType>
         <ComplexType Name="pGetUserSignUpsWeek_Result">
           <Property Type="DateTime" Name="Signup" Nullable="true" Precision="23" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
         </ComplexType>
-        <ComplexType Name="pGetTop10Sellers_Result">
+        <ComplexType Name="pGetSellingGainsTwoWeeks_Result">
+          <Property Type="Int32" Name="Einnahmen" Nullable="true" />
+          <Property Type="Int32" Name="Tag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetSellingOverallTwoWeeks_Result">
+          <Property Type="Int32" Name="Einnahmen" Nullable="true" />
+          <Property Type="Int32" Name="Kaeufe" Nullable="true" />
+          <Property Type="Int32" Name="Tag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetSellingWholeOrdersLastTwoWeeks_Result">
+          <Property Type="Int32" Name="Kaeufe" Nullable="true" />
+          <Property Type="Int32" Name="Tag" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetSignUpsWeek_Result">
+          <Property Type="DateTime" Name="Signup" Nullable="true" Precision="23" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="pGetCountSignUpsWeek_Result">
+          <Property Type="String" Name="Signup" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="signed" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetTop10Sellers1_Result">
           <Property Type="Int32" Name="NumberofPacks" Nullable="true" />
           <Property Type="String" Name="packname" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="pGetSellingstatsLast24hours_Result">
+          <Property Type="Int32" Name="Einnahmen" Nullable="true" />
+          <Property Type="Int32" Name="Kaeufe" Nullable="true" />
+          <Property Type="Int32" Name="Stunde" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pGetTop10Buyers_Result">
+          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -827,30 +771,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CardGameModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CardGameModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CardGameModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CardGameModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CardGameModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CardGameModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CardGameModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="pGetSellingstatsDay" FunctionName="CardGameModel.Store.pGetSellingstatsDay">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsDay_Result">
@@ -869,6 +789,57 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingGainsTwoWeeks" FunctionName="CardGameModel.Store.pGetSellingGainsTwoWeeks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingGainsTwoWeeks_Result">
+                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingOverallTwoWeeks" FunctionName="CardGameModel.Store.pGetSellingOverallTwoWeeks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingOverallTwoWeeks_Result">
+                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
+                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingWholeOrdersLastTwoWeeks" FunctionName="CardGameModel.Store.pGetSellingWholeOrdersLastTwoWeeks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingWholeOrdersLastTwoWeeks_Result">
+                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSignUpsWeek" FunctionName="CardGameModel.Store.pGetSignUpsWeek">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSignUpsWeek_Result">
+                <ScalarProperty Name="Signup" ColumnName="Signup" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetCountSignUpsWeek" FunctionName="CardGameModel.Store.pGetCountSignUpsWeek">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetCountSignUpsWeek_Result">
+                <ScalarProperty Name="Signup" ColumnName="Signup" />
+                <ScalarProperty Name="signed" ColumnName="signed" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetSellingstatsLast24hours" FunctionName="CardGameModel.Store.pGetSellingstatsLast24hours">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetSellingstatsLast24hours_Result">
+                <ScalarProperty Name="Einnahmen" ColumnName="Einnahmen" />
+                <ScalarProperty Name="Kaeufe" ColumnName="Kaeufe" />
+                <ScalarProperty Name="Stunde" ColumnName="Stunde" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CardGameModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="pGetTop10Buyers" FunctionName="CardGameModel.Store.pGetTop10Buyers">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.pGetTop10Buyers_Result">
