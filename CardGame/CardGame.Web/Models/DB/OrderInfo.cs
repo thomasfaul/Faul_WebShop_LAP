@@ -9,7 +9,6 @@ namespace CardGame.Web.Models.DB
     public class OrderInfo
     {
 
-
         #region User
         [Required]
         public UserInfo User { get; set; } 
@@ -61,10 +60,7 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
 
         #endregion
 
-
         [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
-
-
     }
 }

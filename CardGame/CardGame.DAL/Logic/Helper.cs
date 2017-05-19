@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
 using log4net;
+using System.Diagnostics;
 
 namespace CardGame.DAL.Logic
 {
@@ -16,12 +17,20 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GenerateHash(string s)
         {
-            log.Info("Helper-GenerateHash");
-            var bytes = System.Text.Encoding.UTF8.GetBytes(s);
-            using (SHA512 sha = new SHA512Managed())
+            try
             {
-                var hash = sha.ComputeHash(bytes);
-                return GetHexNotation(hash);
+                log.Info("Helper-GenerateHash");
+                var bytes = System.Text.Encoding.UTF8.GetBytes(s);
+                using (SHA512 sha = new SHA512Managed())
+                {
+                    var hash = sha.ComputeHash(bytes);
+                    return GetHexNotation(hash);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
             }
         }
         #endregion
@@ -33,14 +42,22 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static string GenerateSalt()
         {
-            log.Info("Helper-Salt");
-            var salt = new byte[64];
-            // generieren ein neues byte 64 array
-            var rng = new RNGCryptoServiceProvider();
-            rng.GetNonZeroBytes(salt);
-            //befüllen mit werten die nicht null sind
-            return GetHexNotation(salt);
-            // Umwandlung
+            try
+            {
+                log.Info("Helper-Salt");
+                var salt = new byte[64];
+                // generieren ein neues byte 64 array
+                var rng = new RNGCryptoServiceProvider();
+                rng.GetNonZeroBytes(salt);
+                //befüllen mit werten die nicht null sind
+                return GetHexNotation(salt);
+                // Umwandlung
+            }
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
         }
         #endregion
 
@@ -52,15 +69,24 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         private static string GetHexNotation(byte[] bytes)
         {
-            log.Info("Helper-GetHexNotation");
-            var hashStringBuilder = new StringBuilder(128);
-
-            foreach (var b in bytes)
+            try
             {
-                hashStringBuilder.Append(b.ToString("X2"));
-            }
+                log.Info("Helper-GetHexNotation");
+                var hashStringBuilder = new StringBuilder(128);
 
-            return hashStringBuilder.ToString();
+                foreach (var b in bytes)
+                {
+                    hashStringBuilder.Append(b.ToString("X2"));
+                }
+
+                return hashStringBuilder.ToString()
+ 
+            
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            };
         }
         #endregion
     }

@@ -71,7 +71,10 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         public string ImageMimeType { get; set; }
         #endregion
 
+
+        #region SORTVALUE
         [HiddenInput(DisplayValue = false)]
-        public int? SortValue { get; set; }
+        public int? SortValue { get; set; } 
+        #endregion
     }
 }

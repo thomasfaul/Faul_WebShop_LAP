@@ -3,6 +3,7 @@ using System.Linq;
 using CardGame.DAL.Model;
 using log4net;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CardGame.DAL.Logic
 {
@@ -46,7 +47,7 @@ namespace CardGame.DAL.Logic
         /// <summary>
         /// Returns a list of all cards
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List<Card></returns>
         public static List<Card> GetAllCards()
         {
             log.Info("CardManager-GetAllCards");
@@ -154,7 +155,8 @@ namespace CardGame.DAL.Logic
 
         #region SAVE CARD
         /// <summary>
-        /// Saves a new Cardpack 
+        /// Takes the Values of the Card and Saves a new Card
+        /// or changes a Card in the Database with new Values
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -167,6 +169,7 @@ namespace CardGame.DAL.Logic
         /// <param name="mimetypename"></param>
         public static void SaveCard(int id, string name, byte mana,string flavortext, short attack, short life,  bool isactive,int cardtype, byte[] pic, string mimetypename)
         {
+            log.Info("CardManager-SaveCard");
             if (id == 0)
             {
                 using (var db = new itin21_ClonestoneFSEntities())
@@ -186,7 +189,7 @@ namespace CardGame.DAL.Logic
                     db.AllCards.Add(dbcard);
 
                     db.SaveChanges();
-
+                    log.Info("CardManager-SaveCard, New Card was build");
                 }
 
             }
@@ -215,10 +218,8 @@ namespace CardGame.DAL.Logic
                         db.Entry(dbcard).State = EntityState.Modified;
 
                         db.SaveChanges();
-
+                        log.Info("CardManager-SaveCard, Card is actual");
                     }
-
-
                 }
             }
         }
@@ -232,16 +233,26 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static bool SetCardInActive(int id)
         {
-            using (var db = new itin21_ClonestoneFSEntities())
+            log.Info("CardManager-Set Card inactive; ");
+            try
             {
-                Card dbcard = db.AllCards.SingleOrDefault(p => p.ID == id);
-                dbcard.IsActive = false;
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    Card dbcard = db.AllCards.SingleOrDefault(p => p.ID == id);
+                    dbcard.IsActive = false;
 
-                db.Entry(dbcard).State = EntityState.Modified;
-                db.SaveChanges();
+                    db.Entry(dbcard).State = EntityState.Modified;
+                    db.SaveChanges();
+                    log.Info("Card was set inactive; ");
+                }
+                return true;
             }
-            return true;
-            #endregion
+            catch (System.Exception)
+            {
+                Debug.WriteLine("Card couln't be set inactive");
+                throw;
+            }
         }
+         #endregion
     }
 }

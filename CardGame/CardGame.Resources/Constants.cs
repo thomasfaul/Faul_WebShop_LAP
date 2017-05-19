@@ -1,5 +1,4 @@
 ﻿
-
 namespace CardGame.Resources
 {
     public class Constants

@@ -1,10 +1,5 @@
 ﻿
 
-using CardGame.Resources;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
-
 namespace CardGame.Web.Models.DB
 {
     public class Order

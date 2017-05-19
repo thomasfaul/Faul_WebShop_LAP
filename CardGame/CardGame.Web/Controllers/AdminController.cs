@@ -1,5 +1,4 @@
-﻿
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using CardGame.DAL.Logic;
 using CardGame.Web.Models;
 using System.Collections.Generic;

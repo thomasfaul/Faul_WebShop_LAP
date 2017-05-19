@@ -86,10 +86,12 @@ ErrorMessageResourceName = Constants.Validation.DESCRIPTION)]
                 return 1;
         }
         #endregion
-       
+
+        #region SORTVALUE
         [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
 
-        public int OwnerId { get; set; }
+        public int OwnerId { get; set; } 
+        #endregion
     }
 }

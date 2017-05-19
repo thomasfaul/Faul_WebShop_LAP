@@ -9,7 +9,13 @@
     <h3>User bearbeiten</h3>
     <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
         <h3 style="position:absolute">Bearbeite @Model.Firstname &thinsp;@Model.Lastname</h3>
-        <div id="cardi" style="margin-top:10em;">@Html.Partial("_ShowUserImage", @Model)</div>
+        <div id="cardi" style="margin-top:10em;">
+        @if (@Model.Pic!=null)
+        {
+        @Html.Partial("_ShowUserImage")
+        }
+
+        </div>
     </div>
 
     @using (Html.BeginForm("UserEdit", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))

@@ -3,6 +3,7 @@ using System.Linq;
 using CardGame.DAL.Model;
 using log4net;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace CardGame.DAL.Logic
 {
@@ -43,13 +44,21 @@ namespace CardGame.DAL.Logic
         /// <returns></returns> returns a tblpack
         public static List<Pack> GetAllPacks()
         {
-            log.Info("Usermanager-GetAllPacks");
-            List<Pack> ReturnList = null;
-            using (var db = new itin21_ClonestoneFSEntities())
+            try
             {
-                ReturnList = db.AllPacks.Where(p => p.IsActive == true).ToList();
+                log.Info("Usermanager-GetAllPacks");
+                List<Pack> ReturnList = null;
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    ReturnList = db.AllPacks.Where(p => p.IsActive == true).ToList();
+                }
+                return ReturnList;
             }
-            return ReturnList;
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
         }
         #endregion
 
@@ -61,15 +70,23 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static Pack GetPackById(int id)
         {
-            log.Info("Usermanager-GetPackById");
-            Pack pack = null;
-
-            using (var db = new itin21_ClonestoneFSEntities())
+            try
             {
-                //Extention Method
-                pack = db.AllPacks.Where(c => c.ID == id).FirstOrDefault();
+                log.Info("Usermanager-GetPackById");
+                Pack pack = null;
+
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    //Extention Method
+                    pack = db.AllPacks.Where(c => c.ID == id).FirstOrDefault();
+                }
+                return pack;
             }
-            return pack;
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
         }
         #endregion
 
@@ -80,13 +97,21 @@ namespace CardGame.DAL.Logic
         /// <returns></returns> returns a tblpack
         public static List<Pack> AdminGetAllPacks()
         {
-            log.Info("Usermanager-GetAllPacks");
-            List<Pack> ReturnList = null;
-            using (var db = new itin21_ClonestoneFSEntities())
+            try
             {
-                ReturnList = db.AllPacks.ToList();
+                log.Info("Usermanager-GetAllPacks");
+                List<Pack> ReturnList = null;
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    ReturnList = db.AllPacks.ToList();
+                }
+                return ReturnList;
             }
-            return ReturnList;
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
         }
         #endregion
 
@@ -107,34 +132,12 @@ namespace CardGame.DAL.Logic
         {
             if (id == 0)
             {
-                using (var db = new itin21_ClonestoneFSEntities())
+                try
                 {
-
-                    Pack dbpack = new Pack();
-                    dbpack.Name = name;
-                    dbpack.IsActive = true;
-                    dbpack.IsMoney = ismoney;
-                    dbpack.NumberOfCards = numberofcards;
-                    dbpack.Worth = worth;
-                    dbpack.FlavorText = flavortext;
-                    dbpack.Image = pic;
-                    dbpack.ImageMimeType = mimetypename;
-                    db.AllPacks.Add(dbpack);
-
-                    db.SaveChanges();
-
-                }
-
-            }
-            else
-            {
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-
-                    if (db.AllPacks != null)
+                    using (var db = new itin21_ClonestoneFSEntities())
                     {
-                        Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
 
+                        Pack dbpack = new Pack();
                         dbpack.Name = name;
                         dbpack.IsActive = true;
                         dbpack.IsMoney = ismoney;
@@ -143,20 +146,52 @@ namespace CardGame.DAL.Logic
                         dbpack.FlavorText = flavortext;
                         dbpack.Image = pic;
                         dbpack.ImageMimeType = mimetypename;
-                        db.Entry(dbpack).State = EntityState.Modified;
+                        db.AllPacks.Add(dbpack);
 
                         db.SaveChanges();
 
                     }
+                }
+                catch (System.Exception e)
+                {
+                    Debugger.Break();
+                    throw e;
+                }
 
+            }
+            else
+            {
+                try
+                {
+                    using (var db = new itin21_ClonestoneFSEntities())
+                    {
 
+                        if (db.AllPacks != null)
+                        {
+                            Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
+
+                            dbpack.Name = name;
+                            dbpack.IsActive = true;
+                            dbpack.IsMoney = ismoney;
+                            dbpack.NumberOfCards = numberofcards;
+                            dbpack.Worth = worth;
+                            dbpack.FlavorText = flavortext;
+                            dbpack.Image = pic;
+                            dbpack.ImageMimeType = mimetypename;
+                            db.Entry(dbpack).State = EntityState.Modified;
+
+                            db.SaveChanges();
+                        }
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Debugger.Break();
+                    throw e;
                 }
             }
         }
         #endregion
-
-      
-
 
         #region SET PACK INACTIVE
         /// <summary>
@@ -166,16 +201,25 @@ namespace CardGame.DAL.Logic
         /// <returns></returns>
         public static bool SetPackInactive(int id)
         {
-            using (var db = new itin21_ClonestoneFSEntities())
+            try
             {
-                Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
-                dbpack.IsActive = false;
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    Pack dbpack = db.AllPacks.SingleOrDefault(p => p.ID == id);
+                    dbpack.IsActive = false;
 
-                db.Entry(dbpack).State = EntityState.Modified;
-                db.SaveChanges();
+                    db.Entry(dbpack).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                return true;
             }
-            return true; 
-            #endregion
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
+            
         }
+        #endregion
     }
 }

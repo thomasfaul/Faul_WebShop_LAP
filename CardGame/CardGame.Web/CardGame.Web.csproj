@@ -378,6 +378,10 @@
     <Content Include="Views\Profile\UserEdit.cshtml" />
     <Content Include="Views\Shared\_ShowProfileImage.cshtml" />
     <Content Include="Views\Shared\Chart\_ChartOverview.cshtml" />
+    <Content Include="Views\Shared\Chart\_ShowSignUpsLastWeek.cshtml" />
+    <Content Include="Views\Shared\Chart\_ShowPurchaseAllDay.cshtml" />
+    <Content Include="Views\Shared\Chart\_ShowSellingStatslast24HoursSum.cshtml" />
+    <Content Include="Views\Shared\Chart\_ShowPurchaseCountWeek.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
