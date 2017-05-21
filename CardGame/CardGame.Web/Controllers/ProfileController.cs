@@ -53,7 +53,7 @@ namespace CardGame.Web.Controllers
         /// sends all Cards by Email
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        //[HttpGet]
         [Authorize]
         public ActionResult CardCollection(int? sortValue, string search)
         {

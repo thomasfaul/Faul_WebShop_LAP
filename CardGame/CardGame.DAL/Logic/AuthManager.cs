@@ -31,6 +31,14 @@ namespace CardGame.DAL.Logic
                     {
                         log.Error("AuthManager-Register, Emailadresse gibt es bereits");
                         throw new Exception("User-Emailadresse gibt es bereits");
+                        
+
+                    }
+                    if (db.AllUsers.Any(n => n.Email == regUser.GamerTag))
+                    {
+                        log.Error("AuthManager-Register, Gamertag gibt es bereits");
+                        throw new Exception("User-Gamertag gibt es bereits");
+
                     }
                     //Salt erzeugen
                     string salt = Helper.GenerateSalt();
@@ -48,10 +56,10 @@ namespace CardGame.DAL.Logic
             
             catch (Exception e)
             {
-                Debugger.Break();
+                //Debugger.Break();
                 log.Error("AuthManager-Register",e);
                 return false; 
-                //TODO Errorpage             
+                       
             }
 
             return true;

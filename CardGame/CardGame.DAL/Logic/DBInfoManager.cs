@@ -345,8 +345,9 @@ namespace CardGame.DAL.Logic
             }
             catch (System.Exception e)
             {
-                Debugger.Break();
-                throw e;
+                //Debugger.Break();
+                log.Error("Usermanager-GetTotalCost", e);
+                return null;
             }
         }
         #endregion

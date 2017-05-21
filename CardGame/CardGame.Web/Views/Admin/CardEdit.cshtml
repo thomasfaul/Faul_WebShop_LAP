@@ -11,12 +11,20 @@
     
 
     <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:6em;">
-        <h3>Bearbeite @Model.Name</h3>   
+        @if (Model.Name!=null)
+        {
+            <h3>Bearbeite @Model.Name</h3>
+        }
+        else
+        {
+            <h3>Neue Karte generieren</h3>
+        }
+
     </div>
     <div style="margin-left:-12em" >@Html.Partial("_ShowCardImageR", @Model)</div>
     @using (Html.BeginForm("CardEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div class="panel-body" style="margin-top:-17em">
+        <div class="panel-body" style="margin-top:-20em">
 
             @Html.HiddenFor(c => c.ID)
             @foreach (var property in ViewData.ModelMetadata.Properties)

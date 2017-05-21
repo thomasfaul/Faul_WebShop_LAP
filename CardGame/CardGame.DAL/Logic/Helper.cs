@@ -79,9 +79,9 @@ namespace CardGame.DAL.Logic
                     hashStringBuilder.Append(b.ToString("X2"));
                 }
 
-                return hashStringBuilder.ToString()
- 
-            
+                return hashStringBuilder.ToString();
+
+            }
             catch (System.Exception e)
             {
                 Debugger.Break();

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Collections;
+using log4net;
 
 namespace CardGame.Web.Controllers.ChartController
 {
     public class ChartController : Controller
     {
-
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         #region Show TOP Ten Buyers
         public ActionResult ShowTopTenBuyers()
@@ -49,9 +50,19 @@ namespace CardGame.Web.Controllers.ChartController
             model.Infos = new ArrayList();
             model.Werte = new ArrayList();
             ChartModel dbmodel = DBInfoManager.GetUserSignUpsWeekEmail();
-
+            try
+            {
             model.Infos = dbmodel.Strings;
             model.Werte = dbmodel.Values;
+            }
+            catch (System.Exception e)
+            {
+
+                log.Error("Usermanager-ShowSignups week", e);
+                TempData["ErrorMessage"] = "Aufruf des ShowsSignups nicht möglich";
+                return null;
+            }
+
 
             if (model.Infos == null || model.Werte == null)
             {

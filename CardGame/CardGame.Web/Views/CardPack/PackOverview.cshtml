@@ -53,8 +53,8 @@
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
 
 
-                        <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
-                         <h5 style="margin-top:-1em; margin-left:4em "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
+                        <h5 style="margin-top:0em;margin-left:4em;z-index:9999;"> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h5>
+
                         }
                     else
                     {
@@ -62,7 +62,7 @@
                         {
                             var base64 = Convert.ToBase64String(@pack.Pic);
                             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                            <img class="cardpic" src="@imgSrc" style="min-height:12em" />
+                            <img class="cardpic" src="@imgSrc" style="min-height:12em;max-height:12em" />
                         }
                         else
                         {
@@ -80,9 +80,9 @@
         </div>
 
     </div>
-    <div class="col-md-12">
+    
         <p class="col-md-11" id="paginator" style="max-height:5em; margin-top:1em; ">@Html.PageLinks(Model.PagingInfo, x => Url.Action("PackOverview", new { page = x }))</p>
-    </div>
+ 
 </div>
 
 @*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@

@@ -9,9 +9,16 @@
 <h3>Pack bearbeiten</h3>
 
 <div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
-    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;">
-        <h3 style="position:absolute">Bearbeite @Model.PackName</h3>
-        <div id="cardi">@Html.Partial("_ShowCardImage", @Model)</div>
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;margin-top:-4em">
+        @if (Model.PackName != null)
+        {
+            <h3>Bearbeite @Model.PackName</h3>
+        }
+        else
+        {
+            <h3>Neues Pack generieren</h3>
+        }
+        <div style="margin-top:7em"id="cardi">@Html.Partial("_ShowCardImage", @Model)</div>
     </div>
 
     @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -69,7 +76,7 @@
         <div class="panel-footer" style="background-color:transparent">
             <div class="col-md-10" style="margin-top:8em;float:left;width:32em;margin-top:1em">
                 <input type="submit" value="Save" class="btn btn-default" />
-                @Html.ActionLink("Zurücksetzen", "Index", null, new { @class = "btn btn-default" })
+                @Html.ActionLink("Zurück", "Index", null, new { @class = "btn btn-default" })
                 </div>
             </div>
     }
