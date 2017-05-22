@@ -30,15 +30,42 @@
                             </span>&nbsp; Euro
                         </h5>
                         <hr />
-                        <h5 style="color:darkgray; background-color:rgba(115, 63, 33, 0.90)">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Euro</h5>
-
+                        <h5 style="color:darkgray; background-color:rgba(115, 63, 33, 0.90)">Gesamtbetrag:&nbsp;<span class="spanpoverview">€ &nbsp;@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Euro</h5><br /><br />
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Kreditkarte</button><br/><br />
+                        @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Paypal</button>*@
                     </div>
                     <br />
+                    
 
-                    @Html.Partial("_Payment")
+
+
+
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog"style="background-color:rgba(210, 180, 140, 0.30)">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content"style="background-color:darkgray">
+                                <div class="modal-header"style="background-image:url('../../Content/images/Head.png');">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Kreditkarte</h4>
+                                </div>
+                                <div class="modal-body"style="background-color:black">
+                                  @Html.Partial("_Payment") 
+                                </div>
+                                <div class="modal-footer"style="background-image:url('../../Content/images/Head.png');">
+                                    @*<button type="button" class="btn btn-default" data-dismiss="modal"style="background-color:darkgray">Schliessen</button>*@
+                                    <input type="submit" value="Bezahlen" class="btn btn-primary" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                                 
 
                     <div class="col-md-push-6">
-                        <input type="submit" value="Bezahlen" class="btn btn-default" />
+                        
                     </div>
                 </fieldset>
             }

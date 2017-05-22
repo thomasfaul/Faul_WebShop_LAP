@@ -1171,14 +1171,10 @@ label.custom-file-upload {
 
 #topbarfilter {
     margin-top:2em;
-    max-width:80%;
-    background-color: rgba(189, 102, 49, 0.60);
-    border-color: rgba(247, 179, 80, 0);
-    border-style: ridge;
-    border-width: 0 0 0.50em;
-    border-radius: 1.0em;
-    padding-left:6%;
-    margin-left:7% !important; 
+
+    max-width:100%;
+    padding-left:30%;
+
 }
 input#Email.form-control {
    max-width:15em;

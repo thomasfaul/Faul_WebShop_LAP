@@ -202,39 +202,35 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         [Authorize]
         [ActionName("OrderOverview")]
-        public ActionResult Order()
+        public ActionResult Order(Order ovv)
         {
             log.Info("CardPackController-Order");
-            
+
             Order o = (Order)TempData["Order"];
-            
-            if (!ModelState.IsValid)
-                {
-                    return View(o);
+            o.CardPayment = ovv.CardPayment;
 
-                }
-            try
+
+            //ORDER COINS
+
+            if (o.Pack.IsMoney == true)
             {
-                if (o.Pack.IsMoney == true)
+                try
                 {
-
-                    //    Payment payed = new Payment();
-                    //    payed.CardCompany = o.CardPayment.CardCompany;
-                    //    payed.CardExpiryDate = o.CardPayment.CardExpiryDate;
-                    //    payed.CardHolder = o.CardPayment.CardHolder;
-                    //    payed.CardNumber = o.CardPayment.CardNumber;
-                    //    payed.CardSecurityNumber = o.CardPayment.CardSecurityNumber;
-
-                    //    if (!ModelState.IsValid)
+                    //Check if Modelstate is valid
+                    //if (!ModelState.IsValid)
                     //    {
                     //        return View(o);
 
                     //    }
 
-                    var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth,o.Quantity);
-                    
+                    //Get Total Cost
+                    var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth, o.Quantity);
+
+                    //Check new Balance and Update Balance
                     var newBalance = o.CurrencyBalance + orderTotal;
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
+
+                    //Check if has Updated
                     if (!hasUpdated)
                     {
                         log.Error("CardPackController-Order, BalanceUpdateError");
@@ -242,30 +238,40 @@ namespace CardGame.Web.Controllers
                     }
                     var us = UserManager.GetUserByUserEmail(User.Identity.Name);
 
-                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack,(int)orderTotal,o.Quantity);
+                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack, (int)orderTotal, o.Quantity, o.OIsCurrency, o.CardPayment.CardCompany);
                     if (!isSaved)
                     {
                         log.Error("CardPackController-Order,SaveOrder");
-                        return RedirectToAction("Order-SaveOrderError");
+
+                        //return RedirectToAction("OrderOverview",o);
+
                     }
-                    EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
+                    var emailsend = EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
+                    var creditcardsend = EmailHelper.SendEmail("thomas.faul@gmx.at", "ZahlungsÜbermittlung", string.Format("{0}", o.CardPayment.CardCompany));
                     return RedirectToAction("Index", "Home");
-                    }
 
-
-
-
-
-
-
-
-
-                else
+                }
+                catch (Exception e)
                 {
+                    Debugger.Break();
+                    log.Error("CardPackController-Order", e);
+                    return RedirectToAction("Error", "Error");
+                }
+            }
+
+            //ORDER CARDS
+
+            else
+            {
+
+                try
+                {
+                    var us = UserManager.GetUserByUserEmail(User.Identity.Name);
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Quantity);
                     if (orderTotal > o.CurrencyBalance)
                     {
+                        TempData["ErrorMessage"] = "Nicht genug Guthaben";
                         log.Error("CardPackController-Order, NotEnoughBalance");
                         return RedirectToAction("NotEnoughBalance");
                     }
@@ -276,7 +282,7 @@ namespace CardGame.Web.Controllers
                     if (!hasUpdated)
                     {
                         log.Error("CardPackController-Order,BalanceUpdateError");
-                        return RedirectToAction("BalanceUpdateError");
+                        return RedirectToAction("NotEnoughBalance");
                     }
 
                     //Generate Cards
@@ -285,21 +291,25 @@ namespace CardGame.Web.Controllers
                     //Add Cards to User Collection
                     var hasUpdatedCards = UserManager.Add_CardsToCollectionByEmail(User.Identity.Name, orderedCards);
 
-                    
+                    //Save Order
+                    var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack, (int)orderTotal, o.Quantity, o.OIsCurrency);
+
+                    //Send Email and Confirmation
                     EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihre Karten sind in der Collection");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
                     TempData["OrderedCards"] = orderedCards;
+
+                    //Redirect to ShowGeneratedCards
                     return RedirectToAction("ShowGeneratedCards");
                 }
+                catch (Exception e)
+                {
+                    Debugger.Break();
+                    log.Error("CardPackController-Order Cards", e);
+                    return RedirectToAction("Error", "Error");
+                }
             }
-            catch (Exception e)
-            {
-                Debugger.Break();
-                log.Error("CardPackController-Order", e);
-                return RedirectToAction("Error", "Error");
-            }
-
-        } 
+        }
         #endregion
 
         #region ACTIONRESULT SHOW GENERATED CARDS
@@ -351,7 +361,8 @@ namespace CardGame.Web.Controllers
         public ActionResult NotEnoughBalance()
         {
             log.Info("CardPackController-NotEnoughBalance");
-            return View();
+            TempData["ConfirmMessage"] = "Wir leiten dich auf die Shopseite um";
+            return View("OrderOverview");
         }
         #endregion
 

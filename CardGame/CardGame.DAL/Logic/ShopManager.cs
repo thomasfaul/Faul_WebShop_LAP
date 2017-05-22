@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
-using System.Data.Entity;
 
 
 namespace CardGame.DAL.Logic
@@ -226,11 +225,13 @@ namespace CardGame.DAL.Logic
         #endregion
 
         #region SAVE ORDER
-        public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks)
+        public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks,bool isCurrency)
         {
             log.Info("SaveOrder");
             User person = null;
             Pack cardpack = null;
+                string money = "***CardPack***";
+
             try
             {
                 using (var db = new itin21_ClonestoneFSEntities())
@@ -240,9 +241,11 @@ namespace CardGame.DAL.Logic
                     Purchase order = new Purchase();
                     order.OrderDateTime = DateTime.Now;
                     order.User = person;
+                    order.IsActive = true;
                     order.CardPack = cardpack;
                     order.NumberOfPackagesBought = numberofpacks;
                     order.TotalCost = totalsum;
+                    order.KindOfPayment = money; 
                     db.AllPurchases.Add(order);
                     db.SaveChanges();
                 }
@@ -257,11 +260,44 @@ namespace CardGame.DAL.Logic
 
         }
         #endregion
+        #region SAVE ORDERII
+        public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks, bool iscurrency,string creditcard)
+        {
+            log.Info("SaveOrderII");
+            User person = null;
+            Pack cardpack = null;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    person = db.AllUsers.Find(userid);
+                    cardpack = db.AllPacks.Find(cardpackid);
+                    Purchase order = new Purchase();
+                    order.OrderDateTime = DateTime.Now;
+                    order.User = person;
+                    order.IsActive = true;
+                    order.KindOfPayment = creditcard;
+                    order.CardPack = cardpack;
+                    order.NumberOfPackagesBought = numberofpacks;
+                    order.TotalCost = totalsum;
+                    db.AllPurchases.Add(order);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("Usermanager-SaveOrderII", e);
+                return false;
+            }
 
-        #region SAVE ORDER II
+        }
+        #endregion
+        #region SAVE ORDER III
         public static bool SaveOrder(int userid, int cardpackid, int totalsum, int numberofpacks,string creditcard,bool isactive)
         {
-            log.Info("SaveOrder");
+            log.Info("SaveOrderIII");
             User person = null;
             Pack cardpack = null;
             try
@@ -273,6 +309,7 @@ namespace CardGame.DAL.Logic
                     Purchase order = new Purchase();
                     order.OrderDateTime = DateTime.Now;
                     order.User = person;
+                    order.IsActive = isactive;
                     order.CardPack = cardpack;
                     order.NumberOfPackagesBought = numberofpacks;
                     order.TotalCost = totalsum;
@@ -290,8 +327,7 @@ namespace CardGame.DAL.Logic
 
         }
         #endregion
-
-        #region SAVE ORDER III
+        #region SAVE ORDER IV
         public static bool SaveOrder( int orderid, int totalsum, int numberofpacks, string creditcard, bool isactive,DateTime orderdate)
         {
             log.Info("SaveOrder");
@@ -316,7 +352,7 @@ namespace CardGame.DAL.Logic
             catch (Exception e)
             {
                 Debugger.Break();
-                log.Error("Usermanager-SaveOrderIII", e);
+                log.Error("Usermanager-SaveOrderIV", e);
                 return false;
             }
 
@@ -372,8 +408,6 @@ namespace CardGame.DAL.Logic
             return true;
         }
             #endregion
-
-
 
         #region GET Order BY ID
             /// <summary>
