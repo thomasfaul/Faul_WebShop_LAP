@@ -37,6 +37,7 @@ namespace CardGame.DAL.Model
         public virtual DbSet<User> AllUsers { get; set; }
         public virtual DbSet<CardType> AllCardTypes { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Discount> AllDiscounts { get; set; }
     
         public virtual ObjectResult<pGetSellingstatsDay_Result> pGetSellingstatsDay()
         {

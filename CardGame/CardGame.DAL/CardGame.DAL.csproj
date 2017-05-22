@@ -67,6 +67,7 @@
     <Compile Include="Logic\CardManager.cs" />
     <Compile Include="Logic\DBInfoManager.cs" />
     <Compile Include="Logic\DeckManager.cs" />
+    <Compile Include="Logic\DiscountManager.cs" />
     <Compile Include="Logic\Helper.cs" />
     <Compile Include="Logic\PackManager.cs" />
     <Compile Include="Logic\ShopManager.cs" />
@@ -99,6 +100,9 @@
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DeckCard.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Discount.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Pack.cs">

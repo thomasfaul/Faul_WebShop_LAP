@@ -64,6 +64,16 @@
           <Property Name="fkcard" Type="int" Nullable="false" />
           <Property Name="numcards" Type="int" />
         </EntityType>
+        <EntityType Name="tbldiscount">
+          <Key>
+            <PropertyRef Name="iddiscount" />
+          </Key>
+          <Property Name="iddiscount" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fkpack" Type="int" />
+          <Property Name="discount" Type="int" />
+          <Property Name="startdate" Type="smalldatetime" />
+          <Property Name="enddate" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="tblorder">
           <Key>
             <PropertyRef Name="idorder" />
@@ -83,7 +93,6 @@
           </Key>
           <Property Name="idpack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="packname" Type="varchar" MaxLength="50" />
-          <Property Name="packprice" Type="decimal" Precision="18" Scale="0" />
           <Property Name="cardquantity" Type="int" />
           <Property Name="packimage" Type="varbinary(max)" />
           <Property Name="flavour" Type="varchar" MaxLength="50" />
@@ -92,6 +101,8 @@
           <Property Name="worth" Type="int" />
           <Property Name="isactive" Type="bit" />
           <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
+          <Property Name="baseprice" Type="int" />
+          <Property Name="packprice" Type="int" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="tblperson">
           <Key>
@@ -204,6 +215,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__tbldiscou__fkpac__625A9A57">
+          <End Role="tblpack" Type="Self.tblpack" Multiplicity="0..1" />
+          <End Role="tbldiscount" Type="Self.tbldiscount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblpack">
+              <PropertyRef Name="idpack" />
+            </Principal>
+            <Dependent Role="tbldiscount">
+              <PropertyRef Name="fkpack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__tblorder__fkpack__0B91BA14">
           <End Role="tblpack" Type="Self.tblpack" Multiplicity="0..1" />
           <End Role="tblorder" Type="Self.tblorder" Multiplicity="*" />
@@ -244,6 +267,7 @@
           <EntitySet Name="tblcollection" EntityType="Self.tblcollection" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbldeck" EntityType="Self.tbldeck" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbldeckcard" EntityType="Self.tbldeckcard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbldiscount" EntityType="Self.tbldiscount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblorder" EntityType="Self.tblorder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblpack" EntityType="Self.tblpack" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblperson" EntityType="Self.tblperson" Schema="dbo" store:Type="Tables" />
@@ -275,6 +299,10 @@
           <AssociationSet Name="FK__tbldeckca__fkdec__30F848ED" Association="Self.FK__tbldeckca__fkdec__30F848ED">
             <End Role="tbldeck" EntitySet="tbldeck" />
             <End Role="tbldeckcard" EntitySet="tbldeckcard" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tbldiscou__fkpac__625A9A57" Association="Self.FK__tbldiscou__fkpac__625A9A57">
+            <End Role="tblpack" EntitySet="tblpack" />
+            <End Role="tbldiscount" EntitySet="tbldiscount" />
           </AssociationSet>
           <AssociationSet Name="FK__tblorder__fkpack__0B91BA14" Association="Self.FK__tblorder__fkpack__0B91BA14">
             <End Role="tblpack" EntitySet="tblpack" />
@@ -370,7 +398,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Price" Type="Int32" />
           <Property Name="CardQuantity" Type="Int32" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="FlavorText" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -380,6 +408,8 @@
           <NavigationProperty Name="Order" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BasePrice" Type="Int32" />
+          <NavigationProperty Name="AllDiscounts" Relationship="CardGameModel.FK__tbldiscou__fkpac__625A9A57" FromRole="Pack" ToRole="tbldiscount" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -579,6 +609,11 @@
           <FunctionImport Name="pGetSellingstatsLast24hours" ReturnType="Collection(CardGameModel.pGetSellingstatsLast24hours_Result)" />
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="pGetTop10Buyers" ReturnType="Collection(CardGameModel.pGetTop10Buyers_Result)" />
+          <EntitySet Name="AllDiscounts" EntityType="CardGameModel.Discount" />
+          <AssociationSet Name="FK__tbldiscou__fkpac__625A9A57" Association="CardGameModel.FK__tbldiscou__fkpac__625A9A57">
+            <End Role="Pack" EntitySet="AllPacks" />
+            <End Role="tbldiscount" EntitySet="AllDiscounts" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -638,6 +673,20 @@
           <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
           <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
         </ComplexType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiscountAmount" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Pack" Relationship="CardGameModel.FK__tbldiscou__fkpac__625A9A57" FromRole="tbldiscount" ToRole="Pack" />
+        </EntityType>
+        <Association Name="FK__tbldiscou__fkpac__625A9A57">
+          <End Type="CardGameModel.Pack" Role="Pack" Multiplicity="0..1" />
+          <End Type="CardGameModel.Discount" Role="tbldiscount" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -715,6 +764,7 @@
           <EntitySetMapping Name="AllPacks">
             <EntityTypeMapping TypeName="CardGameModel.Pack">
               <MappingFragment StoreEntitySet="tblpack">
+                <ScalarProperty Name="BasePrice" ColumnName="baseprice" />
                 <ScalarProperty Name="ImageMimeType" ColumnName="imagemimetype" />
                 <ScalarProperty Name="IsActive" ColumnName="isactive" />
                 <ScalarProperty Name="ID" ColumnName="idpack" />
@@ -829,6 +879,25 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="AllDiscounts">
+            <EntityTypeMapping TypeName="CardGameModel.Discount">
+              <MappingFragment StoreEntitySet="tbldiscount">
+                <ScalarProperty Name="EndDate" ColumnName="enddate" />
+                <ScalarProperty Name="StartDate" ColumnName="startdate" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="discount" />
+                <ScalarProperty Name="ID" ColumnName="iddiscount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK__tbldiscou__fkpac__625A9A57" TypeName="CardGameModel.FK__tbldiscou__fkpac__625A9A57" StoreEntitySet="tbldiscount">
+            <EndProperty Name="tbldiscount">
+              <ScalarProperty Name="ID" ColumnName="iddiscount" />
+            </EndProperty>
+            <EndProperty Name="Pack">
+              <ScalarProperty Name="ID" ColumnName="fkpack" />
+            </EndProperty>
+            <Condition ColumnName="fkpack" IsNull="false" />
+          </AssociationSetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -13,6 +13,7 @@ namespace CardGame.DAL.Logic
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static readonly Dictionary<int, string> Packs;
 
+
         #region Construktor Packmanager
         /// <summary>
         /// Creates the Constructor

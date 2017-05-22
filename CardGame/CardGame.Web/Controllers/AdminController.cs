@@ -16,6 +16,7 @@ namespace CardGame.Web.Controllers
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         HomeController a = new HomeController();
+
         #region ACTIONRESULT INDEX
         /// <summary>
         /// 
@@ -222,7 +223,60 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT DISCOUNT INDEX
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        public ActionResult DiscountIndex(int? sortValue, string search)
+        {
+            log.Info("AdminController-DiscountIndex");
 
+            try
+            {
+                DiscountInfo dinfo = new DiscountInfo();
+
+                List<DiscountPack> discountpacks = new List<DiscountPack>();
+                var dbdiscounts = DiscountManager.GetAllDiscount();
+               
+                foreach (var dis in dbdiscounts)
+                {
+                    DiscountPack p = new DiscountPack();
+               
+                    p.DiscountAmount = dis.DiscountAmount ?? 0;
+                    p.StartDate = dis.StartDate ?? DateTime.MinValue;
+                    p.EndDate = dis.EndDate ?? DateTime.MinValue;
+                    
+                    p.IdPack = dis.Pack.ID;
+                    p.PackName = dis.Pack.Name;
+                    p.IsMoney = dis.Pack.IsMoney??false;
+                    p.PackPrice = dis.Pack.Price ?? 0;
+                    p.Pic = dis.Pack.Image;
+
+
+                    discountpacks.Add(p);
+                }
+                var sorted = discountpacks;
+                if (sortValue != null)
+                {
+                    sorted = SortHelper.FilterDiscountPacks(discountpacks, (int)sortValue);
+                }
+                if (search != null)
+                {
+                    sorted = SortHelper.FilterDiscountPacks(discountpacks, search);
+                }
+                return View(sorted);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-Edit", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
 
         #region VIEWRESULT A_USER EDIT
         /// <summary>

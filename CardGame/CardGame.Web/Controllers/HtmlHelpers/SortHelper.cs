@@ -226,6 +226,15 @@ namespace CardGame.Web.Controllers.HtmlHelpers
             return sorted;
 
         }
+
+        public  static List<DiscountPack> FilterDiscountPacks(List<DiscountPack> discountpacks, string search)
+        {
+            throw new NotImplementedException();
+        }
+        public static List<DiscountPack> FilterDiscountPacks(List<DiscountPack> discountpacks, int sortValue)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region FilterUsersII
