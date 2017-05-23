@@ -192,13 +192,11 @@
     <Compile Include="Models\DB\Payment.cs" />
     <Compile Include="Models\DB\Shop.cs" />
     <Compile Include="Models\DB\UserProfile.cs" />
+    <Compile Include="Models\Discount.cs" />
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
     <Compile Include="Models\UI\AdminUserInfo.cs" />
-    <Compile Include="Models\UI\Discount.cs" />
-    <Compile Include="Models\UI\DiscountInfo.cs" />
-    <Compile Include="Models\UI\DiscountPack.cs" />
     <Compile Include="Models\UI\EditUserInfo.cs" />
     <Compile Include="Models\UI\Register.cs" />
     <Compile Include="Models\UI\Login.cs" />

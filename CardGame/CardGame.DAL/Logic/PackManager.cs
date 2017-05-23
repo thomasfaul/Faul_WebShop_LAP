@@ -4,6 +4,7 @@ using CardGame.DAL.Model;
 using log4net;
 using System.Data.Entity;
 using System.Diagnostics;
+using System;
 
 namespace CardGame.DAL.Logic
 {
@@ -222,5 +223,31 @@ namespace CardGame.DAL.Logic
             
         }
         #endregion
+
+        #region GET ALL PACKS
+        /// <summary>
+        /// Gets all Packs from the Database
+        /// </summary>
+        /// <returns></returns> returns a tblpack
+        public static List<Discount> GetAllDiscounts()
+        {
+            try
+            {
+                log.Info("Usermanager-GetAllPacks");
+                List<Discount> ReturnList = null;
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    ReturnList = db.AllDiscounts.Where(d => d.EndDate< DateTime.Now).ToList();
+                }
+                return ReturnList;
+            }
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
+        }
+        #endregion
+
     }
 }

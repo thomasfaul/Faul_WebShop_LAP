@@ -74,7 +74,22 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
 
         #region SORTVALUE
         [HiddenInput(DisplayValue = false)]
-        public int? SortValue { get; set; } 
+        public int? SortValue { get; set; }
         #endregion
+
+
+        #region Discount
+        [HiddenInput(DisplayValue = false)]
+        public int DiscountValue { get; set; }
+        #endregion
+        #region isDiscount
+        [HiddenInput(DisplayValue = false)]
+        public bool isDiscount { get; set; }
+        #endregion
+        #region DiscountEnddate
+        [HiddenInput(DisplayValue = false)]
+        public int DiscountEndDate { get; set; }
+        #endregion
+
     }
 }

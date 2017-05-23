@@ -2,56 +2,25 @@
 using log4net;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Data.Entity;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace CardGame.DAL.Logic
 {
     public class DiscountManager
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        
 
-        public static List<Pack> GetAllPacks()
-        {
-            try
-            {
-                log.Info("Discountmanager-GetAllPacks");
-                List<Pack> ReturnList = null;
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    ReturnList = db.AllPacks.Where(p => p.IsActive == true).ToList();
-                }
-                return ReturnList;
-            }
-            catch (System.Exception e)
-            {
-                Debugger.Break();
-                log.Error("Discountmanager-GetAllPacks", e);
-                return null;
-            }
-        }
-        public static List<Discount> GetDiscountbyId(int id)
-        {
-            try
-            {
-                log.Info("Discountmanager-GetDiscountbyId");
-                List<Discount> ReturnList = null;
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    ReturnList = db.AllDiscounts.Where(d => d.ID == id).ToList();
-                }
-                return ReturnList;
-            }
-            catch (Exception e)
-            {
-                Debugger.Break();
-                log.Error("Discountmanager-GetDiscountbyId", e);
-                return null;
-            }
-            
-        }
-        public static List<Discount> GetAllDiscount()
+        #region GET ALL PACKS
+        /// <summary>
+        /// Gets all Discounts from the Database
+        /// </summary>
+        /// <returns></returns> returns a tblpack
+        public static List<Discount> GetAllDiscounts()
         {
             try
             {
@@ -59,21 +28,17 @@ namespace CardGame.DAL.Logic
                 List<Discount> ReturnList = null;
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    ReturnList = db.AllDiscounts.ToList();
+                    ReturnList = db.AllDiscounts.Include(c => c.Pack).ToList();
                 }
                 return ReturnList;
             }
-            catch (Exception e)
+            catch (System.Exception e)
             {
                 Debugger.Break();
-                log.Error("Discountmanager-GetAllDiscounts", e);
+                log.Error("Discountmanager-GetAllDiscounts",e);
                 return null;
             }
-
-
         }
-
-
-
+        #endregion
     }
 }

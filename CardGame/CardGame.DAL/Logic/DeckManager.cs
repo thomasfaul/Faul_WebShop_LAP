@@ -34,7 +34,7 @@ namespace CardGame.DAL.Logic
                     }  
                     for (int i = 1; i <= 3; ++i)
                     {
-                        addedAll = AddDeckByUserId(id, person.Email.Substring(0, 9) + i.ToString());
+                        addedAll = AddDeckByUserId(id, person.Email.Substring(0, 3) + i.ToString());
                     }
                     return addedAll;
                 }
