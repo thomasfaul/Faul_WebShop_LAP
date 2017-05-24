@@ -42,19 +42,20 @@
 
 
                     <!-- Modal -->
-                    <div id="myModal" class="modal fade" role="dialog"style="background-color:rgba(210, 180, 140, 0.30)">
+                    <div id="myModal" class="modal fade" role="dialog"style="background-color:rgba(210, 180, 140, 0.30);">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
-                            <div class="modal-content"style="background-color:darkgray">
-                                <div class="modal-header"style="background-image:url('../../Content/images/Head.png');">
+                            <div class="modal-content"style="background-color:transparent">
+                                <div class="modal-header" style="background-color:rgba(189, 102, 49, 0.60);border-color:rgba(255, 215, 0, 0.35);border-style:ridge;border-width:0 0 0.50em;border-radius:1.0em;padding-right:1em;margin-bottom:1em;">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Kreditkarte</h4>
                                 </div>
-                                <div class="modal-body"style="background-color:black">
+                                <div class="modal-body"style="background-image: url('../../Content/images/maxresdefault.jpg');">
+                                    
                                   @Html.Partial("_Payment") 
                                 </div>
-                                <div class="modal-footer"style="background-image:url('../../Content/images/Head.png');">
+                                <div class="modal-footer"style="background-color:rgba(189, 102, 49, 0.60);border-color:rgba(255, 215, 0, 0.35);border-style:ridge;border-width:0 0 0.50em;border-radius:1.0em;padding-right:1em;margin-bottom:1em;">
                                     @*<button type="button" class="btn btn-default" data-dismiss="modal"style="background-color:darkgray">Schliessen</button>*@
                                     <input type="submit" value="Bezahlen" class="btn btn-primary" />
                                 </div>

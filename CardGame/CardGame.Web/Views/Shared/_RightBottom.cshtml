@@ -6,11 +6,19 @@
 
 <div class="col col-md-12">
     <br />
+@{ if (User.Identity.Name != "")
+            {
     <h3>Kaufe Kartenpacks </h3>
     <p>Hier bekommst du Karten und du kannst sie deiner Sammlung hinzufügen</p>
-    @{ if (User.Identity.Name != "")
-            {
+
             <a class="btn btn-default" href="@Url.Action("DisableCurrency", "CardPack")">Zum Shop</a>
-        }
     }
+    else
+    {
+        <center>
+            <h3 style="margin-bottom:-0.5em;margin-left:-2em;margin-top:1em">POWERED BY</h3>
+            <a  style="transform:rotate(20deg)"class="navbar-brand" href=http://www.lazyweb.at><img src="~/Content/HeadLazyBorder.png" /></a>
+        </center>
+    }
+}
 </div>

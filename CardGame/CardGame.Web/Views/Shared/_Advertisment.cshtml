@@ -12,12 +12,12 @@
             var base64 = Convert.ToBase64String(@ViewBag.Pic);
             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
             <img class="cardpic img-circle" src="@imgSrc" />
-            <br />
+            <br style="height:0.5em" />
                 <h3> @ViewBag.Firstname</h3>
                 <h6>
-                    Hier findest du alle deine Daten.Drück den Button und du kannst sie einsehen und bearbeiten
+                    Hier findest du alle deine Daten
                 </h6>
-            if (User.Identity!=null)
+            if (User.Identity.Name != "")
             {
                 <a class="btn btn-default" href="@Url.Action("UProfile", "Profile")">Zum Profil</a>
             }
@@ -25,23 +25,24 @@
         }
         else
         {
-            <br />
-            <br />
+            <br style="height:0.5em"/>
+            <h3>Bearbeite deine Daten </h3>
             <h6>
-                Hier findest du alle deine Daten.Drück den Button und du kannst sie einsehen und bearbeiten
+                Hier findest du alle deine Daten
             </h6>
-            if (User.Identity != null)
+            if (User.Identity.Name != "")
             {
             <a class="btn btn-default" href="@Url.Action("UProfile", "Profile")">Zum Profil</a>
             }
-            <br />
-            <br />
+            <br style="height:0.5em" />
+            <br style="height:0.5em" />
+            <h3>Stelle deine Decks zusammen </h3>
             <h6>
                 Schau deine Sammlung durch , gestalte deine Winner-Decks!!
             </h6>
-            if (User.Identity != null)
+            if (User.Identity.Name != "")
             { 
-            <a class="btn btn-default" href="@Url.Action("CardCollection", "Profile")">Zur Sammlung</a>
+            <a class="btn btn-default"style="margin-top:0.5em" href="@Url.Action("CardCollection", "Profile")">Zur Sammlung</a>
             }
         }
 

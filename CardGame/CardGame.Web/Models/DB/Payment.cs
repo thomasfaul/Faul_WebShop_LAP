@@ -48,16 +48,23 @@ ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName 
         public int CardSecurityNumber { get; set; }
         #endregion
 
-        #region EXPIRY DATE
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
-ErrorMessageResourceName = Constants.Validation.REQUIRED)]
-        [RegularExpression("^(0[1-9]|1[0-2]|[1-9])\\/(1[4-9]|[2-9][0-9]|20[1-9][1-9])$",
-ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName = Constants.Validation.CARD_EXPIRY)]
-        [DataType(DataType.Date)]
+        #region EXPIRY Month
+        [Required]
         [Display(Name = Constants.Labels.CARD_EXPIRY, ResourceType = typeof(ValidationLabels))]
-        public DateTime CardExpiryDate { get; set; }
+        [StringLength(maximumLength: 4, MinimumLength = 4,
+        ErrorMessageResourceType = typeof(ValidationMessages),
+        ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+         public string CardExpiryMonth { get; set; }
         #endregion
 
+        #region EXPIRY YEAR
+        [Required]
+        [Display(Name = Constants.Labels.CARD_EXPIRY, ResourceType = typeof(ValidationLabels))]
+        [StringLength(maximumLength: 4,MinimumLength =4,
+        ErrorMessageResourceType = typeof(ValidationMessages),
+        ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        public string CardExpiryYear { get; set; }
+        #endregion
     }
     #region CLASS CREDIT CARD ATTRIBUTE
     internal class CreditCardAttribute : ValidationAttribute

@@ -4,7 +4,7 @@
 
 
 @model Order
-
+<h4 style="color:aquamarine">HTTPS!</h4>
 <fieldset>
     <h3 class="welcome">Kreditkartenzahlung</h3>
 
@@ -32,11 +32,16 @@
 
     <div class="row"style="margin-top:0.6em">
         <div class="col-md-4 cardcol">
-            <h5> @Html.LabelFor(m => m.CardPayment.CardExpiryDate)</h5>
+            <h5> @Html.LabelFor(m => m.CardPayment.CardExpiryYear)</h5>
         </div>
         <div class="col-md-push-4 cardcol">
-            <h5>@Html.TextBoxFor(m => m.CardPayment.CardExpiryDate, "{0:dd-MM-yyyy}", new { @class = "form-control jqueryui-marker-datepicker" })</h5>
-            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryDate)</h5>
+          
+            {MM}<h5 style="max-width:7em"> @Html.TextBoxFor(m => m.CardPayment.CardExpiryYear, "{MM}")</h5>
+            {YYYY}<h5 style="max-width:7em"> @Html.TextBoxFor(m => m.CardPayment.CardExpiryMonth, "{YYYY}")</h5>
+                
+            
+            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)</h5>
+            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryYear)</h5>
         </div>
      </div>
 

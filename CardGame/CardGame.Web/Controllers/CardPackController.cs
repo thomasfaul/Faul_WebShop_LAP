@@ -328,11 +328,11 @@ namespace CardGame.Web.Controllers
             try
             {
                 var orderedCards = (List<DAL.Model.Card>)TempData["OrderedCards"];
-                var cards = new List<Card>();
+                var cards = new List<Web.Models.Card>();
 
                 foreach (var c in orderedCards)
                 {
-                    Card card = new Card();
+                    Web.Models.Card card = new Web.Models.Card();
                     card.ID = c.ID;
                     card.Name = c.Name;
                     card.Type = c.CardType.Name;
@@ -368,42 +368,7 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-        #region ACTIONRESULT DISCOUNTOVERVIEW
-        /// <summary>
-        /// checks if its a Currencyview
-        /// takes the Pagesize
-        /// and gets the Cardpacks
-        /// returns the model
-        /// </summary>
-        /// <param name="page"></param>
-        /// <returns>ActionResult</returns>
-        public ActionResult DiscountOverview()
-        {
-            log.Info("CardPackController-DiscountOverview");
-            //PacksListViewModel model = new PacksListViewModel();
-            //model.PIsMoney = false;
-
-           var dbdiscounts= PackManager.GetAllDiscounts();
-
-            List<
-                Discount> Discounts = new List<Discount>();
-
-            foreach (var dis in dbdiscounts)
-            {
-                CardPack pa = new CardPack();
-                Discount d = new Discount();
-                d.ID = dis.ID;
-                d.StartDate = dis.StartDate?? DateTime.MinValue;
-                d.EndDate = dis.EndDate ?? DateTime.MinValue;
-                d.DiscountAmount = dis.DiscountAmount ?? 0;
-                d.DiscountPack.IdPack=
-
-                PackList.Add(pack);
-            }
-
-            return View(model);
-        }
-        #endregion
+ 
 
 
         public FileContentResult GetImage(int id)

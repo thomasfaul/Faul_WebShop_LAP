@@ -35,7 +35,7 @@
                 <div class="card col-md-2 packcard" id="deckcardcard">
                     <img class="cardpic" src="~/Content/images/Cardpacks/2.png"  />
                     <h3 class="packname">@Html.DisplayFor(c => deck.Name)</h3>
-                    @Html.ActionLink("Zu diesem Deck", "DeckDetails", new { id = deck.DeckID })
+                    <h5> @Html.ActionLink("Zu diesem Deck", "DeckDetails", new { id = deck.DeckID })</h5>
                 </div>
             }
         </div>
