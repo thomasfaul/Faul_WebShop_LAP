@@ -1188,3 +1188,13 @@ font-family:Xena;
 .cardpic.img-rounded {
     margin-top: 10em;
 }
+#CardPayment_CardExpiryMonth {
+       
+          max-width:10em !important;
+          max-width:10%
+}
+#CardPayment_CardExpiryYear {
+     
+           max-width:10em !important;
+           max-width:10%
+}

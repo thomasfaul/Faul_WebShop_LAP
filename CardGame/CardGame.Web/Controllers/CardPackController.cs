@@ -229,7 +229,7 @@ namespace CardGame.Web.Controllers
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth, o.Quantity);
 
                     //Check new Balance and Update Balance
-                    var newBalance = o.CurrencyBalance + orderTotal;
+                    var newBalance = o.CurrencyBalance+(o.Pack.Worth*o.Quantity);
                     var hasUpdated = UserManager.Update_BalanceByEmail(User.Identity.Name, (int)newBalance);
 
                     //Check if has Updated

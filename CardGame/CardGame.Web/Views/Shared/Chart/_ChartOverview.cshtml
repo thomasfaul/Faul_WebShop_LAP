@@ -5,38 +5,24 @@
 
 <div class="col-md-5">
     <br />
-    <span id="chartspan">Top 10 Kunden</span>
+    <span id="chartspan">Top 5 Kunden/N</span>
 
-    @Html.Partial("Chart/_ShowTopTenBuyers")
+    @Html.Partial("Chart/_ShowTopFiveBuyers")
 </div>
-
 <div class="col-md-5">
     <br />
-    <span id="chartspan">Sign ups Woche</span>
+    <span id="chartspan">Top 5 Kunden/E</span>
 
-    @Html.Partial("Chart/_ShowSignUpsLastWeek")
+    @Html.Partial("Chart/_ShowTop5BuyersEmail")
 </div>
-
 <div class="col-md-5">
     <br />
-    <span id="chartspan">Verkauf heute</span>
+    <span id="chartspan">Top 5 Packs</span>
 
-    @Html.Partial("Chart/_ShowPurchaseAllDay")
+    @Html.Partial("Chart/_ShowTop5Sellers")
 </div>
 
-<div class="col-md-5">
-    <br />
-    <span id="chartspan">Artikel Verkauf 24h</span>
 
-    @Html.Partial("Chart/_ShowSellingStatsLast24HoursSum")
-</div>
-
-<div class="col-md-5">
-    <br />
-    <span id="chartspan">Verkauf Woche</span>
-
-    @Html.Partial("Chart/_ShowPurchaseCountWeek")
-</div>
 
 
 

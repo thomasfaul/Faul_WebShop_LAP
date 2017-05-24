@@ -39,64 +39,67 @@ namespace CardGame.DAL.Model
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Discount> AllDiscounts { get; set; }
     
-        public virtual ObjectResult<pGetSellingstatsDay_Result> pGetSellingstatsDay()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsDay_Result>("pGetSellingstatsDay");
-        }
-    
-        public virtual ObjectResult<pGetSellingstatsMonth_Result> pGetSellingstatsMonth()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsMonth_Result>("pGetSellingstatsMonth");
-        }
-    
-        public virtual ObjectResult<pGetUserSignUpsWeek_Result> pGetUserSignUpsWeek()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetUserSignUpsWeek_Result>("pGetUserSignUpsWeek");
-        }
-    
-        public virtual int pGetTop10Sellers()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pGetTop10Sellers");
-        }
-    
-        public virtual ObjectResult<pGetSellingGainsTwoWeeks_Result> pGetSellingGainsTwoWeeks()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingGainsTwoWeeks_Result>("pGetSellingGainsTwoWeeks");
-        }
-    
-        public virtual ObjectResult<pGetSellingOverallTwoWeeks_Result> pGetSellingOverallTwoWeeks()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingOverallTwoWeeks_Result>("pGetSellingOverallTwoWeeks");
-        }
-    
-        public virtual ObjectResult<pGetSellingWholeOrdersLastTwoWeeks_Result> pGetSellingWholeOrdersLastTwoWeeks()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingWholeOrdersLastTwoWeeks_Result>("pGetSellingWholeOrdersLastTwoWeeks");
-        }
-    
-        public virtual ObjectResult<pGetSignUpsWeek_Result> pGetSignUpsWeek()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSignUpsWeek_Result>("pGetSignUpsWeek");
-        }
-    
-        public virtual ObjectResult<pGetCountSignUpsWeek_Result> pGetCountSignUpsWeek()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetCountSignUpsWeek_Result>("pGetCountSignUpsWeek");
-        }
-    
-        public virtual ObjectResult<pGetSellingstatsLast24hours_Result> pGetSellingstatsLast24hours()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetSellingstatsLast24hours_Result>("pGetSellingstatsLast24hours");
-        }
-    
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual ObjectResult<pGetTop10Buyers_Result> pGetTop10Buyers()
+        public virtual ObjectResult<pGetTop5Customers_Result> pGetTop5Customers()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop10Buyers_Result>("pGetTop10Buyers");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Customers_Result>("pGetTop5Customers");
+        }
+    
+        public virtual ObjectResult<pGetTop5CustomersEmails_Result> pGetTop5CustomersEmails()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5CustomersEmails_Result>("pGetTop5CustomersEmails");
+        }
+    
+        public virtual ObjectResult<pGetTop5Sellers_Result> pGetTop5Sellers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Sellers_Result>("pGetTop5Sellers");
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
         }
     }
 }

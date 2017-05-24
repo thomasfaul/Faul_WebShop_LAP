@@ -4,65 +4,60 @@
 
 
 @model Order
-<h4 style="color:aquamarine">HTTPS!</h4>
+<h9 style="color:aquamarine">HTTPS!</h9>
+@using (Html.BeginForm())
+{
 <fieldset>
+    <legend></legend>
     <h3 class="welcome">Kreditkartenzahlung</h3>
 
-    <div class="row"style="margin-top:-0.4em">
-        <div class="col-md-4 cardcol">
-            <h5> @Html.LabelFor(model => model.CardPayment.CardCompany)</h5>
-        </div>
-        <div class="col-md-push-4 cardcol">
-            <h5> @Html.TextBoxFor(m => m.CardPayment.CardCompany)</h5>
-            <h5>@Html.ValidationMessageFor(model => model.CardPayment.CardCompany)</h5>
-        </div>
-    </div>
+    <ul>
+        <li>
+            <p>
+                @Html.LabelFor(model => model.CardPayment.CardCompany)
+                @Html.TextBoxFor(m => m.CardPayment.CardCompany)
+            </p>
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(model => model.CardPayment.CardHolder)
+                @Html.TextBoxFor(m => m.CardPayment.CardHolder)
+            </p>
+        </li>
+        <li>
+            @Html.ValidationMessageFor(model => model.CardPayment.CardHolder)
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.CardPayment.CardNumber)
+                @Html.TextBoxFor(m => m.CardPayment.CardNumber)
+            </p>
+            @Html.ValidationMessageFor(m => m.CardPayment.CardNumber)
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.CardPayment.CardSecurityNumber)
+                @Html.TextBoxFor(m => m.CardPayment.CardSecurityNumber)
+            </p>
+            @Html.ValidationMessageFor(m => m.CardPayment.CardSecurityNumber)
+        </li>
+        <li>
+            <p>
+                @Html.LabelFor(m => m.CardPayment.CardExpiryYear)
 
 
-    <div class="row"style="margin-top:0.6em">
-        <div class="col-md-4 cardcol">
-            <h5> @Html.LabelFor(model => model.CardPayment.CardHolder)</h5>
-      </div>
-        <div class="col-md-push-4 cardcol">
-            <h5>@Html.TextBoxFor(m => m.CardPayment.CardHolder)</h5>
-            <h5>@Html.ValidationMessageFor(model => model.CardPayment.CardHolder)</h5>
-        </div>
-    </div>
 
-
-    <div class="row"style="margin-top:0.6em">
-        <div class="col-md-4 cardcol">
-            <h5> @Html.LabelFor(m => m.CardPayment.CardExpiryYear)</h5>
-        </div>
-        <div class="col-md-push-4 cardcol">
           
-            {MM}<h5 style="max-width:7em"> @Html.TextBoxFor(m => m.CardPayment.CardExpiryYear, "{MM}")</h5>
-            {YYYY}<h5 style="max-width:7em"> @Html.TextBoxFor(m => m.CardPayment.CardExpiryMonth, "{YYYY}")</h5>
-                
+            (yyyy/mm) @Html.TextBoxFor(m => m.CardPayment.CardExpiryYear, "{MM}")
+             @Html.TextBoxFor(m => m.CardPayment.CardExpiryMonth, "{YYYY}")
+        
             
-            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)</h5>
-            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardExpiryYear)</h5>
-        </div>
-     </div>
+                
+            </p>
+            @Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)
+            @Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)
+        </li>
+    </ul>
 
-    <div class="row"style="margin-top:0.6em">
-        <div class="col-md-4 cardcol">
-            <h5>@Html.LabelFor(m => m.CardPayment.CardNumber)</h5>
-           </div>
-        <div class="col-md-push-4 cardcol">
-            <h5>@Html.TextBoxFor(m => m.CardPayment.CardNumber)</h5>
-            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardNumber)</h5>
-        </div>
-    </div>
-
-    <div class="row" style="margin-top:0.6em">
-        <div class="col-md-4 cardcol">
-            <h5> @Html.LabelFor(m => m.CardPayment.CardSecurityNumber)</h5>
-        </div>
-        <div class="col-md-push-4 cardcol">
-            <h5>@Html.TextBoxFor(m => m.CardPayment.CardSecurityNumber)</h5>
-            <h5>@Html.ValidationMessageFor(m => m.CardPayment.CardSecurityNumber)</h5>
-</div>
-       </div>
 </fieldset>
-
+}

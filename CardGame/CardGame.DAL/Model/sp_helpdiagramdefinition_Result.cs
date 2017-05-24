@@ -11,9 +11,9 @@ namespace CardGame.DAL.Model
 {
     using System;
     
-    public partial class pGetUserSignUpsWeek_Result
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public Nullable<System.DateTime> Signup { get; set; }
-        public string email { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

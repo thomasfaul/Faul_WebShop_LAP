@@ -28,7 +28,7 @@ namespace CardGame.DAL.Logic
                     numUsers = db.AllUsers.Count();
                 }
                 log.Info("DB-InfoManager-GetNumUsers " + numUsers);
-               
+
                 return numUsers;
             }
             catch (System.Exception e)
@@ -61,7 +61,7 @@ namespace CardGame.DAL.Logic
             catch (System.Exception e)
             {
                 log.Error("Usermanager-GetTotalCost", e);
-                return 0;  
+                return 0;
             }
         }
         #endregion
@@ -95,30 +95,66 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-        #region Get Top Ten Buyers
+        #region Get Top 5 Customers/Names
         /// <summary>
-        /// Calls the pTop10Buyers stored Procedure
+        /// Calls the pTop5 Customers stored Procedure
         /// takes the Values and gives back the ChartModel
         /// </summary>
         /// <returns>ChartModel</returns>
-        public static ChartModel GetTop10Buyers()
+        public static ChartModel GetTop10CustomersNames()
         {
             try
             {
-                log.Info("DB-InfoManager-Top 10 Buyers");
+                log.Info("DB-InfoManager-Top 5 Customers");
                 ChartModel cmodel = new ChartModel();
                 cmodel.Strings = new ArrayList();
                 cmodel.Values = new ArrayList();
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var result = db.pGetTop10Buyers().ToList();
+                    var result = db.pGetTop5Customers().ToList();
+
+                    for (int i = 0; i < result.Count; i++)
+                    {
+                        cmodel.Strings.Add(result[i].firstname);
+                        cmodel.Values.Add(result[i].NumberofPurchases);
+                    }
+                    log.Info("DB-InfoManager-Top 5 Customers worked");
+                    return cmodel;
+                }
+            }
+
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
+        }
+        #endregion
+
+        #region Get Top 5 Customers/Email
+        /// <summary>
+        /// Calls the pTop5CustomersEmail stored Procedure
+        /// takes the Values and gives back the ChartModel
+        /// </summary>
+        /// <returns>ChartModel</returns>
+        public static ChartModel GetTop5CustomersEmail()
+        {
+            try
+            {
+                log.Info("DB-InfoManager-Top 5 Customers/Email");
+                ChartModel cmodel = new ChartModel();
+                cmodel.Strings = new ArrayList();
+                cmodel.Values = new ArrayList();
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    var result = db.pGetTop5CustomersEmails().ToList();
 
                     for (int i = 0; i < result.Count; i++)
                     {
                         cmodel.Strings.Add(result[i].email);
                         cmodel.Values.Add(result[i].NumberofPurchases);
                     }
-                    log.Info("DB-InfoManager-Top 10 Buyers worked");
+                    log.Info("DB-InfoManager-Top 5 Customers/Email worked");
                     return cmodel;
                 }
             }
@@ -131,287 +167,40 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-        #region GET TOP TEN SELLERS
+        #region Get Top 5 Customers/Email
         /// <summary>
-        /// Calls the pTopTenSellers stored Procedure
+        /// Calls the pTop5CustomersEmail stored Procedure
         /// takes the Values and gives back the ChartModel
         /// </summary>
         /// <returns>ChartModel</returns>
-        public static ChartModel GetTop10Sellers()
+        public static ChartModel GetTop5Sellers()
         {
             try
             {
-                log.Info("DB-InfoManager-Top 10 Sellers");
+                log.Info("DB-InfoManager-Top 5 Sellers");
                 ChartModel cmodel = new ChartModel();
                 cmodel.Strings = new ArrayList();
                 cmodel.Values = new ArrayList();
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    //var result = db.pGetTop10Sellers()ToList();
-
-                    //for (int i = 0; i < result.Count; i++)
-                    //{
-                    //    cmodel.Strings.Add(result[i].email);
-                    //    cmodel.Values.Add(result[i].NumberofPurchases);
-                    //}
-                    log.Info("DB-InfoManager-Top 10 Sellers worked");
-                    return cmodel;
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debugger.Break();
-                throw e;
-            }
-        }
-        #endregion
-
-        #region GET COUNT SIGN UPS WEEK
-        public static ChartModel GetCountSignUpsWeek()
-        {
-            try
-            {
-                ChartModel cmodel = new ChartModel();
-                cmodel.Strings = new ArrayList();
-                cmodel.Values = new ArrayList();
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    var result = db.pGetCountSignUpsWeek().ToList();
+                    var result=db.pGetTop5Sellers().ToList();
 
                     for (int i = 0; i < result.Count; i++)
                     {
-                        cmodel.Strings.Add(result[i].Signup);
-                        cmodel.Values.Add(result[i].signed);
+                        cmodel.Strings.Add(result[i].packname);
+                        cmodel.Values.Add(result[i].NumberofPurchases);
                     }
+                    log.Info("DB-InfoManager-Top 5 Sellers");
                     return cmodel;
                 }
             }
-            catch (System.Exception e)
-            {
 
-                Debugger.Break();
-                throw e;
-            }
-        }
-        #endregion
-
-        #region GET PURCHASE SUM DAY
-        /// <summary>
-        /// Calls the pGetSellingstatsDay stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns>ChartModel</returns>
-        public static ChartModel GetPurchaseSumDay()
-        {
-            log.Info("DB-InfoManager-GetPurchaseSumDay");
-            ChartModel cmodel = new ChartModel();
-            cmodel.Strings = new ArrayList();
-            cmodel.Values = new ArrayList();
-            using (var db = new itin21_ClonestoneFSEntities())
-            {
-                var result = db.pGetSellingstatsDay().ToList();
-
-                for (int i = 0; i < result.Count; i++)
-                {
-                    cmodel.Strings.Add(result[i].Einnahmen);
-                    cmodel.Values.Add(result[i].Tag);
-                }
-                log.Info("DB-InfoManager-GetPurchaseSumDay worked");
-                return cmodel;
-            }
-
-        }
-        #endregion
-
-        #region GET PURCHASE COUNT DAY
-        /// <summary>
-        /// Calls the pGetSellingstatsDay stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns></returns>
-        public static ChartModel GetPurchaseCountDay()
-        {
-            log.Info("DB-InfoManager-GetPurchaseCountDay");
-            ChartModel cmodel = new ChartModel();
-            cmodel.Strings = new ArrayList();
-            cmodel.Values = new ArrayList();
-            using (var db = new itin21_ClonestoneFSEntities())
-            {
-                var result = db.pGetSellingstatsDay().ToList();
-
-                for (int i = 0; i < result.Count; i++)
-                {
-                    cmodel.Strings.Add(result[i].Kaeufe);
-                    cmodel.Values.Add(result[i].Tag);
-                }
-                log.Info("DB-InfoManager-Top 10 Sellers worked");
-                return cmodel;
-            }
-
-        }
-        #endregion
-
-        #region GET PURCHASES COUNT WEEK
-        public static ChartModel GetPurchasesCountWeek()
-        {
-            try
-            {
-                ChartModel cmodel = new ChartModel();
-                cmodel.Strings = new ArrayList();
-                cmodel.Values = new ArrayList();
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    var result = db.pGetSellingstatsMonth().ToList();
-
-                    for (int i = 0; i < result.Count; i++)
-                    {
-                        cmodel.Strings.Add(result[i].Kaeufe);
-                        cmodel.Values.Add(result[i].Woche);
-                    }
-                    return cmodel;
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debugger.Break();
-                throw e;
-            }
-
-        }
-        #endregion
-
-        #region GET PURCHASES SUM WEEK
-        /// <summary>
-        /// Calls the pGetSellingstatsMonth stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns>ChartModel</returns>
-        public static ChartModel GetPurchasesSumWeek()
-        {
-            try
-            {
-                log.Info("DB-InfoManager-PurchasesSumWeek");
-                ChartModel cmodel = new ChartModel();
-                cmodel.Strings = new ArrayList();
-                cmodel.Values = new ArrayList();
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    var result = db.pGetSellingstatsMonth().ToList();
-
-                    for (int i = 0; i < result.Count; i++)
-                    {
-                        cmodel.Strings.Add(result[i].Einnahmen);
-                        cmodel.Values.Add(result[i].Woche);
-                    }
-                    log.Info("DB-InfoManager-PurchaseSumWeek worked");
-                    return cmodel;
-                }
-            }
             catch (System.Exception e)
             {
                 Debugger.Break();
                 throw e;
             }
         }
-        #endregion
-
-        #region GET USER SIGN UPS WEEK EMAIL
-        /// <summary>
-        /// Calls the pGetSellingstatsMonth stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns>ChartModel</returns>
-        public static ChartModel GetUserSignUpsWeekEmail()
-        {
-
-            try
-            {
-                log.Info("DB-InfoManager-PurchasesSumWeek");
-                ChartModel cmodel = new ChartModel();
-                cmodel.Strings = new ArrayList();
-                cmodel.Values = new ArrayList();
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    var result = db.pGetUserSignUpsWeek().ToList();
-
-                    for (int i = 0; i < result.Count; i++)
-                    {
-                        cmodel.Strings.Add(result[i].Signup);
-                        cmodel.Values.Add(result[i].email);
-                    }
-                    log.Info("DB-InfoManager-PurchaseSumWeek worked");
-                    return cmodel;
-                }
-            }
-            catch (System.Exception e)
-            {
-                //Debugger.Break();
-                log.Error("Usermanager-GetTotalCost", e);
-                return null;
-            }
-        }
-        #endregion
-
-        #region GET SELLING WHOLE ORDERS LAST TWO WEEKS
-        /// <summary>
-        /// Calls the pGetSellingWholeOrdersLastTwoWeeks stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns>ChartModel</returns>
-        public static ChartModel GetSellingWohleOrdersLastTwoWeeks()
-        {
-            try
-            {
-                log.Info("DB-InfoManager-GetSellingWohleOrdersLastTwoWeeks");
-                ChartModel cmodel = new ChartModel();
-                cmodel.Strings = new ArrayList();
-                cmodel.Values = new ArrayList();
-                using (var db = new itin21_ClonestoneFSEntities())
-                {
-                    var result = db.pGetSellingWholeOrdersLastTwoWeeks().ToList();
-
-                    for (int i = 0; i < result.Count; i++)
-                    {
-                        cmodel.Strings.Add(result[i].Kaeufe);
-                        cmodel.Values.Add(result[i].Tag);
-                    }
-                    log.Info("DB-InfoManager-GetSellingWohleOrdersLastTwoWeeks worked");
-                    return cmodel;
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debugger.Break();
-                throw e;
-            }
-        }
-        #endregion
-
-        #region GET SELLING LAST 21 HOURS SUM
-        /// <summary>
-        /// Calls the pGetSellingWholeOrdersLastTwoWeeks stored Procedure
-        /// takes the Values and gives back the ChartModel
-        /// </summary>
-        /// <returns>ChartModel</returns>
-        public static ChartModel GetSellingStatsLast21HoursSum()
-        {
-            log.Info("DB-InfoManager-pGetSellingstatsLast24hours");
-            ChartModel cmodel = new ChartModel();
-            cmodel.Strings = new ArrayList();
-            cmodel.Values = new ArrayList();
-            using (var db = new itin21_ClonestoneFSEntities())
-            {
-                var result = db.pGetSellingstatsLast24hours().ToList();
-
-                for (int i = 0; i < result.Count; i++)
-                {
-                    cmodel.Strings.Add(result[i].Einnahmen);
-                    cmodel.Values.Add(result[i].Stunde);
-                }
-                log.Info("DB-InfoManager-GetSellingstatsLast24hours worked");
-                return cmodel;
-            }
-        } 
         #endregion
 
     }

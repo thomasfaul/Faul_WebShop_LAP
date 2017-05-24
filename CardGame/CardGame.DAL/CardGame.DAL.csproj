@@ -107,40 +107,22 @@
     <Compile Include="Model\Pack.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\pGetCountSignUpsWeek_Result.cs">
+    <Compile Include="Model\pGetTop5CustomersEmails_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\pGetSellingGainsTwoWeeks_Result.cs">
+    <Compile Include="Model\pGetTop5Customers_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\pGetSellingOverallTwoWeeks_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetSellingstatsDay_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetSellingstatsLast24hours_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetSellingstatsMonth_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetSellingWholeOrdersLastTwoWeeks_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetSignUpsWeek_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetTop10Buyers_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetTop10Sellers1_Result.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\pGetUserSignUpsWeek_Result.cs">
+    <Compile Include="Model\pGetTop5Sellers_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Purchase.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sysdiagrams.cs">
@@ -160,6 +142,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CardGameModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App_Browsers\qt.browser" />
     <None Include="Model\CardGameModel.edmx.diagram">
       <DependentUpon>CardGameModel.edmx</DependentUpon>
     </None>
