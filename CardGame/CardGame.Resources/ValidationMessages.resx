@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ADDRESS" xml:space="preserve">
+    <value>Bitte geben Sie eine gültige Adresse ein</value>
+  </data>
   <data name="CARD_EXPIRY" xml:space="preserve">
     <value>Bitte ein korrektes Ablaufdatum eintragen</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="CARD_SECURITY_N" xml:space="preserve">
     <value>Bitte einen korrekten Sicherheitscode eintragen</value>
+  </data>
+  <data name="CITY" xml:space="preserve">
+    <value>Bitte geben Sie eine Stadt ein</value>
   </data>
   <data name="CURRENCYBALANCE" xml:space="preserve">
     <value>Bitte geben Sie einen gültigen Wert ein</value>
@@ -182,5 +188,8 @@
   </data>
   <data name="USERROLE" xml:space="preserve">
     <value>Bitte geben Sie eine gültige Rolle ein: (player,admin)</value>
+  </data>
+  <data name="Zip" xml:space="preserve">
+    <value>Bitte geben Sie eine gültige Postleitzahl ein</value>
   </data>
 </root>

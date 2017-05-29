@@ -123,6 +123,9 @@
           <Property Name="bandate" Type="datetime" />
           <Property Name="picmimetype" Type="varchar" MaxLength="50" />
           <Property Name="isdeleted" Type="bit" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="zip" Type="int" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbltype">
           <Key>
@@ -251,9 +254,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="pGetTop5Customers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetTop5CustomersEmails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="pGetTop5Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -441,6 +441,9 @@
           <Property Name="BanDate" Type="DateTime" Precision="3" />
           <Property Name="AvatarMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CardType">
           <Key>
@@ -770,6 +773,9 @@
           <EntitySetMapping Name="AllUsers">
             <EntityTypeMapping TypeName="CardGameModel.User">
               <MappingFragment StoreEntitySet="tblperson">
+                <ScalarProperty Name="City" ColumnName="city" />
+                <ScalarProperty Name="Zip" ColumnName="zip" />
+                <ScalarProperty Name="Address" ColumnName="address" />
                 <ScalarProperty Name="IsDeleted" ColumnName="isdeleted" />
                 <ScalarProperty Name="AvatarMimeType" ColumnName="picmimetype" />
                 <ScalarProperty Name="BanDate" ColumnName="bandate" />
@@ -827,30 +833,6 @@
             </EndProperty>
             <Condition ColumnName="fkpack" IsNull="false" />
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="pGetTop5Customers" FunctionName="CardGameModel.Store.pGetTop5Customers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5Customers_Result">
-                <ScalarProperty Name="NumberofPurchases" ColumnName="NumberofPurchases" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pGetTop5CustomersEmails" FunctionName="CardGameModel.Store.pGetTop5CustomersEmails">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5CustomersEmails_Result">
-                <ScalarProperty Name="NumberofPurchases" ColumnName="NumberofPurchases" />
-                <ScalarProperty Name="email" ColumnName="email" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pGetTop5Sellers" FunctionName="CardGameModel.Store.pGetTop5Sellers">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5Sellers_Result">
-                <ScalarProperty Name="NumberofPurchases" ColumnName="NumberofPurchases" />
-                <ScalarProperty Name="packname" ColumnName="packname" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CardGameModel.Store.sp_helpdiagramdefinition">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.sp_helpdiagramdefinition_Result">

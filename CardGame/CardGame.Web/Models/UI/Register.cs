@@ -41,6 +41,35 @@ ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
         public string Gamertag { get; set; }
         #endregion
 
+        #region ADDRESS
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50,
+ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [Display(Name = Constants.Labels.ADDRESS, ResourceType = typeof(ValidationLabels))]
+        public string Address { get; set; }
+        #endregion
+
+        #region CITY
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [StringLength(50,
+ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
+        [Display(Name = Constants.Labels.CITY, ResourceType = typeof(ValidationLabels))]
+        public string City { get; set; }
+        #endregion
+
+        #region ZIP
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
+ErrorMessageResourceName = Constants.Validation.REQUIRED)]
+        [Display(Name = Constants.Labels.ZIP, ResourceType = typeof(ValidationLabels))]
+        public int Zip { get; set; }
+        #endregion
+
+
+
         #region PASSWORDCONFIRMATION
         [Required(
         AllowEmptyStrings = false,

@@ -171,6 +171,12 @@ namespace CardGame.Web.Controllers
             log.Info("numPacks: " + numPacks.ToString());
 
             Order o = new Order();
+            EditUserInfo ui = new EditUserInfo();
+            var uiuser =UserManager.GetUserByUserEmail(User.Identity.Name);
+            ui.Address = uiuser.Address;
+            ui.City = uiuser.City;
+            ui.Zip = uiuser.Zip??0;
+
             var dbCardPack = ShopManager.Get_CardPackById(id);
 
             CardPack cardPack = new CardPack();
@@ -184,8 +190,10 @@ namespace CardGame.Web.Controllers
             cardPack.IsActive = (bool)dbCardPack.IsActive;
             cardPack.ImageMimeType = dbCardPack.ImageMimeType;
             cardPack.Pic = dbCardPack.Image;
+           
             o.Pack = cardPack;
             o.Quantity = numPacks;
+            o.UserProfile = ui;
             
             o.CurrencyBalance = UserManager.Get_BalanceByEmail(User.Identity.Name);
 
@@ -219,11 +227,11 @@ namespace CardGame.Web.Controllers
                 try
                 {
                     //Check if Modelstate is valid
-                    //if (!ModelState.IsValid)
-                    //    {
-                    //        return View(o);
+                    if (!ModelState.IsValid)
+                        {
+                           return View(o);
 
-                    //    }
+                      }
 
                     //Get Total Cost
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth, o.Quantity);
@@ -249,8 +257,8 @@ namespace CardGame.Web.Controllers
 
                     }
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
-                    var emailsend = EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihr Guthaben wurde erhöht, viel Spaß beim CardPacks kaufen");
-                    var creditcardsend = EmailHelper.SendEmail("thomas.faul@gmx.at", "ZahlungsÜbermittlung", string.Format("{0}", o.CardPayment.CardCompany));
+                    var emailsend = EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", String.Format(" Magical TeaParty Gmbh,Zipperstrasse 56 - 59,1110 Wien, Telefon:06641525725, Datum:{0}, Lieber{1}, Du hast:{1}Packung(en) {2} gekauft , Umsatzsteuer macht {3} ,GesamtBetrag{4}, Danke für Ihren Einkauf",DateTime.Now,o.UserProfile.Firstname,o.Quantity,o.Pack.PackName, o.Pack.Worth * o.Quantity/6, o.Pack.Worth * o.Quantity));
+                   
                     return RedirectToAction("Index", "Home");
 
                 }

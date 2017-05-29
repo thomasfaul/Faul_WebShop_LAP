@@ -37,6 +37,9 @@ namespace CardGame.DAL.Model
         public Nullable<System.DateTime> BanDate { get; set; }
         public string AvatarMimeType { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public string Address { get; set; }
+        public Nullable<int> Zip { get; set; }
+        public string City { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCardCollection> AllUserCardCollections { get; set; }

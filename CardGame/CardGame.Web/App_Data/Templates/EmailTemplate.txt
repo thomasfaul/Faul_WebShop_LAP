@@ -1,0 +1,47 @@
+﻿<html>
+<body style="color:grey; font-size:15px;">
+<font face="Helvetica, Arial, sans-serif">
+
+<div style="position:absolute; height:100px;
+width:600px; background-color:0d1d36; padding:30px;">
+<img src="logo" />
+</div>
+
+<br/>
+<br/>
+
+<div style="background-color: #ece8d4;
+width:600px; height:200px; padding:30px; margin-top:30px;">
+
+
+
+<p>Ihre Rechnung</p>
+<p>Magical TeaParty Gmbh</p>
+ <p> Zipperstrasse 56-59</p><br />
+ <p> 1110 Wien</p><br />
+<abbr title="Phone">P:</abbr>
+ <p> 1110 Wien</p><br />
+ <p>(+43)0664/1525725</p>
+ <p> magicaltea.party</p>
+ <div>  Datum: {0}</div>
+ <div>  Rechnungsnummer: {1}</div>
+
+<p>Lieber {2},<p><br />
+<p>Hier Ihre Bestellübersicht</p>
+<br />
+<p>Du hast vom Package {3},<p>
+<p>{4} Stück bestellt ,<p>
+<p>Umsatzsteuer: {5},<p>
+<p>Gesamtbetrag ink. Mwst {6},<p>
+<p>Danke für deinen Einkauf,<p>
+<br />
+ <p>Bei Fragen und Reklamationen:<p>
+ <br />
+ <p><strong>Support:</strong>   <a href="mailto:Support@clonestone.at">Support@clonestone.at</a><br /></p>
+<p><strong>Marketing:</strong> <a href="mailto:Marketing@clonestone.at">Marketing@clonestone.com</a></p>
+
+<br/>
+<p>Danke, dein CloneShop-Team</p>
+</div>
+</body>
+</html>

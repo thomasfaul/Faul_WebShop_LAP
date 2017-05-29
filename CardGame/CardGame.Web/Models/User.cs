@@ -1,4 +1,7 @@
 ﻿
+using CardGame.Resources;
+using System.ComponentModel.DataAnnotations;
+
 namespace CardGame.Web.Models
 {
     public class User
@@ -12,6 +15,7 @@ namespace CardGame.Web.Models
         public int Currencybalance { get; set; }
 
         public byte[] Pic { get; set; }
+
     }
 }
  

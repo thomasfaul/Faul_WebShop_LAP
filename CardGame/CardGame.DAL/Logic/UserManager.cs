@@ -92,7 +92,8 @@ namespace CardGame.DAL.Logic
                     dbPerson = db.AllUsers.Where(u => u.Email == uemail).FirstOrDefault();
                     if (dbPerson == null)
                     {
-                        throw new Exception("UserDoesNotExist");
+
+                        log.Info("User doesn't exist");
                     }
                 }
             }
@@ -104,6 +105,9 @@ namespace CardGame.DAL.Logic
             return dbPerson;
         }
         #endregion
+
+    
+
 
         #region Get User by UserEmail
         /// <summary>
@@ -133,6 +137,39 @@ namespace CardGame.DAL.Logic
             }
 
             return dbUser;
+        }
+        #endregion
+
+
+
+        #region Get Users Address by UserId
+        /// <summary>
+        /// takes a the id of the user and gets the Address by the id
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public static User GetUsersAddressbyUserId(int id)
+        {
+            log.Info("GetUsersAddressbyUserId");
+            User ad = null;
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    ad = db.AllUsers.Where(u => u.ID == id).FirstOrDefault();
+                    if (ad == null)
+                    {
+                        log.Error(" Adresse existiert nicht");
+                        throw new Exception("Adress doesn´t exist");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                log.Error(" GetUsersAddressbyUserId", e);
+            }
+
+            return ad;
         }
         #endregion
 
@@ -707,6 +744,47 @@ namespace CardGame.DAL.Logic
             }
         }
         #endregion
+
+
+        //#region Save UserAddress by Userid
+        ///// <summary>
+        ///// Takes the Useremail , Address, Zip, City
+        ///// updates the database and gives back the bool if it worked out
+        ///// </summary>
+        ///// <param name="useremail"></param>
+        ///// <param name="useraddress"></param>
+        ///// <param name="zip"></param>
+        ///// <param name="city"></param>
+        ///// <returns></returns>
+        //public static bool SaveUsersAdress(string email, string address, int zip, string city)
+        //{
+        //    log.Info("UserManager-SaveUsersAdress");
+        //    var dbUser = Get_UserByEmail(email);
+        //    UserAdress dbadress = new UserAdress();
+        //    dbadress.City = city;
+        //    dbadress.Zip = zip;
+        //    dbadress.Address = address;
+
+        //    dbadress.User = dbUser;
+
+        //    try
+        //    {
+        //        using (var db = new itin21_ClonestoneFSEntities())
+        //        {
+                    
+        //            db.Entry(dbadress).State = EntityState.Modified;
+        //            db.SaveChanges();
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Debugger.Break();
+        //        log.Error("UserManager-SaveUsersAdressl", e);
+        //        return false;
+        //    }
+        //}
+        //#endregion
 
     }
 }

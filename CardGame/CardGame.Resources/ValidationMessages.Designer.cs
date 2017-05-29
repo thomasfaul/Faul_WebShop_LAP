@@ -61,6 +61,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie eine gültige Adresse ein.
+        /// </summary>
+        public static string ADDRESS {
+            get {
+                return ResourceManager.GetString("ADDRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitte ein korrektes Ablaufdatum eintragen.
         /// </summary>
         public static string CARD_EXPIRY {
@@ -84,6 +93,15 @@ namespace CardGame.Resources {
         public static string CARD_SECURITY_N {
             get {
                 return ResourceManager.GetString("CARD_SECURITY_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie eine Stadt ein.
+        /// </summary>
+        public static string CITY {
+            get {
+                return ResourceManager.GetString("CITY", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace CardGame.Resources {
         public static string USERROLE {
             get {
                 return ResourceManager.GetString("USERROLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitte geben Sie eine gültige Postleitzahl ein.
+        /// </summary>
+        public static string Zip {
+            get {
+                return ResourceManager.GetString("Zip", resourceCulture);
             }
         }
     }

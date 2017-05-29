@@ -143,11 +143,22 @@ namespace CardGame.Web.Controllers
             dbUser.AmountMoney = 100;
             dbUser.EntryDate = DateTime.Now;
             dbUser.IsDeleted = false;
+            dbUser.Zip = regUser.Zip;
+            dbUser.City = regUser.City;
+            dbUser.Address = regUser.Address;
             
+
+
+            //bool saved = UserManager.SaveUsersAdress(User.Identity.Name,regUser.Address,regUser.Zip,regUser.City );
             bool ok= AuthManager.Register(dbUser);
+            //if (saved != true)
+            //{
+            //    TempData["ErrorMessage"] = "Eintragen der Addressdaten war nicht möglich";
+            //    return View(regUser);
+            //}
             if (ok != true)
             {
-                TempData["ErrorMessage"] = "Sie konnten nicht eingeloggt werden";
+                TempData["ErrorMessage"] = "Sie konnten nicht registriert werden";
                 return View(regUser);
             }
             else

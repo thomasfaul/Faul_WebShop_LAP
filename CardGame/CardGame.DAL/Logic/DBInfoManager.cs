@@ -125,7 +125,7 @@ namespace CardGame.DAL.Logic
 
             catch (System.Exception e)
             {
-                Debugger.Break();
+                //Debugger.Break();
                 throw e;
             }
         }

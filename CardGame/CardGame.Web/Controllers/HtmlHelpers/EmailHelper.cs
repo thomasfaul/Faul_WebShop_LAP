@@ -2,12 +2,16 @@
 using System.Net.Mail;
 using System.Diagnostics;
 using log4net;
+using System.IO;
 
 namespace CardGame.Web.HtmlHelpers
 {
     public class EmailHelper
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
+
         #region SEND EMAIL
         public static bool SendEmail(string emailaddress, string emailsubject, string text)
         {
@@ -39,13 +43,17 @@ namespace CardGame.Web.HtmlHelpers
             catch (Exception e)
             {
                 //Debugger.Break();
-                log.Error("Emailhelper-EmailBBRZ",e);
+                log.Error("Emailhelper-EmailBBRZ", e);
                 return true;
             }
             #endregion
 
+
+        }
+  
+          
             #region EMAIL GMX
-        
+
             //MailMessage Email = new MailMessage();
             //MailAddress Sender = new MailAddress("thomas.faul@gmx.at");
 
@@ -72,7 +80,6 @@ namespace CardGame.Web.HtmlHelpers
             //return true;
 
             #endregion
-        }
+      }
 #endregion
-    }
-}
+   }

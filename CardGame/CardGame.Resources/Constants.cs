@@ -27,6 +27,9 @@ namespace CardGame.Resources
             public const string NUMBER_PACKAGES = "NUMBER_PACKAGES";
             public const string USERROLE= "USERROLE";
             public const string CURRENCYBALANCE = "CURRENCYBALANCE";
+            public const string ADDRESS = "ADDRESS";
+            public const string ZIP = "ZIP";
+            public const string CITY = "CITY";
         }
 
         public class Labels
@@ -65,7 +68,9 @@ namespace CardGame.Resources
             public const string CURRENCYBALANCE = "CURRENCYBALANCE";
             public const string BANDATE = "BANDATE";
             public const string ISDELETED = "ISDELETED";
-
+            public const string ADDRESS = "ADDRESS";
+            public const string ZIP = "ZIP";
+            public const string CITY = "CITY";
 
         }
     }

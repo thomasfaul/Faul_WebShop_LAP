@@ -40,6 +40,27 @@
                 </li>
                 <li>
                     <p>
+                        @Html.LabelFor(u => u.Address)
+                        @Html.EditorFor(u => u.Address)
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Address)
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.Zip)
+                        @Html.EditorFor(u => u.Zip)
+                    </p>
+                    @Html.ValidationMessageFor(model => model.Zip)
+                </li>
+                <li>
+                    <p>
+                        @Html.LabelFor(u => u.City)
+                        @Html.EditorFor(u => u.City)
+                    </p>
+                    @Html.ValidationMessageFor(model => model.City)
+                </li>
+                <li>
+                    <p>
                         @Html.LabelFor(u => u.Gamertag)
                         @Html.EditorFor(u => u.Gamertag)
                     </p>

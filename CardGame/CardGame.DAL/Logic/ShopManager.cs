@@ -427,6 +427,9 @@ namespace CardGame.DAL.Logic
             return purch;
         }
         #endregion
+
+
+
     }
 
 }

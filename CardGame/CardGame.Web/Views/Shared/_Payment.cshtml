@@ -12,6 +12,7 @@
     <h3 class="welcome">Kreditkartenzahlung</h3>
 
     <ul>
+
         <li>
             <p>
                 @Html.LabelFor(model => model.CardPayment.CardCompany)
@@ -48,8 +49,8 @@
 
 
           
-            (yyyy/mm) @Html.TextBoxFor(m => m.CardPayment.CardExpiryYear, "{MM}")
-             @Html.TextBoxFor(m => m.CardPayment.CardExpiryMonth, "{YYYY}")
+            (yyyy/mm) @Html.TextBoxFor(m => m.CardPayment.CardExpiryYear)
+             @Html.TextBoxFor(m => m.CardPayment.CardExpiryMonth)
         
             
                 
@@ -57,6 +58,28 @@
             @Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)
             @Html.ValidationMessageFor(m => m.CardPayment.CardExpiryMonth)
         </li>
+        
+        <li><h3 class="welcome">Ihre Daten</h3>
+            <p>
+                @Html.LabelFor(model => model.UserProfile.Address):
+                @Html.DisplayFor(model => model.UserProfile.Address)
+            </p>
+        </li>
+        <li>
+    
+            <p>
+                @Html.LabelFor(model => model.UserProfile.Zip):
+                @Html.DisplayFor(model => model.UserProfile.Zip)
+            </p>
+        </li>
+        <li>
+ 
+            <p>
+                @Html.LabelFor(model => model.UserProfile.Zip):
+                @Html.DisplayFor(model => model.UserProfile.City)
+            </p>
+        </li>
+
     </ul>
 
 </fieldset>

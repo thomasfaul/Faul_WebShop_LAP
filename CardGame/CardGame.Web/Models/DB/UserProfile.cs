@@ -9,6 +9,7 @@ namespace CardGame.Web.Models.DB
         public string LastName { get; set; }
         [DisplayName("eMail Address")]
         public string Email { get; set; }
+
         public int Currency { get; set; }
         
 

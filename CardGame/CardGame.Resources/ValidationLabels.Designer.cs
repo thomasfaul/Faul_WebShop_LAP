@@ -61,6 +61,15 @@ namespace CardGame.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adresse.
+        /// </summary>
+        public static string ADDRESS {
+            get {
+                return ResourceManager.GetString("ADDRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attack.
         /// </summary>
         public static string ATTACK {
@@ -129,6 +138,15 @@ namespace CardGame.Resources {
         public static string CARD_SECURITY_N {
             get {
                 return ResourceManager.GetString("CARD_SECURITY_N", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stadt.
+        /// </summary>
+        public static string CITY {
+            get {
+                return ResourceManager.GetString("CITY", resourceCulture);
             }
         }
         
@@ -381,6 +399,15 @@ namespace CardGame.Resources {
         public static string WORTH {
             get {
                 return ResourceManager.GetString("WORTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Postleitzahl.
+        /// </summary>
+        public static string ZIP {
+            get {
+                return ResourceManager.GetString("ZIP", resourceCulture);
             }
         }
     }

@@ -1148,6 +1148,8 @@ label.custom-file-upload {
 #Email {
      max-width:15em;
 }
+
+
 #Password {
      max-width:15em;
 }
@@ -1197,4 +1199,13 @@ font-family:Xena;
      
            max-width:10em !important;
            max-width:10%
+}
+#City {
+     max-width:15em !important;
+}
+#Address {
+     max-width:15em !important;
+}
+#Zip {
+     max-width:15em !important;
 }

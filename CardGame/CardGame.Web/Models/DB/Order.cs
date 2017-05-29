@@ -1,5 +1,7 @@
 ﻿
 
+using CardGame.Web.Models.UI;
+
 namespace CardGame.Web.Models.DB
 {
     public class Order
@@ -9,6 +11,7 @@ namespace CardGame.Web.Models.DB
         public int CurrencyBalance { get; set; }
         public bool OIsCurrency { get; set; }
         public Payment CardPayment {get; set;}
+        public EditUserInfo UserProfile { get; set; }
     }
 
 }

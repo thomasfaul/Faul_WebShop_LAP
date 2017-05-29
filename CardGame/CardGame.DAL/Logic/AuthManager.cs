@@ -40,7 +40,6 @@ namespace CardGame.DAL.Logic
                         throw new Exception("User-Gamertag gibt es bereits");
 
                     }
-                    //Salt erzeugen
                     string salt = Helper.GenerateSalt();
 
                     //Passwort Hashen

@@ -36,6 +36,9 @@ namespace CardGame.Web.Controllers
             profile.LastName = dbPerson.LastName;
             profile.GamerTag = dbPerson.GamerTag;
             profile.Pic = dbPerson.Avatar;
+            profile.Address = dbPerson.Address;
+            profile.City = dbPerson.City;
+            profile.Zip = dbPerson.Zip ??0;
 
 
             profile.NumDistinctCardsOwned = UserManager.Get_NumDistinctCardsOwnedByEmail(User.Identity.Name);
@@ -170,6 +173,9 @@ namespace CardGame.Web.Controllers
                 u.Gamertag = user.GamerTag ?? "n/a";
                 u.Pic = user.Avatar;
                 u.ImageMimeType = user.AvatarMimeType ?? "n/a";
+                u.Address = user.Address;
+                u.City = user.City;
+                u.Zip = user.Zip??0;
 
                 return View(u);
             }

@@ -34,6 +34,9 @@ namespace CardGame.Web.Controllers
                 user.Role = c.UserRole;
                 user.Password = c.Password;
                 user.Salt = c.Salt;
+                user.Address = c.Address;
+                user.City = c.City;
+                user.Zip = c.Zip ?? 0;
                 if (c.AmountMoney != null)
                 {
                     user.Currencybalance = (int)c.AmountMoney;
