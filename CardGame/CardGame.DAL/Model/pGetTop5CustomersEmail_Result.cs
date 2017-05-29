@@ -11,9 +11,9 @@ namespace CardGame.DAL.Model
 {
     using System;
     
-    public partial class pGetTop5CustomersEmails_Result
+    public partial class pGetTop5CustomersEmail_Result
     {
-        public Nullable<int> NumberofPurchases { get; set; }
+        public Nullable<int> Käufe { get; set; }
         public string email { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace CardGame.DAL.Model
         public Pack()
         {
             this.Order = new HashSet<Purchase>();
-            this.AllDiscounts = new HashSet<Discount>();
+            this.Discount = new HashSet<PackDiscount>();
         }
     
         public int ID { get; set; }
@@ -32,11 +32,11 @@ namespace CardGame.DAL.Model
         public Nullable<int> Worth { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public string ImageMimeType { get; set; }
-        public Nullable<int> BasePrice { get; set; }
+        public Nullable<decimal> BasePrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Purchase> Order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Discount> AllDiscounts { get; set; }
+        public virtual ICollection<PackDiscount> Discount { get; set; }
     }
 }

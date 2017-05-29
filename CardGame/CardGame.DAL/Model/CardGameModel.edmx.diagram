@@ -32,8 +32,8 @@
         <AssociationConnector Association="CardGameModel.FK__tbldeckca__fkdec__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblorder__fkpack__0B91BA14" ManuallyRouted="false" />
         <AssociationConnector Association="CardGameModel.FK__tblorder__fkpers__0A9D95DB" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="CardGameModel.Discount" Width="1.5" PointX="8.625" PointY="5.875" />
-        <AssociationConnector Association="CardGameModel.FK__tbldiscou__fkpac__625A9A57" />
+        <EntityTypeShape EntityType="CardGameModel.PackDiscount" Width="1.5" PointX="9.875" PointY="6.75" />
+        <AssociationConnector Association="CardGameModel.FK__tbldiscou__fkpac__5224328E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

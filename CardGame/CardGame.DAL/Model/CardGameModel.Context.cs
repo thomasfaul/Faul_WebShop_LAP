@@ -37,26 +37,11 @@ namespace CardGame.DAL.Model
         public virtual DbSet<User> AllUsers { get; set; }
         public virtual DbSet<CardType> AllCardTypes { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Discount> AllDiscounts { get; set; }
+        public virtual DbSet<PackDiscount> AllDiscounts { get; set; }
     
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<pGetTop5Customers_Result> pGetTop5Customers()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Customers_Result>("pGetTop5Customers");
-        }
-    
-        public virtual ObjectResult<pGetTop5CustomersEmails_Result> pGetTop5CustomersEmails()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5CustomersEmails_Result>("pGetTop5CustomersEmails");
-        }
-    
-        public virtual ObjectResult<pGetTop5Sellers_Result> pGetTop5Sellers()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Sellers_Result>("pGetTop5Sellers");
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
@@ -100,6 +85,21 @@ namespace CardGame.DAL.Model
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual ObjectResult<pGetTop5Customers_Result> pGetTop5Customers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Customers_Result>("pGetTop5Customers");
+        }
+    
+        public virtual ObjectResult<pGetTop5CustomersEmail_Result> pGetTop5CustomersEmail()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5CustomersEmail_Result>("pGetTop5CustomersEmail");
+        }
+    
+        public virtual ObjectResult<pGetTop5Sellers_Result> pGetTop5Sellers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pGetTop5Sellers_Result>("pGetTop5Sellers");
         }
     }
 }

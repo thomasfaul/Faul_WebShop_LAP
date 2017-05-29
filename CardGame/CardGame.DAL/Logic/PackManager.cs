@@ -229,12 +229,12 @@ namespace CardGame.DAL.Logic
         /// Gets all Packs from the Database
         /// </summary>
         /// <returns></returns> returns a tblpack
-        public static List<Discount> GetAllDiscounts()
+        public static List<PackDiscount> GetAllDiscounts()
         {
             try
             {
                 log.Info("Usermanager-GetAllPacks");
-                List<Discount> ReturnList = null;
+                List<PackDiscount> ReturnList = null;
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
                     ReturnList = db.AllDiscounts.Where(d => d.EndDate< DateTime.Now).ToList();

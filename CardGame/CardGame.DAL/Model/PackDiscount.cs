@@ -10,10 +10,15 @@
 namespace CardGame.DAL.Model
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class pGetTop5Customers_Result
+    public partial class PackDiscount
     {
-        public Nullable<int> Käufe { get; set; }
-        public string Name { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> Discount { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+    
+        public virtual Pack Pack { get; set; }
     }
 }

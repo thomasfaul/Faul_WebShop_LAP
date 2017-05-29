@@ -115,8 +115,8 @@ namespace CardGame.DAL.Logic
 
                     for (int i = 0; i < result.Count; i++)
                     {
-                        cmodel.Strings.Add(result[i].firstname);
-                        cmodel.Values.Add(result[i].NumberofPurchases);
+                        cmodel.Strings.Add(result[i].Name);
+                        cmodel.Values.Add(result[i].Käufe);
                     }
                     log.Info("DB-InfoManager-Top 5 Customers worked");
                     return cmodel;
@@ -147,12 +147,12 @@ namespace CardGame.DAL.Logic
                 cmodel.Values = new ArrayList();
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    var result = db.pGetTop5CustomersEmails().ToList();
+                    var result = db.pGetTop5CustomersEmail().ToList();
 
                     for (int i = 0; i < result.Count; i++)
                     {
                         cmodel.Strings.Add(result[i].email);
-                        cmodel.Values.Add(result[i].NumberofPurchases);
+                        cmodel.Values.Add(result[i].Käufe);
                     }
                     log.Info("DB-InfoManager-Top 5 Customers/Email worked");
                     return cmodel;
@@ -187,8 +187,8 @@ namespace CardGame.DAL.Logic
 
                     for (int i = 0; i < result.Count; i++)
                     {
-                        cmodel.Strings.Add(result[i].packname);
-                        cmodel.Values.Add(result[i].NumberofPurchases);
+                        cmodel.Strings.Add(result[i].Name);
+                        cmodel.Values.Add(result[i].Käufe);
                     }
                     log.Info("DB-InfoManager-Top 5 Sellers");
                     return cmodel;

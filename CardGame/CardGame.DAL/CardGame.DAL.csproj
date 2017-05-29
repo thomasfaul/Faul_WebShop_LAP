@@ -101,13 +101,13 @@
     <Compile Include="Model\DeckCard.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Discount.cs">
-      <DependentUpon>CardGameModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Pack.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\pGetTop5CustomersEmails_Result.cs">
+    <Compile Include="Model\PackDiscount.cs">
+      <DependentUpon>CardGameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\pGetTop5CustomersEmail_Result.cs">
       <DependentUpon>CardGameModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\pGetTop5Customers_Result.cs">

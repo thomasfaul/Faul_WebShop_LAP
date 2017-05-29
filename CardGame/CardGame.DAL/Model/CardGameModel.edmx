@@ -69,10 +69,10 @@
             <PropertyRef Name="iddiscount" />
           </Key>
           <Property Name="iddiscount" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fkpack" Type="int" />
           <Property Name="discount" Type="int" />
           <Property Name="startdate" Type="smalldatetime" />
           <Property Name="enddate" Type="smalldatetime" />
+          <Property Name="fkpack" Type="int" />
         </EntityType>
         <EntityType Name="tblorder">
           <Key>
@@ -101,8 +101,8 @@
           <Property Name="worth" Type="int" />
           <Property Name="isactive" Type="bit" />
           <Property Name="imagemimetype" Type="varchar" MaxLength="50" />
-          <Property Name="baseprice" Type="int" />
-          <Property Name="packprice" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="baseprice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="packprice" Type="decimal" Precision="19" Scale="0" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="tblperson">
           <Key>
@@ -124,8 +124,8 @@
           <Property Name="picmimetype" Type="varchar" MaxLength="50" />
           <Property Name="isdeleted" Type="bit" />
           <Property Name="address" Type="varchar" MaxLength="50" />
-          <Property Name="zip" Type="int" />
           <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="zip" Type="int" />
         </EntityType>
         <EntityType Name="tbltype">
           <Key>
@@ -218,7 +218,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__tbldiscou__fkpac__625A9A57">
+        <Association Name="FK__tbldiscou__fkpac__5224328E">
           <End Role="tblpack" Type="Self.tblpack" Multiplicity="0..1" />
           <End Role="tbldiscount" Type="Self.tbldiscount" Multiplicity="*" />
           <ReferentialConstraint>
@@ -254,6 +254,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="pGetTop5Customers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetTop5CustomersEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pGetTop5Sellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -308,7 +311,7 @@
             <End Role="tbldeck" EntitySet="tbldeck" />
             <End Role="tbldeckcard" EntitySet="tbldeckcard" />
           </AssociationSet>
-          <AssociationSet Name="FK__tbldiscou__fkpac__625A9A57" Association="Self.FK__tbldiscou__fkpac__625A9A57">
+          <AssociationSet Name="FK__tbldiscou__fkpac__5224328E" Association="Self.FK__tbldiscou__fkpac__5224328E">
             <End Role="tblpack" EntitySet="tblpack" />
             <End Role="tbldiscount" EntitySet="tbldiscount" />
           </AssociationSet>
@@ -416,8 +419,8 @@
           <NavigationProperty Name="Order" Relationship="Self.FK__tblorder__fkpack__0B91BA14" FromRole="tblpack" ToRole="tblorder" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="ImageMimeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="BasePrice" Type="Int32" />
-          <NavigationProperty Name="AllDiscounts" Relationship="CardGameModel.FK__tbldiscou__fkpac__625A9A57" FromRole="Pack" ToRole="tbldiscount" />
+          <Property Name="BasePrice" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Discount" Relationship="CardGameModel.FK__tbldiscou__fkpac__5224328E" FromRole="Pack" ToRole="tbldiscount" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -609,14 +612,6 @@
           </AssociationSet>
           <EntitySet Name="sysdiagrams" EntityType="CardGameModel.sysdiagrams" />
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="AllDiscounts" EntityType="CardGameModel.Discount" />
-          <AssociationSet Name="FK__tbldiscou__fkpac__625A9A57" Association="CardGameModel.FK__tbldiscou__fkpac__625A9A57">
-            <End Role="Pack" EntitySet="AllPacks" />
-            <End Role="tbldiscount" EntitySet="AllDiscounts" />
-          </AssociationSet>
-          <FunctionImport Name="pGetTop5Customers" ReturnType="Collection(CardGameModel.pGetTop5Customers_Result)" />
-          <FunctionImport Name="pGetTop5CustomersEmails" ReturnType="Collection(CardGameModel.pGetTop5CustomersEmails_Result)" />
-          <FunctionImport Name="pGetTop5Sellers" ReturnType="Collection(CardGameModel.pGetTop5Sellers_Result)" />
           <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CardGameModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -630,6 +625,14 @@
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="AllDiscounts" EntityType="CardGameModel.PackDiscount" />
+          <AssociationSet Name="FK__tbldiscou__fkpac__5224328E" Association="CardGameModel.FK__tbldiscou__fkpac__5224328E">
+            <End Role="Pack" EntitySet="AllPacks" />
+            <End Role="tbldiscount" EntitySet="AllDiscounts" />
+          </AssociationSet>
+          <FunctionImport Name="pGetTop5Customers" ReturnType="Collection(CardGameModel.pGetTop5Customers_Result)" />
+          <FunctionImport Name="pGetTop5CustomersEmail" ReturnType="Collection(CardGameModel.pGetTop5CustomersEmail_Result)" />
+          <FunctionImport Name="pGetTop5Sellers" ReturnType="Collection(CardGameModel.pGetTop5Sellers_Result)" />
         </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -641,32 +644,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Discount">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DiscountAmount" Type="Int32" />
-          <Property Name="StartDate" Type="DateTime" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Pack" Relationship="CardGameModel.FK__tbldiscou__fkpac__625A9A57" FromRole="tbldiscount" ToRole="Pack" />
-        </EntityType>
-        <Association Name="FK__tbldiscou__fkpac__625A9A57">
-          <End Type="CardGameModel.Pack" Role="Pack" Multiplicity="0..1" />
-          <End Type="CardGameModel.Discount" Role="tbldiscount" Multiplicity="*" />
-        </Association>
-        <ComplexType Name="pGetTop5Customers_Result">
-          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
-          <Property Type="String" Name="firstname" Nullable="false" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="pGetTop5CustomersEmails_Result">
-          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
-          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
-        </ComplexType>
-        <ComplexType Name="pGetTop5Sellers_Result">
-          <Property Type="Int32" Name="NumberofPurchases" Nullable="true" />
-          <Property Type="String" Name="packname" Nullable="true" MaxLength="50" />
-        </ComplexType>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -677,6 +654,32 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="PackDiscount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Discount" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Pack" Relationship="CardGameModel.FK__tbldiscou__fkpac__5224328E" FromRole="tbldiscount" ToRole="Pack" />
+        </EntityType>
+        <Association Name="FK__tbldiscou__fkpac__5224328E">
+          <End Type="CardGameModel.Pack" Role="Pack" Multiplicity="0..1" />
+          <End Type="CardGameModel.PackDiscount" Role="tbldiscount" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="pGetTop5Customers_Result">
+          <Property Type="Int32" Name="Käufe" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="pGetTop5CustomersEmail_Result">
+          <Property Type="Int32" Name="Käufe" Nullable="true" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="pGetTop5Sellers_Result">
+          <Property Type="Int32" Name="Käufe" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -814,25 +817,6 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CardGameModel.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="AllDiscounts">
-            <EntityTypeMapping TypeName="CardGameModel.Discount">
-              <MappingFragment StoreEntitySet="tbldiscount">
-                <ScalarProperty Name="EndDate" ColumnName="enddate" />
-                <ScalarProperty Name="StartDate" ColumnName="startdate" />
-                <ScalarProperty Name="DiscountAmount" ColumnName="discount" />
-                <ScalarProperty Name="ID" ColumnName="iddiscount" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="FK__tbldiscou__fkpac__625A9A57" TypeName="CardGameModel.FK__tbldiscou__fkpac__625A9A57" StoreEntitySet="tbldiscount">
-            <EndProperty Name="tbldiscount">
-              <ScalarProperty Name="ID" ColumnName="iddiscount" />
-            </EndProperty>
-            <EndProperty Name="Pack">
-              <ScalarProperty Name="ID" ColumnName="fkpack" />
-            </EndProperty>
-            <Condition ColumnName="fkpack" IsNull="false" />
-          </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CardGameModel.Store.sp_helpdiagramdefinition">
             <ResultMapping>
               <ComplexTypeMapping TypeName="CardGameModel.sp_helpdiagramdefinition_Result">
@@ -853,6 +837,49 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CardGameModel.Store.sp_renamediagram" />
+          <EntitySetMapping Name="AllDiscounts">
+            <EntityTypeMapping TypeName="CardGameModel.PackDiscount">
+              <MappingFragment StoreEntitySet="tbldiscount">
+                <ScalarProperty Name="EndDate" ColumnName="enddate" />
+                <ScalarProperty Name="StartDate" ColumnName="startdate" />
+                <ScalarProperty Name="Discount" ColumnName="discount" />
+                <ScalarProperty Name="ID" ColumnName="iddiscount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK__tbldiscou__fkpac__5224328E" TypeName="CardGameModel.FK__tbldiscou__fkpac__5224328E" StoreEntitySet="tbldiscount">
+            <EndProperty Name="tbldiscount">
+              <ScalarProperty Name="ID" ColumnName="iddiscount" />
+            </EndProperty>
+            <EndProperty Name="Pack">
+              <ScalarProperty Name="ID" ColumnName="fkpack" />
+            </EndProperty>
+            <Condition ColumnName="fkpack" IsNull="false" />
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="pGetTop5Customers" FunctionName="CardGameModel.Store.pGetTop5Customers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5Customers_Result">
+                <ScalarProperty Name="Käufe" ColumnName="Käufe" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetTop5CustomersEmail" FunctionName="CardGameModel.Store.pGetTop5CustomersEmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5CustomersEmail_Result">
+                <ScalarProperty Name="Käufe" ColumnName="Käufe" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pGetTop5Sellers" FunctionName="CardGameModel.Store.pGetTop5Sellers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CardGameModel.pGetTop5Sellers_Result">
+                <ScalarProperty Name="Käufe" ColumnName="Käufe" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
