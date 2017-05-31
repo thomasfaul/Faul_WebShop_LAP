@@ -383,6 +383,7 @@
     <Content Include="Views\Shared\Chart\_ChartOverview.cshtml" />
     <Content Include="Views\Shared\Chart\_ShowTop5BuyersEmail.cshtml" />
     <Content Include="Views\Shared\Chart\_ShowTop5Sellers.cshtml" />
+    <Content Include="Views\Account\Passwordreset.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -176,6 +176,9 @@ namespace CardGame.Web.Controllers
                 u.Address = user.Address;
                 u.City = user.City;
                 u.Zip = user.Zip??0;
+                u.Email = user.Email;
+                u.Password = "*****";
+                u.PasswordConfirmation = "*****";
 
                 return View(u);
             }
@@ -211,13 +214,25 @@ namespace CardGame.Web.Controllers
                         au.Pic = new byte[img.ContentLength];
                         img.InputStream.Read(au.Pic, 0, img.ContentLength);
                     }
+                    if (au.Password== "*****"||au.PasswordConfirmation== "*****")
+                    {
                     UserManager.SaveAUser(au.ID, au.Firstname, au.Lastname, au.Gamertag, au.Pic,au.ImageMimeType);
+                    }
+                    else
+                    {
+                     bool ok= UserManager.SaveAUser(au.ID, au.Firstname, au.Lastname, au.Gamertag, au.Pic, au.ImageMimeType,au.Password,au.Email);
+                        if (ok==false)
+                        {
+                            TempData["message"] = "Konnte nicht gespeichert werden";
+                            return RedirectToAction("UserEdit",au.ID);
+                        }
+                    }
+
                     TempData["message"] = string.Format("{0} wurde gespeichert", au.Lastname);
                     return RedirectToAction("UProfile");
                 }
                 else
                 {
-
                     return View(au);
                 }
             }

@@ -3,6 +3,7 @@ using System.Linq;
 using CardGame.DAL.Model;
 using System.Diagnostics;
 using log4net;
+using System.Data.Entity;
 
 namespace CardGame.DAL.Logic
 {
@@ -119,6 +120,43 @@ namespace CardGame.DAL.Logic
             }
         }
 
+        #endregion
+
+
+        #region ResetPassword
+        /// <summary>
+        /// 
+        /// Hashes the password and salt and changes the Stte of the database
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="salt"></param>
+        /// <param name="hashedpassword"></param>
+        /// <returns>bool</returns>
+        public static bool ResetThePassword(string hashedpassword,string salt,string email)
+        {
+            log.Info("AuthManager-Resetpassword");
+            try
+            {
+                var dbUser = UserManager.GetUserByUserEmail(email);
+
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    dbUser.Password = hashedpassword;
+                    dbUser.Salt = salt;
+                    db.Entry(dbUser).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+
+            catch (Exception e)
+            {
+                //Debugger.Break();
+                log.Error("AuthManager-Register", e);
+                return false;
+
+            }
+        }
         #endregion
     }
 }

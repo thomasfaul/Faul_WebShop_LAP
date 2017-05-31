@@ -8,6 +8,7 @@ using CardGame.Web.HtmlHelpers;
 using log4net;
 using CardGame.Web.Models.UI;
 
+
 namespace CardGame.Web.Controllers
 {
     public class AccountController : Controller
@@ -124,7 +125,7 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register(Register regUser)
         {
-            log.Info("Accountcontroller-LoginII");
+            log.Info("Accountcontroller-RegisterII");
 
             if (!ModelState.IsValid)
             {
@@ -201,9 +202,50 @@ namespace CardGame.Web.Controllers
             TempData["ErrorMessage"] = "muss sich ein Fehler eingeschlichen haben";
             return View();
 
+        }
+        #endregion
+
+
+        #region ACTIONRESULT PASSWORDRESET
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Passwordreset()
+        {
+            return View();
+        }
+        #endregion
+
+        #region ACTIONRESULT PASSWORDRESETII
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Passwordreset(string Email)
+        {
+            var user = UserManager.Get_UserByEmail(Email);
+
+            bool ok = EmailHelper.SendPasswordResetEmail(user.Email, user.ID, user.FirstName);
+            TempData["ConfirmMessage"] = "Du Hast eine Email bekommen, bitte Postfach überprüfen";
+            return RedirectToAction("Login");
+        }
+        #endregion
+
+        #region ACTIONRESULT RESETPASSWORD
+        [AllowAnonymous]
+        public ActionResult ResetPassword(int id)
+        {
+            var user = UserManager.Get_UserById(id);
+            string salt = Helper.GenerateSalt();
+            string hashedAndSaltedPassword = Helper.GenerateHash("123user!" + salt);
+            bool ok = AuthManager.ResetThePassword(hashedAndSaltedPassword, salt, User.Identity.Name);
+            if (ok == true)
+            {
+                EmailHelper.SendPasswordResetEmailAnswer(User.Identity.Name, id);
+            }
+            return RedirectToAction("Login");
         } 
         #endregion
 
     }
+
 }
+
 

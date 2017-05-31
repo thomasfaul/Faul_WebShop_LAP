@@ -68,8 +68,6 @@ ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         public int Zip { get; set; }
         #endregion
 
-
-
         #region PASSWORDCONFIRMATION
         [Required(
         AllowEmptyStrings = false,

@@ -106,9 +106,6 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-    
-
-
         #region Get User by UserEmail
         /// <summary>
         /// takes a string email  and returns a tblperson
@@ -488,6 +485,7 @@ namespace CardGame.DAL.Logic
             return true;
         }
         #endregion
+
         #region SET USER Deleted
         /// <summary>
         /// Sets a user deleted
@@ -583,17 +581,20 @@ namespace CardGame.DAL.Logic
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
 
-                    if (db.AllPacks != null)
+                    if (db.AllUsers != null)
                     {
                         User dbuser = db.AllUsers.SingleOrDefault(u => u.ID == id); ;
                         dbuser.ID = id;
                         dbuser.FirstName = Firstname;
                         dbuser.LastName = Lastname;
-                        //dbuser.Email = Email;
+                        dbuser.Email = Email;
                         dbuser.GamerTag = Gamertag;
                         dbuser.IsActive = IsActive;
+                        if (Pic!=null)
+                        {
                         dbuser.Avatar = Pic;
                         dbuser.AvatarMimeType = ImageMimeType;
+                        }
                         dbuser.AmountMoney = CurrencyBalance;
                         dbuser.UserRole = userrole;
 
@@ -609,6 +610,7 @@ namespace CardGame.DAL.Logic
             }
         }
         #endregion
+
         #region SAVE USERII
         /// <summary>
         /// Saves a new User or Modifies a user 
@@ -634,8 +636,11 @@ namespace CardGame.DAL.Logic
                     dbuser.FirstName = Firstname;
                     dbuser.LastName = Lastname;
                     dbuser.GamerTag = Gamertag;
+                    if (Pic!=null)
+                    {
                     dbuser.Avatar = Pic;
                     dbuser.AvatarMimeType = ImageMimeType;
+                    }
                     dbuser.EntryDate = DateTime.Now;
 
                     db.AllUsers.Add(dbuser);
@@ -656,10 +661,11 @@ namespace CardGame.DAL.Logic
                         dbuser.FirstName = Firstname;
                         dbuser.LastName = Lastname;
                         dbuser.GamerTag = Gamertag;
+                        if (Pic!=null)
+                        {
                         dbuser.Avatar = Pic;
                         dbuser.AvatarMimeType = ImageMimeType;
-
-
+                        }
                         db.Entry(dbuser).State = EntityState.Modified;
 
                         db.SaveChanges();
@@ -667,6 +673,71 @@ namespace CardGame.DAL.Logic
                     }
                 }
             }
+        }
+        #endregion
+
+        #region SAVE USERIII
+        /// <summary>
+        /// Saves a new User or Modifies a user 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="firstname"></param>
+        /// <param name="Lastname"></param>
+        /// <param name="email"></param>
+        /// <param name="gamertag"></param>
+        /// <param name="isactive"></param>
+        /// <param name="pic"></param>
+        /// <param name="currencybal"></param>
+        /// <param name="mimetypename"></param>
+        /// <param name="Email"></param>
+        /// <param name="Password"></param>
+        public static bool SaveAUser(int id, string Firstname, string Lastname, string Gamertag, byte[] Pic, string ImageMimeType,string Password, string Email)
+        {
+
+            try
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    var user = Get_UserById(id);
+                    if (db.AllUsers.Any(n => n.Email == Email)&& user.Email!=Email)
+                    {
+                        log.Error("AuthManager-Register, Emailadresse gibt es bereits");
+                        return false;
+                        throw new Exception("User-Emailadresse gibt es bereits");
+                    }
+                    if (db.AllUsers != null)
+                    {
+
+                        User dbuser = db.AllUsers.SingleOrDefault(u => u.ID == id);
+                        dbuser.ID = id;
+                        dbuser.FirstName = Firstname;
+                        dbuser.LastName = Lastname;
+                        dbuser.GamerTag = Gamertag;
+                        if (Pic!=null)
+                        {
+                        dbuser.Avatar = Pic;
+                        dbuser.AvatarMimeType = ImageMimeType;
+                        }
+                        dbuser.Email = Email;
+                        dbuser.Password = Password;
+                        dbuser.Salt = Helper.GenerateSalt();
+                        dbuser.Password = Helper.GenerateHash(Password + dbuser.Salt);
+
+                        db.Entry(dbuser).State = EntityState.Modified;
+
+                        db.SaveChanges();
+
+                    }
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                log.Error("UserManager-SaveUserIII", e);
+                return false;
+                
+            }
+            
         }
         #endregion
 
@@ -744,47 +815,6 @@ namespace CardGame.DAL.Logic
             }
         }
         #endregion
-
-
-        //#region Save UserAddress by Userid
-        ///// <summary>
-        ///// Takes the Useremail , Address, Zip, City
-        ///// updates the database and gives back the bool if it worked out
-        ///// </summary>
-        ///// <param name="useremail"></param>
-        ///// <param name="useraddress"></param>
-        ///// <param name="zip"></param>
-        ///// <param name="city"></param>
-        ///// <returns></returns>
-        //public static bool SaveUsersAdress(string email, string address, int zip, string city)
-        //{
-        //    log.Info("UserManager-SaveUsersAdress");
-        //    var dbUser = Get_UserByEmail(email);
-        //    UserAdress dbadress = new UserAdress();
-        //    dbadress.City = city;
-        //    dbadress.Zip = zip;
-        //    dbadress.Address = address;
-
-        //    dbadress.User = dbUser;
-
-        //    try
-        //    {
-        //        using (var db = new itin21_ClonestoneFSEntities())
-        //        {
-                    
-        //            db.Entry(dbadress).State = EntityState.Modified;
-        //            db.SaveChanges();
-        //            return true;
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debugger.Break();
-        //        log.Error("UserManager-SaveUsersAdressl", e);
-        //        return false;
-        //    }
-        //}
-        //#endregion
 
     }
 }
