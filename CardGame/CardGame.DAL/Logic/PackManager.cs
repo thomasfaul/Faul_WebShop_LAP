@@ -224,20 +224,24 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
-        #region GET ALL PACKS
+        #region GET ALL DISCOUNTS
         /// <summary>
-        /// Gets all Packs from the Database
+        ///Gets All Cardpacks 
         /// </summary>
         /// <returns></returns> returns a tblpack
         public static List<PackDiscount> GetAllDiscounts()
         {
             try
             {
-                log.Info("Usermanager-GetAllPacks");
+                log.Info("Usermanager-GetDiscounts");
                 List<PackDiscount> ReturnList = null;
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    ReturnList = db.AllDiscounts.Where(d => d.EndDate< DateTime.Now).ToList();
+                    ReturnList = db.AllDiscounts
+                        .Include(d => d.Pack)
+                        .Where(d => d.EndDate >= DateTime.Now)
+                        .OrderByDescending(d=> d.EndDate)
+                        .ToList();
                 }
                 return ReturnList;
             }

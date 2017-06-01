@@ -218,7 +218,8 @@ namespace CardGame.Web.Controllers
 
             Order o = (Order)TempData["Order"];
             o.CardPayment = ovv.CardPayment;
-
+            double priceoverall = (double)o.Pack.PackPrice * o.Quantity;
+            var user=UserManager.Get_UserByEmail(User.Identity.Name);
 
             //ORDER COINS
 
@@ -226,13 +227,19 @@ namespace CardGame.Web.Controllers
             {
                 try
                 {
+
+                    if (!HtmlHelpers.CreditCardValidation.IsValidCardNumber(o.CardPayment.CardNumber))
+                    {
+                        TempData["ConfirmMessage"] = "Kreditkartennummer bitte nochmals eingeben!";
+                        return View(ovv);
+                    }
+
                     //Check if Modelstate is valid
                     if (!ModelState.IsValid)
                         {
-                           return View(o);
+                           return View(ovv);
 
                       }
-
                     //Get Total Cost
                     var orderTotal = ShopManager.GetTotalCost(o.Pack.IdPack, o.Pack.Worth, o.Quantity);
 
@@ -252,19 +259,19 @@ namespace CardGame.Web.Controllers
                     if (!isSaved)
                     {
                         log.Error("CardPackController-Order,SaveOrder");
-
-                        //return RedirectToAction("OrderOverview",o);
+                         TempData["ConfirmMessage"] = "Verbindungsproblem, bitte nochmal eingeben";
+                        return RedirectToAction("OrderOverview",o);
 
                     }
-                    TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
-                    var emailsend = EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", String.Format(" Magical TeaParty Gmbh,Zipperstrasse 56 - 59,1110 Wien, Telefon:06641525725, Datum:{0}, Lieber{1}, Du hast:{1}Packung(en) {2} gekauft , Umsatzsteuer macht {3} ,GesamtBetrag{4}, Danke für Ihren Einkauf",DateTime.Now,o.UserProfile.Firstname,o.Quantity,o.Pack.PackName, o.Pack.Worth * o.Quantity/6, o.Pack.Worth * o.Quantity));
-                   
-                    return RedirectToAction("Index", "Home");
+                    TempData["ConfirmMessage"] = "Danke für deinen Einkauf";
+                    var emailsend = EmailHelper.SendBillAndConfirmationAnswer(User.Identity.Name,o.Pack.IdPack, user.LastName, o.Pack.PackName, o.Quantity, priceoverall, us.ID);
+ 
+                    return RedirectToAction("DisableCurrency", "CardPack");
 
                 }
                 catch (Exception e)
                 {
-                    Debugger.Break();
+                   
                     log.Error("CardPackController-Order", e);
                     return RedirectToAction("Error", "Error");
                 }
@@ -314,7 +321,7 @@ namespace CardGame.Web.Controllers
                 }
                 catch (Exception e)
                 {
-                    Debugger.Break();
+                    
                     log.Error("CardPackController-Order Cards", e);
                     return RedirectToAction("Error", "Error");
                 }

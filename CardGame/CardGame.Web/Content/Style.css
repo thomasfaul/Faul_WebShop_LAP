@@ -10,14 +10,15 @@
 	color:papayawhip
 }
 body {
-	font-size: 100%;
-	margin-top: 19em;
-	padding: 0em;
-	/*em ist eine  relative Angabe bezogen, an dieser Stelle müssen
+    font-size: 100%;
+    margin-top: 19em;
+    padding: 0em;
+    /*em ist eine  relative Angabe bezogen, an dieser Stelle müssen
 		wir später nur die Schriftgrösse anpassen (100%--16px)MERKEN
 		STELLSCHRAUBE für alles!!!!*/
-	background-color: black;
-	background-image: url('images/black_pattern_tile.jpg');
+    background-color: black;
+    background-image: url('images/black_pattern_tile.jpg');
+    
 }
 ::-webkit-scrollbar {
 	width: 12px;

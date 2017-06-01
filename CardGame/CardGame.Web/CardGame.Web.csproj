@@ -172,6 +172,8 @@
     <Compile Include="Controllers\DeckController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HtmlHelpers\ChartThemes.cs" />
+    <Compile Include="Controllers\HtmlHelpers\CreditCardValidation.cs" />
     <Compile Include="Controllers\HtmlHelpers\SortHelper.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Models\CardPack.cs" />
     <Compile Include="Models\CardsListViewModel.cs" />
     <Compile Include="Models\Charts\ChartModel.cs" />
+    <Compile Include="Models\DB\Discount.cs" />
     <Compile Include="Models\DB\Deck.cs" />
     <Compile Include="Models\DB\DeckBuilder.cs" />
     <Compile Include="Models\DB\Order.cs" />
@@ -206,7 +209,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Templates\EmailTemplate.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\HeadLazyBorder.png" />
@@ -385,7 +387,9 @@
     <Content Include="Views\Shared\Chart\_ShowTop5Sellers.cshtml" />
     <Content Include="Views\Account\Passwordreset.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\Templates\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />

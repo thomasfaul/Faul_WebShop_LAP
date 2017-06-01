@@ -42,8 +42,6 @@ ErrorMessageResourceName = Constants.Validation.REQUIRED)]
         #region SECURITYNUMBER
         [Required(AllowEmptyStrings = false, ErrorMessageResourceType = typeof(ValidationMessages),
 ErrorMessageResourceName = Constants.Validation.REQUIRED)]
-        [RegularExpression(@"^\d{9}|\d{3}-\d{2}-\d{4}$",
-ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName = Constants.Validation.CARD_SECURITY_N)]
         [Display(Name = Constants.Labels.CARD_SECURITY_N, ResourceType = typeof(ValidationLabels))]
         public int CardSecurityNumber { get; set; }
         #endregion
@@ -51,7 +49,7 @@ ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName 
         #region EXPIRY Month
         [Required]
         [Display(Name = Constants.Labels.CARD_EXPIRY, ResourceType = typeof(ValidationLabels))]
-        [StringLength(maximumLength: 4, MinimumLength = 4,
+        [StringLength(maximumLength: 5, MinimumLength = 1,
         ErrorMessageResourceType = typeof(ValidationMessages),
         ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
          public string CardExpiryMonth { get; set; }
@@ -60,7 +58,7 @@ ErrorMessageResourceType = typeof(ValidationMessages), ErrorMessageResourceName 
         #region EXPIRY YEAR
         [Required]
         [Display(Name = Constants.Labels.CARD_EXPIRY, ResourceType = typeof(ValidationLabels))]
-        [StringLength(maximumLength: 4,MinimumLength =4,
+        [StringLength(maximumLength: 5,MinimumLength =2,
         ErrorMessageResourceType = typeof(ValidationMessages),
         ErrorMessageResourceName = Constants.Validation.MAX_LENGTH)]
         public string CardExpiryYear { get; set; }

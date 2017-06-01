@@ -1,13 +1,11 @@
 ﻿using CardGame.DAL.Logic;
 using CardGame.Web.Models.Charts;
-using System.Linq;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Collections;
 using log4net;
-using System.Collections.Generic;
-using CardGame.DAL.Model;
-using CardGame.Web.Models.DB;
+
+using CardGame.Web.Controllers.HtmlHelpers;
 
 namespace CardGame.Web.Controllers.ChartController
 {
@@ -34,8 +32,9 @@ namespace CardGame.Web.Controllers.ChartController
             }
             else
             {
-                Chart bytes = new Chart(width: 600, height: 220)
-                .AddSeries(
+                Chart bytes = new Chart(width: 600, height: 220,theme: ChartThemes.GetMyCustomTheme())
+                    .AddTitle("Die Top5 Kunden")
+                    .AddSeries(
                     chartType: "column",
                     xValue: model.Infos,
                     yValues: model.Werte);
@@ -66,9 +65,10 @@ namespace CardGame.Web.Controllers.ChartController
             }
             else
             {
-                Chart bytes = new Chart(width: 600, height: 220)
-                .AddSeries(
-                    chartType: "column",
+                Chart bytes = new Chart(width: 600, height: 220, theme: ChartThemes.GetMyCustomTheme())
+                   .AddTitle("Die Top5 Kunden Emails")
+                   .AddSeries(
+                    chartType: "bar",
                     xValue: model.Infos,
                     yValues: model.Werte);
 
@@ -98,9 +98,10 @@ namespace CardGame.Web.Controllers.ChartController
             }
             else
             {
-                Chart bytes = new Chart(width: 600, height: 220)
-                .AddSeries(
-                    chartType: "column",
+                Chart bytes = new Chart(width: 600, height: 220,theme:ChartThemes.GetMyCustomTheme())
+                    .AddTitle("Die Top5 Produkte")
+                    .AddSeries(
+                    chartType: "pie",
                     xValue: model.Infos,
                     yValues: model.Werte);
 
