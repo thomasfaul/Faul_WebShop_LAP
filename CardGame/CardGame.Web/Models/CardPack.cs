@@ -61,7 +61,7 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         public bool IsActive { get; set; }
         #endregion
 
-
+        public Discount PackDiscount { get; set; }
 
         #region PIC
         public byte[] Pic { get; set; }

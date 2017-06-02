@@ -50,8 +50,14 @@
                         {
                             <h6 class="card-header head" style="margin-top:-1em">@Html.DisplayFor(c => pack.Flavor)</h6>
                         }
+                        if (pack.isDiscount == true)
+                        {
+                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red;margin-top:-5em">Aktion</h8></p>
+                        }
+                        else
+                        {
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
-
+                        }
 
                         <h3 style="margin-top:0em;margin-left:2em;z-index:9999; "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h3>
 
@@ -71,7 +77,15 @@
 
                         <h3 class="packname">@Html.DisplayFor(c => pack.PackName)</h3>
                             <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
+                        if (pack.isDiscount == true)
+                        {
+                            <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red;margin-top:-5em">Aktion</h8></p>
+                        }
+                        else
+                        {
                             <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
+                        }
+
 
                             <h3 style="margin-top:2em;">@Html.ActionLink("Aufladen", "BuyCardPack", new { id = pack.IdPack })</h3>
                     }

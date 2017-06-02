@@ -1,0 +1,132 @@
+﻿@model IEnumerable<CardGame.Web.Models.Discount>
+
+@{
+    ViewBag.Title = "ADMIN -All_Discounts";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-11">
+    <div class="panel panel-defaultpanel panel-default" style="background-color:transparent;width:100%;min-height:62em;border:transparent">
+        <div class=panel-heading style="background-color:darkgrey; width:77em;">
+            <h2>Alle Aktionen</h2>
+            @using (Html.BeginForm())
+            {
+                <p>
+                    @Html.TextBox("Search")
+                    <input style="max-width:5em" type="submit" value="Suchen" />
+                </p>
+            }
+            <center>
+              
+            </center>
+        </div>
+        <center>
+            <div class="panel-body">
+                <table class="table-hover table-condensed table-bordered"style="margin-top:15em">
+                    <tr>
+                        <th class="text-right">Sortieren =></th>
+
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    Name &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Index", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Index", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    StartDatum &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Aktiv", "Index", new { SortValue = 3 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Inaktiv", "Index", new { SortValue = 4 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                   Enddatum&nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Index", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Index", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+
+
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    AktionsHöhe in €/Coins &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Index", new { SortValue = 7 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Index", new { SortValue = 8 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    mom.Preis &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "Index", new { SortValue = 9 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Absteigend", "Index", new { SortValue = 10 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:3em;background-color:transparent;">
+                                    Karten-Packet? &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
+                                </button>
+                                <ul class="dropdown-menu" style="background-color:transparent">
+                                    <li style="background-color:transparent">@Html.ActionLink("Geldpaket", "Index", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
+                                    <li style="background-color:transparent">@Html.ActionLink("Kartenpaket", "Index", new { SortValue = 12 }, new { @class = "btn dropdown-toggle" })</li>
+                                </ul>
+                            </div>
+                        </th>
+
+
+                    </tr>
+                    @foreach (var discount in Model)
+                    {
+                        <tr>
+                            <td class="text-right">@discount.ID</td>
+
+                            <td><h6>@Html.ActionLink( discount.DiscountPack.PackName, "Edit", new { id = discount.ID})</h6></td>
+                     
+                            <td class="text-right">@discount.StartDate</td>
+                            <td class="text-right">@discount.EndDate</td>
+
+                            <td class="text-right">@discount.DiscountAmount</td>
+                            <td class="text-right">@discount.DiscountPack.PackPrice</td>
+                            <td class="text-center">
+                                @if (discount.DiscountPack.IsMoney)
+                                {@discount.DiscountPack.PackPrice.ToString("c")}
+                                else
+                                { @discount.DiscountPack.PackPrice.ToString("Coins")}
+                            </td>
+                           
+  
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </center>
+
+
+    </div>
+</div>

@@ -551,5 +551,113 @@ namespace CardGame.Web.Controllers.HtmlHelpers
            
         }
         #endregion
+
+        #region FilterDiscountPacks
+        public static List<Web.Models.Discount> FilterDiscountPacks(List<Web.Models.Discount> Discounts, string search)
+        {
+            if (!String.IsNullOrEmpty(search))
+            {
+               Discounts = Discounts.Where(s => s.DiscountPack.PackName.Contains(search)).ToList();
+            }
+            int sortValue = 0;
+            var sorted = Discounts;
+            //switch (sortValue)
+            //{
+            //    case 1:
+            //        sorted = Packs.OrderBy(c => c.PackName).ToList();
+            //        break;
+            //    case 2:
+            //        sorted = Packs.OrderByDescending(c => c.PackName).ToList();
+            //        break;
+            //    case 3:
+            //        sorted = Packs.Where(c => c.IsActive == true).ToList();
+            //        break;
+            //    case 4:
+            //        sorted = Packs.Where(c => c.IsActive == false).ToList();
+            //        break;
+            //    case 5:
+            //        sorted = Packs.OrderBy(c => c.NumCards).ToList();
+            //        break;
+            //    case 6:
+            //        sorted = Packs.OrderByDescending(c => c.NumCards).ToList();
+            //        break;
+
+            //    case 7:
+            //        sorted = Packs.OrderBy(c => c.PackPrice).ToList();
+            //        break;
+            //    case 8:
+            //        sorted = Packs.OrderByDescending(c => c.PackPrice).ToList();
+            //        break;
+            //    case 9:
+            //        sorted = Packs.OrderBy(c => c.Worth).ToList();
+            //        break;
+            //    case 10:
+            //        sorted = Packs.OrderByDescending(c => c.Worth).ToList();
+            //        break;
+            //    case 11:
+            //        sorted = Packs.Where(c => c.IsMoney == true).ToList();
+            //        break;
+            //    case 12:
+            //        sorted = Packs.Where(c => c.IsMoney == false).ToList();
+            //        break;
+            //    default:
+            //        sorted = Packs.ToList();
+            //        break;
+            //}
+            return sorted;
+        }
+        #endregion
+
+        #region FilterDiscountPacks II
+        public static List<Web.Models.Discount> FilterDiscountPacks(List<Web.Models.Discount> Discounts, int sortValue)
+        {
+            var sorted = Discounts;
+        //switch (sortValue)
+        //{
+        //    case 1:
+        //        sorted = Packs.OrderBy(c => c.PackName).ToList();
+        //        break;
+        //    case 2:
+        //        sorted = Packs.OrderByDescending(c => c.PackName).ToList();
+        //        break;
+        //    case 3:
+        //        sorted = Packs.Where(c => c.IsActive == true).ToList();
+        //        break;
+        //    case 4:
+        //        sorted = Packs.Where(c => c.IsActive == false).ToList();
+        //        break;
+        //    case 5:
+        //        sorted = Packs.OrderBy(c => c.NumCards).ToList();
+        //        break;
+        //    case 6:
+        //        sorted = Packs.OrderByDescending(c => c.NumCards).ToList();
+        //        break;
+
+        //    case 7:
+        //        sorted = Packs.OrderBy(c => c.PackPrice).ToList();
+        //        break;
+        //    case 8:
+        //        sorted = Packs.OrderByDescending(c => c.PackPrice).ToList();
+        //        break;
+        //    case 9:
+        //        sorted = Packs.OrderBy(c => c.Worth).ToList();
+        //        break;
+        //    case 10:
+        //        sorted = Packs.OrderByDescending(c => c.Worth).ToList();
+        //        break;
+        //    case 11:
+        //        sorted = Packs.Where(c => c.IsMoney == true).ToList();
+        //        break;
+        //    case 12:
+        //        sorted = Packs.Where(c => c.IsMoney == false).ToList();
+        //        break;
+        //    default:
+        //        sorted = Packs.ToList();
+        //        break;
+        return sorted;
+        }
+          
+       }
+        #endregion
+
     }
-}

@@ -1,0 +1,96 @@
+﻿@model CardGame.Web.Models.DiscountListViewModel
+
+@{
+    ViewBag.Title = "DiscountOverview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Aktionen im Überblick</h3>
+
+@*-------------------------------------------------------LEFTBAR AD--------------------------------------------*@
+<div class="col-md-3">
+    @Html.Partial("_Advertisment")
+
+    @*-----------------------------------------------------LEFTBAR Banner-----------------------------------------*@
+
+    @Html.Partial("_BannerAd")
+
+    @*-----------------------------------------------------LEFTBAR CURRENCY-----------------------------------------*@
+
+    @Html.Partial("_Money");
+
+</div>
+@*-----------------------------------------------------MAINCOLUMN---------------------------------------  ------*@
+
+<div class="col-md-6 cardcol" style="max-height:74em;overflow:hidden;overflow-y:scroll">
+    <div class="card-deck-wrapper col-md-12 cardcol">
+        <div class="card-deck packcol packdeck " id="packoverview">
+            @foreach (var disc in Model.Discounts)
+            {
+                <div class="card col-md-3 packcard" style="margin-left:1em;height:36em">
+
+                    @if (disc.DiscountPack.Pic != null)
+                    {
+
+
+                       
+                        var base64 = Convert.ToBase64String(disc.DiscountPack.Pic);
+                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                        <img class="cardpic" style="margin-top:0.5em;min-height:17em" src="@imgSrc" />
+
+                        
+                    }
+                    else
+                    {
+                        <img class="cardpic" src="~/Content/images/Cardpacks/classic-pack.png" />
+                        <h8 style="margin-top:-10em">Originalbild nicht vorhanden</h8>
+                    }
+                    <h5>@disc.DiscountPack.PackName</h5>
+                    @if (disc.DiscountPack.IsMoney == true)
+                    {
+                        <h6 style="color:darkorange">Minus @disc.DiscountAmount Euro</h6>
+                    }
+                    else
+                    {
+                        <h6 style="color:red">Minus @disc.DiscountAmount Coins</h6>
+                    }
+
+
+                    von @disc.StartDate.ToShortDateString()<br />
+                    bis @disc.EndDate.ToShortDateString()
+                    @if (disc.DiscountPack.IsMoney == true)
+                    {
+                        <h6 style="color:darkorange">Neuer Preis @disc.DiscountPack.PackPrice Euro</h6>
+                    }
+                    else
+                    {
+                        <h6 style="color:red">Neuer Preis @disc.DiscountPack.PackPrice Coins</h6>
+                    }
+                    <h3 style="margin-top:2em;">@Html.ActionLink("Kaufen", "BuyCardPack", new { id = disc.DiscountPack.IdPack })</h3>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@*-----------------------------------------------------RIGHTBAR TOP-------------------------------------------*@
+<div class="col-md-3">
+    <div class="col col-md-12 ">
+        <h3>Coins einlösen</h3>
+        <p>
+            Lege dir Cardpacks zu und statte deine Kartendecks aus
+        </p>
+        <a href="/CardPack/DisableCurrency" class="btn btn-default buttonleftnav">Buy Cardpacks</a>
+    </div>
+    @*-----------------------------------------------------RIGHTBAR Middle------------------------------------------*@
+    <div class="col col-md-12">
+        <h3>Kaufe Coins</h3>
+        <p>und du kannst damit Cardpacks erstehen</p>
+        <a href="/CardPack/EnableCurrency" class="btn btn-default buttonleftnav">Kaufe Coins </a>
+    </div>
+    @*-------------------------------------------------RIGHTBAR BOTTOM-----------------------------------------*@
+
+    @Html.Partial("_RightTop")
+</div>

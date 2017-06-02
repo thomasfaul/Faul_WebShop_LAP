@@ -196,6 +196,7 @@
     <Compile Include="Models\DB\Shop.cs" />
     <Compile Include="Models\DB\UserProfile.cs" />
     <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\DiscountListViewModel.cs" />
     <Compile Include="Models\PacksListViewModel.cs" />
     <Compile Include="Models\PageInfo.cs" />
     <Compile Include="Models\Statistic.cs" />
@@ -354,7 +355,6 @@
     <Content Include="Views\CardPack\OrderOverview.cshtml" />
     <Content Include="Views\CardPack\ShowGeneratedCards.cshtml" />
     <Content Include="Views\Shared\_DBCardList.cshtml" />
-    <Content Include="Views\Shared\_BannerAd.cshtml" />
     <Content Include="Views\CardPack\BuyCardPack.cshtml" />
     <Content Include="Views\Shared\_CardList.cshtml" />
     <Content Include="Views\Shared\_CardTable.cshtml" />
@@ -386,6 +386,10 @@
     <Content Include="Views\Shared\Chart\_ShowTop5BuyersEmail.cshtml" />
     <Content Include="Views\Shared\Chart\_ShowTop5Sellers.cshtml" />
     <Content Include="Views\Account\Passwordreset.cshtml" />
+    <Content Include="Views\CardPack\DiscountOverview.cshtml" />
+    <Content Include="Views\Shared\_BannerAd.cshtml" />
+    <Content Include="Views\Admin\DiscountIndex.cshtml" />
+    <Content Include="Views\Admin\DiscountEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Templates\" />

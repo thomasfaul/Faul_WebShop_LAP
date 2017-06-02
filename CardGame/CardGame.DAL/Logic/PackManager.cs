@@ -52,7 +52,7 @@ namespace CardGame.DAL.Logic
                 List<Pack> ReturnList = null;
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
-                    ReturnList = db.AllPacks.Where(p => p.IsActive == true).ToList();
+                    ReturnList = db.AllPacks.Where(p => p.IsActive == true).Include(p=>p.Discount).ToList();
                 }
                 return ReturnList;
             }
@@ -226,10 +226,10 @@ namespace CardGame.DAL.Logic
 
         #region GET ALL DISCOUNTS
         /// <summary>
-        ///Gets All Cardpacks 
+        ///Gets All Discounts 
         /// </summary>
         /// <returns></returns> returns a tblpack
-        public static List<PackDiscount> GetAllDiscounts()
+        public static List<PackDiscount> GetAlltDiscounts()
         {
             try
             {
@@ -238,12 +238,19 @@ namespace CardGame.DAL.Logic
                 using (var db = new itin21_ClonestoneFSEntities())
                 {
                     ReturnList = db.AllDiscounts
-                        .Include(d => d.Pack)
-                        .Where(d => d.EndDate >= DateTime.Now)
-                        .OrderByDescending(d=> d.EndDate)
-                        .ToList();
+                        //.Where(d=>d.Discount!=0)
+                    .Include(d => d.Pack).ToList();
+                        ;
+
+                    if (ReturnList==null)
+                    {
+                        return null;
+                    }
+
+                  return ReturnList;
                 }
-                return ReturnList;
+
+
             }
             catch (System.Exception e)
             {

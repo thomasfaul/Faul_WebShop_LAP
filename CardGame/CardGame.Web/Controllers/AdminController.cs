@@ -223,6 +223,61 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region ACTIONRESULT DISCOUNTINDEX
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        public ActionResult DiscountIndex(int? sortValue, string search)
+        {
+            log.Info("AdminController-DiscountIndex");
+
+            try
+            {
+                List<Web.Models.Discount> Discountpacks = new List<Web.Models.Discount>();
+                var dbdiscounts = PackManager.GetAlltDiscounts();
+                foreach (var d in dbdiscounts)
+                {
+                    Web.Models.Discount disc = new Web.Models.Discount();
+                    disc.ID = d.ID;
+                    disc.EndDate = d.EndDate ?? DateTime.MinValue;
+                    disc.StartDate = d.StartDate ?? DateTime.MinValue;
+                    disc.DiscountAmount = d.Discount ?? 0;
+                    CardPack p = new CardPack();
+                    p.PackName = d.Pack.Name;
+                    p.PackPrice = (int)d.Pack.Price;
+                    p.Pic = d.Pack.Image;
+                    p.IdPack = d.Pack.ID;
+                    p.IsActive = d.Pack.IsActive ?? false;
+                    p.PackPrice = d.Pack.Price ?? 0;
+                    p.IsMoney = d.Pack.IsMoney ?? false;
+
+                    disc.DiscountPack = p;
+                    Discountpacks.Add(disc);
+                    
+                }
+                var sorted = Discountpacks;
+                //if (sortValue != null)
+                //{
+                //    sorted = SortHelper.FilterCardPacks(Discountpacks, (int)sortValue);
+                //}
+                //if (search != null)
+                //{
+                //    sorted = SortHelper.FilterCardPacks(Discountpacks, search);
+                //}
+                return View(sorted);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-DiscountIndex", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
+
         #region VIEWRESULT A_USER EDIT
         /// <summary>
         /// Takes the UserId, gets the User

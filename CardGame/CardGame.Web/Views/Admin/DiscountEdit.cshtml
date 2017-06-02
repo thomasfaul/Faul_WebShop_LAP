@@ -1,0 +1,84 @@
+﻿@model CardGame.Web.Models.DiscountListViewModel
+
+
+@{
+    ViewBag.Title = "Admin: Edit" + @Model.PackName;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Pack bearbeiten</h3>
+
+<div class="panel" style="background-color:transparent;background:fixed;max-width:50%;min-height:62em;margin-left:25%">
+    <div class="panel-heading" style="position:relative;width:58em; margin-left:-15em;height:8em;margin-top:-4em">
+        @if (Model.PackName != null)
+        {
+            <h3>Bearbeite @Model.PackName</h3>
+        }
+        else
+        {
+            <h3>Neues Pack generieren</h3>
+        }
+        <div style="margin-top:7em"id="cardi">@Html.Partial("_ShowCardImage", @Model)</div>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.IdPack)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName)
+                {
+                    case "IdPack":
+                    case "Pic":
+                    case "ImageMimeType":
+                    case "SortValue":
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                            @if (property.PropertyName == "Flavor")
+                            {
+                                @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 3 })
+                            }
+                            else if (property.PropertyName == "IsActive")
+                            {
+                                @Html.CheckBox(property.PropertyName)
+                            }
+                            else if (property.PropertyName == "IsMoney")
+                            {
+                                @Html.CheckBox(property.PropertyName)
+                            }
+                            else
+                            {
+                                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                            }
+                            @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+
+                }
+            }
+            <div class="form-group">
+                <div >
+                    <label style="margin-right:10em">Bild</label>
+                    <label class="custom-file-upload" style="margin-left:12em">
+                        <input id="img" name="img" onchange='$("#upload-file-info").html($(this).val());' type="file"size="40" />
+                        <i class="fa fa-cloud-upload"></i> Wähle neues Bild aus...
+                    </label>
+
+                    <span class='label label-info' id="upload-file-info"></span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="panel-footer" style="background-color:transparent">
+            <div class="col-md-10" style="margin-top:8em;float:left;width:32em;margin-top:1em">
+                <input type="submit" value="Save" class="btn btn-default" />
+                @Html.ActionLink("Zurück", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            </div>
+    }
+</div>
+

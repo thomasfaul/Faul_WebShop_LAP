@@ -1,15 +1,23 @@
-﻿@{
+﻿
+
+
+
+
+@{
     ViewBag.Title = "_BannerAd";
 }
 
 <div class="banner">
     <div class="w3-content w3-section">
-        <img class="mySlides w3-animate-fading" src="~/Content/images/Banner/banner1.jpg">
-        <div class="mySlides w3-animate-fading bannertext"><br /><h3>Unsere neuesten Packs</h3></div>
+        <img class="mySlides w3-animate-fading" src="~/Content/images/Banner/banner1.jpg" >
+        <div class="mySlides w3-animate-fading bannertext"><br /><a href="@Url.Action("DisableCurrency", "CardPack")"><h3>Kauf dir neue Karten</h3></a></div>
         <img class="mySlides w3-animate-fading" src="~/Content/images/Banner/banner2.jpg">
-        <div class="mySlides w3-animate-fading bannertext"><br /><h3>Unsere neuesten Aktionen</h3></div>
+        <div class="mySlides w3-animate-fading bannertext"><br /><a href="@Url.Action("DiscountOverview", "CardPack")"><h3>Jetzt Packs in Aktion:</h3></a></div>
+        <img class="mySlides w3-animate-fading" src="~/Content/images/Cardpacks/4.png" style="max-width:5em;margin-left:10em"/>
+        <img class="mySlides w3-animate-fading" src="~/Content/images/Cardpacks/2.png" style="max-width:5em;margin-left:10em" />
+        <img class="mySlides w3-animate-fading" src="~/Content/images/Cardpacks/1.png" style="max-width:5em;margin-left:10em" />
         <img class="mySlides w3-animate-fading" src="~/Content/images/Banner/banner3.jpg">
-        <div class="mySlides w3-animate-fading bannertext"><br /><h3>Unsere neuesen Packs</h3></div>
+        <div class="mySlides w3-animate-fading bannertext"><br /><h3><a href="@Url.Action("Deckoverview", "Profile")">Bestücke deine Decks</a></h3></div>
         <img class="mySlides w3-animate-fading" src="~/Content/images/Banner/banner4.png">
     </div>
 </div>

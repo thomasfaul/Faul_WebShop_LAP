@@ -56,10 +56,20 @@
 
                     <h3 class="packname">@Html.DisplayFor(c => Model.PackName)</h3>
                     <h5 style="color:darkorange" class="card-header head">@Html.DisplayFor(c => Model.NumCards)<span>&nbsp;Karten</span></h5>
+                    if (Model.isDiscount == true)
+                    {
+                        <p class="price">
+                            @Html.DisplayFor(c => Model.PackPrice)<br /><span>Coins</span>
+                            <h8 style="color:red">In Aktion!</h8>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="price">
+                            @Html.DisplayFor(c => Model.PackPrice)<br /><span>Coins</span>
+                        </p>
+                    }
 
-                    <p class="price">
-                        @Html.DisplayFor(c => Model.PackPrice)<br /><span>Coins</span>
-                    </p>
                 }
             </div>
         </div>
@@ -79,7 +89,10 @@
                             <tr class="trbuypack">
                                 <td class="tdbuypack">Preis:</td>
                                 <td class="tdbuypack">  </td>
-                                <td class="tdbuypackr"> € @Html.DisplayFor(cp => cp.PackPrice)</td>
+                                @if (Model.isDiscount == true)
+                                {
+                                    <td class="tdbuypackr"> € @Html.DisplayFor(cp => cp.PackPrice)></td><h8 style="color:red">In Aktion!</h8>
+                                }
                             </tr>
                             <tr class="trbuypack">
                                 <td class="tdbuypack">Anzahl:</td>

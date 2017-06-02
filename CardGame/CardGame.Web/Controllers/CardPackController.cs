@@ -19,6 +19,75 @@ namespace CardGame.Web.Controllers
         HomeController a = new HomeController();
         public int PPagesize = 6;
 
+
+        #region ACTIONRESULT DISCOUNTOVERVIEW
+        /// <summary>
+        /// checks if its a Currencyview
+        /// takes the Pagesize
+        /// and gets the Cardpacks
+        /// returns the model
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns>ActionResult</returns>
+        public ActionResult DiscountOverview(int page = 1)
+        {
+            log.Info("CardPackController-PackOverview");
+            DiscountListViewModel model = new DiscountListViewModel();
+            model.PIsMoney = false;
+            try
+            {
+                model.PIsMoney = (bool)Session["isCurrency"];
+            }
+            catch (Exception e)
+            {
+                //Debugger.Break();
+                log.Error("CardPackController-Discount", e);
+            }
+
+            List<Web.Models.Discount> DiscList = new List<Web.Models.Discount>();
+            var dbDiscountlist = PackManager.GetAlltDiscounts();
+            var dbPacklist = PackManager.GetAllPacks();
+            foreach (var d in dbDiscountlist)
+            {
+                Web.Models.Discount disc = new Web.Models.Discount();
+                disc.ID = d.ID;
+                disc.EndDate = d.EndDate?? DateTime.MinValue;
+                disc.StartDate= d.StartDate ?? DateTime.MinValue;
+                disc.DiscountAmount = d.Discount ??0;
+                CardPack p = new CardPack();
+                p.PackName = d.Pack.Name;
+                p.PackPrice =(int) d.Pack.Price;
+                p.Pic = d.Pack.Image;
+                p.IdPack = d.Pack.ID;
+                p.IsActive = d.Pack.IsActive ??false;
+                p.PackPrice = d.Pack.Price ?? 0;
+                p.IsMoney = d.Pack.IsMoney??false;
+                
+                
+
+                disc.DiscountPack = p;
+                DiscList.Add(disc);
+            }
+            
+            DiscList = DiscList.Where(d => d.DiscountAmount != 0).ToList();
+            DiscList = DiscList.Where(d => d.EndDate >DateTime.Now).ToList();
+            DiscList = DiscList.Where(d => d.DiscountPack.IsActive).OrderBy(d=>d.DiscountPack.IsMoney).ToList();
+            
+            model.Discounts = DiscList;
+            model.PagingInfo = new PageInfo
+            {
+                CurrentPage = page,
+                ItemsPerPage = PPagesize,
+                TotalItems = DiscList.Count()
+            };
+
+            return View(model);
+        }
+        #endregion
+
+   
+
+
         #region ACTIONRESULT PACKOVERVIEW
         /// <summary>
         /// checks if its a Currencyview
@@ -48,6 +117,13 @@ namespace CardGame.Web.Controllers
 
             foreach (var p in dbPacklist)
             {
+                bool discount = false;
+                
+                if (p.Discount.FirstOrDefault().EndDate > DateTime.Now)
+                {
+                     discount = true;
+                }
+
                 CardPack pack = new CardPack();
                 pack.IdPack = p.ID;
                 pack.PackName = p.Name;
@@ -59,6 +135,14 @@ namespace CardGame.Web.Controllers
                 pack.IsActive = (bool)p.IsActive;
                 pack.ImageMimeType = p.ImageMimeType;
                 pack.Pic = p.Image;
+
+                Web.Models.Discount dis = new Web.Models.Discount();
+                dis.StartDate = p.Discount.FirstOrDefault().StartDate?? DateTime.MinValue;
+                dis.EndDate = p.Discount.FirstOrDefault().EndDate ?? DateTime.MinValue;
+                dis.DiscountAmount = p.Discount.FirstOrDefault().Discount??0;
+
+                pack.isDiscount = discount;
+                pack.PackDiscount = dis;
                 PackList.Add(pack);
             }
 
