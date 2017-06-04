@@ -34,7 +34,7 @@
 
                         if (pack.Pic != null)
                         {
-                            <img class="cardpic" style="min-height:18em" src="@Url.Action("GetImage", "CardPack", new { id = pack.IdPack })" />
+                            <img class="cardpic" style="min-height:18em;margin-top:1em" src="@Url.Action("GetImage", "CardPack", new { id = pack.IdPack })" />
                         }
                         else
                         {
@@ -52,7 +52,7 @@
                         }
                         if (pack.isDiscount == true)
                         {
-                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red;margin-top:-5em">Aktion</h8></p>
+                            <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red;background-color:#935404;margin-top:-5em">Aktion</h8></p>
                         }
                         else
                         {
@@ -79,7 +79,7 @@
                             <h6 class="card-header head">@Html.DisplayFor(c => pack.Flavor)</h6>
                         if (pack.isDiscount == true)
                         {
-                            <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red;margin-top:-5em">Aktion</h8></p>
+                            <p class="price">€@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span><br /><h8 style="color:red ;background-color:#935404;margin-top:-5em">Aktion</h8></p>
                         }
                         else
                         {

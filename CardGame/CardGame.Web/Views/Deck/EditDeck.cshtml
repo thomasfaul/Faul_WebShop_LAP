@@ -13,13 +13,7 @@
             <div><h3> Ihre Sammlung</h3></div>
           
                 <div>
-                    @using (Html.BeginForm())
-                    {
-                        <p style="font-size:80%">
-                            @Html.TextBox("Search")
-                            <input style="max-width:5em" type="submit" value="Suchen" />
-                        </p>
-                    }
+
                 </div>
             
             <div class="table-responsive showcont" id="listProducts">
@@ -28,59 +22,20 @@
                         <tr class="showtr">
                             <th class="col-md-1 "></th>
                             <th class="col-md-4 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:90%">
-                                        Namen &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                                Namen
                             </th>
-                            <th class="col-md-2 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent;">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                             
+                            <th>
+                                Typ
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Mana &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 12 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                               Mana
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Attack &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 13 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 14 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                           Attack 
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Life &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 15 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 16 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                            Life 
                             </th>
                             <th></th>
                         </tr>
@@ -109,13 +64,6 @@
             <div>
                 <h3> Ihr Deck</h3>
                 <div>
-                    @using (Html.BeginForm())
-                    {
-                        <p style="font-size:80%">
-                            @Html.TextBox("Search")
-                            <input style="max-width:5em" type="submit" value="Suchen" />
-                        </p>
-                    }
                 </div>
                 <div class="col-md-2-offset offsetlinks">
 
@@ -133,66 +81,28 @@
 
                 <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed">
                     <thead>
-                        <tr>
+                        
+                        <tr class="showtr">
                             <th class="col-md-1 "></th>
                             <th class="col-md-4 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:90%">
-                                        Namen &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 1 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 2 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                                Namen
                             </th>
-                            <th class="col-md-2 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Typ &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent;">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 5 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 6 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                           
+                            <th>
+                                Typ
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Mana &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 11 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 12 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                                Mana
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Attack &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 13 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 14 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                                Attack
                             </th>
-                            <th class="col-md-1 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" style="min-width:5em;background-color:transparent;padding-top:1em;margin-bottom:-1em;font-family:Xena;font-size:85%">
-                                        Life &nbsp;<span class="caret" style="border-color:white; border-width:2px"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" style="background-color:transparent">
-                                        <li style="background-color:transparent">@Html.ActionLink("Aufsteigend", "EditDeck", new { SortValue = 15 }, new { @class = "btn dropdown-toggle" })</li>
-                                        <li style="background-color:transparent">@Html.ActionLink("Absteigend", "EditDeck", new { SortValue = 16 }, new { @class = "btn dropdown-toggle" })</li>
-                                    </ul>
-                                </div>
+                            <th>
+                                Life
                             </th>
                             <th></th>
-
                         </tr>
+                    
                     </thead>
                     <tbody>
                         @foreach (var card in Model.deckcards)

@@ -299,12 +299,12 @@ namespace CardGame.Web.Controllers
         [HttpPost]
         [Authorize]
         [ActionName("OrderOverview")]
-        public ActionResult Order(Order ovv)
+        public ActionResult Order(Order order)
         {
             log.Info("CardPackController-Order");
 
             Order o = (Order)TempData["Order"];
-            o.CardPayment = ovv.CardPayment;
+            o.CardPayment = order.CardPayment;
             double priceoverall = (double)o.Pack.PackPrice * o.Quantity;
             var user=UserManager.Get_UserByEmail(User.Identity.Name);
 
@@ -318,13 +318,13 @@ namespace CardGame.Web.Controllers
                     if (!HtmlHelpers.CreditCardValidation.IsValidCardNumber(o.CardPayment.CardNumber))
                     {
                         TempData["ConfirmMessage"] = "Kreditkartennummer bitte nochmals eingeben!";
-                        return View(ovv);
+                        return View(o);
                     }
 
                     //Check if Modelstate is valid
                     if (!ModelState.IsValid)
                         {
-                           return View(ovv);
+                           return View(o);
 
                       }
                     //Get Total Cost
@@ -351,7 +351,8 @@ namespace CardGame.Web.Controllers
 
                     }
                     TempData["ConfirmMessage"] = "Danke für deinen Einkauf";
-                    var emailsend = EmailHelper.SendBillAndConfirmationAnswer(User.Identity.Name,o.Pack.IdPack, user.LastName, o.Pack.PackName, o.Quantity, priceoverall, us.ID);
+                    var emailsend = EmailHelper.SendBillAndConfirmationAnswer(User.Identity.Name,o.Pack.IdPack, us.FirstName+" "+us.LastName, o.Pack.PackName, o.Quantity, priceoverall, us.ID,o.CardPayment.CardCompany);
+
                     Bill bill = new Models.Bill();
                     bill.Username=us.FirstName+" "+us.LastName;
                     bill.OrderDate = DateTime.Now;

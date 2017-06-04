@@ -21,7 +21,7 @@
 
                     <h5 style="color:bisque">Gesamt: <span class="spanpoverview">@Model.Quantity x @Model.Pack.PackPrice = @(Model.Quantity * Model.Pack.PackPrice)</span> &nbsp;Stück</h5>
 
-                    <h5 style="color:bisque">Guthaben nach Kauf:<span class="spanpoverview"> @(@Model.CurrencyBalance - Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Coins</h5>
+                    <h5 style="color:darkorange;font-size:1.6em;background-color:#4a260c">Guthaben nach Kauf:<span class="spanpoverview"> @(@Model.CurrencyBalance - Model.Quantity * Model.Pack.PackPrice)</span>&nbsp;Coins</h5>
                 </div>
                 <div class=col-md-push-6>
                     <input type="submit" value="Will es Haben" class="btn btn-default" />
