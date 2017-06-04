@@ -92,6 +92,36 @@ namespace CardGame.DAL.Logic
         }
         #endregion
 
+        #region GET Discount BY ID
+        /// <summary>
+        /// Gets a Discount by  id and retuns a tblPack
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static PackDiscount GetDiscountbyId(int id)
+        {
+            try
+            {
+                log.Info("Usermanager-GetDiscountbyId");
+                PackDiscount disc = null;
+
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    //Extention Method
+                   disc = db.AllDiscounts
+                        .Include(c=>c.Pack)
+                        .Where(c => c.ID == id).FirstOrDefault();
+                }
+                return disc;
+            }
+            catch (System.Exception e)
+            {
+                Debugger.Break();
+                throw e;
+            }
+        }
+        #endregion
+
         #region ADMIN: GET ALL PACKS
         /// <summary>
         /// Gets all Packs from the Database
@@ -148,6 +178,12 @@ namespace CardGame.DAL.Logic
                         dbpack.FlavorText = flavortext;
                         dbpack.Image = pic;
                         dbpack.ImageMimeType = mimetypename;
+                        PackDiscount dis = new PackDiscount();
+                        dis.StartDate = DateTime.MinValue;
+                        dis.EndDate = DateTime.MinValue;
+                        dis.Discount = 0;
+                        dbpack.Discount.Add(dis);
+          
                         db.AllPacks.Add(dbpack);
 
                         db.SaveChanges();
@@ -258,7 +294,30 @@ namespace CardGame.DAL.Logic
                 throw e;
             }
         }
+
         #endregion
+
+        #region SaveDiscount
+        public static void SaveDiscount(int iD, int discountAmount, DateTime endDate, DateTime startDate)
+        {
+            if (endDate != null)
+            {
+                using (var db = new itin21_ClonestoneFSEntities())
+                {
+                    PackDiscount dbdis = db.AllDiscounts.SingleOrDefault(p => p.ID == iD);
+
+                    dbdis.EndDate = endDate;
+                    dbdis.StartDate = startDate;
+                    dbdis.EndDate = endDate;
+
+                    db.Entry(dbdis).State = EntityState.Modified;
+
+                    db.SaveChanges();
+                }
+            }
+        } 
+        #endregion
+
 
     }
 }

@@ -89,6 +89,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -183,6 +187,7 @@
     <Compile Include="Controllers\HtmlHelpers\EmailHelper.cs" />
     <Compile Include="Controllers\HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Controllers\HtmlHelpers\SessionHelper.cs" />
+    <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Models\CardPack.cs" />
     <Compile Include="Models\CardsListViewModel.cs" />
@@ -282,6 +287,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\d3\d3.js" />
@@ -290,6 +296,7 @@
     <Content Include="Scripts\d3\LICENSE" />
     <Content Include="Scripts\d3\CHANGES.md" />
     <Content Include="Scripts\d3\API.md" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -390,6 +397,8 @@
     <Content Include="Views\Shared\_BannerAd.cshtml" />
     <Content Include="Views\Admin\DiscountIndex.cshtml" />
     <Content Include="Views\Admin\DiscountEdit.cshtml" />
+    <Content Include="Views\CardPack\FinalCoin.cshtml" />
+    <Content Include="Views\CardPack\CreatePdf.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Templates\" />

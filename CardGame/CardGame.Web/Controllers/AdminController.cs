@@ -357,6 +357,49 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region VIEWRESULT DISCOUNTEDIT
+        /// <summary>
+        /// Takes the CardId, gets the Cardpack
+        /// from DB,returns a ViewResult with pack
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Authorize]
+        public ViewResult DiscountEdit(int id)
+        {
+            log.Info("AdminController-DiscountEdit");
+            try
+            {
+                Web.Models.Discount dis = new Web.Models.Discount();
+                var dbdiscount = PackManager.GetDiscountbyId(id);
+                dis.ID = dbdiscount.ID;
+                dis.DiscountAmount = dbdiscount.Discount??0;
+                dis.StartDate = dbdiscount.StartDate?? DateTime.MinValue;
+                dis.EndDate = dbdiscount.EndDate ?? DateTime.MinValue;
+                CardPack pack = new CardPack();
+                pack.IdPack = dbdiscount.Pack.ID;
+                pack.PackName = dbdiscount.Pack.Name;
+                pack.PackPrice = dbdiscount.Pack.Price??0;
+                pack.Worth = dbdiscount.Pack.Worth ?? 0;
+                pack.NumCards = dbdiscount.Pack.NumberOfCards??0;
+                pack.Pic = dbdiscount.Pack.Image;
+                dis.DiscountPack = pack;
+               
+                return View(dis);
+            }
+            catch (Exception e)
+            {
+
+                Debugger.Break();
+                log.Error("AdminController-DiscountEdit", e);
+                return View("Error");
+            }
+
+        }
+        #endregion
+
+
+
         #region VIEWRESULT CARD Edit
         /// <summary>
         /// Takes the CardId, gets the Cardpack
@@ -598,7 +641,39 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-
+        #region ACTIONRESULT EDIT II
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cp"></param>
+        /// <param name="img"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPost]
+        public ActionResult DiscountEdit(Web.Models.Discount dis)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                   
+                    PackManager.SaveDiscount(dis.ID, dis.DiscountAmount, dis.EndDate, dis.StartDate);
+                    TempData["message"] = string.Format("{0} wurde gespeichert", dis.ID);
+                    return RedirectToAction("DiscountIndex");
+                }
+                else
+                {
+                    return View(dis);
+                }
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error("AdminController-EditII", e);
+                return View("Error");
+            }
+        }
+        #endregion
 
 
         #region VIEWRESULT CREATE

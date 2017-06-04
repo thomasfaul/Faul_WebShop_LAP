@@ -5,11 +5,14 @@ using CardGame.Web.Models;
 using CardGame.Web.Models.DB;
 using CardGame.Web.Models.UI;
 using log4net;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
+
+
 
 namespace CardGame.Web.Controllers
 {
@@ -349,8 +352,17 @@ namespace CardGame.Web.Controllers
                     }
                     TempData["ConfirmMessage"] = "Danke für deinen Einkauf";
                     var emailsend = EmailHelper.SendBillAndConfirmationAnswer(User.Identity.Name,o.Pack.IdPack, user.LastName, o.Pack.PackName, o.Quantity, priceoverall, us.ID);
- 
-                    return RedirectToAction("DisableCurrency", "CardPack");
+                    Bill bill = new Models.Bill();
+                    bill.Username=us.FirstName+" "+us.LastName;
+                    bill.OrderDate = DateTime.Now;
+                    bill.OrderNumber = us.ID;
+                    bill.AmountOfPacks = o.Quantity;
+                    bill.Packtype = o.Pack.PackName;
+                    bill.Tax = (priceoverall /120)*20;
+                    bill.OrderAmount = priceoverall;
+                    bill.Creditcard = o.CardPayment.CardCompany;
+                   
+                    return View("FinalCoin",bill);
 
                 }
                 catch (Exception e)
@@ -396,7 +408,7 @@ namespace CardGame.Web.Controllers
                     var isSaved = ShopManager.SaveOrder(us.ID, o.Pack.IdPack, (int)orderTotal, o.Quantity, o.OIsCurrency);
 
                     //Send Email and Confirmation
-                    EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Ihre Karten sind in der Collection");
+                    EmailHelper.SendEmail(User.Identity.Name, "Liebe Grüsse vom CloneShop- Team", " Deine Karten sind in der Sammlung, viel Spass beim Erstellen der Decks");
                     TempData["ConfirmMessage"] = "Danke für Ihren Einkauf";
                     TempData["OrderedCards"] = orderedCards;
 
@@ -412,7 +424,21 @@ namespace CardGame.Web.Controllers
             }
         }
         #endregion
-
+        public ActionResult FinalCoin(Bill o)
+        {
+            log.Info("CardPackController-FinalCoin");
+            try
+            {
+                var ordered = (Order)TempData["Order"];
+                return View(ordered);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error(e);
+                return View("Error");
+            }
+        }
         #region ACTIONRESULT SHOW GENERATED CARDS
         /// <summary>
         /// Gets the Generated Cards and returns a List
@@ -467,8 +493,28 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
- 
+        public ActionResult DownloadPdf(Bill bill)
+        {
+            return new ActionAsPdf(
+                           "CreatePdf",
+                           bill){ FileName = "Rechnung.pdf" };
+        }
 
+        public ActionResult CreatePdf(Bill o)
+        {
+            log.Info("CardPackController-FinalCoin");
+            try
+            {
+                var order = (Bill)TempData["Order"];
+                return View(o);
+            }
+            catch (Exception e)
+            {
+                Debugger.Break();
+                log.Error(e);
+                return View("Error");
+            }
+        }
 
         public FileContentResult GetImage(int id)
         {

@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CardGame.Web.Models.Bill
+
+
+
+<div class="col col-md-6 cardcol " id="index">
+
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   
+                    <h4 style="color:darkgoldenrod;text-shadow:none;font-family:Xena;font-size:2em" class="modal-title">Deine Rechnung </h4>
+                </div>
+                <div class="modal-body" style="color:black;text-shadow:none;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:1.3em;text-align:left;padding-right:4em;">
+
+                    <p style="color:black;">Magical TeaParty Gmbh</p>
+                    <p style="color:black;">Zipperstrasse 56 - 59</p>
+                    <p style="color:black;"> 1110 Wien </p>
+                    <p style="color:black;"> (+43)0664 / 1525725 </p>
+                    <p style="color:black;"> magicaltea.party.at </p>
+                    <div style="color:black;">
+                        <p style="color:black; text-align:right;">Datum:&nbsp;@Model.OrderDate</p> <br />
+                        <p style="color:black;"> Rechnungsnummer:&nbsp;@Model.OrderNumber</p>
+                    </div>
+                    <br />
+                    <p style="color:black;">
+                        Liebe(r) &nbsp;@Model.Username,
+                    </p>
+                    <br />
+                    <p style="color:black;"> Hier ist deine Bestellübersicht:</p><br />
+                    <p style="color:black;"> Du hast vom Package &nbsp;@Model.Packtype,&nbsp; @Model.AmountOfPacks&nbsp;Stück bestellt,</>
+                    <p style="color:black;"> Umsatzsteuer (20%):&nbsp;@Model.Tax&nbsp; Euro,</p>
+                    <p style="color:black;font-weight:bold"> Gesamtbetrag ink.Mwst &nbsp;@Model.OrderAmount&nbsp; Euro,</><br /><br />
+                    <p style="color:black;"> Bezahlt mit: @Model.Creditcard</p><br />
+                    <p style="color:black;"> Danke für deinen Einkauf,</p>
+                    <p style="color:black;text-align:left"> Das Clonestone - Team </p><br /><br />
+                    <p style="color:black;"> Bei Fragen und Reklamationen:</p>
+                    <p style="color:black;">
+                        Support:
+                        <a href='mailto:Support@clonestone.at'>
+                            Support@clonestone.at
+                        </a>
+                    </p>
+                    <p style="color:black;"> Marketing:<a href='mailto:Marketing@clonestone.at' style="color:black;"> Marketing@clonestone.com </a></p>
+                    <p style="color:black;"> Gerichtsstand Wien </p>
+                </div>
+
+                
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
