@@ -114,7 +114,7 @@ namespace CardGame.DAL.Logic
             }
             catch (Exception e)
             {
-                Debugger.Break();
+                
                 log.Error("AuthManager-AuthUser", e);
                 return false;
             }

@@ -93,6 +93,14 @@
       <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rotativa.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.Core.2.0.0\lib\net45\Rotativa.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rotativa.MVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.MVC.2.0.3\lib\net45\Rotativa.MVC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -223,6 +231,49 @@
     <Content Include="Content\images\Banner\banner4.png" />
     <Content Include="Content\images\Banner\banner3.jpg" />
     <Content Include="Content\images\black_pattern_tile.jpg" />
+    <Content Include="Content\images\Cardpacks\animatedGif\003c3d997ee6600da3d39b53939cf381.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\2.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\3.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\aANRoOd.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\ab190cdc63e1dd849eb568e731f6a18c9abcc013_hq.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Animiert1.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Animiert2.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\AT_068_premium.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_Draenei.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_Esports %281%29.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_Esports.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_Pandaria_02.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_Samsung.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Card_Back_TeSPA.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\jMa7-fxwrhpn9561628.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\MagniBronzebeard.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\MJbQdpb.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\RavenholdtAssassin.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Shiv.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\Stormpike.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\The_Ancient_One.gif" />
+    <Content Include="Content\images\Cardpacks\animatedGif\1.gif" />
+    <Content Include="Content\images\Cardpacks\personalized\Bintinger.png" />
+    <Content Include="Content\images\Cardpacks\personalized\CaptainAndi.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Chris.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Cleghorn.png" />
+    <Content Include="Content\images\Cardpacks\personalized\diaperSteve.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Hager.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Hirscher.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Jungsue.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Kloiber.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Knibbe.png" />
+    <Content Include="Content\images\Cardpacks\personalized\LazyTom.png" />
+    <Content Include="Content\images\Cardpacks\personalized\MagicPipe.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Mandl.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Nichterl.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Pacher.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Pilgersdorfer.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Sandman.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Schinagl.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Stallion.png" />
+    <Content Include="Content\images\Cardpacks\personalized\TheVin.png" />
+    <Content Include="Content\images\Cardpacks\personalized\Yoda.png" />
     <Content Include="Content\images\image_1096894.gif" />
     <Content Include="Content\images\Coins-PNG-Picture-180x180.png" />
     <Content Include="Content\images\Money.png" />
@@ -287,6 +338,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -297,6 +349,8 @@
     <Content Include="Scripts\d3\CHANGES.md" />
     <Content Include="Scripts\d3\API.md" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -313,7 +367,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\toastr.js" />
-    <Content Include="Scripts\toastr.min.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="Content\toastr.css" />
     <None Include="compilerconfig.json" />
@@ -329,6 +382,7 @@
     </Content>
     <Content Include="Content\fonts\Xena.ttf" />
     <Content Include="Content\fonts\DistractorFree-Regular.otf" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

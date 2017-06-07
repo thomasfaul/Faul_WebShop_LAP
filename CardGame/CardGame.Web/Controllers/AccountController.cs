@@ -220,11 +220,19 @@ namespace CardGame.Web.Controllers
         [AllowAnonymous]
         public ActionResult Passwordreset(string Email)
         {
-            var user = UserManager.Get_UserByEmail(Email);
+            try
+            {
+                var user = UserManager.Get_UserByEmail(Email);
 
-            bool ok = EmailHelper.SendPasswordResetEmail(user.Email, user.ID, user.FirstName);
-            TempData["ConfirmMessage"] = "Du Hast eine Email bekommen, bitte Postfach überprüfen";
-            return RedirectToAction("Login");
+                bool ok = EmailHelper.SendPasswordResetEmail(user.Email, user.ID, user.FirstName);
+                TempData["ConfirmMessage"] = "Du Hast eine Email bekommen, bitte Postfach überprüfen";
+                return RedirectToAction("Login");
+            }
+            catch (Exception e)
+            {
+                TempData["ConfirmMessage"] = "Bitte nochmals versuchen";
+                return RedirectToAction("Login");
+            }
         }
         #endregion
 

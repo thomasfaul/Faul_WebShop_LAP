@@ -21,8 +21,7 @@
                 error: 'error',
                 info: 'info',
                 success: 'success',
-                warning: 'warning',
-                progressbar:'progressbar'
+                warning: 'warning'
             };
 
             var toastr = {
@@ -53,15 +52,7 @@
                     title: title
                 });
             }
-            function progressbar(message, title, optionsOverride) {
-                return notify({
-                    type: toastType.progressbar,
-                    iconClass: getOptions().iconClasses.progressBar,
-                    message: message,
-                    optionsOverride: optionsOverride,
-                    title: title
-                });
-            }
+
             function getContainer(options, create) {
                 if (!options) { options = getOptions(); }
                 $container = $('#' + options.containerId);

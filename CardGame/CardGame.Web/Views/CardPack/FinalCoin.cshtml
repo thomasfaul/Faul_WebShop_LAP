@@ -24,10 +24,11 @@
 @*-----------------------------------------------------MAINCOLUMN---------------------------------------------*@
 
 
-<div class="col col-md-6 cardcol " id="index">
+<div class="col col-md-6 cardcol " style="margin-left:2em; "id="index">
     <h3>Danke für den Einkauf</h3>
+    <img src="~/Content/images/Cardpacks/animatedGif/Animiert1.gif"/>
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-default" style="width:15em" data-toggle="modal" data-target="#myModal">Rechnung ausdrucken</button>
+    <button type="button" class="btn btn-default" style="width:15em" data-toggle="modal" data-target="#myModal">Rechnung als Pdf</button>
 
     <!-- Modal -->
     <div id="myModal" class="modal fade" role="dialog">
@@ -37,7 +38,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 style="color:darkgoldenrod;text-shadow:none;font-family:Xena;font-size:2em" class="modal-title">Deine Rechnung </h4>
+                    <h4 style="color:darkgoldenrod;text-shadow:none; font-family:Xena;font-size:2em" class="modal-title">Deine Rechnung </h4>
                 </div>
                 <div class="modal-body" style="color:black;text-shadow:none;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:0.8em;text-align:left;padding-right:2em;">
                     
@@ -72,7 +73,7 @@
                     <p style="color:black;"> Gerichtsstand Wien </p>
                 </div>
    
-                <h6>@Html.ActionLink("Drucken", "DownloadPdf", Model)</h6>
+                <h6>@Html.ActionLink("Rechnung als Pdf", "DownloadPdf", Model)</h6>
                 <button type="button" class="btn btn-default" style="width:15em" data-dismiss="modal">Schließen</button>
             </div>
 

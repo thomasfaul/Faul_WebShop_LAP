@@ -496,6 +496,7 @@ namespace CardGame.Web.Controllers
 
         public ActionResult DownloadPdf(Bill bill)
         {
+            
             return new ActionAsPdf(
                            "CreatePdf",
                            bill){ FileName = "Rechnung.pdf" };

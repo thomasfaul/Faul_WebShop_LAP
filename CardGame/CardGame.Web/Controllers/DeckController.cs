@@ -176,9 +176,13 @@ namespace CardGame.Web.Controllers
 
                     dbDeckList.Add(dbDeckCard);
                 }
-            } 
-          
+            }
 
+            if (dbDeckList.Count >= 32)
+            {
+                TempData["ErrorMessage"] = "Maximum 32 Karten!!!";
+                return RedirectToAction("DeckOverview", "Profile");
+            }
             var result = DeckManager.UpdateDeckById(id, dbDeckList); 
             return RedirectToAction("DeckOverview", "Profile");
         }

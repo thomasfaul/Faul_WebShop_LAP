@@ -29,12 +29,16 @@
         <h3>Du hast @Model.ToList().Count Decks</h3>
     <div class="card-deck-wrapper col-md-12 cardcol "id="deckwrapper">
       
-        <div class="card-deck packcol packdeck " id="packoverview">
+        <div class="card-deck packcol packdeck " id="packoverview" style="margin-left:1em" >
+
             @foreach (var deck in Model)
             {
-                <div class="card col-md-2 packcard" id="deckcardcard">
-                    <img class="cardpic" src="~/Content/images/Cardpacks/2.png"  />
-                    <h3 class="packname">@Html.DisplayFor(c => deck.Name)</h3>
+                <div class="card col-md-2 packcard" id="deckcardcard" style="width:16em; margin-right:-1.5em; height:14em">
+                  
+
+                    <img class="img-circle img-responsive" src="~/Content/images/Cardpacks/animatedGif/1.gif" />
+                    
+                    <h3 class="packname"style="margin-top:-1em">@Html.DisplayFor(c => deck.Name)</h3>
                     <h5> @Html.ActionLink("Zu diesem Deck", "DeckDetails", new { id = deck.DeckID })</h5>
                 </div>
             }

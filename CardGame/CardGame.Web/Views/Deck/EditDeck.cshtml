@@ -12,9 +12,9 @@
         <div class="col col-md-6  colcol"style="min-width:45em">
             <div><h3> Ihre Sammlung</h3></div>
           
-                <div>
-
-                </div>
+               
+                    <h3 style="color:darkorange">@Model.collectioncards.Count Karten </h3>
+            
             
             <div class="table-responsive showcont" id="listProducts">
                 <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed showtable">
@@ -42,11 +42,14 @@
                     </thead>
 
                     <tbody>
+                       
+                        
+                           
                         @foreach (var card in Model.collectioncards)
                         {
                             var base64 = Convert.ToBase64String(card.Pic);
                             var imgSrc = String.Format("data:image/png;base64,{0}", base64);
-                            <tr class="showtr">
+<tr class="showtr">
                                 <td class="col-md-1 showth"><img class="img-responsive deckbuilderpic img-thumbnail" src="@imgSrc" /></td>
                                 <td  class="col-md-2 showth">@Html.DisplayFor(c => card.Name)</td>
                                 <td class="col-md-2 showth">@Html.DisplayFor(c => card.Type)</td>
@@ -63,8 +66,16 @@
         <div class="col col-md-6 colcol" style="background-color:rgba(247, 179, 80, 0.64);color:gray;min-width:45em">
             <div>
                 <h3> Ihr Deck</h3>
-                <div>
-                </div>
+                @if (Model.deckcards.Count > 32)
+                {
+                    <h3 style="color:red;background-color:darkgoldenrod">@Model.deckcards.Count Karten </h3>
+                    <h5 style="color:red;background-color:darkgoldenrod">Max.32 Karten!! </h5>
+                }
+                else
+                {
+                    <h3 style="color:darkorange">@Model.deckcards.Count Karten </h3>
+                }
+                
                 <div class="col-md-2-offset offsetlinks">
 
                     <h1>Klick auf die Kreuze ;-)</h1>
@@ -78,7 +89,7 @@
                     <br />
                     <h2>@Html.ActionLink("Save Deck", "SaveDeck", new { id = Model.DeckID })</h2>
                 </div>
-
+               
                 <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed">
                     <thead>
                         
