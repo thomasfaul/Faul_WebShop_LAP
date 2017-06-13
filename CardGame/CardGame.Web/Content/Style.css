@@ -840,7 +840,6 @@ margin-right:0;
 margin-left:0;
 }
 
-
 #decklistcard {
 
     position:relative;
@@ -906,7 +905,6 @@ font-size:larger;
 	-moz-box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33);
 	box-shadow: 2px -5px 35px 16px rgba(125,108,73,0.33); 
     transition:ease-in linear 3s;
-
 }
 
 .colcol {
@@ -1046,7 +1044,6 @@ input[type="file"] {
 
 .col-md-5:hover
 {   
-  
     max-width:60em;
     width:52em;
     height:25em;
