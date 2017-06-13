@@ -88,9 +88,6 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
-   
-
-
         #region ACTIONRESULT PACKOVERVIEW
         /// <summary>
         /// checks if its a Currencyview
@@ -108,6 +105,7 @@ namespace CardGame.Web.Controllers
             try
             {
                 model.PIsMoney = (bool)Session["isCurrency"];
+               
             }
             catch (Exception e)
             {
@@ -117,7 +115,7 @@ namespace CardGame.Web.Controllers
 
             List<CardPack> PackList = new List<CardPack>();
             var dbPacklist = PackManager.GetAllPacks();
-
+            int us = UserManager.Get_UserByEmail(User.Identity.Name).AmountMoney ??0;
             foreach (var p in dbPacklist)
             {
                 bool discount = false;
@@ -138,6 +136,7 @@ namespace CardGame.Web.Controllers
                 pack.IsActive = (bool)p.IsActive;
                 pack.ImageMimeType = p.ImageMimeType;
                 pack.Pic = p.Image;
+                
 
                 Web.Models.Discount dis = new Web.Models.Discount();
                 dis.StartDate = p.Discount.FirstOrDefault().StartDate?? DateTime.MinValue;
@@ -160,6 +159,7 @@ namespace CardGame.Web.Controllers
                 ItemsPerPage = PPagesize,
                 TotalItems = PackList.Count()
             };
+            model.Userbalance = us;
 
             return View(model);
         }
@@ -303,10 +303,17 @@ namespace CardGame.Web.Controllers
         {
             log.Info("CardPackController-Order");
 
-            Order o = (Order)TempData["Order"];
-            o.CardPayment = order.CardPayment;
-            double priceoverall = (double)o.Pack.PackPrice * o.Quantity;
-            var user=UserManager.Get_UserByEmail(User.Identity.Name);
+
+                Order o = (Order)TempData["Order"];
+                
+            if (o==null)
+            {
+                return RedirectToAction("Error", "Error");
+            }
+                o.CardPayment = order.CardPayment;
+                double priceoverall = (double)o.Pack.PackPrice * o.Quantity;
+                var user = UserManager.Get_UserByEmail(User.Identity.Name);
+                
 
             //ORDER COINS
 
@@ -425,6 +432,9 @@ namespace CardGame.Web.Controllers
             }
         }
         #endregion
+
+
+        #region FinalCoin
         public ActionResult FinalCoin(Bill o)
         {
             log.Info("CardPackController-FinalCoin");
@@ -439,7 +449,10 @@ namespace CardGame.Web.Controllers
                 log.Error(e);
                 return View("Error");
             }
-        }
+        } 
+        #endregion
+
+
         #region ACTIONRESULT SHOW GENERATED CARDS
         /// <summary>
         /// Gets the Generated Cards and returns a List
@@ -494,14 +507,18 @@ namespace CardGame.Web.Controllers
         }
         #endregion
 
+        #region DOWNLOADPDF
         public ActionResult DownloadPdf(Bill bill)
         {
-            
+
             return new ActionAsPdf(
                            "CreatePdf",
-                           bill){ FileName = "Rechnung.pdf" };
+                           bill)
+            { FileName = "Rechnung.pdf" };
         }
+        #endregion
 
+        #region CREATEPDF
         public ActionResult CreatePdf(Bill o)
         {
             log.Info("CardPackController-FinalCoin");
@@ -517,7 +534,9 @@ namespace CardGame.Web.Controllers
                 return View("Error");
             }
         }
+        #endregion
 
+        #region GET IMAGE
         public FileContentResult GetImage(int id)
         {
             var pack = PackManager.GetPackById(id);
@@ -529,6 +548,7 @@ namespace CardGame.Web.Controllers
             {
                 return null;
             }
-        }
+        } 
+        #endregion
     }
 }

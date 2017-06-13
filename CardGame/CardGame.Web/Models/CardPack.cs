@@ -61,7 +61,9 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         public bool IsActive { get; set; }
         #endregion
 
-        public Discount PackDiscount { get; set; }
+        #region PACKDISCOUNT
+        public Discount PackDiscount { get; set; } 
+        #endregion
 
         #region PIC
         public byte[] Pic { get; set; }
@@ -71,21 +73,21 @@ ErrorMessageResourceName = Constants.Validation.NUMBER)]
         public string ImageMimeType { get; set; }
         #endregion
 
-
         #region SORTVALUE
         [HiddenInput(DisplayValue = false)]
         public int? SortValue { get; set; }
         #endregion
 
-
         #region Discount
         [HiddenInput(DisplayValue = false)]
         public int DiscountValue { get; set; }
         #endregion
+
         #region isDiscount
         [HiddenInput(DisplayValue = false)]
         public bool isDiscount { get; set; }
         #endregion
+
         #region DiscountEnddate
         [HiddenInput(DisplayValue = false)]
         public int DiscountEndDate { get; set; }

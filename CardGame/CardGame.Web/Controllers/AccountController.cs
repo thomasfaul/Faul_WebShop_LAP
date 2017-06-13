@@ -243,7 +243,8 @@ namespace CardGame.Web.Controllers
             var user = UserManager.Get_UserById(id);
             string salt = Helper.GenerateSalt();
             string hashedAndSaltedPassword = Helper.GenerateHash("123user!" + salt);
-            bool ok = AuthManager.ResetThePassword(hashedAndSaltedPassword, salt, User.Identity.Name);
+            bool ok = AuthManager.ResetThePassword(hashedAndSaltedPassword, salt, user.Email
+                );
             if (ok == true)
             {
                 EmailHelper.SendPasswordResetEmailAnswer(User.Identity.Name, id);

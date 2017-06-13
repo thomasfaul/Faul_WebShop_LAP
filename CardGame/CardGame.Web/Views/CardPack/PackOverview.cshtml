@@ -34,7 +34,7 @@
 
                         if (pack.Pic != null)
                         {
-                            <img class="cardpic" style="min-height:18em;margin-top:1em" src="@Url.Action("GetImage", "CardPack", new { id = pack.IdPack })" />
+                            <img class="cardpic" style="min-height:18em;margin-top:-1.5em" src="@Url.Action("GetImage", "CardPack", new { id = pack.IdPack })" />
                         }
                         else
                         {
@@ -48,7 +48,7 @@
                         }
                         else
                         {
-                            <h6 class="card-header head" style="margin-top:-1em">@Html.DisplayFor(c => pack.Flavor)</h6>
+                            <h6 class="card-header head" style="margin-top:0em">@Html.DisplayFor(c => pack.Flavor)</h6>
                         }
                         if (pack.isDiscount == true)
                         {
@@ -58,10 +58,16 @@
                         {
                         <p class="price">@Html.DisplayFor(c => pack.PackPrice)<br /><span class="break">Coins</span></p>
                         }
-
-                        <h3 style="margin-top:0em;margin-left:2em;z-index:9999; "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h3>
-
+                        if (Model.Userbalance >pack.PackPrice)
+                        {
+                            <h3 style="margin-top:0em;margin-left:2em;z-index:9999; "> @Html.ActionLink("Kaufen", "BuyCardPack", new { id = pack.IdPack })</h3>
                         }
+                        else
+                        {
+                            <h6><a style="margin-top:-1em" href="@Url.Action("EnableCurrency", "CardPack")"> zu wenig Guthaben</a></h6>
+                        }
+
+                    }
                     else
                     {
                         if (pack.Pic != null)

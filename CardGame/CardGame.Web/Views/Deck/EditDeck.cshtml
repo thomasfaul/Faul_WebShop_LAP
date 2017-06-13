@@ -17,7 +17,7 @@
             
             
             <div class="table-responsive showcont" id="listProducts">
-                <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed showtable">
+                <table cellpadding="2" cellspacing="2" border="0" class="table table-condensed ">
                     <thead>
                         <tr class="showtr">
                             <th class="col-md-1 "></th>
@@ -37,7 +37,7 @@
                             <th>
                             Life 
                             </th>
-                            <th></th>
+                            <th>Hinzufügen</th>
                         </tr>
                     </thead>
 
@@ -56,7 +56,7 @@
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Mana)</td>
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Attack)</td>
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-md-1 showth">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.collectioncards.IndexOf(card) })</td>
+                                <td class="col-md-1 showth"style="font-size:large">@Html.ActionLink("+", "AddCardToDeck", new { id = Model.collectioncards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>
@@ -111,7 +111,7 @@
                             <th>
                                 Life
                             </th>
-                            <th></th>
+                            <th>Entfernen</th>
                         </tr>
                     
                     </thead>
@@ -127,7 +127,7 @@
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Mana)</td>
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Attack)</td>
                                 <td class="col-md-1 showth">@Html.DisplayFor(c => card.Life)</td>
-                                <td class="col-md-1 showth">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deckcards.IndexOf(card) })</td>
+                                <td class="col-md-1 showth"style="font-size:large">@Html.ActionLink("x", "RemoveCardFromDeck", new { id = Model.deckcards.IndexOf(card) })</td>
                             </tr>
                         }
                     </tbody>

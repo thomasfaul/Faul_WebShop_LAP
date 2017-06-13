@@ -8,6 +8,6 @@ namespace CardGame.Web.Models
         public List<CardPack> Packs { get; set; }
         public PageInfo PagingInfo { get; set; }
         public bool PIsMoney { get; set; }
-       
+        public int Userbalance { get; set; }
     }
 }

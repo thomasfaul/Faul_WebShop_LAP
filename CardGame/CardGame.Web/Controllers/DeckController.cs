@@ -4,6 +4,7 @@ using CardGame.Web.Controllers.HtmlHelpers;
 using CardGame.Web.Models.DB;
 using log4net;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Web.Mvc;
 
 namespace CardGame.Web.Controllers
@@ -95,20 +96,29 @@ namespace CardGame.Web.Controllers
         /// <returns></returns>
         public ActionResult AddCardToDeck(int id)
         {
-            log.Info("Deckcontroller-AddCardToDeck");
-            DeckBuilder db = new DeckBuilder();
-            db = (DeckBuilder)TempData["DeckBuilder"];
+            try
+            {
+                log.Info("Deckcontroller-AddCardToDeck");
+                DeckBuilder db = new DeckBuilder();
+                db = (DeckBuilder)TempData["DeckBuilder"];
 
-            Web.Models.Card card = db.collectioncards[id];
-            db.collectioncards.RemoveAt(id);
+                Web.Models.Card card = db.collectioncards[id];
+                db.collectioncards.RemoveAt(id);
 
-            db.deckcards.Add(card);
+                db.deckcards.Add(card);
 
-            db.collectioncards.Sort();
-            db.deckcards.Sort();
+                db.collectioncards.Sort();
+                db.deckcards.Sort();
 
-            TempData["DeckBuilder"] = db;
-            return View("EditDeck", db);
+                TempData["DeckBuilder"] = db;
+                return View("EditDeck", db);
+            }
+            catch (System.Exception e)
+            {
+               
+                return RedirectToAction("Edit", "Deck");
+               
+            }
         }
         #endregion
 

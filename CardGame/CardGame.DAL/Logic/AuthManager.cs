@@ -137,7 +137,7 @@ namespace CardGame.DAL.Logic
             log.Info("AuthManager-Resetpassword");
             try
             {
-                var dbUser = UserManager.GetUserByUserEmail(email);
+                var dbUser = UserManager.Get_UserByEmail(email);
 
                 using (var db = new itin21_ClonestoneFSEntities())
                 {

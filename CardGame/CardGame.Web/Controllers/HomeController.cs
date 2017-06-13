@@ -138,7 +138,5 @@ namespace CardGame.Web.Controllers
             }
         }
         #endregion
-
-
     }
 }

@@ -93,7 +93,6 @@ ErrorMessageResourceName = Constants.Validation.REQUIRED)]
 
         #endregion
 
-
         #region CLASS => ATTRIBUT [MUSTBEATTIBUTE]
         /// <summary>
         /// IClientValidatable for client side Validation
